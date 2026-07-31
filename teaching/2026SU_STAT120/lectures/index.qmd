@@ -1,0 +1,10 @@
+---
+title: "Lectures"
+format:
+  html:
+    toc: false
+---
+
+# Lectures
+
+Lecture notes, slides, and recordings will be linked here.

@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  title: "Yi Lu"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - research.qmd
+      - text: Teaching
+        menu:
+          - href: teaching/2026SU_STAT120/index.qmd
+            text: Stat 120 (Summer 2026)
+  sidebar:
+    - id: stat120
+      contents:
+        - text: "About"
+          href: teaching/2026SU_STAT120/about.qmd
+        - text: "Lectures"
+          href: teaching/2026SU_STAT120/lectures/index.qmd
+        - text: "Homework"
+          href: teaching/2026SU_STAT120/homework/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+
+
+

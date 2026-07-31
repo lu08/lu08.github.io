@@ -1,0 +1,18 @@
+---
+title: "STAT 120 — 2026 SU"
+format:
+  html:
+    toc: false
+    sidebar: stat120
+---
+
+# STAT 120 (2026 Summer)
+
+Welcome to the course site. Use the sidebar to navigate within this course:
+
+- About — course info and contact
+- Lectures — lecture notes and slides
+- Homework — assignments and handouts
+
+
+

@@ -1,0 +1,53 @@
+[
+  {
+    "objectID": "teaching/2026SU_STAT120/lectures/index.html",
+    "href": "teaching/2026SU_STAT120/lectures/index.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Lectures\nLecture notes, slides, and recordings will be linked here.",
+    "crumbs": [
+      "Lectures"
+    ]
+  },
+  {
+    "objectID": "teaching/2026SU_STAT120/about.html",
+    "href": "teaching/2026SU_STAT120/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nCourse description, instructor info, office hours, and contact details go here.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "website-new",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "teaching/2026SU_STAT120/index.html",
+    "href": "teaching/2026SU_STAT120/index.html",
+    "title": "STAT 120 — 2026 SU",
+    "section": "",
+    "text": "STAT 120 (2026 Summer)\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
+  },
+  {
+    "objectID": "teaching/2026SU_STAT120/homework/index.html",
+    "href": "teaching/2026SU_STAT120/homework/index.html",
+    "title": "Homework",
+    "section": "",
+    "text": "Homework\nAssignments, due dates, and submission instructions will be posted here.",
+    "crumbs": [
+      "Homework"
+    ]
+  }
+]

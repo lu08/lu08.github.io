@@ -1,0 +1,20 @@
+{
+  "research.qmd": {
+    "research.html": "dab76b94"
+  },
+  "index.qmd": {
+    "index.html": "43ed6860"
+  },
+  "teaching/2026SU_STAT120/index.qmd": {
+    "index.html": "1d3bd758"
+  },
+  "teaching/2026SU_STAT120/about.qmd": {
+    "about.html": "2d594656"
+  },
+  "teaching/2026SU_STAT120/homework/index.qmd": {
+    "index.html": "53eabf0d"
+  },
+  "teaching/2026SU_STAT120/lectures/index.qmd": {
+    "index.html": "fbf375fb"
+  }
+}

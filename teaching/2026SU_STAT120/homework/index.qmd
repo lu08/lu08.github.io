@@ -1,0 +1,10 @@
+---
+title: "Homework"
+format:
+  html:
+    toc: false
+---
+
+# Homework
+
+Assignments, due dates, and submission instructions will be posted here.
