@@ -40,5 +40,11 @@
   },
   "teaching/STAT117/lectures/index.qmd": {
     "index.html": "2d06812e"
+  },
+  "teaching/STAT120/lectures/lecture1.qmd": {
+    "lecture1.html": "3e3a3a7a"
+  },
+  "teaching/STAT120/lectures/lecture2.qmd": {
+    "lecture2.html": "2cb90255"
   }
 }

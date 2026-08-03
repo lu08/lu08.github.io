@@ -23,6 +23,11 @@ website:
           href: teaching/STAT120/about.qmd
         - text: "Lectures"
           href: teaching/STAT120/lectures/index.qmd
+          contents:
+            - text: "Lecture 1"
+              href: teaching/STAT120/lectures/lecture1.qmd
+            - text: "Lecture 2"
+              href: teaching/STAT120/lectures/lecture2.qmd
         - text: "Homework"
           href: teaching/STAT120/homework/index.qmd
     - id: stat117

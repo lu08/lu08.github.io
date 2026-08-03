@@ -3,6 +3,7 @@ title: "Lecture 2"
 format:
   html:
     toc: false
+sidebar: stat120
 ---
 
 ## Introduction

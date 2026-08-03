@@ -1,0 +1,11 @@
+---
+title: "Lectures"
+format:
+  html:
+    toc: false
+sidebar: stat120
+---
+
+# Lectures
+
+Lecture notes, slides, and recordings will be linked here.

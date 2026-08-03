@@ -1,5 +1,5 @@
 ---
-title: "STAT 120 — 2026 SU"
+title: "STAT 120"
 format:
   html:
     toc: false

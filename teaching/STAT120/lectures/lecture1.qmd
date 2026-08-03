@@ -1,5 +1,9 @@
 ---
 title: "Lecture 1"
+format:
+  html:
+    toc: false
+sidebar: stat120
 ---
 
-Cat
+Cat and dogs

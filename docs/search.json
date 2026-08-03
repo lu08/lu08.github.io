@@ -86,5 +86,33 @@
     "crumbs": [
       "Homework"
     ]
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture2.html",
+    "href": "teaching/STAT120/lectures/lecture2.html",
+    "title": "Lecture 2",
+    "section": "",
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)"
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture2.html#introduction",
+    "href": "teaching/STAT120/lectures/lecture2.html#introduction",
+    "title": "Lecture 2",
+    "section": "",
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)"
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
+    "href": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
+    "title": "Lecture 2",
+    "section": "Example 1: Histogram",
+    "text": "Example 1: Histogram\n\nA histogram is given by default for plotting one variable\nAdd type=‘histogram’ to get rid of the warning message\nNote the difference in syntax convention (e.g.:  ~ varname)\n\n\nplot(mtcars$mpg)"
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture1.html",
+    "href": "teaching/STAT120/lectures/lecture1.html",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Cat"
   }
 ]
