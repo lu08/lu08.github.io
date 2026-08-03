@@ -16,5 +16,29 @@
   },
   "teaching/2026SU_STAT120/lectures/index.qmd": {
     "index.html": "fbf375fb"
+  },
+  "teaching/STAT120/index.qmd": {
+    "index.html": "d032d0c6"
+  },
+  "teaching/STAT120/about.qmd": {
+    "about.html": "8b374e73"
+  },
+  "teaching/STAT120/homework/index.qmd": {
+    "index.html": "a1ee74ee"
+  },
+  "teaching/STAT120/lectures/index.qmd": {
+    "index.html": "1041631b"
+  },
+  "teaching/STAT117/index.qmd": {
+    "index.html": "8cc10004"
+  },
+  "teaching/STAT117/about.qmd": {
+    "about.html": "c93cd9d1"
+  },
+  "teaching/STAT117/homework/index.qmd": {
+    "index.html": "507593e2"
+  },
+  "teaching/STAT117/lectures/index.qmd": {
+    "index.html": "2d06812e"
   }
 }

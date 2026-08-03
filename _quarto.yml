@@ -10,17 +10,28 @@ website:
       - research.qmd
       - text: Teaching
         menu:
-          - href: teaching/2026SU_STAT120/index.qmd
-            text: Stat 120 (Summer 2026)
+          - href: teaching/STAT120/index.qmd
+            text: Stat 120 Statistical Computing in R
+          - href: teaching/STAT117/index.qmd
+            text: Stat 117 Introduction to Statistics
+  
   sidebar:
     - id: stat120
       contents:
         - text: "About"
-          href: teaching/2026SU_STAT120/about.qmd
+          href: teaching/STAT120/about.qmd
         - text: "Lectures"
-          href: teaching/2026SU_STAT120/lectures/index.qmd
+          href: teaching/STAT120/lectures/index.qmd
         - text: "Homework"
-          href: teaching/2026SU_STAT120/homework/index.qmd
+          href: teaching/STAT120/homework/index.qmd
+    - id: stat117
+      contents:
+        - text: "About"
+          href: teaching/STAT117/about.qmd
+        - text: "Lectures"
+          href: teaching/STAT117/lectures/index.qmd
+        - text: "Homework"
+          href: teaching/STAT117/homework/index.qmd
 
 format:
   html:

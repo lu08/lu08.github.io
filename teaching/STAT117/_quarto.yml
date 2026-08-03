@@ -1,0 +1,5 @@
+format:
+  html:
+    page-layout: docs
+    toc: false
+    sidebar: stat117
