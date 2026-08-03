@@ -1,0 +1,30 @@
+---
+title: "Lecture 2"
+format:
+  html:
+    toc: false
+---
+
+## Introduction
+- Wide variety, very flexible - can generate quite complicated graphs
+  + http://www.htmlwidgets.org/showcase_leaflet.html
+  + https://plot.ly/r/
+- Many new packages and functions are being published (esp. on github)
+- Currently, no "go-to" package, no unified approach
+- We'll try a few simple examples to give you an idea, mostly using the <font color='red'>plotly</font> package
+
+```{r,message=F}
+#install.packages('plotly')
+library(plotly)
+library(ggplot2)
+library(Lock5Data)
+```
+
+
+## Example 1: Histogram
+- A histogram is given by default for plotting one variable
+- Add <font color='blue'>type='histogram'</font> to get rid of the warning message
+- Note the difference in syntax convention (e.g.: <font color='red'> ~ </font>varname)
+```{r}
+plot(mtcars$mpg)
+```
