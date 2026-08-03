@@ -14,7 +14,7 @@
     "href": "teaching/STAT117/about.html",
     "title": "About",
     "section": "",
-    "text": "About\nCourse description, instructor info, office hours, and contact details go here.",
+    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
     "crumbs": [
       "About"
     ]
@@ -26,6 +26,7 @@
     "section": "",
     "text": "Lectures\nLecture notes, slides, and recordings will be linked here.",
     "crumbs": [
+      "Home",
       "Lectures"
     ]
   },
@@ -34,7 +35,7 @@
     "href": "teaching/STAT120/about.html",
     "title": "About",
     "section": "",
-    "text": "About\nCourse description, instructor info, office hours, and contact details go here.",
+    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
     "crumbs": [
       "About"
     ]
@@ -56,9 +57,9 @@
   {
     "objectID": "teaching/STAT120/index.html",
     "href": "teaching/STAT120/index.html",
-    "title": "STAT 120 — 2026 SU",
+    "title": "STAT 120",
     "section": "",
-    "text": "STAT 120 (2026 Summer)\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
+    "text": "STAT 120\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
   },
   {
     "objectID": "teaching/STAT120/homework/index.html",
@@ -73,9 +74,9 @@
   {
     "objectID": "teaching/STAT117/index.html",
     "href": "teaching/STAT117/index.html",
-    "title": "STAT 117 — 2026 SU",
+    "title": "STAT 117",
     "section": "",
-    "text": "STAT 117 (2026 Summer)\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
+    "text": "STAT 117\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
   },
   {
     "objectID": "teaching/STAT117/homework/index.html",
@@ -92,27 +93,47 @@
     "href": "teaching/STAT120/lectures/lecture2.html",
     "title": "Lecture 2",
     "section": "",
-    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)"
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "crumbs": [
+      "Home",
+      "Lectures",
+      "Lecture 2"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture2.html#introduction",
     "href": "teaching/STAT120/lectures/lecture2.html#introduction",
     "title": "Lecture 2",
     "section": "",
-    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)"
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "crumbs": [
+      "Home",
+      "Lectures",
+      "Lecture 2"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
     "href": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
     "title": "Lecture 2",
     "section": "Example 1: Histogram",
-    "text": "Example 1: Histogram\n\nA histogram is given by default for plotting one variable\nAdd type=‘histogram’ to get rid of the warning message\nNote the difference in syntax convention (e.g.:  ~ varname)\n\n\nplot(mtcars$mpg)"
+    "text": "Example 1: Histogram\n\nA histogram is given by default for plotting one variable\nAdd type=‘histogram’ to get rid of the warning message\nNote the difference in syntax convention (e.g.:  ~ varname)\n\n\nplot(mtcars$mpg)",
+    "crumbs": [
+      "Home",
+      "Lectures",
+      "Lecture 2"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture1.html",
     "href": "teaching/STAT120/lectures/lecture1.html",
     "title": "Lecture 1",
     "section": "",
-    "text": "Cat"
+    "text": "Cat and dogs",
+    "crumbs": [
+      "Home",
+      "Lectures",
+      "Lecture 1"
+    ]
   }
 ]

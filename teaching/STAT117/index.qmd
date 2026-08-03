@@ -1,12 +1,12 @@
 ---
-title: "STAT 117 — 2026 SU"
+title: "STAT 117"
 format:
   html:
     toc: false
     sidebar: stat117
 ---
 
-# STAT 117 (2026 Summer)
+# STAT 117
 
 Welcome to the course site. Use the sidebar to navigate within this course:
 

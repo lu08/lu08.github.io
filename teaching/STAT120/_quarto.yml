@@ -1,5 +1,5 @@
 format:
   html:
-    page-layout: docs
+    page-layout: article
     toc: false
     sidebar: stat120
