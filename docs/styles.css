@@ -1,1 +1,104 @@
-/* css styles */
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+body {
+  background: #ffffff;
+  color: #102a43;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: #0f766e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.course-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.course-tab {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: #486581;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+
+.course-tab:hover {
+  color: #0f766e;
+  text-decoration: none;
+}
+
+.course-tab.active {
+  color: #0f766e;
+  font-weight: 600;
+  border-bottom-color: #0f766e;
+}
+
+.course-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.course-dropdown:hover .course-dropdown-menu,
+.course-dropdown:focus-within .course-dropdown-menu {
+  display: block;
+}
+
+.course-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem 0;
+  display: none;
+  z-index: 10;
+}
+
+.course-dropdown-menu a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  color: #486581;
+  border-bottom: none;
+  font-weight: 400;
+}
+
+.course-dropdown-menu a:hover {
+  background: #f8fafc;
+  color: #0f766e;
+  text-decoration: none;
+}
+
+.course-dropdown-menu a.active {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.pdf-viewer {
+  margin-bottom: 1rem;
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid #e2e8f0;
+}

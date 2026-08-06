@@ -1,11 +1,10 @@
 ---
 title: "Lectures"
-format:
-  html:
-    toc: false
-sidebar: stat120
 ---
 
 # Lectures
 
 Lecture notes, slides, and recordings will be linked here.
+
+- [Week 1](week_1/lectures_1.qmd)
+- [Week 2](week_2/lectures_2.qmd)

@@ -1,0 +1,26 @@
+---
+title: "List of courses"
+---
+
+
+*Drew University*  
+(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)
+
+- **STAT335/DATA503** **Applied Regression Analysis**: Fall 2022
+- **STAT350 Statistical Theory**: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024
+- [**STAT207/STAT117 Introduction to Statistics**](STAT117/index.qmd): Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025
+- **DATA200 Data Science: Introduction, History, and Case Studies**: Spring 2018*, Spring 2022, Fall 2024
+- **DATA252/DATA551** **Modeling and Simulation**: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025
+- [**STAT120 Statistical Computing in R**](STAT120/index.qmd): Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024
+- **STAT220 Special Topics in Statistics: Bayesian Statistics**: Spring 2021*
+- **FIN622** **Computational Finance & Large Data Analysis (M.S. of Finance program)**: Spring 2019*
+- **DATA251 Data Visualization**: Fall 2018*
+
+*The Ohio State University*
+
+- **STAT4201 Introduction to Mathematical Statistics**: Fall 2015
+- **Recitation instructor, STAT2480 Statistics for Life Sciences**: Spring 2015
+- **Recitation instructor, STAT4202 Introduction to Mathematical Statistics II**: Fall 2014
+- **Recitation instructor, STAT2450 Introduction to Statistical Analysis**: Fall 2014
+- **Recitation instructor, STAT1450 Introduction to the Practice of Statistics**: Summer 2014
+- **Recitation instructor, STAT1350 Elementary Statistics**: Spring 2014, Spring 2013, Fall 2012

@@ -1,9 +1,5 @@
 ---
 title: "STAT 120"
-format:
-  html:
-    toc: false
-    sidebar: stat120
 ---
 
 # STAT 120
@@ -11,8 +7,9 @@ format:
 Welcome to the course site. Use the sidebar to navigate within this course:
 
 - About — course info and contact
+- Syllabus — policies and grading
+- Schedule — weekly topics
 - Lectures — lecture notes and slides
 - Homework — assignments and handouts
-
 
 

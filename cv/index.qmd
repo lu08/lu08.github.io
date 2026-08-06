@@ -1,0 +1,14 @@
+---
+title: "CV"
+format:
+  html:
+    toc: false
+---
+
+```{=html}
+<div class="pdf-viewer">
+  <iframe src="cv.pdf" title="CV"></iframe>
+</div>
+```
+
+[Open PDF in a new tab](cv.pdf){target="_blank"}

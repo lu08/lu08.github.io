@@ -1,0 +1,19 @@
+---
+title: "Syllabus"
+---
+
+# Syllabus
+
+Course policies, grading breakdown, and required materials go here.
+
+## Grading
+
+- Homework: TBD%
+- Exams: TBD%
+- Participation: TBD%
+
+## Policies
+
+- Attendance
+- Late work
+- Academic integrity

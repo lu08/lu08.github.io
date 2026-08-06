@@ -1,8 +1,5 @@
 ---
 title: "About"
-format:
-  html:
-    toc: false
 ---
 
 # About

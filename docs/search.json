@@ -1,73 +1,19 @@
 [
   {
-    "objectID": "teaching/STAT117/lectures/index.html",
-    "href": "teaching/STAT117/lectures/index.html",
-    "title": "Lectures",
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "CV",
     "section": "",
-    "text": "Lectures\nLecture notes, slides, and recordings will be linked here.",
-    "crumbs": [
-      "Lectures"
-    ]
+    "text": "Open PDF in a new tab"
   },
   {
-    "objectID": "teaching/STAT117/about.html",
-    "href": "teaching/STAT117/about.html",
-    "title": "About",
-    "section": "",
-    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT120/lectures/index.html",
-    "href": "teaching/STAT120/lectures/index.html",
-    "title": "Lectures",
-    "section": "",
-    "text": "Lectures\nLecture notes, slides, and recordings will be linked here.",
-    "crumbs": [
-      "Home",
-      "Lectures"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT120/about.html",
-    "href": "teaching/STAT120/about.html",
-    "title": "About",
-    "section": "",
-    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "This is a Quarto website. test cat\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "teaching/STAT120/index.html",
-    "href": "teaching/STAT120/index.html",
-    "title": "STAT 120",
-    "section": "",
-    "text": "STAT 120\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
-  },
-  {
-    "objectID": "teaching/STAT120/homework/index.html",
-    "href": "teaching/STAT120/homework/index.html",
+    "objectID": "teaching/STAT117/homework/index.html",
+    "href": "teaching/STAT117/homework/index.html",
     "title": "Homework",
     "section": "",
     "text": "Homework\nAssignments, due dates, and submission instructions will be posted here.",
     "crumbs": [
+      "Research",
       "Homework"
     ]
   },
@@ -79,61 +25,194 @@
     "text": "STAT 117\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nLectures — lecture notes and slides\nHomework — assignments and handouts"
   },
   {
-    "objectID": "teaching/STAT117/homework/index.html",
-    "href": "teaching/STAT117/homework/index.html",
+    "objectID": "teaching/STAT120/lectures/week_1/lectures_1.html",
+    "href": "teaching/STAT120/lectures/week_1/lectures_1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Cat and dogs",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/week_2/lectures_2.html",
+    "href": "teaching/STAT120/lectures/week_2/lectures_2.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/week_2/lectures_2.html#introduction",
+    "href": "teaching/STAT120/lectures/week_2/lectures_2.html#introduction",
+    "title": "Week 2",
+    "section": "",
+    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/week_2/lectures_2.html#example-1-histogram",
+    "href": "teaching/STAT120/lectures/week_2/lectures_2.html#example-1-histogram",
+    "title": "Week 2",
+    "section": "Example 1: Histogram",
+    "text": "Example 1: Histogram\n\nA histogram is given by default for plotting one variable\nAdd type=‘histogram’ to get rid of the warning message\nNote the difference in syntax convention (e.g.:  ~ varname)\n\n\nplot(mtcars$mpg)",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/homework/homework_1.html",
+    "href": "teaching/STAT120/homework/homework_1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Assignment details go here.",
+    "crumbs": [
+      "Research",
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/about.html",
+    "href": "teaching/STAT120/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
+    "crumbs": [
+      "Research",
+      "About"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "List of courses",
+    "section": "",
+    "text": "Drew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503 Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551 Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622 Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on fun, applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (since the alternative, analytical derivations, are often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto and VS Code."
+  },
+  {
+    "objectID": "teaching/STAT120/index.html",
+    "href": "teaching/STAT120/index.html",
+    "title": "STAT 120",
+    "section": "",
+    "text": "STAT 120\nWelcome to the course site. Use the sidebar to navigate within this course:\n\nAbout — course info and contact\nSyllabus — policies and grading\nSchedule — weekly topics\nLectures — lecture notes and slides\nHomework — assignments and handouts",
+    "crumbs": [
+      "Research",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/homework/index.html",
+    "href": "teaching/STAT120/homework/index.html",
     "title": "Homework",
     "section": "",
-    "text": "Homework\nAssignments, due dates, and submission instructions will be posted here.",
+    "text": "Homework\nAssignments, due dates, and submission instructions will be posted here.\n\nHomework 1",
     "crumbs": [
+      "Research",
       "Homework"
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture2.html",
-    "href": "teaching/STAT120/lectures/lecture2.html",
-    "title": "Lecture 2",
+    "objectID": "teaching/STAT120/syllabus.html",
+    "href": "teaching/STAT120/syllabus.html",
+    "title": "Syllabus",
     "section": "",
-    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "text": "Course policies, grading breakdown, and required materials go here.\n\n\n\nHomework: TBD%\nExams: TBD%\nParticipation: TBD%\n\n\n\n\n\nAttendance\nLate work\nAcademic integrity",
     "crumbs": [
-      "Home",
-      "Lectures",
-      "Lecture 2"
+      "Research",
+      "Syllabus"
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture2.html#introduction",
-    "href": "teaching/STAT120/lectures/lecture2.html#introduction",
-    "title": "Lecture 2",
+    "objectID": "teaching/STAT120/syllabus.html#grading",
+    "href": "teaching/STAT120/syllabus.html#grading",
+    "title": "Syllabus",
     "section": "",
-    "text": "Wide variety, very flexible - can generate quite complicated graphs\n\nhttp://www.htmlwidgets.org/showcase_leaflet.html\nhttps://plot.ly/r/\n\nMany new packages and functions are being published (esp. on github)\nCurrently, no “go-to” package, no unified approach\nWe’ll try a few simple examples to give you an idea, mostly using the plotly package\n\n\n#install.packages('plotly')\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(Lock5Data)",
+    "text": "Homework: TBD%\nExams: TBD%\nParticipation: TBD%",
     "crumbs": [
-      "Home",
-      "Lectures",
-      "Lecture 2"
+      "Research",
+      "Syllabus"
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
-    "href": "teaching/STAT120/lectures/lecture2.html#example-1-histogram",
-    "title": "Lecture 2",
-    "section": "Example 1: Histogram",
-    "text": "Example 1: Histogram\n\nA histogram is given by default for plotting one variable\nAdd type=‘histogram’ to get rid of the warning message\nNote the difference in syntax convention (e.g.:  ~ varname)\n\n\nplot(mtcars$mpg)",
+    "objectID": "teaching/STAT120/syllabus.html#policies",
+    "href": "teaching/STAT120/syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Attendance\nLate work\nAcademic integrity",
     "crumbs": [
-      "Home",
-      "Lectures",
-      "Lecture 2"
+      "Research",
+      "Syllabus"
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture1.html",
-    "href": "teaching/STAT120/lectures/lecture1.html",
-    "title": "Lecture 1",
+    "objectID": "teaching/STAT120/lectures/index.html",
+    "href": "teaching/STAT120/lectures/index.html",
+    "title": "Lectures",
     "section": "",
-    "text": "Cat and dogs",
+    "text": "Lectures\nLecture notes, slides, and recordings will be linked here.\n\nWeek 1\nWeek 2",
     "crumbs": [
-      "Home",
-      "Lectures",
-      "Lecture 1"
+      "Research",
+      "Lectures"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/schedule.html",
+    "href": "teaching/STAT120/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week\nTopic\nNotes\n\n\n\n\nWeek 1\nIntroduction to R\n\n\n\nWeek 2\nData visualization",
+    "crumbs": [
+      "Research",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/about.html",
+    "href": "teaching/STAT117/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nCourse description, instructor info, office hours, and contact details go here. TEST",
+    "crumbs": [
+      "Research",
+      "About"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/lectures/index.html",
+    "href": "teaching/STAT117/lectures/index.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Lectures\nLecture notes, slides, and recordings will be linked here.",
+    "crumbs": [
+      "Research",
+      "Lectures"
     ]
   }
 ]

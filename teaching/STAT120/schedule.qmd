@@ -1,0 +1,9 @@
+---
+title: "Schedule"
+subtitle: "Tentative, subject to revision"
+---
+
+| Week | Topic | Notes |
+|------|-------|-------|
+| Week 1 | Introduction to R | |
+| Week 2 | Data visualization | |

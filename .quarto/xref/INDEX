@@ -1,50 +1,59 @@
 {
-  "research.qmd": {
-    "research.html": "dab76b94"
-  },
   "index.qmd": {
-    "index.html": "43ed6860"
+    "index.html": "375b6e78"
   },
-  "teaching/2026SU_STAT120/index.qmd": {
-    "index.html": "1d3bd758"
+  "cv/index.qmd": {
+    "index.html": "23bdc7f5"
   },
-  "teaching/2026SU_STAT120/about.qmd": {
-    "about.html": "2d594656"
+  "research.qmd": {
+    "research.html": "e8c3a664"
   },
-  "teaching/2026SU_STAT120/homework/index.qmd": {
-    "index.html": "53eabf0d"
-  },
-  "teaching/2026SU_STAT120/lectures/index.qmd": {
-    "index.html": "fbf375fb"
+  "teaching/index.qmd": {
+    "index.html": "fac8c121"
   },
   "teaching/STAT120/index.qmd": {
-    "index.html": "d032d0c6"
+    "index.html": "1752d920"
   },
   "teaching/STAT120/about.qmd": {
-    "about.html": "8b374e73"
+    "about.html": "dd5e4d1a"
   },
   "teaching/STAT120/homework/index.qmd": {
-    "index.html": "a1ee74ee"
+    "index.html": "af4f9c6c"
   },
   "teaching/STAT120/lectures/index.qmd": {
-    "index.html": "1041631b"
-  },
-  "teaching/STAT117/index.qmd": {
-    "index.html": "8cc10004"
-  },
-  "teaching/STAT117/about.qmd": {
-    "about.html": "c93cd9d1"
-  },
-  "teaching/STAT117/homework/index.qmd": {
-    "index.html": "507593e2"
-  },
-  "teaching/STAT117/lectures/index.qmd": {
-    "index.html": "2d06812e"
+    "index.html": "afa1e7b8"
   },
   "teaching/STAT120/lectures/lecture1.qmd": {
-    "lecture1.html": "3e3a3a7a"
+    "lecture1.html": "55da7b93"
   },
   "teaching/STAT120/lectures/lecture2.qmd": {
-    "lecture2.html": "2cb90255"
+    "lecture2.html": "da0cb68a"
+  },
+  "teaching/STAT117/index.qmd": {
+    "index.html": "a89a882f"
+  },
+  "teaching/STAT117/about.qmd": {
+    "about.html": "acab8fa5"
+  },
+  "teaching/STAT117/homework/index.qmd": {
+    "index.html": "da76c98c"
+  },
+  "teaching/STAT117/lectures/index.qmd": {
+    "index.html": "3776d49a"
+  },
+  "teaching/STAT120/syllabus.qmd": {
+    "syllabus.html": "3a4c449a"
+  },
+  "teaching/STAT120/homework/homework_1.qmd": {
+    "homework_1.html": "258a804b"
+  },
+  "teaching/STAT120/lectures/week_2/lectures_2.qmd": {
+    "lectures_2.html": "bd69c08d"
+  },
+  "teaching/STAT120/lectures/week_1/lectures_1.qmd": {
+    "lectures_1.html": "c94c773c"
+  },
+  "teaching/STAT120/schedule.qmd": {
+    "schedule.html": "b0f40fca"
   }
 }

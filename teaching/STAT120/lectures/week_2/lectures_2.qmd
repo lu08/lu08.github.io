@@ -1,9 +1,5 @@
 ---
-title: "Lecture 2"
-format:
-  html:
-    toc: false
-sidebar: stat120
+title: "Week 2"
 ---
 
 ## Introduction

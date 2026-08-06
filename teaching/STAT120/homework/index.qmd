@@ -1,10 +1,9 @@
 ---
 title: "Homework"
-format:
-  html:
-    toc: false
 ---
 
 # Homework
 
 Assignments, due dates, and submission instructions will be posted here.
+
+- [Homework 1](homework_1.qmd)

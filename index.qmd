@@ -2,6 +2,14 @@
 title: "Yi Lu"
 ---
 
-This is a Quarto website. test cat
+- Hi! I am an Associate Professor in the [Department of Mathematics and Computer Science at Drew University](https://drew.edu/academics/mathematics/mathematics-computer-science-dept/){target="_blank"} in Madison, New Jersey.  I teach [courses](teaching/index.qmd) in statistics and data science, and I enjoy working on fun, applied [research projects](research.qmd) with students and collaborators.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- I earned a Ph.D. in Statistics from the [Ohio State University](https://stat.osu.edu/){target="_blank"}.  My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods.  I love simulation-based methods (since the alternative, analytical derivations, are often daunting to me).  I am a big fan of [R](https://www.r-project.org/){target="_blank"}.
+
+- I love jogging and running in my spare time.  I am always out on a run, and my statistics classes tend to have too many running examples.  I want to run an ultra-marathon one day.
+
+- You can find my CV [here](cv/index.qmd){target="_blank"}.
+
+- You can email me at <a href="mailto: ylu1@drew.edu">ylu1@drew.edu</a>.
+
+- This website is built with [Quarto](https://quarto.org/){target="_blank"} and [VS Code](https://code.visualstudio.com/){target="_blank"}.

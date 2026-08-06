@@ -6,30 +6,39 @@ website:
   title: "Yi Lu"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - research.qmd
       - text: Teaching
         menu:
-          - href: teaching/STAT120/index.qmd
-            text: Stat 120 Statistical Computing in R
-          - href: teaching/STAT117/index.qmd
-            text: Stat 117 Introduction to Statistics
+          - text: Overview
+            href: teaching/index.qmd
+          - text: Stat 120 Statistical Computing in R
+            href: teaching/STAT120/index.qmd
+          - text: Stat 117 Introduction to Statistics
+            href: teaching/STAT117/index.qmd
   
   sidebar:
     - id: stat120
       contents:
+        - text: "Overview"
+          href: teaching/STAT120/index.qmd
         - text: "About"
           href: teaching/STAT120/about.qmd
+        - text: "Syllabus"
+          href: teaching/STAT120/syllabus.qmd
+        - text: "Schedule"
+          href: teaching/STAT120/schedule.qmd
         - text: "Lectures"
           href: teaching/STAT120/lectures/index.qmd
           contents:
-            - text: "Lecture 1"
-              href: teaching/STAT120/lectures/lecture1.qmd
-            - text: "Lecture 2"
-              href: teaching/STAT120/lectures/lecture2.qmd
+            - text: "Week 1"
+              href: teaching/STAT120/lectures/week_1/lectures_1.qmd
+            - text: "Week 2"
+              href: teaching/STAT120/lectures/week_2/lectures_2.qmd
         - text: "Homework"
           href: teaching/STAT120/homework/index.qmd
+          contents:
+            - text: "Homework 1"
+              href: teaching/STAT120/homework/homework_1.qmd
     - id: stat117
       contents:
         - text: "About"

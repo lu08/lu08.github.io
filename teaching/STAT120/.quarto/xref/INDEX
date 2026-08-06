@@ -10,5 +10,11 @@
   },
   "homework/index.qmd": {
     "index.html": "fc88e216"
+  },
+  "lectures/lecture1.qmd": {
+    "lecture1.html": "917195d8"
+  },
+  "lectures/lecture2.qmd": {
+    "lecture2.html": "6436089e"
   }
 }
