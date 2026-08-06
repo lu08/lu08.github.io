@@ -1,10 +1,8 @@
 ---
-title: "Lectures"
+title: "STAT120 - Statistical Computing in R"
 ---
-
-# Lectures
 
 Lecture notes, slides, and recordings will be linked here.
 
-- [Week 1](week_1/lectures_1.qmd)
-- [Week 2](week_2/lectures_2.qmd)
+- [Week 1](lecture_1/lectures_1.qmd)
+- [Week 2](lecture_2/lectures_2.qmd)

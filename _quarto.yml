@@ -19,10 +19,6 @@ website:
   sidebar:
     - id: stat120
       contents:
-        - text: "Overview"
-          href: teaching/STAT120/index.qmd
-        - text: "About"
-          href: teaching/STAT120/about.qmd
         - text: "Syllabus"
           href: teaching/STAT120/syllabus.qmd
         - text: "Schedule"
@@ -30,10 +26,10 @@ website:
         - text: "Lectures"
           href: teaching/STAT120/lectures/index.qmd
           contents:
-            - text: "Week 1"
-              href: teaching/STAT120/lectures/week_1/lectures_1.qmd
-            - text: "Week 2"
-              href: teaching/STAT120/lectures/week_2/lectures_2.qmd
+            - text: "Lecture 1"
+              href: teaching/STAT120/lectures/lecture_1/lectures_1.qmd
+            - text: "Lecture 2"
+              href: teaching/STAT120/lectures/lecture_2/lectures_2.qmd
         - text: "Homework"
           href: teaching/STAT120/homework/index.qmd
           contents:

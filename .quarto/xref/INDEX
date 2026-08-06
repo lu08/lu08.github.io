@@ -55,5 +55,11 @@
   },
   "teaching/STAT120/schedule.qmd": {
     "schedule.html": "b0f40fca"
+  },
+  "teaching/STAT120/lectures/lecture_1/lectures_1.qmd": {
+    "lectures_1.html": "80aa0191"
+  },
+  "teaching/STAT120/lectures/lecture_2/lectures_2.qmd": {
+    "lectures_2.html": "8ee288a3"
   }
 }

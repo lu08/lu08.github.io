@@ -1,12 +1,9 @@
 ---
-title: "STAT 120"
+title: "STAT120 - Statistical Computing in R"
 ---
-
-# STAT 120
 
 Welcome to the course site. Use the sidebar to navigate within this course:
 
-- About — course info and contact
 - Syllabus — policies and grading
 - Schedule — weekly topics
 - Lectures — lecture notes and slides

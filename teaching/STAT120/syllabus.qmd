@@ -1,8 +1,6 @@
 ---
-title: "Syllabus"
+title: "STAT120 - Statistical Computing in R"
 ---
-
-# Syllabus
 
 Course policies, grading breakdown, and required materials go here.
 

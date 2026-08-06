@@ -1,5 +1,0 @@
----
-title: "Week 1"
----
-
-Cat and dogs

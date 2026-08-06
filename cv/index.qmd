@@ -1,14 +1,195 @@
 ---
-title: "CV"
+title: "Curriculum Vitae"
 format:
   html:
     toc: false
 ---
 
-```{=html}
-<div class="pdf-viewer">
-  <iframe src="cv.pdf" title="CV"></iframe>
-</div>
-```
+Download the pdf version [here](cv.pdf){download="CV_YILU.pdf"}.
 
-[Open PDF in a new tab](cv.pdf){target="_blank"}
+
+::: {.text-center}
+## Yi Lu
+
+Drew University, Department of Mathematics & Computer Science\
+Hall of Sciences 314, Madison, NJ 07940\
+973-408-3769\
+ylu1@drew.edu
+:::
+
+## Education
+
+**Ph.D. Statistics**, The Ohio State University (Columbus, OH), August 2017
+
+- Advisors: Radu Herbei and Sebastian Kurtek
+- Dissertation: Function Registration from a Bayesian Perspective
+
+**M.S. Statistics**, The Ohio State University (Columbus, OH), May 2014
+
+**B.S. Mathematics & B.A. History**, Mars Hill University (Mars Hill, NC), May 2011
+
+- Honor: Summa Cum Laude
+
+## Research Interests
+
+Functional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics
+
+## Professional Experience
+
+*Drew University*
+
+- Associate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present
+- Norma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024
+
+*Anthology, Inc. (previously iModules Software)*
+
+- Statistical Consultant, Summer 2019 - Spring 2020
+  - Project: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions
+
+*The Ohio State University*
+
+- Graduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017
+- Consultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017
+- Graduate Research Assistant, Department of Statistics, Summer 2015
+  - Advisor: Radu Herbei (Supported in part by NSF DMS 1209142)
+  - Project: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm
+
+*The Progressive Corporation (Cleveland, OH)*
+
+- Research & Development Analyst (internship), Summer 2016
+  - Project: develop and validate regression models for calculating auto insurance rates
+
+## Teaching
+
+*Drew University*\
+(\* indicates first offering of the course at Drew; \*\* indicates a graduate-level or crosslisted graduate level course)
+
+- **STAT335/DATA503\*\* Applied Regression Analysis**: Fall 2022
+- **STAT350 Statistical Theory**: Spring 2018\*, Spring 2020, Spring 2022, Spring 2023, Spring 2024
+- **STAT207/STAT117 Introduction to Statistics**: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025
+- **DATA200 Data Science: Introduction, History, and Case Studies**: Spring 2018\*, Spring 2022, Fall 2024
+- **DATA252/DATA551\*\* Modeling and Simulation**: Spring 2020\*, Fall 2021, Spring 2023, Spring 2024, Spring 2025
+- **STAT120 Statistical Computing in R**: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024
+- **STAT220 Special Topics in Statistics: Bayesian Statistics**: Spring 2021\*
+- **FIN622\*\* Computational Finance & Large Data Analysis (M.S. of Finance program)**: Spring 2019\*
+- **DATA251 Data Visualization**: Fall 2018\*
+
+*The Ohio State University*
+
+- **STAT4201 Introduction to Mathematical Statistics**: Fall 2015
+- **Recitation instructor, STAT2480 Statistics for Life Sciences**: Spring 2015
+- **Recitation instructor, STAT4202 Introduction to Mathematical Statistics II**: Fall 2014
+- **Recitation instructor, STAT2450 Introduction to Statistical Analysis**: Fall 2014
+- **Recitation instructor, STAT1450 Introduction to the Practice of Statistics**: Summer 2014
+- **Recitation instructor, STAT1350 Elementary Statistics**: Spring 2014, Spring 2013, Fall 2012
+
+## Advising
+
+*Current students*\
+(\* indicates students with an Honors Thesis project)
+
+- Arianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia
+
+*Former students*
+
+- Muhammad Mir\* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: *Optimizing Water Usage and Revenue of Jordan's Agricultural Economy*
+
+- Jamie Connors\* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: *Two Approaches to Statistical Research: Frequentist and Bayesian* (co-advisor with Sarah Abramowitz)
+
+- Alex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data
+
+- Peter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)
+
+- Katelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)
+
+- Kevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)
+
+*Member, Honors Thesis Committee*
+
+- Joseph Rojek, Economics, Spring 2025
+- Gabriel Dutra, Computer Science and Statistics, Spring 2023
+- Mehek Agrawal, Biology, Spring 2023
+- David Nesterov-Rappoport, Computer Science, Spring 2022
+
+## Publications
+
+1. A. de Voogt, <u>Y. Lu</u>, F. Pan, H. Zuckerman, "Abrupt maneuvers in General Aviation accidents," Safety Science (2025): Vol. 185: <https://doi.org/10.1016/j.ssci.2025.106785>.
+2. <u>Y. Lu</u>, A. de Voogt, F. Gobet, "Dominance, Streakiness, and Non-random Patterns in the Game of N!àì," Journal of Expertise (2024): Vol. 6(4) & 7(1): <https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html>.
+3. A. de Voogt, A. Campos, <u>Y. Lu</u> "Amphibious Airplane Accidents: An Exploratory Analysis," Applied Sciences 13(22): 12224 (2023): <https://doi.org/10.3390/app132212224>.
+4. <u>Y. Lu</u>, R. Herbei, S. Kurtek, "Bayesian Function Registration with Random Truncation," Plos one 18.7 (2023): e0287734.
+5. <u>Y. Lu</u>, R. Herbei, S. Kurtek, "Bayesian Registration of Functions with a Gaussian Process Prior," Journal of Computational and Graphical Statistics 26.4 (2017): 894-904.
+
+## Work in Progress
+
+- M. Mir, <u>Y. Lu</u>, J. Olmsted, "Optimizing Water Usage and Revenue of Jordan's Agricultural Economy"
+
+## Presentations
+
+*Conference Presentations*
+
+- *Bayesian Registration of Functions with a Gaussian Process Prior*, Joint Statistical Meetings (JSM), Chicago, August 2016
+- *Bayesian Registration of Functions with a Gaussian Process Prior*, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016
+- *Answer in Two Decimal Places Accuracy: How 'Well' Are You Prepared for a Test*, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010
+
+*Invited Talks and Workshops*
+
+- *Introduction to Decision Tree & Discussion on Data Analytics*, workshop lecture, Drew Summer College, July 2022
+- *Quantitative Graphs: Principles of Effective Data Visualization*, Drew Faculty Workshop Series, May 2022
+- *Bayesian Registration of Real-valued Functions*, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022
+- *Bayesian Registration of Functions*, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018
+
+*Posters*
+
+- *Bayesian Registration of Functions*, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016
+- *Bayesian Registration of Functions*, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015
+
+*Miscellaneous*
+
+- *The Magic Box: a Rating Engine for Auto Insurance Rate Comparisons* with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016
+- *A Tutorial on Majorize-Minimization (MM) algorithms* with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014
+- *Temperature Trend of the past 118 Years in the United States* with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013
+
+## Grants
+
+- Digital Humanities (DH) mini-grant (\$500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018
+- Digital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018
+
+## Awards
+
+- Applied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016
+- The Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015
+- University Fellowship, The Ohio State University, 2011 - 2012
+- Chair's Fellowship, The Ohio State University, March 2011
+- Robert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011
+- Best Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011
+- Presidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011
+
+## Services
+
+*Department*
+
+- Coordinator of Statistics Instruction, Spring 2023 - Present
+
+*University*
+
+- Institutional Review Board (IRB), Fall 2021 to present
+- University Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023
+- Global Education Faculty Advisory Committee (GEFAC), Spring 2021 to present
+- Academic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020
+- Statistical Software Discussion Group, Spring 2018
+- Judge, Fair for Emerging Researchers, March 2018
+
+*Professional*
+
+- Article reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)
+
+## Professional Memberships
+
+American Statistical Association (ASA)\
+International Chinese Statistical Association (ICSA)
+
+## Miscellaneous
+
+*Computer Skills*
+
+R, SPSS, some experience with SAS, C, C++, Java, Stata

@@ -1,8 +1,6 @@
 ---
-title: "Homework"
+title: "STAT120 - Statistical Computing in R"
 ---
-
-# Homework
 
 Assignments, due dates, and submission instructions will be posted here.
 
