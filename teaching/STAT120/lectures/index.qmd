@@ -2,5 +2,8 @@
 title: "Lectures"
 ---
 
-- [Lecture 1](lecture_1/lectures_1.qmd)
-- [Lecture 2](lecture_2/lectures_2.qmd)
+- [Lecture 1](lecture_1/lectures_1.html)
+- [Lecture 2](lecture_2/lectures_2.html)
+
+
+- Code and notes used for demonstration during each lecture can be found [here](lecture_notes/index.qmd)

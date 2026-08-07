@@ -24,7 +24,8 @@
     "index.html": "e878cf93"
   },
   "teaching/STAT120/lectures/lecture_1/lectures_1.qmd": {
-    "lectures_1.html": "4cef743c"
+    "lectures_1.html": "4cef743c",
+    "lectures_1-notes.html": "198ea6e6"
   },
   "teaching/STAT120/lectures/lecture_2/lectures_2.qmd": {
     "lectures_2.html": "64963c8f"
@@ -70,5 +71,20 @@
   },
   "teaching/STAT117/schedule.qmd": {
     "schedule.html": "2d306f9f"
+  },
+  "teaching/STAT120/lectures/lecture_notes/index.qmd": {
+    "index.html": "f7f99a06"
+  },
+  "teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd": {
+    "lecture_1_slide.html": "253919ef"
+  },
+  "teaching/STAT117/lectures/lecture_1/lecture_1_slide.qmd": {
+    "lecture_1_slide.html": "1babcb2f"
+  },
+  "teaching/STAT117/lectures/lecture_2/lecture_2_slide.qmd": {
+    "lecture_2_slide.html": "62f46f0f"
+  },
+  "teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd": {
+    "lecture_2_slide.html": "71371e74"
   }
 }

@@ -1,0 +1,374 @@
+---
+title: "Lecture 1: Introduction, numbers, and vectors"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    css: ../../../styles.css
+editor_options: 
+  chunk_output_type: inline
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align='center',
+                      fig.height=3,
+                      fig.width=3,
+                      out.width="50%",
+                      echo=T)
+```
+
+# Getting started
+
+
+## Posit cloud
+Go to https://posit.cloud/ (you can log in with your Drew account).  We'll first use this online platform to demonstrate RStudio; later we'll download R and RStudio on your computer.
+
+To start a new script, do **File - New File - R Script**.  <u>Do NOT choose "new project."</u>
+
+Default layout of RStudio:
+
+ + Upper left (R Script): this is a text file (.R format) that contains all the code you write
+ + Lower left (Console): this is where your code is run (i.e., R will provide feedback and result here)
+ + Upper right: contains information for the current R session
+ + Lower right: contains information for files and packages; plots and help pages will also show up here
+ 
+
+## Download R and RStudio
+
+RStudio is an Integrated development environment (IDE) for R.  You need to download BOTH R and RStudio for RStudio to work.
+
+- While you can use R without RStudio, the interface is not as nice
+- When you open an R script (recall, this is a .R document), make sure it's opened in RStudio (to change the default: Right click - Get Info - Open with RStudio - Change All)
+- Have a habit of saving R script often when you are coding
+- When exit RStudio, you should **only save the R script** ("save workspace image?" - Don't Save)
+- You can easily upload files to Posit Cloud, or download files from Posit Cloud
+
+ 
+## Run R code
+Running code directly in the console (1% of time):
+
+- Fast and easy
+- However: nothing is saved; can only run one line at a time
+
+Instead (99% of time):
+
+- Write code in R scripts
+- Can save the R scripts to run or modify your code in the future 
+- Can write many lines of code and run portions of it as needed
+
+
+## Run R code
+
+To run code in the console, you just need to **hit enter**; when you are writing code in the script, hitting enter will go to the next line but will not run the code.
+
+To run code from R script:
+
+- if you have **any highlighted code**
+   + hit **command + enter** (mac) or **ctrl + enter** (windows)
+   + (alternatively, you can click "Run")
+
+- if you don't have highlighted code
+   + hit **command/ctrl + enter**
+   + R will **run the line of code** where your cursor is at (your cursor can be anywhere in the line)
+   + R will also automatically move the cursor to the next line of code
+   + This is a really handy way to run code line by line
+
+## Try some basic math operations
+To do $\sqrt{100}$ and $e^2$:
+```{r,eval=F}
+sqrt(100)
+exp(2)
+```
+
+To do $\ln{(1000)}$ (log **base e** is the default, can change the base using `log(1000, base=10)`)
+```{r, eval=F}
+log(1000)
+```
+
+Exercise: calculate the following in R
+
+1. $\frac{3\times 2 + 4^2}{5.5 \times 2}$
+2. $\frac{e^{5.1}+23}{\frac{3}{4} \times 5}$
+3. $\frac{\sqrt{12}}{\ln{(8-4.37)}}$
+
+
+## R formatting basics
+- Use \# to comment out text
+
+- Space and empty lines do not matter in R
+
+- R is case sensitive!
+```{r,eval=F}
+Sqrt(100)  # this will give you an error
+```
+
+- Use ';' to put multiple lines of code on the same line
+```{r,eval=F}
+2+4; 5*3
+```
+
+- Can separate one line of code into multiple lines, as long as it is obvious that the previous line has not ended
+```{r,eval=F}
+# works
+3 + 2 - 7 *
+  1000 + 10 - 100
+# does not work
+3 + 2 - 7
+* 1000 + 10 - 100
+```
+
+
+## R packages
+The ability to develop and use **R packages** is a big advantage of R over other commercial statistical software like SPSS or excel.
+
+Before you can use a package, there are two steps:
+
+(1) download and **install** the package: you only need to do this once per computer
+    + How: click install under packages (recommended)
+    + OR run `install.packages()`
+(2) **load** the package: you need to do this each time you start a new R session
+    + How: check the box under packages 
+    + OR run `library()` (recommended)
+
+```{r}
+#install.packages('Lock5Data')
+library('Lock5Data')
+```
+
+## Packages so far...
+The **Lock5Data** package contains dataset from Lock, 
+Lock, Lock, Lock, and Lock textbook *Statistics: Unlocking the Power of
+Data*.  Other formats of the dataset can be downloaded from [http://www.lock5stat.com/datapage3e.html](http://www.lock5stat.com/datapage3e.html).
+
+The **tidyverse** is a collection of very popular and powerful packages for data manipulation, visualization, formatting, etc. Details can be found at [https://www.tidyverse.org/packages/](https://www.tidyverse.org/packages/).  We'll talk more about these packages later. 
+
+
+# R objects; numbers and vectors
+
+## Creating an R object
+- Examples of R object: a number, a vector, a data frame, a function, etc.
+
+- To **assign** a number to an R object called "a":
+```{r}
+a=34
+a = 34
+a<-34
+a <- 34
+```
+- These lines of code are equivalent - personal habit
+- <u>Very useful</u>: you can print out an R object simply by running it
+  + try: highlight "a" and run it
+
+
+## Vector: a collection of values
+- Example: `Cereal$Name` is a vector of 30 values
+- When creating a vector, use `c( , )` for combined values
+- Exercise: record information for a cereal that is not in the Cereal dataset and save it as an R object called **newCereal**
+
+
+## R is case sensitive!
+```{r, eval=F}
+# these will give you errors
+Plot(cereal$Carbs, cereal$Calories)
+plot(cereal$Carbs, cereal$Calories)
+plot(Cereal$carbs, Cereal$Calories)
+```
+
+- You will see these errors pretty often:
+    + **Object `Reaction' not found**: check spelling; check where you thought you have created this object (did you actually create it by running the code?)
+    + **Could not find function `Plot'**: check spelling; check if you have loaded relevant package
+    + **'x' and 'y' lengths differ**: separately print out x and y to check
+
+
+
+
+## Vector arithmetic
+- When you apply some operation to a vector, R will perform the operation to *each element* in the vector 
+
+```{r,eval=F}
+2000 - Cereal$Calories
+```
+
+- Important note: the vector **Cereal$Calories** is not changed and the new values are not stored (verify this); if you want to store the new vector, you need to assign it to a new R object or override an existing R object
+  
+```{r,eval=F}
+remainCalories = 2000 - Cereal$Calories
+```
+
+- When you do something like `vector1 ± vector2`, R will do the arithmetic operation *element by element*
+  + if they have different lengths, R will give you a **warning**
+  
+
+## Basic vector functions
+- Try these *functions*
+```{r,eval=F}
+mean(Cereal$Calories)
+sum(Cereal$Calories)/length(Cereal$Calories)
+range(Cereal$Calories)
+min(Cereal$Calories)
+sd(Cereal$Calories)
+summary(Cereal$Calories)
+```
+
+
+
+## Character strings
+- Put characters in double or single quotes
+- R knows certain characters, like `col="red"`
+```{r}
+mycol="red"  #stores 'red' in an R object mycol
+mycols=c('red','green','blue') #recall how to do vectors
+```
+- `mycol=red` $\rightarrow$ **Error: object 'red' not found**
+
+
+## Logical vectors
+- **TRUE** (or T) and **FALSE** (or F) are special logical characters when NOT in quotation
+- **Numerically, R treats TRUE as 1 and FALSE as 0**
+- Exercise: create a new vector, `cats`, that indicates if a student owns at least one cat or not
+```{r, eval=F}
+names <- c("Tom","Mary","Kate","James")
+cats <- c(T,T,T,F)
+as.numeric(cats)
+```
+
+- Q: what will **mean(cats)** return?
+
+- Logical vectors are very useful for *subsetting* dataset.  For example, to get all the names of students who own cats:
+```{r, eval=F}
+names[cats]
+```
+
+## Logical vectors
+- Logical vectors can be created using **logical operations**: $<, <=, >, >=, ==, !=$
+```{r,eval=F}
+Cereal$Calories < 100
+Cereal$Company == 'K'
+```
+
+- **IMPORTANT: do not confuse `==` and `=`!**
+
+- **which( )** will return the index of TRUE values
+```{r,eval=F}
+which(Cereal$Calories < 100)
+which(Cereal$Company=='K')
+```
+
+
+# Vector modification and subsetting
+
+## Append to a vector
+- The easiest way is to use `c( , )` to combine vectors and/or a single element
+```{r, eval=F}
+# To append elements to a vector
+names2=c("Aaron","Tom")
+c(names,names2)
+```
+
+- The function **append** is more general. Run **?append** to get more information
+
+- Nothing is stored!  Recall, to store, you have to assign the new vector to an R object.  We'll *override* the old vector to store the new vector:
+```{r, eval=F}
+names = c(names,names2)
+cats = c(cats, F,F)
+```
+
+- Run **cbind(names,cats)** (*column bind*) to double check
+
+
+## Subsetting: extract element(s) from a vector
+- Use the **square bracket** for subsetting
+```{r,eval=F}
+#To get the 2nd person's name
+names[2]
+
+#To get the 2nd and 3rd persons' names
+#name[2,3] does not work! Always use c( , ) for vectors!
+names[c(2,3)]
+```
+
+Q: what will **names[c(2,2,2,3)]** return?
+
+
+## Subsetting: extract element(s) from a vector
+- Can also subset use a vector of TRUE and FALSE
+```{r,eval=F}
+names[cats]
+```
+- **R returns elements corresponding to TRUE**
+
+- Alternatively, you can use the `which( )` function
+```{r,eval=F}
+Cereal$Name[Cereal$Protein>3]
+Cereal$Name[which(Cereal$Protein>3)]
+```
+
+
+
+## Delete from a vector
+
+Use the **minus sign** to delete the corresponding elements from a vector
+```{r,eval=F}
+names[-2]
+names[-c(2,3)]
+```
+
+
+## Useful functions for creating vectors
+```{r}
+c(1:5)
+
+# seq( ) is more general
+seq(from=2,to=8,by=2)
+seq(from=0,to=1,length.out=5)
+
+rep(2,6)
+```
+
+```{r,eval=F}
+#Useful for indexing
+Cereal$Name[c(1:5)]
+```
+
+## Exercise: tallest buildings
+- Go to https://en.wikipedia.org/wiki/List_of_tallest_buildings
+- We will only look at the top 10 tallest buildings
+  1. Create a vector that stores the Height (m) of the top 10 tallest buildings
+  1. Use R to verify that the vector you created has a length of 10 
+  1. Calculate the average Height in meters
+  1. Convert height from meters to ft and store it in a new vector
+  1. Print the values of the new vector and check that these values are the same as Height (ft) given in Wikipedia
+  1. Create corresponding vectors for the number of floors and year built for the top 10 tallest buildings
+  1. Create a vector of $\{0,1\}$'s, where 0 means the building was built in 2015 or before, and 1 means otherwise
+  1. Generate a scatterplot of Floors by Height (m), set the color to "col=year_ind+2," where "year_ind" is the indicator vector created in the last step
+  
+## 
+```{r}
+#| code-fold: true
+#| code-summary: "Show code"
+#| fig-height: 4
+#| fig-width: 4
+#| out-width: "70%"
+height_m=c(828, 632, 601, 599, 554.5, 541.3, 530, 530, 528, 508)
+height_f=height_m * 3.28
+floors=c(163, 128, 120, 115, 123, 104, 111, 98, 108, 101)
+year=c(2010, 2015, 2012, 2017, 2016, 2014, 2016, 2018, 2018, 2004)
+year.ind=as.numeric(year>2015)
+plot(height_m,floors,col=year.ind+2,main='top 10 tallest buildings in the world',
+     cex.lab=1.2,cex.axis=1.2,cex.main=1.2,pch=16)
+legend('topleft',
+       col=c(2,3),
+       pch=c(16,16),
+       legend=c('2015 and prior', '2016 and later'),cex=1.2)
+```
+
+
+
+
+
+
+

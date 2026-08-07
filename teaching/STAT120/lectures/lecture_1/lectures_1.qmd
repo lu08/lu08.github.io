@@ -1,5 +1,8 @@
 ---
-title: "STAT120 - Statistical Computing in R"
+format: html
 ---
 
-Cat and dogs
+
+[Link to fullscreen](lecture_1_slide.html)
+
+<iframe src="lecture_1_slide.html" width="100%" height="650px" style="border:none;"></iframe>

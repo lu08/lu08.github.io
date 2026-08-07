@@ -1,0 +1,24 @@
+---
+title: "STAT120 - Statistical Computing in R"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    css: ../../../styles.css
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align='center',
+                      fig.height=3,
+                      fig.width=3,
+                      out.width="50%",
+                      echo=T)
+```
+
+Cat and dogs
+</content>

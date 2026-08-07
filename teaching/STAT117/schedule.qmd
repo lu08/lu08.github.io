@@ -4,15 +4,15 @@ title: "Schedule and reminders"
 
 ## Week 1
 
-- Sep 1: Course introduction, [syllabus](syllabus.qmd), [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) setup, and getting started with [Lecture 1](lectures/lecture_1/lectures_1.qmd).  If not already done in class, please install R and RStudio on your computer before our next class.  
+- Sep 1: Course introduction, [syllabus](syllabus.qmd), [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) setup, and getting started with [Lecture 1](lectures/lecture_1/lectures_1.html).  If not already done in class, please install R and RStudio on your computer before our next class.  
 
 - Sep 3: **Quiz 1** on the basics of R.  If you understand everything we have covered on Sep 1, you should be fine.
 
 
 ## Week 2
-- Sep 8: We are not meeting in person today (as I'll be travelling). Instead, please finish [Lecture 1](lectures/lecture_1/lectures_1.qmd) on your own and do [Homework 1](homework/homework_1.qmd) for extra practice.  Recall that homework is not collected in this class.
+- Sep 8: We are not meeting in person today (as I'll be travelling). Instead, please finish [Lecture 1](lectures/lecture_1/lectures_1.html) on your own and do [Homework 1](homework/homework_1.qmd) for extra practice.  Recall that homework is not collected in this class.
 
-- Sep 10: Quiz 2, based on content from [Lecture 1](lectures/lecture_1/lectures_1.qmd) and [Homework 1](homework/homework_1.qmd).
+- Sep 10: Quiz 2, based on content from [Lecture 1](lectures/lecture_1/lectures_1.html) and [Homework 1](homework/homework_1.qmd).
 
 
 
