@@ -5,7 +5,7 @@ format:
     page-layout: article
 ---
 
-Here are some fun and relatively clean datasets that are mostly used for my [teaching](teaching/index.qmd).
+Here are some fun and relatively clean datasets that are mostly used for my [teaching](../teaching/index.qmd).
 
 
 - [tallest_buildings.csv](tallest%20building_2026.csv){download="tallest_buildings.csv"} 

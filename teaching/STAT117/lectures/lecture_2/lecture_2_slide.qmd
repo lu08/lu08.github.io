@@ -7,7 +7,8 @@ format:
     transition: fade
     toc: false
     self-contained: false
-    css: ../../../styles.css
+    smaller: true
+    scrollable: true
 editor_options: 
   chunk_output_type: inline
 ---

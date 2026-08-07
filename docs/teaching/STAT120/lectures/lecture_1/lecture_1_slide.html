@@ -98,7 +98,6 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lecture_1_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
-  <link rel="stylesheet" href="../../../styles.css">
   <link href="lecture_1_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lecture_1_slide_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lecture_1_slide_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -114,6 +113,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -263,7 +263,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="try-some-basic-math-operations" class="slide level2">
+<section id="try-some-basic-math-operations" class="slide level2 scrollable">
 <h2>Try some basic math operations</h2>
 <p>To do <span class="math inline">\(\sqrt{100}\)</span> and <span class="math inline">\(e^2\)</span>:</p>
 <div class="cell" data-layout-align="center">
@@ -309,7 +309,7 @@
 <span id="cb5-6"><a href=""></a><span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">-</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="r-packages" class="slide level2">
+<section id="r-packages" class="slide level2 scrollable">
 <h2>R packages</h2>
 <p>The ability to develop and use <strong>R packages</strong> is a big advantage of R over other commercial statistical software like SPSS or excel.</p>
 <p>Before you can use a package, there are two steps:</p>
@@ -565,7 +565,7 @@
 <span id="cb31-2"><a href=""></a>Cereal<span class="sc">$</span>Name[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="exercise-tallest-buildings" class="slide level2">
+<section id="exercise-tallest-buildings" class="slide level2 scrollable">
 <h2>Exercise: tallest buildings</h2>
 <ul>
 <li>Go to https://en.wikipedia.org/wiki/List_of_tallest_buildings</li>
@@ -639,7 +639,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,

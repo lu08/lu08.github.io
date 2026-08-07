@@ -1,5 +1,5 @@
 ---
-title: "STAT120 - Statistical Computing in R"
+title: "Lecture 2: Tallest building"
 format:
   revealjs:
     theme: default
@@ -7,7 +7,8 @@ format:
     transition: fade
     toc: false
     self-contained: false
-    css: ../../../styles.css
+    smaller: true
+    scrollable: true
 editor_options: 
   chunk_output_type: inline
 ---
@@ -20,27 +21,574 @@ knitr::opts_chunk$set(fig.align='center',
                       echo=T)
 ```
 
-## Introduction
-- Wide variety, very flexible - can generate quite complicated graphs
-  + http://www.htmlwidgets.org/showcase_leaflet.html
-  + https://plot.ly/r/
-- Many new packages and functions are being published (esp. on github)
-- Currently, no "go-to" package, no unified approach
-- We'll try a few simple examples to give you an idea, mostly using the <font color='red'>plotly</font> package
+# Export and import a dataset
 
-```{r,message=F}
-#install.packages('plotly')
-library(plotly)
-library(ggplot2)
-library(Lock5Data)
+## File path
+
+You need to specify the location of your file when you export or import a dataset.  For simplicity:
+
+```{r, eval=T, echo=F}
+library(tidyverse)
+library(kableExtra)
+df.building <- read.csv('../../../../dataset/tallest building_2026.csv')
 ```
 
 
-## Example 1: Histogram
-- A histogram is given by default for plotting one variable
-- Add <font color='blue'>type='histogram'</font> to get rid of the warning message
-- Note the difference in syntax convention (e.g.: <font color='red'> ~ </font>varname)
+\small
+```{r, eval=F}
+# Put the data (.csv) in the same folder as the code (.R)
+df.building <- read.csv(file='tallest building_2026.csv')
+
+# OR #
+df.building <- read.csv(file.choose())
+```
+\normalsize
+
+In general:
+
+- Use "/" and \alert{tab} to navigate through folders
+- Use "../" to go up a folder
+- If you want to check your current folder, use \alert{getwd()} ("get working directory")
+- (To \alert{export} a csv file, use \texttt{write.table()})
+- test
+- test
+- test
+- test
+- test
+- test
+- test 111
+
+
+# Different types of data; factors
+
+## Types of data
+- Basic types:  **numeric**, **double**, **logical**,  **character**, **integer** 
+- Use \alert{typeof()} or \alert{class()} to check
+
+\small
 ```{r}
-plot(mtcars$mpg)
+class(df.building$Height_m)
+typeof(df.building$Height_m)
+class(df.building$Floors)
+class(df.building$Year > 2010)
 ```
-</content>
+
+
+## Types of data
+- Use functions of the form \alert{as.XXX( )} to switch between different types
+
+\small
+```{r, echo=T,eval=F}
+df.building$Year > 2010
+as.numeric(df.building$Year > 2010)
+```
+
+```{r,echo=T}
+# entries in a vector are always of the same type
+a=c(1,2,T,'red');a
+class(a)
+```
+
+
+## Data modification
+\small
+```{r, echo=F, eval=T}
+df.building$Height_f <- df.building$Height_f %>% 
+  gsub(pattern = ',', replacement = '') %>%
+  as.numeric()
+
+df.building <- df.building %>%
+  mutate(
+    Floors_num = str_extract(Floors, "^\\d+") %>% as.integer(),
+    Floors_additional = str_extract(Floors, "(?<=\\(\\+ )\\d+") %>% as.integer(),
+    Floors_additional_text = str_extract(Floors, "(?<=\\d )[^(]+(?=\\))") %>% str_trim()
+    )
+
+
+```
+
+
+\small
+```{r,echo=T,eval=F}
+# Height_f is a character
+# (print out the values to check: all values are in quotation)
+class(df.building$Height_f)
+
+# Does not work: need to get rid of comma
+as.numeric(df.building$Height_f)
+
+# Get rid of comma
+gsub(pattern = ',', 
+     replacement = '',
+     df.building$Height_f)
+```
+\normalsize
+Putting things together...
+
+\scriptsize
+```{r,echo=T,eval=F}
+df.building$Height_f <- 
+  as.numeric(gsub(pattern = ',', replacement = '', df.building$Height_f))
+
+# Equivalent code with pipe operator
+df.building$Height_f <- df.building$Height_f %>% 
+  gsub(pattern = ',', replacement = '') %>%
+  as.numeric()
+```
+
+
+##
+Take a look at the **Floors** variable. This format is difficult to work with. To parse a text using R, you need to be *very specific* about the text pattern.  This is done using "regular expression" (a pattern language used to search, match, and manipulate text). 
+
+
+\scriptsize
+```{r, echo=T, eval=F}
+df.building$Floors 
+
+df.building <- df.building %>%
+  mutate(
+    Floors_num = str_extract(Floors, "^\\d+") %>% 
+      as.integer(),
+    Floors_additional = str_extract(Floors, "(?<=\\(\\+ )\\d+") %>% 
+      as.integer(),
+    Floors_additional_text = str_extract(Floors, "(?<=\\d )[^(]+(?=\\))") %>% 
+      str_trim()
+    )
+
+# double check
+str(df.building)
+```
+\normalsize
+
+## Factors
+- \texttt{Location} is entered as character (i.e., text) data
+```{r}
+class(df.building$Location)
+unique(df.building$Location)
+```
+
+- We might want to treat it as a \alert{factor} instead
+```{r}
+df.building$Location_F = as.factor(df.building$Location)
+```
+
+## Factors
+- Key difference: \alert{factors} can be treated as numbers but \alert{characters} cannot
+```{r}
+as.numeric(df.building$Location_F)
+```
+
+```{r}
+as.numeric(df.building$Location)
+```
+
+## Useful functions for factors
+```{r}
+unique(df.building$Location_F)
+levels(df.building$Location_F)
+```
+
+##
+- Factors are often used as a \alert{grouping variable}.  \texttt{tapply( )} allows you to analyze data \alert{by groups}. 
+
+\small
+```{r}
+tapply(df.building$Year,df.building$Location_F,median)
+tapply(df.building$Height_m,df.building$Location_F,mean)
+```
+##
+\small
+```{r}
+# OR #
+df.building %>%
+  group_by(Location_F) %>%
+  summarise(median(Year), mean(Height_m), length(Year))
+```
+
+
+## Useful functions for factors
+- Plotting with \texttt{Location} as a character vector is not easy 
+
+```{r,eval=F}
+plot(df.building$Location,df.building$Height_m) #error!
+```
+
+- Plotting with \texttt{Location\_F}:
+
+\scriptsize
+```{r,fig.height=3,fig.width=6,out.width="1\\linewidth"}
+par(mfrow=c(1,2))
+plot(df.building$Location_F) #bar graph
+plot(df.building$Location_F,df.building$Height_m)  #boxplots by Location
+```
+
+# From vector to data: data frames
+
+## Data frame
+In most cases, datasets in R are stored as a \alert{data frame}
+
+```{r,eval=T,echo=T}
+class(df.building)
+```
+
+- \alert{Subseting} requires two indices (row, column)
+```{r}
+df.building[1,2] # first row, second column
+```
+
+- Easier: each \alert{component} in a data frame corresponds to a column (i.e., a variable); use \alert{\$} to get the component
+```{r,eval=F}
+df.building$Name[1] # name of first building
+```
+
+
+
+## Useful functions
+```{r,eval=F}
+names(df.building) # variable names
+dim(df.building) # dimension (row, column)
+nrow(df.building) # number of rows
+str(df.building) # summary information
+head(df.building) # first few rows
+tail(df.building) # last few rows
+```
+
+
+## Exercise set 1
+\small
+- Print out the names of the first 5 buildings
+- Calculate the average height in meters of the first 5 buildings (should get `r  mean(df.building$Height_m[1:5])`)
+
+- Create a new vector, $\texttt{ft.per.floor}$, by height (ft) / number of floors
+```{r,echo=F}
+ft.per.floor <- df.building$Height_f / df.building$Floors_num
+```
+
+To \alert{add a variable} to an existing data frame
+\small
+```{r}
+df.building$ft.per.floor=ft.per.floor
+# OR 
+df.building['ft.per.floor']=ft.per.floor
+```
+
+- Calculate the average $\texttt{ft.per.floor}$ of buildings by Location
+```{r,echo=F}
+tapply(df.building$ft.per.floor,df.building$Location_F,mean)
+```
+
+##
+- Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)
+
+```{r,echo=F}
+plot(df.building$Year,
+     df.building$Height_f, 
+     col = df.building$Location_F,
+     xlab='Year',
+     ylab='Height in ft',
+     pch=16)
+```
+
+
+# Matrix
+
+## Matrix
+
+```{r}
+df.building.matrix=as.matrix(df.building)
+class(df.building.matrix)
+```
+
+- \$ doesn't work for getting variables from a matrix
+- Subsetting can be done using square bracket: \textbf{matrix[row,column]}
+- Variable names are now \textbf{column names}
+
+\small
+```{r,eval=F}
+colnames(df.building.matrix)
+dim(df.building.matrix) 
+df.building.matrix[1,3] #first row, third column
+df.building.matrix[1,] #information for the first row
+df.building.matrix[,2] #information for the second column
+```
+
+
+## Matrix
+- All entries in \texttt{df.building.matrix} are converted to characters
+- This is because \alert{entries in a matrix must have the same type}
+- Matrices are more useful for storing only numeric values
+- In comparison: recall that a data frame allows variables to have different types
+
+
+# A more general R object: list
+
+## List
+- Suppose we also want to store these information
+```{r}
+sample.size <- nrow(df.building)
+variables <- names(df.building)
+```
+
+- We have the following **R objects**
+  1. $\texttt{df.building}$: a $61 \times 9$ data frame 
+  1. $\texttt{sample.size}$: a numeric value
+  1. $\texttt{variables}$: a character vector of size $9$
+ 
+- Q: What if we want to store all three objects in one R object?
+
+## List
+- A: Create a \alert{List} with three components
+```{r}
+list.building <- list(data=df.building,
+               sample.size=sample.size,
+               variables=variables)
+```
+- Note: if a name is not provided for a component, it will be indexed by number
+- List is very general: each component can be of different length or type
+- Use \alert{\$} to extract any component
+ + Try \alert{list.building\$...} to print out each of the component to double check
+ 
+
+## List
+- Another way to extract component: square bracket
+  + $\texttt{list.building[`COMPONENT']}$ is identical to $\texttt{list.building\$COMPONENT}$
+
+- Benefit of using $\$$: no need to spell; use tab
+- Benefit of using $[\texttt{" "}]$: can return more than one components in a more automated fashion
+
+```{r}
+TORETURN=c('variables','sample.size')
+list.building[TORETURN]
+```
+
+## Useful functions
+Handling a list is very similar to handling a data frame
+
+\small
+```{r,eval=F}
+length(list.building) # number of components
+names(list.building) # names of the components
+str(list.building) # summary information
+
+# add new component
+list.building$mean_height=mean(list.building$data$Height_m)
+```
+
+You can \alert{combine lists} with \texttt{c(,)}; for instance: \texttt{c(list.building, newlist)}
+
+# R functions
+
+## R functions
+- R functions follow the same pattern: \alert{function\_name(argument1=XXX, argument2=XXX, ...)}
+
+\small
+```{r,eval=F}
+plot(df.building$Height_m,df.building$Floors_num) #shorter version
+plot(x=df.building$Height_m,y=df.building$Floors_num) #full version
+```
+- Use \alert{?function\_name} to bring up the help menu
+
+
+## pipe operator (dplyr package)
+The pipe operator, **%>%**, is a different syntax for calling R functions: **FUNCTION(x)** is the same as **x %>% FUNCTION**
+
+```{r, eval=F}
+vec=c(1,1,5)
+mean(vec)
+vec %>% mean
+```
+
+**For functions with multiple arguments**: by default, R recognizes the argument being piped as the *first* argument; or you can use "." to specify
+
+\small
+```{r, eval=F}
+# these code are equivalent
+plot(df.building$Height_m,df.building$Floors_num,xlab='Height')
+
+df.building$Height_m %>% 
+  plot(df.building$Floors_num,xlab='Height')
+
+df.building$Height_m %>% 
+  plot(x=., y=df.building$Floors_num,xlab='Height')
+```
+
+
+# An exercise...
+
+## 
+- Generate a scatterplot.  Can you think of a way to color it based on year, and reproduce this plot?
+```{r,echo=F}
+mycols<-rep(NA,dim(df.building)[1])
+mycols[which(df.building$Year<=2009)]='red'
+mycols[which(df.building$Year>=2010 & df.building$Year<=2015)]='blue'
+mycols[which(df.building$Year>=2016)]='green'
+
+plot(df.building$Height_m,df.building$Floors_num,
+     pch=16,
+     col=mycols,
+     main='red: 2009 or before \n blue 2010 to 2015 \n green 2016 or later',
+     xlab='Height in meters',
+     ylab='Number of floors')
+```
+
+
+
+## Sample code 1
+- Create an empty vector with the same length as the number of buildings
+```{r,eval=F}
+mycols <- rep(NA,nrow(df.building))
+```
+
+- (Use R to tell *which* buildings were built in 2009 or before)
+```{r,eval=F}
+which(df.building$Year<=2009)
+```
+
+- Set the corresponding element in the empty vector to the color red (recall, for subsetting, the \texttt{which()} function is not actually needed)
+```{r,eval=F}
+mycols[df.building$Year<=2009]='red'
+```
+
+- Do the same for the other colors
+```{r, eval=F}
+mycols[(df.building$Year>=2010) 
+       & (df.building$Year<=2015)]='blue'
+mycols[(df.building$Year>=2016)]='green'
+```
+
+## Sample code 2
+- Create three colors
+```{r, eval=F}
+cols3 = c('red','blue','green')
+```
+
+- Create index based on the year of the building
+```{r, eval=F}
+myindex <- ifelse(df.building$Year<=2009, 1, NA)
+myindex[(df.building$Year>=2010) 
+       & (df.building$Year<=2015)] = 2
+myindex[(df.building$Year>=2016)]=3
+```
+
+- Use index to subset the colors
+```{r, eval=F}
+cols3[myindex] # same as mycols
+```
+
+# NA values
+
+## NA values
+- \alert{NA} is a special value that represents missing or unavailable entries when not in quotation
+```{r}
+x=c(3.5,3.2,3,NA)
+length(x)
+```
+- Most operations will return NA (e.g.: you don't know the 4th value, so you cannot calculate the mean)
+```{r,eval=F}
+mean(x)
+max(x)
+sd(x)
+```
+
+## Exclude NA values
+To avoid the issue of getting NA's when you perform calculations, you might want to **exclude the NA values**
+
+- Some functions give you the option to remove NA
+```{r}
+mean(x,na.rm=T)
+max(x,na.rm=T)
+```
+- More general, use \alert{na.omit(x)}
+```{r}
+mean(na.omit(x))
+```
+
+
+## Check for NA values
+- Try to use R to tell you which value is NA
+```{r}
+x
+x==NA  # NOT what we want!
+which(x==NA)  # NOT what we want!
+```
+
+- Instead, use \alert{is.na(x)}
+```{r}
+is.na(x)
+which(is.na(x))
+```
+
+## Other types of NA values
+- **NaN** is also treated as NA; **Inf** is not treated as NA (represents infinity)
+- You should check the calculations and variable types when you see NA, NaN, or Inf
+```{r}
+v1=c(1,1,0);v2=c(2,0,0);v1/v2
+mean(v1/v2)
+is.na(v1/v2)
+as.numeric('4,000')
+```
+
+# More on logicals
+
+## Composite logical statements
+You can combine two or more logical statements together
+
+- **!** NOT
+- **&** AND 
+- **|** OR
+```{r}
+x=c(3.6,2.8,3.3,1.2)
+x>3
+x>3 & x<3.5
+(x>3.5) | (x<2)
+```
+
+## \%in\%
+- Recall, logical operators are the ones that return T/F
+```{r, eval=F}
+which(x < 3) # this is ok
+which(x = 3) # this is NOT ok
+which(x) # this is NOT ok
+```
+
+- Operator \alert{\%in\%} is another useful logical operator
+```{r}
+subjects=c('ENG','ENG','MAT','MAT','STAT','HIS')
+subjects %in% c('MAT','STAT')
+```
+
+
+## Exercise set 2
+1. Print the names and built years of the first 3 buildings
+2. Print the names of buildings in the United States
+3. Print the names of buildings in the United States AND also built after 2015
+4. Print the names of buildings in the United States OR in China
+5. Print the names and built years of buildings built between 2010 and 2015
+6. Print the names and built years of the buildings built in 2010 OR in 2015
+7. Plot a histogram of the built year of the buildings.  I'm interested to see there is a building built before 1940 - can you find out which building it is?
+
+##
+Comment:  **Bar graph** is like histogram for discrete variables; recall, **plot( )** gives a bar graph for factors
+
+```{r,echo=F, out.width=300, fig.height=4, fig.width=8}
+par(mfrow=c(1,2))
+hist((df.building$Year),
+     col='royalblue',
+     main='hist(df.building$Year)',
+     xlab=NA,
+     ylab=NA,
+     yaxt='n')
+
+plot(as.factor(df.building$Year),
+     col='salmon',
+     main='plot(as.factor(df.building$Year))',
+     xlab=NA,
+     ylab=NA,
+     yaxt='n')
+```
+
+
+
+
+
+
