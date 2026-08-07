@@ -1,0 +1,9 @@
+---
+title: "Resources"
+---
+
+- An Introduction to R (Venables et. al.) [PDF](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+
+- [Posit recipes: interactive tutorials](https://posit.cloud/learn/recipes)
+
+- [Advanced R (Wickham)](http://adv-r.had.co.nz/)

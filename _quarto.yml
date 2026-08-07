@@ -15,13 +15,15 @@ website:
             href: teaching/STAT120/index.qmd
           - text: Stat 117 Introduction to Statistics
             href: teaching/STAT117/index.qmd
+      - text: "Dataset"
+        href: dataset/index.qmd
   
   sidebar:
     - id: stat120
       contents:
         - text: "Syllabus"
           href: teaching/STAT120/syllabus.qmd
-        - text: "Schedule"
+        - text: "Schedule and reminders"
           href: teaching/STAT120/schedule.qmd
         - text: "Lectures"
           href: teaching/STAT120/lectures/index.qmd
@@ -35,14 +37,29 @@ website:
           contents:
             - text: "Homework 1"
               href: teaching/STAT120/homework/homework_1.qmd
+        - text: "Resources"
+          href: teaching/STAT120/resources/index.qmd
+
     - id: stat117
       contents:
-        - text: "About"
-          href: teaching/STAT117/about.qmd
+        - text: "Syllabus"
+          href: teaching/STAT117/syllabus.qmd
+        - text: "Schedule and reminders"
+          href: teaching/STAT117/schedule.qmd
         - text: "Lectures"
           href: teaching/STAT117/lectures/index.qmd
+          contents:
+            - text: "Lecture 1"
+              href: teaching/STAT117/lectures/lecture_1/lectures_1.qmd
+            - text: "Lecture 2"
+              href: teaching/STAT117/lectures/lecture_2/lectures_2.qmd
         - text: "Homework"
           href: teaching/STAT117/homework/index.qmd
+          contents:
+            - text: "Homework 1"
+              href: teaching/STAT117/homework/homework_1.qmd
+        - text: "Resources"
+          href: teaching/STAT117/resources/index.qmd
 
 format:
   html:

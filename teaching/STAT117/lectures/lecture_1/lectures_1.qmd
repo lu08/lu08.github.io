@@ -1,0 +1,5 @@
+---
+title: "STAT120 - Statistical Computing in R"
+---
+
+Cat and dogs

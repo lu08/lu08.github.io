@@ -1,17 +1,136 @@
 ---
-title: "STAT120 - Statistical Computing in R"
+title: "Syllabus"
 ---
 
-Course policies, grading breakdown, and required materials go here.
+Download the pdf version [here](FA2026_STAT120_syllabus_Lu.pdf){download="STAT120_SYLLABUS.pdf"}.
 
-## Grading
+**STAT120 - Statistical Computing in R**
 
-- Homework: TBD%
-- Exams: TBD%
-- Participation: TBD%
+**Fall 2026**
 
-## Policies
+Instructor: Prof. Yi Lu &nbsp;&nbsp; Email: ylu1@drew.edu &nbsp;&nbsp; Office: HS 314\
+Lectures: TR 2:40 - 3:55, HS 308 (in-person)\
+Office Hours: R 12-2 or by appt (in-person HS314 or via Google Meet; link)
 
-- Attendance
-- Late work
-- Academic integrity
+**Description.** Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.
+
+**Student Learning Outcomes.** By the end of the course, students will be able to:
+
+1. Use R for basic arithmetic and statistical computations;
+2. Read, store, transform, and manipulate data;
+3. Access and use packages;
+4. Write functions;
+5. Write conditional statements and loops;
+6. Visualize data with high quality graphics;
+7. Use online materials to learn R in the future;
+8. Use AI to aid code writing efficiently.
+
+**Textbook and reference material.** There are numerous online materials and documentations for different R topics, and a lot of people learn to code in R using these materials. There is no required textbook for this class - consider the internet your textbook! Some reading and self-learning material might be assigned during the semester. Contents of the class are mostly based on the following:
+
+- *Posit recipes: interactive tutorials* at <https://posit.cloud/learn/recipes>.
+- *An Introduction to R* (Venables et. al.); a pdf version is posted on the course webpage.
+- *Advanced R* (Wickham); free online at <http://adv-r.had.co.nz/>.
+
+**Course webpage.** Course content will be posted on <https://lu08.github.io/teaching/STAT120/>. Grades will be posted on Moodle. You should check both the course webpage and Moodle frequently. You should also check your email frequently for important announcements.
+
+**Programming Software.** We will use R in this course. You will be instructed to install R and RStudio on your computer, both of which are free. For a convenient backup, you can also run R on *POSIT (RStudio) Cloud* (<https://posit.cloud/>), which is an online platform that requires no software installation. (Other popular IDEs for R include: VS Code, Positron, Jupyter Notebooks, etc.; feel free to use any of these instead of RStudio, if you prefer.)
+
+**Electronic devices.** You are expected to bring a working laptop to each lecture. You are allowed to use an iPad (or similar devices) for class-related activities (such as taking notes). You are **prohibited** to use cell phones, headphones, and earbuds during all lectures. You are also prohibited to use electronic devices for unrelated activities, such as browsing internet, messaging, gaming, working on assignments from a different course, etc.
+
+**Attendance.** You are expected to attend every class unless you have a legitimate excuse, such as illness, family emergency or participation in a college sponsored event. Attendance is mandatory for successful completion of the course. Regardless of reason, it is your responsibility to make up course material covered during absences. Note that poor attendance without a valid reason is not an excuse to misuse office hours.
+
+Class attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect a student's grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, which is located in the Academic Policy section of Drew's course catalog under Attendance (<https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC>). Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conference or some Drew-sanctioned events. Students need to inform the faculty member of planned absences in the first week of the semester. For unforeseen extended health issues please see the academic accommodations statement.
+
+**Late work and missed Assignments.** <u>There are no make-ups in this class, even for excused absences</u>. Instead, your two lowest quiz grade are dropped. If you have to miss a midterm exam, we will use your final exam's grade to replace the missing grade. **All quizzes and exams must be taken in person; absolutely no exception.**
+
+**Homework.** Homework problems and solutions can be found on the course website. I encourage you to write your own code and use online resources (including AI) to explore different ways of coding a problem. *Homework is not collected in this class* - it is entirely for your own practice. It is *required* in the sense that you cannot succeed in this class without sufficient practice. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.
+
+**Components of Your Grades:**
+
+- **6%** Attendance, participation, and assignments
+
+  You must attend and actively participate in each lecture. Reasons for losing attendance grade include: not attending class, arriving late, leaving early, doing unrelated activities during lectures, etc. If you have legitimate reasons, please communicate with me. Some assignments (different from homework, which is not collected) might be given. Late work is not accepted. Due date reminders will be posted on the course webpage.
+
+- **2% &times; 2** Project workshops
+
+  Simply attend two out of the three project workshops (see schedule below) for this grade. A third attendance is optional and will NOT earn you extra credit.
+
+- **20%** Quizzes (two drops allowed)
+
+  We will have a short quiz at the beginning of most Thursday lectures. It is closed book/notes/electronics and may include materials from lectures and homework. *There are no make-up quizzes*, but your two lowest quiz grades will be dropped.
+
+- **25% &times; 2** Midterm exams
+
+  We will have two midterm exams. They are closed book/notes/electronics. For each exam, you can use a reference sheet: 8.5 by 11 inch (or A4) piece of paper with whatever you want on it, double sided.
+
+- **20%** Final project
+
+  Throughout the semester, you will be guided to use R for a data analysis project. It includes a presentation and a final report, and several intermediate assignments during the semester.
+
+**Optional second chance (final) exam.** The only purpose of the optional final exam is to potentially raise your midterm exam grades. It is comprehensive and consists of two parts, roughly corresponding to material covered on Midterm 1 and Midterm 2. If your Part 1 grade is *higher* than Midterm 1 grade, we will *raise* your Midterm 1 grade by using a weighted average of the original score (20%) and the Part 1 Final score. Same goes for Midterm 2 and Part 2. If your final exam performance is not higher, the original midterm score is left unchanged.
+
+**Final Exam Policy.** If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:
+
+- Two final exams scheduled at the same time;
+- Three final exams scheduled in one calendar day; one of the exams will be rescheduled at the convenience of the instructor and the student;
+- Serious illness, or personal emergency; the student is required to present documentation to validate.
+
+The final exam schedule is visible on the Registrar's website by the beginning of each semester (<https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/>). Students are expected to schedule travel plans to occur AFTER their final exams.
+
+**Grade Cutoffs:** We will use the following scale in determining your course grade from your course average. The course grades are not curved. A = 93 to 100; A- = 90 to 93; B+ = 87 to 90; B = 83 to 87; B- = 80 to 83; C+ = 77 to 80; C = 73 to 77; C- = 70 to 73; D+ = 67 to 70; D = 63 to 67; D- = 60 to 63; F = 0 to 60.
+
+**Note on cross-listed class:** Some components in the midterm exams and the final project will be different for students registered in STAT120 vs in DATA505.  In general, for these components, the DATA505 version will be slightly longer,  more open-ended, and more comprehensive.  In addition, students registered at the graduate DATA505 level do not have a D range grade.  An overall course grade below 70\% will result in an F.
+
+**Academic Accommodations.** Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course. If you have not yet established services through the Office of Accessibility Resources (OAR), but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), you are encouraged to contact OAR. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.
+
+Although a disclosure may take place at any time during the semester, students are encouraged to do so early in the semester, because, in general, accommodations are not implemented retroactively. Office of Accessibility Resources contact information:\
+Interim Director: Stefanie Attia &nbsp;&nbsp; Location: Brothers College, Room 119B\
+Phone: 973-408-3962 &nbsp;&nbsp; Email: oar@drew.edu
+
+**Academic Integrity Policy.** All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University's "Standards of Academic Integrity: Guidelines and Procedures," which is located in the academic policies section of the catalog (<https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy>).
+
+**Supporting Student Success, Center for Academic Excellence.** All Drew students can access subject tutoring, writing support and academic coaching free of charge in the Center for Academic Excellence (CAE, <https://drew.edu/academic/student-resources/center-for-academic-excellence/>), located in the library. Seeking help through learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, please visit <https://drew.mywconline.com/> and follow the instructions on the landing page; if a tutor is not available, please submit the Tutor Request form. For any other questions, email cae@drew.edu.
+
+**Artificial Intelligence.** I encourage you to explore Artificial Intelligence (AI) resources for learning purposes. When using AI, you must (1) fully document and cite all material (including any code, graph, formula, table, mathematical equation, etc.) in submitted work, (2) check information generated by AI and take full responsibility for its accuracy, and (3) be able to identify where and how you used any AI tools and how they contributed to your work.
+
+**Schedule.** Important dates are summarized below. Any change will be communicated in class and via email. A more detailed, dynamic schedule can be found at <https://lu08.github.io/teaching/STAT120/schedule.html>.
+
+| Week | Date | Note |
+|---|---|---|
+| 1 | Sep 1 | |
+| | Sep 3 | Quiz 1 |
+| 2 | Sep 8 | No (in-person) class: self-learning content will be assigned |
+| | Sep 10 | Quiz 2 |
+| | | (Sep 14 is the last day to drop without W) |
+| 3 | Sep 15 | |
+| | Sep 17 | Quiz 3 |
+| 4 | Sep 22 | |
+| | Sep 24 | Quiz 4 |
+| 5 | Sep 29 | |
+| | Oct 1 | **Midterm Exam 1** |
+| 6 | Oct 6 | |
+| | Oct 8 | Quiz 5 |
+| 7 | Oct 13 | No class - Fall Break |
+| | Oct 15 | Project workshop #1 |
+| 8 | Oct 20 | |
+| | Oct 22 | Quiz 6 |
+| 9 | Oct 27 | |
+| | Oct 29 | Quiz 7 |
+| 10 | Nov 3 | |
+| | Nov 5 | **Midterm Exam 2** |
+| 11 | Nov 10 | Project workshop #2 |
+| | Nov 12 | |
+| 12 | Nov 17 | (Last day to drop with W) |
+| | Nov 19 | Quiz 8 |
+| 13 | Nov 24 | Project workshop #3 |
+| | Nov 26 | No class — Thanksgiving |
+| 14 | Dec 1 | Presentation: group A |
+| | Dec 3 | Presentation: group B |
+| 15 | Dec 8 | Presentation: group C |
+| | Dec 10 | Quiz 9 |
+
+: {tbl-colwidths="[10,15,75]"}
+
+Optional second chance final exam: **Dec 17 (Thu) 4 - 7 pm**
+
+Final project report: **due Dec 18 (Fri) at noon**

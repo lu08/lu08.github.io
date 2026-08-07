@@ -1,10 +1,6 @@
 ---
 title: "Lectures"
-format:
-  html:
-    toc: false
 ---
 
-# Lectures
-
-Lecture notes, slides, and recordings will be linked here.
+- [Lecture 1](lecture_1/lectures_1.qmd)
+- [Lecture 2](lecture_2/lectures_2.qmd)

@@ -1,5 +1,9 @@
+navbar: false
 format:
   html:
     page-layout: article
     toc: false
     sidebar: stat117
+    css:
+      - ../../styles.css
+      - stat117.css

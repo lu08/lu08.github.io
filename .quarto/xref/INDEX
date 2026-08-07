@@ -1,65 +1,74 @@
 {
+  "teaching/STAT120/syllabus.qmd": {
+    "syllabus.html": "ba57b25e"
+  },
   "index.qmd": {
-    "index.html": "375b6e78"
+    "index.html": "2d4a563d"
   },
-  "cv/index.qmd": {
-    "index.html": "23bdc7f5"
-  },
-  "research.qmd": {
-    "research.html": "e8c3a664"
-  },
-  "teaching/index.qmd": {
-    "index.html": "fac8c121"
+  "dataset/index.qmd": {
+    "index.html": "d3375b0b"
   },
   "teaching/STAT120/index.qmd": {
-    "index.html": "1752d920"
-  },
-  "teaching/STAT120/about.qmd": {
-    "about.html": "dd5e4d1a"
-  },
-  "teaching/STAT120/homework/index.qmd": {
-    "index.html": "af4f9c6c"
-  },
-  "teaching/STAT120/lectures/index.qmd": {
-    "index.html": "afa1e7b8"
-  },
-  "teaching/STAT120/lectures/lecture1.qmd": {
-    "lecture1.html": "55da7b93"
-  },
-  "teaching/STAT120/lectures/lecture2.qmd": {
-    "lecture2.html": "da0cb68a"
-  },
-  "teaching/STAT117/index.qmd": {
-    "index.html": "a89a882f"
-  },
-  "teaching/STAT117/about.qmd": {
-    "about.html": "acab8fa5"
-  },
-  "teaching/STAT117/homework/index.qmd": {
-    "index.html": "da76c98c"
-  },
-  "teaching/STAT117/lectures/index.qmd": {
-    "index.html": "3776d49a"
-  },
-  "teaching/STAT120/syllabus.qmd": {
-    "syllabus.html": "3a4c449a"
-  },
-  "teaching/STAT120/homework/homework_1.qmd": {
-    "homework_1.html": "258a804b"
-  },
-  "teaching/STAT120/lectures/week_2/lectures_2.qmd": {
-    "lectures_2.html": "bd69c08d"
-  },
-  "teaching/STAT120/lectures/week_1/lectures_1.qmd": {
-    "lectures_1.html": "c94c773c"
+    "index.html": "79c18552"
   },
   "teaching/STAT120/schedule.qmd": {
-    "schedule.html": "b0f40fca"
+    "schedule.html": "abc53329"
+  },
+  "teaching/STAT120/resources/index.qmd": {
+    "index.html": "fb09b6f6"
+  },
+  "teaching/STAT120/lectures/index.qmd": {
+    "index.html": "38652491"
+  },
+  "teaching/STAT120/homework/index.qmd": {
+    "index.html": "e878cf93"
   },
   "teaching/STAT120/lectures/lecture_1/lectures_1.qmd": {
-    "lectures_1.html": "80aa0191"
+    "lectures_1.html": "4cef743c"
   },
   "teaching/STAT120/lectures/lecture_2/lectures_2.qmd": {
-    "lectures_2.html": "8ee288a3"
+    "lectures_2.html": "64963c8f"
+  },
+  "research.qmd": {
+    "research.html": "8ba74386"
+  },
+  "teaching/index.qmd": {
+    "index.html": "04235001"
+  },
+  "teaching/STAT120/homework/homework_1.qmd": {
+    "homework_1.html": "2aef41c5"
+  },
+  "teaching/STAT117/index.qmd": {
+    "index.html": "83ba373c"
+  },
+  "teaching/STAT117/about.qmd": {
+    "about.html": "c17254cd"
+  },
+  "teaching/STAT117/homework/index.qmd": {
+    "index.html": "94bbd8eb"
+  },
+  "teaching/STAT117/lectures/index.qmd": {
+    "index.html": "24505ccb"
+  },
+  "cv/index.qmd": {
+    "index.html": "6b835e77"
+  },
+  "teaching/STAT117/resources/index.qmd": {
+    "index.html": "7f945341"
+  },
+  "teaching/STAT117/homework/homework_1.qmd": {
+    "homework_1.html": "59476f0f"
+  },
+  "teaching/STAT117/syllabus.qmd": {
+    "syllabus.html": "f92f3f0e"
+  },
+  "teaching/STAT117/lectures/lecture_1/lectures_1.qmd": {
+    "lectures_1.html": "6b7be722"
+  },
+  "teaching/STAT117/lectures/lecture_2/lectures_2.qmd": {
+    "lectures_2.html": "7390682f"
+  },
+  "teaching/STAT117/schedule.qmd": {
+    "schedule.html": "2d306f9f"
   }
 }

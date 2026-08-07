@@ -4,3 +4,6 @@ format:
     page-layout: article
     toc: false
     sidebar: stat120
+    css:
+      - ../../styles.css
+      - stat120.css
