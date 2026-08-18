@@ -6,7 +6,7 @@ title: "Schedule and reminders"
 
 - Sep 1: Course introduction, [syllabus](syllabus.qmd), [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) setup, and getting started with [Lecture 1](lectures/lecture_1/lectures_1.html).  If not already done in class, please install R and RStudio on your computer before our next class.  
 
-- Sep 3: **Quiz 1** on the basics of R.  If you understand everything we have covered on Sep 1, you should be fine.
+- Sep 3: **Quiz 1** on the basics of R.
 
 
 ## Week 2

@@ -6,4 +6,4 @@ title: "Lectures"
 - [Lecture 2](lecture_2/lectures_2.html)
 
 
-- Code and notes used for demonstration during each lecture can be found [here](lecture_notes/index.qmd)
+- Code used for demonstration during each lecture can be found [here](lecture_notes/index.qmd)
