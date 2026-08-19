@@ -1,0 +1,10 @@
+---
+title: "Week 2"
+format: html
+---
+
+This week introduces basic plotting and visualization tools in R, including a first look at the plotly package. Review the slides below before our next class meeting.
+
+[Link to fullscreen](../all_lectures/week_2_slide.html)
+
+<iframe src="../all_lectures/week_2_slide.html" width="100%" height="650px" style="border:none;"></iframe>

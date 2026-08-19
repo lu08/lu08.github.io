@@ -1,7 +1,7 @@
 ---
-title: "STAT120 - Statistical Computing in R"
+title: "STAT117 - Introduction to Statistics"
 ---
 
-Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course is taught at Drew University (Madison, NJ) in Fall 2026.
+Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.
 
-**Description.** Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.
+**Description.** Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.

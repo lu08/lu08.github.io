@@ -1,0 +1,10 @@
+---
+title: "Week 1"
+format: html
+---
+
+This week we get oriented with the course: an overview of the syllabus, setting up R and RStudio, and a first look at working with data in R. Come to class ready to follow along on your own laptop.
+
+[Link to fullscreen](../all_lectures/week_1_slide.html)
+
+<iframe src="../all_lectures/week_1_slide.html" width="100%" height="650px" style="border:none;"></iframe>

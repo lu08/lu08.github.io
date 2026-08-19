@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT120 - Statistical Computing in R – Yi Lu</title>
+<title>STAT117 - Introduction to Statistics – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">STAT120 - Statistical Computing in R</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">STAT117 - Introduction to Statistics</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -103,16 +103,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/STAT117/schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule and reminders</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../teaching/STAT117/lectures/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lectures</span></a>
+            <a href="../../teaching/STAT117/weeks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Weeks</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -120,31 +114,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/STAT117/lectures/lecture_1/lectures_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1</span></a>
+  <a href="../../teaching/STAT117/weeks/week_1/week_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/STAT117/lectures/lecture_2/lectures_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2</span></a>
+  <a href="../../teaching/STAT117/weeks/week_2/week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../teaching/STAT117/homework/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course documents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/STAT117/homework/homework_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Homework 1</span></a>
+  <a href="../../teaching/STAT117/weeks/all_lectures/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Lectures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/STAT117/homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
   </div>
 </li>
       </ul>
@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">STAT120 - Statistical Computing in R</h1>
+<h1 class="title">STAT117 - Introduction to Statistics</h1>
 </div>
 
 
@@ -183,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course is taught at Drew University (Madison, NJ) in Fall 2026.</p>
-<p><strong>Description.</strong> Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.</p>
+<p>Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.</p>
+<p><strong>Description.</strong> Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.</p>
 
 
 

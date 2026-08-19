@@ -4,7 +4,7 @@ title: "Yi Lu"
 
 - Hi! I am an Associate Professor in the [Department of Mathematics and Computer Science at Drew University](https://drew.edu/academics/mathematics/mathematics-computer-science-dept/){target="_blank"} in Madison, New Jersey.  I teach [courses](teaching/index.qmd) in statistics and data science, and I enjoy working on applied [research projects](research.qmd) with students and collaborators.
 
-- I earned a Ph.D. in Statistics from the [Ohio State University](https://stat.osu.edu/){target="_blank"}.  My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods.  I love simulation-based methods (the alternative, analytical derivations, are often daunting to me).  I am a big fan of [R](https://www.r-project.org/){target="_blank"}.
+- I earned a Ph.D. in Statistics from the [Ohio State University](https://stat.osu.edu/){target="_blank"}.  My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods.  I love simulation-based methods (the alternative—analytical derivations—is often daunting to me).  I am a big fan of [R](https://www.r-project.org/){target="_blank"}.
 
 - I love jogging and running in my spare time.  I am always out on a run, and my statistics classes tend to have too many running examples.  I want to run an ultra-marathon one day.
 

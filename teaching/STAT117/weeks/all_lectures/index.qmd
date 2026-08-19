@@ -1,0 +1,8 @@
+---
+title: "All Lectures"
+---
+
+All lecture slide decks for STAT117, in one place.
+
+- [Week 1](week_1_slide.html)
+- [Week 2](week_2_slide.html)

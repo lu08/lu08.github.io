@@ -2,10 +2,6 @@
 title: "Homework"
 ---
 
-*Homework is not collected in this class* - it is entirely for your own practice. 
-
-It is *required* in the sense that you cannot succeed in this class without sufficient practice. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.
-
-The provided solution is usually not the only way to code the answer.  I encourage you to write your own code, talk to your peers, and use online resources (including AI) to explore other ways.
+Demo text: homework assignments for the course will be listed here.
 
 - [Homework 1](homework_1.qmd)

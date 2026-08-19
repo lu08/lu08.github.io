@@ -1,6 +1,0 @@
----
-title: "Lectures"
----
-
-- [Lecture 1](lecture_1/lectures_1.html)
-- [Lecture 2](lecture_2/lectures_2.html)

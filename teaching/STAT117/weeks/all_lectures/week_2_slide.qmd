@@ -44,4 +44,3 @@ library(Lock5Data)
 ```{r}
 plot(mtcars$mpg)
 ```
-</content>

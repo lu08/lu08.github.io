@@ -5,8 +5,8 @@ project:
     - "**/*.qmd"
     - "!teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd"
     - "!teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
-    - "!teaching/STAT117/lectures/lecture_1/lecture_1_slide.qmd"
-    - "!teaching/STAT117/lectures/lecture_2/lecture_2_slide.qmd"
+    - "!teaching/STAT117/weeks/all_lectures/week_1_slide.qmd"
+    - "!teaching/STAT117/weeks/all_lectures/week_2_slide.qmd"
   post-render:
     - ./render_lecture_slides.sh
 
@@ -54,20 +54,19 @@ website:
       contents:
         - text: "Syllabus"
           href: teaching/STAT117/syllabus.qmd
-        - text: "Schedule and reminders"
-          href: teaching/STAT117/schedule.qmd
-        - text: "Lectures"
-          href: teaching/STAT117/lectures/index.qmd
+        - text: "Weeks"
+          href: teaching/STAT117/weeks/index.qmd
           contents:
-            - text: "Lecture 1"
-              href: teaching/STAT117/lectures/lecture_1/lectures_1.html
-            - text: "Lecture 2"
-              href: teaching/STAT117/lectures/lecture_2/lectures_2.html
-        - text: "Homework"
-          href: teaching/STAT117/homework/index.qmd
+            - text: "Week 1"
+              href: teaching/STAT117/weeks/week_1/week_1.html
+            - text: "Week 2"
+              href: teaching/STAT117/weeks/week_2/week_2.html
+        - section: "Course documents"
           contents:
-            - text: "Homework 1"
-              href: teaching/STAT117/homework/homework_1.qmd
+            - text: "All lectures"
+              href: teaching/STAT117/weeks/all_lectures/index.qmd
+            - text: "Homework"
+              href: teaching/STAT117/homework/index.qmd
         - text: "Resources"
           href: teaching/STAT117/resources/index.qmd
 
