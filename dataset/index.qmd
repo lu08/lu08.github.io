@@ -5,10 +5,10 @@ format:
     page-layout: article
 ---
 
-Here are some fun and relatively clean datasets that are mostly used for my [teaching](../teaching/index.qmd).
+Here are some fun and relatively clean datasets that are mostly used for [teaching](../teaching/index.qmd).
 
 
-- [tallest_buildings.csv](tallest%20building_2026.csv){download="tallest_buildings.csv"} 
+- [tallest_buildings.csv](tallest%20building_2026.csv){download="tallest_buildings.csv"}
 
-Tallest buildings in the world.  Source: [scraped](scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings).
+  Tallest buildings in the world. Source: [scraped](scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings).
 

@@ -1,7 +1,9 @@
 ---
-title: "Lectures"
+title: "Weekly modules"
 ---
 
-- [Week 1](week_1/week_1.html)
-- [Week 2](week_2/week_2.html)
+Here is where you can find everything you need to know for each week.
+
+- [Week 1: Aug 31 to Sep 4](week_1/week_1.html)
+- [Week 2: Sep 7 to Sep 11](week_2/week_2.html)
 

@@ -5,8 +5,8 @@ project:
     - "**/*.qmd"
     - "!teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd"
     - "!teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
-    - "!teaching/STAT117/weeks/all_lectures/week_1_slide.qmd"
-    - "!teaching/STAT117/weeks/all_lectures/week_2_slide.qmd"
+    - "!teaching/STAT117/weeks/all_lectures/lecture_1_slide.qmd"
+    - "!teaching/STAT117/weeks/all_lectures/lecture_2_slide.qmd"
   post-render:
     - ./render_lecture_slides.sh
 
