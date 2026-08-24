@@ -1,7 +1,0 @@
----
-title: "Homework"
----
-
-Demo text: homework assignments for the course will be listed here.
-
-- [Homework 1](homework_1.qmd)

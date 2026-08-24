@@ -5,8 +5,8 @@ project:
     - "**/*.qmd"
     - "!teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd"
     - "!teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
-    - "!teaching/STAT117/weeks/all_lectures/lecture_1_slide.qmd"
-    - "!teaching/STAT117/weeks/all_lectures/lecture_2_slide.qmd"
+    - "!teaching/STAT117/course_documents/all_lectures/lecture_1_slide.qmd"
+    - "!teaching/STAT117/course_documents/all_lectures/lecture_2_slide.qmd"
   post-render:
     - ./render_lecture_slides.sh
 
@@ -61,12 +61,8 @@ website:
               href: teaching/STAT117/weeks/week_1/week_1.html
             - text: "Week 2"
               href: teaching/STAT117/weeks/week_2/week_2.html
-        - section: "Course documents"
-          contents:
-            - text: "All lectures"
-              href: teaching/STAT117/weeks/all_lectures/index.qmd
-            - text: "Homework"
-              href: teaching/STAT117/homework/index.qmd
+        - text: "Course documents"
+          href: teaching/STAT117/course_documents/index.qmd
         - text: "Resources"
           href: teaching/STAT117/resources/index.qmd
 

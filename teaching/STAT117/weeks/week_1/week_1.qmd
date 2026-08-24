@@ -17,13 +17,13 @@ Welcome back!  I hope you all had a great summer.
 
  Today we will introduce ourselves, go over the [syllabus](../../syllabus.html), and get started with Chapter 1.
 
-[Link to fullscreen](../all_lectures/lecture_1_slide.html)
+[Link to fullscreen](../../course_documents/all_lectures/lecture_1_slide.html)
 
-<iframe src="../all_lectures/lecture_1_slide.html" width="100%" height="650px" style="border:none;"></iframe>
+<iframe src="../../course_documents/all_lectures/lecture_1_slide.html" width="100%" height="650px" style="border:none;"></iframe>
 
 ## Thursday, Sep 3 (in-person)
 
-Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be similar to the questions in [Lecture 1](../all_lectures/lecture_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).
+Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be similar to the questions in [Lecture 1](../../course_documents/all_lectures/lecture_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).
 
 We will also do an **in-person primer** for next week.  The purpose is to guide you in the right direction before you delve into the asynchronous content on your own, and to give you a chance to ask questions (especially regarding next week's quiz).
 

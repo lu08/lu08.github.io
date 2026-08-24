@@ -106,53 +106,72 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/all_lectures/index.html",
-    "href": "teaching/STAT117/weeks/all_lectures/index.html",
-    "title": "All Lectures",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#overview",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#overview",
+    "title": "Week 1",
     "section": "",
-    "text": "All lecture slide decks for STAT117, in one place.\n\nWeek 1\nWeek 2",
+    "text": "Welcome back! I hope you all had a great summer.\n\nSep 1 (Tuesday): in-person lecture\nBefore Thursday: finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class)\nSep 3 (Thursday): in-person lecture, quiz 1\nDue Sep 4 (Friday) 11:59 pm: Assignment 1 (installation of Jamovi)",
     "crumbs": [
       "Research",
-      "Course documents",
-      "All lectures"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/STAT117/resources/index.html",
-    "href": "teaching/STAT117/resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "An Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
+    "title": "Week 1",
+    "section": "Tuesday, Sep 1 (in-person)",
+    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
-      "Resources"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/STAT117/homework/index.html",
-    "href": "teaching/STAT117/homework/index.html",
-    "title": "Homework",
-    "section": "",
-    "text": "Demo text: homework assignments for the course will be listed here.\n\nHomework 1",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
+    "title": "Week 1",
+    "section": "Thursday, Sep 3 (in-person)",
+    "text": "Thursday, Sep 3 (in-person)\nToday we will have our very first quiz! As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON. Quiz 1 will be similar to the questions in Lecture 1: you will be given some variables and you will be asked to identify their measure types (nominal, ordinal, continuous/scale, or dichotomous).\nWe will also do an in-person primer for next week. The purpose is to guide you in the right direction before you delve into the asynchronous content on your own, and to give you a chance to ask questions (especially regarding next week’s quiz).",
     "crumbs": [
       "Research",
-      "Course documents",
-      "Homework"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
+    "objectID": "teaching/STAT117/syllabus.html",
+    "href": "teaching/STAT117/syllabus.html",
+    "title": "Syllabus",
     "section": "",
-    "text": "Content coming up soon!"
+    "text": "Download the pdf version here.\nSTAT 117 - Introduction to Statistics (Section 005)\nFall 2026\nInstructor: Prof. Yi Lu Email: ylu1@drew.edu Office: HS 314\nLectures: TR 10:25 - 11:40, HS 244 (hybrid)\nOffice Hours: R 12-2 or by appointment (in-person HS314 or via Google Meet; link on course webpage)\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.\nCourse webpage. Course content will be posted on https://lu08.github.io/teaching/STAT117/. Assignments, quizzes, and grades will be posted on Moodle. You should check both the course webpage and Moodle frequently. You should also check your email frequently for important announcements.\nHybrid format. This section is taught in a hybrid modality and will include asynchronous course content. To keep things clear and organized, everything you need to know is organized as weekly modules (https://lu08.github.io/teaching/STAT117/weeks/). This is also where you should check to see whether we will be meeting in person. When we are not meeting in person, I will be in my office (HS314) for the duration of the scheduled lecture time and you are welcome to stop by (the classroom is also available for you to use). Importantly, all quizzes and exams must be taken in person, absolutely no exceptions.\nLearning Outcomes. By the end of the course, students will be able to:\n\nSelect, create, and interpret appropriate graphical displays, descriptive statistics, and inferential statistics. Apply the concepts of robustness and model validation;\nAnalyze real data within authentic applications;\nAssess the quality of a statistical argument;\nUse a professional statistical software package;\nInterpret results in language that is both statistically correct and understandable by someone who has not taken a course in statistics;\nApply statistical reasoning in broad areas of application including the social, biological, and physical sciences.\n\nLaptop Computer and Statistical Software. We will be using the free, open-source statistical software Jamovi (https://jamovi.org/download.html). Jamovi is a simple point-and-click interface, built directly on top of R, one of the most widely used programming languages in statistics and data science. Don’t worry about programming or technical details as these are not the focus of our class. When needed, detailed instructions and sample code will be given to you. Toward the end of the semester, we will explain and demonstrate some basics of R.\nOptional Text. Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. The text includes indexed chapters and exercises and a URL where you may access online solutions. There is a copy of the text available on reserve at the library if you prefer to use that. You do not need to bring your copy of the text to class because the required exercises are available online. You do not need to purchase the text unless reading the content is helpful. Some students find it helpful to use it as a reference because all of the content is indexed. Most students just need the exercises and solutions, which are available for free online.\nTo clarify: we are NOT using SPSS for this section. The textbook is consistent with other sections of STAT117 and is not an issue because (1) statistical concepts, as outlined in the textbook, do not depend on the software used; and (2) Jamovi’s interface is intentionally made similar to SPSS. Supplementary reading, assignments, and material will be posted on the course webpage.\nDataset. The dataset used for the course will be shared on the course webpage. You need to download a dataset first and open it in Jamovi. To make sure that you are using the correct dataset for quizzes and exams, I strongly recommend that you never save a modified dataset. You could also re-download a dataset before a quiz or an exam. I emphasize that it is your responsibility to use the correct dataset, and “my dataset is different” is not a legitimate reason for an incorrect answer under any circumstances.\nElectronic devices. You are expected to bring a working laptop to each lecture. If your computer has issues, know that your course performance will be heavily affected as everything (homework, quizzes, exams) requires the use of Jamovi. It is your responsibility to avoid this situation and solve any computer issues in time.\nYou are allowed to use an iPad (or similar devices) for class-related activities (such as taking notes). You are prohibited from using cell phones, headphones, and earbuds during all lectures. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, working on assignments from a different course, etc.\nAttendance. You are expected to attend every class unless you have a legitimate excuse, such as illness, family emergency or participation in a college sponsored event. Attendance is mandatory for successful completion of the course. Regardless of reason, it is your responsibility to make up course material covered during absences. Note that poor attendance without a valid reason is not an excuse to misuse office hours.\nClass attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect a student’s grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, which is located in the Academic Policy section of Drew’s course catalog under Attendance (https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC). Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conference or some Drew-sanctioned events. Students need to inform the faculty member of planned absences in the first week of the semester. For unforeseen extended health issues please see the academic accommodations statement.\nLate work and Missed Assignments. There are no make-ups in this class, even for excused absences. Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have excused absences for the course, these are part of your drops. All absences and late submissions will result in a grade of zero on assignments and quizzes, but as long as these absences are not excessive, these zero grades will be dropped. If you have an excused absence for an exam, I will use your performance on the final exam in place of the missing exam grade. If you know in advance that you will miss a quiz or exam, you may be able to take it early by making appropriate arrangements with me.\nHomework. Textbook problems and solutions can be found on the course webpage. Homework is not collected in this class, but it is required for you to do these problems. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.\nComponents of Your Grades:\n\n10% Assignments (in-class and take-home, lowest 2 dropped)\nDuring the semester, we’ll do a few in-class activities and at-home assignments that will count toward your grade. Since these assignments are not announced ahead of time, your regular attendance and consistent interaction with asynchronous content are important. You are also expected to actively participate during in-person lectures and group activities.\n17% Quizzes (lowest 2 dropped)\nTo make sure you are not falling behind, there will be a quiz at the beginning of (almost) every Thursday. The quiz will be on Moodle. There is no make-up quiz and you will not be allowed extra time if you join the class late, even if you have excused reasons, but your two lowest grades will be dropped. Note that the last quiz on ANOVA (see below) does not fall in this category and therefore cannot be one of the two drops.\n3% ANOVA grade\nYou can get this grade by (1) taking the last quiz (“ANOVA quiz”) OR (2) taking the ANOVA portion on the final exam. If you take both, this grade will be the higher of the two.\n45% Three in-class exams (15% each)\nThere will be three in-class exams. You are encouraged to make a reference sheet for each exam: An 8.5 by 11 inch (or A4) piece of paper with whatever you want on it, double sided. In addition to being useful during the exam, creating this sheet is a good way to study and prepare for the exam. You can use these same sheets for the final exam.\n25% (Optional) final exam\nThere is an optional final exam during finals week. I will provide you with your course grade before the final, and you can choose to accept that grade and skip the final.\nThe final exam is cumulative. You are encouraged to bring four reference sheets to the final exam: Four 8.5 by 11 inch (or A4) pieces of paper with whatever you want on it, double sided.\nYou can choose to do only the ANOVA portion of the final exam for the ANOVA grade. In this case, you are essentially still skipping the final and will not get a final exam grade.\n\nA Second Chance. If you take the final exam, you will earn two sets of grades. The exam consists of four parts. Parts 1 through 3 roughly correspond to the same material as exams 1 through 3, respectively, while part 4 covers new material learned after the third exam.\n\nThe first final exam grade considers the total number of points earned on the exam, and is your final exam score counting for 25% of your final grade.\nThe other set of final exam grades is a score for each of parts 1 through 3 of the final exam. For each of these parts, if the final exam grade is higher than what you scored on the corresponding midterm exam, we will raise your score on that midterm exam. The new score on the midterm will be the average of the original score and the score on that part of the final. If your final exam performance is not higher, the original midterm score is left unchanged.\n\nFinal Exam Policy. If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:\n\nTwo final exams scheduled at the same time;\nThree final exams scheduled in one calendar day; one of the exams will be rescheduled at the convenience of the instructor and the student;\nSerious illness, or personal emergency; the student is required to present documentation to validate.\n\nThe final exam schedule is visible on the Registrar’s website by the beginning of each semester (https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/). Students are expected to schedule travel plans to occur AFTER their final exams.\nGrade Cutoffs: We will use the following scale in determining your course grade from your course average. The course grades are not curved. A = 94 to 100; A- = 90 to 93; B+ = 87 to 89; B = 84 to 86; B- = 80 to 83; C+ = 77 to 79; C = 74 to 76; C- = 70 to 73; D+ = 67 to 69; D = 64 to 66; D- = 60 to 63; F = 0 to 59.\nAcademic Accommodations. Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.\nIf you have not yet established services through the Office of Accessibility Resources (OAR), but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), you are encouraged to contact OAR. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.\nAlthough a disclosure may take place at any time during the semester, students are encouraged to do so early in the semester, because, in general, accommodations are not implemented retroactively. Office of Accessibility Resources contact information:\nInterim Director: Stefanie Attia    Location: Brothers College, Room 119B\nPhone: 973-408-3962    Email: oar@drew.edu\nAcademic Integrity Policy. All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s “Standards of Academic Integrity: Guidelines and Procedures,” which is located in the academic policies section of the catalog (https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy).\nSupporting Student Success, Center for Academic Excellence. All Drew students can access subject tutoring, writing support and academic coaching free of charge in the Center for Academic Excellence (CAE, https://drew.edu/academic/student-resources/center-for-academic-excellence/), located in the library. Seeking help through learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, please visit https://drew.mywconline.com/ and follow the instructions on the landing page; if a tutor is not available, please submit the Tutor Request form. For any other questions, email cae@drew.edu.\nArtificial Intelligence. I encourage you to explore Artificial Intelligence (AI) resources for learning purposes. When using AI, you must (1) fully document and cite all material (including any code, graph, formula, table, mathematical equation, etc.) that was not generated by you, (2) check information generated by AI and take full responsibility for its accuracy, and (3) be able to identify where and how you used any AI tools and how they contributed to your work. You are not allowed to use AI for any quizzes or exams. Use of any AI tools without permission is unacceptable and will be reported as an academic integrity violation. If you have any doubts about what is acceptable please discuss them with the professor.\nSchedule. Important dates are summarized below. Any change will be communicated in class and via email. Course content is subject to change depending on the pace of the class. Detailed weekly modules can be found at https://lu08.github.io/teaching/STAT117/weeks/. Remember that the quiz and exam dates are always in-person. Modality for the other dates will be communicated in the weekly modules. Reach out if you are not sure.\n\n\n\nWeek\nDate\nContent\nNote\n\n\n\n\n1\nSep 1\nCh1: Introduction\n\n\n\n\nSep 3\nCh2: Univariate distribution\nQuiz 1\n\n\n2\nSep 8\nIntro to Jamovi\n\n\n\n\nSep 10\n\nQuiz 2\n\n\n\n\n(Sep 14 is the last day to drop without W)\n\n\n\n3\nSep 15\nCh3: Location, Spread, and Skewness\n\n\n\n\nSep 17\n\nQuiz 3\n\n\n4\nSep 22\nCh4: Transformation\n\n\n\n\nSep 24\n\nQuiz 4\n\n\n5\nSep 29\n\nEXAM 1\n\n\n\nOct 1\nCh5: Bivariate Relationships\n\n\n\n6\nOct 6\n\n\n\n\n\nOct 8\n\nQuiz 5\n\n\n7\nOct 13\n\nNo class - Fall Break\n\n\n\nOct 15\n\n\n\n\n8\nOct 20\n\n\n\n\n\nOct 22\n\nQuiz 6\n\n\n9\nOct 27\nCh6: Simple Linear Regression\n\n\n\n\nOct 29\n\nQuiz 7\n\n\n10\nNov 3\n\nEXAM 2\n\n\n\nNov 5\nCh7: Basic Probability\n\n\n\n11\nNov 10\nCh8: Normal Distribution\n\n\n\n\nNov 12\nCh9: Central Limit Theorem\nQuiz 8\n\n\n12\nNov 17\nCh11 Part 1: One sample t test\n\n\n\n\nNov 19\n\nQuiz 9\n\n\n13\nNov 24\nCh11 Part 2: Paired samples t test\n\n\n\n\nNov 26\n\nNo class — Thanksgiving\n\n\n14\nDec 1\nCh11 Part 3: Independent samples t test\nQuiz 10\n\n\n\nDec 3\n\nEXAM 3\n\n\n15\nDec 8\n\n\n\n\n\nDec 10\n\nANOVA quiz\n\n\n\n(Optional) final exam: Dec 15 (Tue) 12:30 - 3:30 pm",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
+    "objectID": "teaching/STAT117/index.html",
+    "href": "teaching/STAT117/index.html",
+    "title": "STAT117 - Introduction to Statistics",
     "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching.\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+    "text": "Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/homework/homework_1.html",
+    "href": "teaching/STAT117/course_documents/homework/homework_1.html",
+    "title": "STAT120 - Statistical Computing in R",
+    "section": "",
+    "text": "Assignment details go here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
   },
   {
     "objectID": "cv/index.html",
@@ -260,43 +279,69 @@
     "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
     "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching.\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
   },
   {
-    "objectID": "teaching/STAT117/homework/homework_1.html",
-    "href": "teaching/STAT117/homework/homework_1.html",
-    "title": "STAT120 - Statistical Computing in R",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "Assignment details go here."
+    "text": "Content coming up soon!"
   },
   {
-    "objectID": "teaching/STAT117/index.html",
-    "href": "teaching/STAT117/index.html",
-    "title": "STAT117 - Introduction to Statistics",
+    "objectID": "teaching/STAT117/course_documents/index.html",
+    "href": "teaching/STAT117/course_documents/index.html",
+    "title": "Course documents",
     "section": "",
-    "text": "Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance."
-  },
-  {
-    "objectID": "teaching/STAT117/syllabus.html",
-    "href": "teaching/STAT117/syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Download the pdf version here.\nSTAT 117 - Introduction to Statistics (Section 005)\nFall 2026\nInstructor: Prof. Yi Lu Email: ylu1@drew.edu Office: HS 314\nLectures: TR 10:25 - 11:40, HS 244 (hybrid)\nOffice Hours: R 12-2 or by appointment (in-person HS314 or via Google Meet; link on course webpage)\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.\nCourse webpage. Course content will be posted on https://lu08.github.io/teaching/STAT117/. Assignments, quizzes, and grades will be posted on Moodle. You should check both the course webpage and Moodle frequently. You should also check your email frequently for important announcements.\nHybrid format. This section is taught in a hybrid modality and will include asynchronous course content. To keep things clear and organized, everything you need to know is organized as weekly modules (https://lu08.github.io/teaching/STAT117/weeks/). This is also where you should check to see whether we will be meeting in person. When we are not meeting in person, I will be in my office (HS314) for the duration of the scheduled lecture time and you are welcome to stop by (the classroom is also available for you to use). Importantly, all quizzes and exams must be taken in person, absolutely no exceptions.\nLearning Outcomes. By the end of the course, students will be able to:\n\nSelect, create, and interpret appropriate graphical displays, descriptive statistics, and inferential statistics. Apply the concepts of robustness and model validation;\nAnalyze real data within authentic applications;\nAssess the quality of a statistical argument;\nUse a professional statistical software package;\nInterpret results in language that is both statistically correct and understandable by someone who has not taken a course in statistics;\nApply statistical reasoning in broad areas of application including the social, biological, and physical sciences.\n\nLaptop Computer and Statistical Software. We will be using the free, open-source statistical software Jamovi (https://jamovi.org/download.html). Jamovi is a simple point-and-click interface, built directly on top of R, one of the most widely used programming languages in statistics and data science. Don’t worry about programming or technical details as these are not the focus of our class. When needed, detailed instructions and sample code will be given to you. Toward the end of the semester, we will explain and demonstrate some basics of R.\nOptional Text. Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. The text includes indexed chapters and exercises and a URL where you may access online solutions. There is a copy of the text available on reserve at the library if you prefer to use that. You do not need to bring your copy of the text to class because the required exercises are available online. You do not need to purchase the text unless reading the content is helpful. Some students find it helpful to use it as a reference because all of the content is indexed. Most students just need the exercises and solutions, which are available for free online.\nTo clarify: we are NOT using SPSS for this section. The textbook is consistent with other sections of STAT117 and is not an issue because (1) statistical concepts, as outlined in the textbook, do not depend on the software used; and (2) Jamovi’s interface is intentionally made similar to SPSS. Supplementary reading, assignments, and material will be posted on the course webpage.\nDataset. The dataset used for the course will be shared on the course webpage. You need to download a dataset first and open it in Jamovi. To make sure that you are using the correct dataset for quizzes and exams, I strongly recommend that you never save a modified dataset. You could also re-download a dataset before a quiz or an exam. I emphasize that it is your responsibility to use the correct dataset, and “my dataset is different” is not a legitimate reason for an incorrect answer under any circumstances.\nElectronic devices. You are expected to bring a working laptop to each lecture. If your computer has issues, know that your course performance will be heavily affected as everything (homework, quizzes, exams) requires the use of Jamovi. It is your responsibility to avoid this situation and solve any computer issues in time.\nYou are allowed to use an iPad (or similar devices) for class-related activities (such as taking notes). You are prohibited from using cell phones, headphones, and earbuds during all lectures. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, working on assignments from a different course, etc.\nAttendance. You are expected to attend every class unless you have a legitimate excuse, such as illness, family emergency or participation in a college sponsored event. Attendance is mandatory for successful completion of the course. Regardless of reason, it is your responsibility to make up course material covered during absences. Note that poor attendance without a valid reason is not an excuse to misuse office hours.\nClass attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect a student’s grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, which is located in the Academic Policy section of Drew’s course catalog under Attendance (https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC). Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conference or some Drew-sanctioned events. Students need to inform the faculty member of planned absences in the first week of the semester. For unforeseen extended health issues please see the academic accommodations statement.\nLate work and Missed Assignments. There are no make-ups in this class, even for excused absences. Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have excused absences for the course, these are part of your drops. All absences and late submissions will result in a grade of zero on assignments and quizzes, but as long as these absences are not excessive, these zero grades will be dropped. If you have an excused absence for an exam, I will use your performance on the final exam in place of the missing exam grade. If you know in advance that you will miss a quiz or exam, you may be able to take it early by making appropriate arrangements with me.\nHomework. Textbook problems and solutions can be found on the course webpage. Homework is not collected in this class, but it is required for you to do these problems. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.\nComponents of Your Grades:\n\n10% Assignments (in-class and take-home, lowest 2 dropped)\nDuring the semester, we’ll do a few in-class activities and at-home assignments that will count toward your grade. Since these assignments are not announced ahead of time, your regular attendance and consistent interaction with asynchronous content are important. You are also expected to actively participate during in-person lectures and group activities.\n17% Quizzes (lowest 2 dropped)\nTo make sure you are not falling behind, there will be a quiz at the beginning of (almost) every Thursday. The quiz will be on Moodle. There is no make-up quiz and you will not be allowed extra time if you join the class late, even if you have excused reasons, but your two lowest grades will be dropped. Note that the last quiz on ANOVA (see below) does not fall in this category and therefore cannot be one of the two drops.\n3% ANOVA grade\nYou can get this grade by (1) taking the last quiz (“ANOVA quiz”) OR (2) taking the ANOVA portion on the final exam. If you take both, this grade will be the higher of the two.\n45% Three in-class exams (15% each)\nThere will be three in-class exams. You are encouraged to make a reference sheet for each exam: An 8.5 by 11 inch (or A4) piece of paper with whatever you want on it, double sided. In addition to being useful during the exam, creating this sheet is a good way to study and prepare for the exam. You can use these same sheets for the final exam.\n25% (Optional) final exam\nThere is an optional final exam during finals week. I will provide you with your course grade before the final, and you can choose to accept that grade and skip the final.\nThe final exam is cumulative. You are encouraged to bring four reference sheets to the final exam: Four 8.5 by 11 inch (or A4) pieces of paper with whatever you want on it, double sided.\nYou can choose to do only the ANOVA portion of the final exam for the ANOVA grade. In this case, you are essentially still skipping the final and will not get a final exam grade.\n\nA Second Chance. If you take the final exam, you will earn two sets of grades. The exam consists of four parts. Parts 1 through 3 roughly correspond to the same material as exams 1 through 3, respectively, while part 4 covers new material learned after the third exam.\n\nThe first final exam grade considers the total number of points earned on the exam, and is your final exam score counting for 25% of your final grade.\nThe other set of final exam grades is a score for each of parts 1 through 3 of the final exam. For each of these parts, if the final exam grade is higher than what you scored on the corresponding midterm exam, we will raise your score on that midterm exam. The new score on the midterm will be the average of the original score and the score on that part of the final. If your final exam performance is not higher, the original midterm score is left unchanged.\n\nFinal Exam Policy. If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:\n\nTwo final exams scheduled at the same time;\nThree final exams scheduled in one calendar day; one of the exams will be rescheduled at the convenience of the instructor and the student;\nSerious illness, or personal emergency; the student is required to present documentation to validate.\n\nThe final exam schedule is visible on the Registrar’s website by the beginning of each semester (https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/). Students are expected to schedule travel plans to occur AFTER their final exams.\nGrade Cutoffs: We will use the following scale in determining your course grade from your course average. The course grades are not curved. A = 94 to 100; A- = 90 to 93; B+ = 87 to 89; B = 84 to 86; B- = 80 to 83; C+ = 77 to 79; C = 74 to 76; C- = 70 to 73; D+ = 67 to 69; D = 64 to 66; D- = 60 to 63; F = 0 to 59.\nAcademic Accommodations. Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.\nIf you have not yet established services through the Office of Accessibility Resources (OAR), but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), you are encouraged to contact OAR. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.\nAlthough a disclosure may take place at any time during the semester, students are encouraged to do so early in the semester, because, in general, accommodations are not implemented retroactively. Office of Accessibility Resources contact information:\nInterim Director: Stefanie Attia    Location: Brothers College, Room 119B\nPhone: 973-408-3962    Email: oar@drew.edu\nAcademic Integrity Policy. All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s “Standards of Academic Integrity: Guidelines and Procedures,” which is located in the academic policies section of the catalog (https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy).\nSupporting Student Success, Center for Academic Excellence. All Drew students can access subject tutoring, writing support and academic coaching free of charge in the Center for Academic Excellence (CAE, https://drew.edu/academic/student-resources/center-for-academic-excellence/), located in the library. Seeking help through learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, please visit https://drew.mywconline.com/ and follow the instructions on the landing page; if a tutor is not available, please submit the Tutor Request form. For any other questions, email cae@drew.edu.\nArtificial Intelligence. I encourage you to explore Artificial Intelligence (AI) resources for learning purposes. When using AI, you must (1) fully document and cite all material (including any code, graph, formula, table, mathematical equation, etc.) that was not generated by you, (2) check information generated by AI and take full responsibility for its accuracy, and (3) be able to identify where and how you used any AI tools and how they contributed to your work. You are not allowed to use AI for any quizzes or exams. Use of any AI tools without permission is unacceptable and will be reported as an academic integrity violation. If you have any doubts about what is acceptable please discuss them with the professor.\nSchedule. Important dates are summarized below. Any change will be communicated in class and via email. Course content is subject to change depending on the pace of the class. Detailed weekly modules can be found at https://lu08.github.io/teaching/STAT117/weeks/. Remember that the quiz and exam dates are always in-person. Modality for the other dates will be communicated in the weekly modules. Reach out if you are not sure.\n\n\n\nWeek\nDate\nContent\nNote\n\n\n\n\n1\nSep 1\nCh1: Introduction\n\n\n\n\nSep 3\nCh2: Univariate distribution\nQuiz 1\n\n\n2\nSep 8\nIntro to Jamovi\n\n\n\n\nSep 10\n\nQuiz 2\n\n\n\n\n(Sep 14 is the last day to drop without W)\n\n\n\n3\nSep 15\nCh3: Location, Spread, and Skewness\n\n\n\n\nSep 17\n\nQuiz 3\n\n\n4\nSep 22\nCh4: Transformation\n\n\n\n\nSep 24\n\nQuiz 4\n\n\n5\nSep 29\n\nEXAM 1\n\n\n\nOct 1\nCh5: Bivariate Relationships\n\n\n\n6\nOct 6\n\n\n\n\n\nOct 8\n\nQuiz 5\n\n\n7\nOct 13\n\nNo class - Fall Break\n\n\n\nOct 15\n\n\n\n\n8\nOct 20\n\n\n\n\n\nOct 22\n\nQuiz 6\n\n\n9\nOct 27\nCh6: Simple Linear Regression\n\n\n\n\nOct 29\n\nQuiz 7\n\n\n10\nNov 3\n\nEXAM 2\n\n\n\nNov 5\nCh7: Basic Probability\n\n\n\n11\nNov 10\nCh8: Normal Distribution\n\n\n\n\nNov 12\nCh9: Central Limit Theorem\nQuiz 8\n\n\n12\nNov 17\nCh11 Part 1: One sample t test\n\n\n\n\nNov 19\n\nQuiz 9\n\n\n13\nNov 24\nCh11 Part 2: Paired samples t test\n\n\n\n\nNov 26\n\nNo class — Thanksgiving\n\n\n14\nDec 1\nCh11 Part 3: Independent samples t test\nQuiz 10\n\n\n\nDec 3\n\nEXAM 3\n\n\n15\nDec 8\n\n\n\n\n\nDec 10\n\nANOVA quiz\n\n\n\n(Optional) final exam: Dec 15 (Tue) 12:30 - 3:30 pm",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
     "crumbs": [
       "Research",
-      "Syllabus"
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/index.html#lecture-slides",
+    "href": "teaching/STAT117/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nWeek 1\nWeek 2",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/index.html#homework",
+    "href": "teaching/STAT117/course_documents/index.html#homework",
+    "title": "Course documents",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/resources/index.html",
+    "href": "teaching/STAT117/resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "An Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)",
+    "crumbs": [
+      "Research",
+      "Resources"
     ]
   },
   {
     "objectID": "teaching/STAT117/weeks/index.html",
     "href": "teaching/STAT117/weeks/index.html",
-    "title": "Lectures",
+    "title": "Weekly modules",
     "section": "",
-    "text": "Week 1\nWeek 2",
+    "text": "Here is where you can find everything you need to know for each week.\n\nWeek 1: Aug 31 to Sep 4\nWeek 2: Sep 7 to Sep 11",
     "crumbs": [
       "Research",
       "Weeks"
@@ -368,66 +413,6 @@
     "crumbs": [
       "Research",
       "Syllabus"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#overview",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#overview",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome back! I hope you all had a great summer.\n\nSep 1 (Tuesday): in-person lecture\nBefore Thursday: finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class)\nSep 3 (Thursday): in-person lecture, quiz 1\nDue Sep 4 (Friday) 11:59 pm: Assignment 1 (installation of Jamovi)",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#slides",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#slides",
-    "title": "Week 1",
-    "section": "Slides",
-    "text": "Slides\nLink to fullscreen",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
-    "title": "Week 1",
-    "section": "Tuesday, Sep 1 (in-person)",
-    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nLink to fullscreen",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
-    "title": "Week 1",
-    "section": "Thursday, Sep 3 (in-person)",
-    "text": "Thursday, Sep 3 (in-person)\nToday we will have our very first quiz! As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON. Quiz 1 will be similar to the questions in Lecture 1: you will be given some variables and you will be asked to identify their measure types (nominal, ordinal, continuous/scale, or dichotomous).\nWe will also do an in-person primer for next week. The purpose is to guide you in the right direction before you delve into the asynchronous content on your own, and to give you a chance to ask questions (especially regarding next week’s quiz).",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#assignments",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#assignments",
-    "title": "Week 1",
-    "section": "Assignments",
-    "text": "Assignments\nPlease download and install Jamovi here.",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
     ]
   }
 ]
