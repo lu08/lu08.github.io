@@ -6,8 +6,8 @@ You can find all course documents here as a reference page.  Please refer to the
 
 ## Lecture slides
 
-- [Week 1](all_lectures/lecture_1_slide.html)
-- [Week 2](all_lectures/lecture_2_slide.html)
+- [Week 1](all_lectures/chapter_1_slide.html)
+- [Week 2](all_lectures/chapter_2_slide.html)
 
 ## Homework
 
