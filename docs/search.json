@@ -98,7 +98,7 @@
     "href": "teaching/STAT117/weeks/week_1/week_1.html",
     "title": "Week 1",
     "section": "",
-    "text": "Welcome back! I hope you all had a great summer.\n\nSep 1 (Tuesday): in-person lecture\nBefore Thursday: finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class)\nSep 3 (Thursday): in-person lecture, quiz 1\nDue Sep 4 (Friday) 11:59 pm: Assignment 1 (installation of Jamovi)",
+    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture, quiz 1",
     "crumbs": [
       "Research",
       "Weeks",
@@ -110,7 +110,7 @@
     "href": "teaching/STAT117/weeks/week_1/week_1.html#overview",
     "title": "Week 1",
     "section": "",
-    "text": "Welcome back! I hope you all had a great summer.\n\nSep 1 (Tuesday): in-person lecture\nBefore Thursday: finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class)\nSep 3 (Thursday): in-person lecture, quiz 1\nDue Sep 4 (Friday) 11:59 pm: Assignment 1 (installation of Jamovi)",
+    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture, quiz 1",
     "crumbs": [
       "Research",
       "Weeks",
@@ -122,7 +122,7 @@
     "href": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
     "title": "Week 1",
     "section": "Tuesday, Sep 1 (in-person)",
-    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nLink to fullscreen",
+    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nTo prepare for Thursday’s quiz, you should finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class) after today’s class.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
@@ -134,7 +134,7 @@
     "href": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
     "title": "Week 1",
     "section": "Thursday, Sep 3 (in-person)",
-    "text": "Thursday, Sep 3 (in-person)\nToday we will have our very first quiz! As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON. Quiz 1 will be similar to the questions in Lecture 1: you will be given some variables and you will be asked to identify their measure types (nominal, ordinal, continuous/scale, or dichotomous).\nWe will also do an in-person primer for next week. The purpose is to guide you in the right direction before you delve into the asynchronous content on your own, and to give you a chance to ask questions (especially regarding next week’s quiz).",
+    "text": "Thursday, Sep 3 (in-person)\nToday we will have our very first quiz! As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON. Quiz 1 will be similar to the questions in Chapter 1: you will be given some variables and you will be asked to identify their measure types (nominal, ordinal, continuous/scale, or dichotomous).\nWe will also get started with Chapter 2. Link to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
@@ -160,11 +160,11 @@
     "text": "Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance."
   },
   {
-    "objectID": "teaching/STAT117/course_documents/homework/homework_1.html",
-    "href": "teaching/STAT117/course_documents/homework/homework_1.html",
-    "title": "STAT120 - Statistical Computing in R",
+    "objectID": "teaching/STAT117/course_documents/homework/index.html",
+    "href": "teaching/STAT117/course_documents/homework/index.html",
+    "title": "Homework",
     "section": "",
-    "text": "Assignment details go here."
+    "text": "Homework 1"
   },
   {
     "objectID": "index.html",
@@ -286,11 +286,32 @@
     "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
   },
   {
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
     "text": "Content coming up soon!"
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/homework/homework_1.html",
+    "href": "teaching/STAT117/course_documents/homework/homework_1.html",
+    "title": "STAT120 - Statistical Computing in R",
+    "section": "",
+    "text": "Assignment details go here."
   },
   {
     "objectID": "teaching/STAT117/course_documents/index.html",
@@ -326,6 +347,17 @@
     ]
   },
   {
+    "objectID": "teaching/STAT117/course_documents/index.html#assignments",
+    "href": "teaching/STAT117/course_documents/index.html#assignments",
+    "title": "Course documents",
+    "section": "Assignments",
+    "text": "Assignments\n\nAssignment 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
     "objectID": "teaching/STAT117/resources/index.html",
     "href": "teaching/STAT117/resources/index.html",
     "title": "Resources",
@@ -352,7 +384,43 @@
     "href": "teaching/STAT117/weeks/week_2/week_2.html",
     "title": "Week 2",
     "section": "",
-    "text": "This week we will continue with Chapter 2 and work with basic plotting and visualization tools in R.\n\nSep 8 (Tuesday): in-person lecture\nSep 10 (Thursday): in-person lecture",
+    "text": "This week we will continue with Chapter 2.\n\nSep 8 (Tuesday): asynchronous lecture\nDue at the beginning of Thursday’s class: Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 2",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "title": "Week 2",
+    "section": "",
+    "text": "This week we will continue with Chapter 2.\n\nSep 8 (Tuesday): asynchronous lecture\nDue at the beginning of Thursday’s class: Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 2",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-asynchronous",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-asynchronous",
+    "title": "Week 2",
+    "section": "Tuesday, Sep 8 (asynchronous)",
+    "text": "Tuesday, Sep 8 (asynchronous)\nWe are not meeting in person today. I won’t be on campus as I’ll be travelling, but you can reach me by email, or schedule a meeting with me on Wednesday. Your need to finish the following tasks on your own before Thursday’s class.\n\nStudy the Chapter 2 slides.\n\nLink to fullscreen\n\n\n\nFor additional practice, you should finish homework questions from Chapter 2. Again, homework is not collected in this class and it’s entirely for your own practice.\nInstall Jamovi on your computer. You can download it from here.\nComplete Assignment 1.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "title": "Week 2",
+    "section": "Thursday, Sep 10 (in-person)",
+    "text": "Thursday, Sep 10 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -414,80 +482,5 @@
       "Research",
       "Syllabus"
     ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#overview",
-    "href": "teaching/STAT117/weeks/week_2/week_2.html#overview",
-    "title": "Week 2",
-    "section": "",
-    "text": "This week we will continue with Chapter 2 and work with basic plotting and visualization tools in R.\n\nSep 8 (Tuesday): in-person lecture\nSep 10 (Thursday): in-person lecture",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-in-person",
-    "href": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-in-person",
-    "title": "Week 2",
-    "section": "Tuesday, Sep 8 (in-person)",
-    "text": "Tuesday, Sep 8 (in-person)\nToday we will continue with Chapter 2. Review the slides below before our next class meeting.\nLink to fullscreen",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
-    "href": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
-    "title": "Week 2",
-    "section": "Thursday, Sep 10 (in-person)",
-    "text": "Thursday, Sep 10 (in-person)\nWe will continue working with the material from Chapter 2.",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/index.html#assignments",
-    "href": "teaching/STAT117/course_documents/index.html#assignments",
-    "title": "Course documents",
-    "section": "Assignments",
-    "text": "Assignments\n\nAssignment 1",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/index.html",
-    "href": "teaching/STAT117/course_documents/assignment/index.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Assignments for STAT117 will be posted here."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/homework/index.html",
-    "href": "teaching/STAT117/course_documents/homework/index.html",
-    "title": "Homework",
-    "section": "",
-    "text": "Homework 1"
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
   }
 ]
