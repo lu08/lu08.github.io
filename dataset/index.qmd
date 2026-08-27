@@ -7,8 +7,42 @@ format:
 
 Here are some fun and relatively clean datasets that are mostly used for [teaching](../teaching/index.qmd).
 
+## CSV data
 
 - [tallest_buildings.csv](tallest%20building_2026.csv){download="tallest_buildings.csv"}
 
   Tallest buildings in the world. Source: [scraped](scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings).
+
+## SPSS data
+
+### Combined Class data
+
+These data were collected by STAT117 students at Drew University.
+
+- [Combined Class Books.sav](Combined%20Class%20Books.sav){download="Combined Class Books.sav"}
+- [Combined Class Charities.sav](Combined%20Class%20Charities.sav){download="Combined Class Charities.sav"}
+- [Combined Class Movies Fall 2019.sav](Combined%20Class%20Movies%20Fall%202019.sav){download="Combined Class Movies Fall 2019.sav"}
+- [Combined Class Movies.sav](Combined%20Class%20Movies.sav){download="Combined Class Movies.sav"}
+- [Combined Class NJ homes FA18.sav](Combined%20Class%20NJ%20homes%20FA18.sav){download="Combined Class NJ homes FA18.sav"}
+- [Combined Class NYC Apartments.sav](Combined%20Class%20NYC%20Apartments.sav){download="Combined Class NYC Apartments.sav"}
+- [Combined Class Recipes.sav](Combined%20Class%20Recipes.sav){download="Combined Class Recipes.sav"}
+- [Combined Class Shoes.sav](Combined%20Class%20Shoes.sav){download="Combined Class Shoes.sav"}
+- [Combined Class Song Data.sav](Combined%20Class%20Song%20Data.sav){download="Combined Class Song Data.sav"}
+- [Combined Class eBayToys.sav](Combined%20Class%20eBayToys.sav){download="Combined Class eBayToys.sav"}
+
+### Textbook data
+
+These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222.  A description of these datasets can be found in the [Appendix A data set descriptions](Appendix_A_Data_Set_Descriptions_final.pdf){target="_blank"}.
+
+
+- [NELS.sav](NELS.sav){download="NELS.sav"}
+
+
+### Other SPSS data
+
+- [General Social Survey 2016.sav](General%20Social%20Survey%202016.sav){download="General Social Survey 2016.sav"}
+- [Music.sav](Music.sav){download="Music.sav"}
+- [Student Survey.sav](Student%20Survey.sav){download="Student Survey.sav"}
+- [Young People Survey partial.sav](Young%20People%20Survey%20partial.sav){download="Young People Survey partial.sav"}
+- [Young People Survey.sav](Young%20People%20Survey.sav){download="Young People Survey.sav"}
 

@@ -283,7 +283,7 @@
     "href": "dataset/index.html",
     "title": "Dataset",
     "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching.\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
   },
   {
     "objectID": "research.html",
@@ -475,5 +475,19 @@
     "title": "Homework",
     "section": "",
     "text": "Homework 1"
+  },
+  {
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
   }
 ]
