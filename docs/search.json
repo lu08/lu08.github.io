@@ -319,7 +319,7 @@
     "href": "teaching/STAT117/course_documents/index.html#homework",
     "title": "Course documents",
     "section": "Homework",
-    "text": "Homework\n\nHomework 1",
+    "text": "Homework\n\nHomework",
     "crumbs": [
       "Research",
       "Course documents"
@@ -450,5 +450,30 @@
       "Weeks",
       "Week 2"
     ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/index.html#assignments",
+    "href": "teaching/STAT117/course_documents/index.html#assignments",
+    "title": "Course documents",
+    "section": "Assignments",
+    "text": "Assignments\n\nAssignment 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/index.html",
+    "href": "teaching/STAT117/course_documents/assignment/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignments for STAT117 will be posted here."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/homework/index.html",
+    "href": "teaching/STAT117/course_documents/homework/index.html",
+    "title": "Homework",
+    "section": "",
+    "text": "Homework 1"
   }
 ]

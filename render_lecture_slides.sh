@@ -26,6 +26,7 @@ for rel in "${slides[@]}"; do
     if [ -d "${base}_files" ]; then
       cp -R "${base}_files" "$dest/${base}_files"
     fi
+    find . -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' \) -exec cp {} "$dest/" \;
     rm -f "$dest/$file"
   )
 done

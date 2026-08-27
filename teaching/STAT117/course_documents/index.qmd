@@ -11,4 +11,8 @@ You can find all course documents here as a reference page.  Please refer to the
 
 ## Homework
 
-- [Homework 1](homework/homework_1.qmd)
+- [Homework](homework/index.qmd)
+
+## Assignments
+
+- [Assignment 1](assignment/assignment_1.qmd)

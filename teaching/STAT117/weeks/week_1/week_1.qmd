@@ -5,8 +5,6 @@ format: html
 
 ## Overview
 
-Welcome back!  I hope you all had a great summer. 
-
 - Sep 1 (Tuesday): in-person lecture
 - Sep 3 (Thursday): in-person lecture, quiz 1
 
