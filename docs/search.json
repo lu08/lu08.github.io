@@ -352,7 +352,7 @@
     "href": "teaching/STAT117/weeks/week_2/week_2.html",
     "title": "Week 2",
     "section": "",
-    "text": "This week introduces basic plotting and visualization tools in R, including a first look at the plotly package. Review the slides below before our next class meeting.\nLink to fullscreen",
+    "text": "This week we will continue with Chapter 2 and work with basic plotting and visualization tools in R.\n\nSep 8 (Tuesday): in-person lecture\nSep 10 (Thursday): in-person lecture",
     "crumbs": [
       "Research",
       "Weeks",
@@ -413,6 +413,42 @@
     "crumbs": [
       "Research",
       "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "title": "Week 2",
+    "section": "",
+    "text": "This week we will continue with Chapter 2 and work with basic plotting and visualization tools in R.\n\nSep 8 (Tuesday): in-person lecture\nSep 10 (Thursday): in-person lecture",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-in-person",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-in-person",
+    "title": "Week 2",
+    "section": "Tuesday, Sep 8 (in-person)",
+    "text": "Tuesday, Sep 8 (in-person)\nToday we will continue with Chapter 2. Review the slides below before our next class meeting.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "title": "Week 2",
+    "section": "Thursday, Sep 10 (in-person)",
+    "text": "Thursday, Sep 10 (in-person)\nWe will continue working with the material from Chapter 2.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
     ]
   }
 ]

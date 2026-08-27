@@ -3,8 +3,31 @@ title: "Week 2"
 format: html
 ---
 
-This week introduces basic plotting and visualization tools in R, including a first look at the plotly package. Review the slides below before our next class meeting.
+## Overview
+
+This week we will continue with Chapter 2.
+
+ - Sep 8 (Tuesday): asynchronous lecture
+ - Due at the beginning of Thursday's class: Assignment 1
+ - Sep 10 (Thursday): in-person lecture, quiz 2
+
+
+## Tuesday, Sep 8 (asynchronous)
+
+We are not meeting in person today.  I won't be on campus as I'll be travelling, but you can reach me by email, or schedule a meeting with me on Wednesday.  Your need to finish the following tasks on your own before Thursday's class.
+
+1. Study the Chapter 2 slides.
 
 [Link to fullscreen](../../course_documents/all_lectures/chapter_2_slide.html)
 
 <iframe src="../../course_documents/all_lectures/chapter_2_slide.html" width="100%" height="650px" style="border:none;"></iframe>
+
+2. For additional practice, you should finish homework questions from Chapter 2.  Again, homework is not collected in this class and it's entirely for your own practice.
+
+3. Install Jamovi on your computer.  You can download it from [here](https://www.jamovi.org/download.html).
+
+4. Complete Assignment 1.
+
+
+## Thursday, Sep 10 (in-person)
+
