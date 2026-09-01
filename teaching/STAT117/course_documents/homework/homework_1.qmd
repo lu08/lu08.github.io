@@ -1,5 +1,0 @@
----
-title: "STAT120 - Statistical Computing in R"
----
-
-Assignment details go here.

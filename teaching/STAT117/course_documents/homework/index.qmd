@@ -1,5 +1,0 @@
----
-title: "Homework"
----
-
-- [Homework 1](homework_1.qmd)

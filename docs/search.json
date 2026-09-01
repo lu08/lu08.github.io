@@ -167,7 +167,7 @@
     "href": "teaching/STAT117/course_documents/index.html#lecture-slides",
     "title": "Course documents",
     "section": "Lecture slides",
-    "text": "Lecture slides\n\nWeek 1",
+    "text": "Lecture slides\n\nChapter 1",
     "crumbs": [
       "Research",
       "Course documents"
@@ -185,39 +185,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/course_documents/homework/homework_1.html",
-    "href": "teaching/STAT117/course_documents/homework/homework_1.html",
-    "title": "STAT120 - Statistical Computing in R",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
     "section": "",
-    "text": "Assignment details go here."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Content coming up soon!"
-  },
-  {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
   },
   {
     "objectID": "cv/index.html",
@@ -325,18 +297,39 @@
     "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
     "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
   },
   {
-    "objectID": "teaching/STAT117/course_documents/homework/index.html",
-    "href": "teaching/STAT117/course_documents/homework/index.html",
-    "title": "Homework",
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "Homework 1"
+    "text": "Content coming up soon!"
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/homework/chapter_1.html",
+    "href": "teaching/STAT117/course_documents/homework/chapter_1.html",
+    "title": "STAT117_Chapter 1 Homework",
+    "section": "",
+    "text": "Assignment details go here."
   },
   {
     "objectID": "teaching/STAT117/index.html",
