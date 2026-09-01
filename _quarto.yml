@@ -46,7 +46,12 @@ website:
             - text: "Lecture notes"
               href: teaching/STAT120/lectures/lecture_notes/index.qmd
         - text: "Homework"
-          href: teaching/STAT120/homework/chapter_1.qmd
+          href: teaching/STAT120/homework/index.qmd
+          contents:
+            - text: "Homework 1"
+              href: teaching/STAT120/homework/homework_1.qmd
+        - text: "Datasets"
+          href: dataset/index.qmd
         - text: "Resources"
           href: teaching/STAT120/resources/index.qmd
 
@@ -63,6 +68,8 @@ website:
               href: teaching/STAT117/weeks/week_2/week_2.html
         - text: "Course documents"
           href: teaching/STAT117/course_documents/index.qmd
+        - text: "Datasets"
+          href: dataset/index.qmd
 
 format:
   html:
