@@ -6,7 +6,9 @@ format: html
 ## Overview
  - Sep 8 (Tuesday): asynchronous lecture
  - Due on Moodle at the beginning of Thursday's class (9/10): **Assignment 1**
- - Sep 10 (Thursday): in-person lecture, **quiz 2**
+ - Sep 10 (Thursday): in-person lecture, **quiz 1**
+
+
 
 
 <!-- 
@@ -28,6 +30,9 @@ We are not meeting in person today.  I won't be on campus as I'll be travelling,
 
 
 ## Thursday, Sep 10 (in-person)
+
+
+Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be similar to the questions in [Chapter 1](../../course_documents/all_lectures/chapter_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).
 
 
 -->

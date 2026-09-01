@@ -11,6 +11,12 @@ You can find all course documents here as a reference page.  Please refer to the
 
 ## Homework
 
+Homework exercise questions are adopted from the textbook *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222.
+
+Solutions are provided in the same document.
+
+If a dataset is missing, or if you find a typo/error, please let me know.
+
 - [Chapter 1](homework/chapter_1.qmd)
 
 

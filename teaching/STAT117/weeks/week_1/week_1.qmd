@@ -6,14 +6,13 @@ format: html
 ## Overview
 
 - Sep 1 (Tuesday): in-person lecture
-- Sep 3 (Thursday): in-person lecture, **quiz 1**
+- Sep 3 (Thursday): in-person lecture
 
 
 ## Tuesday, Sep 1 (in-person)
 
  Today we will introduce ourselves, go over the [syllabus](../../syllabus.html), and get started with Chapter 1. 
- 
- To prepare for Thursday's quiz, you should finish Chapter 1 homework questions for additional practice (recall that homework is not collected in this class) after today's class.
+
 
 [Link to fullscreen](../../course_documents/all_lectures/chapter_1_slide.html)
 
@@ -22,12 +21,9 @@ format: html
 
 ## Thursday, Sep 3 (in-person)
 
-Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be similar to the questions in [Chapter 1](../../course_documents/all_lectures/chapter_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).
+We should finish Chapter 1 today and will get started will Chapter 2.
 
-We will also get started with Chapter 2.
-
-
-
+As a reminder, when we finish Chapter 1, you should finish the Chapter 1 homework questions for additional practice. Recall that homework is not collected in this class.
 
 
 

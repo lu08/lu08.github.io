@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1: Introduction"
-subtitle: "STAT117: Introduction to Statistics<br><small><em>Narrative Summary</em> on selective slides are optional. They are drafted by AI based on annotated lecture slides from previous semesters. They are fully proofread and verified by the instructor.</small>"
+subtitle: "<em>Narrative Summary</em> on selective slides are optional. They are drafted by AI based on annotated lecture slides from previous semesters. They are fully proofread and verified by the instructor."
 format:
   revealjs:
     theme: default

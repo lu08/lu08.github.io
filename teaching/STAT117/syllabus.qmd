@@ -119,33 +119,33 @@ Phone: 973-408-3962 &nbsp;&nbsp; Email: oar@drew.edu
 | Week | Date | Content | Note |
 |:----:|------|---------|------|
 | 1 | Sep 1 | Ch1: Introduction | |
-|  | Sep 3 | Ch2: Univariate distribution | **Quiz 1** |
-| 2 | Sep 8 | Intro to Jamovi | |
-|  | Sep 10 |  | **Quiz 2** |
+|  | Sep 3 | Ch2: Univariate distribution | |
+| 2 | Sep 8 | | |
+|  | Sep 10 | Intro to Jamovi  | **Quiz 1** |
 |  |  | (Sep 14 is the last day to drop without W) | |
 | 3 | Sep 15 | Ch3: Location, Spread, and Skewness | |
-|  | Sep 17 |  | **Quiz 3** |
+|  | Sep 17 |  | **Quiz 2** |
 | 4 | Sep 22 | Ch4: Transformation | |
-|  | Sep 24 |  | **Quiz 4** |
+|  | Sep 24 |  | **Quiz 3** |
 | 5 | Sep 29 |  | **EXAM 1** |
 |  | Oct 1 | Ch5: Bivariate Relationships | |
 | 6 | Oct 6 |  | |
-|  | Oct 8 |  | **Quiz 5** |
+|  | Oct 8 |  | **Quiz 4** |
 | 7 | Oct 13 |  | No class - Fall Break |
 |  | Oct 15 |  | |
 | 8 | Oct 20 |  | |
-|  | Oct 22 |  | **Quiz 6** |
+|  | Oct 22 |  | **Quiz 5** |
 | 9 | Oct 27 | Ch6: Simple Linear Regression | |
-|  | Oct 29 |  | **Quiz 7** |
+|  | Oct 29 |  | **Quiz 6** |
 | 10 | Nov 3 |  | **EXAM 2** |
 |  | Nov 5 | Ch7: Basic Probability | |
 | 11 | Nov 10 | Ch8: Normal Distribution | |
-|  | Nov 12 | Ch9: Central Limit Theorem | **Quiz 8** |
+|  | Nov 12 | Ch9: Central Limit Theorem | **Quiz 7** |
 | 12 | Nov 17 | Ch11 Part 1: One sample t test | |
-|  | Nov 19 |  | **Quiz 9** |
+|  | Nov 19 |  | **Quiz 8** |
 | 13 | Nov 24 | Ch11 Part 2: Paired samples t test | |
 |  | Nov 26 |  | No class — Thanksgiving |
-| 14 | Dec 1 | Ch11 Part 3: Independent samples t test | **Quiz 10** |
+| Dec 1 | Ch11 Part 3: Independent samples t test | **Quiz 9** |
 |  | Dec 3 |  | **EXAM 3** |
 | 15 | Dec 8 |  | |
 |  | Dec 10 |  | **ANOVA quiz** |

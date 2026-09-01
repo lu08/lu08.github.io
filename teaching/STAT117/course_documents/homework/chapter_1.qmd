@@ -1,5 +1,192 @@
 ---
-title: "STAT117_Chapter 1 Homework"
+title: "Chapter 1"
 ---
 
-Assignment details go here.
+### Exercise 1.6
+
+A survey was administered to college students to learn about student participation in University sponsored extra-curricular activities. Identify the most likely measure type of each of the following variables taking into account the coding used.
+
+| Variable Name | Question Asked | Coding (if any) |
+|---|---|---|
+| AGE | How old are you in years? | |
+| EXTRAC | At which type of extra-curricular activity do you spend most of your time? | 1 = Sports<br>2 = Student Government<br>3 = Clubs and organizations<br>4 = None |
+| TIME | How much time do you spend weekly on University sponsored extracurricular activities? | 0 = None<br>1 = 1 – 2 hours<br>2 = 3 – 5 hours<br>3 = 6 – 10 hours<br>4 = 10 – 20 hours<br>5 = More than 20 hours |
+
+What are the levels of measurement for:
+a) AGE
+b) EXTRAC
+c) TIME
+
+<details>
+<summary>### Solution</summary>
+
+a) Continuous
+b) Nominal
+c) Ordinal
+
+</details>
+
+---
+
+### Exercise 1.7
+
+The Campus Survey of Alcohol and Other Drug Norms is administered to college students to collect information about drug and alcohol use on campus. Identify the most likely measure type of each of the following variables from that survey taking into account the coding used.
+
+| Variable Name | Question Asked | Coding (if any) |
+|---|---|---|
+| ABSTAIN | Overall, what percentage of students at this college do you think consume no alcoholic beverages at all? | |
+| LIVING | Living arrangements | 1 = House/apartment/etc.<br>2 = Residence Hall<br>3 = Other |
+| STATUS | Student status: | 1 = Full-time (12+ credits)<br>2 = Part-time (1 – 11 credits) |
+| ATTITUDE | Which statement about drinking alcoholic beverages do you feel best represents your own attitude? | 1 = Drinking is never a good thing to do.<br>2 = Drinking is all right but a person should not get drunk<br>3 = Occasionally getting drunk is okay as long as it doesn't interfere with academics or other responsibilities.<br>4 = Occasionally getting drunk is okay even if it does interfere with academics or other responsibilities.<br>5 = Frequently getting drunk is okay if that's what the individual wants to do. |
+| DRINK | How often do you typically consume alcohol (including beer, wine, wine coolers, liquor, and mixed drinks)? | 0 = Never<br>1 = 1 – 2 times/year<br>2 = 6 times/year<br>3 = Once/month<br>4 = Twice/month<br>5 = Once/week<br>6 = 3 times/week<br>7 = 5 times/week<br>8 = Every day |
+
+What are the levels of measurement for:
+a) ABSTAIN
+b) LIVING
+c) STATUS
+d) ATTITUDE
+e) DRINK
+
+<details>
+<summary>### Solution</summary>
+
+a) Continuous
+b) Nominal
+c) Dichotomous
+d) Ordinal
+e) Ordinal
+
+</details>
+
+---
+
+### Exercise 1.8
+
+Exercise 1.8 includes descriptions of some of the variables in the Framingham data set. The Framingham data set is based on a longitudinal study investigating factors relating to coronary heart disease.
+
+For each variable described from the Framingham data set, indicate the measure type.
+
+a) **CURSMOKE1** indicates whether or not the individual smoked cigarettes in 1956. It is coded so that 0 represents no and 1 represents yes.
+
+b) **CIGPDAY1** indicates the number of cigarettes the individual smoked per day, on average, in 1956.
+
+c) **BMI1** indicates the body mass index of the individual in 1956.
+
+d) **SYSBP1 and DIABP1** indicate the systolic and diastolic blood pressures, respectively, of the individuals in 1956. Blood is carried from the heart to all parts of your body in vessels called arteries. Blood pressure is the force of the blood pushing against the walls of the arteries. Each time the heart beats (about 60-70 times a minute at rest), it pumps out blood into the arteries. Your blood pressure is at its highest when the heart beats, pumping the blood. This is called systolic pressure. When the heart is at rest, between beats, your blood pressure falls. This is the diastolic pressure. Blood pressure is always given as these two numbers, the systolic and diastolic pressures. Both are important. Usually they are written one above or before the other, such as 120/80 mmHg. The top number is the systolic and the bottom the diastolic. When the two measurements are written down, the systolic pressure is the first or top number, and the diastolic pressure is the second or bottom number (for example, 120/80). If your blood pressure is 120/80, you say that it is "120 over 80." Blood pressure changes during the day. It is lowest as you sleep and rises when you get up. It also can rise when you are excited, nervous, or active. Still, for most of your waking hours, your blood pressure stays pretty much the same when you are sitting or standing still. Normal values of blood pressure should be lower than 120/80. When the level remains too high, for example, 140/90 or higher, the individual is said to have high blood pressure. With high blood pressure, the heart works harder, your arteries take a beating, and your chances of a stroke, heart attack, and kidney problems are greater.
+
+<details>
+<summary>### Solution</summary>
+
+a) Dichotomous
+b) Continuous
+c) Continuous
+d) Continuous
+
+</details>
+
+---
+
+### Exercise 1.9
+
+Exercise 1.9 includes descriptions of some of the variables in the NELS data set. The NELS data set is a subset of a data set collected by the National Center for Educational Statistics. They conducted a longitudinal study investigating factors relating to educational outcomes.
+
+Read the description of the following variables from the NELS data set and indicate their measure type.
+
+a) **GENDER**. Classifies the student as either male or female, where 0 = "male" and 1 = "female."
+
+b) **URBAN**. Classifies the type of environment in which each student lives where 1 = "Urban," 2 = "Suburban," and 3 = "Rural."
+
+c) **SCHTYP8**. Classifies the type of school each student attended in eighth grade where 1 = "Public," 2 = "Private, Religious," and 3 = "Private, Non-Religious."
+
+d) **TCHERINT**. Classifies student agreement with the statement "My teachers are interested in students" using the Likert scale 1 = "strongly agree," 2 = "agree," 3 = "disagree," and 4 = "strongly disagree."
+
+e) **NUMINST**. Gives the number of post-secondary institutions the student attended.
+
+f) **ACHRDG08**. Gives a score for the student's performance in eighth grade on a standardized test of reading achievement. Actual values range from 36.61 to 77.2, from low to high achievement.
+
+g) **SES**. Gives a score representing the socioeconomic status (SES) of the student, a composite of father's education level, mother's education level, father's occupation, mother's occupation, and family income. Values range from 0 to 35, from low to high SES.
+
+h) **SLFCNC12**. Gives a score for student self-concept in twelfth grade. Values range from 0 to 43. Self-concept is defined as a person's self-perceptions, or how a person feels about himself or herself. Four items comprise the self-concept scale in the NELS questionnaire: I feel good about myself; I feel I am a person of worth, the equal of other people; I am able to do things as well as most other people; and, on the whole, I am satisfied with myself. A self-concept score, based on the sum of scores on each of these items, is used to measure self-concept in the NELS study. Higher scores associate with higher self-concept and lower scores associate with lower self-concept.
+
+i) **SCHATTRT**. Gives the average daily attendance rate for the school.
+
+j) **ABSENT12**. Classifies the number of times missed school. Assigns 0 to Never, 1 to 1–2 times, 2 to 3–6 times, etc.
+
+<details>
+<summary>### Solution</summary>
+
+a) Dichotomous
+
+b) Nominal or Ordinal, depending on interpretation
+
+c) Nominal
+
+d) Continuous (Likert scales are often treated as scale/continuous)
+
+e) Continuous
+
+f) Continuous
+
+g) Continuous
+
+h) Continuous
+
+i) Continuous
+
+j) Ordinal
+
+</details>
+
+---
+
+### Exercise 1.10
+
+Open Jamovi and the NELS data set. If it is not already selected, click the "Variable" tag on the top.
+
+Answer the following questions:
+
+1. What is the first variable in the NELS data set?
+2. What is the second variable in the data set and what is its Description?
+3. What are the levels for this variable? That is, how is the variable coded?
+4. What is the measure type entered for this variable in Jamovi?
+5. What is the Description for the variable FAMSIZE?
+6. Why are there no levels (i.e., code) for this variable?
+7. What is the measure type entered for this variable in Jamovi?
+8. How many variables are there in the NELS data set?
+
+
+<details>
+<summary>### Solution</summary>
+
+1. ID.
+2. ADVMAT8. The Description is "Advanced Math Taken in Eighth Grade." This is a dichotomous variable indicating whether or not a student took advanced math in eighth grade.
+3. "no" is coded 0, "yes" is coded 1, and missing data are coded 8.
+4. The measure type has been entered as nominal. The variable is dichotomous.
+5. Family Size.
+6. The variable gives the family size or the number of members in the person's household. This variable is naturally numeric, so it does not require coded levels to explain what the numbers represent.
+7. The measure type is listed as continuous, which refers to continuous variables.
+8. 48.
+
+</details>
+
+---
+
+### Exercise 1.11
+
+Open Jamovi and the NELS data set. If it is not already selected, click the "Data" tag on the top.  Use the Data View window to answer the following questions about the particular values that different individual students attain in the NELS data set.
+
+1. How many people are in the family (FAMSIZE) of the first student (ID=1) in the NELS data set?
+2. Did the first student in the NELS data set (ID = 1) take advanced math in eighth grade (ADVMATH8)?
+3. Did the second student in the NELS data set (ID = 2) take advanced math in eighth grade (ADVMATH8)?
+4. How many people are in the NELS data set?
+
+<details>
+<summary>### Solution</summary>
+
+1. 4.
+2. Yes.
+3. We do not know. The second student's information is missing from the data set.
+4. 500.
+</details>
+
+
