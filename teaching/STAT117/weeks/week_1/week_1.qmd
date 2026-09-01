@@ -21,9 +21,9 @@ format: html
 
 ## Thursday, Sep 3 (in-person)
 
-We should finish Chapter 1 today and will get started will Chapter 2.
+We will finish Chapter 1 today and get started with Chapter 2.
 
-As a reminder, when we finish Chapter 1, you should finish the Chapter 1 homework questions for additional practice. Recall that homework is not collected in this class.
+As a reminder, when we finish Chapter 1, you should do [Chapter 1 homework](../../homework/chapter_1.html){target="_blank"} for additional practice.  Recall that homework is not collected in this class.
 
 
 
