@@ -4,14 +4,12 @@ format: html
 ---
 
 ## Overview
-
-This week we will continue with Chapter 2.
-
  - Sep 8 (Tuesday): asynchronous lecture
- - Due at the beginning of Thursday's class: Assignment 1
- - Sep 10 (Thursday): in-person lecture, quiz 2
+ - Due on Moodle at the beginning of Thursday's class (9/10): **Assignment 1**
+ - Sep 10 (Thursday): in-person lecture, **quiz 2**
 
 
+<!-- 
 ## Tuesday, Sep 8 (asynchronous)
 
 We are not meeting in person today.  I won't be on campus as I'll be travelling, but you can reach me by email, or schedule a meeting with me on Wednesday.  Your need to finish the following tasks on your own before Thursday's class.
@@ -31,3 +29,5 @@ We are not meeting in person today.  I won't be on campus as I'll be travelling,
 
 ## Thursday, Sep 10 (in-person)
 
+
+-->

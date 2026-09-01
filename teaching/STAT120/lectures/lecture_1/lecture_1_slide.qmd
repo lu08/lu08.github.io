@@ -108,6 +108,7 @@ Exercise: calculate the following in R
 # 3. sqrt(12) / log(8 - 4.37)
 sqrt(12) / log(8 - 4.37)
 ```
+
 </details>
 
 

@@ -7,12 +7,15 @@ You can find all course documents here as a reference page.  Please refer to the
 ## Lecture slides
 
 - [Week 1](all_lectures/chapter_1_slide.html)
-- [Week 2](all_lectures/chapter_2_slide.html)
+
 
 ## Homework
 
-- [Homework](homework/index.qmd)
+- [Chapter 1](homework/chapter_1.qmd)
 
+
+<!--
 ## Assignments
 
 - [Assignment 1](assignment/assignment_1.qmd)
+-->
