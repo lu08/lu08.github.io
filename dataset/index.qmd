@@ -36,6 +36,20 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 
 - [NELS.sav](NELS.sav){download="NELS.sav"}
+- [Blood.sav](Blood.sav){download="Blood.sav"}
+- [Currency.sav](Currency.sav){download="Currency.sav"}
+- [Framingham.sav](Framingham.sav){download="Framingham.sav"}
+- [Hamburg.sav](Hamburg.sav){download="Hamburg.sav"}
+- [Icecream.sav](Icecream.sav){download="Icecream.sav"}
+- [Impeach.sav](Impeach.sav){download="Impeach.sav"}
+- [Learndis.sav](Learndis.sav){download="Learndis.sav"}
+- [Marijuana.sav](Marijuana.sav){download="Marijuana.sav"}
+- [States.sav](States.sav){download="States.sav"}
+- [Temp.sav](Temp.sav){download="Temp.sav"}
+- [Wages.sav](Wages.sav){download="Wages.sav"}
+- [basketball.sav](basketball.sav){download="basketball.sav"}
+- [mandex.sav](mandex.sav){download="mandex.sav"}
+- [stepping.sav](stepping.sav){download="stepping.sav"}
 
 
 ### Other SPSS data

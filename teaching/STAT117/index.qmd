@@ -2,6 +2,6 @@
 title: "STAT117 - Introduction to Statistics"
 ---
 
-Welcome to the course site. Use the sidebar to navigate within this course. Most recently, the course was taught at Drew University (Madison, NJ) in Fall 2026.
+Welcome to the course site of STAT117 - Introduction to Statistics. Use the sidebar to navigate within this course.
 
 **Description.** Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.
