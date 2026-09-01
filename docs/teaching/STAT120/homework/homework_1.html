@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../stat120.css">
@@ -173,6 +237,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/homework_1.html">Homework 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">STAT120 - Statistical Computing in R</h1>
+<p class="subtitle lead">Homework 1</p>
 </div>
 
 
@@ -189,9 +254,340 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Assignment details go here.</p>
+<p>Download <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> locally on your computer and install them. Speak to me as soon as possible if you have any questions.</p>
+<section id="part-i" class="level2">
+<h2 class="anchored" data-anchor-id="part-i">Part I</h2>
+<ol type="1">
+<li>Create and store a vector of values starting at 1 and ending at 103, with the values increasing in increments of 3.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>,<span class="at">to=</span><span class="dv">103</span>,<span class="at">by=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="2" type="1">
+<li>Add 4 to each of the values in the vector from problem 1. Store the new vector.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> v1<span class="sc">+</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="3" type="1">
+<li>Remove the 8th value from the vector in problem 2 and store the new vector.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> v2[<span class="sc">-</span><span class="dv">8</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="4" type="1">
+<li>Add the values 50 and 39 to the end of the vector in problem 3 and store the new vector.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>(v3,<span class="dv">50</span>,<span class="dv">39</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="5" type="1">
+<li>Find the sum of the elements of the vector from problem 4. Note: You should get 2,023.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(v4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2023</code></pre>
+</div>
+</div>
+</details>
+<ol start="6" type="1">
+<li>Using an <code>R</code> function, find the length of the vector in problem 5.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36</code></pre>
+</div>
+</div>
+</details>
+<ol start="7" type="1">
+<li>Create a character vector of length 3, <code>color.list</code>, that stores three colors: <code>deepskyblue</code>, <code>hotpink</code>, and <code>seagreen</code> (in this order).</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>color.list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'deepskyblue'</span>,<span class="st">'hotpink'</span>,<span class="st">'seagreen'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="8" type="1">
+<li>Create a numeric vector of length 100, <code>color.index</code>, that looks like <span class="math inline">\((1,2,1,2,1,2,\ldots)\)</span>. Hint: use the <code>rep()</code> function to repeat the vector <span class="math inline">\((1,2)\)</span> 50 times.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>color.index <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="9" type="1">
+<li>Use the vector from problem 8 to <em>index</em> the color vector in problem 7 and create a new vector that looks like (‘deepskyblue’, ‘hotpink’, ‘deepskyblue’, ‘hotpink’, …)</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mycol <span class="ot">&lt;-</span> color.list[color.index]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mycol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+  [6] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [11] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [16] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [21] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [26] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [31] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [36] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [41] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [46] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [51] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [56] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [61] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [66] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [71] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [76] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [81] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [86] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    
+ [91] "deepskyblue" "hotpink"     "deepskyblue" "hotpink"     "deepskyblue"
+ [96] "hotpink"     "deepskyblue" "hotpink"     "deepskyblue" "hotpink"    </code></pre>
+</div>
+</div>
+</details>
+<ol start="10" type="1">
+<li>Create a numeric sequence <code>x</code> that goes from 1 to 100; create another numeric sequence <code>y</code> that repeats the value 8 for 100 times. Use <code>R</code> to check that both <code>x</code> and <code>y</code> have lengths of 100.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">8</span>,<span class="dv">100</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+</div>
+</details>
+<ol start="11" type="1">
+<li>Use the vectors in problem 10 to perform the following calculation: <span class="math display">\[{1\times8 + 2\times8 + 3\times8 + \ldots + 100 \times 8}.\]</span> You should get <span class="math inline">\(40400\)</span>.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 40400</code></pre>
+</div>
+</div>
+</details>
+<ol start="12" type="1">
+<li>Create a scatterplot using the vectors in problem 10. Vector <code>x</code> should be on the x axis; vector <code>y</code> should be on the y axis. Set the color to the color vector you created in problem 9.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">col=</span>mycol)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<ol start="13" type="1">
+<li>Do the scatterplot from problem 12 again, but add these arguments: set <code>xlab</code> and <code>ylab</code> to <code>NA</code>, set <code>type</code> to <code>"h"</code>, and set <code>ylim</code> to <code>c(5, 9)</code>. Pay attention to what each argument does.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">col=</span>mycol,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">type=</span><span class="st">'h'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">9</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="part-ii" class="level1">
+<h1>Part II</h1>
+<p>In this part, we’ll use the built-in dataset <code>mtcars</code> to practice subsetting. Run the dataset to print it out and run <code>?mtcars</code> to bring up the help page, so that you know what the variables are.</p>
+<p>As you see, the dataset contains 11 variables (<code>mpg</code>, <code>cyl</code>, <code>disp</code>, etc.), each of which is a numeric vector. To get one of these vectors, such as <code>mpg</code>, you can use <code>mtcars$mpg</code>. Alternatively, run <code>attach(mtcars)</code> first and then use <code>mpg</code> directly. In other words, you can use either syntax below to calculate the average <code>mpg</code>. If you decide to attach the dataset, you only need to do it once at the beginning.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">### OR </span><span class="al">###</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="1">
+<li>Run the following code, which creates a new character vector, <code>model</code>, that stores the models of the cars in the dataset.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">row.names</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Print out <code>model</code> and <code>am</code> (transmission type) of the first car.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>model[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mazda RX4"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>am[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</details>
+<ol start="3" type="1">
+<li>Print out <code>model</code> and <code>am</code> of the first, second, and 10th car.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>model[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">10</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mazda RX4"     "Mazda RX4 Wag" "Merc 280"     </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>am[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">10</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 1 0</code></pre>
+</div>
+</div>
+</details>
+<ol start="4" type="1">
+<li>Print out <code>am</code> and <code>mpg</code> of “Toyota Corona”.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>am[model<span class="sc">==</span><span class="st">'Toyota Corona'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mpg[model<span class="sc">==</span><span class="st">'Toyota Corona'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.5</code></pre>
+</div>
+</div>
+</details>
+<ol start="5" type="1">
+<li>Print <code>model</code> for all automatic (<code>am</code>) cars.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>model[am<span class="sc">==</span><span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
+ [4] "Duster 360"          "Merc 240D"           "Merc 230"           
+ [7] "Merc 280"            "Merc 280C"           "Merc 450SE"         
+[10] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
+[13] "Lincoln Continental" "Chrysler Imperial"   "Toyota Corona"      
+[16] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
+[19] "Pontiac Firebird"   </code></pre>
+</div>
+</div>
+</details>
+<ol start="6" type="1">
+<li>Print <code>model</code> for all cars whose weight (<code>wt</code>) is larger than 5.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>model[wt<span class="sc">&gt;</span><span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cadillac Fleetwood"  "Lincoln Continental" "Chrysler Imperial"  </code></pre>
+</div>
+</div>
+</details>
+<ol start="7" type="1">
+<li>Print <code>model</code> and <code>mpg</code> for all cars whose <code>mpg</code> is smaller than 16.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">model =</span> model[mpg<span class="sc">&lt;</span><span class="dv">16</span>], <span class="at">mpg =</span> mpg[mpg<span class="sc">&lt;</span><span class="dv">16</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 model  mpg
+1           Duster 360 14.3
+2          Merc 450SLC 15.2
+3   Cadillac Fleetwood 10.4
+4  Lincoln Continental 10.4
+5    Chrysler Imperial 14.7
+6     Dodge Challenger 15.5
+7          AMC Javelin 15.2
+8           Camaro Z28 13.3
+9       Ford Pantera L 15.8
+10       Maserati Bora 15.0</code></pre>
+</div>
+</div>
+</details>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

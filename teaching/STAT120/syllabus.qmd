@@ -10,7 +10,7 @@ Download the pdf version [here](FA2026_STAT120_syllabus_Lu.pdf){download="STAT12
 
 Instructor: Prof. Yi Lu &nbsp;&nbsp; Email: ylu1@drew.edu &nbsp;&nbsp; Office: HS 314\
 Lectures: TR 2:40 - 3:55, HS 308 (in-person)\
-Office Hours: R 12-2 or by appt (in-person HS314 or via Google Meet; link)
+Office Hours: R 12-2 (in-person HS314 or via [Google Meet](https://meet.google.com/osa-nsvf-dpk){target="_blank"}); or [by appointment](https://calendar.app.google/bSYSzjv5v5ybxvLt7){target="_blank"}
 
 **Description.** Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.
 

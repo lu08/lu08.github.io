@@ -1,0 +1,144 @@
+## Part IV
+
+1. Suppose the following are the final high school GPAs of a group of
+college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90.  Create a vector that stores these values in the order specified.  Choose a variable name that's descriptive but relatively short.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+library(tidyverse)
+gpa <- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)
+```
+</details>
+
+
+2. For the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)
+<details>
+<summary>Show solution</summary>
+
+```{r}
+which(gpa>3.5)
+```
+</details>
+
+
+3. Use `R` to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+length(gpa)
+max(gpa)
+which(gpa==max(gpa))
+```
+</details>
+
+4. Find the average GPA for this group of students.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+mean(gpa)
+```
+</details>
+
+
+5. Suppose the following are the SAT quantitative scores for the same
+group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, 
+respectively.  Create another vector that stores these SAT scores in the order 
+provided.  Double check that it has the right length.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+sat_quant <- c(640, 680, 790, 730, 580, 560, 670, 450, 650, 490)
+length(sat_quant)
+```
+</details>
+
+6. Print out the SAT quantitative scores for the 2nd and 3rd students. 
+<details>
+<summary>Show solution</summary>
+
+```{r}
+sat_quant[c(2,3)]
+```
+</details>
+
+
+7. Print out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type `1, 2, 3, 4, 7` anywhere in your code.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+sat_quant[gpa>3.5]
+```
+</details>
+
+
+8. Create a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1.  Note that 1 represents "male" and 0 represents "female."  Double check that it has the right length.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+gender <- c(rep(1, 3), rep(0, 5), rep(1, 2))
+length(gender)
+```
+</details>
+
+9. Find the average of the values in the gender vector you created in problem 8.  Note that this represents the proportion of males in the group.  Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1's.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+mean(gender)
+```
+</details>
+
+
+10. The respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior.  Create a *factor* vector that stores the year of students (hint: create a character vector first and convert it to factor).  Use R to double check that its type is factor.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+year <- c("Senior", "Freshman", "Sophomore", "Freshman", "Junior", "Sophomore", "Sophomore", "Freshman", "Freshman", "Senior")
+year <- as.factor(year)
+class(year)
+```
+</details>
+
+
+11. Use the **tapply** function to print out the average GPA of students by Year.  Your output should look like this.
+
+<details>
+<summary>Show solution</summary>
+
+```{r,eval=T}
+library(tidyverse)
+gpa <- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)
+year <- c("Senior", "Freshman", "Sophomore", "Freshman", "Junior", "Sophomore", "Sophomore", "Freshman", "Freshman", "Senior")
+year <- as.factor(year)
+tapply(gpa,year,mean)
+```
+</details>
+
+
+12. Store the vectors you created previously (`gpa`, `sat_quant`, `gender`, and `year`) in a data frame using the `data.frame()` function. Then, use the `group_by()` function in `tidyverse` to get the average GPA of students by year.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+df.student <- data.frame(gpa,year,sat_quant,gender)
+df.student %>% 
+  group_by(year) %>%
+  summarise(mean(gpa))
+```
+</details>
+
+
+
+

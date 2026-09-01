@@ -10,6 +10,9 @@ project:
   post-render:
     - ./render_lecture_slides.sh
 
+execute:
+  freeze: auto
+  
 website:
   title: "Yi Lu"
   navbar:

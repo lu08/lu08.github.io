@@ -9,7 +9,7 @@
 <link href="lecture_2_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Lecture 2: Tallest building</title>
+  <title>Lecture 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,72 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lecture_2_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="lecture_2_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -196,220 +130,448 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 2: Tallest building</h1>
+  <h1 class="title">Lecture 2</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section>
-<section id="export-and-import-a-dataset" class="title-slide slide level1 center">
-<h1>Export and import a dataset</h1>
+<section id="to-be-added" class="title-slide slide level1 center">
+<h1>To be added</h1>
+<!--
 
-</section>
-<section id="file-path" class="slide level2">
-<h2>File path</h2>
-<p>You need to specify the location of your file when you export or import a dataset. For simplicity:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Put the data (.csv) in the same folder as the code (.R)</span></span>
-<span id="cb1-2"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">'tallest building_2026.csv'</span>)</span>
-<span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a><span class="co"># OR #</span></span>
-<span id="cb1-5"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>In general:</p>
-<ul>
-<li>Use “/” and to navigate through folders</li>
-<li>Use “../” to go up a folder</li>
-<li>If you want to check your current folder, use (“get working directory”)</li>
-<li>(To a csv file, use )</li>
-<li>test</li>
-<li>test</li>
-<li>test</li>
-<li>test</li>
-<li>test</li>
-<li>test</li>
-<li>test 111</li>
-</ul>
-</section></section>
-<section>
-<section id="different-types-of-data-factors" class="title-slide slide level1 center">
-<h1>Different types of data; factors</h1>
 
-</section>
-<section id="types-of-data" class="slide level2">
-<h2>Types of data</h2>
-<ul>
-<li>Basic types: <strong>numeric</strong>, <strong>double</strong>, <strong>logical</strong>, <strong>character</strong>, <strong>integer</strong></li>
-<li>Use or to check</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "numeric"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">typeof</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Floors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "logical"</code></pre>
-</div>
-</div>
-</section>
-<section id="types-of-data-1" class="slide level2">
-<h2>Types of data</h2>
-<ul>
-<li>Use functions of the form to switch between different types</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span></span>
-<span id="cb10-2"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># entries in a vector are always of the same type</span></span>
-<span id="cb11-2"><a href=""></a>a<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,T,<span class="st">'red'</span>);a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "1"    "2"    "TRUE" "red" </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">class</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-</div>
-</section>
-<section id="data-modification" class="slide level2">
-<h2>Data modification</h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># Height_f is a character</span></span>
-<span id="cb15-2"><a href=""></a><span class="co"># (print out the values to check: all values are in quotation)</span></span>
-<span id="cb15-3"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_f)</span>
-<span id="cb15-4"><a href=""></a></span>
-<span id="cb15-5"><a href=""></a><span class="co"># Does not work: need to get rid of comma</span></span>
-<span id="cb15-6"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Height_f)</span>
-<span id="cb15-7"><a href=""></a></span>
-<span id="cb15-8"><a href=""></a><span class="co"># Get rid of comma</span></span>
-<span id="cb15-9"><a href=""></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, </span>
-<span id="cb15-10"><a href=""></a>     <span class="at">replacement =</span> <span class="st">''</span>,</span>
-<span id="cb15-11"><a href=""></a>     df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Putting things together…</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> </span>
-<span id="cb16-2"><a href=""></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>, df.building<span class="sc">$</span>Height_f))</span>
-<span id="cb16-3"><a href=""></a></span>
-<span id="cb16-4"><a href=""></a><span class="co"># Equivalent code with pipe operator</span></span>
-<span id="cb16-5"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> df.building<span class="sc">$</span>Height_f <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href=""></a>  <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-7"><a href=""></a>  <span class="fu">as.numeric</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>Take a look at the <strong>Floors</strong> variable. This format is difficult to work with. To parse a text using R, you need to be <em>very specific</em> about the text pattern. This is done using “regular expression” (a pattern language used to search, match, and manipulate text).</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>df.building<span class="sc">$</span>Floors </span>
-<span id="cb17-2"><a href=""></a></span>
-<span id="cb17-3"><a href=""></a>df.building <span class="ot">&lt;-</span> df.building <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href=""></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-5"><a href=""></a>    <span class="at">Floors_num =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"^</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-6"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
-<span id="cb17-7"><a href=""></a>    <span class="at">Floors_additional =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">+ )</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-8"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
-<span id="cb17-9"><a href=""></a>    <span class="at">Floors_additional_text =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">d )[^(]+(?=</span><span class="sc">\\</span><span class="st">))"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-10"><a href=""></a>      <span class="fu">str_trim</span>()</span>
-<span id="cb17-11"><a href=""></a>    )</span>
-<span id="cb17-12"><a href=""></a></span>
-<span id="cb17-13"><a href=""></a><span class="co"># double check</span></span>
-<span id="cb17-14"><a href=""></a><span class="fu">str</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="factors" class="slide level2">
-<h2>Factors</h2>
-<ul>
-<li> is entered as character (i.e., text) data</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "United Arab Emirates" "Malaysia"             "China"               
+
+
+
+
+## Exercise: tallest buildings
+- Go to https://en.wikipedia.org/wiki/List_of_tallest_buildings
+- We will only look at the top 10 tallest buildings
+  1. Create a vector that stores the Height (m) of the top 10 tallest buildings
+  1. Use R to verify that the vector you created has a length of 10 
+  1. Calculate the average Height in meters
+  1. Convert height from meters to ft and store it in a new vector
+  1. Print the values of the new vector and check that these values are the same as Height (ft) given in Wikipedia
+  1. Create corresponding vectors for the number of floors and year built for the top 10 tallest buildings
+  1. Create a vector of $\{0,1\}$'s, where 0 means the building was built in 2015 or before, and 1 means otherwise
+  1. Generate a scatterplot of Floors by Height (m), set the color to "col=year_ind+2," where "year_ind" is the indicator vector created in the last step
+  
+## 
+```yzuzixrk
+#| code-fold: true
+#| code-summary: "Show code"
+#| fig-height: 4
+#| fig-width: 4
+#| out-width: "70%"
+height_m=c(828, 632, 601, 599, 554.5, 541.3, 530, 530, 528, 508)
+height_f=height_m * 3.28
+floors=c(163, 128, 120, 115, 123, 104, 111, 98, 108, 101)
+year=c(2010, 2015, 2012, 2017, 2016, 2014, 2016, 2018, 2018, 2004)
+year.ind=as.numeric(year>2015)
+plot(height_m,floors,col=year.ind+2,main='top 10 tallest buildings in the world',
+     cex.lab=1.2,cex.axis=1.2,cex.main=1.2,pch=16)
+legend('topleft',
+       col=c(2,3),
+       pch=c(16,16),
+       legend=c('2015 and prior', '2016 and later'),cex=1.2)
+```
+
+
+# Export and import a dataset
+
+## File path
+
+You need to specify the location of your file when you export or import a dataset. For simplicity:
+
+
+::: {.cell layout-align="center"}
+
+:::
+
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+# Put the data (.csv) in the same folder as the code (.R)
+df.building <- read.csv(file='tallest building_2026.csv')
+
+# OR #
+df.building <- read.csv(file.choose())
+```
+:::
+
+
+\normalsize
+
+In general:
+
+- Use "/" and \alert{tab} to navigate through folders
+- Use "../" to go up a folder
+- If you want to check your current folder, use \alert{getwd()} ("get working directory")
+- (To \alert{export} a csv file, use \texttt{write.table()})
+- test
+- test
+- test
+- test
+- test
+- test
+- test 111
+
+# Different types of data; factors
+
+## Types of data
+
+- Basic types: **numeric**, **double**, **logical**, **character**, **integer**
+- Use \alert{typeof()} or \alert{class()} to check
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+class(df.building$Height_m)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "numeric"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(df.building$Height_m)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(df.building$Floors)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(df.building$Year > 2010)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "logical"
+```
+
+
+:::
+:::
+
+
+## Types of data
+
+- Use functions of the form \alert{as.XXX( )} to switch between different types
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$Year > 2010
+as.numeric(df.building$Year > 2010)
+```
+:::
+
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+# entries in a vector are always of the same type
+a=c(1,2,T,'red');a
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "1"    "2"    "TRUE" "red" 
+```
+
+
+:::
+
+```{.r .cell-code}
+class(a)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+:::
+
+
+## Data modification
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+:::
+
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+# Height_f is a character
+# (print out the values to check: all values are in quotation)
+class(df.building$Height_f)
+
+# Does not work: need to get rid of comma
+as.numeric(df.building$Height_f)
+
+# Get rid of comma
+gsub(pattern = ',', 
+     replacement = '',
+     df.building$Height_f)
+```
+:::
+
+
+\normalsize
+
+Putting things together...
+
+\scriptsize
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$Height_f <- 
+  as.numeric(gsub(pattern = ',', replacement = '', df.building$Height_f))
+
+# Equivalent code with pipe operator
+df.building$Height_f <- df.building$Height_f %>% 
+  gsub(pattern = ',', replacement = '') %>%
+  as.numeric()
+```
+:::
+
+
+## 
+
+Take a look at the **Floors** variable. This format is difficult to work with. To parse a text using R, you need to be *very specific* about the text pattern. This is done using "regular expression" (a pattern language used to search, match, and manipulate text).
+
+\scriptsize
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$Floors 
+
+df.building <- df.building %>%
+  mutate(
+    Floors_num = str_extract(Floors, "^\\d+") %>% 
+      as.integer(),
+    Floors_additional = str_extract(Floors, "(?<=\\(\\+ )\\d+") %>% 
+      as.integer(),
+    Floors_additional_text = str_extract(Floors, "(?<=\\d )[^(]+(?=\\))") %>% 
+      str_trim()
+    )
+
+# double check
+str(df.building)
+```
+:::
+
+
+\normalsize
+
+## Factors
+
+- \texttt{Location} is entered as character (i.e., text) data
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+class(df.building$Location)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+
+```{.r .cell-code}
+unique(df.building$Location)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] "United Arab Emirates" "Malaysia"             "China"               
  [4] "Saudi Arabia"         "South Korea"          "United States"       
  [7] "Taiwan"               "Hong Kong"            "Russia"              
 [10] "Vietnam"              "Kuwait"               "Egypt"               
-[13] "Indonesia"            "Turkey"               "Canada"              </code></pre>
-</div>
-</div>
-<ul>
-<li>We might want to treat it as a instead</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>df.building<span class="sc">$</span>Location_F <span class="ot">=</span> <span class="fu">as.factor</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="factors-1" class="slide level2">
-<h2>Factors</h2>
-<ul>
-<li>Key difference: can be treated as numbers but cannot</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 13  7  2  9  2 10 14  2  2  2 11  2  4  2 14  8 15  2  7  2  7  7  2  2  2
+[13] "Indonesia"            "Turkey"               "Canada"              
+```
+
+
+:::
+:::
+
+
+- We might want to treat it as a \alert{factor} instead
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$Location_F = as.factor(df.building$Location)
+```
+:::
+
+
+## Factors
+
+- Key difference: \alert{factors} can be treated as numbers but \alert{characters} cannot
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+as.numeric(df.building$Location_F)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] 13  7  2  9  2 10 14  2  2  2 11  2  4  2 14  8 15  2  7  2  7  7  2  2  2
 [26] 14  2  2 14  2 14 14 13 14 14  2  2  2 13  6  4 10  2  2  2  3  2  2 13  2
 [51]  2  2 14  9  2  2  5  2 13 14 13 13  2  2  2  4  8  2  2  2 13  2  2  4 14
-[76] 14 13  2  2  2  2 13 13  2  2 13 13 13 13  2  2  8 12 13  1  2  2  2</code></pre>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[76] 14 13  2  2  2  2 13 13  2  2 13 13 13 13  2  2  8 12 13  1  2  2  2
+```
+
+
+:::
+:::
+
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+as.numeric(df.building$Location)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
 [26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
 [51] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
-[76] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA</code></pre>
-</div>
-</div>
-</section>
-<section id="useful-functions-for-factors" class="slide level2">
-<h2>Useful functions for factors</h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] United Arab Emirates Malaysia             China               
+[76] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+```
+
+
+:::
+:::
+
+
+## Useful functions for factors
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+unique(df.building$Location_F)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] United Arab Emirates Malaysia             China               
  [4] Saudi Arabia         South Korea          United States       
  [7] Taiwan               Hong Kong            Russia              
 [10] Vietnam              Kuwait               Egypt               
 [13] Indonesia            Turkey               Canada              
-15 Levels: Canada China Egypt Hong Kong Indonesia Kuwait Malaysia ... Vietnam</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">levels</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "Canada"               "China"                "Egypt"               
+15 Levels: Canada China Egypt Hong Kong Indonesia Kuwait Malaysia ... Vietnam
+```
+
+
+:::
+
+```{.r .cell-code}
+levels(df.building$Location_F)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] "Canada"               "China"                "Egypt"               
  [4] "Hong Kong"            "Indonesia"            "Kuwait"              
  [7] "Malaysia"             "Russia"               "Saudi Arabia"        
 [10] "South Korea"          "Taiwan"               "Turkey"              
-[13] "United Arab Emirates" "United States"        "Vietnam"             </code></pre>
-</div>
-</div>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<ul>
-<li>Factors are often used as a . allows you to analyze data .</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Year,df.building<span class="sc">$</span>Location_F,median)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              Canada                China                Egypt 
+[13] "United Arab Emirates" "United States"        "Vietnam"             
+```
+
+
+:::
+:::
+
+
+## 
+
+- Factors are often used as a \alert{grouping variable}. \texttt{tapply( )} allows you to analyze data \alert{by groups}.
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+tapply(df.building$Year,df.building$Location_F,median)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+              Canada                China                Egypt 
               2026.0               2019.0               2023.0 
            Hong Kong            Indonesia               Kuwait 
               1997.5               2022.0               2011.0 
@@ -418,11 +580,20 @@
          South Korea               Taiwan               Turkey 
               2018.0               2004.0               2024.0 
 United Arab Emirates        United States              Vietnam 
-              2012.5               2017.0               2018.0 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Location_F,mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              Canada                China                Egypt 
+              2012.5               2017.0               2018.0 
+```
+
+
+:::
+
+```{.r .cell-code}
+tapply(df.building$Height_m,df.building$Location_F,mean)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+              Canada                China                Egypt 
             351.4000             412.6417             393.8000 
            Hong Kong            Indonesia               Kuwait 
             409.3250             382.9000             412.6000 
@@ -431,21 +602,34 @@ United Arab Emirates        United States              Vietnam
          South Korea               Taiwan               Turkey 
             483.0500             508.0000             352.0000 
 United Arab Emirates        United States              Vietnam 
-            400.9500             423.9000             461.2000 </code></pre>
-</div>
-</div>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="co"># OR #</span></span>
-<span id="cb35-2"><a href=""></a>df.building <span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href=""></a>  <span class="fu">group_by</span>(Location_F) <span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href=""></a>  <span class="fu">summarise</span>(<span class="fu">median</span>(Year), <span class="fu">mean</span>(Height_m), <span class="fu">length</span>(Year))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 15 × 4
+            400.9500             423.9000             461.2000 
+```
+
+
+:::
+:::
+
+
+## 
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+# OR #
+df.building %>%
+  group_by(Location_F) %>%
+  summarise(median(Year), mean(Height_m), length(Year))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 15 × 4
    Location_F           `median(Year)` `mean(Height_m)` `length(Year)`
-   &lt;fct&gt;                         &lt;dbl&gt;            &lt;dbl&gt;          &lt;int&gt;
+   <fct>                         <dbl>            <dbl>          <int>
  1 Canada                        2026              351.              1
  2 China                         2019              413.             48
  3 Egypt                         2023              394.              1
@@ -460,88 +644,154 @@ United Arab Emirates        United States              Vietnam
 12 Turkey                        2024              352               1
 13 United Arab Emirates          2012.             401.             16
 14 United States                 2017              424.             12
-15 Vietnam                       2018              461.              1</code></pre>
-</div>
-</div>
-</section>
-<section id="useful-functions-for-factors-1" class="slide level2">
-<h2>Useful functions for factors</h2>
-<ul>
-<li>Plotting with as a character vector is not easy</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location,df.building<span class="sc">$</span>Height_m) <span class="co">#error!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Plotting with :</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb38-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F) <span class="co">#bar graph</span></span>
-<span id="cb38-3"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F,df.building<span class="sc">$</span>Height_m)  <span class="co">#boxplots by Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+15 Vietnam                       2018              461.              1
+```
 
-</div>
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
-<section>
-<section id="from-vector-to-data-data-frames" class="title-slide slide level1 center">
-<h1>From vector to data: data frames</h1>
 
-</section>
-<section id="data-frame" class="slide level2">
-<h2>Data frame</h2>
-<p>In most cases, datasets in R are stored as a </p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="fu">class</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "data.frame"</code></pre>
-</div>
-</div>
-<ul>
-<li> requires two indices (row, column)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a>df.building[<span class="dv">1</span>,<span class="dv">2</span>] <span class="co"># first row, second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Burj Khalifa"</code></pre>
-</div>
-</div>
-<ul>
-<li>Easier: each in a data frame corresponds to a column (i.e., a variable); use to get the component</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>df.building<span class="sc">$</span>Name[<span class="dv">1</span>] <span class="co"># name of first building</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="useful-functions" class="slide level2">
-<h2>Useful functions</h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="fu">names</span>(df.building) <span class="co"># variable names</span></span>
-<span id="cb44-2"><a href=""></a><span class="fu">dim</span>(df.building) <span class="co"># dimension (row, column)</span></span>
-<span id="cb44-3"><a href=""></a><span class="fu">nrow</span>(df.building) <span class="co"># number of rows</span></span>
-<span id="cb44-4"><a href=""></a><span class="fu">str</span>(df.building) <span class="co"># summary information</span></span>
-<span id="cb44-5"><a href=""></a><span class="fu">head</span>(df.building) <span class="co"># first few rows</span></span>
-<span id="cb44-6"><a href=""></a><span class="fu">tail</span>(df.building) <span class="co"># last few rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exercise-set-1" class="slide level2">
-<h2>Exercise set 1</h2>
-<ul>
-<li><p>Print out the names of the first 5 buildings</p></li>
-<li><p>Calculate the average height in meters of the first 5 buildings (should get 667.8)</p></li>
-<li><p>Create a new vector, <span class="math inline">\(\texttt{ft.per.floor}\)</span>, by height (ft) / number of floors</p></li>
-</ul>
-<p>To to an existing data frame </p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a>df.building<span class="sc">$</span>ft.per.floor<span class="ot">=</span>ft.per.floor</span>
-<span id="cb45-2"><a href=""></a><span class="co"># OR </span></span>
-<span id="cb45-3"><a href=""></a>df.building[<span class="st">'ft.per.floor'</span>]<span class="ot">=</span>ft.per.floor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Calculate the average <span class="math inline">\(\texttt{ft.per.floor}\)</span> of buildings by Location</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stdout">
-<pre><code>              Canada                China                Egypt 
+:::
+:::
+
+
+## Useful functions for factors
+
+- Plotting with \texttt{Location} as a character vector is not easy
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+plot(df.building$Location,df.building$Height_m) #error!
+```
+:::
+
+
+- Plotting with \texttt{Location\_F}:
+
+\scriptsize
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+par(mfrow=c(1,2))
+plot(df.building$Location_F) #bar graph
+plot(df.building$Location_F,df.building$Height_m)  #boxplots by Location
+```
+
+::: {.cell-output-display}
+![](lecture_2_slide_files/figure-revealjs/unnamed-chunk-18-1.png){fig-align='center' width=100%}
+:::
+:::
+
+
+# From vector to data: data frames
+
+## Data frame
+
+In most cases, datasets in R are stored as a \alert{data frame}
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+class(df.building)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "data.frame"
+```
+
+
+:::
+:::
+
+
+- \alert{Subseting} requires two indices (row, column)
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building[1,2] # first row, second column
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "Burj Khalifa"
+```
+
+
+:::
+:::
+
+
+- Easier: each \alert{component} in a data frame corresponds to a column (i.e., a variable); use \alert{\$} to get the component
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$Name[1] # name of first building
+```
+:::
+
+
+## Useful functions
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+names(df.building) # variable names
+dim(df.building) # dimension (row, column)
+nrow(df.building) # number of rows
+str(df.building) # summary information
+head(df.building) # first few rows
+tail(df.building) # last few rows
+```
+:::
+
+
+## Exercise set 1
+
+\small
+
+- Print out the names of the first 5 buildings
+
+- Calculate the average height in meters of the first 5 buildings (should get 667.8)
+
+- Create a new vector, $\texttt{ft.per.floor}$, by height (ft) / number of floors
+
+
+::: {.cell layout-align="center"}
+
+:::
+
+
+To \alert{add a variable} to an existing data frame \small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building$ft.per.floor=ft.per.floor
+# OR 
+df.building['ft.per.floor']=ft.per.floor
+```
+:::
+
+
+- Calculate the average $\texttt{ft.per.floor}$ of buildings by Location
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output .cell-output-stdout}
+
+```
+              Canada                China                Egypt 
             10.87736             16.39246             16.77922 
            Hong Kong            Indonesia               Kuwait 
             15.63356             16.74667             16.92500 
@@ -550,109 +800,136 @@ United Arab Emirates        United States              Vietnam
          South Korea               Taiwan               Turkey 
             14.07748             16.50495             19.57627 
 United Arab Emirates        United States              Vietnam 
-            15.15999             16.90919             18.67901 </code></pre>
-</div>
-</div>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<ul>
-<li>Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)</li>
-</ul>
+            15.15999             16.90919             18.67901 
+```
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section></section>
-<section>
-<section id="matrix" class="title-slide slide level1 center">
-<h1>Matrix</h1>
 
-</section>
-<section id="matrix-1" class="slide level2">
-<h2>Matrix</h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>df.building.matrix<span class="ot">=</span><span class="fu">as.matrix</span>(df.building)</span>
-<span id="cb47-2"><a href=""></a><span class="fu">class</span>(df.building.matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "matrix" "array" </code></pre>
-</div>
-</div>
-<ul>
-<li>$ doesn’t work for getting variables from a matrix</li>
-<li>Subsetting can be done using square bracket: </li>
-<li>Variable names are now </li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">colnames</span>(df.building.matrix)</span>
-<span id="cb49-2"><a href=""></a><span class="fu">dim</span>(df.building.matrix) </span>
-<span id="cb49-3"><a href=""></a>df.building.matrix[<span class="dv">1</span>,<span class="dv">3</span>] <span class="co">#first row, third column</span></span>
-<span id="cb49-4"><a href=""></a>df.building.matrix[<span class="dv">1</span>,] <span class="co">#information for the first row</span></span>
-<span id="cb49-5"><a href=""></a>df.building.matrix[,<span class="dv">2</span>] <span class="co">#information for the second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="matrix-2" class="slide level2">
-<h2>Matrix</h2>
-<ul>
-<li>All entries in are converted to characters</li>
-<li>This is because </li>
-<li>Matrices are more useful for storing only numeric values</li>
-<li>In comparison: recall that a data frame allows variables to have different types</li>
-</ul>
-</section></section>
-<section>
-<section id="a-more-general-r-object-list" class="title-slide slide level1 center">
-<h1>A more general R object: list</h1>
+:::
+:::
 
-</section>
-<section id="list" class="slide level2 scrollable">
-<h2>List</h2>
-<ul>
-<li>Suppose we also want to store these information</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>sample.size <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df.building)</span>
-<span id="cb50-2"><a href=""></a>variables <span class="ot">&lt;-</span> <span class="fu">names</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>We have the following <strong>R objects</strong>
-<ol type="1">
-<li><span class="math inline">\(\texttt{df.building}\)</span>: a <span class="math inline">\(61 \times 9\)</span> data frame</li>
-<li><span class="math inline">\(\texttt{sample.size}\)</span>: a numeric value</li>
-<li><span class="math inline">\(\texttt{variables}\)</span>: a character vector of size <span class="math inline">\(9\)</span></li>
-</ol></li>
-<li>Q: What if we want to store all three objects in one R object?</li>
-</ul>
-</section>
-<section id="list-1" class="slide level2">
-<h2>List</h2>
-<ul>
-<li>A: Create a with three components</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>list.building <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data=</span>df.building,</span>
-<span id="cb51-2"><a href=""></a>               <span class="at">sample.size=</span>sample.size,</span>
-<span id="cb51-3"><a href=""></a>               <span class="at">variables=</span>variables)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Note: if a name is not provided for a component, it will be indexed by number</li>
-<li>List is very general: each component can be of different length or type</li>
-<li>Use to extract any component</li>
-<li>Try to print out each of the component to double check</li>
-</ul>
-</section>
-<section id="list-2" class="slide level2">
-<h2>List</h2>
-<ul>
-<li>Another way to extract component: square bracket
-<ul>
-<li><span class="math inline">\(\texttt{list.building[`COMPONENT']}\)</span> is identical to <span class="math inline">\(\texttt{list.building\$COMPONENT}\)</span></li>
-</ul></li>
-<li>Benefit of using <span class="math inline">\(\$\)</span>: no need to spell; use tab</li>
-<li>Benefit of using <span class="math inline">\([\texttt{" "}]\)</span>: can return more than one components in a more automated fashion</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>TORETURN<span class="ot">=</span><span class="fu">c</span>(<span class="st">'variables'</span>,<span class="st">'sample.size'</span>)</span>
-<span id="cb52-2"><a href=""></a>list.building[TORETURN]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$variables
+
+## 
+
+- Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](lecture_2_slide_files/figure-revealjs/unnamed-chunk-26-1.png){fig-align='center' width=50%}
+:::
+:::
+
+
+# Matrix
+
+## Matrix
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+df.building.matrix=as.matrix(df.building)
+class(df.building.matrix)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "matrix" "array" 
+```
+
+
+:::
+:::
+
+
+- \$ doesn't work for getting variables from a matrix
+- Subsetting can be done using square bracket: \textbf{matrix[row,column]}
+- Variable names are now \textbf{column names}
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+colnames(df.building.matrix)
+dim(df.building.matrix) 
+df.building.matrix[1,3] #first row, third column
+df.building.matrix[1,] #information for the first row
+df.building.matrix[,2] #information for the second column
+```
+:::
+
+
+## Matrix
+
+- All entries in \texttt{df.building.matrix} are converted to characters
+- This is because \alert{entries in a matrix must have the same type}
+- Matrices are more useful for storing only numeric values
+- In comparison: recall that a data frame allows variables to have different types
+
+# A more general R object: list
+
+## List
+
+- Suppose we also want to store these information
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+sample.size <- nrow(df.building)
+variables <- names(df.building)
+```
+:::
+
+
+- We have the following **R objects**
+  1.  $\texttt{df.building}$: a $61 \times 9$ data frame
+  2.  $\texttt{sample.size}$: a numeric value
+  3.  $\texttt{variables}$: a character vector of size $9$
+- Q: What if we want to store all three objects in one R object?
+
+## List
+
+- A: Create a \alert{List} with three components
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+list.building <- list(data=df.building,
+               sample.size=sample.size,
+               variables=variables)
+```
+:::
+
+
+- Note: if a name is not provided for a component, it will be indexed by number
+- List is very general: each component can be of different length or type
+- Use \alert{\$} to extract any component
+- Try \alert{list.building\$...} to print out each of the component to double check
+
+## List
+
+- Another way to extract component: square bracket
+  - $\texttt{list.building[`COMPONENT']}$ is identical to $\texttt{list.building\$COMPONENT}$
+- Benefit of using $\$$: no need to spell; use tab
+- Benefit of using $[\texttt{" "}]$: can return more than one components in a more automated fashion
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+TORETURN=c('variables','sample.size')
+list.building[TORETURN]
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$variables
  [1] "Rank"                   "Name"                   "Height_m"              
  [4] "Height_f"               "Floors"                 "City"                  
  [7] "Location"               "Year"                   "Comments"              
@@ -660,304 +937,544 @@ United Arab Emirates        United States              Vietnam
 [13] "Location_F"             "ft.per.floor"          
 
 $sample.size
-[1] 98</code></pre>
-</div>
-</div>
-</section>
-<section id="useful-functions-1" class="slide level2">
-<h2>Useful functions</h2>
-<p>Handling a list is very similar to handling a data frame</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="fu">length</span>(list.building) <span class="co"># number of components</span></span>
-<span id="cb54-2"><a href=""></a><span class="fu">names</span>(list.building) <span class="co"># names of the components</span></span>
-<span id="cb54-3"><a href=""></a><span class="fu">str</span>(list.building) <span class="co"># summary information</span></span>
-<span id="cb54-4"><a href=""></a></span>
-<span id="cb54-5"><a href=""></a><span class="co"># add new component</span></span>
-<span id="cb54-6"><a href=""></a>list.building<span class="sc">$</span>mean_height<span class="ot">=</span><span class="fu">mean</span>(list.building<span class="sc">$</span>data<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You can with ; for instance: </p>
-</section></section>
-<section>
-<section id="r-functions" class="title-slide slide level1 center">
-<h1>R functions</h1>
-
-</section>
-<section id="r-functions-1" class="slide level2">
-<h2>R functions</h2>
-<ul>
-<li>R functions follow the same pattern: </li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num) <span class="co">#shorter version</span></span>
-<span id="cb55-2"><a href=""></a><span class="fu">plot</span>(<span class="at">x=</span>df.building<span class="sc">$</span>Height_m,<span class="at">y=</span>df.building<span class="sc">$</span>Floors_num) <span class="co">#full version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Use to bring up the help menu</li>
-</ul>
-</section>
-<section id="pipe-operator-dplyr-package" class="slide level2">
-<h2>pipe operator (dplyr package)</h2>
-<p>The pipe operator, <strong>%&gt;%</strong>, is a different syntax for calling R functions: <strong>FUNCTION(x)</strong> is the same as <strong>x %&gt;% FUNCTION</strong></p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a>vec<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>)</span>
-<span id="cb56-2"><a href=""></a><span class="fu">mean</span>(vec)</span>
-<span id="cb56-3"><a href=""></a>vec <span class="sc">%&gt;%</span> mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>For functions with multiple arguments</strong>: by default, R recognizes the argument being piped as the <em>first</em> argument; or you can use “.” to specify</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="co"># these code are equivalent</span></span>
-<span id="cb57-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
-<span id="cb57-3"><a href=""></a></span>
-<span id="cb57-4"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
-<span id="cb57-5"><a href=""></a>  <span class="fu">plot</span>(df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
-<span id="cb57-6"><a href=""></a></span>
-<span id="cb57-7"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
-<span id="cb57-8"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>., <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section></section>
-<section>
-<section id="an-exercise" class="title-slide slide level1 center">
-<h1>An exercise…</h1>
-
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<ul>
-<li>Generate a scatterplot. Can you think of a way to color it based on year, and reproduce this plot?</li>
-</ul>
-
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
-<section id="sample-code-1" class="slide level2">
-<h2>Sample code 1</h2>
-<ul>
-<li>Create an empty vector with the same length as the number of buildings</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a>mycols <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">nrow</span>(df.building))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>(Use R to tell <em>which</em> buildings were built in 2009 or before)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a><span class="fu">which</span>(df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2009</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Set the corresponding element in the empty vector to the color red (recall, for subsetting, the function is not actually needed)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a>mycols[df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2009</span>]<span class="ot">=</span><span class="st">'red'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Do the same for the other colors</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href=""></a>mycols[(df.building<span class="sc">$</span>Year<span class="sc">&gt;=</span><span class="dv">2010</span>) </span>
-<span id="cb61-2"><a href=""></a>       <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2015</span>)]<span class="ot">=</span><span class="st">'blue'</span></span>
-<span id="cb61-3"><a href=""></a>mycols[(df.building<span class="sc">$</span>Year<span class="sc">&gt;=</span><span class="dv">2016</span>)]<span class="ot">=</span><span class="st">'green'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="sample-code-2" class="slide level2">
-<h2>Sample code 2</h2>
-<ul>
-<li>Create three colors</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a>cols3 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'red'</span>,<span class="st">'blue'</span>,<span class="st">'green'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Create index based on the year of the building</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href=""></a>myindex <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2009</span>, <span class="dv">1</span>, <span class="cn">NA</span>)</span>
-<span id="cb63-2"><a href=""></a>myindex[(df.building<span class="sc">$</span>Year<span class="sc">&gt;=</span><span class="dv">2010</span>) </span>
-<span id="cb63-3"><a href=""></a>       <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2015</span>)] <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb63-4"><a href=""></a>myindex[(df.building<span class="sc">$</span>Year<span class="sc">&gt;=</span><span class="dv">2016</span>)]<span class="ot">=</span><span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Use index to subset the colors</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a>cols3[myindex] <span class="co"># same as mycols</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section></section>
-<section>
-<section id="na-values" class="title-slide slide level1 center">
-<h1>NA values</h1>
-
-</section>
-<section id="na-values-1" class="slide level2">
-<h2>NA values</h2>
-<ul>
-<li> is a special value that represents missing or unavailable entries when not in quotation</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href=""></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">3.5</span>,<span class="fl">3.2</span>,<span class="dv">3</span>,<span class="cn">NA</span>)</span>
-<span id="cb65-2"><a href=""></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<ul>
-<li>Most operations will return NA (e.g.: you don’t know the 4th value, so you cannot calculate the mean)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href=""></a><span class="fu">mean</span>(x)</span>
-<span id="cb67-2"><a href=""></a><span class="fu">max</span>(x)</span>
-<span id="cb67-3"><a href=""></a><span class="fu">sd</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exclude-na-values" class="slide level2">
-<h2>Exclude NA values</h2>
-<p>To avoid the issue of getting NA’s when you perform calculations, you might want to <strong>exclude the NA values</strong></p>
-<ul>
-<li>Some functions give you the option to remove NA</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">mean</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.233333</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href=""></a><span class="fu">max</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5</code></pre>
-</div>
-</div>
-<ul>
-<li>More general, use </li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href=""></a><span class="fu">mean</span>(<span class="fu">na.omit</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.233333</code></pre>
-</div>
-</div>
-</section>
-<section id="check-for-na-values" class="slide level2">
-<h2>Check for NA values</h2>
-<ul>
-<li>Try to use R to tell you which value is NA</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5 3.2 3.0  NA</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href=""></a>x<span class="sc">==</span><span class="cn">NA</span>  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA NA NA NA</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="fu">which</span>(x<span class="sc">==</span><span class="cn">NA</span>)  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>integer(0)</code></pre>
-</div>
-</div>
-<ul>
-<li>Instead, use </li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a><span class="fu">is.na</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE FALSE  TRUE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a><span class="fu">which</span>(<span class="fu">is.na</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-</section>
-<section id="other-types-of-na-values" class="slide level2">
-<h2>Other types of NA values</h2>
-<ul>
-<li><strong>NaN</strong> is also treated as NA; <strong>Inf</strong> is not treated as NA (represents infinity)</li>
-<li>You should check the calculations and variable types when you see NA, NaN, or Inf</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>v1<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>);v2<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>);v1<span class="sc">/</span>v2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5 Inf NaN</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="fu">mean</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NaN</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="fu">is.na</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE  TRUE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href=""></a><span class="fu">as.numeric</span>(<span class="st">'4,000'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
-</div>
-</div>
-</section></section>
-<section>
-<section id="more-on-logicals" class="title-slide slide level1 center">
-<h1>More on logicals</h1>
-
-</section>
-<section id="composite-logical-statements" class="slide level2">
-<h2>Composite logical statements</h2>
-<p>You can combine two or more logical statements together</p>
-<ul>
-<li><strong>!</strong> NOT</li>
-<li><strong>&amp;</strong> AND</li>
-<li><strong>|</strong> OR</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">3.6</span>,<span class="fl">2.8</span>,<span class="fl">3.3</span>,<span class="fl">1.2</span>)</span>
-<span id="cb92-2"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="fl">3.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a>(x<span class="sc">&gt;</span><span class="fl">3.5</span>) <span class="sc">|</span> (x<span class="sc">&lt;</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  TRUE FALSE FALSE  TRUE</code></pre>
-</div>
-</div>
-</section>
-<section id="in" class="slide level2">
-<h2>%in%</h2>
-<ul>
-<li>Recall, logical operators are the ones that return T/F</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a><span class="fu">which</span>(x <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="co"># this is ok</span></span>
-<span id="cb98-2"><a href=""></a><span class="fu">which</span>(<span class="at">x =</span> <span class="dv">3</span>) <span class="co"># this is NOT ok</span></span>
-<span id="cb98-3"><a href=""></a><span class="fu">which</span>(x) <span class="co"># this is NOT ok</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Operator is another useful logical operator</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href=""></a>subjects<span class="ot">=</span><span class="fu">c</span>(<span class="st">'ENG'</span>,<span class="st">'ENG'</span>,<span class="st">'MAT'</span>,<span class="st">'MAT'</span>,<span class="st">'STAT'</span>,<span class="st">'HIS'</span>)</span>
-<span id="cb99-2"><a href=""></a>subjects <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'MAT'</span>,<span class="st">'STAT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE  TRUE  TRUE  TRUE FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-set-2" class="slide level2 scrollable">
-<h2>Exercise set 2</h2>
-<ol type="1">
-<li>Print the names and built years of the first 3 buildings</li>
-<li>Print the names of buildings in the United States</li>
-<li>Print the names of buildings in the United States AND also built after 2015</li>
-<li>Print the names of buildings in the United States OR in China</li>
-<li>Print the names and built years of buildings built between 2010 and 2015</li>
-<li>Print the names and built years of the buildings built in 2010 OR in 2015</li>
-<li>Plot a histogram of the built year of the buildings. I’m interested to see there is a building built before 1940 - can you find out which building it is?</li>
-</ol>
-</section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<p>Comment: <strong>Bar graph</strong> is like histogram for discrete variables; recall, <strong>plot( )</strong> gives a bar graph for factors</p>
+[1] 98
+```
 
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-54-1.png" class="quarto-figure quarto-figure-center r-stretch" width="300"></section></section>
+:::
+:::
+
+
+## Useful functions
+
+Handling a list is very similar to handling a data frame
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+length(list.building) # number of components
+names(list.building) # names of the components
+str(list.building) # summary information
+
+# add new component
+list.building$mean_height=mean(list.building$data$Height_m)
+```
+:::
+
+
+You can \alert{combine lists} with \texttt{c(,)}; for instance: \texttt{c(list.building, newlist)}
+
+# R functions
+
+## R functions
+
+- R functions follow the same pattern: \alert{function\_name(argument1=XXX, argument2=XXX, ...)}
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+plot(df.building$Height_m,df.building$Floors_num) #shorter version
+plot(x=df.building$Height_m,y=df.building$Floors_num) #full version
+```
+:::
+
+
+- Use \alert{?function\_name} to bring up the help menu
+
+## pipe operator (dplyr package)
+
+The pipe operator, **%\>%**, is a different syntax for calling R functions: **FUNCTION(x)** is the same as **x %\>% FUNCTION**
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+vec=c(1,1,5)
+mean(vec)
+vec %>% mean
+```
+:::
+
+
+**For functions with multiple arguments**: by default, R recognizes the argument being piped as the *first* argument; or you can use "." to specify
+
+\small
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+# these code are equivalent
+plot(df.building$Height_m,df.building$Floors_num,xlab='Height')
+
+df.building$Height_m %>% 
+  plot(df.building$Floors_num,xlab='Height')
+
+df.building$Height_m %>% 
+  plot(x=., y=df.building$Floors_num,xlab='Height')
+```
+:::
+
+
+# An exercise...
+
+## 
+
+- Generate a scatterplot. Can you think of a way to color it based on year, and reproduce this plot?
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](lecture_2_slide_files/figure-revealjs/unnamed-chunk-36-1.png){fig-align='center' width=50%}
+:::
+:::
+
+
+## Sample code 1
+
+- Create an empty vector with the same length as the number of buildings
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mycols <- rep(NA,nrow(df.building))
+```
+:::
+
+
+- (Use R to tell *which* buildings were built in 2009 or before)
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+which(df.building$Year<=2009)
+```
+:::
+
+
+- Set the corresponding element in the empty vector to the color red (recall, for subsetting, the \texttt{which()} function is not actually needed)
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mycols[df.building$Year<=2009]='red'
+```
+:::
+
+
+- Do the same for the other colors
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mycols[(df.building$Year>=2010) 
+       & (df.building$Year<=2015)]='blue'
+mycols[(df.building$Year>=2016)]='green'
+```
+:::
+
+
+## Sample code 2
+
+- Create three colors
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+cols3 = c('red','blue','green')
+```
+:::
+
+
+- Create index based on the year of the building
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+myindex <- ifelse(df.building$Year<=2009, 1, NA)
+myindex[(df.building$Year>=2010) 
+       & (df.building$Year<=2015)] = 2
+myindex[(df.building$Year>=2016)]=3
+```
+:::
+
+
+- Use index to subset the colors
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+cols3[myindex] # same as mycols
+```
+:::
+
+
+# NA values
+
+## NA values
+
+- \alert{NA} is a special value that represents missing or unavailable entries when not in quotation
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+x=c(3.5,3.2,3,NA)
+length(x)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 4
+```
+
+
+:::
+:::
+
+
+- Most operations will return NA (e.g.: you don't know the 4th value, so you cannot calculate the mean)
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mean(x)
+max(x)
+sd(x)
+```
+:::
+
+
+## Exclude NA values
+
+To avoid the issue of getting NA's when you perform calculations, you might want to **exclude the NA values**
+
+- Some functions give you the option to remove NA
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mean(x,na.rm=T)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3.233333
+```
+
+
+:::
+
+```{.r .cell-code}
+max(x,na.rm=T)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3.5
+```
+
+
+:::
+:::
+
+
+- More general, use \alert{na.omit(x)}
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+mean(na.omit(x))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3.233333
+```
+
+
+:::
+:::
+
+
+## Check for NA values
+
+- Try to use R to tell you which value is NA
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+x
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3.5 3.2 3.0  NA
+```
+
+
+:::
+
+```{.r .cell-code}
+x==NA  # NOT what we want!
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] NA NA NA NA
+```
+
+
+:::
+
+```{.r .cell-code}
+which(x==NA)  # NOT what we want!
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+integer(0)
+```
+
+
+:::
+:::
+
+
+- Instead, use \alert{is.na(x)}
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+is.na(x)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] FALSE FALSE FALSE  TRUE
+```
+
+
+:::
+
+```{.r .cell-code}
+which(is.na(x))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 4
+```
+
+
+:::
+:::
+
+
+## Other types of NA values
+
+- **NaN** is also treated as NA; **Inf** is not treated as NA (represents infinity)
+- You should check the calculations and variable types when you see NA, NaN, or Inf
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+v1=c(1,1,0);v2=c(2,0,0);v1/v2
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0.5 Inf NaN
+```
+
+
+:::
+
+```{.r .cell-code}
+mean(v1/v2)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] NaN
+```
+
+
+:::
+
+```{.r .cell-code}
+is.na(v1/v2)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] FALSE FALSE  TRUE
+```
+
+
+:::
+
+```{.r .cell-code}
+as.numeric('4,000')
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] NA
+```
+
+
+:::
+:::
+
+
+# More on logicals
+
+## Composite logical statements
+
+You can combine two or more logical statements together
+
+- **!** NOT
+- **&** AND
+- **\|** OR
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+x=c(3.6,2.8,3.3,1.2)
+x>3
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1]  TRUE FALSE  TRUE FALSE
+```
+
+
+:::
+
+```{.r .cell-code}
+x>3 & x<3.5
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] FALSE FALSE  TRUE FALSE
+```
+
+
+:::
+
+```{.r .cell-code}
+(x>3.5) | (x<2)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1]  TRUE FALSE FALSE  TRUE
+```
+
+
+:::
+:::
+
+
+## %in%
+
+- Recall, logical operators are the ones that return T/F
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+which(x < 3) # this is ok
+which(x = 3) # this is NOT ok
+which(x) # this is NOT ok
+```
+:::
+
+
+- Operator \alert{\%in\%} is another useful logical operator
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+subjects=c('ENG','ENG','MAT','MAT','STAT','HIS')
+subjects %in% c('MAT','STAT')
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] FALSE FALSE  TRUE  TRUE  TRUE FALSE
+```
+
+
+:::
+:::
+
+
+## Exercise set 2
+
+1.  Print the names and built years of the first 3 buildings
+2.  Print the names of buildings in the United States
+3.  Print the names of buildings in the United States AND also built after 2015
+4.  Print the names of buildings in the United States OR in China
+5.  Print the names and built years of buildings built between 2010 and 2015
+6.  Print the names and built years of the buildings built in 2010 OR in 2015
+7.  Plot a histogram of the built year of the buildings. I'm interested to see there is a building built before 1940 - can you find out which building it is?
+
+## 
+
+Comment: **Bar graph** is like histogram for discrete variables; recall, **plot( )** gives a bar graph for factors
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](lecture_2_slide_files/figure-revealjs/unnamed-chunk-54-1.png){fig-align='center' width=300}
+:::
+:::
+
+-->
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

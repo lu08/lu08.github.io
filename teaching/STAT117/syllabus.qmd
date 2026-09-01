@@ -9,7 +9,7 @@ Download the pdf version [here](FA2026_STAT117_005_syllabus.pdf){download="STAT1
 
 Instructor: Prof. Yi Lu  Email: ylu1@drew.edu  Office: HS 314  
 Lectures: TR 10:25 - 11:40, HS 244 (hybrid)  
-Office Hours: R 12-2 or by appointment (in-person HS314 or via Google Meet; link on course webpage)
+Office Hours: R 12-2 (in-person HS314 or via [Google Meet](https://meet.google.com/osa-nsvf-dpk){target="_blank"}); or [by appointment](https://calendar.app.google/bSYSzjv5v5ybxvLt7){target="_blank"} 
 
 
 **Description.** Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.
