@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="data352.css">
@@ -166,8 +195,208 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Download the pdf version <a href="FA2026_DATA352_DATA551_syllabus_Lu.pdf" download="DATA352_DATA551_SYLLABUS.pdf">here</a>.</p>
+<section id="data-352551-modeling-and-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="data-352551-modeling-and-simulation">DATA 352/551: Modeling and Simulation</h2>
+<p><strong>Fall 2026</strong></p>
+<p><strong>Instructor:</strong> Prof.&nbsp;Yi Lu<br>
+<strong>Email:</strong> <a href="mailto:ylu1@drew.edu">ylu1@drew.edu</a><br>
+<strong>Office:</strong> HS 314<br>
+<strong>Lectures:</strong> Wednesday, 6:00-8:30 p.m., HS 308 (in person)<br>
+<strong>Office hours:</strong> R 12-2 (in-person HS314 or via <a href="https://meet.google.com/osa-nsvf-dpk" target="_blank">Google Meet</a>); or <a href="https://calendar.app.google/bSYSzjv5v5ybxvLt7" target="_blank">by appointment</a></p>
+</section>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation-based inference.</p>
+<p><strong>Prerequisite:</strong> CSCI 149, CSCI 150, STAT 120, or DATA 505.</p>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>Upon completing this course, students will:</p>
+<ul>
+<li>have a basic understanding of how simulation can be used in various applications;</li>
+<li>have a basic understanding of probability and statistical concepts;</li>
+<li>be able to use common parametric distributions to model random observations;</li>
+<li>be able to perform statistical inference using a few simulation-based techniques;</li>
+<li>be able to simulate random samples and random processes; and</li>
+<li>be able to design and implement simple algorithms to perform simulations.</li>
+</ul>
+</section>
+<section id="text-and-reading-materials" class="level2">
+<h2 class="anchored" data-anchor-id="text-and-reading-materials">Text and Reading Materials</h2>
+<p>Topics in this class are relevant to a few different fields in statistics, especially probability and computational statistics.</p>
+<ul>
+<li>Reading materials will be posted on the course webpage throughout the semester.</li>
+<li>For probability, we will mostly use <a href="course_documents/Intro to Probability.pdf"><em>Introduction to Probability</em></a> (Grinstead and Snell, 2012), which is available online.</li>
+<li>For computational statistics, topics will roughly follow <em>Statistical Computing with R</em> (Rizzo, 2019). This book is not required for this class. It is more in-depth than the scope of this class and requires substantial statistical knowledge.</li>
+</ul>
+</section>
+<section id="course-webpage" class="level2">
+<h2 class="anchored" data-anchor-id="course-webpage">Course Webpage</h2>
+<p>Course content will be posted on the <a href="https://lu08.github.io/teaching/DATA352/">course webpage</a>. Grades will be posted on Moodle. Check both the course webpage and Moodle frequently, and check your email regularly for important announcements.</p>
+</section>
+<section id="programming" class="level2">
+<h2 class="anchored" data-anchor-id="programming">Programming</h2>
+<p>Lecture examples, sample code, and homework solutions will be given in R. It is acceptable to choose a different programming language. Some basics of R will be covered at the beginning of the semester. For simplicity, I will use RStudio; other popular IDEs for R include VS Code, Positron, and Jupyter Notebooks. Feel free to use any of these instead of RStudio.</p>
+</section>
+<section id="electronic-devices" class="level2">
+<h2 class="anchored" data-anchor-id="electronic-devices">Electronic Devices</h2>
+<p>You are expected to bring a working laptop to each lecture. You may use an iPad or similar device for class-related activities such as taking notes. You are <strong>prohibited from using cell phones, headphones, and earbuds during all lectures</strong>. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, or working on assignments from a different course.</p>
+</section>
+<section id="attendance" class="level2">
+<h2 class="anchored" data-anchor-id="attendance">Attendance</h2>
+<p>You are expected to attend every class unless you have a legitimate excuse, such as illness, a family emergency, or participation in a college-sponsored event. Attendance is mandatory for successful completion of the course. Regardless of the reason, it is your responsibility to make up course material covered during absences. Poor attendance without a valid reason is not an excuse to misuse office hours.</p>
+<p>Class attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect your grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the <a href="https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC">Absence Policy: Student Rights and Responsibilities</a>, located in the Academic Policy section of Drew’s course catalog under Attendance. Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conferences, or Drew-sanctioned events. Inform the faculty member of planned absences during the first week of the semester. For unforeseen extended health issues, see the academic accommodations statement.</p>
+</section>
+<section id="late-work-and-missed-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="late-work-and-missed-assignments">Late Work and Missed Assignments</h2>
+<p><strong>There are no make-ups in this class, even for excused absences.</strong> Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have to miss an exam, communicate with me as soon as possible. <strong>All quizzes and exams must be taken in person; absolutely no exceptions.</strong></p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>Final grades are assigned according to the standard scale: A = 92 to 100; A- = 90 to 92; B+ = 88 to 90; B = 82 to 88; B- = 80 to 82; C+ = 78 to 80; C = 72 to 78; C- = 70 to 72; F = 0 to 70. If registered as an undergraduate: D+ = 68 to 70; D = 62 to 68; D- = 60 to 62; F = 0 to 60.</p>
+<ul>
+<li><strong>Homework quizzes (20%; two drops allowed):</strong> Homework problems and solutions will be assigned roughly weekly. Homework is not collected; instead, a quiz will be given at the beginning of the lecture when the homework is due. Quiz content is directly based on the homework questions. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.</li>
+<li><strong>In-class assignments (20%; two drops allowed):</strong> These assignments occur during most lectures and are not announced ahead of time. Regular attendance and active participation in group assignments and class discussions are expected. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.</li>
+<li><strong>Exams (3 <span class="math inline">\(\times\)</span> 20%):</strong> There are three in-class exams: two midterms and one final. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.</li>
+</ul>
+</section>
+<section id="cross-listed-class" class="level2">
+<h2 class="anchored" data-anchor-id="cross-listed-class">Cross-Listed Class</h2>
+<p>Some exam components might differ for students registered in DATA 352 versus DATA 551. In general, the DATA 551 version will be slightly longer, more open-ended, and more comprehensive.</p>
+</section>
+<section id="final-exam-policy" class="level2">
+<h2 class="anchored" data-anchor-id="final-exam-policy">Final Exam Policy</h2>
+<p>If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:</p>
+<ul>
+<li>Two final exams scheduled at the same time;</li>
+<li>three final exams scheduled in one calendar day, in which case one exam will be rescheduled at the convenience of the instructor and the student; or</li>
+<li>serious illness or personal emergency, with documentation required for validation.</li>
+</ul>
+<p>The final exam schedule is visible on the <a href="https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/">Registrar’s website</a> by the beginning of each semester. Students are expected to schedule travel plans <strong>after</strong> their final exams. Our final exam is scheduled for <strong>Wednesday, December 16, 7:30-10:30 p.m.</strong></p>
+</section>
+<section id="academic-accommodations" class="level2">
+<h2 class="anchored" data-anchor-id="academic-accommodations">Academic Accommodations</h2>
+<p>Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.</p>
+<p>If you have not yet established services through OAR, but have a temporary health condition or permanent disability that requires accommodations, you are encouraged to contact OAR. Conditions may include, but are not limited to, mental health, attention-related, learning, vision, hearing, physical, or health impacts. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.</p>
+<p>Although disclosure may take place at any time during the semester, students are encouraged to do so early because accommodations are generally not implemented retroactively.</p>
+<p><strong>Office of Accessibility Resources</strong><br>
+Interim Director: Stefanie Attia<br>
+Location: Brothers College, Room 119B<br>
+Phone: 973-408-3962<br>
+Email: <a href="mailto:oar@drew.edu">oar@drew.edu</a></p>
+</section>
+<section id="academic-integrity-policy" class="level2">
+<h2 class="anchored" data-anchor-id="academic-integrity-policy">Academic Integrity Policy</h2>
+<p>All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s <a href="https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy">Standards of Academic Integrity: Guidelines and Procedures</a>, located in the academic policies section of the catalog.</p>
+</section>
+<section id="supporting-student-success" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-student-success">Supporting Student Success</h2>
+<p>All Drew students can access subject tutoring, writing support, and academic coaching free of charge in the <a href="https://drew.edu/academic/student-resources/center-for-academic-excellence/">Center for Academic Excellence (CAE)</a>, located in the library. Learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, visit <a href="https://drew.mywconline.com/">Drew WCOnline</a> and follow the instructions on the landing page. If a tutor is not available, submit the Tutor Request form. For other questions, email <a href="mailto:cae@drew.edu">cae@drew.edu</a>.</p>
+</section>
+<section id="artificial-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-intelligence">Artificial Intelligence</h2>
+<p>I encourage you to explore artificial intelligence (AI) resources for learning purposes. When using AI, you must:</p>
+<ol type="1">
+<li>fully document and cite all material, including any code, graph, formula, table, mathematical equation, or other AI-generated material, in submitted work;</li>
+<li>check information generated by AI and take full responsibility for its accuracy; and</li>
+<li>be able to identify where and how you used any AI tools and how they contributed to your work.</li>
+</ol>
+<p>If you have any doubts about what is acceptable, please discuss them with the professor.</p>
+</section>
+<section id="tentative-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="tentative-schedule">Tentative Schedule</h2>
+<p>The schedule is subject to change.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Lecture content</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">September 2</td>
+<td style="text-align: left;">Introduction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">September 9</td>
+<td style="text-align: left;">Common discrete distributions</td>
+<td style="text-align: left;">Homework quiz 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">September 16</td>
+<td style="text-align: left;">Review: R basics and loops</td>
+<td style="text-align: left;">Homework quiz 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">September 23</td>
+<td style="text-align: left;">Continuous distributions</td>
+<td style="text-align: left;">Homework quiz 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">September 30</td>
+<td style="text-align: left;"><strong>Exam 1</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">October 7</td>
+<td style="text-align: left;">Simulating the Central Limit Theorem</td>
+<td style="text-align: left;">Homework quiz 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">October 14</td>
+<td style="text-align: left;">Rejection and SIR sampling</td>
+<td style="text-align: left;">Homework quiz 5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">October 21</td>
+<td style="text-align: left;">Model-based inference</td>
+<td style="text-align: left;">Homework quiz 6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">October 28</td>
+<td style="text-align: left;">Bootstrapping</td>
+<td style="text-align: left;">Homework quiz 7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">November 4</td>
+<td style="text-align: left;"><strong>Exam 2</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">November 11</td>
+<td style="text-align: left;">Monte Carlo methods</td>
+<td style="text-align: left;">Homework quiz 8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">November 18</td>
+<td style="text-align: left;">Bayesian modeling</td>
+<td style="text-align: left;">Homework quiz 9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">November 25</td>
+<td style="text-align: left;"><strong>Thanksgiving - no class</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">December 2</td>
+<td style="text-align: left;">MCMC I</td>
+<td style="text-align: left;">Homework quiz 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">December 9</td>
+<td style="text-align: left;">MCMC II</td>
+<td style="text-align: left;">Homework quiz 11</td>
+</tr>
+</tbody>
+</table>
+<p>The in-person final exam is on <strong>Wednesday, December 16, 7:30-10:30 p.m.</strong></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

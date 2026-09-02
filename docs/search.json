@@ -488,5 +488,321 @@
       "Research",
       "Syllabus"
     ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html",
+    "href": "teaching/DATA352/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Download the pdf version here.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#data-352551-modeling-and-simulation",
+    "href": "teaching/DATA352/syllabus.html#data-352551-modeling-and-simulation",
+    "title": "Syllabus",
+    "section": "DATA 352/551: Modeling and Simulation",
+    "text": "DATA 352/551: Modeling and Simulation\nFall 2026\nInstructor: Prof. Yi Lu\nEmail: ylu1@drew.edu\nOffice: HS 314\nLectures: Wednesday, 6:00-8:30 p.m., HS 308 (in person)\nOffice hours: R 12-2 (in-person HS314 or via Google Meet); or by appointment",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#course-description",
+    "href": "teaching/DATA352/syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nCovers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation-based inference.\nPrerequisite: CSCI 149, CSCI 150, STAT 120, or DATA 505.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#learning-outcomes",
+    "href": "teaching/DATA352/syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completing this course, students will:\n\nhave a basic understanding of how simulation can be used in various applications;\nhave a basic understanding of probability and statistical concepts;\nbe able to use common parametric distributions to model random observations;\nbe able to perform statistical inference using a few simulation-based techniques;\nbe able to simulate random samples and random processes; and\nbe able to design and implement simple algorithms to perform simulations.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#text-and-reading-materials",
+    "href": "teaching/DATA352/syllabus.html#text-and-reading-materials",
+    "title": "Syllabus",
+    "section": "Text and Reading Materials",
+    "text": "Text and Reading Materials\nTopics in this class are relevant to a few different fields in statistics, especially probability and computational statistics.\n\nReading materials will be posted on the course webpage throughout the semester.\nFor probability, we will mostly use Introduction to Probability (Grinstead and Snell, 2012), which is available online.\nFor computational statistics, topics will roughly follow Statistical Computing with R (Rizzo, 2019). This book is not required for this class. It is more in-depth than the scope of this class and requires substantial statistical knowledge.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#course-webpage",
+    "href": "teaching/DATA352/syllabus.html#course-webpage",
+    "title": "Syllabus",
+    "section": "Course Webpage",
+    "text": "Course Webpage\nCourse content will be posted on the course webpage. Grades will be posted on Moodle. Check both the course webpage and Moodle frequently, and check your email regularly for important announcements.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#programming",
+    "href": "teaching/DATA352/syllabus.html#programming",
+    "title": "Syllabus",
+    "section": "Programming",
+    "text": "Programming\nLecture examples, sample code, and homework solutions will be given in R. It is acceptable to choose a different programming language. Some basics of R will be covered at the beginning of the semester. For simplicity, I will use RStudio; other popular IDEs for R include VS Code, Positron, and Jupyter Notebooks. Feel free to use any of these instead of RStudio.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#electronic-devices",
+    "href": "teaching/DATA352/syllabus.html#electronic-devices",
+    "title": "Syllabus",
+    "section": "Electronic Devices",
+    "text": "Electronic Devices\nYou are expected to bring a working laptop to each lecture. You may use an iPad or similar device for class-related activities such as taking notes. You are prohibited from using cell phones, headphones, and earbuds during all lectures. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, or working on assignments from a different course.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#attendance",
+    "href": "teaching/DATA352/syllabus.html#attendance",
+    "title": "Syllabus",
+    "section": "Attendance",
+    "text": "Attendance\nYou are expected to attend every class unless you have a legitimate excuse, such as illness, a family emergency, or participation in a college-sponsored event. Attendance is mandatory for successful completion of the course. Regardless of the reason, it is your responsibility to make up course material covered during absences. Poor attendance without a valid reason is not an excuse to misuse office hours.\nClass attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect your grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, located in the Academic Policy section of Drew’s course catalog under Attendance. Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conferences, or Drew-sanctioned events. Inform the faculty member of planned absences during the first week of the semester. For unforeseen extended health issues, see the academic accommodations statement.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#late-work-and-missed-assignments",
+    "href": "teaching/DATA352/syllabus.html#late-work-and-missed-assignments",
+    "title": "Syllabus",
+    "section": "Late Work and Missed Assignments",
+    "text": "Late Work and Missed Assignments\nThere are no make-ups in this class, even for excused absences. Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have to miss an exam, communicate with me as soon as possible. All quizzes and exams must be taken in person; absolutely no exceptions.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#grading",
+    "href": "teaching/DATA352/syllabus.html#grading",
+    "title": "Syllabus",
+    "section": "Grading",
+    "text": "Grading\nFinal grades are assigned according to the standard scale: A = 92 to 100; A- = 90 to 92; B+ = 88 to 90; B = 82 to 88; B- = 80 to 82; C+ = 78 to 80; C = 72 to 78; C- = 70 to 72; F = 0 to 70. If registered as an undergraduate: D+ = 68 to 70; D = 62 to 68; D- = 60 to 62; F = 0 to 60.\n\nHomework quizzes (20%; two drops allowed): Homework problems and solutions will be assigned roughly weekly. Homework is not collected; instead, a quiz will be given at the beginning of the lecture when the homework is due. Quiz content is directly based on the homework questions. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.\nIn-class assignments (20%; two drops allowed): These assignments occur during most lectures and are not announced ahead of time. Regular attendance and active participation in group assignments and class discussions are expected. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.\nExams (3 \\(\\times\\) 20%): There are three in-class exams: two midterms and one final. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#cross-listed-class",
+    "href": "teaching/DATA352/syllabus.html#cross-listed-class",
+    "title": "Syllabus",
+    "section": "Cross-Listed Class",
+    "text": "Cross-Listed Class\nSome exam components might differ for students registered in DATA 352 versus DATA 551. In general, the DATA 551 version will be slightly longer, more open-ended, and more comprehensive.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#final-exam-policy",
+    "href": "teaching/DATA352/syllabus.html#final-exam-policy",
+    "title": "Syllabus",
+    "section": "Final Exam Policy",
+    "text": "Final Exam Policy\nIf extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:\n\nTwo final exams scheduled at the same time;\nthree final exams scheduled in one calendar day, in which case one exam will be rescheduled at the convenience of the instructor and the student; or\nserious illness or personal emergency, with documentation required for validation.\n\nThe final exam schedule is visible on the Registrar’s website by the beginning of each semester. Students are expected to schedule travel plans after their final exams. Our final exam is scheduled for Wednesday, December 16, 7:30-10:30 p.m.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#academic-accommodations",
+    "href": "teaching/DATA352/syllabus.html#academic-accommodations",
+    "title": "Syllabus",
+    "section": "Academic Accommodations",
+    "text": "Academic Accommodations\nYour experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.\nIf you have not yet established services through OAR, but have a temporary health condition or permanent disability that requires accommodations, you are encouraged to contact OAR. Conditions may include, but are not limited to, mental health, attention-related, learning, vision, hearing, physical, or health impacts. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.\nAlthough disclosure may take place at any time during the semester, students are encouraged to do so early because accommodations are generally not implemented retroactively.\nOffice of Accessibility Resources\nInterim Director: Stefanie Attia\nLocation: Brothers College, Room 119B\nPhone: 973-408-3962\nEmail: oar@drew.edu",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#academic-integrity-policy",
+    "href": "teaching/DATA352/syllabus.html#academic-integrity-policy",
+    "title": "Syllabus",
+    "section": "Academic Integrity Policy",
+    "text": "Academic Integrity Policy\nAll students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s Standards of Academic Integrity: Guidelines and Procedures, located in the academic policies section of the catalog.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#supporting-student-success",
+    "href": "teaching/DATA352/syllabus.html#supporting-student-success",
+    "title": "Syllabus",
+    "section": "Supporting Student Success",
+    "text": "Supporting Student Success\nAll Drew students can access subject tutoring, writing support, and academic coaching free of charge in the Center for Academic Excellence (CAE), located in the library. Learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, visit Drew WCOnline and follow the instructions on the landing page. If a tutor is not available, submit the Tutor Request form. For other questions, email cae@drew.edu.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#artificial-intelligence",
+    "href": "teaching/DATA352/syllabus.html#artificial-intelligence",
+    "title": "Syllabus",
+    "section": "Artificial Intelligence",
+    "text": "Artificial Intelligence\nI encourage you to explore artificial intelligence (AI) resources for learning purposes. When using AI, you must:\n\nfully document and cite all material, including any code, graph, formula, table, mathematical equation, or other AI-generated material, in submitted work;\ncheck information generated by AI and take full responsibility for its accuracy; and\nbe able to identify where and how you used any AI tools and how they contributed to your work.\n\nIf you have any doubts about what is acceptable, please discuss them with the professor.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#tentative-schedule",
+    "href": "teaching/DATA352/syllabus.html#tentative-schedule",
+    "title": "Syllabus",
+    "section": "Tentative Schedule",
+    "text": "Tentative Schedule\nThe schedule is subject to change.\n\n\n\nDate\nLecture content\nNote\n\n\n\n\nSeptember 2\nIntroduction\n\n\n\nSeptember 9\nCommon discrete distributions\nHomework quiz 1\n\n\nSeptember 16\nReview: R basics and loops\nHomework quiz 2\n\n\nSeptember 23\nContinuous distributions\nHomework quiz 3\n\n\nSeptember 30\nExam 1\n\n\n\nOctober 7\nSimulating the Central Limit Theorem\nHomework quiz 4\n\n\nOctober 14\nRejection and SIR sampling\nHomework quiz 5\n\n\nOctober 21\nModel-based inference\nHomework quiz 6\n\n\nOctober 28\nBootstrapping\nHomework quiz 7\n\n\nNovember 4\nExam 2\n\n\n\nNovember 11\nMonte Carlo methods\nHomework quiz 8\n\n\nNovember 18\nBayesian modeling\nHomework quiz 9\n\n\nNovember 25\nThanksgiving - no class\n\n\n\nDecember 2\nMCMC I\nHomework quiz 10\n\n\nDecember 9\nMCMC II\nHomework quiz 11\n\n\n\nThe in-person final exam is on Wednesday, December 16, 7:30-10:30 p.m.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#the-in-person-final-exam-is-on-wednesday-december-16-730-1030-p.m.",
+    "href": "teaching/DATA352/syllabus.html#the-in-person-final-exam-is-on-wednesday-december-16-730-1030-p.m.",
+    "title": "Syllabus",
+    "section": "The in-person final exam is on Wednesday, December 16, 7:30-10:30 p.m.",
+    "text": "The in-person final exam is on Wednesday, December 16, 7:30-10:30 p.m.",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/syllabus.html#title-syllabus",
+    "href": "teaching/DATA352/syllabus.html#title-syllabus",
+    "title": "Syllabus",
+    "section": "title: “Syllabus”",
+    "text": "title: “Syllabus”\n% % % % %",
+    "crumbs": [
+      "Research",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/index.html",
+    "href": "teaching/DATA352/index.html",
+    "title": "DATA 352/551: Modeling and Simulation",
+    "section": "",
+    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#random-variables-and-sample-spaces",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#random-variables-and-sample-spaces",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "🎲 Random Variables and Sample Spaces",
+    "text": "🎲 Random Variables and Sample Spaces\nConsider a random experiment like tossing a fair coin. This is a random experiment because the outcome is unknown. The sample space is the set, or collection, of all possible outcomes.\n\nSample space of tossing a fair coin:\n\nA random variable (denoted, say, \\(X\\)) is a variable whose value depends on the unknown outcome. More formally, a random variable is a functional mapping from the outcome to the real line.\n\n\nShow lecture notes\n\n\nFor one coin toss, the sample space is \\(\\{H, T\\}\\). The outcome is unknown before the experiment, while the sample space lists every outcome that could occur."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#random-variables-and-sample-spaces-1",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#random-variables-and-sample-spaces-1",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "🎲 Random Variables and Sample Spaces",
+    "text": "🎲 Random Variables and Sample Spaces\n\nSuppose you toss a fair coin three times. Let \\(X\\) be the number of heads you get. What is the sample space? What is the range, or possible values, of $X?\nLet \\(Y\\) be the number of tosses until you get the first head. What is the sample space? What is the range of \\(Y\\)?\n\n\nUnless otherwise specified, we will use “sample space” to refer to the range of a random variable.\n\nDiscrete random variables: A random variable is called discrete if the sample space is finite, such as \\(X\\) above, or countably infinite, such as \\(Y\\) above.\nCounterexample: the weight of a randomly selected person and the waiting time until the next bus. These are examples of continuous random variables.\n\n\nShow lecture notes\n\n\n\nFor three tosses, the outcome sample space is \\(\\{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\\}\\). Since \\(X\\) counts heads, its range is \\(\\{0, 1, 2, 3\\}\\).\n\n\nFor \\(Y\\), the outcome sample space can be represented by \\(\\{H, TH, TTH, TTTH, \\ldots\\}\\). The range of \\(Y\\) is \\(\\{1, 2, 3, \\ldots\\}\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#probability-mass-function",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#probability-mass-function",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "📊 Probability Mass Function",
+    "text": "📊 Probability Mass Function\nTo fully define a random variable, we need to specify its distribution. In the discrete case, this is done by assigning a probability to each outcome in the sample space.\n\nLet \\(X\\) be the outcome of rolling one fair die.\n\nSample space:\nCorresponding probabilities:\n\n\nThe function \\(P(x)\\), for \\(x = 1, \\ldots, 6\\), is called the probability mass function for the discrete random variable \\(X\\).\nA valid probability mass function must satisfy these basic conditions:\n\n\\(P(x) \\ge 0\\) for all \\(x\\) in the sample space (i.e., you cannot assign a negative probability).\n\\(\\sum_{x \\in \\text{sample space}} P(x) = 1\\) (i.e., the total probability across all possible outcomes must equal 1).\n\n\n\nShow lecture notes\n\n\nThe random variable \\(X\\) has a sample space \\(\\{1, 2, 3, 4, 5, 6\\}\\). Because the die is fair, each outcome has probability \\(1/6\\). Thus \\(P(x) = 1/6\\) for \\(x = 1, \\ldots, 6\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#simulation",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#simulation",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "🔁 Simulation",
+    "text": "🔁 Simulation\nWe simulate the process of rolling one fair die to verify the probabilities, using random.org/dice. What can we expect from the result?\n\nRolling once:\nRolling 10 times:\nIf your goal is to estimate \\(P(X = 1)\\), how would you do it based on the above simulation?\nRolling many, many times: 1,000? 10,000?\n\nSimulation often requires repeating an experiment a large number of times. The result is more trustworthy and can better estimate the truth because the summary of the data, called a “statistic,” has less variation.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nShow lecture notes\n\n\n\nOne roll gives one of the six faces, like 3.\n\n\nTen rolls give a set of random results, like 1, 3, 6, 2, 4, 5, 1, 6, 2, 3.\n\n\nTo estimate \\(P(X = 1)\\), use the observed proportion of rolls that resulted in 1 (\\(2/10\\) in the above example).\n\n\nWith 1,000 or 10,000 rolls, the observed proportion (denoted \\(\\hat{P}(X = 1)\\)) is expected to be close to \\(1/6\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#limitations-of-simulation",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#limitations-of-simulation",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "⚠️ Limitations of Simulation",
+    "text": "⚠️ Limitations of Simulation\nSimulation has limitations when the sample space is very large or when an outcome in the sample space has a very low chance of occurring.\n\nImagine you have a possibly unfair die with 1,000 sides and you want to estimate the probability of rolling a one.\nIf you do not repeat the roll enough times, the outcome of one might not occur at all.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nFor a fair 1000-sided die, the probability of rolling a one is \\(1/1{}000\\). With \\(n\\) rolls, the probability of never seeing a one is \\((999/1{}000)^n\\).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-1",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-1",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "Example 1",
+    "text": "Example 1\nLet \\(X\\) be the number of heads in two coin tosses. The coins are assumed to be fair.\n\na. What is the sample space, or range, of \\(X\\)?\nb. What is the probability mass function of \\(X\\)?\nc. Verify that this probability mass function satisfies the two conditions.\nd. Describe how you can use simulation to verify the probabilities empirically.\n\n\n\nShow lecture notes\n\n\n\nThe range is \\(\\{0, 1, 2\\}\\).\n\n\nThe PMF is \\(P(X = 0) = 1/4\\), \\(P(X = 1) = 1/2\\), and \\(P(X = 2) = 1/4\\).\n\n\nAll probabilities are nonnegative, and \\(1/4 + 1/2 + 1/4 = 1\\).\n\n\nSimulate two fair coin tosses many times, record the number of heads each time, and compare the observed proportions for 0, 1, and 2 heads with the theoretical probabilities (see the four-step thought process on the next slide)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#four-step-thought-process-of-a-typical-simulation",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#four-step-thought-process-of-a-typical-simulation",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "🧭 “Four-Step” Thought Process of a Typical Simulation",
+    "text": "🧭 “Four-Step” Thought Process of a Typical Simulation\nGoal: Estimate \\(P(X = 0)\\) in the previous example, where \\(X\\) is the number of heads in two coin tosses.\n\nStep i. For one simulation, what are you simulating? What is an example of a possible outcome?\nStep ii. What random variable(s) are you recording?\nStep iii. Repeat Steps i and ii many times. What would your recorded results look like?\nStep iv. How do you perform the estimation based on your results?\n\n\n\nShow lecture notes\n\n\n\nSimulate two fair coin tosses; for example, one outcome could be \\(HT\\).\n\n\nRecord \\(X\\), the number of heads in those two tosses. Example: 1.\n\n\nRepeat the experiment many times; recorded result looks like: 1, 2, 0, 1, 2, …\n\n\nEstimate \\(P(X = 0)\\) by the proportion of 0’s in the recorded results."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-2",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-2",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "Example 2",
+    "text": "Example 2\nTry the “American voting coin” on random.org/coins: Bush versus Kerry. Let \\(X\\) be the number of “Bush” outcomes in 5 flips. What is the range of \\(X\\)? Use the four steps to describe how to estimate \\(P(X \\le 2)\\).\nInterpretation: The coin is likely biased. The probability of each side, Bush or Kerry, can represent the percentage of people who would vote for the candidate in a certain population. Suppose you ask five randomly selected people from that population. What is the chance that two or fewer of them would vote for Bush?\n\nStep i. One simulation or outcome:\nStep ii. What to record:\nStep iii. Repeat many times:\nStep iv. Summarize the results:\n\n\n\nShow lecture notes\n\n\n\nBush, Kerry, Bush, Bush, Kerry.\n\n\n\\(X=3\\) (the number of Bush outcomes). The range of \\(X\\) is \\(\\{0, 1, 2, 3, 4, 5\\}\\)\n\n\nRepeat the five-flip experiment many times. Record: \\(3, 2, 1, 4, 0, ...\\)\n\n\nEstimate \\(P(X \\le 2)\\) by the proportion of simulated outcomes that are 0,1, or 2."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-3",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-3",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "Example 3",
+    "text": "Example 3\n(Example 1.3 from Introduction to Probability) Simulation is especially useful when probabilities are hard to calculate mathematically.\nSuppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of sixes will appear. What is the chance of winning? Use the four steps to describe how to estimate the chance of winning.\n\nStep i. One simulation or outcome:\nStep ii. What to record:\nStep iii. Repeat many times:\nStep iv. Summarize the results:\n\n\n\nShow lecture notes\n\n\n\n1-5, 2-4, 6-6, 5-3, 4-2, 6-6, 1-1, 3-3, 2-2, 5-5.\n\n\n“Win” (since 6-6 appeared at least once).\n\n\n“Win,” “Lose,” “Win,” …\n\n\nEstimate the chance of winning by the proportion of “Win” outcomes.\n\n\n\n(Optional) the exact probability is \\(1 - (35/36)^{10} \\approx 0.245\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-4",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html#example-4",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "Example 4",
+    "text": "Example 4\n(Example 1.4 from Introduction to Probability) You play a game with me as follows. A fair coin is tossed. If a head appears, I give you a dollar. If a tail appears, you give me a dollar.\n\na. Suppose we play this game 10 times. Let \\(X\\) be your net winnings after 10 rounds. Use the four steps to describe how to estimate the distribution of \\(X\\).\nb. Suppose you keep playing this game until you win $5. Let \\(Y\\) be the length of the game you have to play. Can you design a simulation to study the distribution of \\(Y\\)? Use the four steps to describe how to estimate the distribution of \\(Y\\).\n\n\n\nShow lecture notes\n\nFor part (a)\n\n\nOne simulation: HHHHTTHTHH (10 tosses of a fair coin).\n\n\nTo record: \\(X=4\\) (net winnings after 10 tosses). Range of \\(X\\): \\(\\{-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10\\}\\).\n\n\nRepeat many times and record: \\(4, -2, 0, 6, ...\\)\n\n\nEstimate the distribution of \\(X\\) by the relative frequencies of the recorded values. Can visualize using a histogram, or calculate the mean/median/percentiles, etc.\n\n\nFor part (b)\n\n\nOne simulation: HHTHTHH (stop when net winnings first reach 5).\n\n\nTo record: \\(Y=7\\) (the number of tosses). Range of \\(Y\\): \\(\\{5, 6, 7, ...\\}\\).\n\n\nRepeat many times and record: \\(7, 5, 9, ...\\)\n\n\nEstimate the distribution of \\(Y\\) by the relative frequencies of the recorded values. Can visualize using a histogram, or calculate the mean/median/percentiles, etc."
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html",
+    "title": "Week 1 (Sept 2)",
+    "section": "",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_1.html",
+    "title": "Lecture 1: Introduction; Discrete Random Variables",
+    "section": "",
+    "text": "Consider a random experiment like tossing a fair coin. This is a random experiment because the outcome is unknown. The sample space is the set, or collection, of all possible outcomes.\n\nSample space of tossing a fair coin:\n\nA random variable (denoted, say, \\(X\\)) is a variable whose value depends on the unknown outcome. More formally, a random variable is a functional mapping from the outcome to the real line.\n\n\nShow lecture notes\n\n\nFor one coin toss, the sample space is \\(\\{H, T\\}\\). The outcome is unknown before the experiment, while the sample space lists every outcome that could occur."
   }
 ]
