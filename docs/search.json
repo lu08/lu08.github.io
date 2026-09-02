@@ -221,7 +221,7 @@
     "href": "teaching/DATA352/resources/index.html",
     "title": "Resources",
     "section": "",
-    "text": "Set up\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\nLearning Resources\n\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)",
+    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
     "crumbs": [
       "Research",
       "Resources"
