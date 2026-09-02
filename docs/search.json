@@ -217,72 +217,57 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/index.html",
-    "href": "teaching/DATA352/index.html",
-    "title": "DATA 352/551: Modeling and Simulation",
+    "objectID": "teaching/DATA352/resources/index.html",
+    "href": "teaching/DATA352/resources/index.html",
+    "title": "Resources",
     "section": "",
-    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html",
-    "href": "teaching/DATA352/course_documents/index.html",
-    "title": "Course documents",
-    "section": "",
-    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
+    "text": "Set up\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\nLearning Resources\n\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)",
     "crumbs": [
       "Research",
-      "Course documents"
+      "Resources"
     ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "title": "Course documents",
-    "section": "Lecture slides",
-    "text": "Lecture slides\n\nLecture 1",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#homework",
-    "href": "teaching/DATA352/course_documents/index.html#homework",
-    "title": "Course documents",
-    "section": "Homework",
-    "text": "Homework\n\nHomework 1",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "title": "DATA 352/551: Homework 1",
     "section": "",
-    "text": "Content coming up soon!"
+    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
   },
   {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 1",
+    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 2",
+    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 3",
+    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 4",
+    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
     "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
   },
   {
     "objectID": "cv/index.html",
@@ -390,46 +375,72 @@
     "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
     "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "title": "DATA 352/551: Homework 1",
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
+    "text": "Content coming up soon!"
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 1",
-    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
+    "objectID": "teaching/DATA352/course_documents/index.html",
+    "href": "teaching/DATA352/course_documents/index.html",
+    "title": "Course documents",
+    "section": "",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 2",
-    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
+    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nLecture 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 3",
-    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
+    "objectID": "teaching/DATA352/course_documents/index.html#homework",
+    "href": "teaching/DATA352/course_documents/index.html#homework",
+    "title": "Course documents",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 4",
-    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
+    "objectID": "teaching/DATA352/index.html",
+    "href": "teaching/DATA352/index.html",
+    "title": "DATA 352/551: Modeling and Simulation",
+    "section": "",
+    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
   },
   {
     "objectID": "teaching/DATA352/syllabus.html",

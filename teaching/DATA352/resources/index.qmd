@@ -1,0 +1,18 @@
+---
+title: "Resources"
+---
+
+### Set up
+
+You need to download and install BOTH [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) for RStudio to work.
+
+As a backup, you can use [Posit Cloud](https://posit.cloud/) to run RStudio in your web browser without installing anything locally.
+
+
+### Learning Resources
+
+- An Introduction to R (Venables et. al.) [PDF](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+
+- [Posit recipes: interactive tutorials](https://posit.cloud/learn/recipes)
+
+- [Advanced R (Wickham)](http://adv-r.had.co.nz/)

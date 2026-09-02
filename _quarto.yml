@@ -89,6 +89,8 @@ website:
           href: teaching/DATA352/course_documents/index.qmd
         - text: "Datasets"
           href: teaching/DATA352/data/index.qmd
+        - text: "Resources"
+          href: teaching/DATA352/resources/index.qmd
 
 format:
   html:
