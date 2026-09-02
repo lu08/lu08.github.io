@@ -1,0 +1,12 @@
+project:
+  type: default
+  output-dir: site
+  render:
+    - "*.qmd"
+    - "course_documents/**/*.qmd"
+    - "data/**/*.qmd"
+    - "weeks/**/*.qmd"
+
+format:
+  html:
+    toc: false

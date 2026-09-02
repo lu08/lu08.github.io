@@ -1,3 +1,21 @@
 ---
 title: "Course documents"
 ---
+
+You can find all course documents here as a reference page. Please refer to the [weekly modules](../weeks/index.qmd) for specifics on what you need to do each week.
+
+## Lecture slides
+
+- [Lecture 1](all_lectures/Lecture_1.html)
+
+
+## Homework
+
+- [Homework 1](homework/homework_1.qmd)
+
+
+<!--
+## Assignments
+
+- [Assignment 1](assignment/assignment_1.qmd)
+-->

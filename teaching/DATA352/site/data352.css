@@ -1,0 +1,4 @@
+/* DATA352 pages: left-align content instead of centering it */
+main.content {
+  margin: 0;
+}

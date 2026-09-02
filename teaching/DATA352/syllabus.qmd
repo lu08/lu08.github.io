@@ -1,3 +1,142 @@
 ---
 title: "Syllabus"
 ---
+
+Download the pdf version [here](FA2026_DATA352_DATA551_syllabus_Lu.pdf){download="DATA352_DATA551_SYLLABUS.pdf"}.
+
+
+## DATA 352/551: Modeling and Simulation
+
+**Fall 2026**
+
+**Instructor:** Prof. Yi Lu  
+**Email:** [ylu1@drew.edu](mailto:ylu1@drew.edu)  
+**Office:** HS 314  
+**Lectures:** Wednesday, 6:00-8:30 p.m., HS 308 (in person)  
+**Office hours:** R 12-2 (in-person HS314 or via [Google Meet](https://meet.google.com/osa-nsvf-dpk){target="_blank"}); or [by appointment](https://calendar.app.google/bSYSzjv5v5ybxvLt7){target="_blank"}
+
+
+## Course Description
+
+Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation-based inference.
+
+**Prerequisite:** CSCI 149, CSCI 150, STAT 120, or DATA 505.
+
+## Learning Outcomes
+
+Upon completing this course, students will:
+
+- have a basic understanding of how simulation can be used in various applications;
+- have a basic understanding of probability and statistical concepts;
+- be able to use common parametric distributions to model random observations;
+- be able to perform statistical inference using a few simulation-based techniques;
+- be able to simulate random samples and random processes; and
+- be able to design and implement simple algorithms to perform simulations.
+
+## Text and Reading Materials
+
+Topics in this class are relevant to a few different fields in statistics, especially probability and computational statistics.
+
+- Reading materials will be posted on the course webpage throughout the semester.
+- For probability, we will mostly use [*Introduction to Probability*](course_documents/Intro%20to%20Probability.pdf) (Grinstead and Snell, 2012), which is available online.
+- For computational statistics, topics will roughly follow *Statistical Computing with R* (Rizzo, 2019). This book is not required for this class. It is more in-depth than the scope of this class and requires substantial statistical knowledge.
+
+## Course Webpage
+
+Course content will be posted on the [course webpage](https://lu08.github.io/teaching/DATA352/). Grades will be posted on Moodle. Check both the course webpage and Moodle frequently, and check your email regularly for important announcements.
+
+## Programming
+
+Lecture examples, sample code, and homework solutions will be given in R. It is acceptable to choose a different programming language. Some basics of R will be covered at the beginning of the semester. For simplicity, I will use RStudio; other popular IDEs for R include VS Code, Positron, and Jupyter Notebooks. Feel free to use any of these instead of RStudio.
+
+## Electronic Devices
+
+You are expected to bring a working laptop to each lecture. You may use an iPad or similar device for class-related activities such as taking notes. You are **prohibited from using cell phones, headphones, and earbuds during all lectures**. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, or working on assignments from a different course.
+
+## Attendance
+
+You are expected to attend every class unless you have a legitimate excuse, such as illness, a family emergency, or participation in a college-sponsored event. Attendance is mandatory for successful completion of the course. Regardless of the reason, it is your responsibility to make up course material covered during absences. Poor attendance without a valid reason is not an excuse to misuse office hours.
+
+Class attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect your grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the [Absence Policy: Student Rights and Responsibilities](https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC), located in the Academic Policy section of Drew's course catalog under Attendance. Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conferences, or Drew-sanctioned events. Inform the faculty member of planned absences during the first week of the semester. For unforeseen extended health issues, see the academic accommodations statement.
+
+## Late Work and Missed Assignments
+
+**There are no make-ups in this class, even for excused absences.** Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have to miss an exam, communicate with me as soon as possible. **All quizzes and exams must be taken in person; absolutely no exceptions.**
+
+## Grading
+
+Final grades are assigned according to the standard scale: A = 92 to 100; A- = 90 to 92; B+ = 88 to 90; B = 82 to 88; B- = 80 to 82; C+ = 78 to 80; C = 72 to 78; C- = 70 to 72; F = 0 to 70. If registered as an undergraduate: D+ = 68 to 70; D = 62 to 68; D- = 60 to 62; F = 0 to 60.
+
+- **Homework quizzes (20%; two drops allowed):** Homework problems and solutions will be assigned roughly weekly. Homework is not collected; instead, a quiz will be given at the beginning of the lecture when the homework is due. Quiz content is directly based on the homework questions. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.
+- **In-class assignments (20%; two drops allowed):** These assignments occur during most lectures and are not announced ahead of time. Regular attendance and active participation in group assignments and class discussions are expected. There are no make-ups for this grade under any circumstance; the two lowest grades may be dropped.
+- **Exams (3 $\times$ 20%):** There are three in-class exams: two midterms and one final. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
+
+## Cross-Listed Class
+
+Some exam components might differ for students registered in DATA 352 versus DATA 551. In general, the DATA 551 version will be slightly longer, more open-ended, and more comprehensive.
+
+## Final Exam Policy
+
+If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:
+
+- Two final exams scheduled at the same time;
+- three final exams scheduled in one calendar day, in which case one exam will be rescheduled at the convenience of the instructor and the student; or
+- serious illness or personal emergency, with documentation required for validation.
+
+The final exam schedule is visible on the [Registrar's website](https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/) by the beginning of each semester. Students are expected to schedule travel plans **after** their final exams. Our final exam is scheduled for **Wednesday, December 16, 7:30-10:30 p.m.**
+
+## Academic Accommodations
+
+Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.
+
+If you have not yet established services through OAR, but have a temporary health condition or permanent disability that requires accommodations, you are encouraged to contact OAR. Conditions may include, but are not limited to, mental health, attention-related, learning, vision, hearing, physical, or health impacts. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.
+
+Although disclosure may take place at any time during the semester, students are encouraged to do so early because accommodations are generally not implemented retroactively.
+
+**Office of Accessibility Resources**  
+Interim Director: Stefanie Attia  
+Location: Brothers College, Room 119B  
+Phone: 973-408-3962  
+Email: [oar@drew.edu](mailto:oar@drew.edu)
+
+## Academic Integrity Policy
+
+All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University's [Standards of Academic Integrity: Guidelines and Procedures](https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy), located in the academic policies section of the catalog.
+
+## Supporting Student Success
+
+All Drew students can access subject tutoring, writing support, and academic coaching free of charge in the [Center for Academic Excellence (CAE)](https://drew.edu/academic/student-resources/center-for-academic-excellence/), located in the library. Learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, visit [Drew WCOnline](https://drew.mywconline.com/) and follow the instructions on the landing page. If a tutor is not available, submit the Tutor Request form. For other questions, email [cae@drew.edu](mailto:cae@drew.edu).
+
+## Artificial Intelligence
+
+I encourage you to explore artificial intelligence (AI) resources for learning purposes. When using AI, you must:
+
+1. fully document and cite all material, including any code, graph, formula, table, mathematical equation, or other AI-generated material, in submitted work;
+2. check information generated by AI and take full responsibility for its accuracy; and
+3. be able to identify where and how you used any AI tools and how they contributed to your work.
+
+If you have any doubts about what is acceptable, please discuss them with the professor.
+
+## Tentative Schedule
+
+The schedule is subject to change.
+
+| Date | Lecture content | Note |
+|:--|:--|:--|
+| September 2 | Introduction | |
+| September 9 | Common discrete distributions | Homework quiz 1 |
+| September 16 | Review: R basics and loops | Homework quiz 2 |
+| September 23 | Continuous distributions | Homework quiz 3 |
+| September 30 | **Exam 1** | |
+| October 7 | Simulating the Central Limit Theorem | Homework quiz 4 |
+| October 14 | Rejection and SIR sampling | Homework quiz 5 |
+| October 21 | Model-based inference | Homework quiz 6 |
+| October 28 | Bootstrapping | Homework quiz 7 |
+| November 4 | **Exam 2** | |
+| November 11 | Monte Carlo methods | Homework quiz 8 |
+| November 18 | Bayesian modeling | Homework quiz 9 |
+| November 25 | **Thanksgiving - no class** | |
+| December 2 | MCMC I | Homework quiz 10 |
+| December 9 | MCMC II | Homework quiz 11 |
+
+The in-person final exam is on **Wednesday, December 16, 7:30-10:30 p.m.**

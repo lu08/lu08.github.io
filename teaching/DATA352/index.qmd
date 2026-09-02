@@ -1,3 +1,8 @@
 ---
 title: "DATA 352/551: Modeling and Simulation"
 ---
+
+
+Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.
+
+**Description.** Covers techniques for modeling and simulating random systems that are otherwise complicated to study.  Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference.   Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505.
