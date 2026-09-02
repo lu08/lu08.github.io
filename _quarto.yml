@@ -26,6 +26,8 @@ website:
             href: teaching/STAT120/index.qmd
           - text: Stat 117 Introduction to Statistics
             href: teaching/STAT117/index.qmd
+          - text: DATA 352/551 Modeling and Simulation
+            href: teaching/DATA352/index.qmd
       - text: "Dataset"
         href: dataset/index.qmd
   
@@ -70,6 +72,22 @@ website:
           href: teaching/STAT117/course_documents/index.qmd
         - text: "Datasets"
           href: teaching/STAT117/data/index.qmd
+
+    - id: data352
+      contents:
+        - text: "Syllabus"
+          href: teaching/DATA352/syllabus.qmd
+        - text: "Weeks"
+          href: teaching/DATA352/weeks/index.qmd
+          contents:
+            - text: "Week 1"
+              href: teaching/DATA352/weeks/week_1/week_1.qmd
+            - text: "Week 2"
+              href: teaching/DATA352/weeks/week_2/week_2.qmd
+        - text: "Course documents"
+          href: teaching/DATA352/course_documents/index.qmd
+        - text: "Datasets"
+          href: teaching/DATA352/data/index.qmd
 
 format:
   html:

@@ -1,0 +1,9 @@
+navbar: false
+format:
+  html:
+    page-layout: article
+    toc: false
+    sidebar: data352
+    css:
+      - ../../styles.css
+      - data352.css
