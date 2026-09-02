@@ -1,8 +1,9 @@
 ---
 title: "Lecture 1: Introduction; Discrete Random Variables"
 subtitle: "DATA 352/551: Modeling and Simulation"
+engine: knitr
 filters:
-  - webr
+  - ../../../../_extensions/coatless/webr/webr.lua
 format:
   revealjs:
     theme: default

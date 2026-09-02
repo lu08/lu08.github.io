@@ -8,6 +8,7 @@ slides=(
   "teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
   "teaching/STAT117/course_documents/all_lectures/chapter_1_slide.qmd"
   "teaching/STAT117/course_documents/all_lectures/chapter_2_slide.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_1.qmd"
 )
 
 for rel in "${slides[@]}"; do
