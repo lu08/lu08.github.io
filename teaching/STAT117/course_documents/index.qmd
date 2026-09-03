@@ -7,6 +7,7 @@ You can find all course documents here as a reference page.  Please refer to the
 ## Lecture slides
 
 - [Chapter 1](all_lectures/chapter_1_slide.html)
+- [Chapter 2](all_lectures/chapter_2_slide.html)
 
 
 ## Homework
@@ -18,6 +19,7 @@ Solutions are provided in the same document.
 If a dataset is missing, or if you find a typo/error, please let me know.
 
 - [Chapter 1](homework/chapter_1.qmd)
+- [Chapter 2](homework/chapter_2.qmd)
 
 
 <!--
