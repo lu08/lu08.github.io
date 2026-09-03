@@ -1,6 +1,7 @@
 ---
 title: "Chapter 1: Introduction"
 subtitle: "STAT117: Introduction to Statistics"
+footnote-text: "Narrative Summary on selective slides are optional. They are drafted by AI based on annotated lecture slides from previous semesters. They are fully proofread and verified by the instructor."
 format:
   revealjs:
     theme: default
@@ -12,13 +13,11 @@ format:
     scrollable: true
     chalkboard:
          buttons: true
+    template-partials:
+      - title-slide.html
 editor_options: 
   chunk_output_type: inline
 ---
-
-::: {style="position: absolute; bottom: 0; font-size: 0.5em; color: #888;"}
-Narrative Summary on selective slides are optional. They are drafted by AI based on annotated lecture slides from previous semesters. They are fully proofread and verified by the instructor.
-:::
 
 ## Data format
 
@@ -37,8 +36,8 @@ For any (tabular) dataset, the first step is to look at:
 
 Example (**NELS.sav**)
 
-![](L1-data.png)
-![](L1-var.png)
+![](L1-data.png){width="950"}
+![](L1-var.png){width="710"}
 
 
 Another example (**Combined Class Movies.sav**)
@@ -50,7 +49,7 @@ Another example (**Combined Class Movies.sav**)
 
 </details>
 
-![](L1-movie.png)
+![](L1-movie.png){width="950"}
 
 
 
@@ -82,8 +81,8 @@ A variable can have different **values**:
 
 For the ease of analysis, non-numeric values are typically given a numeric coding
 
-![](L1-coding1.png)
-![](L1-coding2.png)
+![](L1-coding1.png){width="950"}
+![](L1-coding2.png){width="950"}
 
 <hr>
 

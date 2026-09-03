@@ -131,19 +131,12 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="center">
   <h1 class="title">Chapter 2: Examining Univariate Distributions</h1>
   <p class="subtitle">STAT117: Introduction to Statistics</p>
-
-<div class="quarto-title-authors">
-</div>
-
-</section>
-<section class="slide level2">
-
-<div style="position: absolute; bottom: 0; font-size: 0.5em; color: #888;">
-<p>Some narrative text in <em>Lecture notes and summary</em> are drafted by AI. They are fully proofread and verified by the instructor.</p>
-</div>
+  <div style="position: absolute; bottom: 0; font-size: 0.5em; color: #888;">
+  Some narrative text in <em>Lecture notes and summary</em> are drafted by AI. They are fully proofread and verified by the instructor.
+  </div>
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
@@ -178,7 +171,7 @@ Lecture notes and summary
 </ul>
 </details>
 
-<img data-src="L2-table1.png" class="r-stretch"></section>
+<img data-src="L2-table1.png" width="950" class="r-stretch"></section>
 <section id="frequency-table---continuous-variable" class="slide level2">
 <h2>Frequency table - continuous variable</h2>
 <details>
@@ -194,7 +187,7 @@ Lecture notes and summary
 </ul>
 </details>
 
-<img data-src="L2-table2.png" class="r-stretch"></section>
+<img data-src="L2-table2.png" width="778" class="r-stretch"></section>
 <section id="percentile-intuitive-examples" class="slide level2">
 <h2>Percentile: intuitive examples</h2>
 <ul>
@@ -211,7 +204,7 @@ Lecture notes and summary
 <section id="percentile-and-percentile-rank" class="slide level2">
 <h2>Percentile and Percentile Rank</h2>
 <p><strong>Kth percentile</strong> of a variable: a value that “beats” k% of the data</p>
-<p><img src="L2-famsize.png" alt="Family size frequency table" width="340" height="159"></p>
+<p><img src="L2-famsize.png" alt="Family size frequency table" width="750" height="350"></p>
 <ul>
 <li><p>25th percentile of family size:</p></li>
 <li><p>90th percentile of family size:</p></li>
@@ -230,10 +223,12 @@ Lecture notes and summary
 <summary>
 Lecture notes and summary
 </summary>
-<p>For the family-size table, the 25th percentile is 4: 25% of families have four or fewer members. The 90th percentile is 6: 90% of families have six or fewer members.</p>
+<p>For the family-size table, the 25th percentile is 4: (at least) 25% of families have four or fewer members. The 90th percentile is 6: (at least)90% of families have six or fewer members.</p>
 <p>The percentile rank of 4 is 52%, meaning 52% of families have fewer than four members. The percentile rank of 8 is 97.4%, meaning 97.4% of families have fewer than eight members.</p>
-<p>The 75th percentile of 86 means that 75% of the class scored 86 or lower, and 25% scored above 86. A percentile identifies a score at a particular position in a distribution.</p>
-<p>A percentile rank of 62% for a score of 82 means that 62% of class scores are below 82. A percentile rank identifies the percentage of observations below a given score.</p>
+<p>The 75th percentile of 86 means that 75% of the class scored 86 or lower, and 25% scored above 86.</p>
+<p>A percentile rank of 62% for a score of 82 means that 62% of class scores are below 82.</p>
+<p>Percentile is a description of the distribution by identifying key positions (e.g., top position using 95th percentile; typical position using 50th percentile aka median).</p>
+<p>Percentile rank is about an <strong>individual</strong> score; it describes the RANKING of that score in terms of the percentages.</p>
 </details>
 </section>
 <section id="five-number-summary-and-iqr" class="slide level2">
@@ -259,42 +254,43 @@ Lecture notes and summary
 <li><p>Maximum: largest observed value</p></li>
 <li><p><span class="math inline">\(IQR = Q_3 - Q_1\)</span></p></li>
 <li><p>Quartiles divide the data into four equal parts</p></li>
-<li><p>The IQR (middle 50%) is often more robust than the full range for describing spread</p></li>
 <li><p>IQR covers the middle 50% of the data</p></li>
-<li><p>Range = max − min (covers all data)</p></li>
+<li><p>Range = max − min (covers all data); very affected by outliers</p></li>
 </ul>
-The five-number summary provides the distribution’s extremes, center, and middle spread. The IQR is less influenced by unusually high or low values than the full range.
 </details>
 </section>
 <section id="boxplot" class="slide level2">
 <h2>Boxplot</h2>
-<p>A boxplot is a visualization of the five number summary. In other words, it is made ONLY based on the minimum, Q1, median (Q2), Q3, and maximum.</p>
+<p>A boxplot is a visualization of the five number summary. It is made ONLY based on the minimum, Q1, median (Q2), Q3, and maximum.</p>
 <div class="columns">
 <div class="column">
-<p><img data-src="L2-box-ses.png"></p>
+<p><img data-src="L2-box-ses.png" width="310"></p>
 </div><div class="column">
-<p><img data-src="L2-box-rdg.png"></p>
+<p><img data-src="L2-box-rdg.png" width="310"></p>
 </div><div class="column">
-<p><img data-src="L2-box-sesregion.png"></p>
+<p><img data-src="L2-box-sesregion.png" width="310"></p>
 </div></div>
 <details>
 <summary>
 Lecture notes and summary
 </summary>
 <ul>
-<li><strong>Box</strong>: extends from Q1 to Q3, with a line at Q2 (median)</li>
+<li><strong>Box in the middle</strong>: extends from Q1 to Q3, with a line at Q2 (median)</li>
 <li><strong>Whiskers</strong>: extend from Q1 down to the minimum, and from Q3 up to the maximum</li>
-<li><strong>Points</strong>: individual outliers (extreme values)</li>
+<li><strong>Points</strong>: individual outliers (extreme values); the number on the outlier is the case number (e.g., row 43 is an outlier)</li>
 </ul>
-<p>Boxplots are useful for: * Comparing distributions of a scale variable across groups * Example: Math Achievement by Geographic Region of School * The scale variable goes on the y-axis; the grouping variable (factor) goes on the x-axis * All boxes should not be in the same scale—each region may have a different distribution</p>
-A boxplot uses only the five-number summary. Side-by-side boxplots make it easier to compare the centers, spreads, and possible outliers of groups.
+<p>Boxplots can be useful for comparing distributions of a numeric variable <strong>across different groups</strong></p>
+<ul>
+<li><p>Example: Math Achievement by Geographic Region of School</p></li>
+<li><p>The scale variable goes on the y-axis; the grouping variable goes on the x-axis</p></li>
+</ul>
 </details>
 </section>
 <section id="bar-graph" class="slide level2">
 <h2>Bar Graph</h2>
 <p>Used for <strong>nominal/ordinal variables</strong></p>
 
-<img data-src="L2-bar.png" class="r-stretch"><details>
+<img data-src="L2-bar.png" width="800" class="r-stretch"><details>
 <summary>
 Lecture notes and summary
 </summary>
@@ -302,15 +298,14 @@ Lecture notes and summary
 <li><strong>Bar graph</strong>: X-axis (categories) is not necessarily ordered</li>
 <li><strong>Width of bar</strong>: does not matter (unlike histograms)</li>
 </ul>
-<p>Pie charts and bar graphs both visualize the distribution of categorical data. The pie chart shows each category as a slice, with the slice size proportional to its frequency or percentage. Bar graphs show categories on the x-axis and frequency on the y-axis.</p>
-<p>A key distinction: in a bar graph for a nominal variable (like geographic region), the order of categories is arbitrary—you could rearrange them without changing the meaning. The width of each bar is just a visual feature; what matters is the height (frequency). This is different from histograms, where bar width represents a meaningful range of numeric values.</p>
+<p>In a bar graph for a nominal variable (like geographic region), the order of categories is arbitrary—you could rearrange them without changing the meaning. The width of each bar is just a visual feature; what matters is the height (frequency). This is different from histograms, where bar width represents a meaningful range of numeric values.</p>
 </details>
 </section>
 <section id="histogram" class="slide level2">
 <h2>Histogram</h2>
 <p>Used for <strong>scale variables</strong></p>
 
-<img data-src="L2-histogram.png" class="r-stretch"><details>
+<img data-src="L2-histogram.png" width="800" class="r-stretch"><details>
 <summary>
 Lecture notes and summary
 </summary>
@@ -318,11 +313,8 @@ Lecture notes and summary
 <li><strong>X-axis</strong>: ordered numeric values (e.g., math achievement)</li>
 <li><strong>Y-axis</strong>: frequency</li>
 <li><strong>Bar width</strong>: represents the <strong>range</strong> of values in each bin</li>
-<li>Mean = 56.99, Std. Dev. = 7.836, N = 500</li>
-<li>X-axis is ordered; width of bar represents the range</li>
-<li>Reveals the <strong>shape</strong> of the distribution (e.g., roughly symmetric, bell-shaped)</li>
 </ul>
-<p>A histogram is designed for numeric data. Its connected bars represent ordered intervals, allowing us to see the distribution’s overall shape, including its center, spread, skewness, and number of peaks.</p>
+<p>A histogram is designed for numeric data. Its connected bars represent <strong>ordered</strong> intervals, allowing us to see the distribution’s overall shape, including its center, spread, skewness, and number of peaks.</p>
 </details>
 </section>
 <section id="stem-and-leaf" class="slide level2">
@@ -349,7 +341,8 @@ Lecture notes and summary
 <summary>
 Lecture notes and summary
 </summary>
-<p>With <code>scale = 2</code>, the stems represent intervals of 10: stem 1 represents values from 10 to 19, stem 2 represents values from 20 to 29, and so forth. Each leaf represents the ones digit of an observation.</p>
+<p>In this example, stem 1 represents values from 10 to 19, stem 2 represents values from 20 to 29, and so forth. Each leaf represents the ones digit of an observation.</p>
+<p>In a stem-and-leaf plot, the stem gives the leading digit(s) and each leaf represents a remaining digit. It displays the distribution’s overall shape while retaining individual observations.</p>
 </details>
 </section>
 <section id="stem-and-leaf-1" class="slide level2">
@@ -359,19 +352,19 @@ Lecture notes and summary
 <summary>
 Family size
 </summary>
-<img data-src="L2-stem-famsize.png">
+<img data-src="L2-stem-famsize.png" width="950">
 </details>
 <details>
 <summary>
 Math achievement in 8th grade
 </summary>
-<p><img data-src="L2-stem-achmat.png"></p>
+<p><img data-src="L2-stem-achmat.png" width="950"></p>
 </details>
 <details>
 <summary>
 Lecture notes and summary
 </summary>
-<p>In a stem-and-leaf plot, the stem gives the leading digit(s) and each leaf represents a remaining digit. It displays the distribution’s shape while retaining individual observations, but grouping, rounding, and repeated leaves can make the original values difficult to recover exactly.</p>
+<p>None.</p>
 </details>
 
 </section>

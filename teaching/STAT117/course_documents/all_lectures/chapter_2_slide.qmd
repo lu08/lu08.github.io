@@ -1,6 +1,7 @@
 ---
 title: "Chapter 2: Examining Univariate Distributions"
 subtitle: "STAT117: Introduction to Statistics"
+footnote-text: "Some narrative text in <em>Lecture notes and summary</em> are drafted by AI.  They are fully proofread and verified by the instructor."
 format:
   revealjs:
     theme: default
@@ -12,15 +13,11 @@ format:
     scrollable: true
     chalkboard:
          buttons: true
+    template-partials:
+      - title-slide.html
 editor_options: 
   chunk_output_type: inline
 ---
-
-::: {style="position: absolute; bottom: 0; font-size: 0.5em; color: #888;"}
-Some narrative text in *Lecture notes and summary* are drafted by AI.  They are fully proofread and verified by the instructor.
-:::
-
-
 
 ## Introduction
 
@@ -61,7 +58,7 @@ For the variable `parmarl8` (Parents' Marital Status in 8th grade):
 * Should pay attention to how missing values are handled: in this case, by default, they are excluded from the percentage calculations
 </details>
 
-![](L2-table1.png)
+![](L2-table1.png){width="950"}
 
 
 
@@ -80,7 +77,7 @@ For the variable `achmat08` (Math achievement in 8th grade):
 * Counts and "%_of_total" columns are NOT very useful in this case as it is a **continuous** variable; most values have a count of 1 (i.e., unique scores); occasionally some values would have a count of 2 or more just due to coincidence
 </details>
 
-![](L2-table2.png)
+![](L2-table2.png){width="778"}
 
 
 ## Percentile: intuitive examples
@@ -100,7 +97,7 @@ Percentiles compare one observation with a reference distribution. SAT reports s
 
 **Kth percentile** of a variable: a value that "beats" k% of the data
 
-<img src="L2-famsize.png" alt="Family size frequency table" width="340" height="159">
+<img src="L2-famsize.png" alt="Family size frequency table" width="750" height="350">
 
 * 25th percentile of family size:
 
@@ -123,13 +120,17 @@ Percentiles compare one observation with a reference distribution. SAT reports s
 <details>
 <summary>Lecture notes and summary</summary>
 
-For the family-size table, the 25th percentile is 4: 25% of families have four or fewer members. The 90th percentile is 6: 90% of families have six or fewer members.
+For the family-size table, the 25th percentile is 4: (at least) 25% of families have four or fewer members. The 90th percentile is 6: (at least)90% of families have six or fewer members.
 
 The percentile rank of 4 is 52%, meaning 52% of families have fewer than four members. The percentile rank of 8 is 97.4%, meaning 97.4% of families have fewer than eight members.
 
-The 75th percentile of 86 means that 75% of the class scored 86 or lower, and 25% scored above 86. A percentile identifies a score at a particular position in a distribution.
+The 75th percentile of 86 means that 75% of the class scored 86 or lower, and 25% scored above 86.
 
-A percentile rank of 62% for a score of 82 means that 62% of class scores are below 82. A percentile rank identifies the percentage of observations below a given score.
+A percentile rank of 62% for a score of 82 means that 62% of class scores are below 82.
+
+Percentile is a description of the distribution by identifying key positions (e.g., top position using 95th percentile; typical position using 50th percentile aka median).
+
+Percentile rank is about an **individual** score; it describes the RANKING of that score in terms of the percentages.
 
 </details>
 
@@ -158,11 +159,9 @@ A percentile rank of 62% for a score of 82 means that 62% of class scores are be
 * $IQR = Q_3 - Q_1$
 
 * Quartiles divide the data into four equal parts
-* The IQR (middle 50%) is often more robust than the full range for describing spread
 * IQR covers the middle 50% of the data
-* Range = max − min (covers all data)
+* Range = max − min (covers all data); very affected by outliers
 
-The five-number summary provides the distribution's extremes, center, and middle spread. The IQR is less influenced by unusually high or low values than the full range.
 </details>
 
 ---
@@ -170,37 +169,35 @@ The five-number summary provides the distribution's extremes, center, and middle
 
 ## Boxplot
 
-A boxplot is a visualization of the five number summary.  In other words, it is made ONLY based on the minimum, Q1, median (Q2), Q3, and maximum.
+A boxplot is a visualization of the five number summary.  It is made ONLY based on the minimum, Q1, median (Q2), Q3, and maximum.
 
 
 ::: columns
 :::: column
-![](L2-box-ses.png)
+![](L2-box-ses.png){width="310"}
 ::::
 
 :::: column
-![](L2-box-rdg.png)
+![](L2-box-rdg.png){width="310"}
 ::::
 
 :::: column
-![](L2-box-sesregion.png)
+![](L2-box-sesregion.png){width="310"}
 ::::
 :::
 
 <details>
 <summary>Lecture notes and summary</summary>
-* **Box**: extends from Q1 to Q3, with a line at Q2 (median)
+* **Box in the middle**: extends from Q1 to Q3, with a line at Q2 (median)
 * **Whiskers**: extend from Q1 down to the minimum, and from Q3 up to the maximum
-* **Points**: individual outliers (extreme values)
+* **Points**: individual outliers (extreme values); the number on the outlier is the case number (e.g., row 43 is an outlier)
 
 
-Boxplots are useful for:
-* Comparing distributions of a scale variable across groups
+Boxplots can be useful for comparing distributions of a numeric variable **across different groups**
+
 * Example: Math Achievement by Geographic Region of School
-* The scale variable goes on the y-axis; the grouping variable (factor) goes on the x-axis
-* All boxes should not be in the same scale—each region may have a different distribution
 
-A boxplot uses only the five-number summary. Side-by-side boxplots make it easier to compare the centers, spreads, and possible outliers of groups.
+* The scale variable goes on the y-axis; the grouping variable goes on the x-axis
 </details>
 
 
@@ -209,16 +206,14 @@ A boxplot uses only the five-number summary. Side-by-side boxplots make it easie
 
 Used for **nominal/ordinal variables**
 
-![](L2-bar.png)
+![](L2-bar.png){width="800"}
 
 <details>
 <summary>Lecture notes and summary</summary>
 * **Bar graph**: X-axis (categories) is not necessarily ordered
 * **Width of bar**: does not matter (unlike histograms)
 
-Pie charts and bar graphs both visualize the distribution of categorical data. The pie chart shows each category as a slice, with the slice size proportional to its frequency or percentage. Bar graphs show categories on the x-axis and frequency on the y-axis.
-
-A key distinction: in a bar graph for a nominal variable (like geographic region), the order of categories is arbitrary—you could rearrange them without changing the meaning. The width of each bar is just a visual feature; what matters is the height (frequency). This is different from histograms, where bar width represents a meaningful range of numeric values.
+In a bar graph for a nominal variable (like geographic region), the order of categories is arbitrary—you could rearrange them without changing the meaning. The width of each bar is just a visual feature; what matters is the height (frequency). This is different from histograms, where bar width represents a meaningful range of numeric values.
 
 </details>
 
@@ -226,7 +221,7 @@ A key distinction: in a bar graph for a nominal variable (like geographic region
 
 Used for **scale variables**
 
-![](L2-histogram.png)
+![](L2-histogram.png){width="800"}
 
 <details>
 <summary>Lecture notes and summary</summary>
@@ -234,11 +229,8 @@ Used for **scale variables**
 * **X-axis**: ordered numeric values (e.g., math achievement)
 * **Y-axis**: frequency
 * **Bar width**: represents the **range** of values in each bin
-* Mean = 56.99, Std. Dev. = 7.836, N = 500
-* X-axis is ordered; width of bar represents the range
-* Reveals the **shape** of the distribution (e.g., roughly symmetric, bell-shaped)
 
-A histogram is designed for numeric data. Its connected bars represent ordered intervals, allowing us to see the distribution's overall shape, including its center, spread, skewness, and number of peaks.
+A histogram is designed for numeric data. Its connected bars represent **ordered** intervals, allowing us to see the distribution's overall shape, including its center, spread, skewness, and number of peaks.
 
 </details>
 
@@ -257,7 +249,9 @@ stem(mydata, scale=2)
 <details>
 <summary>Lecture notes and summary</summary>
 
-With `scale = 2`, the stems represent intervals of 10: stem 1 represents values from 10 to 19, stem 2 represents values from 20 to 29, and so forth. Each leaf represents the ones digit of an observation.
+In this example, stem 1 represents values from 10 to 19, stem 2 represents values from 20 to 29, and so forth.  Each leaf represents the ones digit of an observation.
+
+In a stem-and-leaf plot, the stem gives the leading digit(s) and each leaf represents a remaining digit. It displays the distribution's overall shape while retaining individual observations.
 
 </details>
 
@@ -269,14 +263,14 @@ Stem-and-leaf plots are not very precise, and different software may use differe
 <details>
 <summary>Family size</summary>
 
-![](L2-stem-famsize.png)
+![](L2-stem-famsize.png){width="950"}
 </details>
 
 
 <details>
 <summary>Math achievement in 8th grade</summary>
 
-![](L2-stem-achmat.png)
+![](L2-stem-achmat.png){width="950"}
 
 </details>
 
@@ -285,6 +279,6 @@ Stem-and-leaf plots are not very precise, and different software may use differe
 <details>
 <summary>Lecture notes and summary</summary>
 
-In a stem-and-leaf plot, the stem gives the leading digit(s) and each leaf represents a remaining digit. It displays the distribution's shape while retaining individual observations, but grouping, rounding, and repeated leaves can make the original values difficult to recover exactly.
+None.
 
 </details>
