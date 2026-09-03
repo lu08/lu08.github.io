@@ -9,7 +9,7 @@
 <link href="chapter_2_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>STAT117 - Chapter 2</title>
+  <title>Chapter 2: Examining Univariate Distributions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,77 +30,13 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="chapter_2_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="chapter_2_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="chapter_2_slide_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="chapter_2_slide_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="chapter_2_slide_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="chapter_2_slide_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="chapter_2_slide_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -196,7 +132,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">STAT117 - Chapter 2</h1>
+  <h1 class="title">Chapter 2: Examining Univariate Distributions</h1>
+  <p class="subtitle">STAT117: Introduction to Statistics</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -205,35 +142,231 @@
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>Wide variety, very flexible - can generate quite complicated graphs
-<ul>
-<li>http://www.htmlwidgets.org/showcase_leaflet.html</li>
-<li>https://plot.ly/r/</li>
-</ul></li>
-<li>Many new packages and functions are being published (esp.&nbsp;on github)</li>
-<li>Currently, no “go-to” package, no unified approach</li>
-<li>We’ll try a few simple examples to give you an idea, mostly using the <font color="red">plotly</font> package</li>
+<li><p><strong>Univariate</strong> distribution: describe ONE variable</p></li>
+<li><p>Usually, a <strong>combination of tools</strong> can be used (e.g., statistics, table, visualizations)</p></li>
+<li><p>The <strong>same information</strong> about a variable can be given by <strong>different tools</strong></p></li>
+<li><p>Choice of tools largely depends on the measurement type</p></li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co">#install.packages('plotly')</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">library</span>(plotly)</span>
-<span id="cb1-3"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-4"><a href=""></a><span class="fu">library</span>(Lock5Data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<hr>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>A univariate distribution describes one variable at a time. Choose a combination of numerical summaries, tables, and graphs according to the variable’s level of measurement.</p>
+</details>
 </section>
-<section id="example-1-histogram" class="slide level2">
-<h2>Example 1: Histogram</h2>
+<section id="frequency-table---categorical-variable" class="slide level2">
+<h2>Frequency table - categorical variable</h2>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>For the variable <code>parmarl8</code> (Parents’ Marital Status in 8th grade):</p>
 <ul>
-<li>A histogram is given by default for plotting one variable</li>
-<li>Add <font color="blue">type=‘histogram’</font> to get rid of the warning message</li>
-<li>Note the difference in syntax convention (e.g.: <font color="red"> ~ </font>varname)</li>
+<li><p><strong>% of Total</strong> example: <span class="math inline">\(5.5\% = 26 / 477\)</span></p></li>
+<li><p><strong>Cumulative %</strong> example: <span class="math inline">\(8.4\%\)</span> for “Separated” = <span class="math inline">\(5.5\% + 1.3\% + 1.7\%\)</span> (i.e., it is the sum of all percents up to that row)</p></li>
+<li><p>Cumulative percent is NOT very useful in this case as it is a <strong>nominal</strong> variable</p></li>
+<li><p>Should pay attention to how missing values are handled: in this case, by default, they are excluded from the percentage calculations</p></li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
+<img data-src="L2-table1.png" class="r-stretch"></section>
+<section id="frequency-table---continuous-variable" class="slide level2">
+<h2>Frequency table - continuous variable</h2>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>For the variable <code>achmat08</code> (Math achievement in 8th grade):</p>
+<ul>
+<li><p><strong>% of Total</strong> example: <span class="math inline">\(0.2\% = 1 / 500\)</span></p></li>
+<li><p><strong>Cumulative %</strong> example 1: in row 30, a score of 42.54 has a cumulative percentage of <span class="math inline">\(6.2\%\)</span>, which means that <span class="math inline">\(6.2\%\)</span> of students in the dataset scored 42.54 or lower</p></li>
+<li><p><strong>Cumulative %</strong> example 2: if I want to identify the bottom <span class="math inline">\(5\%\)</span> of students, I would look for the row where the cumulative percentage reaches <span class="math inline">\(5\%\)</span>. The grade cutoff I’m looking for is 41.84</p></li>
+<li><p>Counts and “%_of_total” columns are NOT very useful in this case as it is a <strong>continuous</strong> variable; most values have a count of 1 (i.e., unique scores); occasionally some values would have a count of 2 or more just due to coincidence</p></li>
+</ul>
+</details>
+
+<img data-src="L2-table2.png" class="r-stretch"></section>
+<section id="percentile-intuitive-examples" class="slide level2">
+<h2>Percentile: intuitive examples</h2>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/SAT">SAT</a> percentiles.</p></li>
+<li><p><a href="https://www.cdc.gov/growthcharts/cdc-growth-charts.htm">Pediatric measurement percentiles</a> (e.g., height and weight for age).</p></li>
+</ul>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>Percentiles compare one observation with a reference distribution. SAT reports show how a student’s score compares with scores from other test takers, while pediatric growth charts compare a child’s height or weight with measurements for children of the same age and sex.</p>
+</details>
+</section>
+<section id="percentile-and-percentile-rank" class="slide level2">
+<h2>Percentile and Percentile Rank</h2>
+<p><strong>Kth percentile</strong> of a variable: a value that “beats” k% of the data</p>
+<p><img src="L2-famsize.png" alt="Family size frequency table" width="340" height="159"></p>
+<ul>
+<li><p>25th percentile of family size:</p></li>
+<li><p>90th percentile of family size:</p></li>
+</ul>
+<p><strong>Percentile rank</strong> of a given value: % of data that are below the given value</p>
+<ul>
+<li><p>Percentile rank of 4:</p></li>
+<li><p>Percentile rank of 8:</p></li>
+</ul>
+<p><strong>Comparing percentile and percentile rank:</strong></p>
+<ul>
+<li><p>For example, after midterm 1, I can say “the 75th percentile of our class is 86.” What does that mean?</p></li>
+<li><p>If your grade is 82, you could ask me what your percentile rank is. If the percentile rank of 82 is 62%, what does that mean?</p></li>
+</ul>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>For the family-size table, the 25th percentile is 4: 25% of families have four or fewer members. The 90th percentile is 6: 90% of families have six or fewer members.</p>
+<p>The percentile rank of 4 is 52%, meaning 52% of families have fewer than four members. The percentile rank of 8 is 97.4%, meaning 97.4% of families have fewer than eight members.</p>
+<p>The 75th percentile of 86 means that 75% of the class scored 86 or lower, and 25% scored above 86. A percentile identifies a score at a particular position in a distribution.</p>
+<p>A percentile rank of 62% for a score of 82 means that 62% of class scores are below 82. A percentile rank identifies the percentage of observations below a given score.</p>
+</details>
+</section>
+<section id="five-number-summary-and-iqr" class="slide level2">
+<h2>Five Number Summary and IQR</h2>
+<p><strong>Five Number Summary</strong> provides a quick snapshot of a continuous distribution:</p>
+<ul>
+<li><strong>Minimum</strong> (min):</li>
+<li><strong>First Quartile (Q1)</strong>:</li>
+<li><strong>Second Quartile (Q2)</strong>:</li>
+<li><strong>Third Quartile (Q3)</strong>:</li>
+<li><strong>Maximum</strong> (max):</li>
+</ul>
+<p><strong>Interquartile Range (IQR)</strong></p>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<ul>
+<li><p>Minimum: smallest observed value</p></li>
+<li><p><span class="math inline">\(Q_1\)</span>: 25th percentile</p></li>
+<li><p><span class="math inline">\(Q_2\)</span>: median, or 50th percentile</p></li>
+<li><p><span class="math inline">\(Q_3\)</span>: 75th percentile</p></li>
+<li><p>Maximum: largest observed value</p></li>
+<li><p><span class="math inline">\(IQR = Q_3 - Q_1\)</span></p></li>
+<li><p>Quartiles divide the data into four equal parts</p></li>
+<li><p>The IQR (middle 50%) is often more robust than the full range for describing spread</p></li>
+<li><p>IQR covers the middle 50% of the data</p></li>
+<li><p>Range = max − min (covers all data)</p></li>
+</ul>
+The five-number summary provides the distribution’s extremes, center, and middle spread. The IQR is less influenced by unusually high or low values than the full range.
+</details>
+</section>
+<section id="boxplot" class="slide level2">
+<h2>Boxplot</h2>
+<p>A boxplot is a visualization of the five number summary. In other words, it is made ONLY based on the minimum, Q1, median (Q2), Q3, and maximum.</p>
+<div class="columns">
+<div class="column">
+<p><img data-src="L2-box-ses.png"></p>
+</div><div class="column">
+<p><img data-src="L2-box-rdg.png"></p>
+</div><div class="column">
+<p><img data-src="L2-box-sesregion.png"></p>
+</div></div>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<ul>
+<li><strong>Box</strong>: extends from Q1 to Q3, with a line at Q2 (median)</li>
+<li><strong>Whiskers</strong>: extend from Q1 down to the minimum, and from Q3 up to the maximum</li>
+<li><strong>Points</strong>: individual outliers (extreme values)</li>
+</ul>
+<p>Boxplots are useful for: * Comparing distributions of a scale variable across groups * Example: Math Achievement by Geographic Region of School * The scale variable goes on the y-axis; the grouping variable (factor) goes on the x-axis * All boxes should not be in the same scale—each region may have a different distribution</p>
+A boxplot uses only the five-number summary. Side-by-side boxplots make it easier to compare the centers, spreads, and possible outliers of groups.
+</details>
+</section>
+<section id="bar-graph" class="slide level2">
+<h2>Bar Graph</h2>
+<p>Used for <strong>nominal/ordinal variables</strong></p>
+
+<img data-src="L2-bar.png" class="r-stretch"><details>
+<summary>
+Lecture notes and summary
+</summary>
+<ul>
+<li><strong>Bar graph</strong>: X-axis (categories) is not necessarily ordered</li>
+<li><strong>Width of bar</strong>: does not matter (unlike histograms)</li>
+</ul>
+<p>Pie charts and bar graphs both visualize the distribution of categorical data. The pie chart shows each category as a slice, with the slice size proportional to its frequency or percentage. Bar graphs show categories on the x-axis and frequency on the y-axis.</p>
+<p>A key distinction: in a bar graph for a nominal variable (like geographic region), the order of categories is arbitrary—you could rearrange them without changing the meaning. The width of each bar is just a visual feature; what matters is the height (frequency). This is different from histograms, where bar width represents a meaningful range of numeric values.</p>
+</details>
+</section>
+<section id="histogram" class="slide level2">
+<h2>Histogram</h2>
+<p>Used for <strong>scale variables</strong></p>
+
+<img data-src="L2-histogram.png" class="r-stretch"><details>
+<summary>
+Lecture notes and summary
+</summary>
+<ul>
+<li><strong>X-axis</strong>: ordered numeric values (e.g., math achievement)</li>
+<li><strong>Y-axis</strong>: frequency</li>
+<li><strong>Bar width</strong>: represents the <strong>range</strong> of values in each bin</li>
+<li>Mean = 56.99, Std. Dev. = 7.836, N = 500</li>
+<li>X-axis is ordered; width of bar represents the range</li>
+<li>Reveals the <strong>shape</strong> of the distribution (e.g., roughly symmetric, bell-shaped)</li>
+</ul>
+<p>A histogram is designed for numeric data. Its connected bars represent ordered intervals, allowing us to see the distribution’s overall shape, including its center, spread, skewness, and number of peaks.</p>
+</details>
+</section>
+<section id="stem-and-leaf" class="slide level2">
+<h2>Stem-and-Leaf</h2>
+<p>Let’s first take a look at <a href="Stem%20and%20leaf.pdf">A Japanese train timetable</a> from 1985 (from <a href="https://www.edwardtufte.com/book/envisioning-information/"><em>Envisioning Information</em></a>, Tufte)</p>
+<p>A basic example:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>data: 13 13 13 14 16 17 17 23 48 49 55 55 55 60 61 61 62 63 64 68</code></pre>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
 
-<img data-src="chapter_2_slide_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+  1 | 3334677
+  2 | 3
+  3 | 
+  4 | 89
+  5 | 555
+  6 | 0112348</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>With <code>scale = 2</code>, the stems represent intervals of 10: stem 1 represents values from 10 to 19, stem 2 represents values from 20 to 29, and so forth. Each leaf represents the ones digit of an observation.</p>
+</details>
+</section>
+<section id="stem-and-leaf-1" class="slide level2">
+<h2>Stem-and-Leaf</h2>
+<p>Stem-and-leaf plots are not very precise, and different software may use different rounding or grouping strategies, which can affect the appearance of the plot.</p>
+<details>
+<summary>
+Family size
+</summary>
+<img data-src="L2-stem-famsize.png">
+</details>
+<details>
+<summary>
+Math achievement in 8th grade
+</summary>
+<p><img data-src="L2-stem-achmat.png"></p>
+</details>
+<details>
+<summary>
+Lecture notes and summary
+</summary>
+<p>In a stem-and-leaf plot, the stem gives the leading digit(s) and each leaf represents a remaining digit. It displays the distribution’s shape while retaining individual observations, but grouping, rounding, and repeated leaves can make the original values difficult to recover exactly.</p>
+</details>
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -248,6 +381,7 @@
   <script src="chapter_2_slide_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="chapter_2_slide_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="chapter_2_slide_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="chapter_2_slide_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="chapter_2_slide_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -269,7 +403,8 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': true,
  
         // Display controls in the bottom right corner
@@ -440,7 +575,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
