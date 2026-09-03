@@ -23,11 +23,13 @@ format: html
 
 We will finish Chapter 1 today and get started with Chapter 2.
 
+As a reminder, when we finish Chapter 1, you should do [Chapter 1 homework](../../course_documents/homework/chapter_1.html){target="_blank"} for additional practice.  You can skip the last two questions (which involve Jamovi) for now.  Recall that homework is not collected in this class. 
+
 [Link to fullscreen](../../course_documents/all_lectures/chapter_2_slide.html)
 
 <iframe src="../../course_documents/all_lectures/chapter_2_slide.html" width="100%" height="650px" style="border:none;"></iframe>
 
-As a reminder, when we finish Chapter 1, you should do [Chapter 1 homework](../../course_documents/homework/chapter_1.html){target="_blank"} for additional practice.  Recall that homework is not collected in this class.
+
 
 
 
