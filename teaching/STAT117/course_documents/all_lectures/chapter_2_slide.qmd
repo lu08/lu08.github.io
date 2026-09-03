@@ -22,10 +22,11 @@ Some narrative text in *Lecture notes and summary* are drafted by AI.  They are 
 
 
 
-
 ## Introduction
 
 - **Univariate** distribution: describe ONE variable
+
+- Example: how would you describe the distribution of `income` in New Jersey?  What about the distribution of `education level`?
 
 - Usually, a **combination of tools** can be used (e.g., statistics, table, visualizations)
 
@@ -39,7 +40,9 @@ Some narrative text in *Lecture notes and summary* are drafted by AI.  They are 
 <details>
 <summary>Lecture notes and summary</summary>
 
-A univariate distribution describes one variable at a time. Choose a combination of numerical summaries, tables, and graphs according to the variable's level of measurement.
+To describe the distribution of `income` in New Jersey, we could report **statistics** such as the mean, median, and standard deviation, look at a **frequency/percentile table**, and/or plot a **histogram** or **boxplot** to visualize the shape, center, and spread (and check for skewness or outliers). Since `income` is **continuous**, tools like the mean, standard deviation, and histograms are appropriate.
+
+To describe the distribution of `education level`, we could report a **frequency table** showing the count/percent of residents in each category (e.g., less than high school, high school, some college, bachelor's, graduate degree) and display it with a **bar chart**. Since `education level` is **ordinal** (or sometimes treated as nominal), the median and percentiles make more sense than the mean, and cumulative percentages can be meaningful because the categories are ordered.
 
 </details>
 
