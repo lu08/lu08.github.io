@@ -9,7 +9,7 @@ Homework is not collected.  The quiz based on this homework will be at the begin
 
 You do not need to write any code for this homework.  You only need to *describe* how you would perform the simulations and analyze the results.
 
-Read Section 1.1, “Simulation of Discrete Probabilities,” in *Introduction to Probability* (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later.
+Read Section 1.1, “Simulation of Discrete Probabilities,” in [Introduction to Probability](../course_documents/Intro%20to%20Probability.pdf) (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later.
 
 ## Question 1
 

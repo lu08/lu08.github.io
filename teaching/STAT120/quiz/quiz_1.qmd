@@ -1,0 +1,77 @@
+---
+title: "STAT120: Quiz 1 (9/3)"
+format:
+  pdf:
+    geometry: "top=0.5in,left=1in,right=1in,bottom=1in"
+    title-block-style: plain
+---
+
+\vspace{-5em}
+
+**Name:** ____________________________________________
+
+
+1. Which statement about R and RStudio is correct?
+
+[ ] RStudio is a replacement for R, so R does not need to be installed.
+
+[ ] R is the programming language, and RStudio is an interface (IDE) for working with R.
+
+[ ] RStudio can only be used through an online environment like Posit Cloud.
+
+[ ] R and RStudio are two names for the same program.
+
+
+
+\vspace{0.5em}
+
+2. Which statement about running code from an R script file is correct?
+
+[ ] You should not run code from an R script and should always type code directly into the console.
+
+[ ] You cannot save an R script file.
+
+[ ] You can highlight part of the code in an R script file and run only the highlighted portion.
+
+[ ] All lines of code in an R script must be run together.
+
+
+\vspace{0.5em}
+
+3. If you don't have highlighted code in an R script file, what happens when you try to run code (by hitting Command + Enter on a Mac, or Ctrl + Enter on Windows)?
+
+[ ] The current line of code where the cursor is located will be run.
+
+[ ] Nothing will happen.
+
+[ ] The entire script will be run.
+
+[ ] An error message will be displayed.
+
+
+\vspace{0.5em}
+
+4. Which of the following is the correct code to calculate $\sqrt{2}$ in R?
+
+[ ] sqrt(2)
+
+[ ] sqrt: 2
+
+[ ] sqrt of 2
+
+[ ] R cannot calculate square roots.
+
+
+\vspace{0.5em}
+
+5. If you run `2+5` in R, what will be the output?
+
+[ ] 7
+
+[ ] 25
+
+[ ] "2+5"
+
+[ ] An error message will be displayed.
+
+

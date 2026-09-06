@@ -29,6 +29,17 @@
     ]
   },
   {
+    "objectID": "teaching/STAT120/schedule.html#week-2",
+    "href": "teaching/STAT120/schedule.html#week-2",
+    "title": "Schedule and reminders",
+    "section": "Week 2",
+    "text": "Week 2\n\nSep 8: We are not meeting in person today (as I’ll be travelling). Instead, please study the remaining slides of Lecture 1 on your own and do Homework 1 for extra practice. Recall that homework is not collected in this class.\nSep 10: Quiz 2, based on content from Lecture 1 and Homework 1.",
+    "crumbs": [
+      "Research",
+      "Schedule and reminders"
+    ]
+  },
+  {
     "objectID": "teaching/STAT120/schedule.html#overall-schedule-from-syllabus",
     "href": "teaching/STAT120/schedule.html#overall-schedule-from-syllabus",
     "title": "Schedule and reminders",
@@ -40,195 +51,399 @@
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture_notes/index.html",
-    "href": "teaching/STAT120/lectures/lecture_notes/index.html",
-    "title": "Lecture code and notes",
+    "objectID": "teaching/STAT120/quiz/quiz_1.html",
+    "href": "teaching/STAT120/quiz/quiz_1.html",
+    "title": "STAT120: Quiz 1 (9/3)",
     "section": "",
-    "text": "Coming soon.",
-    "crumbs": [
-      "Research",
-      "Lectures",
-      "Lecture notes"
-    ]
+    "text": "Name: ____________________________________________\n\nWhich statement about R and RStudio is correct?\n\n[ ] RStudio is a replacement for R, so R does not need to be installed.\n[ ] R is the programming language, and RStudio is an interface (IDE) for working with R.\n[ ] RStudio can only be used through an online environment like Posit Cloud.\n[ ] R and RStudio are two names for the same program.\n\nWhich statement about running code from an R script file is correct?\n\n[ ] You should not run code from an R script and should always type code directly into the console.\n[ ] You cannot save an R script file.\n[ ] You can highlight part of the code in an R script file and run only the highlighted portion.\n[ ] All lines of code in an R script must be run together.\n\nIf you don’t have highlighted code in an R script file, what happens when you try to run code (by hitting Command + Enter on a Mac, or Ctrl + Enter on Windows)?\n\n[ ] The current line of code where the cursor is located will be run.\n[ ] Nothing will happen.\n[ ] The entire script will be run.\n[ ] An error message will be displayed.\n\nWhich of the following is the correct code to calculate \\(\\sqrt{2}\\) in R?\n\n[ ] sqrt(2)\n[ ] sqrt: 2\n[ ] sqrt of 2\n[ ] R cannot calculate square roots.\n\nIf you run 2+5 in R, what will be the output?\n\n[ ] 7\n[ ] 25\n[ ] “2+5”\n[ ] An error message will be displayed."
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
-    "href": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
+    "objectID": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
+    "href": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
     "title": "Yi Lu",
     "section": "",
     "text": "Link to fullscreen",
     "crumbs": [
       "Research",
       "Lectures",
-      "Lecture 1"
+      "Lecture 2"
     ]
   },
   {
-    "objectID": "teaching/STAT120/index.html",
-    "href": "teaching/STAT120/index.html",
-    "title": "STAT120 - Statistical Computing in R / DATA505 - Statistics Using R",
+    "objectID": "teaching/STAT120/lectures/index.html",
+    "href": "teaching/STAT120/lectures/index.html",
+    "title": "Lectures",
     "section": "",
-    "text": "Welcome to the course site of STAT120 - Statistical Computing in R / DATA505 - Statistics Using R. Use the sidebar to navigate within this course.\nDescription. (STAT120) Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.\n(DATA505) Covers how to use real-world data and draw intelligent conclusions on it using univariate and bivariate descriptive statistics such as centrality, spread, and correlation. Students have the opportunity to learn how to use the R language in the R-studio environment to obtain representative samples from large datasets and use the information in such samples to draw inferences on the larger datasets they were taken from. Course topics include graphical and tabular presentation of data, measures of central tendency, spread and shape, linear transformations of data, correlation, regression, probability, the normal probability model, sampling, t-tests, and one-way analysis of variance."
-  },
-  {
-    "objectID": "teaching/STAT120/homework/homework_2.html",
-    "href": "teaching/STAT120/homework/homework_2.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "Suppose the following are the final high school GPAs of a group of college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90. Create a vector that stores these values in the order specified. Choose a variable name that’s descriptive but relatively short.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\n\n\n\nFor the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)\n\n\nShow solution\n\n\n\nwhich(gpa&gt;3.5)\n\n[1] 1 2 3 4 7\n\n\n\n\nUse R to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.\n\n\nShow solution\n\n\n\nlength(gpa)\n\n[1] 10\n\nmax(gpa)\n\n[1] 4\n\nwhich(gpa==max(gpa))\n\n[1] 4\n\n\n\n\nFind the average GPA for this group of students.\n\n\nShow solution\n\n\n\nmean(gpa)\n\n[1] 3.385\n\n\n\n\nSuppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.\n\n\nShow solution\n\n\n\nsat_quant &lt;- c(640, 680, 790, 730, 580, 560, 670, 450, 650, 490)\nlength(sat_quant)\n\n[1] 10\n\n\n\n\nPrint out the SAT quantitative scores for the 2nd and 3rd students.\n\n\nShow solution\n\n\n\nsat_quant[c(2,3)]\n\n[1] 680 790\n\n\n\n\nPrint out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type 1, 2, 3, 4, 7 anywhere in your code.\n\n\nShow solution\n\n\n\nsat_quant[gpa&gt;3.5]\n\n[1] 640 680 790 730 670\n\n\n\n\nCreate a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1. Note that 1 represents “male” and 0 represents “female.” Double check that it has the right length.\n\n\n\nShow solution\n\n\ngender &lt;- c(rep(1, 3), rep(0, 5), rep(1, 2))\nlength(gender)\n\n[1] 10\n\n\n\n\nFind the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.\n\n\nShow solution\n\n\n\nmean(gender)\n\n[1] 0.5\n\n\n\n\nThe respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior. Create a factor vector that stores the year of students (hint: create a character vector first and convert it to factor). Use R to double check that its type is factor.\n\n\n\nShow solution\n\n\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\nclass(year)\n\n[1] \"factor\"\n\n\n\n\nUse the tapply function to print out the average GPA of students by Year. Your output should look like this.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\ntapply(gpa,year,mean)\n\n Freshman    Junior    Senior Sophomore \n 3.407500  3.120000  3.260000  3.526667 \n\n\n\n\nStore the vectors you created previously (gpa, sat_quant, gender, and year) in a data frame using the data.frame() function. Then, use the group_by() function in tidyverse to get the average GPA of students by year.\n\n\n\nShow solution\n\n\ndf.student &lt;- data.frame(gpa,year,sat_quant,gender)\ndf.student %&gt;% \n  group_by(year) %&gt;%\n  summarise(mean(gpa))\n\n# A tibble: 4 × 2\n  year      `mean(gpa)`\n  &lt;fct&gt;           &lt;dbl&gt;\n1 Freshman         3.41\n2 Junior           3.12\n3 Senior           3.26\n4 Sophomore        3.53"
-  },
-  {
-    "objectID": "teaching/STAT120/homework/homework_2.html#part-iv",
-    "href": "teaching/STAT120/homework/homework_2.html#part-iv",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "Suppose the following are the final high school GPAs of a group of college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90. Create a vector that stores these values in the order specified. Choose a variable name that’s descriptive but relatively short.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\n\n\n\nFor the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)\n\n\nShow solution\n\n\n\nwhich(gpa&gt;3.5)\n\n[1] 1 2 3 4 7\n\n\n\n\nUse R to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.\n\n\nShow solution\n\n\n\nlength(gpa)\n\n[1] 10\n\nmax(gpa)\n\n[1] 4\n\nwhich(gpa==max(gpa))\n\n[1] 4\n\n\n\n\nFind the average GPA for this group of students.\n\n\nShow solution\n\n\n\nmean(gpa)\n\n[1] 3.385\n\n\n\n\nSuppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.\n\n\nShow solution\n\n\n\nsat_quant &lt;- c(640, 680, 790, 730, 580, 560, 670, 450, 650, 490)\nlength(sat_quant)\n\n[1] 10\n\n\n\n\nPrint out the SAT quantitative scores for the 2nd and 3rd students.\n\n\nShow solution\n\n\n\nsat_quant[c(2,3)]\n\n[1] 680 790\n\n\n\n\nPrint out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type 1, 2, 3, 4, 7 anywhere in your code.\n\n\nShow solution\n\n\n\nsat_quant[gpa&gt;3.5]\n\n[1] 640 680 790 730 670\n\n\n\n\nCreate a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1. Note that 1 represents “male” and 0 represents “female.” Double check that it has the right length.\n\n\n\nShow solution\n\n\ngender &lt;- c(rep(1, 3), rep(0, 5), rep(1, 2))\nlength(gender)\n\n[1] 10\n\n\n\n\nFind the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.\n\n\nShow solution\n\n\n\nmean(gender)\n\n[1] 0.5\n\n\n\n\nThe respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior. Create a factor vector that stores the year of students (hint: create a character vector first and convert it to factor). Use R to double check that its type is factor.\n\n\n\nShow solution\n\n\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\nclass(year)\n\n[1] \"factor\"\n\n\n\n\nUse the tapply function to print out the average GPA of students by Year. Your output should look like this.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\ntapply(gpa,year,mean)\n\n Freshman    Junior    Senior Sophomore \n 3.407500  3.120000  3.260000  3.526667 \n\n\n\n\nStore the vectors you created previously (gpa, sat_quant, gender, and year) in a data frame using the data.frame() function. Then, use the group_by() function in tidyverse to get the average GPA of students by year.\n\n\n\nShow solution\n\n\ndf.student &lt;- data.frame(gpa,year,sat_quant,gender)\ndf.student %&gt;% \n  group_by(year) %&gt;%\n  summarise(mean(gpa))\n\n# A tibble: 4 × 2\n  year      `mean(gpa)`\n  &lt;fct&gt;           &lt;dbl&gt;\n1 Freshman         3.41\n2 Junior           3.12\n3 Senior           3.26\n4 Sophomore        3.53"
-  },
-  {
-    "objectID": "teaching/STAT120/data/index.html",
-    "href": "teaching/STAT120/data/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "tallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.",
+    "text": "Lecture 1\nLecture 2\nCode used for demonstration during each lecture can be found here",
     "crumbs": [
       "Research",
-      "Datasets"
+      "Lectures"
     ]
   },
   {
-    "objectID": "teaching/STAT120/data/index.html#csv-data",
-    "href": "teaching/STAT120/data/index.html#csv-data",
-    "title": "Dataset",
+    "objectID": "teaching/STAT120/homework/index.html",
+    "href": "teaching/STAT120/homework/index.html",
+    "title": "Homework",
     "section": "",
-    "text": "tallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.",
+    "text": "Homework is not collected in this class - it is entirely for your own practice.\nIt is required in the sense that you cannot succeed in this class without sufficient practice. Materials from the homework may appear on quizzes and exams, even if they do not appear in the lecture.\nThe provided solution is usually not the only way to code the answer. Write your own code, talk to your peers, and use online resources, including AI, to explore other approaches.\n\nHomework 1",
     "crumbs": [
       "Research",
-      "Datasets"
+      "Homework"
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html",
-    "title": "Week 1",
+    "objectID": "teaching/STAT120/homework/homework_1.html",
+    "href": "teaching/STAT120/homework/homework_1.html",
+    "title": "STAT120 - Statistical Computing in R",
     "section": "",
-    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture",
+    "text": "Download R and RStudio locally on your computer and install them. Speak to me as soon as possible if you have any questions.",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Homework",
+      "Homework 1"
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#overview",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#overview",
-    "title": "Week 1",
+    "objectID": "teaching/STAT120/homework/homework_1.html#part-i",
+    "href": "teaching/STAT120/homework/homework_1.html#part-i",
+    "title": "STAT120 - Statistical Computing in R",
+    "section": "Part I",
+    "text": "Part I\n\nCreate and store a vector of values starting at 1 and ending at 103, with the values increasing in increments of 3.\n\n\n\nShow solution\n\n\nv1 &lt;- seq(from=1,to=103,by=3)\n\n\n\nAdd 4 to each of the values in the vector from problem 1. Store the new vector.\n\n\n\nShow solution\n\n\nv2 &lt;- v1+4\n\n\n\nRemove the 8th value from the vector in problem 2 and store the new vector.\n\n\n\nShow solution\n\n\nv3 &lt;- v2[-8]\n\n\n\nAdd the values 50 and 39 to the end of the vector in problem 3 and store the new vector.\n\n\n\nShow solution\n\n\nv4 &lt;- c(v3,50,39)\n\n\n\nFind the sum of the elements of the vector from problem 4. Note: You should get 2,023.\n\n\n\nShow solution\n\n\nsum(v4)\n\n[1] 2023\n\n\n\n\nUsing an R function, find the length of the vector in problem 5.\n\n\n\nShow solution\n\n\nlength(v4)\n\n[1] 36\n\n\n\n\nCreate a character vector of length 3, color.list, that stores three colors: deepskyblue, hotpink, and seagreen (in this order).\n\n\n\nShow solution\n\n\ncolor.list &lt;- c('deepskyblue','hotpink','seagreen')\n\n\n\nCreate a numeric vector of length 100, color.index, that looks like \\((1,2,1,2,1,2,\\ldots)\\). Hint: use the rep() function to repeat the vector \\((1,2)\\) 50 times.\n\n\n\nShow solution\n\n\ncolor.index &lt;- rep(c(1,2),50)\n\n\n\nUse the vector from problem 8 to index the color vector in problem 7 and create a new vector that looks like (‘deepskyblue’, ‘hotpink’, ‘deepskyblue’, ‘hotpink’, …)\n\n\n\nShow solution\n\n\nmycol &lt;- color.list[color.index]\nmycol\n\n  [1] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n  [6] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [11] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [16] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [21] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [26] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [31] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [36] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [41] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [46] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [51] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [56] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [61] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [66] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [71] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [76] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [81] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [86] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [91] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [96] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n\n\n\n\nCreate a numeric sequence x that goes from 1 to 100; create another numeric sequence y that repeats the value 8 for 100 times. Use R to check that both x and y have lengths of 100.\n\n\n\nShow solution\n\n\nx &lt;- c(1:100)\ny &lt;- rep(8,100)\nlength(x)\n\n[1] 100\n\nlength(y)\n\n[1] 100\n\n\n\n\nUse the vectors in problem 10 to perform the following calculation: \\[{1\\times8 + 2\\times8 + 3\\times8 + \\ldots + 100 \\times 8}.\\] You should get \\(40400\\).\n\n\n\nShow solution\n\n\nsum(x*y)\n\n[1] 40400\n\n\n\n\nCreate a scatterplot using the vectors in problem 10. Vector x should be on the x axis; vector y should be on the y axis. Set the color to the color vector you created in problem 9.\n\n\n\nShow solution\n\n\nplot(x,y,col=mycol)\n\n\n\n\n\n\n\n\n\n\nDo the scatterplot from problem 12 again, but add these arguments: set xlab and ylab to NA, set type to \"h\", and set ylim to c(5, 9). Pay attention to what each argument does.\n\n\n\nShow solution\n\n\nplot(x,y,col=mycol,xlab=NA,ylab=NA,type='h',ylim=c(5,9))",
+    "crumbs": [
+      "Research",
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html",
+    "title": "Week 2",
     "section": "",
-    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture",
+    "text": "Sep 8 (Tuesday): asynchronous lecture\nDue on Moodle at the beginning of Thursday’s class (9/10): Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 1",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 1"
+      "Week 2"
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
-    "title": "Week 1",
-    "section": "Tuesday, Sep 1 (in-person)",
-    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nLink to fullscreen",
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#overview",
+    "title": "Week 2",
+    "section": "",
+    "text": "Sep 8 (Tuesday): asynchronous lecture\nDue on Moodle at the beginning of Thursday’s class (9/10): Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 1",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 1"
+      "Week 2"
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
-    "href": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
-    "title": "Week 1",
-    "section": "Thursday, Sep 3 (in-person)",
-    "text": "Thursday, Sep 3 (in-person)\nWe will finish Chapter 1 today and get started with Chapter 2.\nAs a reminder, when we finish Chapter 1, you should do Chapter 1 homework for additional practice. You can skip the last two questions (which involve Jamovi) for now. Recall that homework is not collected in this class.\nLink to fullscreen",
+    "objectID": "teaching/STAT117/weeks/index.html",
+    "href": "teaching/STAT117/weeks/index.html",
+    "title": "Weekly modules",
+    "section": "",
+    "text": "Here is where you can find everything you need to know for each week.\n\nWeek 1: Aug 31 to Sep 4\nWeek 2: Sep 7 to Sep 11",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Weeks"
     ]
   },
   {
-    "objectID": "teaching/STAT117/syllabus.html",
-    "href": "teaching/STAT117/syllabus.html",
-    "title": "Syllabus",
+    "objectID": "teaching/STAT117/index.html",
+    "href": "teaching/STAT117/index.html",
+    "title": "STAT117 - Introduction to Statistics",
     "section": "",
-    "text": "Download the pdf version here.\nSTAT 117 - Introduction to Statistics (Section 005)\nFall 2026\nInstructor: Prof. Yi Lu Email: ylu1@drew.edu Office: HS 314\nLectures: TR 10:25 - 11:40, HS 244 (hybrid)\nOffice Hours: R 12-2 (in-person HS314 or via Google Meet); or by appointment\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.\nCourse webpage. Course content will be posted on https://lu08.github.io/teaching/STAT117/. Assignments, quizzes, and grades will be posted on Moodle. You should check both the course webpage and Moodle frequently. You should also check your email frequently for important announcements.\nHybrid format. This section is taught in a hybrid modality and will include asynchronous course content. To keep things clear and organized, everything you need to know is organized as weekly modules (https://lu08.github.io/teaching/STAT117/weeks/). This is also where you should check to see whether we will be meeting in person. When we are not meeting in person, I will be in my office (HS314) for the duration of the scheduled lecture time and you are welcome to stop by (the classroom is also available for you to use). Importantly, all quizzes and exams must be taken in person, absolutely no exceptions.\nLearning Outcomes. By the end of the course, students will be able to:\n\nSelect, create, and interpret appropriate graphical displays, descriptive statistics, and inferential statistics. Apply the concepts of robustness and model validation;\nAnalyze real data within authentic applications;\nAssess the quality of a statistical argument;\nUse a professional statistical software package;\nInterpret results in language that is both statistically correct and understandable by someone who has not taken a course in statistics;\nApply statistical reasoning in broad areas of application including the social, biological, and physical sciences.\n\nLaptop Computer and Statistical Software. We will be using the free, open-source statistical software Jamovi (https://jamovi.org/download.html). Jamovi is a simple point-and-click interface, built directly on top of R, one of the most widely used programming languages in statistics and data science. Don’t worry about programming or technical details as these are not the focus of our class. When needed, detailed instructions and sample code will be given to you. Toward the end of the semester, we will explain and demonstrate some basics of R.\nOptional Text. Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. The text includes indexed chapters and exercises and a URL where you may access online solutions. There is a copy of the text available on reserve at the library if you prefer to use that. You do not need to bring your copy of the text to class because the required exercises are available online. You do not need to purchase the text unless reading the content is helpful. Some students find it helpful to use it as a reference because all of the content is indexed. Most students just need the exercises and solutions, which are available for free online.\nTo clarify: we are NOT using SPSS for this section. The textbook is consistent with other sections of STAT117 and is not an issue because (1) statistical concepts, as outlined in the textbook, do not depend on the software used; and (2) Jamovi’s interface is intentionally made similar to SPSS. Supplementary reading, assignments, and material will be posted on the course webpage.\nDataset. The dataset used for the course will be shared on the course webpage. You need to download a dataset first and open it in Jamovi. To make sure that you are using the correct dataset for quizzes and exams, I strongly recommend that you never save a modified dataset. You could also re-download a dataset before a quiz or an exam. I emphasize that it is your responsibility to use the correct dataset, and “my dataset is different” is not a legitimate reason for an incorrect answer under any circumstances.\nElectronic devices. You are expected to bring a working laptop to each lecture. If your computer has issues, know that your course performance will be heavily affected as everything (homework, quizzes, exams) requires the use of Jamovi. It is your responsibility to avoid this situation and solve any computer issues in time.\nYou are allowed to use an iPad (or similar devices) for class-related activities (such as taking notes). You are prohibited from using cell phones, headphones, and earbuds during all lectures. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, working on assignments from a different course, etc.\nAttendance. You are expected to attend every class unless you have a legitimate excuse, such as illness, family emergency or participation in a college sponsored event. Attendance is mandatory for successful completion of the course. Regardless of reason, it is your responsibility to make up course material covered during absences. Note that poor attendance without a valid reason is not an excuse to misuse office hours.\nClass attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect a student’s grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, which is located in the Academic Policy section of Drew’s course catalog under Attendance (https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC). Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conference or some Drew-sanctioned events. Students need to inform the faculty member of planned absences in the first week of the semester. For unforeseen extended health issues please see the academic accommodations statement.\nLate work and Missed Assignments. There are no make-ups in this class, even for excused absences. Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have excused absences for the course, these are part of your drops. All absences and late submissions will result in a grade of zero on assignments and quizzes, but as long as these absences are not excessive, these zero grades will be dropped. If you have an excused absence for an exam, I will use your performance on the final exam in place of the missing exam grade. If you know in advance that you will miss a quiz or exam, you may be able to take it early by making appropriate arrangements with me.\nHomework. Textbook problems and solutions can be found on the course webpage. Homework is not collected in this class, but it is required for you to do these problems. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.\nComponents of Your Grades:\n\n10% Assignments (in-class and take-home, lowest 2 dropped)\nDuring the semester, we’ll do a few in-class activities and at-home assignments that will count toward your grade. Since these assignments are not announced ahead of time, your regular attendance and consistent interaction with asynchronous content are important. You are also expected to actively participate during in-person lectures and group activities.\n17% Quizzes (lowest 2 dropped)\nTo make sure you are not falling behind, there will be a quiz at the beginning of (almost) every Thursday. The quiz will be on Moodle. There is no make-up quiz and you will not be allowed extra time if you join the class late, even if you have excused reasons, but your two lowest grades will be dropped. Note that the last quiz on ANOVA (see below) does not fall in this category and therefore cannot be one of the two drops.\n3% ANOVA grade\nYou can get this grade by (1) taking the last quiz (“ANOVA quiz”) OR (2) taking the ANOVA portion on the final exam. If you take both, this grade will be the higher of the two.\n45% Three in-class exams (15% each)\nThere will be three in-class exams. You are encouraged to make a reference sheet for each exam: An 8.5 by 11 inch (or A4) piece of paper with whatever you want on it, double sided. In addition to being useful during the exam, creating this sheet is a good way to study and prepare for the exam. You can use these same sheets for the final exam.\n25% (Optional) final exam\nThere is an optional final exam during finals week. I will provide you with your course grade before the final, and you can choose to accept that grade and skip the final.\nThe final exam is cumulative. You are encouraged to bring four reference sheets to the final exam: Four 8.5 by 11 inch (or A4) pieces of paper with whatever you want on it, double sided.\nYou can choose to do only the ANOVA portion of the final exam for the ANOVA grade. In this case, you are essentially still skipping the final and will not get a final exam grade.\n\nA Second Chance. If you take the final exam, you will earn two sets of grades. The exam consists of four parts. Parts 1 through 3 roughly correspond to the same material as exams 1 through 3, respectively, while part 4 covers new material learned after the third exam.\n\nThe first final exam grade considers the total number of points earned on the exam, and is your final exam score counting for 25% of your final grade.\nThe other set of final exam grades is a score for each of parts 1 through 3 of the final exam. For each of these parts, if the final exam grade is higher than what you scored on the corresponding midterm exam, we will raise your score on that midterm exam. The new score on the midterm will be the average of the original score and the score on that part of the final. If your final exam performance is not higher, the original midterm score is left unchanged.\n\nFinal Exam Policy. If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:\n\nTwo final exams scheduled at the same time;\nThree final exams scheduled in one calendar day; one of the exams will be rescheduled at the convenience of the instructor and the student;\nSerious illness, or personal emergency; the student is required to present documentation to validate.\n\nThe final exam schedule is visible on the Registrar’s website by the beginning of each semester (https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/). Students are expected to schedule travel plans to occur AFTER their final exams.\nGrade Cutoffs: We will use the following scale in determining your course grade from your course average. The course grades are not curved. A = 94 to 100; A- = 90 to 93; B+ = 87 to 89; B = 84 to 86; B- = 80 to 83; C+ = 77 to 79; C = 74 to 76; C- = 70 to 73; D+ = 67 to 69; D = 64 to 66; D- = 60 to 63; F = 0 to 59.\nAcademic Accommodations. Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.\nIf you have not yet established services through the Office of Accessibility Resources (OAR), but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), you are encouraged to contact OAR. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.\nAlthough a disclosure may take place at any time during the semester, students are encouraged to do so early in the semester, because, in general, accommodations are not implemented retroactively. Office of Accessibility Resources contact information:\nInterim Director: Stefanie Attia    Location: Brothers College, Room 119B\nPhone: 973-408-3962    Email: oar@drew.edu\nAcademic Integrity Policy. All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s “Standards of Academic Integrity: Guidelines and Procedures,” which is located in the academic policies section of the catalog (https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy).\nSupporting Student Success, Center for Academic Excellence. All Drew students can access subject tutoring, writing support and academic coaching free of charge in the Center for Academic Excellence (CAE, https://drew.edu/academic/student-resources/center-for-academic-excellence/), located in the library. Seeking help through learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, please visit https://drew.mywconline.com/ and follow the instructions on the landing page; if a tutor is not available, please submit the Tutor Request form. For any other questions, email cae@drew.edu.\nArtificial Intelligence. I encourage you to explore Artificial Intelligence (AI) resources for learning purposes. When using AI, you must (1) fully document and cite all material (including any code, graph, formula, table, mathematical equation, etc.) that was not generated by you, (2) check information generated by AI and take full responsibility for its accuracy, and (3) be able to identify where and how you used any AI tools and how they contributed to your work. You are not allowed to use AI for any quizzes or exams. Use of any AI tools without permission is unacceptable and will be reported as an academic integrity violation. If you have any doubts about what is acceptable please discuss them with the professor.\nSchedule. Important dates are summarized below. Any change will be communicated in class and via email. Course content is subject to change depending on the pace of the class. Detailed weekly modules can be found at https://lu08.github.io/teaching/STAT117/weeks/. Remember that the quiz and exam dates are always in-person. Modality for the other dates will be communicated in the weekly modules. Reach out if you are not sure.\n\n\n\nWeek\nDate\nContent\nNote\n\n\n\n\n1\nSep 1\nCh1: Introduction\n\n\n\n\nSep 3\nCh2: Univariate distribution\n\n\n\n2\nSep 8\n\n\n\n\n\nSep 10\nIntro to Jamovi\nQuiz 1\n\n\n\n\n(Sep 14 is the last day to drop without W)\n\n\n\n3\nSep 15\nCh3: Location, Spread, and Skewness\n\n\n\n\nSep 17\n\nQuiz 2\n\n\n4\nSep 22\nCh4: Transformation\n\n\n\n\nSep 24\n\nQuiz 3\n\n\n5\nSep 29\n\nEXAM 1\n\n\n\nOct 1\nCh5: Bivariate Relationships\n\n\n\n6\nOct 6\n\n\n\n\n\nOct 8\n\nQuiz 4\n\n\n7\nOct 13\n\nNo class - Fall Break\n\n\n\nOct 15\n\n\n\n\n8\nOct 20\n\n\n\n\n\nOct 22\n\nQuiz 5\n\n\n9\nOct 27\nCh6: Simple Linear Regression\n\n\n\n\nOct 29\n\nQuiz 6\n\n\n10\nNov 3\n\nEXAM 2\n\n\n\nNov 5\nCh7: Basic Probability\n\n\n\n11\nNov 10\nCh8: Normal Distribution\n\n\n\n\nNov 12\nCh9: Central Limit Theorem\nQuiz 7\n\n\n12\nNov 17\nCh11 Part 1: One sample t test\n\n\n\n\nNov 19\n\nQuiz 8\n\n\n13\nNov 24\nCh11 Part 2: Paired samples t test\n\n\n\n\nNov 26\n\nNo class — Thanksgiving\n\n\nDec 1\nCh11 Part 3: Independent samples t test\nQuiz 9\n\n\n\n\nDec 3\n\nEXAM 3\n\n\n15\nDec 8\n\n\n\n\n\nDec 10\n\nANOVA quiz\n\n\n\n(Optional) final exam: Dec 15 (Tue) 12:30 - 3:30 pm",
+    "text": "Welcome to the course site of STAT117 - Introduction to Statistics. Use the sidebar to navigate within this course.\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/index.html",
+    "href": "teaching/STAT117/course_documents/index.html",
+    "title": "Course documents",
+    "section": "",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
     "crumbs": [
       "Research",
-      "Syllabus"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/STAT117/data/index.html",
-    "href": "teaching/STAT117/data/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
+    "objectID": "teaching/STAT117/course_documents/index.html#lecture-slides",
+    "href": "teaching/STAT117/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nChapter 1\nChapter 2",
     "crumbs": [
       "Research",
-      "Datasets"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/STAT117/data/index.html#spss-data",
-    "href": "teaching/STAT117/data/index.html#spss-data",
-    "title": "Dataset",
-    "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
-    "crumbs": [
-      "Research",
-      "Datasets"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/homework/chapter_2.html",
-    "href": "teaching/STAT117/course_documents/homework/chapter_2.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "To be added."
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html",
-    "title": "Week 1 (Sept 2)",
-    "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "title": "Week 1 (Sept 2)",
-    "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "title": "Week 1 (Sept 2)",
+    "objectID": "teaching/STAT117/course_documents/index.html#homework",
+    "href": "teaching/STAT117/course_documents/index.html#homework",
+    "title": "Course documents",
     "section": "Homework",
-    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
+    "text": "Homework\nHomework exercise questions are adopted from the textbook Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222.\nSolutions are provided in the same document.\nIf a dataset is missing, or if you find a typo/error, please let me know.\n\nChapter 1\nChapter 2",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/homework/chapter_1.html",
+    "href": "teaching/STAT117/course_documents/homework/chapter_1.html",
+    "title": "Chapter 1",
+    "section": "",
+    "text": "Exercise 1.6\nA survey was administered to college students to learn about student participation in University sponsored extra-curricular activities. Identify the most likely measure type of each of the following variables taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nAGE\nHow old are you in years?\n\n\n\nEXTRAC\nAt which type of extra-curricular activity do you spend most of your time?\n1 = Sports2 = Student Government3 = Clubs and organizations4 = None\n\n\nTIME\nHow much time do you spend weekly on University sponsored extracurricular activities?\n0 = None1 = 1 – 2 hours2 = 3 – 5 hours3 = 6 – 10 hours4 = 10 – 20 hours5 = More than 20 hours\n\n\n\nWhat are the levels of measurement for: a) AGE b) EXTRAC c) TIME\n\n\n### Solution\n\n\nContinuous\nNominal\nOrdinal\n\n\n\n\n\nExercise 1.7\nThe Campus Survey of Alcohol and Other Drug Norms is administered to college students to collect information about drug and alcohol use on campus. Identify the most likely measure type of each of the following variables from that survey taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nABSTAIN\nOverall, what percentage of students at this college do you think consume no alcoholic beverages at all?\n\n\n\nLIVING\nLiving arrangements\n1 = House/apartment/etc.2 = Residence Hall3 = Other\n\n\nSTATUS\nStudent status:\n1 = Full-time (12+ credits)2 = Part-time (1 – 11 credits)\n\n\nATTITUDE\nWhich statement about drinking alcoholic beverages do you feel best represents your own attitude?\n1 = Drinking is never a good thing to do.2 = Drinking is all right but a person should not get drunk3 = Occasionally getting drunk is okay as long as it doesn’t interfere with academics or other responsibilities.4 = Occasionally getting drunk is okay even if it does interfere with academics or other responsibilities.5 = Frequently getting drunk is okay if that’s what the individual wants to do.\n\n\nDRINK\nHow often do you typically consume alcohol (including beer, wine, wine coolers, liquor, and mixed drinks)?\n0 = Never1 = 1 – 2 times/year2 = 6 times/year3 = Once/month4 = Twice/month5 = Once/week6 = 3 times/week7 = 5 times/week8 = Every day\n\n\n\nWhat are the levels of measurement for: a) ABSTAIN b) LIVING c) STATUS d) ATTITUDE e) DRINK\n\n\n### Solution\n\n\nContinuous\nNominal\nDichotomous\nOrdinal\nOrdinal\n\n\n\n\n\nExercise 1.8\nExercise 1.8 includes descriptions of some of the variables in the Framingham data set. The Framingham data set is based on a longitudinal study investigating factors relating to coronary heart disease.\nFor each variable described from the Framingham data set, indicate the measure type.\n\nCURSMOKE1 indicates whether or not the individual smoked cigarettes in 1956. It is coded so that 0 represents no and 1 represents yes.\nCIGPDAY1 indicates the number of cigarettes the individual smoked per day, on average, in 1956.\nBMI1 indicates the body mass index of the individual in 1956.\nSYSBP1 and DIABP1 indicate the systolic and diastolic blood pressures, respectively, of the individuals in 1956. Blood is carried from the heart to all parts of your body in vessels called arteries. Blood pressure is the force of the blood pushing against the walls of the arteries. Each time the heart beats (about 60-70 times a minute at rest), it pumps out blood into the arteries. Your blood pressure is at its highest when the heart beats, pumping the blood. This is called systolic pressure. When the heart is at rest, between beats, your blood pressure falls. This is the diastolic pressure. Blood pressure is always given as these two numbers, the systolic and diastolic pressures. Both are important. Usually they are written one above or before the other, such as 120/80 mmHg. The top number is the systolic and the bottom the diastolic. When the two measurements are written down, the systolic pressure is the first or top number, and the diastolic pressure is the second or bottom number (for example, 120/80). If your blood pressure is 120/80, you say that it is “120 over 80.” Blood pressure changes during the day. It is lowest as you sleep and rises when you get up. It also can rise when you are excited, nervous, or active. Still, for most of your waking hours, your blood pressure stays pretty much the same when you are sitting or standing still. Normal values of blood pressure should be lower than 120/80. When the level remains too high, for example, 140/90 or higher, the individual is said to have high blood pressure. With high blood pressure, the heart works harder, your arteries take a beating, and your chances of a stroke, heart attack, and kidney problems are greater.\n\n\n\n### Solution\n\n\nDichotomous\nContinuous\nContinuous\nContinuous\n\n\n\n\n\nExercise 1.9\nExercise 1.9 includes descriptions of some of the variables in the NELS data set. The NELS data set is a subset of a data set collected by the National Center for Educational Statistics. They conducted a longitudinal study investigating factors relating to educational outcomes.\nRead the description of the following variables from the NELS data set and indicate their measure type.\n\nGENDER. Classifies the student as either male or female, where 0 = “male” and 1 = “female.”\nURBAN. Classifies the type of environment in which each student lives where 1 = “Urban,” 2 = “Suburban,” and 3 = “Rural.”\nSCHTYP8. Classifies the type of school each student attended in eighth grade where 1 = “Public,” 2 = “Private, Religious,” and 3 = “Private, Non-Religious.”\nTCHERINT. Classifies student agreement with the statement “My teachers are interested in students” using the Likert scale 1 = “strongly agree,” 2 = “agree,” 3 = “disagree,” and 4 = “strongly disagree.”\nNUMINST. Gives the number of post-secondary institutions the student attended.\nACHRDG08. Gives a score for the student’s performance in eighth grade on a standardized test of reading achievement. Actual values range from 36.61 to 77.2, from low to high achievement.\nSES. Gives a score representing the socioeconomic status (SES) of the student, a composite of father’s education level, mother’s education level, father’s occupation, mother’s occupation, and family income. Values range from 0 to 35, from low to high SES.\nSLFCNC12. Gives a score for student self-concept in twelfth grade. Values range from 0 to 43. Self-concept is defined as a person’s self-perceptions, or how a person feels about himself or herself. Four items comprise the self-concept scale in the NELS questionnaire: I feel good about myself; I feel I am a person of worth, the equal of other people; I am able to do things as well as most other people; and, on the whole, I am satisfied with myself. A self-concept score, based on the sum of scores on each of these items, is used to measure self-concept in the NELS study. Higher scores associate with higher self-concept and lower scores associate with lower self-concept.\nSCHATTRT. Gives the average daily attendance rate for the school.\nABSENT12. Classifies the number of times missed school. Assigns 0 to Never, 1 to 1–2 times, 2 to 3–6 times, etc.\n\n\n\n### Solution\n\n\nDichotomous\nNominal or Ordinal, depending on interpretation\nNominal\nContinuous (Likert scales are often treated as scale/continuous)\nContinuous\nContinuous\nContinuous\nContinuous\nContinuous\nOrdinal\n\n\n\n\n\nExercise 1.10\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Variable” tag on the top.\nAnswer the following questions:\n\nWhat is the first variable in the NELS data set?\nWhat is the second variable in the data set and what is its Description?\nWhat are the levels for this variable? That is, how is the variable coded?\nWhat is the measure type entered for this variable in Jamovi?\nWhat is the Description for the variable FAMSIZE?\nWhy are there no levels (i.e., code) for this variable?\nWhat is the measure type entered for this variable in Jamovi?\nHow many variables are there in the NELS data set?\n\n\n\n### Solution\n\n\nID.\nADVMAT8. The Description is “Advanced Math Taken in Eighth Grade.” This is a dichotomous variable indicating whether or not a student took advanced math in eighth grade.\n“no” is coded 0, “yes” is coded 1, and missing data are coded 8.\nThe measure type has been entered as nominal. The variable is dichotomous.\nFamily Size.\nThe variable gives the family size or the number of members in the person’s household. This variable is naturally numeric, so it does not require coded levels to explain what the numbers represent.\nThe measure type is listed as continuous, which refers to continuous variables.\n\n\n\n\n\n\n\n\nExercise 1.11\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Data” tag on the top. Use the Data View window to answer the following questions about the particular values that different individual students attain in the NELS data set.\n\nHow many people are in the family (FAMSIZE) of the first student (ID=1) in the NELS data set?\nDid the first student in the NELS data set (ID = 1) take advanced math in eighth grade (ADVMATH8)?\nDid the second student in the NELS data set (ID = 2) take advanced math in eighth grade (ADVMATH8)?\nHow many people are in the NELS data set?\n\n\n\n### Solution\n\n\n\n\n\nYes.\nWe do not know. The second student’s information is missing from the data set."
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/index.html",
+    "href": "teaching/DATA352/weeks/index.html",
+    "title": "Weekly schedule",
+    "section": "",
+    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
+    "crumbs": [
+      "Research",
+      "Weeks"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/index.html#weeks",
+    "href": "teaching/DATA352/weeks/index.html#weeks",
+    "title": "Weekly schedule",
+    "section": "Weeks",
+    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026",
+    "crumbs": [
+      "Research",
+      "Weeks"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/resources/index.html",
+    "href": "teaching/DATA352/resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
+    "crumbs": [
+      "Research",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "title": "DATA 352/551: Homework 1",
+    "section": "",
+    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 1",
+    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 2",
+    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 3",
+    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 4",
+    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download the pdf version here."
+  },
+  {
+    "objectID": "cv/index.html#yi-lu",
+    "href": "cv/index.html#yi-lu",
+    "title": "Curriculum Vitae",
+    "section": "Yi Lu",
+    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
+  },
+  {
+    "objectID": "cv/index.html#research-interests",
+    "href": "cv/index.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "Research Interests",
+    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
+  },
+  {
+    "objectID": "cv/index.html#professional-experience",
+    "href": "cv/index.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
+  },
+  {
+    "objectID": "cv/index.html#teaching",
+    "href": "cv/index.html#teaching",
+    "title": "Curriculum Vitae",
+    "section": "Teaching",
+    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
+  },
+  {
+    "objectID": "cv/index.html#advising",
+    "href": "cv/index.html#advising",
+    "title": "Curriculum Vitae",
+    "section": "Advising",
+    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
+  },
+  {
+    "objectID": "cv/index.html#publications",
+    "href": "cv/index.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
+  },
+  {
+    "objectID": "cv/index.html#work-in-progress",
+    "href": "cv/index.html#work-in-progress",
+    "title": "Curriculum Vitae",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
+  },
+  {
+    "objectID": "cv/index.html#presentations",
+    "href": "cv/index.html#presentations",
+    "title": "Curriculum Vitae",
+    "section": "Presentations",
+    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
+  },
+  {
+    "objectID": "cv/index.html#grants",
+    "href": "cv/index.html#grants",
+    "title": "Curriculum Vitae",
+    "section": "Grants",
+    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
+  },
+  {
+    "objectID": "cv/index.html#awards",
+    "href": "cv/index.html#awards",
+    "title": "Curriculum Vitae",
+    "section": "Awards",
+    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
+  },
+  {
+    "objectID": "cv/index.html#services",
+    "href": "cv/index.html#services",
+    "title": "Curriculum Vitae",
+    "section": "Services",
+    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
+  },
+  {
+    "objectID": "cv/index.html#professional-memberships",
+    "href": "cv/index.html#professional-memberships",
+    "title": "Curriculum Vitae",
+    "section": "Professional Memberships",
+    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
+  },
+  {
+    "objectID": "cv/index.html#miscellaneous",
+    "href": "cv/index.html#miscellaneous",
+    "title": "Curriculum Vitae",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
+  },
+  {
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
+    "section": "",
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
+  },
+  {
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Content coming up soon!"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html",
+    "href": "teaching/DATA352/course_documents/index.html",
+    "title": "Course documents",
+    "section": "",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nLecture 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html#homework",
+    "href": "teaching/DATA352/course_documents/index.html#homework",
+    "title": "Course documents",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/index.html",
+    "href": "teaching/DATA352/index.html",
+    "title": "DATA 352/551: Modeling and Simulation",
+    "section": "",
+    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
   },
   {
     "objectID": "teaching/DATA352/syllabus.html",
@@ -429,391 +644,194 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/index.html",
-    "href": "teaching/DATA352/index.html",
-    "title": "DATA 352/551: Modeling and Simulation",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html",
+    "title": "Week 1 (Sept 2)",
     "section": "",
-    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html",
-    "href": "teaching/DATA352/course_documents/index.html",
-    "title": "Course documents",
-    "section": "",
-    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
-      "Course documents"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "title": "Course documents",
-    "section": "Lecture slides",
-    "text": "Lecture slides\n\nLecture 1",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "title": "Week 1 (Sept 2)",
+    "section": "",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
-      "Course documents"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/course_documents/index.html#homework",
-    "href": "teaching/DATA352/course_documents/index.html#homework",
-    "title": "Course documents",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "title": "Week 1 (Sept 2)",
     "section": "Homework",
-    "text": "Homework\n\nHomework 1",
+    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
     "crumbs": [
       "Research",
-      "Course documents"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Content coming up soon!"
-  },
-  {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Download the pdf version here."
-  },
-  {
-    "objectID": "cv/index.html#yi-lu",
-    "href": "cv/index.html#yi-lu",
-    "title": "Curriculum Vitae",
-    "section": "Yi Lu",
-    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
-  },
-  {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
-  },
-  {
-    "objectID": "cv/index.html#research-interests",
-    "href": "cv/index.html#research-interests",
-    "title": "Curriculum Vitae",
-    "section": "Research Interests",
-    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
-  },
-  {
-    "objectID": "cv/index.html#professional-experience",
-    "href": "cv/index.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional Experience",
-    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
-  },
-  {
-    "objectID": "cv/index.html#teaching",
-    "href": "cv/index.html#teaching",
-    "title": "Curriculum Vitae",
-    "section": "Teaching",
-    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
-  },
-  {
-    "objectID": "cv/index.html#advising",
-    "href": "cv/index.html#advising",
-    "title": "Curriculum Vitae",
-    "section": "Advising",
-    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
-  },
-  {
-    "objectID": "cv/index.html#publications",
-    "href": "cv/index.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "Publications",
-    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
-  },
-  {
-    "objectID": "cv/index.html#work-in-progress",
-    "href": "cv/index.html#work-in-progress",
-    "title": "Curriculum Vitae",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
-  },
-  {
-    "objectID": "cv/index.html#presentations",
-    "href": "cv/index.html#presentations",
-    "title": "Curriculum Vitae",
-    "section": "Presentations",
-    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
-  },
-  {
-    "objectID": "cv/index.html#grants",
-    "href": "cv/index.html#grants",
-    "title": "Curriculum Vitae",
-    "section": "Grants",
-    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
-  },
-  {
-    "objectID": "cv/index.html#awards",
-    "href": "cv/index.html#awards",
-    "title": "Curriculum Vitae",
-    "section": "Awards",
-    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
-  },
-  {
-    "objectID": "cv/index.html#services",
-    "href": "cv/index.html#services",
-    "title": "Curriculum Vitae",
-    "section": "Services",
-    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
-  },
-  {
-    "objectID": "cv/index.html#professional-memberships",
-    "href": "cv/index.html#professional-memberships",
-    "title": "Curriculum Vitae",
-    "section": "Professional Memberships",
-    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
-  },
-  {
-    "objectID": "cv/index.html#miscellaneous",
-    "href": "cv/index.html#miscellaneous",
-    "title": "Curriculum Vitae",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "teaching/STAT117/course_documents/homework/chapter_2.html",
+    "href": "teaching/STAT117/course_documents/homework/chapter_2.html",
     "title": "Yi Lu",
     "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+    "text": "To be added."
   },
   {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "title": "DATA 352/551: Homework 1",
+    "objectID": "teaching/STAT117/data/index.html",
+    "href": "teaching/STAT117/data/index.html",
+    "title": "Dataset",
     "section": "",
-    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 1",
-    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 2",
-    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 3",
-    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 4",
-    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
-  },
-  {
-    "objectID": "teaching/DATA352/resources/index.html",
-    "href": "teaching/DATA352/resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
     "crumbs": [
       "Research",
-      "Resources"
+      "Datasets"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/index.html",
-    "href": "teaching/DATA352/weeks/index.html",
-    "title": "Weekly schedule",
+    "objectID": "teaching/STAT117/data/index.html#spss-data",
+    "href": "teaching/STAT117/data/index.html#spss-data",
+    "title": "Dataset",
     "section": "",
-    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
     "crumbs": [
       "Research",
-      "Weeks"
+      "Datasets"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/index.html#weeks",
-    "href": "teaching/DATA352/weeks/index.html#weeks",
-    "title": "Weekly schedule",
-    "section": "Weeks",
-    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026",
+    "objectID": "teaching/STAT117/syllabus.html",
+    "href": "teaching/STAT117/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Download the pdf version here.\nSTAT 117 - Introduction to Statistics (Section 005)\nFall 2026\nInstructor: Prof. Yi Lu Email: ylu1@drew.edu Office: HS 314\nLectures: TR 10:25 - 11:40, HS 244 (hybrid)\nOffice Hours: R 12-2 (in-person HS314 or via Google Meet); or by appointment\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance.\nCourse webpage. Course content will be posted on https://lu08.github.io/teaching/STAT117/. Assignments, quizzes, and grades will be posted on Moodle. You should check both the course webpage and Moodle frequently. You should also check your email frequently for important announcements.\nHybrid format. This section is taught in a hybrid modality and will include asynchronous course content. To keep things clear and organized, everything you need to know is organized as weekly modules (https://lu08.github.io/teaching/STAT117/weeks/). This is also where you should check to see whether we will be meeting in person. When we are not meeting in person, I will be in my office (HS314) for the duration of the scheduled lecture time and you are welcome to stop by (the classroom is also available for you to use). Importantly, all quizzes and exams must be taken in person, absolutely no exceptions.\nLearning Outcomes. By the end of the course, students will be able to:\n\nSelect, create, and interpret appropriate graphical displays, descriptive statistics, and inferential statistics. Apply the concepts of robustness and model validation;\nAnalyze real data within authentic applications;\nAssess the quality of a statistical argument;\nUse a professional statistical software package;\nInterpret results in language that is both statistically correct and understandable by someone who has not taken a course in statistics;\nApply statistical reasoning in broad areas of application including the social, biological, and physical sciences.\n\nLaptop Computer and Statistical Software. We will be using the free, open-source statistical software Jamovi (https://jamovi.org/download.html). Jamovi is a simple point-and-click interface, built directly on top of R, one of the most widely used programming languages in statistics and data science. Don’t worry about programming or technical details as these are not the focus of our class. When needed, detailed instructions and sample code will be given to you. Toward the end of the semester, we will explain and demonstrate some basics of R.\nOptional Text. Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. The text includes indexed chapters and exercises and a URL where you may access online solutions. There is a copy of the text available on reserve at the library if you prefer to use that. You do not need to bring your copy of the text to class because the required exercises are available online. You do not need to purchase the text unless reading the content is helpful. Some students find it helpful to use it as a reference because all of the content is indexed. Most students just need the exercises and solutions, which are available for free online.\nTo clarify: we are NOT using SPSS for this section. The textbook is consistent with other sections of STAT117 and is not an issue because (1) statistical concepts, as outlined in the textbook, do not depend on the software used; and (2) Jamovi’s interface is intentionally made similar to SPSS. Supplementary reading, assignments, and material will be posted on the course webpage.\nDataset. The dataset used for the course will be shared on the course webpage. You need to download a dataset first and open it in Jamovi. To make sure that you are using the correct dataset for quizzes and exams, I strongly recommend that you never save a modified dataset. You could also re-download a dataset before a quiz or an exam. I emphasize that it is your responsibility to use the correct dataset, and “my dataset is different” is not a legitimate reason for an incorrect answer under any circumstances.\nElectronic devices. You are expected to bring a working laptop to each lecture. If your computer has issues, know that your course performance will be heavily affected as everything (homework, quizzes, exams) requires the use of Jamovi. It is your responsibility to avoid this situation and solve any computer issues in time.\nYou are allowed to use an iPad (or similar devices) for class-related activities (such as taking notes). You are prohibited from using cell phones, headphones, and earbuds during all lectures. You are also prohibited from using electronic devices for unrelated activities, such as browsing the internet, messaging, gaming, working on assignments from a different course, etc.\nAttendance. You are expected to attend every class unless you have a legitimate excuse, such as illness, family emergency or participation in a college sponsored event. Attendance is mandatory for successful completion of the course. Regardless of reason, it is your responsibility to make up course material covered during absences. Note that poor attendance without a valid reason is not an excuse to misuse office hours.\nClass attendance and participation are integral to the academic experience at Drew University. Along with the course attendance policy, which may outline how attendance will affect a student’s grade, students should also be aware of their rights and responsibilities regarding absences for legitimate reasons, as described in the Absence Policy: Student Rights and Responsibilities, which is located in the Academic Policy section of Drew’s course catalog under Attendance (https://drew-undergraduate-catalog.coursedog.com/pages/h3iCIMkMOg5fz3KTJDgC). Legitimate planned absences may include religious holidays, NCAA-sanctioned competition, academic conference or some Drew-sanctioned events. Students need to inform the faculty member of planned absences in the first week of the semester. For unforeseen extended health issues please see the academic accommodations statement.\nLate work and Missed Assignments. There are no make-ups in this class, even for excused absences. Instead, your two lowest quiz grades and two lowest assignment grades are dropped. If you have excused absences for the course, these are part of your drops. All absences and late submissions will result in a grade of zero on assignments and quizzes, but as long as these absences are not excessive, these zero grades will be dropped. If you have an excused absence for an exam, I will use your performance on the final exam in place of the missing exam grade. If you know in advance that you will miss a quiz or exam, you may be able to take it early by making appropriate arrangements with me.\nHomework. Textbook problems and solutions can be found on the course webpage. Homework is not collected in this class, but it is required for you to do these problems. It is possible that materials from the homework appear on quizzes and exams, even if they do not appear in the lecture.\nComponents of Your Grades:\n\n10% Assignments (in-class and take-home, lowest 2 dropped)\nDuring the semester, we’ll do a few in-class activities and at-home assignments that will count toward your grade. Since these assignments are not announced ahead of time, your regular attendance and consistent interaction with asynchronous content are important. You are also expected to actively participate during in-person lectures and group activities.\n17% Quizzes (lowest 2 dropped)\nTo make sure you are not falling behind, there will be a quiz at the beginning of (almost) every Thursday. The quiz will be on Moodle. There is no make-up quiz and you will not be allowed extra time if you join the class late, even if you have excused reasons, but your two lowest grades will be dropped. Note that the last quiz on ANOVA (see below) does not fall in this category and therefore cannot be one of the two drops.\n3% ANOVA grade\nYou can get this grade by (1) taking the last quiz (“ANOVA quiz”) OR (2) taking the ANOVA portion on the final exam. If you take both, this grade will be the higher of the two.\n45% Three in-class exams (15% each)\nThere will be three in-class exams. You are encouraged to make a reference sheet for each exam: An 8.5 by 11 inch (or A4) piece of paper with whatever you want on it, double sided. In addition to being useful during the exam, creating this sheet is a good way to study and prepare for the exam. You can use these same sheets for the final exam.\n25% (Optional) final exam\nThere is an optional final exam during finals week. I will provide you with your course grade before the final, and you can choose to accept that grade and skip the final.\nThe final exam is cumulative. You are encouraged to bring four reference sheets to the final exam: Four 8.5 by 11 inch (or A4) pieces of paper with whatever you want on it, double sided.\nYou can choose to do only the ANOVA portion of the final exam for the ANOVA grade. In this case, you are essentially still skipping the final and will not get a final exam grade.\n\nA Second Chance. If you take the final exam, you will earn two sets of grades. The exam consists of four parts. Parts 1 through 3 roughly correspond to the same material as exams 1 through 3, respectively, while part 4 covers new material learned after the third exam.\n\nThe first final exam grade considers the total number of points earned on the exam, and is your final exam score counting for 25% of your final grade.\nThe other set of final exam grades is a score for each of parts 1 through 3 of the final exam. For each of these parts, if the final exam grade is higher than what you scored on the corresponding midterm exam, we will raise your score on that midterm exam. The new score on the midterm will be the average of the original score and the score on that part of the final. If your final exam performance is not higher, the original midterm score is left unchanged.\n\nFinal Exam Policy. If extenuating circumstances occur, students may submit a Final Exam Reschedule request for review by the Associate Provost. Students may not negotiate a make-up date directly with the course instructor. Students may request to reschedule an exam only under the following circumstances:\n\nTwo final exams scheduled at the same time;\nThree final exams scheduled in one calendar day; one of the exams will be rescheduled at the convenience of the instructor and the student;\nSerious illness, or personal emergency; the student is required to present documentation to validate.\n\nThe final exam schedule is visible on the Registrar’s website by the beginning of each semester (https://drew.edu/academic/office-of-the-registrar/registration/final-exam-schedule/). Students are expected to schedule travel plans to occur AFTER their final exams.\nGrade Cutoffs: We will use the following scale in determining your course grade from your course average. The course grades are not curved. A = 94 to 100; A- = 90 to 93; B+ = 87 to 89; B = 84 to 86; B- = 80 to 83; C+ = 77 to 79; C = 74 to 76; C- = 70 to 73; D+ = 67 to 69; D = 64 to 66; D- = 60 to 63; F = 0 to 59.\nAcademic Accommodations. Your experience in this class is important to me. If you have already established accommodations with the Office of Accessibility Resources (OAR), please provide me with a copy of your accommodation letter at your earliest convenience so we can discuss your needs in this course.\nIf you have not yet established services through the Office of Accessibility Resources (OAR), but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), you are encouraged to contact OAR. OAR offers resources and coordinates reasonable accommodations for students with disabilities and/or temporary health conditions.\nAlthough a disclosure may take place at any time during the semester, students are encouraged to do so early in the semester, because, in general, accommodations are not implemented retroactively. Office of Accessibility Resources contact information:\nInterim Director: Stefanie Attia    Location: Brothers College, Room 119B\nPhone: 973-408-3962    Email: oar@drew.edu\nAcademic Integrity Policy. All students are required to uphold the highest academic standards. Any case of academic dishonesty will be dealt with according to the guidelines and procedures outlined in Drew University’s “Standards of Academic Integrity: Guidelines and Procedures,” which is located in the academic policies section of the catalog (https://drew-undergraduate-catalog.coursedog.com/academicpolicies#academic-integrity-policy).\nSupporting Student Success, Center for Academic Excellence. All Drew students can access subject tutoring, writing support and academic coaching free of charge in the Center for Academic Excellence (CAE, https://drew.edu/academic/student-resources/center-for-academic-excellence/), located in the library. Seeking help through learning support resources in the CAE can help you achieve your academic goals. To access the appointment schedule, please visit https://drew.mywconline.com/ and follow the instructions on the landing page; if a tutor is not available, please submit the Tutor Request form. For any other questions, email cae@drew.edu.\nArtificial Intelligence. I encourage you to explore Artificial Intelligence (AI) resources for learning purposes. When using AI, you must (1) fully document and cite all material (including any code, graph, formula, table, mathematical equation, etc.) that was not generated by you, (2) check information generated by AI and take full responsibility for its accuracy, and (3) be able to identify where and how you used any AI tools and how they contributed to your work. You are not allowed to use AI for any quizzes or exams. Use of any AI tools without permission is unacceptable and will be reported as an academic integrity violation. If you have any doubts about what is acceptable please discuss them with the professor.\nSchedule. Important dates are summarized below. Any change will be communicated in class and via email. Course content is subject to change depending on the pace of the class. Detailed weekly modules can be found at https://lu08.github.io/teaching/STAT117/weeks/. Remember that the quiz and exam dates are always in-person. Modality for the other dates will be communicated in the weekly modules. Reach out if you are not sure.\n\n\n\nWeek\nDate\nContent\nNote\n\n\n\n\n1\nSep 1\nCh1: Introduction\n\n\n\n\nSep 3\nCh2: Univariate distribution\n\n\n\n2\nSep 8\n\n\n\n\n\nSep 10\nIntro to Jamovi\nQuiz 1\n\n\n\n\n(Sep 14 is the last day to drop without W)\n\n\n\n3\nSep 15\nCh3: Location, Spread, and Skewness\n\n\n\n\nSep 17\n\nQuiz 2\n\n\n4\nSep 22\nCh4: Transformation\n\n\n\n\nSep 24\n\nQuiz 3\n\n\n5\nSep 29\n\nEXAM 1\n\n\n\nOct 1\nCh5: Bivariate Relationships\n\n\n\n6\nOct 6\n\n\n\n\n\nOct 8\n\nQuiz 4\n\n\n7\nOct 13\n\nNo class - Fall Break\n\n\n\nOct 15\n\n\n\n\n8\nOct 20\n\n\n\n\n\nOct 22\n\nQuiz 5\n\n\n9\nOct 27\nCh6: Simple Linear Regression\n\n\n\n\nOct 29\n\nQuiz 6\n\n\n10\nNov 3\n\nEXAM 2\n\n\n\nNov 5\nCh7: Basic Probability\n\n\n\n11\nNov 10\nCh8: Normal Distribution\n\n\n\n\nNov 12\nCh9: Central Limit Theorem\nQuiz 7\n\n\n12\nNov 17\nCh11 Part 1: One sample t test\n\n\n\n\nNov 19\n\nQuiz 8\n\n\n13\nNov 24\nCh11 Part 2: Paired samples t test\n\n\n\n\nNov 26\n\nNo class — Thanksgiving\n\n\nDec 1\nCh11 Part 3: Independent samples t test\nQuiz 9\n\n\n\n\nDec 3\n\nEXAM 3\n\n\n15\nDec 8\n\n\n\n\n\nDec 10\n\nANOVA quiz\n\n\n\n(Optional) final exam: Dec 15 (Tue) 12:30 - 3:30 pm",
     "crumbs": [
       "Research",
-      "Weeks"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "teaching/STAT117/course_documents/homework/chapter_1.html",
-    "href": "teaching/STAT117/course_documents/homework/chapter_1.html",
-    "title": "Chapter 1",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html",
+    "title": "Week 1",
     "section": "",
-    "text": "Exercise 1.6\nA survey was administered to college students to learn about student participation in University sponsored extra-curricular activities. Identify the most likely measure type of each of the following variables taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nAGE\nHow old are you in years?\n\n\n\nEXTRAC\nAt which type of extra-curricular activity do you spend most of your time?\n1 = Sports2 = Student Government3 = Clubs and organizations4 = None\n\n\nTIME\nHow much time do you spend weekly on University sponsored extracurricular activities?\n0 = None1 = 1 – 2 hours2 = 3 – 5 hours3 = 6 – 10 hours4 = 10 – 20 hours5 = More than 20 hours\n\n\n\nWhat are the levels of measurement for: a) AGE b) EXTRAC c) TIME\n\n\n### Solution\n\n\nContinuous\nNominal\nOrdinal\n\n\n\n\n\nExercise 1.7\nThe Campus Survey of Alcohol and Other Drug Norms is administered to college students to collect information about drug and alcohol use on campus. Identify the most likely measure type of each of the following variables from that survey taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nABSTAIN\nOverall, what percentage of students at this college do you think consume no alcoholic beverages at all?\n\n\n\nLIVING\nLiving arrangements\n1 = House/apartment/etc.2 = Residence Hall3 = Other\n\n\nSTATUS\nStudent status:\n1 = Full-time (12+ credits)2 = Part-time (1 – 11 credits)\n\n\nATTITUDE\nWhich statement about drinking alcoholic beverages do you feel best represents your own attitude?\n1 = Drinking is never a good thing to do.2 = Drinking is all right but a person should not get drunk3 = Occasionally getting drunk is okay as long as it doesn’t interfere with academics or other responsibilities.4 = Occasionally getting drunk is okay even if it does interfere with academics or other responsibilities.5 = Frequently getting drunk is okay if that’s what the individual wants to do.\n\n\nDRINK\nHow often do you typically consume alcohol (including beer, wine, wine coolers, liquor, and mixed drinks)?\n0 = Never1 = 1 – 2 times/year2 = 6 times/year3 = Once/month4 = Twice/month5 = Once/week6 = 3 times/week7 = 5 times/week8 = Every day\n\n\n\nWhat are the levels of measurement for: a) ABSTAIN b) LIVING c) STATUS d) ATTITUDE e) DRINK\n\n\n### Solution\n\n\nContinuous\nNominal\nDichotomous\nOrdinal\nOrdinal\n\n\n\n\n\nExercise 1.8\nExercise 1.8 includes descriptions of some of the variables in the Framingham data set. The Framingham data set is based on a longitudinal study investigating factors relating to coronary heart disease.\nFor each variable described from the Framingham data set, indicate the measure type.\n\nCURSMOKE1 indicates whether or not the individual smoked cigarettes in 1956. It is coded so that 0 represents no and 1 represents yes.\nCIGPDAY1 indicates the number of cigarettes the individual smoked per day, on average, in 1956.\nBMI1 indicates the body mass index of the individual in 1956.\nSYSBP1 and DIABP1 indicate the systolic and diastolic blood pressures, respectively, of the individuals in 1956. Blood is carried from the heart to all parts of your body in vessels called arteries. Blood pressure is the force of the blood pushing against the walls of the arteries. Each time the heart beats (about 60-70 times a minute at rest), it pumps out blood into the arteries. Your blood pressure is at its highest when the heart beats, pumping the blood. This is called systolic pressure. When the heart is at rest, between beats, your blood pressure falls. This is the diastolic pressure. Blood pressure is always given as these two numbers, the systolic and diastolic pressures. Both are important. Usually they are written one above or before the other, such as 120/80 mmHg. The top number is the systolic and the bottom the diastolic. When the two measurements are written down, the systolic pressure is the first or top number, and the diastolic pressure is the second or bottom number (for example, 120/80). If your blood pressure is 120/80, you say that it is “120 over 80.” Blood pressure changes during the day. It is lowest as you sleep and rises when you get up. It also can rise when you are excited, nervous, or active. Still, for most of your waking hours, your blood pressure stays pretty much the same when you are sitting or standing still. Normal values of blood pressure should be lower than 120/80. When the level remains too high, for example, 140/90 or higher, the individual is said to have high blood pressure. With high blood pressure, the heart works harder, your arteries take a beating, and your chances of a stroke, heart attack, and kidney problems are greater.\n\n\n\n### Solution\n\n\nDichotomous\nContinuous\nContinuous\nContinuous\n\n\n\n\n\nExercise 1.9\nExercise 1.9 includes descriptions of some of the variables in the NELS data set. The NELS data set is a subset of a data set collected by the National Center for Educational Statistics. They conducted a longitudinal study investigating factors relating to educational outcomes.\nRead the description of the following variables from the NELS data set and indicate their measure type.\n\nGENDER. Classifies the student as either male or female, where 0 = “male” and 1 = “female.”\nURBAN. Classifies the type of environment in which each student lives where 1 = “Urban,” 2 = “Suburban,” and 3 = “Rural.”\nSCHTYP8. Classifies the type of school each student attended in eighth grade where 1 = “Public,” 2 = “Private, Religious,” and 3 = “Private, Non-Religious.”\nTCHERINT. Classifies student agreement with the statement “My teachers are interested in students” using the Likert scale 1 = “strongly agree,” 2 = “agree,” 3 = “disagree,” and 4 = “strongly disagree.”\nNUMINST. Gives the number of post-secondary institutions the student attended.\nACHRDG08. Gives a score for the student’s performance in eighth grade on a standardized test of reading achievement. Actual values range from 36.61 to 77.2, from low to high achievement.\nSES. Gives a score representing the socioeconomic status (SES) of the student, a composite of father’s education level, mother’s education level, father’s occupation, mother’s occupation, and family income. Values range from 0 to 35, from low to high SES.\nSLFCNC12. Gives a score for student self-concept in twelfth grade. Values range from 0 to 43. Self-concept is defined as a person’s self-perceptions, or how a person feels about himself or herself. Four items comprise the self-concept scale in the NELS questionnaire: I feel good about myself; I feel I am a person of worth, the equal of other people; I am able to do things as well as most other people; and, on the whole, I am satisfied with myself. A self-concept score, based on the sum of scores on each of these items, is used to measure self-concept in the NELS study. Higher scores associate with higher self-concept and lower scores associate with lower self-concept.\nSCHATTRT. Gives the average daily attendance rate for the school.\nABSENT12. Classifies the number of times missed school. Assigns 0 to Never, 1 to 1–2 times, 2 to 3–6 times, etc.\n\n\n\n### Solution\n\n\nDichotomous\nNominal or Ordinal, depending on interpretation\nNominal\nContinuous (Likert scales are often treated as scale/continuous)\nContinuous\nContinuous\nContinuous\nContinuous\nContinuous\nOrdinal\n\n\n\n\n\nExercise 1.10\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Variable” tag on the top.\nAnswer the following questions:\n\nWhat is the first variable in the NELS data set?\nWhat is the second variable in the data set and what is its Description?\nWhat are the levels for this variable? That is, how is the variable coded?\nWhat is the measure type entered for this variable in Jamovi?\nWhat is the Description for the variable FAMSIZE?\nWhy are there no levels (i.e., code) for this variable?\nWhat is the measure type entered for this variable in Jamovi?\nHow many variables are there in the NELS data set?\n\n\n\n### Solution\n\n\nID.\nADVMAT8. The Description is “Advanced Math Taken in Eighth Grade.” This is a dichotomous variable indicating whether or not a student took advanced math in eighth grade.\n“no” is coded 0, “yes” is coded 1, and missing data are coded 8.\nThe measure type has been entered as nominal. The variable is dichotomous.\nFamily Size.\nThe variable gives the family size or the number of members in the person’s household. This variable is naturally numeric, so it does not require coded levels to explain what the numbers represent.\nThe measure type is listed as continuous, which refers to continuous variables.\n\n\n\n\n\n\n\n\nExercise 1.11\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Data” tag on the top. Use the Data View window to answer the following questions about the particular values that different individual students attain in the NELS data set.\n\nHow many people are in the family (FAMSIZE) of the first student (ID=1) in the NELS data set?\nDid the first student in the NELS data set (ID = 1) take advanced math in eighth grade (ADVMATH8)?\nDid the second student in the NELS data set (ID = 2) take advanced math in eighth grade (ADVMATH8)?\nHow many people are in the NELS data set?\n\n\n\n### Solution\n\n\n\n\n\nYes.\nWe do not know. The second student’s information is missing from the data set."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/index.html",
-    "href": "teaching/STAT117/course_documents/index.html",
-    "title": "Course documents",
-    "section": "",
-    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/index.html#lecture-slides",
-    "href": "teaching/STAT117/course_documents/index.html#lecture-slides",
-    "title": "Course documents",
-    "section": "Lecture slides",
-    "text": "Lecture slides\n\nChapter 1\nChapter 2",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/index.html#homework",
-    "href": "teaching/STAT117/course_documents/index.html#homework",
-    "title": "Course documents",
-    "section": "Homework",
-    "text": "Homework\nHomework exercise questions are adopted from the textbook Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222.\nSolutions are provided in the same document.\nIf a dataset is missing, or if you find a typo/error, please let me know.\n\nChapter 1\nChapter 2",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/index.html",
-    "href": "teaching/STAT117/index.html",
-    "title": "STAT117 - Introduction to Statistics",
-    "section": "",
-    "text": "Welcome to the course site of STAT117 - Introduction to Statistics. Use the sidebar to navigate within this course.\nDescription. Introduces statistics needed for data analysis and to understand statistical content in the media. Uses a widely-used software application for statistics. May include graphical and tabular presentation of data, measures of central tendency, dispersion, and shape, linear transformations of data, correlation, regression, basic probability, and the normal probability model, sampling, hypothesis testing t-tests, and one-way analysis of variance."
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/index.html",
-    "href": "teaching/STAT117/weeks/index.html",
-    "title": "Weekly modules",
-    "section": "",
-    "text": "Here is where you can find everything you need to know for each week.\n\nWeek 1: Aug 31 to Sep 4\nWeek 2: Sep 7 to Sep 11",
-    "crumbs": [
-      "Research",
-      "Weeks"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_2/week_2.html",
-    "href": "teaching/STAT117/weeks/week_2/week_2.html",
-    "title": "Week 2",
-    "section": "",
-    "text": "Sep 8 (Tuesday): asynchronous lecture\nDue on Moodle at the beginning of Thursday’s class (9/10): Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 1",
+    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 2"
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#overview",
-    "href": "teaching/STAT117/weeks/week_2/week_2.html#overview",
-    "title": "Week 2",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#overview",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#overview",
+    "title": "Week 1",
     "section": "",
-    "text": "Sep 8 (Tuesday): asynchronous lecture\nDue on Moodle at the beginning of Thursday’s class (9/10): Assignment 1\nSep 10 (Thursday): in-person lecture, quiz 1",
+    "text": "Sep 1 (Tuesday): in-person lecture\nSep 3 (Thursday): in-person lecture",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 2"
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/STAT120/homework/homework_1.html",
-    "href": "teaching/STAT120/homework/homework_1.html",
-    "title": "STAT120 - Statistical Computing in R",
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#tuesday-sep-1-in-person",
+    "title": "Week 1",
+    "section": "Tuesday, Sep 1 (in-person)",
+    "text": "Tuesday, Sep 1 (in-person)\nToday we will introduce ourselves, go over the syllabus, and get started with Chapter 1.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
+    "href": "teaching/STAT117/weeks/week_1/week_1.html#thursday-sep-3-in-person",
+    "title": "Week 1",
+    "section": "Thursday, Sep 3 (in-person)",
+    "text": "Thursday, Sep 3 (in-person)\nWe will finish Chapter 1 today and get started with Chapter 2.\nAs a reminder, when we finish Chapter 1, you should do Chapter 1 homework for additional practice. You can skip the last two questions (which involve Jamovi) for now. Recall that homework is not collected in this class.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/data/index.html",
+    "href": "teaching/STAT120/data/index.html",
+    "title": "Dataset",
     "section": "",
-    "text": "Download R and RStudio locally on your computer and install them. Speak to me as soon as possible if you have any questions.",
+    "text": "tallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.",
     "crumbs": [
       "Research",
-      "Homework",
-      "Homework 1"
+      "Datasets"
     ]
   },
   {
-    "objectID": "teaching/STAT120/homework/homework_1.html#part-i",
-    "href": "teaching/STAT120/homework/homework_1.html#part-i",
-    "title": "STAT120 - Statistical Computing in R",
-    "section": "Part I",
-    "text": "Part I\n\nCreate and store a vector of values starting at 1 and ending at 103, with the values increasing in increments of 3.\n\n\n\nShow solution\n\n\nv1 &lt;- seq(from=1,to=103,by=3)\n\n\n\nAdd 4 to each of the values in the vector from problem 1. Store the new vector.\n\n\n\nShow solution\n\n\nv2 &lt;- v1+4\n\n\n\nRemove the 8th value from the vector in problem 2 and store the new vector.\n\n\n\nShow solution\n\n\nv3 &lt;- v2[-8]\n\n\n\nAdd the values 50 and 39 to the end of the vector in problem 3 and store the new vector.\n\n\n\nShow solution\n\n\nv4 &lt;- c(v3,50,39)\n\n\n\nFind the sum of the elements of the vector from problem 4. Note: You should get 2,023.\n\n\n\nShow solution\n\n\nsum(v4)\n\n[1] 2023\n\n\n\n\nUsing an R function, find the length of the vector in problem 5.\n\n\n\nShow solution\n\n\nlength(v4)\n\n[1] 36\n\n\n\n\nCreate a character vector of length 3, color.list, that stores three colors: deepskyblue, hotpink, and seagreen (in this order).\n\n\n\nShow solution\n\n\ncolor.list &lt;- c('deepskyblue','hotpink','seagreen')\n\n\n\nCreate a numeric vector of length 100, color.index, that looks like \\((1,2,1,2,1,2,\\ldots)\\). Hint: use the rep() function to repeat the vector \\((1,2)\\) 50 times.\n\n\n\nShow solution\n\n\ncolor.index &lt;- rep(c(1,2),50)\n\n\n\nUse the vector from problem 8 to index the color vector in problem 7 and create a new vector that looks like (‘deepskyblue’, ‘hotpink’, ‘deepskyblue’, ‘hotpink’, …)\n\n\n\nShow solution\n\n\nmycol &lt;- color.list[color.index]\nmycol\n\n  [1] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n  [6] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [11] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [16] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [21] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [26] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [31] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [36] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [41] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [46] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [51] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [56] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [61] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [66] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [71] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [76] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [81] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [86] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n [91] \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\"\n [96] \"hotpink\"     \"deepskyblue\" \"hotpink\"     \"deepskyblue\" \"hotpink\"    \n\n\n\n\nCreate a numeric sequence x that goes from 1 to 100; create another numeric sequence y that repeats the value 8 for 100 times. Use R to check that both x and y have lengths of 100.\n\n\n\nShow solution\n\n\nx &lt;- c(1:100)\ny &lt;- rep(8,100)\nlength(x)\n\n[1] 100\n\nlength(y)\n\n[1] 100\n\n\n\n\nUse the vectors in problem 10 to perform the following calculation: \\[{1\\times8 + 2\\times8 + 3\\times8 + \\ldots + 100 \\times 8}.\\] You should get \\(40400\\).\n\n\n\nShow solution\n\n\nsum(x*y)\n\n[1] 40400\n\n\n\n\nCreate a scatterplot using the vectors in problem 10. Vector x should be on the x axis; vector y should be on the y axis. Set the color to the color vector you created in problem 9.\n\n\n\nShow solution\n\n\nplot(x,y,col=mycol)\n\n\n\n\n\n\n\n\n\n\nDo the scatterplot from problem 12 again, but add these arguments: set xlab and ylab to NA, set type to \"h\", and set ylim to c(5, 9). Pay attention to what each argument does.\n\n\n\nShow solution\n\n\nplot(x,y,col=mycol,xlab=NA,ylab=NA,type='h',ylim=c(5,9))",
-    "crumbs": [
-      "Research",
-      "Homework",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT120/homework/index.html",
-    "href": "teaching/STAT120/homework/index.html",
-    "title": "Homework",
+    "objectID": "teaching/STAT120/data/index.html#csv-data",
+    "href": "teaching/STAT120/data/index.html#csv-data",
+    "title": "Dataset",
     "section": "",
-    "text": "Homework is not collected in this class - it is entirely for your own practice.\nIt is required in the sense that you cannot succeed in this class without sufficient practice. Materials from the homework may appear on quizzes and exams, even if they do not appear in the lecture.\nThe provided solution is usually not the only way to code the answer. Write your own code, talk to your peers, and use online resources, including AI, to explore other approaches.\n\nHomework 1",
+    "text": "tallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.",
     "crumbs": [
       "Research",
-      "Homework"
+      "Datasets"
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/index.html",
-    "href": "teaching/STAT120/lectures/index.html",
-    "title": "Lectures",
+    "objectID": "teaching/STAT120/homework/homework_2.html",
+    "href": "teaching/STAT120/homework/homework_2.html",
+    "title": "Yi Lu",
     "section": "",
-    "text": "Lecture 1\nLecture 2\nCode used for demonstration during each lecture can be found here",
-    "crumbs": [
-      "Research",
-      "Lectures"
-    ]
+    "text": "Suppose the following are the final high school GPAs of a group of college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90. Create a vector that stores these values in the order specified. Choose a variable name that’s descriptive but relatively short.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\n\n\n\nFor the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)\n\n\nShow solution\n\n\n\nwhich(gpa&gt;3.5)\n\n[1] 1 2 3 4 7\n\n\n\n\nUse R to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.\n\n\nShow solution\n\n\n\nlength(gpa)\n\n[1] 10\n\nmax(gpa)\n\n[1] 4\n\nwhich(gpa==max(gpa))\n\n[1] 4\n\n\n\n\nFind the average GPA for this group of students.\n\n\nShow solution\n\n\n\nmean(gpa)\n\n[1] 3.385\n\n\n\n\nSuppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.\n\n\nShow solution\n\n\n\nsat_quant &lt;- c(640, 680, 790, 730, 580, 560, 670, 450, 650, 490)\nlength(sat_quant)\n\n[1] 10\n\n\n\n\nPrint out the SAT quantitative scores for the 2nd and 3rd students.\n\n\nShow solution\n\n\n\nsat_quant[c(2,3)]\n\n[1] 680 790\n\n\n\n\nPrint out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type 1, 2, 3, 4, 7 anywhere in your code.\n\n\nShow solution\n\n\n\nsat_quant[gpa&gt;3.5]\n\n[1] 640 680 790 730 670\n\n\n\n\nCreate a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1. Note that 1 represents “male” and 0 represents “female.” Double check that it has the right length.\n\n\n\nShow solution\n\n\ngender &lt;- c(rep(1, 3), rep(0, 5), rep(1, 2))\nlength(gender)\n\n[1] 10\n\n\n\n\nFind the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.\n\n\nShow solution\n\n\n\nmean(gender)\n\n[1] 0.5\n\n\n\n\nThe respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior. Create a factor vector that stores the year of students (hint: create a character vector first and convert it to factor). Use R to double check that its type is factor.\n\n\n\nShow solution\n\n\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\nclass(year)\n\n[1] \"factor\"\n\n\n\n\nUse the tapply function to print out the average GPA of students by Year. Your output should look like this.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\ntapply(gpa,year,mean)\n\n Freshman    Junior    Senior Sophomore \n 3.407500  3.120000  3.260000  3.526667 \n\n\n\n\nStore the vectors you created previously (gpa, sat_quant, gender, and year) in a data frame using the data.frame() function. Then, use the group_by() function in tidyverse to get the average GPA of students by year.\n\n\n\nShow solution\n\n\ndf.student &lt;- data.frame(gpa,year,sat_quant,gender)\ndf.student %&gt;% \n  group_by(year) %&gt;%\n  summarise(mean(gpa))\n\n# A tibble: 4 × 2\n  year      `mean(gpa)`\n  &lt;fct&gt;           &lt;dbl&gt;\n1 Freshman         3.41\n2 Junior           3.12\n3 Senior           3.26\n4 Sophomore        3.53"
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
-    "href": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
+    "objectID": "teaching/STAT120/homework/homework_2.html#part-iv",
+    "href": "teaching/STAT120/homework/homework_2.html#part-iv",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Suppose the following are the final high school GPAs of a group of college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90. Create a vector that stores these values in the order specified. Choose a variable name that’s descriptive but relatively short.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\n\n\n\nFor the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)\n\n\nShow solution\n\n\n\nwhich(gpa&gt;3.5)\n\n[1] 1 2 3 4 7\n\n\n\n\nUse R to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.\n\n\nShow solution\n\n\n\nlength(gpa)\n\n[1] 10\n\nmax(gpa)\n\n[1] 4\n\nwhich(gpa==max(gpa))\n\n[1] 4\n\n\n\n\nFind the average GPA for this group of students.\n\n\nShow solution\n\n\n\nmean(gpa)\n\n[1] 3.385\n\n\n\n\nSuppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.\n\n\nShow solution\n\n\n\nsat_quant &lt;- c(640, 680, 790, 730, 580, 560, 670, 450, 650, 490)\nlength(sat_quant)\n\n[1] 10\n\n\n\n\nPrint out the SAT quantitative scores for the 2nd and 3rd students.\n\n\nShow solution\n\n\n\nsat_quant[c(2,3)]\n\n[1] 680 790\n\n\n\n\nPrint out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type 1, 2, 3, 4, 7 anywhere in your code.\n\n\nShow solution\n\n\n\nsat_quant[gpa&gt;3.5]\n\n[1] 640 680 790 730 670\n\n\n\n\nCreate a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1. Note that 1 represents “male” and 0 represents “female.” Double check that it has the right length.\n\n\n\nShow solution\n\n\ngender &lt;- c(rep(1, 3), rep(0, 5), rep(1, 2))\nlength(gender)\n\n[1] 10\n\n\n\n\nFind the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.\n\n\nShow solution\n\n\n\nmean(gender)\n\n[1] 0.5\n\n\n\n\nThe respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior. Create a factor vector that stores the year of students (hint: create a character vector first and convert it to factor). Use R to double check that its type is factor.\n\n\n\nShow solution\n\n\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\nclass(year)\n\n[1] \"factor\"\n\n\n\n\nUse the tapply function to print out the average GPA of students by Year. Your output should look like this.\n\n\n\nShow solution\n\n\nlibrary(tidyverse)\ngpa &lt;- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)\nyear &lt;- c(\"Senior\", \"Freshman\", \"Sophomore\", \"Freshman\", \"Junior\", \"Sophomore\", \"Sophomore\", \"Freshman\", \"Freshman\", \"Senior\")\nyear &lt;- as.factor(year)\ntapply(gpa,year,mean)\n\n Freshman    Junior    Senior Sophomore \n 3.407500  3.120000  3.260000  3.526667 \n\n\n\n\nStore the vectors you created previously (gpa, sat_quant, gender, and year) in a data frame using the data.frame() function. Then, use the group_by() function in tidyverse to get the average GPA of students by year.\n\n\n\nShow solution\n\n\ndf.student &lt;- data.frame(gpa,year,sat_quant,gender)\ndf.student %&gt;% \n  group_by(year) %&gt;%\n  summarise(mean(gpa))\n\n# A tibble: 4 × 2\n  year      `mean(gpa)`\n  &lt;fct&gt;           &lt;dbl&gt;\n1 Freshman         3.41\n2 Junior           3.12\n3 Senior           3.26\n4 Sophomore        3.53"
+  },
+  {
+    "objectID": "teaching/STAT120/index.html",
+    "href": "teaching/STAT120/index.html",
+    "title": "STAT120 - Statistical Computing in R / DATA505 - Statistics Using R",
+    "section": "",
+    "text": "Welcome to the course site of STAT120 - Statistical Computing in R / DATA505 - Statistics Using R. Use the sidebar to navigate within this course.\nDescription. (STAT120) Provides students with an introduction to computing in the popular statistical programming language R. Topics may include: data structures, reading and storing data, data transformation and manipulation, accessing and using packages, conditionals, loops, functions, graphics and data visualization, and introductory statistical methods for data analysis. No previous programming experience is required.\n(DATA505) Covers how to use real-world data and draw intelligent conclusions on it using univariate and bivariate descriptive statistics such as centrality, spread, and correlation. Students have the opportunity to learn how to use the R language in the R-studio environment to obtain representative samples from large datasets and use the information in such samples to draw inferences on the larger datasets they were taken from. Course topics include graphical and tabular presentation of data, measures of central tendency, spread and shape, linear transformations of data, correlation, regression, probability, the normal probability model, sampling, t-tests, and one-way analysis of variance."
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
+    "href": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
     "title": "Yi Lu",
     "section": "",
     "text": "Link to fullscreen",
     "crumbs": [
       "Research",
       "Lectures",
-      "Lecture 2"
+      "Lecture 1"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT120/lectures/lecture_notes/index.html",
+    "href": "teaching/STAT120/lectures/lecture_notes/index.html",
+    "title": "Lecture code and notes",
+    "section": "",
+    "text": "Coming soon.",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Lecture notes"
     ]
   },
   {
