@@ -140,6 +140,30 @@
     ]
   },
   {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-asynchronous",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-asynchronous",
+    "title": "Week 2",
+    "section": "Tuesday, Sep 8 (asynchronous)",
+    "text": "Tuesday, Sep 8 (asynchronous)\nWe are not meeting in person today. I won’t be on campus as I’ll be travelling, but you can reach me by email, or schedule a meeting with me. Please complete the following tasks on your own before Thursday’s class.\n\nDownload Jamovi here. Install it on your computer. If you have issues with this process (especially if you believe it’s related to your particular computer), I suggest that you stop by the Univeristy Technology.\nGo over Handout 1. It will guide you through the basics of using Jamovi and understanding the NELS dataset. There are several practice questions at the end.\nFor Assignment 1, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of Handout 1 on Moodle. These questions are not graded for correctness and quiz 1 will not involve Jamovi, so it’s ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not behind during class.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "href": "teaching/STAT117/weeks/week_2/week_2.html#thursday-sep-10-in-person",
+    "title": "Week 2",
+    "section": "Thursday, Sep 10 (in-person)",
+    "text": "Thursday, Sep 10 (in-person)\nToday we will have our very first quiz! As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON. Quiz 1 will be very short and similar to the questions in Chapter 1: you will be given some variables and you will be asked to identify their measure types (nominal, ordinal, continuous/scale, or dichotomous). It will not involve Jamovi.\nDuring class, we will finish Chapter 2, get started on Chapter 3, and go over some basics of Jamovi.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
     "objectID": "teaching/STAT117/weeks/index.html",
     "href": "teaching/STAT117/weeks/index.html",
     "title": "Weekly modules",
@@ -191,6 +215,17 @@
     ]
   },
   {
+    "objectID": "teaching/STAT117/course_documents/index.html#handout",
+    "href": "teaching/STAT117/course_documents/index.html#handout",
+    "title": "Course documents",
+    "section": "Handout",
+    "text": "Handout\n\nHandout 1: Introduction",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
     "objectID": "teaching/STAT117/course_documents/homework/chapter_1.html",
     "href": "teaching/STAT117/course_documents/homework/chapter_1.html",
     "title": "Chapter 1",
@@ -198,252 +233,40 @@
     "text": "Exercise 1.6\nA survey was administered to college students to learn about student participation in University sponsored extra-curricular activities. Identify the most likely measure type of each of the following variables taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nAGE\nHow old are you in years?\n\n\n\nEXTRAC\nAt which type of extra-curricular activity do you spend most of your time?\n1 = Sports2 = Student Government3 = Clubs and organizations4 = None\n\n\nTIME\nHow much time do you spend weekly on University sponsored extracurricular activities?\n0 = None1 = 1 – 2 hours2 = 3 – 5 hours3 = 6 – 10 hours4 = 10 – 20 hours5 = More than 20 hours\n\n\n\nWhat are the levels of measurement for: a) AGE b) EXTRAC c) TIME\n\n\n### Solution\n\n\nContinuous\nNominal\nOrdinal\n\n\n\n\n\nExercise 1.7\nThe Campus Survey of Alcohol and Other Drug Norms is administered to college students to collect information about drug and alcohol use on campus. Identify the most likely measure type of each of the following variables from that survey taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nABSTAIN\nOverall, what percentage of students at this college do you think consume no alcoholic beverages at all?\n\n\n\nLIVING\nLiving arrangements\n1 = House/apartment/etc.2 = Residence Hall3 = Other\n\n\nSTATUS\nStudent status:\n1 = Full-time (12+ credits)2 = Part-time (1 – 11 credits)\n\n\nATTITUDE\nWhich statement about drinking alcoholic beverages do you feel best represents your own attitude?\n1 = Drinking is never a good thing to do.2 = Drinking is all right but a person should not get drunk3 = Occasionally getting drunk is okay as long as it doesn’t interfere with academics or other responsibilities.4 = Occasionally getting drunk is okay even if it does interfere with academics or other responsibilities.5 = Frequently getting drunk is okay if that’s what the individual wants to do.\n\n\nDRINK\nHow often do you typically consume alcohol (including beer, wine, wine coolers, liquor, and mixed drinks)?\n0 = Never1 = 1 – 2 times/year2 = 6 times/year3 = Once/month4 = Twice/month5 = Once/week6 = 3 times/week7 = 5 times/week8 = Every day\n\n\n\nWhat are the levels of measurement for: a) ABSTAIN b) LIVING c) STATUS d) ATTITUDE e) DRINK\n\n\n### Solution\n\n\nContinuous\nNominal\nDichotomous\nOrdinal\nOrdinal\n\n\n\n\n\nExercise 1.8\nExercise 1.8 includes descriptions of some of the variables in the Framingham data set. The Framingham data set is based on a longitudinal study investigating factors relating to coronary heart disease.\nFor each variable described from the Framingham data set, indicate the measure type.\n\nCURSMOKE1 indicates whether or not the individual smoked cigarettes in 1956. It is coded so that 0 represents no and 1 represents yes.\nCIGPDAY1 indicates the number of cigarettes the individual smoked per day, on average, in 1956.\nBMI1 indicates the body mass index of the individual in 1956.\nSYSBP1 and DIABP1 indicate the systolic and diastolic blood pressures, respectively, of the individuals in 1956. Blood is carried from the heart to all parts of your body in vessels called arteries. Blood pressure is the force of the blood pushing against the walls of the arteries. Each time the heart beats (about 60-70 times a minute at rest), it pumps out blood into the arteries. Your blood pressure is at its highest when the heart beats, pumping the blood. This is called systolic pressure. When the heart is at rest, between beats, your blood pressure falls. This is the diastolic pressure. Blood pressure is always given as these two numbers, the systolic and diastolic pressures. Both are important. Usually they are written one above or before the other, such as 120/80 mmHg. The top number is the systolic and the bottom the diastolic. When the two measurements are written down, the systolic pressure is the first or top number, and the diastolic pressure is the second or bottom number (for example, 120/80). If your blood pressure is 120/80, you say that it is “120 over 80.” Blood pressure changes during the day. It is lowest as you sleep and rises when you get up. It also can rise when you are excited, nervous, or active. Still, for most of your waking hours, your blood pressure stays pretty much the same when you are sitting or standing still. Normal values of blood pressure should be lower than 120/80. When the level remains too high, for example, 140/90 or higher, the individual is said to have high blood pressure. With high blood pressure, the heart works harder, your arteries take a beating, and your chances of a stroke, heart attack, and kidney problems are greater.\n\n\n\n### Solution\n\n\nDichotomous\nContinuous\nContinuous\nContinuous\n\n\n\n\n\nExercise 1.9\nExercise 1.9 includes descriptions of some of the variables in the NELS data set. The NELS data set is a subset of a data set collected by the National Center for Educational Statistics. They conducted a longitudinal study investigating factors relating to educational outcomes.\nRead the description of the following variables from the NELS data set and indicate their measure type.\n\nGENDER. Classifies the student as either male or female, where 0 = “male” and 1 = “female.”\nURBAN. Classifies the type of environment in which each student lives where 1 = “Urban,” 2 = “Suburban,” and 3 = “Rural.”\nSCHTYP8. Classifies the type of school each student attended in eighth grade where 1 = “Public,” 2 = “Private, Religious,” and 3 = “Private, Non-Religious.”\nTCHERINT. Classifies student agreement with the statement “My teachers are interested in students” using the Likert scale 1 = “strongly agree,” 2 = “agree,” 3 = “disagree,” and 4 = “strongly disagree.”\nNUMINST. Gives the number of post-secondary institutions the student attended.\nACHRDG08. Gives a score for the student’s performance in eighth grade on a standardized test of reading achievement. Actual values range from 36.61 to 77.2, from low to high achievement.\nSES. Gives a score representing the socioeconomic status (SES) of the student, a composite of father’s education level, mother’s education level, father’s occupation, mother’s occupation, and family income. Values range from 0 to 35, from low to high SES.\nSLFCNC12. Gives a score for student self-concept in twelfth grade. Values range from 0 to 43. Self-concept is defined as a person’s self-perceptions, or how a person feels about himself or herself. Four items comprise the self-concept scale in the NELS questionnaire: I feel good about myself; I feel I am a person of worth, the equal of other people; I am able to do things as well as most other people; and, on the whole, I am satisfied with myself. A self-concept score, based on the sum of scores on each of these items, is used to measure self-concept in the NELS study. Higher scores associate with higher self-concept and lower scores associate with lower self-concept.\nSCHATTRT. Gives the average daily attendance rate for the school.\nABSENT12. Classifies the number of times missed school. Assigns 0 to Never, 1 to 1–2 times, 2 to 3–6 times, etc.\n\n\n\n### Solution\n\n\nDichotomous\nNominal or Ordinal, depending on interpretation\nNominal\nContinuous (Likert scales are often treated as scale/continuous)\nContinuous\nContinuous\nContinuous\nContinuous\nContinuous\nOrdinal\n\n\n\n\n\nExercise 1.10\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Variable” tag on the top.\nAnswer the following questions:\n\nWhat is the first variable in the NELS data set?\nWhat is the second variable in the data set and what is its Description?\nWhat are the levels for this variable? That is, how is the variable coded?\nWhat is the measure type entered for this variable in Jamovi?\nWhat is the Description for the variable FAMSIZE?\nWhy are there no levels (i.e., code) for this variable?\nWhat is the measure type entered for this variable in Jamovi?\nHow many variables are there in the NELS data set?\n\n\n\n### Solution\n\n\nID.\nADVMAT8. The Description is “Advanced Math Taken in Eighth Grade.” This is a dichotomous variable indicating whether or not a student took advanced math in eighth grade.\n“no” is coded 0, “yes” is coded 1, and missing data are coded 8.\nThe measure type has been entered as nominal. The variable is dichotomous.\nFamily Size.\nThe variable gives the family size or the number of members in the person’s household. This variable is naturally numeric, so it does not require coded levels to explain what the numbers represent.\nThe measure type is listed as continuous, which refers to continuous variables.\n\n\n\n\n\n\n\n\nExercise 1.11\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Data” tag on the top. Use the Data View window to answer the following questions about the particular values that different individual students attain in the NELS data set.\n\nHow many people are in the family (FAMSIZE) of the first student (ID=1) in the NELS data set?\nDid the first student in the NELS data set (ID = 1) take advanced math in eighth grade (ADVMATH8)?\nDid the second student in the NELS data set (ID = 2) take advanced math in eighth grade (ADVMATH8)?\nHow many people are in the NELS data set?\n\n\n\n### Solution\n\n\n\n\n\nYes.\nWe do not know. The second student’s information is missing from the data set."
   },
   {
-    "objectID": "teaching/DATA352/weeks/index.html",
-    "href": "teaching/DATA352/weeks/index.html",
-    "title": "Weekly schedule",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html",
+    "title": "Week 1 (Sept 2)",
     "section": "",
-    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
-      "Weeks"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/index.html#weeks",
-    "href": "teaching/DATA352/weeks/index.html#weeks",
-    "title": "Weekly schedule",
-    "section": "Weeks",
-    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "title": "Week 1 (Sept 2)",
+    "section": "",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
-      "Weeks"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/resources/index.html",
-    "href": "teaching/DATA352/resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
-    "crumbs": [
-      "Research",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "title": "DATA 352/551: Homework 1",
-    "section": "",
-    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 1",
-    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 2",
-    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 3",
-    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 4",
-    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Download the pdf version here."
-  },
-  {
-    "objectID": "cv/index.html#yi-lu",
-    "href": "cv/index.html#yi-lu",
-    "title": "Curriculum Vitae",
-    "section": "Yi Lu",
-    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
-  },
-  {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
-  },
-  {
-    "objectID": "cv/index.html#research-interests",
-    "href": "cv/index.html#research-interests",
-    "title": "Curriculum Vitae",
-    "section": "Research Interests",
-    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
-  },
-  {
-    "objectID": "cv/index.html#professional-experience",
-    "href": "cv/index.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional Experience",
-    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
-  },
-  {
-    "objectID": "cv/index.html#teaching",
-    "href": "cv/index.html#teaching",
-    "title": "Curriculum Vitae",
-    "section": "Teaching",
-    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
-  },
-  {
-    "objectID": "cv/index.html#advising",
-    "href": "cv/index.html#advising",
-    "title": "Curriculum Vitae",
-    "section": "Advising",
-    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
-  },
-  {
-    "objectID": "cv/index.html#publications",
-    "href": "cv/index.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "Publications",
-    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
-  },
-  {
-    "objectID": "cv/index.html#work-in-progress",
-    "href": "cv/index.html#work-in-progress",
-    "title": "Curriculum Vitae",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
-  },
-  {
-    "objectID": "cv/index.html#presentations",
-    "href": "cv/index.html#presentations",
-    "title": "Curriculum Vitae",
-    "section": "Presentations",
-    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
-  },
-  {
-    "objectID": "cv/index.html#grants",
-    "href": "cv/index.html#grants",
-    "title": "Curriculum Vitae",
-    "section": "Grants",
-    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
-  },
-  {
-    "objectID": "cv/index.html#awards",
-    "href": "cv/index.html#awards",
-    "title": "Curriculum Vitae",
-    "section": "Awards",
-    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
-  },
-  {
-    "objectID": "cv/index.html#services",
-    "href": "cv/index.html#services",
-    "title": "Curriculum Vitae",
-    "section": "Services",
-    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
-  },
-  {
-    "objectID": "cv/index.html#professional-memberships",
-    "href": "cv/index.html#professional-memberships",
-    "title": "Curriculum Vitae",
-    "section": "Professional Memberships",
-    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
-  },
-  {
-    "objectID": "cv/index.html#miscellaneous",
-    "href": "cv/index.html#miscellaneous",
-    "title": "Curriculum Vitae",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
-  },
-  {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Content coming up soon!"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html",
-    "href": "teaching/DATA352/course_documents/index.html",
-    "title": "Course documents",
-    "section": "",
-    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "title": "Course documents",
-    "section": "Lecture slides",
-    "text": "Lecture slides\n\nLecture 1",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#homework",
-    "href": "teaching/DATA352/course_documents/index.html#homework",
-    "title": "Course documents",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "title": "Week 1 (Sept 2)",
     "section": "Homework",
-    "text": "Homework\n\nHomework 1",
+    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
     "crumbs": [
       "Research",
-      "Course documents"
+      "Weeks",
+      "Week 1"
     ]
-  },
-  {
-    "objectID": "teaching/DATA352/index.html",
-    "href": "teaching/DATA352/index.html",
-    "title": "DATA 352/551: Modeling and Simulation",
-    "section": "",
-    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
   },
   {
     "objectID": "teaching/DATA352/syllabus.html",
@@ -644,40 +467,287 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html",
-    "title": "Week 1 (Sept 2)",
+    "objectID": "teaching/DATA352/index.html",
+    "href": "teaching/DATA352/index.html",
+    "title": "DATA 352/551: Modeling and Simulation",
     "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
+    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html",
+    "href": "teaching/DATA352/course_documents/index.html",
+    "title": "Course documents",
+    "section": "",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "title": "Week 1 (Sept 2)",
-    "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
+    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nLecture 1",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "title": "Week 1 (Sept 2)",
+    "objectID": "teaching/DATA352/course_documents/index.html#homework",
+    "href": "teaching/DATA352/course_documents/index.html#homework",
+    "title": "Course documents",
     "section": "Homework",
-    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
+    "text": "Homework\n\nHomework 1",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Content coming up soon!"
+  },
+  {
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
+    "section": "",
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
+  },
+  {
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download the pdf version here."
+  },
+  {
+    "objectID": "cv/index.html#yi-lu",
+    "href": "cv/index.html#yi-lu",
+    "title": "Curriculum Vitae",
+    "section": "Yi Lu",
+    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
+  },
+  {
+    "objectID": "cv/index.html#research-interests",
+    "href": "cv/index.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "Research Interests",
+    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
+  },
+  {
+    "objectID": "cv/index.html#professional-experience",
+    "href": "cv/index.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
+  },
+  {
+    "objectID": "cv/index.html#teaching",
+    "href": "cv/index.html#teaching",
+    "title": "Curriculum Vitae",
+    "section": "Teaching",
+    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
+  },
+  {
+    "objectID": "cv/index.html#advising",
+    "href": "cv/index.html#advising",
+    "title": "Curriculum Vitae",
+    "section": "Advising",
+    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
+  },
+  {
+    "objectID": "cv/index.html#publications",
+    "href": "cv/index.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
+  },
+  {
+    "objectID": "cv/index.html#work-in-progress",
+    "href": "cv/index.html#work-in-progress",
+    "title": "Curriculum Vitae",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
+  },
+  {
+    "objectID": "cv/index.html#presentations",
+    "href": "cv/index.html#presentations",
+    "title": "Curriculum Vitae",
+    "section": "Presentations",
+    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
+  },
+  {
+    "objectID": "cv/index.html#grants",
+    "href": "cv/index.html#grants",
+    "title": "Curriculum Vitae",
+    "section": "Grants",
+    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
+  },
+  {
+    "objectID": "cv/index.html#awards",
+    "href": "cv/index.html#awards",
+    "title": "Curriculum Vitae",
+    "section": "Awards",
+    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
+  },
+  {
+    "objectID": "cv/index.html#services",
+    "href": "cv/index.html#services",
+    "title": "Curriculum Vitae",
+    "section": "Services",
+    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
+  },
+  {
+    "objectID": "cv/index.html#professional-memberships",
+    "href": "cv/index.html#professional-memberships",
+    "title": "Curriculum Vitae",
+    "section": "Professional Memberships",
+    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
+  },
+  {
+    "objectID": "cv/index.html#miscellaneous",
+    "href": "cv/index.html#miscellaneous",
+    "title": "Curriculum Vitae",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "title": "DATA 352/551: Homework 1",
+    "section": "",
+    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 7.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 1",
+    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 2",
+    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 3",
+    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 4",
+    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
+  },
+  {
+    "objectID": "teaching/DATA352/resources/index.html",
+    "href": "teaching/DATA352/resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
+    "crumbs": [
+      "Research",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/index.html",
+    "href": "teaching/DATA352/weeks/index.html",
+    "title": "Weekly schedule",
+    "section": "",
+    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
+    "crumbs": [
+      "Research",
+      "Weeks"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/index.html#weeks",
+    "href": "teaching/DATA352/weeks/index.html#weeks",
+    "title": "Weekly schedule",
+    "section": "Weeks",
+    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026",
+    "crumbs": [
+      "Research",
+      "Weeks"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html",
+    "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html",
+    "title": "STAT117 Jamovi Handout: Introduction",
+    "section": "",
+    "text": "This handout uses the NELS dataset as an example. Download the dataset before beginning."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#getting-started-in-jamovi",
+    "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#getting-started-in-jamovi",
+    "title": "STAT117 Jamovi Handout: Introduction",
+    "section": "Getting started in Jamovi",
+    "text": "Getting started in Jamovi\n\nOpen Jamovi.\nSelect menu (three lines) in the upper-left corner, choose Open, and select This PC. Click Browse to locate the downloaded NELS data file. You can also drag the file into the Jamovi window.\nJamovi displays the data in a spreadsheet. Each row is a student and each column is a variable.\nClosing Jamovi: my recommendation for this class is to NOT save anything. When you get a prompt to “save XXX?”, you should always choose “No.” If you need to re-access statistical results, you can simply re-run the analysis. Or, you can always take screenshots as needed.\n\n(Optional) If you really do want to save your work (e.g., for a future project), use the menu button and choose Save As. Jamovi saves the dataset and analyses together in a .omv file."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#data-and-variable-views",
+    "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#data-and-variable-views",
+    "title": "STAT117 Jamovi Handout: Introduction",
+    "section": "Data and variable views",
+    "text": "Data and variable views\n\nSelect the Data tab (at the top) to view the dataset and inspect variables.\nUnder data view, each column corresponds to a variable. To see a variable’s settings, select the column and choose Setup. You can also double-click a column header. Note that the setup panel shows the variable name, description, data type, and measure type. The measure types are Nominal, Ordinal, Continuous, and ID.\nFor this class: don’t worry too much about the “ID” measure type. Also, don’t worry about the “data type” (integer, decimal, text)."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#jamovi-analysis-examples",
+    "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#jamovi-analysis-examples",
+    "title": "STAT117 Jamovi Handout: Introduction",
+    "section": "Jamovi analysis examples",
+    "text": "Jamovi analysis examples\nThese tools are introduced in Chapter 2 and will be used throughout the semester.\n\nFrequency tables (Nominal or Ordinal)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove region into the Variables box.\nUnder Statistics, select Frequency tables. You can add several variables to the same analysis to create multiple tables.\nNote that this does NOT work for continuous variables.\n\n\n\nPercentile and percentile rank\n\nOpen Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics &gt; Percentile Values, select cut points for 10 equal groups (you need to enter 10).\nJamovi only allows up to 10 equally spaced cut points, so you cannot get precise percentile or percentile rank values for continuous variables beyond these cut points. With achmat08:\n\nExample 1: What is the 28th percentile? Answer: between 47.8 and 51.\nExample 2: What is the percentile rank of 50? Answer: between 20% and 30%.\n\n\n\n\nStatistic\nValue\n\n\n\n\nN\n500\n\n\nMissing\n0\n\n\nMean\n56.6\n\n\nMedian\n56.2\n\n\nStandard deviation\n9.34\n\n\nMinimum\n36.6\n\n\nMaximum\n77.2\n\n\n10th percentile\n44.2\n\n\n20th percentile\n47.8\n\n\n30th percentile\n51.0\n\n\n40th percentile\n53.7\n\n\n50th percentile\n56.2\n\n\n60th percentile\n58.9\n\n\n70th percentile\n62.1\n\n\n80th percentile\n65.7\n\n\n90th percentile\n68.9\n\n\n100th percentile\n77.2\n\n\n\n\n\n\nSummary statistics and plots (univariate)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics, select the desired numerical summaries (e.g., mean, median, standard deviation). Under Plots, select the desired visual summaries (e.g., histogram, box plot, bar plot)."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#practice-questions",
+    "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#practice-questions",
+    "title": "STAT117 Jamovi Handout: Introduction",
+    "section": "Practice Questions",
+    "text": "Practice Questions\nUse the NELS dataset in Jamovi. The same information can often be generated with more than one Jamovi option.\n\nHow many people are recorded in the NELS dataset? How many are women and how many are men (gender)?\nHow many variables are recorded in total?\nHow many regions are there? What are the regions?\nWhat does the variable parmarl8 represent? If a person has a value of 1 for this variable, what does it mean?\nFind the person whose ID is 10. What is the highest level of education this person expects to get?\nWhat percentage of students in the dataset have ever smoked marijuana (marijuan)?\nWhat is the biggest family size recorded?\nWhat is the recorded measure type for alcbinge? What is the actual appropriate measure type for this variable?"
   },
   {
     "objectID": "teaching/STAT117/course_documents/homework/chapter_2.html",

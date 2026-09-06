@@ -1,0 +1,86 @@
+---
+title: "STAT117 Jamovi Handout: Introduction"
+subtitle: "Using the NELS dataset"
+format:
+  html:
+    toc: true
+    number-sections: false
+    self-contained: true
+---
+
+This handout uses the **NELS** dataset as an example. [Download the dataset](../data/NELS.csv) before beginning.
+
+## Getting started in Jamovi
+
+1.  Open Jamovi.
+2.  Select menu (three lines) in the upper-left corner, choose **Open**, and select **This PC**. Click **Browse** to locate the downloaded NELS data file. You can also drag the file into the Jamovi window.
+3.  Jamovi displays the data in a spreadsheet. Each row is a student and each column is a variable.
+4.  Closing Jamovi: my recommendation for this class is to NOT save anything. When you get a prompt to "save XXX?", you should always choose "No." If you need to re-access statistical results, you can simply re-run the analysis. Or, you can always take screenshots as needed.
+    - (Optional) If you really do want to save your work (e.g., for a future project), use the menu button and choose **Save As**. Jamovi saves the dataset and analyses *together* in a `.omv` file.
+
+## Data and variable views
+
+- Select the **Data** tab (at the top) to view the dataset and inspect variables.
+- Under data view, each *column* corresponds to a variable. To see a variable's settings, select the column and choose **Setup**. You can also double-click a column header. Note that the setup panel shows the variable name, description, data type, and measure type. The measure types are **Nominal**, **Ordinal**, **Continuous**, and **ID**.
+- For this class: don't worry too much about the "ID" measure type. Also, don't worry about the "**data type**" (integer, decimal, text).
+
+## Jamovi analysis examples
+
+These tools are introduced in Chapter 2 and will be used throughout the semester.
+
+### Frequency tables (Nominal or Ordinal)
+
+1.  Select **Analyses \> Exploration \> Descriptives**.
+2.  Move `region` into the **Variables** box.
+3.  Under **Statistics**, select **Frequency tables**. You can add several variables to the same analysis to create multiple tables.
+4.  Note that this does NOT work for continuous variables.
+
+### Percentile and percentile rank
+
+1.  Open **Analyses \> Exploration \> Descriptives**.
+2.  Move `achmat08` into the **Variables** box.
+3.  Under **Statistics \> Percentile Values**, select `cut points for 10 equal groups` (you need to enter `10`).
+4.  Jamovi only allows up to 10 equally spaced cut points, so you cannot get precise percentile or percentile rank values for continuous variables beyond these cut points. With `achmat08`:
+    - Example 1: What is the 28th percentile? Answer: between 47.8 and 51.
+    - Example 2: What is the percentile rank of 50? Answer: between 20% and 30%.
+
+    | Statistic | Value |
+    | --- | --- |
+    | N | 500 |
+    | Missing | 0 |
+    | Mean | 56.6 |
+    | Median | 56.2 |
+    | Standard deviation | 9.34 |
+    | Minimum | 36.6 |
+    | Maximum | 77.2 |
+    | 10th percentile | 44.2 |
+    | 20th percentile | 47.8 |
+    | 30th percentile | 51.0 |
+    | 40th percentile | 53.7 |
+    | 50th percentile | 56.2 |
+    | 60th percentile | 58.9 |
+    | 70th percentile | 62.1 |
+    | 80th percentile | 65.7 |
+    | 90th percentile | 68.9 |
+    | 100th percentile | 77.2 |
+
+
+### Summary statistics and plots (univariate)
+
+1.  Select **Analyses \> Exploration \> Descriptives**.
+2.  Move `achmat08` into the **Variables** box.
+3.  Under **Statistics**, select the desired numerical summaries (e.g., mean, median, standard deviation). Under **Plots**, select the desired visual summaries (e.g., **histogram**, **box plot**, **bar plot**).
+
+
+## Practice Questions
+
+Use the NELS dataset in Jamovi. The same information can often be generated with more than one Jamovi option.
+
+1.  How many people are recorded in the NELS dataset? How many are women and how many are men (`gender`)?
+2.  How many variables are recorded in total?
+3.  How many regions are there? What are the regions?
+4.  What does the variable `parmarl8` represent? If a person has a value of 1 for this variable, what does it mean?
+5.  Find the person whose ID is 10. What is the highest level of education this person expects to get?
+6.  What percentage of students in the dataset have ever smoked marijuana (`marijuan`)?
+7.  What is the biggest family size recorded?
+8.  What is the recorded measure type for `alcbinge`? What is the actual appropriate measure type for this variable?

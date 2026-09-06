@@ -22,6 +22,11 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Chapter 2](homework/chapter_2.qmd)
 
 
+## Handout
+
+- [Handout 1: Introduction](handout/handout_1_introduction.qmd)
+
+
 <!--
 ## Assignments
 
