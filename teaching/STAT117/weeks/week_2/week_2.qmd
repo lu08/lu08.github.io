@@ -12,15 +12,15 @@ format: html
 
 ## Tuesday, Sep 8 (asynchronous)
 
-We are not meeting in person today.  I won't be on campus as I'll be travelling, but you can reach me by email, or schedule a meeting with me.  Please complete the following tasks on your own before Thursday's class.
+We are not meeting in person today.  I won't be on campus as I'll be travelling, but you can reach me [by email](mailto:ylu1@drew.edu), or [schedule a meeting](https://calendar.app.google/bSYSzjv5v5ybxvLt7) with me. Please complete the following tasks on your own before Thursday's class.
 
 
-1. Download Jamovi [here](https://www.jamovi.org/download.html).  Install it on your computer.  If you have issues with this process (especially if you believe it's related to your particular computer), I suggest that you stop by the [Univeristy Technology](https://drew.edu/about/technology-resources/university-technology/). 
+1. Download Jamovi [here](https://www.jamovi.org/download.html) (select `download desktop`).  Install it on your computer.  If you have issues with this process (especially if you believe it's related to your particular computer), I suggest that you stop by the [Univeristy Technology](https://drew.edu/about/technology-resources/university-technology/). 
 
 
-2. Go over [Handout 1](../../course_documents/handout/handout_1_introduction.qmd).  It will guide you through the basics of using Jamovi and understanding the NELS dataset.  There are several practice questions at the end.  
+2. Go over [Handout 1](../../course_documents/handout/handout_1_introduction.qmd).  It will guide you through the basics of using Jamovi and understanding the NELS dataset.  There are several practice questions at the end.
 
-3. For **Assignment 1**, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of [Handout 1](../../course_documents/handout/handout_1_introduction.qmd) on [Moodle](https://moodle.drew.edu).  These questions are not graded for correctness and quiz 1 will not involve Jamovi, so it's ok if you have questions about Jamovi.  However,  it is important that you have it installed and have spent some time familiarizing yourself with it so you are not behind during class.
+3. For **Assignment 1**, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of [Handout 1](../../course_documents/handout/handout_1_introduction.qmd) on [Moodle](https://moodle.drew.edu). These questions are NOT graded for correctness and quiz 1 will not involve Jamovi, so it's ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not lost during class.
 
 
 ## Thursday, Sep 10 (in-person)

@@ -144,7 +144,7 @@
     "href": "teaching/STAT117/weeks/week_2/week_2.html#tuesday-sep-8-asynchronous",
     "title": "Week 2",
     "section": "Tuesday, Sep 8 (asynchronous)",
-    "text": "Tuesday, Sep 8 (asynchronous)\nWe are not meeting in person today. I won’t be on campus as I’ll be travelling, but you can reach me by email, or schedule a meeting with me. Please complete the following tasks on your own before Thursday’s class.\n\nDownload Jamovi here. Install it on your computer. If you have issues with this process (especially if you believe it’s related to your particular computer), I suggest that you stop by the Univeristy Technology.\nGo over Handout 1. It will guide you through the basics of using Jamovi and understanding the NELS dataset. There are several practice questions at the end.\nFor Assignment 1, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of Handout 1 on Moodle. These questions are not graded for correctness and quiz 1 will not involve Jamovi, so it’s ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not behind during class.",
+    "text": "Tuesday, Sep 8 (asynchronous)\nWe are not meeting in person today. I won’t be on campus as I’ll be travelling, but you can reach me by email, or schedule a meeting with me. Please complete the following tasks on your own before Thursday’s class.\n\nDownload Jamovi here (select download desktop). Install it on your computer. If you have issues with this process (especially if you believe it’s related to your particular computer), I suggest that you stop by the Univeristy Technology.\nGo over Handout 1. It will guide you through the basics of using Jamovi and understanding the NELS dataset. There are several practice questions at the end.\nFor Assignment 1, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of Handout 1 on Moodle. These questions are NOT graded for correctness and quiz 1 will not involve Jamovi, so it’s ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not lost during class.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -717,35 +717,35 @@
   {
     "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html",
     "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html",
-    "title": "STAT117 Jamovi Handout: Introduction",
+    "title": "STAT117 handout-1: Jamovi introduction",
     "section": "",
     "text": "This handout uses the NELS dataset as an example. Download the dataset before beginning."
   },
   {
     "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#getting-started-in-jamovi",
     "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#getting-started-in-jamovi",
-    "title": "STAT117 Jamovi Handout: Introduction",
+    "title": "STAT117 handout-1: Jamovi introduction",
     "section": "Getting started in Jamovi",
     "text": "Getting started in Jamovi\n\nOpen Jamovi.\nSelect menu (three lines) in the upper-left corner, choose Open, and select This PC. Click Browse to locate the downloaded NELS data file. You can also drag the file into the Jamovi window.\nJamovi displays the data in a spreadsheet. Each row is a student and each column is a variable.\nClosing Jamovi: my recommendation for this class is to NOT save anything. When you get a prompt to “save XXX?”, you should always choose “No.” If you need to re-access statistical results, you can simply re-run the analysis. Or, you can always take screenshots as needed.\n\n(Optional) If you really do want to save your work (e.g., for a future project), use the menu button and choose Save As. Jamovi saves the dataset and analyses together in a .omv file."
   },
   {
     "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#data-and-variable-views",
     "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#data-and-variable-views",
-    "title": "STAT117 Jamovi Handout: Introduction",
+    "title": "STAT117 handout-1: Jamovi introduction",
     "section": "Data and variable views",
     "text": "Data and variable views\n\nSelect the Data tab (at the top) to view the dataset and inspect variables.\nUnder data view, each column corresponds to a variable. To see a variable’s settings, select the column and choose Setup. You can also double-click a column header. Note that the setup panel shows the variable name, description, data type, and measure type. The measure types are Nominal, Ordinal, Continuous, and ID.\nFor this class: don’t worry too much about the “ID” measure type. Also, don’t worry about the “data type” (integer, decimal, text)."
   },
   {
     "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#jamovi-analysis-examples",
     "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#jamovi-analysis-examples",
-    "title": "STAT117 Jamovi Handout: Introduction",
+    "title": "STAT117 handout-1: Jamovi introduction",
     "section": "Jamovi analysis examples",
     "text": "Jamovi analysis examples\nThese tools are introduced in Chapter 2 and will be used throughout the semester.\n\nFrequency tables (Nominal or Ordinal)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove region into the Variables box.\nUnder Statistics, select Frequency tables. You can add several variables to the same analysis to create multiple tables.\nNote that this does NOT work for continuous variables.\n\n\n\nPercentile and percentile rank\n\nOpen Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics &gt; Percentile Values, select cut points for 10 equal groups (you need to enter 10).\nJamovi only allows up to 10 equally spaced cut points, so you cannot get precise percentile or percentile rank values for continuous variables beyond these cut points. With achmat08:\n\nExample 1: What is the 28th percentile? Answer: between 47.8 and 51.\nExample 2: What is the percentile rank of 50? Answer: between 20% and 30%.\n\n\n\n\nStatistic\nValue\n\n\n\n\nN\n500\n\n\nMissing\n0\n\n\nMean\n56.6\n\n\nMedian\n56.2\n\n\nStandard deviation\n9.34\n\n\nMinimum\n36.6\n\n\nMaximum\n77.2\n\n\n10th percentile\n44.2\n\n\n20th percentile\n47.8\n\n\n30th percentile\n51.0\n\n\n40th percentile\n53.7\n\n\n50th percentile\n56.2\n\n\n60th percentile\n58.9\n\n\n70th percentile\n62.1\n\n\n80th percentile\n65.7\n\n\n90th percentile\n68.9\n\n\n100th percentile\n77.2\n\n\n\n\n\n\nSummary statistics and plots (univariate)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics, select the desired numerical summaries (e.g., mean, median, standard deviation). Under Plots, select the desired visual summaries (e.g., histogram, box plot, bar plot)."
   },
   {
     "objectID": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#practice-questions",
     "href": "teaching/STAT117/course_documents/handout/handout_1_introduction.html#practice-questions",
-    "title": "STAT117 Jamovi Handout: Introduction",
+    "title": "STAT117 handout-1: Jamovi introduction",
     "section": "Practice Questions",
     "text": "Practice Questions\nUse the NELS dataset in Jamovi. The same information can often be generated with more than one Jamovi option.\n\nHow many people are recorded in the NELS dataset? How many are women and how many are men (gender)?\nHow many variables are recorded in total?\nHow many regions are there? What are the regions?\nWhat does the variable parmarl8 represent? If a person has a value of 1 for this variable, what does it mean?\nFind the person whose ID is 10. What is the highest level of education this person expects to get?\nWhat percentage of students in the dataset have ever smoked marijuana (marijuan)?\nWhat is the biggest family size recorded?\nWhat is the recorded measure type for alcbinge? What is the actual appropriate measure type for this variable?"
   },

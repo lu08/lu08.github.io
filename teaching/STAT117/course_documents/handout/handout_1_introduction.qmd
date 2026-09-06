@@ -1,14 +1,15 @@
 ---
-title: "STAT117 Jamovi Handout: Introduction"
+title: "STAT117 handout-1: Jamovi introduction"
 subtitle: "Using the NELS dataset"
 format:
   html:
     toc: true
     number-sections: false
     self-contained: true
+
 ---
 
-This handout uses the **NELS** dataset as an example. [Download the dataset](../data/NELS.csv) before beginning.
+This handout uses the **NELS** dataset as an example. [Download the dataset](../../data/index.html){target="_blank"} before beginning.
 
 ## Getting started in Jamovi
 
