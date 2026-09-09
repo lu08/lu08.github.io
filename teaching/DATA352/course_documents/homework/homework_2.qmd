@@ -7,98 +7,92 @@ format:
 
 Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 16.
 
-You may use R or another programming language. The code in the solutions is provided for self-study.
-
 ## Question 1
 
-Suppose a random variable $X$ can take values $\{1,2,3\}$ with probabilities $\{0.2,0.3,0.5\}$.
+Suppose a random variable $X$ can take values $\{1,2,3\}$ according to the probabilities $\{0.2,0.3,0.5\}$.
 
-1. Simulate 10,000 observations from the distribution of $X$. Calculate the mean of the simulated draws.
-2. Calculate $E(X)$ mathematically and compare it with the simulated mean.
-3. Simulate another 10,000 observations using only random draws from a uniform distribution on $(0,1)$. In R, do not use `sample`; use `runif` instead.
+1. Simulate 10,000 observations from the distribution of $X$. Calculate the mean of the 10,000 simulated draws. Calculate the expectation of $X$ mathematically to compare.
+2. Simulate another 10,000 observations from the distribution of $X$, with the condition that you are only allowed to make random draws *uniformly* from $(0,1)$. In R, you cannot use the `sample` function, but can only use `runif`.
 
 <details>
 <summary>Show solution</summary>
 
-The expected value is
+The mean should be very close to $0.2+0.3\times2+0.5\times3=2.3$.
 
-$$
-E(X)=1(0.2)+2(0.3)+3(0.5)=2.3.
-$$
-
-The simulated mean should be close to 2.3.
-
-```r
-simulated_x <- sample(1:3, size = 10000,
-                      prob = c(0.2, 0.3, 0.5), replace = TRUE)
-mean(simulated_x)
+```{r}
+mysim <- sample(1:3, size = 10000,
+                prob = c(0.2, 0.3, 0.5), replace = TRUE)
+mean(mysim)
 ```
 
-For the uniform-draw version, use intervals with lengths equal to the desired probabilities: $X=1$ if $U<0.2$, $X=2$ if $0.2\le U<0.5$, and $X=3$ otherwise.
+Suppose $U$ is a uniform random draw from $(0,1)$. To draw a value $x$ from the distribution of $X$:
 
-```r
-uniform_draws <- runif(10000)
-simulated_x <- uniform_draws
-simulated_x[uniform_draws < 0.2] <- 1
-simulated_x[uniform_draws >= 0.2 & uniform_draws < 0.5] <- 2
-simulated_x[uniform_draws >= 0.5] <- 3
-mean(simulated_x)
+- Set $x=1$ if $U<0.2$.
+- Set $x=2$ if $0.2\le U<0.5$.
+- Set $x=3$ if $0.5\le U$.
+
+```{r}
+sim_unif <- runif(10000)
+sim_x <- sim_unif
+sim_x[sim_unif < 0.2] <- 1
+sim_x[sim_unif < 0.5 & sim_unif >= 0.2] <- 2
+sim_x[sim_unif >= 0.5] <- 3
+mean(sim_x)
 ```
 
 </details>
 
 ## Question 2
 
-There is a 2% click rate for an online advertisement. The number of people who click among the next 100 people can be modeled by a binomial distribution.
+There is a $2\%$ click rate for an online advertisement. The number of people that will click on the advertisement among the next $100$ people can be modeled by a binomial distribution.
 
 1. What are the parameters of the binomial distribution?
-2. Discuss the binomial model assumptions in this context.
-3. Calculate the probability that exactly two people click, that no one clicks, and that five or fewer people click.
+2. Discuss the binomial model assumptions in the context of the problem.
+3. Use your computer to calculate, among the next $100$ people: the probability that exactly two people click the advertisement; the probability that no one clicks the advertisement; and the probability that 5 or fewer people click the advertisement.
 
 <details>
 <summary>Show solution</summary>
 
-Let $X$ be the number of clicks. Then $X\sim\operatorname{Binomial}(n=100,p=0.02)$. The model assumes independent clicks and the same click probability for every person.
+We model it as a binomial distribution with parameters $n=100$ and $p=0.02$. There are two assumptions. (1) We assume that each person clicks the advertisement *independently* of each other; one person's action does not affect the action of the next person. (2) We assume that each person has the *same probability* of clicking the advertisement. This may be invalid if different populations have different click probabilities.
 
-```r
-dbinom(2, size = 100, prob = 0.02)
-dbinom(0, size = 100, prob = 0.02)
-pbinom(5, size = 100, prob = 0.02)
+```{r}
+dbinom(2, size = 100, prob = 0.02)  # P(exactly two)
+dbinom(0, size = 100, prob = 0.02)  # P(no one)
+pbinom(5, size = 100, prob = 0.02)  # P(five or fewer)
 ```
-
-Independence might fail if people influence one another. The common-probability assumption might fail if different groups have different click rates.
 
 </details>
 
 ## Question 3
 
-The number of sixes obtained when rolling a fair six-sided die five times can be modeled by a binomial distribution.
+The number of times you get a 6 if you roll a fair, six-sided die for five times can be modeled by a binomial distribution.
 
 1. What are the parameters of the binomial distribution?
-2. Discuss the binomial model assumptions. If the die were biased, could a binomial distribution still be used?
-3. What is the probability of getting more than two sixes in five rolls?
-4. Design a simulation to verify your answer using the four steps from Lecture 1.
+2. Discuss the binomial model assumptions in the context of the problem. If the die were biased, can we still use a binomial distribution?
+3. What is the probability that you get more than two 6's in five rolls?
+4. Design a simulation to verify your answer in part 3, using the four steps in Lecture 1.
 
 <details>
 <summary>Show solution</summary>
 
-Let $X$ be the number of sixes. Then $X\sim\operatorname{Binomial}(n=5,p=1/6)$. The rolls must be independent, and the probability of rolling a six must remain constant. A biased die can still use a binomial model if that probability is constant from roll to roll.
+We model it as a binomial distribution with parameters $n=5$ and $p=1/6$. We assume (1) each roll is independent of each other and (2) the probability of rolling a 6 is the same for each roll. We can still use a binomial model if the die is biased, as long as the probability of rolling a 6 stays the same.
 
-$$
-P(X>2)=1-P(X\le 2).
-$$
-
-```r
-1 - pbinom(2, size = 5, prob = 1 / 6)
+```{r}
+1 - pbinom(2, size = 5, prob = 1 / 6)  # P(more than two 6's)
 ```
 
-For a simulation: roll the die five times, record the number of sixes, repeat many times, and estimate $P(X>2)$ by the proportion of repetitions with more than two sixes.
+For verifying the above probability:
 
-```r
+- **One simulation/outcome:** Randomly sample five numbers from $\{1,2,\ldots,6\}$; for example, 2, 3, 2, 5, 6.
+- **What to record:** The number of 6's in the five numbers.
+- **Repeat many times:** Results might look like 1, 1, 2, 0, 3, ...
+- **Summarize results:** Calculate the proportion of results greater than 2.
+
+```{r}
 number_of_sixes <- numeric(10000)
 for (simulation in seq_len(10000)) {
-  rolls <- sample(1:6, size = 5, replace = TRUE)
-  number_of_sixes[simulation] <- sum(rolls == 6)
+  one_run <- sample(1:6, size = 5, replace = TRUE)
+  number_of_sixes[simulation] <- sum(one_run == 6)
 }
 mean(number_of_sixes > 2)
 ```
@@ -107,50 +101,50 @@ mean(number_of_sixes > 2)
 
 ## Question 4
 
-A typesetter makes, on average, one mistake per 1,000 words. Let $X$ be the number of mistakes on a page with $n$ words.
+A typesetter makes, on average, one mistake per 1000 word. Let $X$ be the number of mistakes that he makes on a page with $n$ words.
 
-1. Suppose $X$ follows a binomial distribution. What are the parameters? Discuss the assumptions.
-2. Using a binomial model, calculate the probabilities of no mistakes and exactly one mistake on a 100-word page, one or more mistakes on a 100-word page, and no mistakes on a 200-word page.
-3. Suppose $X$ follows a Poisson distribution. What is the parameter? Discuss the assumptions.
-4. Recalculate the probabilities using a Poisson model.
-5. Simulate 1,000 observations from both models and compare their histograms.
+1. Suppose we model $X$ with a binomial distribution. What are the model parameters? Discuss the binomial model assumptions in the context of the problem.
+2. With a binomial model, calculate the probabilities that: (i) he makes no mistake on a page with 100 words; (ii) he makes exactly 1 mistake on a page with 100 words; (iii) he makes 1 or more mistake on a page with 100 words; (iv) he makes no mistake on a page with 200 words.
+3. Suppose we model $X$ with a Poisson distribution. What is the model parameter? Discuss the Poisson model assumptions in the context of the problem.
+4. Re-calculate the probabilities in part 2 using a Poisson model.
+5. Simulate 1000 random observations from the binomial model in part 1 and plot a histogram; simulate another 1000 random observations from the Poisson model in part 3 and also plot a histogram. Compare the two histograms.
 
 <details>
 <summary>Show solution</summary>
 
-For the binomial model, each word is a trial with mistake probability $p=0.001$, so $X\sim\operatorname{Binomial}(n,0.001)$. The assumptions are independent mistakes and the same mistake probability for every word.
+We can model $X$ with binomial $(n,p=0.001)$. We assume that whether he makes a mistake on one word is *independent* from whether he makes mistakes on other words, and that each word has *equal probability* that he makes a mistake.
 
-```r
+```{r}
 dbinom(0, size = 100, prob = 0.001)
 dbinom(1, size = 100, prob = 0.001)
 1 - dbinom(0, size = 100, prob = 0.001)
 dbinom(0, size = 200, prob = 0.001)
 ```
 
-For the Poisson model, $\lambda=0.001n$. It assumes independent mistakes occurring at a constant average rate.
+We can also model $X$ with Poisson $(\lambda=0.001n)$. This is an approximation because the binomial sample space is $0,1,\ldots,n$, while the Poisson sample space is $0,1,\ldots,\infty$. We assume independent mistakes and that he makes mistakes at a *constant rate*. The probabilities are very close to the binomial model.
 
-```r
+```{r}
 dpois(0, lambda = 0.1)
 dpois(1, lambda = 0.1)
 1 - dpois(0, lambda = 0.1)
 dpois(0, lambda = 0.2)
 ```
 
-The models should give similar probabilities because $n$ is relatively large and $p$ is small.
-
-```r
+```{r}
 par(mfrow = c(1, 2))
-hist(rbinom(1000, size = 100, prob = 0.001),
-     main = "Binomial", xlab = "Mistakes", col = "lightblue")
-hist(rpois(1000, lambda = 0.1),
-     main = "Poisson", xlab = "Mistakes", col = "purple")
+plot(as.factor(rbinom(1000, size = 100, prob = 0.001)),
+     col = "lightblue", main = "binomial")
+plot(as.factor(rpois(1000, lambda = 0.1)),
+     col = "purple", main = "Poisson")
 ```
+
+It is hard to estimate tail probabilities like $P(X=3,4,\ldots,100)$ using simulation because the probabilities are very small.
 
 </details>
 
 ## Question 5
 
-Read Question 18 on page 199 of *Introduction to Probability* (copied below) and answer its parts using appropriate probability models.
+Do Question 18 on page 199 in *Introduction to Probability*.
 
 > **18.** A baker blends 600 raisins and 400 chocolate chips into a dough mix and, from this, makes 500 cookies.
 >
@@ -158,49 +152,42 @@ Read Question 18 on page 199 of *Introduction to Probability* (copied below) and
 > 2. Find the probability that a randomly picked cookie will have exactly two chocolate chips.
 > 3. Find the probability that a randomly chosen cookie will have at least two bits (raisins or chips) in it.
 
-
-
 <details>
 <summary>Show solution</summary>
 
-For the raisin-count calculations, use Poisson and binomial models as appropriate. The Poisson mean is the average number of raisins per cookie.
+The number of raisins in a randomly picked cookie, $X$, can be modeled using a Poisson distribution with $\lambda=600/500$. We can also model $X$ with a binomial distribution with parameters $n=600$, $p=1/500$. The probabilities are very close, but the binomial model is more exact because it has the correct range $X\in\{0,\ldots,600\}$.
 
-For part (a), $\lambda=600/500=6/5$:
-
-```r
+```{r}
 dpois(0, lambda = 6 / 5)
 dbinom(0, size = 600, prob = 1 / 500)
 ```
 
-For part (b), $\lambda=400/500=4/5$:
+For part (b), use a Poisson model with $\lambda=400/500$:
 
-```r
+```{r}
 dpois(2, lambda = 4 / 5)
 ```
 
-For part (c), $\lambda=1000/500=2$:
+For part (c), use a Poisson model with $\lambda=1000/500$:
 
-```r
+```{r}
 1 - ppois(1, lambda = 2)
 ```
-
-The binomial and Poisson answers should be close because the number of trials is large and the success probability is small.
 
 </details>
 
 ## Question 6
 
-Under the setup of Question 26 on page 201 of *Introduction to Probability* (copied below), the number of hits in each of 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that an area has 0, 1, 2, 3, 4, and 5 or more hits, and compare them with the actual proportions.
-
+Under the setup of Question 26 on page 201 in *Introduction to Probability*, the number of hits in each of the 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that a small area would have 0, 1, 2, 3, 4, and 5 or more hits under the Poisson model, and compare the probabilities to the actual proportions.
 
 > **26.** Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into $24\times24=576$ small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly $k$ hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.
 
 <details>
 <summary>Show solution</summary>
 
-The Poisson parameter is $\lambda=537/576$.
+The number of hits can be modeled by a Poisson distribution with $\lambda=537/576$. Calculation below shows that the Poisson model works very well.
 
-```r
+```{r}
 probability <- dpois(0:4, lambda = 537 / 576)
 probability <- c(probability, 1 - ppois(4, lambda = 537 / 576))
 
@@ -209,47 +196,36 @@ actual <- c(229, 211, 93, 35, 7, 1)
 
 comparison <- cbind(expected, actual)
 rownames(comparison) <- c(
-  "0 hits", "1 hit", "2 hits", "3 hits", "4 hits", "5 or more hits"
+  "0 hit", "1 hit", "2 hits", "3 hits", "4 hits", "5 or more hits"
 )
 round(comparison, 1)
 ```
-
-The expected and actual counts should be close, indicating that the Poisson model fits these data reasonably well.
 
 </details>
 
 ## Question 7
 
-Suppose the probabilities of a male and a female child are both 0.5, and twins are not considered. Calculate the following probabilities using appropriate models.
+Suppose that the probabilities of having a male or a female child are both 0.5, and you do not have to consider cases like twins. Calculate the following probabilities using appropriate models.
 
-1. If you plan to have three children, what is the probability of exactly one daughter? What is the probability of at least one daughter?
-2. What is the probability that your first daughter is your third child?
+1. If you plan to have three children, what is the probability that you have exactly one daughter? What is the probability that you have at least one daughter?
+2. What is the probability that your first daughter is your third child? (Hint: imagine the scenario of keeping having children until you have a daughter, and model the number of children when the first daughter “occurs.”)
 3. What is the probability that your second daughter is your third child?
-4. How many children do you need to have more than a 95% chance of at least one daughter?
+4. How many children do you need to have to guarantee with more than 95% chance that you will have at least a daughter?
 
 <details>
 <summary>Show solution</summary>
 
-For part 1, use $X\sim\operatorname{Binomial}(3,0.5)$:
+For parts (a), (b), and (c):
 
-```r
-dbinom(1, size = 3, prob = 0.5)
-1 - dbinom(0, size = 3, prob = 0.5)
+```{r}
+dbinom(1, size = 3, prob = 0.5)       # a, exactly 1
+1 - dbinom(0, size = 3, prob = 0.5)                   # a, at least 1
+
+dgeom(2, prob = 0.5)                   # b
+dnbinom(1, size = 2, prob = 0.5)       # c
 ```
 
-For part 2, two sons followed by a daughter means two failures before the first success:
-
-```r
-dgeom(2, prob = 0.5)
-```
-
-For part 3, one son followed by two daughters means one failure before the second success:
-
-```r
-dnbinom(1, size = 2, prob = 0.5)
-```
-
-For part 4, find the smallest $M$ such that $1-P(X=0)>0.95$ for $X\sim\operatorname{Binomial}(M,0.5)$. The smallest value is $M=5$.
+For part (d), let $M$ be the number of children. The number of daughters, $X$, can be modeled by a binomial distribution with parameters $n=M$ and $p=0.5$. We want $P(X\ge1)=1-P(X=0)$ to be greater than $95\%$. We calculate this probability for different values of $M$; $M=5$ is the smallest number of children that satisfies the condition.
 
 ```r
 1 - pbinom(0, size = 1:10, prob = 0.5)

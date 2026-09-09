@@ -5,7 +5,7 @@ format:
     toc: false
 ---
 
-Homework is not collected.  The quiz based on this homework will be at the beginning of class, Sep 9.
+Homework is not collected.  The quiz based on this homework will be at the beginning of class, **Sep 9**.
 
 You do not need to write any code for this homework.  You only need to *describe* how you would perform the simulations and analyze the results.
 
