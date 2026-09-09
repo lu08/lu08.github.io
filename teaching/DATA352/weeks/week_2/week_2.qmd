@@ -5,6 +5,8 @@ title: "Week 2 (Sept 9)"
 
 ## In class
 
+We will start today's class with **Quiz 1** on [Homework 1](../../course_documents/homework/homework_1.qmd).  Next, we will have a group discussion also based on Homework 1 and your group will submit an [**assignment 1**](../../course_documents/assignment/assignment_1.qmd) on Moodle.  For the rest of the class, we will go over Lecture 2.
+
 [Link to fullscreen](../../course_documents/all_lectures/Lecture_2.html)
 
 <iframe src="../../course_documents/all_lectures/Lecture_2.html" width="100%" height="650px" style="border:none;"></iframe>

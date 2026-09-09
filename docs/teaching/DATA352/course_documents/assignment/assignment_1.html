@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DATA 352/551: In-Class Assignment 1 – Yi Lu</title>
+<title>DATA 352/551: Assignment 1 – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DATA 352/551: In-Class Assignment 1</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DATA 352/551: Assignment 1</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -184,8 +184,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DATA 352/551: In-Class Assignment 1</h1>
-<p class="subtitle lead">What Can Simulation Teach Us?</p>
+<h1 class="title">DATA 352/551: Assignment 1</h1>
+<p class="subtitle lead">Group discussion based on Homework 1</p>
 </div>
 
 
@@ -204,17 +204,12 @@ window.Quarto = {
 
 <section id="group-activity" class="level2">
 <h2 class="anchored" data-anchor-id="group-activity">Group activity</h2>
-<p>Work in groups of 3–4. Your group will submit <strong>one response</strong>. You may use your Homework 1 solutions, lecture notes, and a calculator. You do not need to write executable code unless your group wants to use it to investigate an idea.</p>
-<p><strong>Suggested time:</strong> 25–35 minutes<br>
-<strong>Submission:</strong> One concise response per group, with each group member’s name</p>
-<p>Your goal is to discuss what a simulation is measuring, what can go wrong, and how to communicate evidence from simulated data.</p>
+<p>Work in groups of 2-3. Your group will submit <strong>one response</strong> on Moodle. Make sure to put all group members name on your response.</p>
 </section>
 <section id="part-1-exact-probability-versus-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-exact-probability-versus-simulation">Part 1: Exact probability versus simulation</h2>
-<p>Let <span class="math inline">\(X\)</span> be the number of heads in three tosses of a fair coin.</p>
 <ol type="1">
-<li><p>Use the Homework 1 solution to identify <span class="math inline">\(P(X=0),\ldots,P(X=3)\)</span>.</p></li>
-<li><p>Imagine simulating 20, 100, and 10,000 sets of three tosses. What would you expect to happen to the simulated proportions as the number of repetitions increases?</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> be the number of heads in three tosses of a fair coin. Imagine simulating 20, 100, and 10000 sets of three tosses. What would you expect to happen to the simulated proportions as the number of repetitions increases?</p></li>
 <li><p>A group reports the following results from 20 repetitions:</p>
 <table class="caption-top table">
 <thead>
@@ -241,13 +236,7 @@ window.Quarto = {
 </section>
 <section id="part-2-design-a-fair-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="part-2-design-a-fair-comparison">Part 2: Design a fair comparison</h2>
-<p>Your group wants to compare the probability that three fair dice have a sum of 9 with the probability that they have a sum of 10.</p>
-<ol type="1">
-<li>Write a clear definition of <strong>one simulation</strong>. Be precise about what is randomly generated.</li>
-<li>What should be recorded after each simulation?</li>
-<li>How would you estimate the two probabilities from the recorded results?</li>
-<li>One student proposes simulating until the first sum of 9 appears and then comparing the number of rolls with the number of rolls until the first sum of 10 appears. Discuss why this is less useful than recording both outcomes across the same fixed number of repetitions.</li>
-</ol>
+<p>Your group wants to compare the probability that three fair dice have a sum of 9 with the probability that they have a sum of 10. One student proposes simulating until the first sum of 9 appears and then comparing the number of rolls with the number of rolls until the first sum of 10 appears. Discuss why this is less useful than recording both outcomes across the same fixed number of repetitions.</p>
 </section>
 <section id="part-3-the-martingale-and-misleading-summaries" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-the-martingale-and-misleading-summaries">Part 3: The martingale and misleading summaries</h2>
@@ -258,7 +247,6 @@ window.Quarto = {
 </blockquote>
 <p>As a group, respond to these questions:</p>
 <ol type="1">
-<li>What outcome should be recorded for each completed game?</li>
 <li>What additional quantities would help us understand the risk besides the proportion of games that end in a win?</li>
 <li>How could a small number of large losses affect the average net winnings, the median net winnings, and the proportion of winning games differently?</li>
 <li>Write a two- or three-sentence conclusion that would be more informative than the claim above.</li>
@@ -266,24 +254,7 @@ window.Quarto = {
 </section>
 <section id="part-4-why-do-smaller-hospitals-vary-more" class="level2">
 <h2 class="anchored" data-anchor-id="part-4-why-do-smaller-hospitals-vary-more">Part 4: Why do smaller hospitals vary more?</h2>
-<p>In one town, a large hospital has about 45 births per day and a small hospital has about 15 births per day. The probability of a boy is 0.5 at both hospitals.</p>
-<ol type="1">
-<li>Design a simulation that compares the number of days in one year on which more than 60% of births are boys at each hospital.</li>
-<li>Why can the small hospital have more days above 60% even though the underlying probability of a boy is the same?</li>
-<li>Predict what will happen to the difference between the hospitals if the daily birth counts become 90 and 30 instead of 45 and 15.</li>
-<li>State one lesson from this example about interpreting percentages from small samples.</li>
-</ol>
-</section>
-<section id="group-submission-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="group-submission-checklist">Group submission checklist</h2>
-<p>Submit one response containing:</p>
-<ul>
-<li>Your answers to Parts 1–4</li>
-<li>At least one clearly written simulation design</li>
-<li>One statement distinguishing a theoretical probability from a simulated estimate</li>
-<li>One statement about variability or sample size</li>
-<li>The names of all group members</li>
-</ul>
+<p>In one town, a large hospital has about 45 births per day and a small hospital has about 15 births per day. The probability of a boy is 0.5 at both hospitals. Why can the small hospital have more days above 60% even though the underlying probability of a boy is the same?</p>
 
 
 </section>

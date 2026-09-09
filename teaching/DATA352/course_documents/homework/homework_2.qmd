@@ -5,7 +5,7 @@ format:
     toc: false
 ---
 
-Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 16.
+Homework is not collected. The quiz based on this homework will be at the beginning of class, **Sep 16.**
 
 ## Question 1
 

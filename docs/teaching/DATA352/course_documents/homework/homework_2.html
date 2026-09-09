@@ -236,118 +236,187 @@ window.Quarto = {
 </header>
 
 
-<p>Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 16.</p>
-<p>You may use R or another programming language. The code in the solutions is provided for self-study.</p>
+<p>Homework is not collected. The quiz based on this homework will be at the beginning of class, <strong>Sep 16.</strong></p>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Suppose a random variable <span class="math inline">\(X\)</span> can take values <span class="math inline">\(\{1,2,3\}\)</span> with probabilities <span class="math inline">\(\{0.2,0.3,0.5\}\)</span>.</p>
+<p>Suppose a random variable <span class="math inline">\(X\)</span> can take values <span class="math inline">\(\{1,2,3\}\)</span> according to the probabilities <span class="math inline">\(\{0.2,0.3,0.5\}\)</span>.</p>
 <ol type="1">
-<li>Simulate 10,000 observations from the distribution of <span class="math inline">\(X\)</span>. Calculate the mean of the simulated draws.</li>
-<li>Calculate <span class="math inline">\(E(X)\)</span> mathematically and compare it with the simulated mean.</li>
-<li>Simulate another 10,000 observations using only random draws from a uniform distribution on <span class="math inline">\((0,1)\)</span>. In R, do not use <code>sample</code>; use <code>runif</code> instead.</li>
+<li>Simulate 10,000 observations from the distribution of <span class="math inline">\(X\)</span>. Calculate the mean of the 10,000 simulated draws. Calculate the expectation of <span class="math inline">\(X\)</span> mathematically to compare.</li>
+<li>Simulate another 10,000 observations from the distribution of <span class="math inline">\(X\)</span>, with the condition that you are only allowed to make random draws <em>uniformly</em> from <span class="math inline">\((0,1)\)</span>. In R, you cannot use the <code>sample</code> function, but can only use <code>runif</code>.</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>The expected value is</p>
-<p><span class="math display">\[
-E(X)=1(0.2)+2(0.3)+3(0.5)=2.3.
-\]</span></p>
-<p>The simulated mean should be close to 2.3.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>simulated_x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10000</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(simulated_x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For the uniform-draw version, use intervals with lengths equal to the desired probabilities: <span class="math inline">\(X=1\)</span> if <span class="math inline">\(U&lt;0.2\)</span>, <span class="math inline">\(X=2\)</span> if <span class="math inline">\(0.2\le U&lt;0.5\)</span>, and <span class="math inline">\(X=3\)</span> otherwise.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>uniform_draws <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>simulated_x <span class="ot">&lt;-</span> uniform_draws</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>simulated_x[uniform_draws <span class="sc">&lt;</span> <span class="fl">0.2</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>simulated_x[uniform_draws <span class="sc">&gt;=</span> <span class="fl">0.2</span> <span class="sc">&amp;</span> uniform_draws <span class="sc">&lt;</span> <span class="fl">0.5</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>simulated_x[uniform_draws <span class="sc">&gt;=</span> <span class="fl">0.5</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(simulated_x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The mean should be very close to <span class="math inline">\(0.2+0.3\times2+0.5\times3=2.3\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mysim <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10000</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mysim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.2991</code></pre>
+</div>
+</div>
+<p>Suppose <span class="math inline">\(U\)</span> is a uniform random draw from <span class="math inline">\((0,1)\)</span>. To draw a value <span class="math inline">\(x\)</span> from the distribution of <span class="math inline">\(X\)</span>:</p>
+<ul>
+<li>Set <span class="math inline">\(x=1\)</span> if <span class="math inline">\(U&lt;0.2\)</span>.</li>
+<li>Set <span class="math inline">\(x=2\)</span> if <span class="math inline">\(0.2\le U&lt;0.5\)</span>.</li>
+<li>Set <span class="math inline">\(x=3\)</span> if <span class="math inline">\(0.5\le U\)</span>.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim_unif <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sim_x <span class="ot">&lt;-</span> sim_unif</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sim_x[sim_unif <span class="sc">&lt;</span> <span class="fl">0.2</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sim_x[sim_unif <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">&amp;</span> sim_unif <span class="sc">&gt;=</span> <span class="fl">0.2</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sim_x[sim_unif <span class="sc">&gt;=</span> <span class="fl">0.5</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sim_x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.292</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>There is a 2% click rate for an online advertisement. The number of people who click among the next 100 people can be modeled by a binomial distribution.</p>
+<p>There is a <span class="math inline">\(2\%\)</span> click rate for an online advertisement. The number of people that will click on the advertisement among the next <span class="math inline">\(100\)</span> people can be modeled by a binomial distribution.</p>
 <ol type="1">
 <li>What are the parameters of the binomial distribution?</li>
-<li>Discuss the binomial model assumptions in this context.</li>
-<li>Calculate the probability that exactly two people click, that no one clicks, and that five or fewer people click.</li>
+<li>Discuss the binomial model assumptions in the context of the problem.</li>
+<li>Use your computer to calculate, among the next <span class="math inline">\(100\)</span> people: the probability that exactly two people click the advertisement; the probability that no one clicks the advertisement; and the probability that 5 or fewer people click the advertisement.</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>Let <span class="math inline">\(X\)</span> be the number of clicks. Then <span class="math inline">\(X\sim\operatorname{Binomial}(n=100,p=0.02)\)</span>. The model assumes independent clicks and the same click probability for every person.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Independence might fail if people influence one another. The common-probability assumption might fail if different groups have different click rates.</p>
+<p>We model it as a binomial distribution with parameters <span class="math inline">\(n=100\)</span> and <span class="math inline">\(p=0.02\)</span>. There are two assumptions. (1) We assume that each person clicks the advertisement <em>independently</em> of each other; one person’s action does not affect the action of the next person. (2) We assume that each person has the <em>same probability</em> of clicking the advertisement. This may be invalid if different populations have different click probabilities.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)  <span class="co"># P(exactly two)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2734139</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)  <span class="co"># P(no one)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1326196</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)  <span class="co"># P(five or fewer)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9845164</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>The number of sixes obtained when rolling a fair six-sided die five times can be modeled by a binomial distribution.</p>
+<p>The number of times you get a 6 if you roll a fair, six-sided die for five times can be modeled by a binomial distribution.</p>
 <ol type="1">
 <li>What are the parameters of the binomial distribution?</li>
-<li>Discuss the binomial model assumptions. If the die were biased, could a binomial distribution still be used?</li>
-<li>What is the probability of getting more than two sixes in five rolls?</li>
-<li>Design a simulation to verify your answer using the four steps from Lecture 1.</li>
+<li>Discuss the binomial model assumptions in the context of the problem. If the die were biased, can we still use a binomial distribution?</li>
+<li>What is the probability that you get more than two 6’s in five rolls?</li>
+<li>Design a simulation to verify your answer in part 3, using the four steps in Lecture 1.</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>Let <span class="math inline">\(X\)</span> be the number of sixes. Then <span class="math inline">\(X\sim\operatorname{Binomial}(n=5,p=1/6)\)</span>. The rolls must be independent, and the probability of rolling a six must remain constant. A biased die can still use a binomial model if that probability is constant from roll to roll.</p>
-<p><span class="math display">\[
-P(X&gt;2)=1-P(X\le 2).
-\]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For a simulation: roll the die five times, record the number of sixes, repeat many times, and estimate <span class="math inline">\(P(X&gt;2)\)</span> by the proportion of repetitions with more than two sixes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>number_of_sixes <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (simulation <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="dv">10000</span>)) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  number_of_sixes[simulation] <span class="ot">&lt;-</span> <span class="fu">sum</span>(rolls <span class="sc">==</span> <span class="dv">6</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(number_of_sixes <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We model it as a binomial distribution with parameters <span class="math inline">\(n=5\)</span> and <span class="math inline">\(p=1/6\)</span>. We assume (1) each roll is independent of each other and (2) the probability of rolling a 6 is the same for each roll. We can still use a binomial model if the die is biased, as long as the probability of rolling a 6 stays the same.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">6</span>)  <span class="co"># P(more than two 6's)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03549383</code></pre>
+</div>
+</div>
+<p>For verifying the above probability:</p>
+<ul>
+<li><strong>One simulation/outcome:</strong> Randomly sample five numbers from <span class="math inline">\(\{1,2,\ldots,6\}\)</span>; for example, 2, 3, 2, 5, 6.</li>
+<li><strong>What to record:</strong> The number of 6’s in the five numbers.</li>
+<li><strong>Repeat many times:</strong> Results might look like 1, 1, 2, 0, 3, …</li>
+<li><strong>Summarize results:</strong> Calculate the proportion of results greater than 2.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>number_of_sixes <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (simulation <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="dv">10000</span>)) {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  one_run <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  number_of_sixes[simulation] <span class="ot">&lt;-</span> <span class="fu">sum</span>(one_run <span class="sc">==</span> <span class="dv">6</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(number_of_sixes <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0327</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>A typesetter makes, on average, one mistake per 1,000 words. Let <span class="math inline">\(X\)</span> be the number of mistakes on a page with <span class="math inline">\(n\)</span> words.</p>
+<p>A typesetter makes, on average, one mistake per 1000 word. Let <span class="math inline">\(X\)</span> be the number of mistakes that he makes on a page with <span class="math inline">\(n\)</span> words.</p>
 <ol type="1">
-<li>Suppose <span class="math inline">\(X\)</span> follows a binomial distribution. What are the parameters? Discuss the assumptions.</li>
-<li>Using a binomial model, calculate the probabilities of no mistakes and exactly one mistake on a 100-word page, one or more mistakes on a 100-word page, and no mistakes on a 200-word page.</li>
-<li>Suppose <span class="math inline">\(X\)</span> follows a Poisson distribution. What is the parameter? Discuss the assumptions.</li>
-<li>Recalculate the probabilities using a Poisson model.</li>
-<li>Simulate 1,000 observations from both models and compare their histograms.</li>
+<li>Suppose we model <span class="math inline">\(X\)</span> with a binomial distribution. What are the model parameters? Discuss the binomial model assumptions in the context of the problem.</li>
+<li>With a binomial model, calculate the probabilities that: (i) he makes no mistake on a page with 100 words; (ii) he makes exactly 1 mistake on a page with 100 words; (iii) he makes 1 or more mistake on a page with 100 words; (iv) he makes no mistake on a page with 200 words.</li>
+<li>Suppose we model <span class="math inline">\(X\)</span> with a Poisson distribution. What is the model parameter? Discuss the Poisson model assumptions in the context of the problem.</li>
+<li>Re-calculate the probabilities in part 2 using a Poisson model.</li>
+<li>Simulate 1000 random observations from the binomial model in part 1 and plot a histogram; simulate another 1000 random observations from the Poisson model in part 3 and also plot a histogram. Compare the two histograms.</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>For the binomial model, each word is a trial with mistake probability <span class="math inline">\(p=0.001\)</span>, so <span class="math inline">\(X\sim\operatorname{Binomial}(n,0.001)\)</span>. The assumptions are independent mistakes and the same mistake probability for every word.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For the Poisson model, <span class="math inline">\(\lambda=0.001n\)</span>. It assumes independent mistakes occurring at a constant average rate.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">1</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The models should give similar probabilities because <span class="math inline">\(n\)</span> is relatively large and <span class="math inline">\(p\)</span> is small.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>),</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Binomial"</span>, <span class="at">xlab =</span> <span class="st">"Mistakes"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rpois</span>(<span class="dv">1000</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Poisson"</span>, <span class="at">xlab =</span> <span class="st">"Mistakes"</span>, <span class="at">col =</span> <span class="st">"purple"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We can model <span class="math inline">\(X\)</span> with binomial <span class="math inline">\((n,p=0.001)\)</span>. We assume that whether he makes a mistake on one word is <em>independent</em> from whether he makes mistakes on other words, and that each word has <em>equal probability</em> that he makes a mistake.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9047921</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.09056978</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.09520785</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8186488</code></pre>
+</div>
+</div>
+<p>We can also model <span class="math inline">\(X\)</span> with Poisson <span class="math inline">\((\lambda=0.001n)\)</span>. This is an approximation because the binomial sample space is <span class="math inline">\(0,1,\ldots,n\)</span>, while the Poisson sample space is <span class="math inline">\(0,1,\ldots,\infty\)</span>. We assume independent mistakes and that he makes mistakes at a <em>constant rate</em>. The probabilities are very close to the binomial model.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9048374</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">1</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.09048374</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.09516258</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8187308</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">as.factor</span>(<span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.001</span>)),</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">main =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">as.factor</span>(<span class="fu">rpois</span>(<span class="dv">1000</span>, <span class="at">lambda =</span> <span class="fl">0.1</span>)),</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"purple"</span>, <span class="at">main =</span> <span class="st">"Poisson"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is hard to estimate tail probabilities like <span class="math inline">\(P(X=3,4,\ldots,100)\)</span> using simulation because the probabilities are very small.</p>
 </details>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p>Read Question 18 on page 199 of <em>Introduction to Probability</em> (copied below) and answer its parts using appropriate probability models.</p>
+<p>Do Question 18 on page 199 in <em>Introduction to Probability</em>.</p>
 <blockquote class="blockquote">
 <p><strong>18.</strong> A baker blends 600 raisins and 400 chocolate chips into a dough mix and, from this, makes 500 cookies.</p>
 <ol type="1">
@@ -360,20 +429,36 @@ Show solution
 <summary>
 Show solution
 </summary>
-<p>For the raisin-count calculations, use Poisson and binomial models as appropriate. The Poisson mean is the average number of raisins per cookie.</p>
-<p>For part (a), <span class="math inline">\(\lambda=600/500=6/5\)</span>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="dv">6</span> <span class="sc">/</span> <span class="dv">5</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">600</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">500</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For part (b), <span class="math inline">\(\lambda=400/500=4/5\)</span>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">2</span>, <span class="at">lambda =</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For part (c), <span class="math inline">\(\lambda=1000/500=2\)</span>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">1</span>, <span class="at">lambda =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The binomial and Poisson answers should be close because the number of trials is large and the success probability is small.</p>
+<p>The number of raisins in a randomly picked cookie, <span class="math inline">\(X\)</span>, can be modeled using a Poisson distribution with <span class="math inline">\(\lambda=600/500\)</span>. We can also model <span class="math inline">\(X\)</span> with a binomial distribution with parameters <span class="math inline">\(n=600\)</span>, <span class="math inline">\(p=1/500\)</span>. The probabilities are very close, but the binomial model is more exact because it has the correct range <span class="math inline">\(X\in\{0,\ldots,600\}\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="dv">6</span> <span class="sc">/</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3011942</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">600</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">500</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3008325</code></pre>
+</div>
+</div>
+<p>For part (b), use a Poisson model with <span class="math inline">\(\lambda=400/500\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">2</span>, <span class="at">lambda =</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1437853</code></pre>
+</div>
+</div>
+<p>For part (c), use a Poisson model with <span class="math inline">\(\lambda=1000/500\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">1</span>, <span class="at">lambda =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5939942</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
-<p>Under the setup of Question 26 on page 201 of <em>Introduction to Probability</em> (copied below), the number of hits in each of 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that an area has 0, 1, 2, 3, 4, and 5 or more hits, and compare them with the actual proportions.</p>
+<p>Under the setup of Question 26 on page 201 in <em>Introduction to Probability</em>, the number of hits in each of the 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that a small area would have 0, 1, 2, 3, 4, and 5 or more hits under the Poisson model, and compare the probabilities to the actual proportions.</p>
 <blockquote class="blockquote">
 <p><strong>26.</strong> Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into <span class="math inline">\(24\times24=576\)</span> small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly <span class="math inline">\(k\)</span> hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.</p>
 </blockquote>
@@ -381,43 +466,65 @@ Show solution
 <summary>
 Show solution
 </summary>
-<p>The Poisson parameter is <span class="math inline">\(\lambda=537/576\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>probability <span class="ot">&lt;-</span> <span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">lambda =</span> <span class="dv">537</span> <span class="sc">/</span> <span class="dv">576</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>probability <span class="ot">&lt;-</span> <span class="fu">c</span>(probability, <span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">4</span>, <span class="at">lambda =</span> <span class="dv">537</span> <span class="sc">/</span> <span class="dv">576</span>))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="dv">576</span> <span class="sc">*</span> probability</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>actual <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">229</span>, <span class="dv">211</span>, <span class="dv">93</span>, <span class="dv">35</span>, <span class="dv">7</span>, <span class="dv">1</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> <span class="fu">cbind</span>(expected, actual)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(comparison) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"0 hits"</span>, <span class="st">"1 hit"</span>, <span class="st">"2 hits"</span>, <span class="st">"3 hits"</span>, <span class="st">"4 hits"</span>, <span class="st">"5 or more hits"</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(comparison, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The expected and actual counts should be close, indicating that the Poisson model fits these data reasonably well.</p>
+<p>The number of hits can be modeled by a Poisson distribution with <span class="math inline">\(\lambda=537/576\)</span>. Calculation below shows that the Poisson model works very well.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>probability <span class="ot">&lt;-</span> <span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">lambda =</span> <span class="dv">537</span> <span class="sc">/</span> <span class="dv">576</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>probability <span class="ot">&lt;-</span> <span class="fu">c</span>(probability, <span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">4</span>, <span class="at">lambda =</span> <span class="dv">537</span> <span class="sc">/</span> <span class="dv">576</span>))</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="dv">576</span> <span class="sc">*</span> probability</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>actual <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">229</span>, <span class="dv">211</span>, <span class="dv">93</span>, <span class="dv">35</span>, <span class="dv">7</span>, <span class="dv">1</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> <span class="fu">cbind</span>(expected, actual)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(comparison) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"0 hit"</span>, <span class="st">"1 hit"</span>, <span class="st">"2 hits"</span>, <span class="st">"3 hits"</span>, <span class="st">"4 hits"</span>, <span class="st">"5 or more hits"</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(comparison, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               expected actual
+0 hit             226.7    229
+1 hit             211.4    211
+2 hits             98.5     93
+3 hits             30.6     35
+4 hits              7.1      7
+5 or more hits      1.6      1</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
-<p>Suppose the probabilities of a male and a female child are both 0.5, and twins are not considered. Calculate the following probabilities using appropriate models.</p>
+<p>Suppose that the probabilities of having a male or a female child are both 0.5, and you do not have to consider cases like twins. Calculate the following probabilities using appropriate models.</p>
 <ol type="1">
-<li>If you plan to have three children, what is the probability of exactly one daughter? What is the probability of at least one daughter?</li>
-<li>What is the probability that your first daughter is your third child?</li>
+<li>If you plan to have three children, what is the probability that you have exactly one daughter? What is the probability that you have at least one daughter?</li>
+<li>What is the probability that your first daughter is your third child? (Hint: imagine the scenario of keeping having children until you have a daughter, and model the number of children when the first daughter “occurs.”)</li>
 <li>What is the probability that your second daughter is your third child?</li>
-<li>How many children do you need to have more than a 95% chance of at least one daughter?</li>
+<li>How many children do you need to have to guarantee with more than 95% chance that you will have at least a daughter?</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>For part 1, use <span class="math inline">\(X\sim\operatorname{Binomial}(3,0.5)\)</span>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For part 2, two sons followed by a daughter means two failures before the first success:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dgeom</span>(<span class="dv">2</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For part 3, one son followed by two daughters means one failure before the second success:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For part 4, find the smallest <span class="math inline">\(M\)</span> such that <span class="math inline">\(1-P(X=0)&gt;0.95\)</span> for <span class="math inline">\(X\sim\operatorname{Binomial}(M,0.5)\)</span>. The smallest value is <span class="math inline">\(M=5\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For parts (a), (b), and (c):</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)       <span class="co"># a, exactly 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.375</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">dbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)                   <span class="co"># a, at least 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.875</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dgeom</span>(<span class="dv">2</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)                   <span class="co"># b</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.125</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)       <span class="co"># c</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.25</code></pre>
+</div>
+</div>
+<p>For part (d), let <span class="math inline">\(M\)</span> be the number of children. The number of daughters, <span class="math inline">\(X\)</span>, can be modeled by a binomial distribution with parameters <span class="math inline">\(n=M\)</span> and <span class="math inline">\(p=0.5\)</span>. We want <span class="math inline">\(P(X\ge1)=1-P(X=0)\)</span> to be greater than <span class="math inline">\(95\%\)</span>. We calculate this probability for different values of <span class="math inline">\(M\)</span>; <span class="math inline">\(M=5\)</span> is the smallest number of children that satisfies the condition.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="at">size =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 
