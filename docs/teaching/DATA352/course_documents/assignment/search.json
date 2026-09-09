@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "",
+    "text": "Work in groups of 3–4. Your group will submit one response. You may use your Homework 1 solutions, lecture notes, and a calculator. You do not need to write executable code unless your group wants to use it to investigate an idea.\nSuggested time: 25–35 minutes\nSubmission: One concise response per group, with each group member’s name\nYour goal is to discuss what a simulation is measuring, what can go wrong, and how to communicate evidence from simulated data."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "",
+    "text": "Work in groups of 3–4. Your group will submit one response. You may use your Homework 1 solutions, lecture notes, and a calculator. You do not need to write executable code unless your group wants to use it to investigate an idea.\nSuggested time: 25–35 minutes\nSubmission: One concise response per group, with each group member’s name\nYour goal is to discuss what a simulation is measuring, what can go wrong, and how to communicate evidence from simulated data."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "Part 1: Exact probability versus simulation",
+    "text": "Part 1: Exact probability versus simulation\nLet \\(X\\) be the number of heads in three tosses of a fair coin.\n\nUse the Homework 1 solution to identify \\(P(X=0),\\ldots,P(X=3)\\).\nImagine simulating 20, 100, and 10,000 sets of three tosses. What would you expect to happen to the simulated proportions as the number of repetitions increases?\nA group reports the following results from 20 repetitions:\n\n\n\nNumber of heads\n0\n1\n2\n3\n\n\n\n\nSimulated count\n1\n8\n7\n4\n\n\n\nWhich features of these results are consistent with the theoretical pmf? What would you avoid concluding from only 20 repetitions?"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "Part 2: Design a fair comparison",
+    "text": "Part 2: Design a fair comparison\nYour group wants to compare the probability that three fair dice have a sum of 9 with the probability that they have a sum of 10.\n\nWrite a clear definition of one simulation. Be precise about what is randomly generated.\nWhat should be recorded after each simulation?\nHow would you estimate the two probabilities from the recorded results?\nOne student proposes simulating until the first sum of 9 appears and then comparing the number of rolls with the number of rolls until the first sum of 10 appears. Discuss why this is less useful than recording both outcomes across the same fixed number of repetitions."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "Part 3: The martingale and misleading summaries",
+    "text": "Part 3: The martingale and misleading summaries\nIn the roulette martingale, a player stops after winning at least 5 dollars or losing more than 100 dollars. Red occurs with probability \\(18/38\\).\nDiscuss the following claim:\n\n“The strategy is safe because most simulated games end with a win of 5 dollars.”\n\nAs a group, respond to these questions:\n\nWhat outcome should be recorded for each completed game?\nWhat additional quantities would help us understand the risk besides the proportion of games that end in a win?\nHow could a small number of large losses affect the average net winnings, the median net winnings, and the proportion of winning games differently?\nWrite a two- or three-sentence conclusion that would be more informative than the claim above."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "Part 4: Why do smaller hospitals vary more?",
+    "text": "Part 4: Why do smaller hospitals vary more?\nIn one town, a large hospital has about 45 births per day and a small hospital has about 15 births per day. The probability of a boy is 0.5 at both hospitals.\n\nDesign a simulation that compares the number of days in one year on which more than 60% of births are boys at each hospital.\nWhy can the small hospital have more days above 60% even though the underlying probability of a boy is the same?\nPredict what will happen to the difference between the hospitals if the daily birth counts become 90 and 30 instead of 45 and 15.\nState one lesson from this example about interpreting percentages from small samples."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-submission-checklist",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-submission-checklist",
+    "title": "DATA 352/551: In-Class Assignment 1",
+    "section": "Group submission checklist",
+    "text": "Group submission checklist\nSubmit one response containing:\n\nYour answers to Parts 1–4\nAt least one clearly written simulation design\nOne statement distinguishing a theoretical probability from a simulated estimate\nOne statement about variability or sample size\nThe names of all group members"
+  }
+]
