@@ -1,0 +1,67 @@
+---
+title: "DATA 352/551: Homework Quiz 1"
+subtitle: "Simulation of Discrete Probabilities"
+format:
+  html:
+    toc: false
+---
+
+**Time:** 5–10 minutes  
+**Instructions:** Answer briefly in words, formulas, or sketches of pseudocode. You do not need to write executable code.
+
+## Multiple choice
+
+Choose the **best** answer. Each question is worth 1 point.
+
+### 1. What is one simulation?
+
+In the three-dice problem, one simulation should be:
+
+- [ ] Calculating the exact probability of a sum of 9.
+- [ ] Rolling three dice once and recording their sum.
+- [ ] Rolling one die three times and recording only the largest roll.
+- [ ] Repeating the experiment until a sum of 9 occurs.
+
+### 2. Interpreting a martingale simulation
+
+Which statement is the most appropriate conclusion if most simulated roulette games end with a small win, but a few end with very large losses?
+
+- [ ] The strategy is guaranteed to make money in the long run.
+- [ ] The strategy is safe because the median outcome is positive.
+- [ ] The proportion of winning games alone does not measure the full financial risk.
+- [ ] The simulation must be wrong because every game should have the same outcome.
+
+### 3. Hospital sample size
+
+Why does the smaller hospital tend to have more days on which the percentage of boys is above 60%?
+
+- [ ] The probability of a boy is higher at the smaller hospital.
+- [ ] Smaller daily samples have more variability in their observed percentages.
+- [ ] The larger hospital has fewer births over the year.
+- [ ] Percentages cannot be compared between hospitals.
+
+## 1. Discrete random variable (2 points)
+
+Let $X$ be the number of heads in three tosses of a fair coin.
+
+1. Give the probability mass function of $X$ by listing $P(X=0), P(X=1), P(X=2)$, and $P(X=3)$.
+2. State the two conditions that a valid probability mass function must satisfy.
+
+## 2. Four-step simulation plan (2 points)
+
+You roll three fair dice and compare the probabilities that their sum is 9 and that their sum is 10. Describe the four steps you would use to estimate both probabilities by simulation.
+
+## 3. What should be recorded? (2 points)
+
+For one run of the roulette martingale simulation from Homework 1, what quantity should be recorded when the simulation stops? What two stopping conditions determine when the run ends?
+
+## 4. Interpreting simulation results (2 points)
+
+Suppose you repeat the roulette simulation 10,000 times. How would you use the recorded results to estimate:
+
+1. The probability of winning at least 5 dollars.
+2. The probability of losing at least 100 dollars.
+
+## 5. Hospital-size effect (2 points)
+
+In the hospital simulation, 45 babies are born per day at the large hospital and 15 babies per day at the small hospital. The probability of a boy is 0.5 at both hospitals. Which hospital is expected to have more days on which more than 60% of the babies are boys? Explain briefly why.
