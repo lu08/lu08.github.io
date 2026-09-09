@@ -12,4 +12,4 @@ title: "Week 2 (Sept 9)"
 
 ## Homework
 
-Please finish [Homework 1](../../course_documents/homework/homework_1.qmd). There will be a quiz on this material at the beginning of the next class.
+Please finish [Homework 2](../../course_documents/homework/homework_2.qmd). There will be a quiz on this material at the beginning of the next class.
