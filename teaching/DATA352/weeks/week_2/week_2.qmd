@@ -5,7 +5,9 @@ title: "Week 2 (Sept 9)"
 
 ## In class
 
-We will start today's class with **Quiz 1** on [Homework 1](../../course_documents/homework/homework_1.qmd).  Next, we will have a group discussion also based on Homework 1 and your group will submit an [**assignment 1**](../../course_documents/assignment/assignment_1.qmd) on Moodle.  For the rest of the class, we will go over Lecture 2.
+We will start today's class with **Quiz 1** on [Homework 1](../../course_documents/homework/homework_1.qmd).  Next, we will have a group discussion also based on Homework 1 and your group will submit an [**assignment 1**](../../course_documents/assignment/assignment_1.qmd) by putting your answers on [this](https://docs.google.com/document/d/1LTyJwQF0iltrEbGICquAi48hNU6l-Jk0ER_Esox_x0Q/edit?usp=sharing) Google doc.  
+
+For the rest of the class, we will go over Lecture 2.
 
 [Link to fullscreen](../../course_documents/all_lectures/Lecture_2.html)
 

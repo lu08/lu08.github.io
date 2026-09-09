@@ -8,7 +8,7 @@ format:
 
 ## Group activity
 
-Work in groups of 2-3. Your group will submit **one response** on Moodle.  Make sure to put all group members name on your response.  
+Work in groups of 2-3. Your group will submit **one response** on [this](https://docs.google.com/document/d/1LTyJwQF0iltrEbGICquAi48hNU6l-Jk0ER_Esox_x0Q/edit?usp=sharing) Google doc.  Make sure to put all group members name on your response.  We will discuss every group's response in class.
 
 ## Part 1: Exact probability versus simulation
 
