@@ -1,0 +1,19 @@
+---
+title: "Assignment 2"
+format: html
+---
+
+This assignment will guide you through a practice question from Chapter 3 using the Combined Class NYC Apartments dataset. [Download the dataset](../../data/index.html){target="_blank"} and open it in Jamovi.
+
+For now, as a warm-up for Chapter 3, take notes and submit your answers on Moodle. We will explain many of these concepts in more detail in Chapter 3.
+
+We want to compare the distributions of square footage (`SQFT`) for NYC apartments by `TYPE` (co-ops versus condos). Explain and support your answers with the value of at least one appropriate statistic.
+
+1. Is the distribution of square footage more skewed for condos or co-ops among the apartments in the dataset?
+
+
+
+2. Among the apartments in the dataset, which type of apartment *typically* has more square footage?
+
+
+3. Among the apartments in the dataset, which type of apartment has the more homogeneous distribution of square footage?
