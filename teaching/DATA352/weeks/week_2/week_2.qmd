@@ -2,7 +2,6 @@
 title: "Week 2 (Sept 9)"
 ---
 
-
 ## In class
 
 We will start today's class with **Quiz 1** on [Homework 1](../../course_documents/homework/homework_1.qmd).  Next, we will have a group discussion also based on Homework 1 and your group will submit an [**assignment 1**](../../course_documents/assignment/assignment_1.qmd) by putting your answers on [this](https://docs.google.com/document/d/1LTyJwQF0iltrEbGICquAi48hNU6l-Jk0ER_Esox_x0Q/edit?usp=sharing) Google doc.  
@@ -16,4 +15,4 @@ For the rest of the class, we will go over Lecture 2.
 
 ## Homework
 
-Please finish [Homework 2](../../course_documents/homework/homework_2.qmd). There will be a quiz on this material at the beginning of the next class.
+Please finish [Homework 2](../../course_documents/homework/homework_2.qmd). There will be a quiz on this material at the beginning of the next class. You can skip some of the questions (marked) until next week (I'm keeping the questions in the homework for consistency.)

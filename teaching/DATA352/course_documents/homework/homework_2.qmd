@@ -99,7 +99,7 @@ mean(number_of_sixes > 2)
 
 </details>
 
-## Question 4
+## Question 4 (SKIP THIS QUESTION)
 
 A typesetter makes, on average, one mistake per 1000 word. Let $X$ be the number of mistakes that he makes on a page with $n$ words.
 
@@ -142,7 +142,7 @@ It is hard to estimate tail probabilities like $P(X=3,4,\ldots,100)$ using simul
 
 </details>
 
-## Question 5
+## Question 5. (SKIP THIS QUESTION)
 
 Do Question 18 on page 199 in *Introduction to Probability*.
 
@@ -203,7 +203,7 @@ round(comparison, 1)
 
 </details>
 
-## Question 7
+## Question 7 (SKIP THIS QUESTION)
 
 Suppose that the probabilities of having a male or a female child are both 0.5, and you do not have to consider cases like twins. Calculate the following probabilities using appropriate models.
 
