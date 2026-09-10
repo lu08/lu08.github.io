@@ -17,17 +17,14 @@ We are not meeting in person today.  I won't be on campus as I'll be travelling,
 
 1. Download Jamovi [here](https://www.jamovi.org/download.html) (select `download desktop`).  Install it on your computer.  If you have issues with this process (especially if you believe it's related to your particular computer), I suggest that you stop by the [Univeristy Technology](https://drew.edu/about/technology-resources/university-technology/). 
 
-
-2. Go over [Handout 1](../../course_documents/handout/handout_1_introduction.qmd).  It will guide you through the basics of using Jamovi and understanding the NELS dataset.  There are several practice questions at the end.
-
-3. For **Assignment 1**, submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of [Handout 1](../../course_documents/handout/handout_1_introduction.qmd) on [Moodle](https://moodle.drew.edu). These questions are NOT graded for correctness and quiz 1 will not involve Jamovi, so it's ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not lost during class.
+2. [Assignment 1](../../course_documents/assignment/assignment_1.qmd) will guide you through the basics of using Jamovi and understanding the NELS dataset. On [Moodle](https://moodle.drew.edu), submit a screenshot of a Jamovi dataset, along with your answers to the practice questions at the end of the assignment.  These questions are NOT graded for correctness and quiz 1 will not involve Jamovi, so it's ok if you have questions about Jamovi. However, it is important that you have it installed and have spent some time familiarizing yourself with it so you are not lost during class.
 
 
 ## Thursday, Sep 10 (in-person)
 
 Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be very short and similar to the questions in [Chapter 1](../../course_documents/all_lectures/chapter_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).  It will not involve Jamovi.
 
-During class, we will finish Chapter 2, get started on Chapter 3 by doing [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd), and go over some basics of Jamovi.
+During class, we will finish Chapter 2 and go over some basics of Jamovi.
 
 Please finish the last two questions from [Chapter 1 homework](../../course_documents/homework/chapter_1.html){target="_blank"} for additional practice on Jamovi.  Since we finished Chapter 2, you should also do the exercises from [Chapter 2 homework](../../course_documents/homework/chapter_2.html){target="_blank"}.
 

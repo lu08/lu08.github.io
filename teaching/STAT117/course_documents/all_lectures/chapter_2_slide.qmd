@@ -236,7 +236,7 @@ A histogram is designed for numeric data. Its connected bars represent **ordered
 
 ## Stem-and-Leaf
 
-Let's first take a look at [A Japanese train timetable](Stem%20and%20leaf.pdf) from 1985 (from [*Envisioning Information*](https://www.edwardtufte.com/book/envisioning-information/), Tufte)
+Let's first take a look at [A Japanese train timetable](../Stem%20and%20leaf.pdf) from 1985 (from [*Envisioning Information*](https://www.edwardtufte.com/book/envisioning-information/), Tufte)
 
 A basic example:
 

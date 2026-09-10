@@ -8,8 +8,9 @@ format: html
 - Sep 15 (Tuesday): in-person lecture
 - Sep 17 (Thursday): in-person lecture, **quiz 2**
 
-
+<!--
 ## Tuesday, Sep 15 (in-person)
-
+ get started on Chapter 3 by doing [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd),
 
 ## Thursday, Sep 17 (in-person)
+-->

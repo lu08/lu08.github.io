@@ -13,11 +13,6 @@ editor_options:
   chunk_output_type: inline
 ---
 
-# To be added
-
-<!--
-
-
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.align='center',
@@ -47,11 +42,11 @@ knitr::opts_chunk$set(fig.align='center',
 #| fig-height: 4
 #| fig-width: 4
 #| out-width: "70%"
-height_m=c(828, 632, 601, 599, 554.5, 541.3, 530, 530, 528, 508)
-height_f=height_m * 3.28
-floors=c(163, 128, 120, 115, 123, 104, 111, 98, 108, 101)
-year=c(2010, 2015, 2012, 2017, 2016, 2014, 2016, 2018, 2018, 2004)
-year.ind=as.numeric(year>2015)
+height_m <- c(828, 632, 601, 599, 554.5, 541.3, 530, 530, 528, 508)
+height_f <- height_m * 3.28
+floors <- c(163, 128, 120, 115, 123, 104, 111, 98, 108, 101)
+year <- c(2010, 2015, 2012, 2017, 2016, 2014, 2016, 2018, 2018, 2004)
+year.ind <- as.numeric(year > 2015)
 plot(height_m,floors,col=year.ind+2,main='top 10 tallest buildings in the world',
      cex.lab=1.2,cex.axis=1.2,cex.main=1.2,pch=16)
 legend('topleft',
@@ -128,7 +123,7 @@ as.numeric(df.building$Year > 2010)
 
 ```{r,echo=T}
 # entries in a vector are always of the same type
-a=c(1,2,T,'red');a
+a <- c(1, 2, T, 'red'); a
 class(a)
 ```
 
@@ -220,7 +215,7 @@ unique(df.building$Location)
 - We might want to treat it as a \alert{factor} instead
 
 ```{r}
-df.building$Location_F = as.factor(df.building$Location)
+df.building$Location_F <- as.factor(df.building$Location)
 ```
 
 ## Factors
@@ -332,9 +327,9 @@ ft.per.floor <- df.building$Height_f / df.building$Floors_num
 To \alert{add a variable} to an existing data frame \small
 
 ```{r}
-df.building$ft.per.floor=ft.per.floor
+df.building$ft.per.floor <- ft.per.floor
 # OR 
-df.building['ft.per.floor']=ft.per.floor
+df.building['ft.per.floor'] <- ft.per.floor
 ```
 
 - Calculate the average $\texttt{ft.per.floor}$ of buildings by Location
@@ -361,7 +356,7 @@ plot(df.building$Year,
 ## Matrix
 
 ```{r}
-df.building.matrix=as.matrix(df.building)
+df.building.matrix <- as.matrix(df.building)
 class(df.building.matrix)
 ```
 
@@ -426,7 +421,7 @@ list.building <- list(data=df.building,
 - Benefit of using $[\texttt{" "}]$: can return more than one components in a more automated fashion
 
 ```{r}
-TORETURN=c('variables','sample.size')
+TORETURN <- c('variables', 'sample.size')
 list.building[TORETURN]
 ```
 
@@ -442,7 +437,7 @@ names(list.building) # names of the components
 str(list.building) # summary information
 
 # add new component
-list.building$mean_height=mean(list.building$data$Height_m)
+list.building$mean_height <- mean(list.building$data$Height_m)
 ```
 
 You can \alert{combine lists} with \texttt{c(,)}; for instance: \texttt{c(list.building, newlist)}
@@ -467,7 +462,7 @@ plot(x=df.building$Height_m,y=df.building$Floors_num) #full version
 The pipe operator, **%\>%**, is a different syntax for calling R functions: **FUNCTION(x)** is the same as **x %\>% FUNCTION**
 
 ```{r, eval=F}
-vec=c(1,1,5)
+vec <- c(1, 1, 5)
 mean(vec)
 vec %>% mean
 ```
@@ -495,9 +490,9 @@ df.building$Height_m %>%
 
 ```{r,echo=F}
 mycols<-rep(NA,dim(df.building)[1])
-mycols[which(df.building$Year<=2009)]='red'
-mycols[which(df.building$Year>=2010 & df.building$Year<=2015)]='blue'
-mycols[which(df.building$Year>=2016)]='green'
+mycols[which(df.building$Year <= 2009)] <- 'red'
+mycols[which(df.building$Year >= 2010 & df.building$Year <= 2015)] <- 'blue'
+mycols[which(df.building$Year >= 2016)] <- 'green'
 
 plot(df.building$Height_m,df.building$Floors_num,
      pch=16,
@@ -524,15 +519,15 @@ which(df.building$Year<=2009)
 - Set the corresponding element in the empty vector to the color red (recall, for subsetting, the \texttt{which()} function is not actually needed)
 
 ```{r,eval=F}
-mycols[df.building$Year<=2009]='red'
+mycols[df.building$Year <= 2009] <- 'red'
 ```
 
 - Do the same for the other colors
 
 ```{r, eval=F}
-mycols[(df.building$Year>=2010) 
-       & (df.building$Year<=2015)]='blue'
-mycols[(df.building$Year>=2016)]='green'
+mycols[(df.building$Year >= 2010)
+  & (df.building$Year <= 2015)] <- 'blue'
+mycols[df.building$Year >= 2016] <- 'green'
 ```
 
 ## Sample code 2
@@ -540,16 +535,16 @@ mycols[(df.building$Year>=2016)]='green'
 - Create three colors
 
 ```{r, eval=F}
-cols3 = c('red','blue','green')
+cols3 <- c('red', 'blue', 'green')
 ```
 
 - Create index based on the year of the building
 
 ```{r, eval=F}
-myindex <- ifelse(df.building$Year<=2009, 1, NA)
-myindex[(df.building$Year>=2010) 
-       & (df.building$Year<=2015)] = 2
-myindex[(df.building$Year>=2016)]=3
+myindex <- ifelse(df.building$Year <= 2009, 1, NA)
+myindex[(df.building$Year >= 2010)
+  & (df.building$Year <= 2015)] <- 2
+myindex[df.building$Year >= 2016] <- 3
 ```
 
 - Use index to subset the colors
@@ -565,7 +560,7 @@ cols3[myindex] # same as mycols
 - \alert{NA} is a special value that represents missing or unavailable entries when not in quotation
 
 ```{r}
-x=c(3.5,3.2,3,NA)
+x <- c(3.5, 3.2, 3, NA)
 length(x)
 ```
 
@@ -617,7 +612,7 @@ which(is.na(x))
 - You should check the calculations and variable types when you see NA, NaN, or Inf
 
 ```{r}
-v1=c(1,1,0);v2=c(2,0,0);v1/v2
+v1 <- c(1, 1, 0); v2 <- c(2, 0, 0); v1 / v2
 mean(v1/v2)
 is.na(v1/v2)
 as.numeric('4,000')
@@ -634,7 +629,7 @@ You can combine two or more logical statements together
 - **\|** OR
 
 ```{r}
-x=c(3.6,2.8,3.3,1.2)
+x <- c(3.6, 2.8, 3.3, 1.2)
 x>3
 x>3 & x<3.5
 (x>3.5) | (x<2)
@@ -646,14 +641,14 @@ x>3 & x<3.5
 
 ```{r, eval=F}
 which(x < 3) # this is ok
-which(x = 3) # this is NOT ok
+which(x == 3)
 which(x) # this is NOT ok
 ```
 
 - Operator \alert{\%in\%} is another useful logical operator
 
 ```{r}
-subjects=c('ENG','ENG','MAT','MAT','STAT','HIS')
+subjects <- c('ENG', 'ENG', 'MAT', 'MAT', 'STAT', 'HIS')
 subjects %in% c('MAT','STAT')
 ```
 
@@ -687,4 +682,3 @@ plot(as.factor(df.building$Year),
      ylab=NA,
      yaxt='n')
 ```
--->

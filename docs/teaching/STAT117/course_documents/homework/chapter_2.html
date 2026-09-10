@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter_2 – Yi Lu</title>
+<title>Chapter 2 – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Chapter 2</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -151,12 +151,538 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 2</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>To be added.</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--
+## Examining Univariate Distributions
+
+### Exercise 2.1
+
+Create a frequency distribution table of the variable `ABSENT12`, which gives the number of times a student was absent in twelfth grade. Use the frequency distribution to answer the following questions:
+
+a) How many students in the NELS data set were absent 3–6 times in twelfth grade?
+
+b) How many students in the NELS data set were absent exactly 3 times in twelfth grade?
+
+c) What percentage of students in the NELS data set was absent 3–6 times in twelfth grade?
+
+d) What percentage of students in the NELS data set was absent 6 or fewer times in twelfth grade?
+
+<details>
+<summary>### Solution</summary>
+
+a) 180 students.
+
+b) It is impossible to know the exact number. Assuming equal numbers of students were absent 3, 4, 5, and 6 times, the estimate is 180 / 4 = 45 students.
+
+c) 36%.
+
+d) 86%.
+
+</details>
+
+### Exercise 2.2
+
+Create a frequency distribution table of the variable `PARMARL8`, which gives the marital status of the parents when the student was in eighth grade. Use it and the Data View window to answer the following questions:
+
+a) What does a score of 3 indicate on the variable `PARMARL8`?
+
+b) For how many students in the NELS data set was `PARMARL8 = 3`?
+
+c) For what percentage of students in the NELS data set was `PARMARL8 = 3`? Interpret both the values from the percent and valid percent columns.
+
+d) Why is the cumulative percent column of `PARMARL8` not meaningful?
+
+<details>
+<summary>### Solution</summary>
+
+a) The student’s parents were separated when the student was in eighth grade.
+
+b) 8 students.
+
+c) Of students who reported their parents’ marital status in eighth grade, 1.7% reported that their parents were separated. Of all students in the NELS data set, 1.6% reported that their parents were separated.
+
+d) `PARMARL8` is nominal, so its categories have no intrinsic ordering. The numerical codes are assigned arbitrarily, so cumulative percentages are not meaningful.
+
+</details>
+
+### Exercise 2.3
+
+Create a frequency distribution table of the variable `FAMSIZE`, which represents the number of people in a student’s household when the student was in eighth grade. Use the frequency distribution table to answer the following questions:
+
+a) What was the greatest number of people in a household for all the students in the NELS data set?
+
+b) How many students lived in households with only three members?
+
+c) How many students lived in households with at most three members?
+
+d) What percentage of the students lived in households with only three members?
+
+e) What percentage of the students lived in households with at most three members?
+
+<details>
+<summary>### Solution</summary>
+
+a) 9 people.
+
+b) 52 students.
+
+c) 9 + 52 = 61 students.
+
+d) 10.4%.
+
+e) 12.2%.
+
+</details>
+
+### Exercise 2.4
+
+Create a bar graph summarizing the variable `GENDER`. Use it to answer the following questions:
+
+a) Why is a bar graph an appropriate display in this case?
+
+b) Are there more males or females in the NELS?
+
+c) What percentage of students is female?
+
+<details>
+<summary>### Solution</summary>
+
+a) `GENDER` is a nominal variable.
+
+b) There are more females: 273 females and 227 males.
+
+c) 54.6%.
+
+</details>
+
+### Exercise 2.5
+
+In this exercise, make separate bar graphs for males and females of the variable `ALCBINGE`, which indicates whether a student has ever binged on alcohol. For this question, you will learn how to split the data file in SPSS. To label the frequencies on a bar graph, you can refer to the instructions for Exercise 2.4.
+
+a) What percentage of males in the NELS data set has ever binged on alcohol? What percentage of females?
+
+b) Given the two frequency bar graphs, why are the scales on the vertical axes different for the two graphs?
+
+<details>
+<summary>### Solution</summary>
+
+a) Males: $(66 / 227) \times 100 = 29.1\%$. Females: $(42 / 273) \times 100 = 15.4\%$.
+
+b) The scales differ to accommodate the larger number of females who had never binged on alcohol.
+
+</details>
+
+### Exercise 2.6
+
+Create a bar graph for average daily school attendance rate, given by the variable `SCHATTRT` in the NELS data set. Use the bar graph to answer the following questions:
+
+a) What appears to be problematic with the way in which the values are set along the x-axis of the bar graph?
+
+b) What type of graph could be selected to display `SCHATTRT` that does not have that problem?
+
+<details>
+<summary>### Solution</summary>
+
+a) The values are not equally spaced, making it difficult to judge the shape of the distribution and the distance of the lower tail from the bulk of the distribution.
+
+b) A stem-and-leaf plot, histogram, or interactive line graph.
+
+</details>
+
+### Exercise 2.9
+
+Create a stem-and-leaf plot of the variable `MATHCOMP` from the learndis data set. Use it to answer the following questions:
+
+b) What is the total number of scores in this distribution?
+
+c) How many scores are in the seventies?
+
+d) Are there any outliers (i.e., extreme values) in this distribution?
+
+g) What is or are the most frequently occurring score or scores in this distribution? How many times does it or do they occur?
+
+h) What is the highest score in this distribution?
+
+i) Can we use this stem-and-leaf plot to obtain the original set of values for this variable?
+
+<details>
+<summary>### Solution</summary>
+
+b) 94 scores.
+
+c) 28 scores.
+
+d) No.
+
+g) 78; it occurs 8 times.
+
+h) 121.
+
+i) Yes.
+
+</details>
+
+### Exercise 2.10
+
+Create a stem-and-leaf plot of the variable `BIRTH` from the Statisticians data set that you entered in Exercise 1.15. Use it to answer the following questions:
+
+a) How many people in the data set were born in 1900?
+
+b) Are there any outliers (i.e., extreme values) in this distribution?
+
+c) How would you describe the shape of this distribution? Explain.
+
+d) What is or are the most frequently occurring score or scores in this distribution? How many times does it or do they occur?
+
+e) What is the highest score in this distribution?
+
+f) Can we use this stem-and-leaf plot to obtain the original set of values for this variable?
+
+<details>
+<summary>### Solution</summary>
+
+a) 1 person.
+
+b) Yes. One statistician was born on or before 1822.
+
+c) The distribution is negatively skewed because of the low outlier.
+
+d) Two statisticians were born in 1893. No other pair of statisticians was born in the same year.
+
+e) 1915.
+
+f) No. The exact value of the outlier cannot be determined from the display.
+
+</details>
+
+### Exercise 2.12
+
+Create a stem-and-leaf plot of total cholesterol, given by the variable `TOTCHOL1` found in the Framingham data set. Use it to answer the following questions:
+
+b) Are there any outliers (i.e., extreme values) in this distribution? Describe them.
+
+e) What is the highest score in this distribution?
+
+f) Can we use this stem-and-leaf plot to obtain the complete set of original values for this variable?
+
+<details>
+<summary>### Solution</summary>
+
+b) Yes. There are two people with initial cholesterol levels greater than or equal to 353.
+
+e) The exact value cannot be determined because the highest score is recorded only as an extreme value greater than or equal to 353.
+
+f) No. The scores are rounded to two significant digits, and the two outlier values are unknown.
+
+</details>
+
+### Exercise 2.13
+
+Create a stem-and-leaf plot of eighth-grade math achievement scores, given by the variable `ACHMAT08` in the NELS data set. Use the stem-and-leaf plot to answer the following questions:
+
+a) According to the stem-and-leaf plot, what is the lowest eighth-grade math achievement score?
+
+b) According to the stem-and-leaf plot, approximately how many students received the lowest eighth-grade math achievement score?
+
+c) According to the stem-and-leaf plot, are there any outliers (extreme values) in this distribution?
+
+e) According to the stem-and-leaf plot, which eighth-grade math achievement score occurs most often?
+
+<details>
+<summary>### Solution</summary>
+
+a) Approximately 37.
+
+b) Approximately 2 students.
+
+c) No.
+
+e) 54.
+
+</details>
+
+### Exercise 2.14
+
+Follow the instructions to create separate stem-and-leaf plots of `SYSBP1` (systolic blood pressure) for men and women (`SEX`) using the Framingham data set. Use the plots to answer the following questions:
+
+a) In which distribution, male or female, do we find the lowest systolic blood pressure value? Explain.
+
+b) In which distribution is the most frequently occurring systolic blood pressure value higher? Explain.
+
+c) In which, if either, distribution does systolic blood pressure have a greater spread? Explain.
+
+d) In which, if either, distribution is systolic blood pressure more skewed? Explain.
+
+<details>
+<summary>### Solution</summary>
+
+a) Female. The lowest values are 98 for males and 92 for females.
+
+b) Female. The most frequently occurring values are 130 for males and 132 for females.
+
+c) The distributions appear to be quite similar in spread.
+
+d) The distributions appear similarly positively skewed.
+
+</details>
+
+### Exercise 2.15
+
+Create a histogram of twelfth-grade math achievement, given by the variable `ACHMAT12` in the NELS data set. Use the histogram to answer the following questions:
+
+a) According to the histogram, what is the smallest twelfth-grade math achievement score in the NELS data set? Approximately how many times does that score occur?
+
+b) According to the histogram, what is the most frequently occurring twelfth-grade math achievement score interval?
+
+<details>
+<summary>### Solution</summary>
+
+a) Approximately 34, occurring about 2 times.
+
+b) Between 54 and 55.
+
+</details>
+
+### Exercise 2.16
+
+Follow the instructions to create two side-by-side histograms for socioeconomic status, given by the variable `SES` in the NELS data set. Let one histogram represent students who did not own a computer in eighth grade and the other represent students who did own a computer (`COMPUTER`). Use the histograms to answer the following questions:
+
+a) Which computer group has the single highest SES score?
+
+b) Would you say that SES is higher for the group that owns a computer? Why or why not?
+
+c) Do the SES values have more spread for one group than the other?
+
+<details>
+<summary>### Solution</summary>
+
+a) The group that owned a computer in eighth grade.
+
+b) Yes. SES appears higher for the group that owns a computer because its distribution begins and ends at higher points on the SES scale, and its scores are generally higher.
+
+c) No. The spread of the two distributions appears quite similar.
+
+</details>
+
+### Exercise 2.21
+
+Find the following values for a student’s expected income at age 30, given by the variable `EXPINC30` in the NELS data set:
+
+a) What is the exact value of the 15th percentile, according to SPSS?
+
+b) What is the exact value of the 50th percentile, according to SPSS?
+
+c) What is the approximate percentile rank of an expected income of $50,000?
+
+<details>
+<summary>### Solution</summary>
+
+a) $30,000. This means that 15% of students expect to earn less than $30,000 at age 30.
+
+b) $40,000.
+
+c) 73.9.
+
+</details>
+
+### Exercise 2.23
+
+This question relates to the optimist who is expecting to earn $1,000,000 per year at age 30 (`EXPINC30 = 1,000,000`).
+
+a) What is this student’s ID?
+
+b) What was this student’s eighth-grade self-concept score (`SLFCNC08`)?
+
+c) What is the percentile rank of this student’s eighth-grade self-concept score? Is it what you expected?
+
+d) Use percentile ranks to determine the grade (eighth, tenth, or twelfth) in which this student was least self-confident relative to his or her peers.
+
+<details>
+<summary>### Solution</summary>
+
+a) 102.
+
+b) 25.
+
+c) The percentile rank is 74.8%. This is higher than almost three-fourths of the students, although one might have expected the student’s self-concept to be even higher.
+
+d) Twelfth grade. The percentile ranks are 74.8% in eighth grade, 88% in tenth grade, and 7.2% in twelfth grade.
+
+</details>
+
+### Exercise 2.24
+
+Create a boxplot that shows the number of times a student in twelfth grade was recorded late for school, given by the variable `LATE12`. Note that the level of measurement of `LATE12` is ordinal. Use the boxplot and the scoring information in the data set to answer the following questions:
+
+a) Estimate and interpret the value of the 50th percentile for `LATE12`, represented by the line in the middle of the box.
+
+b) Estimate the IQR of this distribution.
+
+d) What is the significance of the fact that the graph has no bottom whisker?
+
+<details>
+<summary>### Solution</summary>
+
+a) The 50th percentile is 1. Since 1 means being late one or two times, half the students were late no more than one or two times.
+
+b) The IQR is $2 - 0 = 2$.
+
+d) The minimum score is the same as the 25th percentile. At least 25% of students were never late in twelfth grade.
+
+</details>
+
+### Exercise 2.25
+
+Create one graph that has three boxplots, one for each distribution of self-concept scores for eighth, tenth, and twelfth grades, respectively. Use this graph to answer the following questions:
+
+c) Overall, which of the three grades has the highest level of self-concept?
+
+d) Which of the three grades contains the highest single self-concept score? What is your estimate of that score?
+
+<details>
+<summary>### Solution</summary>
+
+c) Twelfth grade, based on the 50th percentile.
+
+d) Twelfth grade; approximately 43.
+
+</details>
+
+### Exercise 2.26
+
+Create four boxplots on the same axis, one for each region, that plot the number of years of math taken in high school, given by the variable `UNITMATH` in the NELS data set. Use the graph to answer the following questions:
+
+b) In which of the four regions is the overall level of `UNITMATH` lowest?
+
+c) Which of the four regions contains the student with the single lowest number of units of math taken in high school? What is that number?
+
+e) How many of the 106 students in the Northeast have `UNITMATH` scores between Q1 and Q2? Is this number confined to `UNITMATH` scores, or does it generalize to all variables in this data set?
+
+<details>
+<summary>### Solution</summary>
+
+b) West.
+
+c) West. There is a student in the Northeast who took only one year of math in high school.
+
+e) Approximately $0.25 \times 106 = 27$ students. Because 25% of scores in any distribution fall between Q1 and Q2, this generalizes to all variables in the data set.
+
+</details>
+
+### Exercise 2.30
+
+Describe the shape of each of the following distributions, denoted a, b, c, d, e, and f.
+
+<details>
+<summary>### Solution</summary>
+
+a) Positively skewed.
+
+b) Negatively skewed.
+
+c) Slightly positively skewed.
+
+d) Positively skewed.
+
+e) Positively skewed.
+
+f) Positively skewed.
+
+</details>
+
+### Exercise 2.31
+
+This exercise is based on the States data set and does not require the use of SPSS. The boxplots below show, for each of the four regions, the average educational expenditure for the states in that region. The four stem-and-leaf displays, labeled A, B, C, and D, show the same data. For each stem-and-leaf plot, the stem width is 1000 and each leaf represents one case. Match the letter associated with each stem-and-leaf plot to the appropriate boxplot.
+
+**Correction:** The stem width for plot D is 10000, not 1000.
+
+<details>
+<summary>### Solution</summary>
+
+A) South
+
+B) West
+
+C) Midwest
+
+D) Northeast
+
+</details>
+
+### Exercise 2.33
+
+The following questions pertain to the tenth-grade social studies achievement score for students, given by the variable `ACHSLS10` in the NELS data set:
+
+a) What is the highest tenth-grade social studies achievement score in the NELS data set?
+
+b) How many students obtained the highest score?
+
+c) What is the most frequently occurring score in this distribution?
+
+d) What is the 50th percentile of the distribution?
+
+e) What is the 67th percentile?
+
+f) What percentage of students scored 70 or below?
+
+<details>
+<summary>### Solution</summary>
+
+a) 72.89.
+
+b) 13 students.
+
+c) 72.89.
+
+d) 55.7.
+
+e) 59.9.
+
+f) 94.9%.
+
+</details>
+
+### Exercise 2.34
+
+The following questions pertain to the amount of time spent weekly on extracurricular activities in twelfth grade, given by `EXCURR12` in the NELS data set:
+
+a) What does the value 2 represent?
+
+b) How many students in the NELS data set answered that they spent 1–4 hours per week on extracurricular activities?
+
+c) What is the value at the 50th percentile?
+
+<details>
+<summary>### Solution</summary>
+
+a) A value of 2 represents spending 1–4 hours per week on extracurricular activities in twelfth grade.
+
+b) 125 students.
+
+c) 1–4 hours.
+
+</details>
+-->
 
 
 

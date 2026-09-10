@@ -18,17 +18,10 @@ Solutions are provided in the same document.
 
 If a dataset is missing, or if you find a typo/error, please let me know.
 
-- [Chapter 1](homework/chapter_1.qmd)
-- [Chapter 2](homework/chapter_2.qmd)
+- [Homework Chapter 1](homework/chapter_1.qmd)
+- [Homework Chapter 2](homework/chapter_2.qmd)
 
 
-## Handout
+## Assignment
 
-- [Handout 1: Introduction](handout/handout_1_introduction.qmd)
-
-
-<!--
-## Assignments
-
-- [Assignment 1](assignment/assignment_1.qmd)
--->
+- [Assignment 1: Jamovi introduction](assignment/assignment_1.qmd)
