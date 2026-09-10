@@ -27,6 +27,6 @@ We are not meeting in person today.  I won't be on campus as I'll be travelling,
 
 Today we will have our very first quiz!  As a reminder, quizzes in this class will be administered on Moodle but MUST BE TAKEN IN PERSON.  **Quiz 1** will be very short and similar to the questions in [Chapter 1](../../course_documents/all_lectures/chapter_1_slide.html): you will be given some variables and you will be asked to identify their *measure types* (nominal, ordinal, continuous/scale, or dichotomous).  It will not involve Jamovi.
 
-During class, we will finish Chapter 2, get started on Chapter 3 by doing [**assignment 2**](../../course_documents/assignment/assignment_2.qmd), and go over some basics of Jamovi.
+During class, we will finish Chapter 2, get started on Chapter 3 by doing [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd), and go over some basics of Jamovi.
 
 Please finish the last two questions from [Chapter 1 homework](../../course_documents/homework/chapter_1.html){target="_blank"} for additional practice on Jamovi.  Since we finished Chapter 2, you should also do the exercises from [Chapter 2 homework](../../course_documents/homework/chapter_2.html){target="_blank"}.
