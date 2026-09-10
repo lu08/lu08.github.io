@@ -1,5 +1,9 @@
 ---
-title: "Lecture 2"
+title: "Lecture 2: Data types"
+subtitle: "Data: Tallest building"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
 format:
   revealjs:
     theme: default
@@ -9,6 +13,12 @@ format:
     self-contained: false
     smaller: true
     scrollable: true
+    code-font-size: 1.15em
+    chalkboard:
+      buttons: true
+    code-tools:
+      source: true
+      toggle: false
 editor_options: 
   chunk_output_type: inline
 ---
@@ -32,16 +42,13 @@ knitr::opts_chunk$set(fig.align='center',
   1. Convert height from meters to ft and store it in a new vector
   1. Print the values of the new vector and check that these values are the same as Height (ft) given in Wikipedia
   1. Create corresponding vectors for the number of floors and year built for the top 10 tallest buildings
-  1. Create a vector of $\{0,1\}$'s, where 0 means the building was built in 2015 or before, and 1 means otherwise
+  1. Create a vector of `{0, 1}` values, where 0 means the building was built in 2015 or before, and 1 means otherwise
   1. Generate a scatterplot of Floors by Height (m), set the color to "col=year_ind+2," where "year_ind" is the indicator vector created in the last step
-  
-## 
+
+<details>
+<summary>Show solution</summary>
+
 ```{webr-r}
-#| code-fold: true
-#| code-summary: "Show code"
-#| fig-height: 4
-#| fig-width: 4
-#| out-width: "70%"
 height_m <- c(828, 632, 601, 599, 554.5, 541.3, 530, 530, 528, 508)
 height_f <- height_m * 3.28
 floors <- c(163, 128, 120, 115, 123, 104, 111, 98, 108, 101)
@@ -55,12 +62,15 @@ legend('topleft',
        legend=c('2015 and prior', '2016 and later'),cex=1.2)
 ```
 
+    </details>
 
-# Export and import a dataset
+# Prep work
 
-## File path
+## Import a dataset
 
-You need to specify the location of your file when you export or import a dataset. For simplicity:
+[Download](../../data/index.html) the dataset "tallest building_2026.csv"
+
+You need to specify the location (**file path**) of your dataset when you export or import a dataset. For simplicity:
 
 ```{r, eval=T, echo=F}
 library(tidyverse)
@@ -68,7 +78,6 @@ library(kableExtra)
 df.building <- read.csv('../../../../dataset/tallest building_2026.csv')
 ```
 
-\small
 
 ```{r, eval=F}
 # Put the data (.csv) in the same folder as the code (.R)
@@ -78,30 +87,24 @@ df.building <- read.csv(file='tallest building_2026.csv')
 df.building <- read.csv(file.choose())
 ```
 
-\normalsize
 
 In general:
 
-- Use "/" and \alert{tab} to navigate through folders
-- Use "../" to go up a folder
-- If you want to check your current folder, use \alert{getwd()} ("get working directory")
-- (To \alert{export} a csv file, use \texttt{write.table()})
-- test
-- test
-- test
-- test
-- test
-- test
-- test 111
+- Use "/" and **Tab** to navigate through folders
+- Use "../" to go up to the parent folder
+- If you want to check your current folder, use `getwd()` ("get working directory")
+- To **export** a CSV file, use `write.table()`.
 
-# Different types of data; factors
+In addition, load necessary packages
+```{r, eval=F}
+library(tidyverse)
+```
+
 
 ## Types of data
 
 - Basic types: **numeric**, **double**, **logical**, **character**, **integer**
-- Use \alert{typeof()} or \alert{class()} to check
-
-\small
+- Use `typeof()` or `class()` to check
 
 ```{r}
 class(df.building$Height_m)
@@ -110,11 +113,7 @@ class(df.building$Floors)
 class(df.building$Year > 2010)
 ```
 
-## Types of data
-
-- Use functions of the form \alert{as.XXX( )} to switch between different types
-
-\small
+- Use functions of the form `as.XXX()` to switch between different types
 
 ```{r, echo=T,eval=F}
 df.building$Year > 2010
@@ -129,12 +128,12 @@ class(a)
 
 ## Data modification
 
-\small
-
 ```{r, echo=F, eval=T}
-df.building$Height_f <- df.building$Height_f %>% 
-  gsub(pattern = ',', replacement = '') %>%
-  as.numeric()
+df.building$Height_f <- gsub(
+  pattern = ',',
+  replacement = '',
+  x = df.building$Height_f
+) %>% as.numeric()
 
 df.building <- df.building %>%
   mutate(
@@ -145,8 +144,6 @@ df.building <- df.building %>%
 
 
 ```
-
-\small
 
 ```{r,echo=T,eval=F}
 # Height_f is a character
@@ -162,11 +159,7 @@ gsub(pattern = ',',
      df.building$Height_f)
 ```
 
-\normalsize
-
 Putting things together...
-
-\scriptsize
 
 ```{r,echo=T,eval=F}
 df.building$Height_f <- 
@@ -178,11 +171,8 @@ df.building$Height_f <- df.building$Height_f %>%
   as.numeric()
 ```
 
-## 
 
 Take a look at the **Floors** variable. This format is difficult to work with. To parse a text using R, you need to be *very specific* about the text pattern. This is done using "regular expression" (a pattern language used to search, match, and manipulate text).
-
-\scriptsize
 
 ```{r, echo=T, eval=F}
 df.building$Floors 
@@ -201,26 +191,23 @@ df.building <- df.building %>%
 str(df.building)
 ```
 
-\normalsize
+# Factors
 
 ## Factors
-
-- \texttt{Location} is entered as character (i.e., text) data
+- `Location` is entered as character (i.e., text) data
 
 ```{r}
 class(df.building$Location)
 unique(df.building$Location)
 ```
 
-- We might want to treat it as a \alert{factor} instead
+- We might want to treat it as a **factor** instead
 
 ```{r}
 df.building$Location_F <- as.factor(df.building$Location)
 ```
 
-## Factors
-
-- Key difference: \alert{factors} can be treated as numbers but \alert{characters} cannot
+- Key difference: **factors** can be treated as numbers but **characters** cannot
 
 ```{r}
 as.numeric(df.building$Location_F)
@@ -237,20 +224,13 @@ unique(df.building$Location_F)
 levels(df.building$Location_F)
 ```
 
-## 
-
-- Factors are often used as a \alert{grouping variable}. \texttt{tapply( )} allows you to analyze data \alert{by groups}.
-
-\small
+- Factors are often used as a **grouping variable**. `tapply()` allows you to analyze data **by groups**.
 
 ```{r}
 tapply(df.building$Year,df.building$Location_F,median)
 tapply(df.building$Height_m,df.building$Location_F,mean)
 ```
 
-## 
-
-\small
 
 ```{r}
 # OR #
@@ -259,17 +239,14 @@ df.building %>%
   summarise(median(Year), mean(Height_m), length(Year))
 ```
 
-## Useful functions for factors
 
-- Plotting with \texttt{Location} as a character vector is not easy
+- Plotting with `Location` as a character vector is not easy
 
 ```{r,eval=F}
 plot(df.building$Location,df.building$Height_m) #error!
 ```
 
-- Plotting with \texttt{Location\_F}:
-
-\scriptsize
+- Plotting with `Location_F`:
 
 ```{r,fig.height=3,fig.width=6,out.width="1\\linewidth"}
 par(mfrow=c(1,2))
@@ -281,19 +258,20 @@ plot(df.building$Location_F,df.building$Height_m)  #boxplots by Location
 
 ## Data frame
 
-In most cases, datasets in R are stored as a \alert{data frame}
+In most cases, datasets in R are stored as a **data frame**
 
-```{r,eval=T,echo=T}
+```{webr-r}
+#| autorun: false
 class(df.building)
 ```
 
-- \alert{Subseting} requires two indices (row, column)
+- **Subsetting** requires two indices (row, column)
 
 ```{r}
 df.building[1,2] # first row, second column
 ```
 
-- Easier: each \alert{component} in a data frame corresponds to a column (i.e., a variable); use \alert{\$} to get the component
+- Easier: each **component** in a data frame corresponds to a column (i.e., a variable); use `$` to get the component
 
 ```{r,eval=F}
 df.building$Name[1] # name of first building
@@ -310,21 +288,18 @@ head(df.building) # first few rows
 tail(df.building) # last few rows
 ```
 
-## Exercise set 1
-
-\small
-
+## Exercise: data frame basics
 - Print out the names of the first 5 buildings
 
 - Calculate the average height in meters of the first 5 buildings (should get `r  mean(df.building$Height_m[1:5])`)
 
-- Create a new vector, $\texttt{ft.per.floor}$, by height (ft) / number of floors
+- Create a new vector, `ft.per.floor`, by height (ft) / number of floors
 
 ```{r,echo=F}
 ft.per.floor <- df.building$Height_f / df.building$Floors_num
 ```
 
-To \alert{add a variable} to an existing data frame \small
+To **add a variable** to an existing data frame
 
 ```{r}
 df.building$ft.per.floor <- ft.per.floor
@@ -332,13 +307,12 @@ df.building$ft.per.floor <- ft.per.floor
 df.building['ft.per.floor'] <- ft.per.floor
 ```
 
-- Calculate the average $\texttt{ft.per.floor}$ of buildings by Location
+- Calculate the average `ft.per.floor` of buildings by Location
 
 ```{r,echo=F}
 tapply(df.building$ft.per.floor,df.building$Location_F,mean)
 ```
 
-## 
 
 - Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)
 
@@ -361,10 +335,8 @@ class(df.building.matrix)
 ```
 
 - \$ doesn't work for getting variables from a matrix
-- Subsetting can be done using square bracket: \textbf{matrix[row,column]}
-- Variable names are now \textbf{column names}
-
-\small
+- Subsetting can be done using square brackets: **matrix[row, column]**
+- Variable names are now **column names**
 
 ```{r,eval=F}
 colnames(df.building.matrix)
@@ -374,10 +346,8 @@ df.building.matrix[1,] #information for the first row
 df.building.matrix[,2] #information for the second column
 ```
 
-## Matrix
-
-- All entries in \texttt{df.building.matrix} are converted to characters
-- This is because \alert{entries in a matrix must have the same type}
+- All entries in `df.building.matrix` are converted to characters
+- This is because **entries in a matrix must have the same type**
 - Matrices are more useful for storing only numeric values
 - In comparison: recall that a data frame allows variables to have different types
 
@@ -393,14 +363,14 @@ variables <- names(df.building)
 ```
 
 - We have the following **R objects**
-  1.  $\texttt{df.building}$: a $61 \times 9$ data frame
-  2.  $\texttt{sample.size}$: a numeric value
-  3.  $\texttt{variables}$: a character vector of size $9$
+  1.  `df.building`: a 61 x 9 data frame
+  2.  `sample.size`: a numeric value
+  3.  `variables`: a character vector of size 9
 - Q: What if we want to store all three objects in one R object?
 
 ## List
 
-- A: Create a \alert{List} with three components
+- A: Create a **list** with three components
 
 ```{r}
 list.building <- list(data=df.building,
@@ -410,26 +380,21 @@ list.building <- list(data=df.building,
 
 - Note: if a name is not provided for a component, it will be indexed by number
 - List is very general: each component can be of different length or type
-- Use \alert{\$} to extract any component
-- Try \alert{list.building\$...} to print out each of the component to double check
-
-## List
-
+- Use `$` to extract any component
+- Try `list.building$...` to print out each component to double-check
 - Another way to extract component: square bracket
-  - $\texttt{list.building[`COMPONENT']}$ is identical to $\texttt{list.building\$COMPONENT}$
-- Benefit of using $\$$: no need to spell; use tab
-- Benefit of using $[\texttt{" "}]$: can return more than one components in a more automated fashion
+  - `list.building["COMPONENT"]` is identical to `list.building$COMPONENT`
+- Benefit of using `$`: no need to spell; use Tab
+- Benefit of using `[","]`: can return more than one component in a more automated fashion
 
 ```{r}
 TORETURN <- c('variables', 'sample.size')
 list.building[TORETURN]
 ```
 
-## Useful functions
+## Useful functions for lists
 
 Handling a list is very similar to handling a data frame
-
-\small
 
 ```{r,eval=F}
 length(list.building) # number of components
@@ -440,22 +405,20 @@ str(list.building) # summary information
 list.building$mean_height <- mean(list.building$data$Height_m)
 ```
 
-You can \alert{combine lists} with \texttt{c(,)}; for instance: \texttt{c(list.building, newlist)}
+You can **combine lists** with `c()`; for instance: `c(list.building, newlist)`
 
 # R functions
 
 ## R functions
 
-- R functions follow the same pattern: \alert{function\_name(argument1=XXX, argument2=XXX, ...)}
-
-\small
+- R functions follow the same pattern: `function_name(argument1 = XXX, argument2 = XXX, ...)`
 
 ```{r,eval=F}
 plot(df.building$Height_m,df.building$Floors_num) #shorter version
 plot(x=df.building$Height_m,y=df.building$Floors_num) #full version
 ```
 
-- Use \alert{?function\_name} to bring up the help menu
+- Use `?function_name` to bring up the help menu
 
 ## pipe operator (dplyr package)
 
@@ -469,8 +432,6 @@ vec %>% mean
 
 **For functions with multiple arguments**: by default, R recognizes the argument being piped as the *first* argument; or you can use "." to specify
 
-\small
-
 ```{r, eval=F}
 # these code are equivalent
 plot(df.building$Height_m,df.building$Floors_num,xlab='Height')
@@ -482,9 +443,8 @@ df.building$Height_m %>%
   plot(x=., y=df.building$Floors_num,xlab='Height')
 ```
 
-# An exercise...
 
-## 
+## Exercise: scatterplot
 
 - Generate a scatterplot. Can you think of a way to color it based on year, and reproduce this plot?
 
@@ -516,7 +476,7 @@ mycols <- rep(NA,nrow(df.building))
 which(df.building$Year<=2009)
 ```
 
-- Set the corresponding element in the empty vector to the color red (recall, for subsetting, the \texttt{which()} function is not actually needed)
+- Set the corresponding element in the empty vector to the color red (recall, for subsetting, the `which()` function is not actually needed)
 
 ```{r,eval=F}
 mycols[df.building$Year <= 2009] <- 'red'
@@ -557,7 +517,7 @@ cols3[myindex] # same as mycols
 
 ## NA values
 
-- \alert{NA} is a special value that represents missing or unavailable entries when not in quotation
+- **NA** is a special value that represents missing or unavailable entries when not in quotation marks
 
 ```{r}
 x <- c(3.5, 3.2, 3, NA)
@@ -583,7 +543,7 @@ mean(x,na.rm=T)
 max(x,na.rm=T)
 ```
 
-- More general, use \alert{na.omit(x)}
+- More generally, use `na.omit(x)`
 
 ```{r}
 mean(na.omit(x))
@@ -599,7 +559,7 @@ x==NA  # NOT what we want!
 which(x==NA)  # NOT what we want!
 ```
 
-- Instead, use \alert{is.na(x)}
+- Instead, use `is.na(x)`
 
 ```{r}
 is.na(x)
@@ -645,14 +605,14 @@ which(x == 3)
 which(x) # this is NOT ok
 ```
 
-- Operator \alert{\%in\%} is another useful logical operator
+- Operator `%in%` is another useful logical operator
 
 ```{r}
 subjects <- c('ENG', 'ENG', 'MAT', 'MAT', 'STAT', 'HIS')
 subjects %in% c('MAT','STAT')
 ```
 
-## Exercise set 2
+## Exercise: logical statements and subsetting
 
 1.  Print the names and built years of the first 3 buildings
 2.  Print the names of buildings in the United States

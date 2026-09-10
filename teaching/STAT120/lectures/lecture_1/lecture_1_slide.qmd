@@ -13,6 +13,7 @@ format:
     self-contained: false
     smaller: true
     scrollable: true
+    code-font-size: 1.15em
     chalkboard:
       buttons: true
     code-tools:

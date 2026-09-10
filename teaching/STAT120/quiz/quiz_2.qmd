@@ -1,0 +1,77 @@
+---
+title: "STAT120: Quiz 2 (9/10)"
+format:
+  pdf:
+    geometry: "top=0.5in,left=1in,right=1in,bottom=1in"
+    title-block-style: plain
+---
+
+\vspace{-5em}
+
+**Name:** ____________________________________________
+
+
+1. Which line of R code creates a vector containing the values 1, 4, 7, and 10?
+
+[ ] `c(1, 4, 7, 10)`
+
+[ ] `seq(from = 1, to = 10, by = 4)`
+
+[ ] `rep(c(1, 4), 7)`
+
+[ ] `1:10`
+
+
+\vspace{0.75em}
+
+2. Suppose `v <- c(10, 20, 30, 40, 50)`. What is the output of `v[-2]`?
+
+[ ] `20`
+
+[ ] `10, 30, 40, 50`
+
+[ ] `10, 20, 30, 40`
+
+[ ] An error message
+
+
+\vspace{0.75em}
+
+3. Write R code that creates a vector called `x` containing the numbers 1 through 100.
+
+\vspace{2.5em}
+
+
+4. Write R code that calculates the mean of the vector `x` from Question 3.
+
+\vspace{2.5em}
+
+
+5. Suppose `gpa <- c(3.2, 3.8, 2.9, 3.9)`. Which line of R code returns the positions of the GPAs greater than 3.5 (i.e., should return `2` and `4`)?
+
+[ ] `gpa(gpa > 3.5)`
+
+[ ] `which(gpa > 3.5)`
+
+[ ] `which[gpa > 3.5]`
+
+[ ] `gpa > 3.5`
+
+
+\vspace{0.75em}
+
+6. Using the vector `gpa` from Question 5, write R code that prints the GPA values greater than 3.5 without manually typing their positions.
+
+\vspace{2.5em}
+
+
+7. The `mtcars` data set has a variable called `am`, where `0` represents an automatic transmission and `1` represents a manual transmission. Write R code that prints the `mpg` values for cars with manual transmissions.
+
+\vspace{3em}
+
+
+8. Using the `mtcars` data set, write R code that prints the car models whose `mpg` is less than 16. Assume that the car model names have been stored in a vector called `model`.
+
+\vspace{3em}
+
+
