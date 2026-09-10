@@ -62,7 +62,7 @@ legend('topleft',
        legend=c('2015 and prior', '2016 and later'),cex=1.2)
 ```
 
-    </details>
+</details>
 
 # Prep work
 
@@ -93,7 +93,7 @@ In general:
 - Use "/" and **Tab** to navigate through folders
 - Use "../" to go up to the parent folder
 - If you want to check your current folder, use `getwd()` ("get working directory")
-- To **export** a CSV file, use `write.table()`.
+- To **export** a CSV file, use `write.table()`
 
 In addition, load necessary packages
 ```{r, eval=F}

@@ -2064,8 +2064,8 @@ Show solution
 </summary>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<pre><code>&lt;/details&gt;</code></pre>
-</details></section>
+</details>
+</section>
 <section>
 <section id="prep-work" class="title-slide slide level1 center">
 <h1>Prep work</h1>
@@ -2076,22 +2076,22 @@ Show solution
 <p><a href="../../data/index.html">Download</a> the dataset “tallest building_2026.csv”</p>
 <p>You need to specify the location (<strong>file path</strong>) of your dataset when you export or import a dataset. For simplicity:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Put the data (.csv) in the same folder as the code (.R)</span></span>
-<span id="cb2-2"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">'tallest building_2026.csv'</span>)</span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="co"># OR #</span></span>
-<span id="cb2-5"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Put the data (.csv) in the same folder as the code (.R)</span></span>
+<span id="cb1-2"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">'tallest building_2026.csv'</span>)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="co"># OR #</span></span>
+<span id="cb1-5"><a href=""></a>df.building <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In general:</p>
 <ul>
 <li>Use “/” and <strong>Tab</strong> to navigate through folders</li>
 <li>Use “../” to go up to the parent folder</li>
 <li>If you want to check your current folder, use <code>getwd()</code> (“get working directory”)</li>
-<li>To <strong>export</strong> a CSV file, use <code>write.table()</code>.</li>
+<li>To <strong>export</strong> a CSV file, use <code>write.table()</code></li>
 </ul>
 <p>In addition, load necessary packages</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="types-of-data" class="slide level2">
@@ -2101,19 +2101,19 @@ Show solution
 <li>Use <code>typeof()</code> or <code>class()</code> to check</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">typeof</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">typeof</span>(df.building<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "double"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Floors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Floors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
@@ -2122,16 +2122,16 @@ Show solution
 <li>Use functions of the form <code>as.XXX()</code> to switch between different types</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span></span>
-<span id="cb12-2"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2010</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># entries in a vector are always of the same type</span></span>
-<span id="cb13-2"><a href=""></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, T, <span class="st">'red'</span>); a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co"># entries in a vector are always of the same type</span></span>
+<span id="cb12-2"><a href=""></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, T, <span class="st">'red'</span>); a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1"    "2"    "TRUE" "red" </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">class</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">class</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -2140,44 +2140,44 @@ Show solution
 <section id="data-modification" class="slide level2">
 <h2>Data modification</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="co"># Height_f is a character</span></span>
-<span id="cb17-2"><a href=""></a><span class="co"># (print out the values to check: all values are in quotation)</span></span>
-<span id="cb17-3"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_f)</span>
-<span id="cb17-4"><a href=""></a></span>
-<span id="cb17-5"><a href=""></a><span class="co"># Does not work: need to get rid of comma</span></span>
-<span id="cb17-6"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Height_f)</span>
-<span id="cb17-7"><a href=""></a></span>
-<span id="cb17-8"><a href=""></a><span class="co"># Get rid of comma</span></span>
-<span id="cb17-9"><a href=""></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, </span>
-<span id="cb17-10"><a href=""></a>     <span class="at">replacement =</span> <span class="st">''</span>,</span>
-<span id="cb17-11"><a href=""></a>     df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Height_f is a character</span></span>
+<span id="cb16-2"><a href=""></a><span class="co"># (print out the values to check: all values are in quotation)</span></span>
+<span id="cb16-3"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_f)</span>
+<span id="cb16-4"><a href=""></a></span>
+<span id="cb16-5"><a href=""></a><span class="co"># Does not work: need to get rid of comma</span></span>
+<span id="cb16-6"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Height_f)</span>
+<span id="cb16-7"><a href=""></a></span>
+<span id="cb16-8"><a href=""></a><span class="co"># Get rid of comma</span></span>
+<span id="cb16-9"><a href=""></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, </span>
+<span id="cb16-10"><a href=""></a>     <span class="at">replacement =</span> <span class="st">''</span>,</span>
+<span id="cb16-11"><a href=""></a>     df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Putting things together…</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> </span>
-<span id="cb18-2"><a href=""></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>, df.building<span class="sc">$</span>Height_f))</span>
-<span id="cb18-3"><a href=""></a></span>
-<span id="cb18-4"><a href=""></a><span class="co"># Equivalent code with pipe operator</span></span>
-<span id="cb18-5"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> df.building<span class="sc">$</span>Height_f <span class="sc">%&gt;%</span> </span>
-<span id="cb18-6"><a href=""></a>  <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-7"><a href=""></a>  <span class="fu">as.numeric</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> </span>
+<span id="cb17-2"><a href=""></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>, df.building<span class="sc">$</span>Height_f))</span>
+<span id="cb17-3"><a href=""></a></span>
+<span id="cb17-4"><a href=""></a><span class="co"># Equivalent code with pipe operator</span></span>
+<span id="cb17-5"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> df.building<span class="sc">$</span>Height_f <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href=""></a>  <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href=""></a>  <span class="fu">as.numeric</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Take a look at the <strong>Floors</strong> variable. This format is difficult to work with. To parse a text using R, you need to be <em>very specific</em> about the text pattern. This is done using “regular expression” (a pattern language used to search, match, and manipulate text).</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>df.building<span class="sc">$</span>Floors </span>
-<span id="cb19-2"><a href=""></a></span>
-<span id="cb19-3"><a href=""></a>df.building <span class="ot">&lt;-</span> df.building <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href=""></a>  <span class="fu">mutate</span>(</span>
-<span id="cb19-5"><a href=""></a>    <span class="at">Floors_num =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"^</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-6"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
-<span id="cb19-7"><a href=""></a>    <span class="at">Floors_additional =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">+ )</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-8"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
-<span id="cb19-9"><a href=""></a>    <span class="at">Floors_additional_text =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">d )[^(]+(?=</span><span class="sc">\\</span><span class="st">))"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-10"><a href=""></a>      <span class="fu">str_trim</span>()</span>
-<span id="cb19-11"><a href=""></a>    )</span>
-<span id="cb19-12"><a href=""></a></span>
-<span id="cb19-13"><a href=""></a><span class="co"># double check</span></span>
-<span id="cb19-14"><a href=""></a><span class="fu">str</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>df.building<span class="sc">$</span>Floors </span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a>df.building <span class="ot">&lt;-</span> df.building <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-5"><a href=""></a>    <span class="at">Floors_num =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"^</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
+<span id="cb18-7"><a href=""></a>    <span class="at">Floors_additional =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">+ )</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-8"><a href=""></a>      <span class="fu">as.integer</span>(),</span>
+<span id="cb18-9"><a href=""></a>    <span class="at">Floors_additional_text =</span> <span class="fu">str_extract</span>(Floors, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">d )[^(]+(?=</span><span class="sc">\\</span><span class="st">))"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-10"><a href=""></a>      <span class="fu">str_trim</span>()</span>
+<span id="cb18-11"><a href=""></a>    )</span>
+<span id="cb18-12"><a href=""></a></span>
+<span id="cb18-13"><a href=""></a><span class="co"># double check</span></span>
+<span id="cb18-14"><a href=""></a><span class="fu">str</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -2191,11 +2191,11 @@ Show solution
 <li><code>Location</code> is entered as character (i.e., text) data</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "United Arab Emirates" "Malaysia"             "China"               
  [4] "Saudi Arabia"         "South Korea"          "United States"       
@@ -2208,13 +2208,13 @@ Show solution
 <li>We might want to treat it as a <strong>factor</strong> instead</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>df.building<span class="sc">$</span>Location_F <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>df.building<span class="sc">$</span>Location_F <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Key difference: <strong>factors</strong> can be treated as numbers but <strong>characters</strong> cannot</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 13  7  2  9  2 10 14  2  2  2 11  2  4  2 14  8 15  2  7  2  7  7  2  2  2
 [26] 14  2  2 14  2 14 14 13 14 14  2  2  2 13  6  4 10  2  2  2  3  2  2 13  2
@@ -2223,7 +2223,7 @@ Show solution
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
 [26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
@@ -2235,7 +2235,7 @@ Show solution
 <section id="useful-functions-for-factors" class="slide level2">
 <h2>Useful functions for factors</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">unique</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] United Arab Emirates Malaysia             China               
  [4] Saudi Arabia         South Korea          United States       
@@ -2244,7 +2244,7 @@ Show solution
 [13] Indonesia            Turkey               Canada              
 15 Levels: Canada China Egypt Hong Kong Indonesia Kuwait Malaysia ... Vietnam</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">levels</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">levels</span>(df.building<span class="sc">$</span>Location_F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Canada"               "China"                "Egypt"               
  [4] "Hong Kong"            "Indonesia"            "Kuwait"              
@@ -2257,7 +2257,7 @@ Show solution
 <li>Factors are often used as a <strong>grouping variable</strong>. <code>tapply()</code> allows you to analyze data <strong>by groups</strong>.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Year,df.building<span class="sc">$</span>Location_F,median)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Year,df.building<span class="sc">$</span>Location_F,median)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              Canada                China                Egypt 
               2026.0               2019.0               2023.0 
@@ -2270,7 +2270,7 @@ Show solution
 United Arab Emirates        United States              Vietnam 
               2012.5               2017.0               2018.0 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Location_F,mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="fu">tapply</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Location_F,mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              Canada                China                Egypt 
             351.4000             412.6417             393.8000 
@@ -2285,10 +2285,10 @@ United Arab Emirates        United States              Vietnam
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="co"># OR #</span></span>
-<span id="cb37-2"><a href=""></a>df.building <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href=""></a>  <span class="fu">group_by</span>(Location_F) <span class="sc">%&gt;%</span></span>
-<span id="cb37-4"><a href=""></a>  <span class="fu">summarise</span>(<span class="fu">median</span>(Year), <span class="fu">mean</span>(Height_m), <span class="fu">length</span>(Year))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a><span class="co"># OR #</span></span>
+<span id="cb36-2"><a href=""></a>df.building <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href=""></a>  <span class="fu">group_by</span>(Location_F) <span class="sc">%&gt;%</span></span>
+<span id="cb36-4"><a href=""></a>  <span class="fu">summarise</span>(<span class="fu">median</span>(Year), <span class="fu">mean</span>(Height_m), <span class="fu">length</span>(Year))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 15 × 4
    Location_F           `median(Year)` `mean(Height_m)` `length(Year)`
@@ -2314,15 +2314,15 @@ United Arab Emirates        United States              Vietnam
 <li>Plotting with <code>Location</code> as a character vector is not easy</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location,df.building<span class="sc">$</span>Height_m) <span class="co">#error!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location,df.building<span class="sc">$</span>Height_m) <span class="co">#error!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Plotting with <code>Location_F</code>:</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb40-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F) <span class="co">#bar graph</span></span>
-<span id="cb40-3"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F,df.building<span class="sc">$</span>Height_m)  <span class="co">#boxplots by Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb39-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F) <span class="co">#bar graph</span></span>
+<span id="cb39-3"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F,df.building<span class="sc">$</span>Height_m)  <span class="co">#boxplots by Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
@@ -2340,7 +2340,7 @@ United Arab Emirates        United States              Vietnam
 <li><strong>Subsetting</strong> requires two indices (row, column)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a>df.building[<span class="dv">1</span>,<span class="dv">2</span>] <span class="co"># first row, second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>df.building[<span class="dv">1</span>,<span class="dv">2</span>] <span class="co"># first row, second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Burj Khalifa"</code></pre>
 </div>
@@ -2349,18 +2349,18 @@ United Arab Emirates        United States              Vietnam
 <li>Easier: each <strong>component</strong> in a data frame corresponds to a column (i.e., a variable); use <code>$</code> to get the component</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>df.building<span class="sc">$</span>Name[<span class="dv">1</span>] <span class="co"># name of first building</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a>df.building<span class="sc">$</span>Name[<span class="dv">1</span>] <span class="co"># name of first building</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="useful-functions" class="slide level2">
 <h2>Useful functions</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="fu">names</span>(df.building) <span class="co"># variable names</span></span>
-<span id="cb44-2"><a href=""></a><span class="fu">dim</span>(df.building) <span class="co"># dimension (row, column)</span></span>
-<span id="cb44-3"><a href=""></a><span class="fu">nrow</span>(df.building) <span class="co"># number of rows</span></span>
-<span id="cb44-4"><a href=""></a><span class="fu">str</span>(df.building) <span class="co"># summary information</span></span>
-<span id="cb44-5"><a href=""></a><span class="fu">head</span>(df.building) <span class="co"># first few rows</span></span>
-<span id="cb44-6"><a href=""></a><span class="fu">tail</span>(df.building) <span class="co"># last few rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="fu">names</span>(df.building) <span class="co"># variable names</span></span>
+<span id="cb43-2"><a href=""></a><span class="fu">dim</span>(df.building) <span class="co"># dimension (row, column)</span></span>
+<span id="cb43-3"><a href=""></a><span class="fu">nrow</span>(df.building) <span class="co"># number of rows</span></span>
+<span id="cb43-4"><a href=""></a><span class="fu">str</span>(df.building) <span class="co"># summary information</span></span>
+<span id="cb43-5"><a href=""></a><span class="fu">head</span>(df.building) <span class="co"># first few rows</span></span>
+<span id="cb43-6"><a href=""></a><span class="fu">tail</span>(df.building) <span class="co"># last few rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-data-frame-basics" class="slide level2">
@@ -2372,9 +2372,9 @@ United Arab Emirates        United States              Vietnam
 </ul>
 <p>To <strong>add a variable</strong> to an existing data frame</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a>df.building<span class="sc">$</span>ft.per.floor <span class="ot">&lt;-</span> ft.per.floor</span>
-<span id="cb45-2"><a href=""></a><span class="co"># OR </span></span>
-<span id="cb45-3"><a href=""></a>df.building[<span class="st">'ft.per.floor'</span>] <span class="ot">&lt;-</span> ft.per.floor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>df.building<span class="sc">$</span>ft.per.floor <span class="ot">&lt;-</span> ft.per.floor</span>
+<span id="cb44-2"><a href=""></a><span class="co"># OR </span></span>
+<span id="cb44-3"><a href=""></a>df.building[<span class="st">'ft.per.floor'</span>] <span class="ot">&lt;-</span> ft.per.floor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Calculate the average <code>ft.per.floor</code> of buildings by Location</li>
@@ -2406,8 +2406,8 @@ United Arab Emirates        United States              Vietnam
 <section id="matrix-1" class="slide level2">
 <h2>Matrix</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>df.building.matrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(df.building)</span>
-<span id="cb47-2"><a href=""></a><span class="fu">class</span>(df.building.matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>df.building.matrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(df.building)</span>
+<span id="cb46-2"><a href=""></a><span class="fu">class</span>(df.building.matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "matrix" "array" </code></pre>
 </div>
@@ -2418,11 +2418,11 @@ United Arab Emirates        United States              Vietnam
 <li>Variable names are now <strong>column names</strong></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">colnames</span>(df.building.matrix)</span>
-<span id="cb49-2"><a href=""></a><span class="fu">dim</span>(df.building.matrix) </span>
-<span id="cb49-3"><a href=""></a>df.building.matrix[<span class="dv">1</span>,<span class="dv">3</span>] <span class="co">#first row, third column</span></span>
-<span id="cb49-4"><a href=""></a>df.building.matrix[<span class="dv">1</span>,] <span class="co">#information for the first row</span></span>
-<span id="cb49-5"><a href=""></a>df.building.matrix[,<span class="dv">2</span>] <span class="co">#information for the second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="fu">colnames</span>(df.building.matrix)</span>
+<span id="cb48-2"><a href=""></a><span class="fu">dim</span>(df.building.matrix) </span>
+<span id="cb48-3"><a href=""></a>df.building.matrix[<span class="dv">1</span>,<span class="dv">3</span>] <span class="co">#first row, third column</span></span>
+<span id="cb48-4"><a href=""></a>df.building.matrix[<span class="dv">1</span>,] <span class="co">#information for the first row</span></span>
+<span id="cb48-5"><a href=""></a>df.building.matrix[,<span class="dv">2</span>] <span class="co">#information for the second column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>All entries in <code>df.building.matrix</code> are converted to characters</li>
@@ -2442,8 +2442,8 @@ United Arab Emirates        United States              Vietnam
 <li>Suppose we also want to store these information</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>sample.size <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df.building)</span>
-<span id="cb50-2"><a href=""></a>variables <span class="ot">&lt;-</span> <span class="fu">names</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>sample.size <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df.building)</span>
+<span id="cb49-2"><a href=""></a>variables <span class="ot">&lt;-</span> <span class="fu">names</span>(df.building)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>We have the following <strong>R objects</strong>
@@ -2461,9 +2461,9 @@ United Arab Emirates        United States              Vietnam
 <li>A: Create a <strong>list</strong> with three components</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>list.building <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data=</span>df.building,</span>
-<span id="cb51-2"><a href=""></a>               <span class="at">sample.size=</span>sample.size,</span>
-<span id="cb51-3"><a href=""></a>               <span class="at">variables=</span>variables)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>list.building <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data=</span>df.building,</span>
+<span id="cb50-2"><a href=""></a>               <span class="at">sample.size=</span>sample.size,</span>
+<span id="cb50-3"><a href=""></a>               <span class="at">variables=</span>variables)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Note: if a name is not provided for a component, it will be indexed by number</li>
@@ -2478,8 +2478,8 @@ United Arab Emirates        United States              Vietnam
 <li>Benefit of using <code>[","]</code>: can return more than one component in a more automated fashion</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>TORETURN <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'variables'</span>, <span class="st">'sample.size'</span>)</span>
-<span id="cb52-2"><a href=""></a>list.building[TORETURN]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>TORETURN <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'variables'</span>, <span class="st">'sample.size'</span>)</span>
+<span id="cb51-2"><a href=""></a>list.building[TORETURN]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$variables
  [1] "Rank"                   "Name"                   "Height_m"              
@@ -2497,12 +2497,12 @@ $sample.size
 <h2>Useful functions for lists</h2>
 <p>Handling a list is very similar to handling a data frame</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="fu">length</span>(list.building) <span class="co"># number of components</span></span>
-<span id="cb54-2"><a href=""></a><span class="fu">names</span>(list.building) <span class="co"># names of the components</span></span>
-<span id="cb54-3"><a href=""></a><span class="fu">str</span>(list.building) <span class="co"># summary information</span></span>
-<span id="cb54-4"><a href=""></a></span>
-<span id="cb54-5"><a href=""></a><span class="co"># add new component</span></span>
-<span id="cb54-6"><a href=""></a>list.building<span class="sc">$</span>mean_height <span class="ot">&lt;-</span> <span class="fu">mean</span>(list.building<span class="sc">$</span>data<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="fu">length</span>(list.building) <span class="co"># number of components</span></span>
+<span id="cb53-2"><a href=""></a><span class="fu">names</span>(list.building) <span class="co"># names of the components</span></span>
+<span id="cb53-3"><a href=""></a><span class="fu">str</span>(list.building) <span class="co"># summary information</span></span>
+<span id="cb53-4"><a href=""></a></span>
+<span id="cb53-5"><a href=""></a><span class="co"># add new component</span></span>
+<span id="cb53-6"><a href=""></a>list.building<span class="sc">$</span>mean_height <span class="ot">&lt;-</span> <span class="fu">mean</span>(list.building<span class="sc">$</span>data<span class="sc">$</span>Height_m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can <strong>combine lists</strong> with <code>c()</code>; for instance: <code>c(list.building, newlist)</code></p>
 </section></section>
@@ -2517,8 +2517,8 @@ $sample.size
 <li>R functions follow the same pattern: <code>function_name(argument1 = XXX, argument2 = XXX, ...)</code></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num) <span class="co">#shorter version</span></span>
-<span id="cb55-2"><a href=""></a><span class="fu">plot</span>(<span class="at">x=</span>df.building<span class="sc">$</span>Height_m,<span class="at">y=</span>df.building<span class="sc">$</span>Floors_num) <span class="co">#full version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num) <span class="co">#shorter version</span></span>
+<span id="cb54-2"><a href=""></a><span class="fu">plot</span>(<span class="at">x=</span>df.building<span class="sc">$</span>Height_m,<span class="at">y=</span>df.building<span class="sc">$</span>Floors_num) <span class="co">#full version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Use <code>?function_name</code> to bring up the help menu</li>
@@ -2528,20 +2528,20 @@ $sample.size
 <h2>pipe operator (dplyr package)</h2>
 <p>The pipe operator, <strong>%&gt;%</strong>, is a different syntax for calling R functions: <strong>FUNCTION(x)</strong> is the same as <strong>x %&gt;% FUNCTION</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
-<span id="cb56-2"><a href=""></a><span class="fu">mean</span>(vec)</span>
-<span id="cb56-3"><a href=""></a>vec <span class="sc">%&gt;%</span> mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb55-2"><a href=""></a><span class="fu">mean</span>(vec)</span>
+<span id="cb55-3"><a href=""></a>vec <span class="sc">%&gt;%</span> mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>For functions with multiple arguments</strong>: by default, R recognizes the argument being piped as the <em>first</em> argument; or you can use “.” to specify</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="co"># these code are equivalent</span></span>
-<span id="cb57-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
-<span id="cb57-3"><a href=""></a></span>
-<span id="cb57-4"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
-<span id="cb57-5"><a href=""></a>  <span class="fu">plot</span>(df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
-<span id="cb57-6"><a href=""></a></span>
-<span id="cb57-7"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
-<span id="cb57-8"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>., <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="co"># these code are equivalent</span></span>
+<span id="cb56-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
+<span id="cb56-3"><a href=""></a></span>
+<span id="cb56-4"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
+<span id="cb56-5"><a href=""></a>  <span class="fu">plot</span>(df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
+<span id="cb56-6"><a href=""></a></span>
+<span id="cb56-7"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
+<span id="cb56-8"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>., <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-scatterplot" class="slide level2">
@@ -2557,27 +2557,27 @@ $sample.size
 <li>Create an empty vector with the same length as the number of buildings</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a>mycols <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">nrow</span>(df.building))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a>mycols <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">nrow</span>(df.building))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>(Use R to tell <em>which</em> buildings were built in 2009 or before)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a><span class="fu">which</span>(df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2009</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a><span class="fu">which</span>(df.building<span class="sc">$</span>Year<span class="sc">&lt;=</span><span class="dv">2009</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Set the corresponding element in the empty vector to the color red (recall, for subsetting, the <code>which()</code> function is not actually needed)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a>mycols[df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2009</span>] <span class="ot">&lt;-</span> <span class="st">'red'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a>mycols[df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2009</span>] <span class="ot">&lt;-</span> <span class="st">'red'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Do the same for the other colors</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href=""></a>mycols[(df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
-<span id="cb61-2"><a href=""></a>  <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2015</span>)] <span class="ot">&lt;-</span> <span class="st">'blue'</span></span>
-<span id="cb61-3"><a href=""></a>mycols[df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2016</span>] <span class="ot">&lt;-</span> <span class="st">'green'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a>mycols[(df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
+<span id="cb60-2"><a href=""></a>  <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2015</span>)] <span class="ot">&lt;-</span> <span class="st">'blue'</span></span>
+<span id="cb60-3"><a href=""></a>mycols[df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2016</span>] <span class="ot">&lt;-</span> <span class="st">'green'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="sample-code-2" class="slide level2">
@@ -2586,22 +2586,22 @@ $sample.size
 <li>Create three colors</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a>cols3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href=""></a>cols3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Create index based on the year of the building</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href=""></a>myindex <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2009</span>, <span class="dv">1</span>, <span class="cn">NA</span>)</span>
-<span id="cb63-2"><a href=""></a>myindex[(df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
-<span id="cb63-3"><a href=""></a>  <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2015</span>)] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb63-4"><a href=""></a>myindex[df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2016</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a>myindex <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2009</span>, <span class="dv">1</span>, <span class="cn">NA</span>)</span>
+<span id="cb62-2"><a href=""></a>myindex[(df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
+<span id="cb62-3"><a href=""></a>  <span class="sc">&amp;</span> (df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2015</span>)] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb62-4"><a href=""></a>myindex[df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2016</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Use index to subset the colors</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a>cols3[myindex] <span class="co"># same as mycols</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href=""></a>cols3[myindex] <span class="co"># same as mycols</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -2615,8 +2615,8 @@ $sample.size
 <li><strong>NA</strong> is a special value that represents missing or unavailable entries when not in quotation marks</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="fl">3.2</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span>
-<span id="cb65-2"><a href=""></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="fl">3.2</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span>
+<span id="cb64-2"><a href=""></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -2625,9 +2625,9 @@ $sample.size
 <li>Most operations will return NA (e.g.: you don’t know the 4th value, so you cannot calculate the mean)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href=""></a><span class="fu">mean</span>(x)</span>
-<span id="cb67-2"><a href=""></a><span class="fu">max</span>(x)</span>
-<span id="cb67-3"><a href=""></a><span class="fu">sd</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">mean</span>(x)</span>
+<span id="cb66-2"><a href=""></a><span class="fu">max</span>(x)</span>
+<span id="cb66-3"><a href=""></a><span class="fu">sd</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exclude-na-values" class="slide level2">
@@ -2637,11 +2637,11 @@ $sample.size
 <li>Some functions give you the option to remove NA</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">mean</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href=""></a><span class="fu">mean</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.233333</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href=""></a><span class="fu">max</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href=""></a><span class="fu">max</span>(x,<span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5</code></pre>
 </div>
@@ -2650,7 +2650,7 @@ $sample.size
 <li>More generally, use <code>na.omit(x)</code></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href=""></a><span class="fu">mean</span>(<span class="fu">na.omit</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href=""></a><span class="fu">mean</span>(<span class="fu">na.omit</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.233333</code></pre>
 </div>
@@ -2662,15 +2662,15 @@ $sample.size
 <li>Try to use R to tell you which value is NA</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5 3.2 3.0  NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href=""></a>x<span class="sc">==</span><span class="cn">NA</span>  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href=""></a>x<span class="sc">==</span><span class="cn">NA</span>  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA NA NA NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="fu">which</span>(x<span class="sc">==</span><span class="cn">NA</span>)  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href=""></a><span class="fu">which</span>(x<span class="sc">==</span><span class="cn">NA</span>)  <span class="co"># NOT what we want!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>integer(0)</code></pre>
 </div>
@@ -2679,11 +2679,11 @@ $sample.size
 <li>Instead, use <code>is.na(x)</code></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a><span class="fu">is.na</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href=""></a><span class="fu">is.na</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a><span class="fu">which</span>(<span class="fu">is.na</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href=""></a><span class="fu">which</span>(<span class="fu">is.na</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -2696,19 +2696,19 @@ $sample.size
 <li>You should check the calculations and variable types when you see NA, NaN, or Inf</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>); v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>); v1 <span class="sc">/</span> v2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href=""></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>); v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>); v1 <span class="sc">/</span> v2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5 Inf NaN</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="fu">mean</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href=""></a><span class="fu">mean</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NaN</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="fu">is.na</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href=""></a><span class="fu">is.na</span>(v1<span class="sc">/</span>v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE  TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href=""></a><span class="fu">as.numeric</span>(<span class="st">'4,000'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href=""></a><span class="fu">as.numeric</span>(<span class="st">'4,000'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
@@ -2728,16 +2728,16 @@ $sample.size
 <li><strong>|</strong> OR</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.6</span>, <span class="fl">2.8</span>, <span class="fl">3.3</span>, <span class="fl">1.2</span>)</span>
-<span id="cb92-2"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.6</span>, <span class="fl">2.8</span>, <span class="fl">3.3</span>, <span class="fl">1.2</span>)</span>
+<span id="cb91-2"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="fl">3.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href=""></a>x<span class="sc">&gt;</span><span class="dv">3</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="fl">3.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a>(x<span class="sc">&gt;</span><span class="fl">3.5</span>) <span class="sc">|</span> (x<span class="sc">&lt;</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href=""></a>(x<span class="sc">&gt;</span><span class="fl">3.5</span>) <span class="sc">|</span> (x<span class="sc">&lt;</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE  TRUE</code></pre>
 </div>
@@ -2749,16 +2749,16 @@ $sample.size
 <li>Recall, logical operators are the ones that return T/F</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a><span class="fu">which</span>(x <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="co"># this is ok</span></span>
-<span id="cb98-2"><a href=""></a><span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">3</span>)</span>
-<span id="cb98-3"><a href=""></a><span class="fu">which</span>(x) <span class="co"># this is NOT ok</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href=""></a><span class="fu">which</span>(x <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="co"># this is ok</span></span>
+<span id="cb97-2"><a href=""></a><span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">3</span>)</span>
+<span id="cb97-3"><a href=""></a><span class="fu">which</span>(x) <span class="co"># this is NOT ok</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Operator <code>%in%</code> is another useful logical operator</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href=""></a>subjects <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'ENG'</span>, <span class="st">'ENG'</span>, <span class="st">'MAT'</span>, <span class="st">'MAT'</span>, <span class="st">'STAT'</span>, <span class="st">'HIS'</span>)</span>
-<span id="cb99-2"><a href=""></a>subjects <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'MAT'</span>,<span class="st">'STAT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a>subjects <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'ENG'</span>, <span class="st">'ENG'</span>, <span class="st">'MAT'</span>, <span class="st">'MAT'</span>, <span class="st">'STAT'</span>, <span class="st">'HIS'</span>)</span>
+<span id="cb98-2"><a href=""></a>subjects <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'MAT'</span>,<span class="st">'STAT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE  TRUE  TRUE  TRUE FALSE</code></pre>
 </div>
