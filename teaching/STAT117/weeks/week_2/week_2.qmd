@@ -30,3 +30,8 @@ Today we will have our very first quiz!  As a reminder, quizzes in this class wi
 During class, we will finish Chapter 2, get started on Chapter 3 by doing [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd), and go over some basics of Jamovi.
 
 Please finish the last two questions from [Chapter 1 homework](../../course_documents/homework/chapter_1.html){target="_blank"} for additional practice on Jamovi.  Since we finished Chapter 2, you should also do the exercises from [Chapter 2 homework](../../course_documents/homework/chapter_2.html){target="_blank"}.
+
+
+[Link to fullscreen](../../course_documents/all_lectures/chapter_2_slide.html)
+
+<iframe src="../../course_documents/all_lectures/chapter_2_slide.html" width="100%" height="650px" style="border:none;"></iframe>
