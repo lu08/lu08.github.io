@@ -478,6 +478,10 @@ Show solution
 <ol type="1">
 <li>The dataset used in this part is <a href="../../../dataset/salaries-by-college-type-clean.csv">salaries-by-college-type-clean.csv</a>. Download the data and import it into R. Print the names of the variables.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df.sal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../../../dataset/salaries-by-college-type-clean.csv'</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df.sal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -493,9 +497,14 @@ Show solution
  $ Mid.Career.90th.Percentile.Salary: num  220000 NA NA 190000 NA 180000 209000 182000 183000 201000 ...</code></pre>
 </div>
 </div>
+</details>
 <ol start="2" type="1">
 <li>Print the <em>names</em> of the 3rd, 4th, and 10th school.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">10</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -504,9 +513,14 @@ Show solution
 [3] "Colorado School of Mines"                    </code></pre>
 </div>
 </div>
+</details>
 <ol start="3" type="1">
 <li>Print all the information of the 3rd, 4th, and 10th school.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df.sal[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">10</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -528,18 +542,28 @@ Show solution
 10                            142000                            201000</code></pre>
 </div>
 </div>
+</details>
 <ol start="4" type="1">
 <li>Calculate the average <strong>Starting.Median.Salary</strong> of the first 20 schools.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df.sal<span class="sc">$</span>Starting.Median.Salary[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 58750</code></pre>
 </div>
 </div>
+</details>
 <ol start="5" type="1">
 <li>Print out all information of the school with the highest <strong>Starting.Median.Salary</strong>?</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df.sal[<span class="fu">which.max</span>(df.sal<span class="sc">$</span>Starting.Median.Salary),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -564,9 +588,14 @@ Show solution
 264                             91300</code></pre>
 </div>
 </div>
+</details>
 <ol start="6" type="1">
 <li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -577,9 +606,14 @@ Show solution
 [4] "Princeton University"                       </code></pre>
 </div>
 </div>
+</details>
 <ol start="7" type="1">
 <li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater OR with a <strong>Mid.Career.Median.Salary</strong> of 130,000 or greater (hint: to do something like Condition 1 OR Condition 2, the code is Condition 1 Condition 2).</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span> <span class="sc">|</span> df.sal<span class="sc">$</span>Mid.Career.Median.Salary <span class="sc">&gt;=</span> <span class="dv">130000</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -591,9 +625,14 @@ Show solution
 [5] "Princeton University"                       </code></pre>
 </div>
 </div>
+</details>
 <ol start="8" type="1">
 <li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater AND with a <strong>Mid.Career.Median.Salary</strong> of 130,000 or greater.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span> <span class="sc">&amp;</span> df.sal<span class="sc">$</span>Mid.Career.Median.Salary <span class="sc">&gt;=</span> <span class="dv">130000</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -601,9 +640,14 @@ Show solution
 <pre><code>[1] "Princeton University"</code></pre>
 </div>
 </div>
+</details>
 <ol start="9" type="1">
 <li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> between 55,000 and 60,000 (hint: you cannot write code like <span class="math inline">\(4&lt;x&lt;5\)</span> in R. You need to separately write <span class="math inline">\(x&gt;4\)</span> and <span class="math inline">\(x&lt;5\)</span>).</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">55000</span> <span class="sc">&amp;</span> df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&lt;=</span> <span class="dv">60000</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -621,9 +665,14 @@ Show solution
 [11] "University of Missouri - Rolla (UMR)"     </code></pre>
 </div>
 </div>
+</details>
 <ol start="10" type="1">
 <li>Print out the <em>names</em> of ‘Party’ or ‘Engineering’ schools.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[df.sal<span class="sc">$</span>School.Type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Party'</span>,<span class="st">'Engineering'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -668,9 +717,14 @@ Show solution
 [39] "Florida State University (FSU)"                                     </code></pre>
 </div>
 </div>
+</details>
 <ol start="11" type="1">
 <li>Print out the average <strong>Starting.Median.Salary</strong> and the average <strong>Mid.Career.Median.Salary</strong> by different school types. Sort the output by the average starting median salary.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df.sal <span class="sc">%&gt;%</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(School.Type) <span class="sc">%&gt;%</span></span>
@@ -687,6 +741,7 @@ Show solution
 5 Ivy League   60475  120125 </code></pre>
 </div>
 </div>
+</details>
 
 
 </section>
