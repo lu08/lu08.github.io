@@ -8,4 +8,5 @@ Here is the weekly schedule for the course. Please refer to this page to keep tr
 
 - [Week 1: September 2, 2026](week_1/week_1.qmd)
 - [Week 2: September 9, 2026](week_2/week_2.qmd)
+- [Week 3: September 16, 2026](week_3/week_3.qmd)
 

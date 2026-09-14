@@ -9,3 +9,7 @@ title: "Dataset"
 
   Tallest buildings in the world. Source: [scraped](../../../dataset/scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings).
 
+
+- [Salaries by college type](../../../dataset/college-salaries/salaries-by-college-type-clean.csv){download="salaries-by-college-type-clean.csv"}
+
+  Salaries by college type. Source: [Kaggle](https://www.kaggle.com/datasets/wsj/college-salaries). 

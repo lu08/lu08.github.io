@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>homework_2 – Yi Lu</title>
+<title>STAT120 - Statistical Computing in R – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../stat120.css">
@@ -120,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/homework_2.html">Homework 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -155,13 +184,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../teaching/STAT120/lectures/lecture_1/lectures_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../teaching/STAT120/lectures/lecture_1/lecture_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../teaching/STAT120/lectures/lecture_2/lectures_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../teaching/STAT120/lectures/lecture_2/lecture_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 2</span></a>
   </div>
 </li>
@@ -188,6 +217,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Homework 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/STAT120/homework/homework_2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Homework 2</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -209,13 +244,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../../teaching/STAT120/homework/homework_2.html">Homework 2</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">STAT120 - Statistical Computing in R</h1>
+<p class="subtitle lead">Homework 2</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="part-iv" class="level2">
-<h2 class="anchored" data-anchor-id="part-iv">Part IV</h2>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-i" class="level2">
+<h2 class="anchored" data-anchor-id="part-i">Part I</h2>
 <ol type="1">
 <li>Suppose the following are the final high school GPAs of a group of college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90. Create a vector that stores these values in the order specified. Choose a variable name that’s descriptive but relatively short.</li>
 </ol>
@@ -420,6 +472,221 @@ Show solution
 </div>
 </div>
 </details>
+</section>
+<section id="part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii">Part II</h2>
+<ol type="1">
+<li>The dataset used in this part is <a href="../../../dataset/salaries-by-college-type-clean.csv">salaries-by-college-type-clean.csv</a>. Download the data and import it into R. Print the names of the variables.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df.sal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../../../dataset/salaries-by-college-type-clean.csv'</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df.sal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   269 obs. of  8 variables:
+ $ School.Name                      : chr  "Massachusetts Institute of Technology (MIT)" "California Institute of Technology (CIT)" "Harvey Mudd College" "Polytechnic University of New York, Brooklyn" ...
+ $ School.Type                      : chr  "Engineering" "Engineering" "Engineering" "Engineering" ...
+ $ Starting.Median.Salary           : num  72200 75500 71800 62400 62200 61000 61800 61100 58300 58100 ...
+ $ Mid.Career.Median.Salary         : num  126000 123000 122000 114000 114000 114000 111000 110000 106000 106000 ...
+ $ Mid.Career.10th.Percentile.Salary: num  76800 NA NA 66800 NA 80000 63300 71600 67200 62200 ...
+ $ Mid.Career.25th.Percentile.Salary: num  99200 104000 96000 94300 80200 91200 80100 85500 85200 87900 ...
+ $ Mid.Career.75th.Percentile.Salary: num  168000 161000 180000 143000 142000 137000 150000 140000 137000 142000 ...
+ $ Mid.Career.90th.Percentile.Salary: num  220000 NA NA 190000 NA 180000 209000 182000 183000 201000 ...</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Print the <em>names</em> of the 3rd, 4th, and 10th school.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">10</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Harvey Mudd College"                         
+[2] "Polytechnic University of New York, Brooklyn"
+[3] "Colorado School of Mines"                    </code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Print all the information of the 3rd, 4th, and 10th school.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df.sal[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">10</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                    School.Name School.Type
+3                           Harvey Mudd College Engineering
+4  Polytechnic University of New York, Brooklyn Engineering
+10                     Colorado School of Mines Engineering
+   Starting.Median.Salary Mid.Career.Median.Salary
+3                   71800                   122000
+4                   62400                   114000
+10                  58100                   106000
+   Mid.Career.10th.Percentile.Salary Mid.Career.25th.Percentile.Salary
+3                                 NA                             96000
+4                              66800                             94300
+10                             62200                             87900
+   Mid.Career.75th.Percentile.Salary Mid.Career.90th.Percentile.Salary
+3                             180000                                NA
+4                             143000                            190000
+10                            142000                            201000</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Calculate the average <strong>Starting.Median.Salary</strong> of the first 20 schools.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df.sal<span class="sc">$</span>Starting.Median.Salary[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 58750</code></pre>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Print out all information of the school with the highest <strong>Starting.Median.Salary</strong>?</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df.sal[<span class="fu">which.max</span>(df.sal<span class="sc">$</span>Starting.Median.Salary),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                               School.Name School.Type Starting.Median.Salary
+2 California Institute of Technology (CIT) Engineering                  75500
+  Mid.Career.Median.Salary Mid.Career.10th.Percentile.Salary
+2                   123000                                NA
+  Mid.Career.25th.Percentile.Salary Mid.Career.75th.Percentile.Salary
+2                            104000                            161000
+  Mid.Career.90th.Percentile.Salary
+2                                NA</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df.sal[<span class="fu">which.min</span>(df.sal<span class="sc">$</span>Starting.Median.Salary),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  School.Name School.Type Starting.Median.Salary
+264 Morehead State University       State                  34800
+    Mid.Career.Median.Salary Mid.Career.10th.Percentile.Salary
+264                    60600                             34300
+    Mid.Career.25th.Percentile.Salary Mid.Career.75th.Percentile.Salary
+264                             46500                             72000
+    Mid.Career.90th.Percentile.Salary
+264                             91300</code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Massachusetts Institute of Technology (MIT)"
+[2] "California Institute of Technology (CIT)"   
+[3] "Harvey Mudd College"                        
+[4] "Princeton University"                       </code></pre>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater OR with a <strong>Mid.Career.Median.Salary</strong> of 130,000 or greater (hint: to do something like Condition 1 OR Condition 2, the code is Condition 1 Condition 2).</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span> <span class="sc">|</span> df.sal<span class="sc">$</span>Mid.Career.Median.Salary <span class="sc">&gt;=</span> <span class="dv">130000</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Massachusetts Institute of Technology (MIT)"
+[2] "California Institute of Technology (CIT)"   
+[3] "Harvey Mudd College"                        
+[4] "Dartmouth College"                          
+[5] "Princeton University"                       </code></pre>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> of 65,000 or greater AND with a <strong>Mid.Career.Median.Salary</strong> of 130,000 or greater.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">65000</span> <span class="sc">&amp;</span> df.sal<span class="sc">$</span>Mid.Career.Median.Salary <span class="sc">&gt;=</span> <span class="dv">130000</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Princeton University"</code></pre>
+</div>
+</div>
+<ol start="9" type="1">
+<li>Print out the <em>names</em> of schools with a <strong>Starting.Median.Salary</strong> between 55,000 and 60,000 (hint: you cannot write code like <span class="math inline">\(4&lt;x&lt;5\)</span> in R. You need to separately write <span class="math inline">\(x&gt;4\)</span> and <span class="math inline">\(x&lt;5\)</span>).</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>myindex <span class="ot">&lt;-</span> <span class="fu">which</span>(df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&gt;=</span> <span class="dv">55000</span> <span class="sc">&amp;</span> df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">&lt;=</span> <span class="dv">60000</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[myindex]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Georgia Institute of Technology"          
+ [2] "Colorado School of Mines"                 
+ [3] "Illinois Institute of Technology (IIT)"   
+ [4] "South Dakota School of Mines &amp; Technology"
+ [5] "Dartmouth College"                        
+ [6] "Yale University"                          
+ [7] "Brown University"                         
+ [8] "Columbia University"                      
+ [9] "University of California, Berkeley"       
+[10] "Cal Poly San Luis Obispo"                 
+[11] "University of Missouri - Rolla (UMR)"     </code></pre>
+</div>
+</div>
+<ol start="10" type="1">
+<li>Print out the <em>names</em> of ‘Party’ or ‘Engineering’ schools.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>School.Name[df.sal<span class="sc">$</span>School.Type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Party'</span>,<span class="st">'Engineering'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Massachusetts Institute of Technology (MIT)"                        
+ [2] "California Institute of Technology (CIT)"                           
+ [3] "Harvey Mudd College"                                                
+ [4] "Polytechnic University of New York, Brooklyn"                       
+ [5] "Cooper Union"                                                       
+ [6] "Worcester Polytechnic Institute (WPI)"                              
+ [7] "Carnegie Mellon University (CMU)"                                   
+ [8] "Rensselaer Polytechnic Institute (RPI)"                             
+ [9] "Georgia Institute of Technology"                                    
+[10] "Colorado School of Mines"                                           
+[11] "Stevens Institute of Technology"                                    
+[12] "Illinois Institute of Technology (IIT)"                             
+[13] "Wentworth Institute of Technology"                                  
+[14] "Virginia Polytechnic Institute and State University (Virginia Tech)"
+[15] "South Dakota School of Mines &amp; Technology"                          
+[16] "New Mexico Institute of Mining and Technology (New Mexico Tech)"    
+[17] "Rochester Institute of Technology (RIT)"                            
+[18] "Embry-Riddle Aeronautical University (ERAU)"                        
+[19] "Tennessee Technological University"                                 
+[20] "University of Illinois at Urbana-Champaign (UIUC)"                  
+[21] "University of Maryland, College Park"                               
+[22] "University of California, Santa Barbara (UCSB)"                     
+[23] "University of Texas (UT) - Austin"                                  
+[24] "State University of New York (SUNY) at Albany"                      
+[25] "University of Florida (UF)"                                         
+[26] "Louisiana State University (LSU)"                                   
+[27] "University of Georgia (UGA)"                                        
+[28] "Pennsylvania State University (PSU)"                                
+[29] "Arizona State University (ASU)"                                     
+[30] "Indiana University (IU), Bloomington"                               
+[31] "University of Iowa (UI)"                                            
+[32] "Randolph-Macon College"                                             
+[33] "University of Alabama, Tuscaloosa"                                  
+[34] "University of Mississippi"                                          
+[35] "University of New Hampshire (UNH)"                                  
+[36] "West Virginia University (WVU)"                                     
+[37] "University of Tennessee"                                            
+[38] "Ohio University"                                                    
+[39] "Florida State University (FSU)"                                     </code></pre>
+</div>
+</div>
+<ol start="11" type="1">
+<li>Print out the average <strong>Starting.Median.Salary</strong> and the average <strong>Mid.Career.Median.Salary</strong> by different school types. Sort the output by the average starting median salary.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df.sal <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(School.Type) <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">start=</span><span class="fu">mean</span>(Starting.Median.Salary), <span class="at">mid=</span><span class="fu">mean</span>(Mid.Career.Median.Salary)) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(start)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  School.Type   start     mid
+  &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;
+1 State        44126.  78567.
+2 Party        45715   84685 
+3 Liberal Arts 45747.  89379.
+4 Engineering  59058. 103842.
+5 Ivy League   60475  120125 </code></pre>
+</div>
+</div>
 
 
 </section>

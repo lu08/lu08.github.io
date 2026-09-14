@@ -1,4 +1,9 @@
-## Part IV
+---
+title: "STAT120 - Statistical Computing in R"
+subtitle: "Homework 2"
+---
+
+## Part I
 
 1. Suppose the following are the final high school GPAs of a group of
 college students: 3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, and 2.90.  Create a vector that stores these values in the order specified.  Choose a variable name that's descriptive but relatively short.
@@ -142,3 +147,86 @@ df.student %>%
 
 
 
+
+## Part II
+
+1. The dataset used in this part is [salaries-by-college-type-clean.csv](../../../dataset/salaries-by-college-type-clean.csv). Download the data and import it into R. Print the names of the variables.
+
+```{r}
+df.sal <- read.csv('../../../dataset/salaries-by-college-type-clean.csv')
+str(df.sal)
+```
+
+2. Print the *names* of the 3rd, 4th, and 10th school. 
+```{r}
+df.sal$School.Name[c(3,4,10)]
+```
+
+3. Print all the information of the 3rd, 4th, and 10th school.
+```{r}
+df.sal[c(3,4,10),]
+```
+
+
+4. Calculate the average **Starting.Median.Salary** of the first 20 schools.
+
+```{r}
+mean(df.sal$Starting.Median.Salary[1:20])
+```
+
+
+5. Print out all information of the school with the highest **Starting.Median.Salary**?  
+
+```{r}
+df.sal[which.max(df.sal$Starting.Median.Salary),]
+df.sal[which.min(df.sal$Starting.Median.Salary),]
+```
+
+
+6. Print out the *names* of schools with a **Starting.Median.Salary** of 65,000 or greater.
+
+```{r}
+myindex <- which(df.sal$Starting.Median.Salary >= 65000)
+df.sal$School.Name[myindex]
+```
+
+
+7. Print out the *names* of schools with a **Starting.Median.Salary** of 65,000 or greater OR with a **Mid.Career.Median.Salary** of 130,000 or greater (hint: to do something like Condition 1 OR Condition 2, the code is Condition 1 \textbf{|} Condition 2).
+
+```{r}
+myindex <- which(df.sal$Starting.Median.Salary >= 65000 | df.sal$Mid.Career.Median.Salary >= 130000)
+df.sal$School.Name[myindex]
+```
+
+
+8. Print out the *names* of schools with a **Starting.Median.Salary** of 65,000 or greater AND with a **Mid.Career.Median.Salary** of 130,000 or greater.
+
+```{r}
+myindex <- which(df.sal$Starting.Median.Salary >= 65000 & df.sal$Mid.Career.Median.Salary >= 130000)
+df.sal$School.Name[myindex]
+```
+
+
+9. Print out the *names* of schools with a **Starting.Median.Salary** between 55,000 and 60,000 (hint: you cannot write code like $4<x<5$ in R.  You need to separately write $x>4$ and $x<5$).
+
+```{r}
+myindex <- which(df.sal$Starting.Median.Salary >= 55000 & df.sal$Starting.Median.Salary <= 60000)
+df.sal$School.Name[myindex]
+```
+
+
+10. Print out the *names* of 'Party' or 'Engineering' schools.
+
+```{r}
+df.sal$School.Name[df.sal$School.Type %in% c('Party','Engineering')]
+```
+
+
+11. Print out the average **Starting.Median.Salary** and the average **Mid.Career.Median.Salary** by different school types.  Sort the output by the average starting median salary. 
+
+```{r}
+df.sal %>%
+  group_by(School.Type) %>%
+  summarise(start=mean(Starting.Median.Salary), mid=mean(Mid.Career.Median.Salary)) %>%
+  arrange(start)
+```
