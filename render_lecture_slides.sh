@@ -25,6 +25,9 @@ for rel in "${slides[@]}"; do
     dest="$root/docs/$dir"
     mkdir -p "$dest"
     cp "$base.html" "$dest/$base.html"
+    if [ -f "$base.css" ]; then
+      cp "$base.css" "$dest/$base.css"
+    fi
     rm -rf "$dest/${base}_files"
     if [ -d "${base}_files" ]; then
       cp -R "${base}_files" "$dest/${base}_files"
