@@ -129,26 +129,9 @@ class(a)
 
 ## Data modification
 
-```{r, echo=F, eval=T}
-df.building$Height_f <- gsub(
-  pattern = ',',
-  replacement = '',
-  x = df.building$Height_f
-) %>% as.numeric()
-
-df.building <- df.building %>%
-  mutate(
-    Floors_num = str_extract(Floors, "^\\d+") %>% as.integer(),
-    Floors_additional = str_extract(Floors, "(?<=\\(\\+ )\\d+") %>% as.integer(),
-    Floors_additional_text = str_extract(Floors, "(?<=\\d )[^(]+(?=\\))") %>% str_trim()
-    )
-
-
-```
+- Issue 1: `Height_f` is a character vector (not numeric) because it contains commas.  We need to get rid of the commas before converting it to numeric
 
 ```{r,echo=T,eval=T}
-# Height_f is a character
-# (print out the values to check: all values are in quotation)
 class(df.building$Height_f)
 
 # Does not work: need to get rid of comma
@@ -158,11 +141,8 @@ as.numeric(df.building$Height_f)
 gsub(pattern = ',', 
      replacement = '',
      df.building$Height_f)
-```
 
-Putting things together...
-
-```{r,echo=T,eval=F}
+# Putting things together
 df.building$Height_f <- 
   as.numeric(gsub(pattern = ',', replacement = '', df.building$Height_f))
 
@@ -170,10 +150,10 @@ df.building$Height_f <-
 df.building$Height_f <- df.building$Height_f %>% 
   gsub(pattern = ',', replacement = '') %>%
   as.numeric()
-```
+```    
 
 
-Take a look at the **Floors** variable. This format is difficult to work with. To parse a text using R, you need to be *very specific* about the text pattern. This is done using "regular expression" (a pattern language used to search, match, and manipulate text).
+- Issue 2: Take a look at the **Floors** variable. This format is difficult to work with. To parse a text using R, you need to be *very specific* about the text pattern. This is done using "regular expression" (a pattern language used to search, match, and manipulate text).
 
 ```{r, echo=T, eval=T}
 df.building$Floors 
@@ -191,6 +171,9 @@ df.building <- df.building %>%
 # double check
 str(df.building)
 ```
+
+
+
 
 # Factors
 

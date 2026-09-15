@@ -2140,23 +2140,21 @@ Show solution
 </section>
 <section id="data-modification" class="slide level2">
 <h2>Data modification</h2>
+<ul>
+<li>Issue 1: <code>Height_f</code> is a character vector (not numeric) because it contains commas. We need to get rid of the commas before converting it to numeric</li>
+</ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Height_f is a character</span></span>
-<span id="cb16-2"><a href=""></a><span class="co"># (print out the values to check: all values are in quotation)</span></span>
-<span id="cb16-3"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">class</span>(df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "numeric"</code></pre>
+<pre><code>[1] "character"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Does not work: need to get rid of comma</span></span>
 <span id="cb18-2"><a href=""></a><span class="fu">as.numeric</span>(df.building<span class="sc">$</span>Height_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2717 2227 2073 1972 1966 1819 1776 1740 1740 1731 1667 1614 1588 1560 1550
-[16] 1516 1513 1503 1488 1483 1483 1483 1480 1480 1454 1450 1449 1439 1428 1404
-[31] 1401 1397 1394 1388 1388 1386 1380 1367 1356 1354 1352 1350 1342 1321 1316
-[46] 1292 1289 1288 1287 1280 1274 1273 1270 1263 1260 1257 1256 1251 1251 1250
-[61] 1248 1237 1234 1232 1232 1227 1226 1225 1215 1210 1210 1210 1208 1205 1200
-[76] 1191 1180 1180 1178 1177 1175 1175 1169 1168 1168 1168 1166 1166 1163 1163
-[91] 1163 1162 1155 1155 1153 1150 1149 1148</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[51] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[76] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="co"># Get rid of comma</span></span>
 <span id="cb20-2"><a href=""></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, </span>
@@ -2174,18 +2172,18 @@ Show solution
 [81] "1175" "1175" "1169" "1168" "1168" "1168" "1166" "1166" "1163" "1163"
 [91] "1163" "1162" "1155" "1155" "1153" "1150" "1149" "1148"</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co"># Putting things together</span></span>
+<span id="cb22-2"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> </span>
+<span id="cb22-3"><a href=""></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>, df.building<span class="sc">$</span>Height_f))</span>
+<span id="cb22-4"><a href=""></a></span>
+<span id="cb22-5"><a href=""></a><span class="co"># Equivalent code with pipe operator</span></span>
+<span id="cb22-6"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> df.building<span class="sc">$</span>Height_f <span class="sc">%&gt;%</span> </span>
+<span id="cb22-7"><a href=""></a>  <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-8"><a href=""></a>  <span class="fu">as.numeric</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Putting things together…</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> </span>
-<span id="cb22-2"><a href=""></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>, df.building<span class="sc">$</span>Height_f))</span>
-<span id="cb22-3"><a href=""></a></span>
-<span id="cb22-4"><a href=""></a><span class="co"># Equivalent code with pipe operator</span></span>
-<span id="cb22-5"><a href=""></a>df.building<span class="sc">$</span>Height_f <span class="ot">&lt;-</span> df.building<span class="sc">$</span>Height_f <span class="sc">%&gt;%</span> </span>
-<span id="cb22-6"><a href=""></a>  <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">','</span>, <span class="at">replacement =</span> <span class="st">''</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb22-7"><a href=""></a>  <span class="fu">as.numeric</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Take a look at the <strong>Floors</strong> variable. This format is difficult to work with. To parse a text using R, you need to be <em>very specific</em> about the text pattern. This is done using “regular expression” (a pattern language used to search, match, and manipulate text).</p>
+<ul>
+<li>Issue 2: Take a look at the <strong>Floors</strong> variable. This format is difficult to work with. To parse a text using R, you need to be <em>very specific</em> about the text pattern. This is done using “regular expression” (a pattern language used to search, match, and manipulate text).</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>df.building<span class="sc">$</span>Floors </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2397,7 +2395,7 @@ United Arab Emirates        United States              Vietnam
 <span id="cb47-3"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Location_F,df.building<span class="sc">$</span>Height_m)  <span class="co">#boxplots by Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
+<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
 <section>
 <section id="from-vector-to-data-data-frames" class="title-slide slide level1 center">
 <h1>From vector to data: data frames</h1>
@@ -2469,7 +2467,7 @@ United Arab Emirates        United States              Vietnam
 <li>Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)</li>
 </ul>
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section></section>
+<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section></section>
 <section>
 <section id="matrix" class="title-slide slide level1 center">
 <h1>Matrix</h1>
@@ -2622,7 +2620,7 @@ $sample.size
 <li>Generate a scatterplot. Can you think of a way to color it based on year, and reproduce this plot?</li>
 </ul>
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
 <section id="sample-code-1" class="slide level2">
 <h2>Sample code 1</h2>
 <ul>
@@ -2853,7 +2851,7 @@ $sample.size
 <p>Comment: <strong>Bar graph</strong> is like histogram for discrete variables; recall, <strong>plot( )</strong> gives a bar graph for factors</p>
 
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-54-1.png" class="quarto-figure quarto-figure-center r-stretch" width="300"></section></section>
+<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-52-1.png" class="quarto-figure quarto-figure-center r-stretch" width="300"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
