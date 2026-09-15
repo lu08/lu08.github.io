@@ -8,6 +8,7 @@ You can find all course documents here as a reference page.  Please refer to the
 
 - [Chapter 1](all_lectures/chapter_1_slide.html)
 - [Chapter 2](all_lectures/chapter_2_slide.html)
+- [Chapter 3](all_lectures/chapter_3_slide.html)
 
 
 ## Homework
@@ -20,8 +21,10 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 
 - [Homework Chapter 1](homework/chapter_1.qmd)
 - [Homework Chapter 2](homework/chapter_2.qmd)
+- [Homework Chapter 3](homework/chapter_3.qmd)
 
 
 ## Assignment
 
 - [Assignment 1: Jamovi introduction](assignment/assignment_1.qmd)
+- [Assignment 2: NYC apartments](assignment/assignment_2.qmd)

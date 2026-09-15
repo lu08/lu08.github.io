@@ -293,26 +293,26 @@ Show solution
 </div>
 </details>
 <ol start="2" type="1">
-<li>For the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)
+<li>For the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(gpa<span class="sc">&gt;</span><span class="fl">3.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4 7</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="3" type="1">
-<li>Use <code>R</code> to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.
+<li>Use <code>R</code> to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(gpa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -327,28 +327,28 @@ Show solution
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="4" type="1">
-<li>Find the average GPA for this group of students.
+<li>Find the average GPA for this group of students.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gpa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.385</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="5" type="1">
-<li>Suppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.
+<li>Suppose the following are the SAT quantitative scores for the same group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, respectively. Create another vector that stores these SAT scores in the order provided. Double check that it has the right length.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sat_quant <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">640</span>, <span class="dv">680</span>, <span class="dv">790</span>, <span class="dv">730</span>, <span class="dv">580</span>, <span class="dv">560</span>, <span class="dv">670</span>, <span class="dv">450</span>, <span class="dv">650</span>, <span class="dv">490</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(sat_quant)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -356,35 +356,35 @@ Show solution
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="6" type="1">
-<li>Print out the SAT quantitative scores for the 2nd and 3rd students.
+<li>Print out the SAT quantitative scores for the 2nd and 3rd students.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sat_quant[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 680 790</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="7" type="1">
-<li>Print out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type <code>1, 2, 3, 4, 7</code> anywhere in your code.
+<li>Print out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type <code>1, 2, 3, 4, 7</code> anywhere in your code.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sat_quant[gpa<span class="sc">&gt;</span><span class="fl">3.5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 640 680 790 730 670</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="8" type="1">
 <li>Create a vector for gender with the following values (in this order): 1, 1, 1, 0, 0, 0, 0, 0, 1, 1. Note that 1 represents “male” and 0 represents “female.” Double check that it has the right length.</li>
 </ol>
@@ -401,19 +401,19 @@ Show solution
 </div>
 </details>
 <ol start="9" type="1">
-<li>Find the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.
+<li>Find the average of the values in the gender vector you created in problem 8. Note that this represents the proportion of males in the group. Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1’s.</li>
+</ol>
 <details>
 <summary>
 Show solution
-</summary></details></li>
-</ol>
+</summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5</code></pre>
 </div>
 </div>
-
+</details>
 <ol start="10" type="1">
 <li>The respective years of the 10 students are: Senior, Freshman, Sophomore, Freshman, Junior, Sophomore, Sophomore, Freshman, Freshman, Senior. Create a <em>factor</em> vector that stores the year of students (hint: create a character vector first and convert it to factor). Use R to double check that its type is factor.</li>
 </ol>

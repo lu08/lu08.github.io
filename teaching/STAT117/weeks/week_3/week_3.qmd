@@ -5,12 +5,20 @@ format: html
 
 ## Overview
 
-- Sep 15 (Tuesday): in-person lecture
+- Sep 15 (Tuesday): in-person lecture, **assignment 2** (due before Thursday's class)
 - Sep 17 (Thursday): in-person lecture, **quiz 2**
 
-<!--
 ## Tuesday, Sep 15 (in-person)
- get started on Chapter 3 by doing [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd),
+
+We will begin [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html). Toward the end of the class, we will go over [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd) and you need to submit your answers on Moodle before Thursday's class.
+
+[Link to fullscreen](../../course_documents/all_lectures/chapter_3_slide.html)
+
+<iframe src="../../course_documents/all_lectures/chapter_3_slide.html" width="100%" height="650px" style="border:none;"></iframe>
+
 
 ## Thursday, Sep 17 (in-person)
--->
+
+We will continue [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html). 
+
+**Quiz 2** (given at the beginning of the class) will be based on content from [Chapter 2](../../course_documents/all_lectures/chapter_2_slide.html) and [Homework 2](../../course_documents/homework/homework_2.qmd).  In addition, it involves Jamovi and you are expected to understand the basics of using Jamovi, as outlined in [Assignment 1](../../course_documents/assignment/assignment_1.qmd).

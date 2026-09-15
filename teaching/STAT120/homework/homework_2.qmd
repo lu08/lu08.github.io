@@ -19,6 +19,7 @@ gpa <- c(3.62, 3.84, 3.95, 4.00, 3.12, 2.86, 3.77, 2.53, 3.26, 2.90)
 
 
 2. For the vector you created in problem 1, print out which value is greater than 3.5 (i.e., the output should be: 1, 2,3,4,7)
+
 <details>
 <summary>Show solution</summary>
 
@@ -29,6 +30,7 @@ which(gpa>3.5)
 
 
 3. Use `R` to check how many students are recorded in the data set, what the maximum GPA is, and which student has the maximum GPA.
+
 <details>
 <summary>Show solution</summary>
 
@@ -40,6 +42,7 @@ which(gpa==max(gpa))
 </details>
 
 4. Find the average GPA for this group of students.
+
 <details>
 <summary>Show solution</summary>
 
@@ -53,6 +56,7 @@ mean(gpa)
 group of students: 640, 680, 790, 730, 580, 560, 670, 450, 650, and 490, 
 respectively.  Create another vector that stores these SAT scores in the order 
 provided.  Double check that it has the right length.
+
 <details>
 <summary>Show solution</summary>
 
@@ -63,6 +67,7 @@ length(sat_quant)
 </details>
 
 6. Print out the SAT quantitative scores for the 2nd and 3rd students. 
+
 <details>
 <summary>Show solution</summary>
 
@@ -73,6 +78,7 @@ sat_quant[c(2,3)]
 
 
 7. Print out the SAT quantitative scores for the students whose GPA is above 3.5. Avoid hard-coding: do not manually type `1, 2, 3, 4, 7` anywhere in your code.
+
 <details>
 <summary>Show solution</summary>
 
@@ -94,6 +100,7 @@ length(gender)
 </details>
 
 9. Find the average of the values in the gender vector you created in problem 8.  Note that this represents the proportion of males in the group.  Whenever you have 0/1 data (and only when this is true!), the mean is the proportion of 1's.
+
 <details>
 <summary>Show solution</summary>
 
