@@ -35,7 +35,7 @@ knitr::opts_chunk$set(fig.align='center',
 
 
 ## Exercise: tallest buildings
-- Go to https://en.wikipedia.org/wiki/List_of_tallest_buildings
+- Go to [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings)
 - We will only look at the top 10 tallest buildings
   1. Create a vector that stores the Height (m) of the top 10 tallest buildings
   1. Use R to verify that the vector you created has a length of 10 
@@ -279,13 +279,9 @@ tail(df.building) # last few rows
 
 - Create a new vector, `ft.per.floor`, by height (ft) / number of floors
 
-```{r,echo=F}
-ft.per.floor <- df.building$Height_f / df.building$Floors_num
-```
-
 To **add a variable** to an existing data frame
 
-```{r}
+```{r, eval=F}
 df.building$ft.per.floor <- ft.per.floor
 # OR 
 df.building['ft.per.floor'] <- ft.per.floor
@@ -293,14 +289,23 @@ df.building['ft.per.floor'] <- ft.per.floor
 
 - Calculate the average `ft.per.floor` of buildings by Location
 
-```{r,echo=F}
-tapply(df.building$ft.per.floor,df.building$Location_F,mean)
-```
-
-
 - Create a scatterplot of year by height (ft), colored by Location (hint: use the factor version)
 
-```{r,echo=F}
+<details>
+<summary>Show solution</summary>
+
+```{r,echo=T, eval=T}
+df.building$Name[1:5]
+df.building$Height_m[1:5] %>% mean()
+
+df.building$ft.per.floor <- df.building$Height_f/df.building$Floors_num
+
+tapply(df.building$ft.per.floor, df.building$Location_F, mean)
+
+df.building %>% 
+  group_by(Location_F) %>% 
+  summarise(mean(ft.per.floor))
+
 plot(df.building$Year,
      df.building$Height_f, 
      col = df.building$Location_F,
@@ -308,6 +313,8 @@ plot(df.building$Year,
      ylab='Height in ft',
      pch=16)
 ```
+
+  </details>
 
 # Matrix
 

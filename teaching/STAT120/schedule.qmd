@@ -18,9 +18,9 @@ title: "Schedule and reminders"
 
 ## Week 3
 
-- Sep 15: 
+- Sep 15: We will continue with [Lecture 2](lectures/lecture_2/lectures_2.html).  You should finish **Part I** of [Homework 2](homework/homework_2.qmd).  If you want, you can also try **Part II** for extra practice.
 
-- Sep 17: **Quiz 3**
+- Sep 17: **Quiz 3**, based on slides 1 to 13 from [Lecture 2](lectures/lecture_2/lectures_2.html) and **Part I** of [Homework 2](homework/homework_2.qmd).
 
  
 
