@@ -5,12 +5,12 @@ format: html
 
 ## Overview
 
-- Sep 15 (Tuesday): in-person lecture, **assignment 2** (due before Thursday's class)
+- Sep 15 (Tuesday): in-person lecture, [**assignment 2**](../../course_documents/assignment/assignment_2.qmd) (due before Thursday's class)
 - Sep 17 (Thursday): in-person lecture, **quiz 2**
 
 ## Tuesday, Sep 15 (in-person)
 
-We will begin [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html). Toward the end of the class, we will go over [**Assignment 2**](../../course_documents/assignment/assignment_2.qmd) and you need to submit your answers on Moodle before Thursday's class.
+We will begin [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html). Toward the end of the class, we will go over [**assignment 2**](../../course_documents/assignment/assignment_2.qmd) and you need to submit your answers on Moodle before Thursday's class.
 
 [Link to fullscreen](../../course_documents/all_lectures/chapter_3_slide.html)
 

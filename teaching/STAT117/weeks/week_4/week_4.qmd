@@ -1,0 +1,10 @@
+---
+title: "Week 4"
+format: html
+---
+
+
+## Overview
+
+- Sep 22 (Tuesday): asynchronous lecture
+- Sep 24 (Thursday): in-person lecture, **quiz 3**

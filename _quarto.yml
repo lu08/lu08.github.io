@@ -75,6 +75,8 @@ website:
               href: teaching/STAT117/weeks/week_2/week_2.html
             - text: "Week 3"
               href: teaching/STAT117/weeks/week_3/week_3.html
+            - text: "Week 4"
+              href: teaching/STAT117/weeks/week_4/week_4.html
         - text: "Course documents"
           href: teaching/STAT117/course_documents/index.qmd
         - text: "Datasets"

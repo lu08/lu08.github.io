@@ -84,9 +84,9 @@ This example previews the three properties studied in this chapter: **location**
 
 In addition to visualizations, we can use **numeric summaries** of data to describe a distribution.  
 
-A numeric summary of data is called a “statistic,” i.e., the sample mean is a statistic; the sample maximum is a statistic, etc.
+A numeric summary of data is called a **statistic**, i.e., the sample mean is a statistic; the sample maximum is a statistic, etc.
 
-![](L3-summary.png){width=180%}
+![](L3-summary.png){width=130%}
 
 Common statistics can be grouped by what they measure:
 
@@ -104,7 +104,7 @@ These three categories of statistics (location, spread, shape) organize the rest
 
 ## mean, median, and mode
 
-Example: How many hours did you sleep?
+Example 1: How many hours did you sleep?
 
 - Mean:
 
@@ -112,9 +112,9 @@ Example: How many hours did you sleep?
 
 - Mode:
 
-Example: type of recipe (1=Appetizer, 2=Main course, 3=Dessert, 4=Other). Can we calculate mean?  Median?  Mode?
+Example 2: type of recipe (1=Appetizer, 2=Main course, 3=Dessert, 4=Other). Can we calculate mean?  Median?  Mode?
 
-Example: average preparation time (1=0 to 30 min, 2=30 min to 1 hour, 3=1 hour to 2 hours, 4 = 2 hours and above). Can we calculate mean?  Median?  Mode?
+Example 3: average preparation time (1=0 to 30 min, 2=30 min to 1 hour, 3=1 hour to 2 hours, 4 = 2 hours and above). Can we calculate mean?  Median?  Mode?
 
 Recall, **Likert scale variables** are treated like numeric variables and people frequently calculate the mean for Likert scale variables.
 
@@ -132,9 +132,9 @@ Likert scale items are technically ordinal, but by common (if debated) conventio
 </details>
 
 
-## Example: choosing appropriate statistics
+## Choosing appropriate statistics
 
-Provide an interpretation for the statistics in the table below.  Pay attention to what statistics should not be interpretated. 
+Example: (NELS dataset) provide interpretations for some of the statistics in the table below.  Pay attention to what statistics should not be interpretated. 
 
 
 ```{r echo=FALSE}
@@ -148,20 +148,19 @@ cat("region:\n")
 attr(mydata$region, "labels")
 cat("hwkin12:\n")
 attr(mydata$hwkin12, "labels")
+
+options(digits = 3)
+mydata |>
+  mutate(across(c(region, hwkin12), haven::zap_labels)) |>
+  jmv::descriptives(
+  vars = c("famsize", "region", "hwkin12"),
+  mode = T,
+  sd = F,
+  min = F,
+  max = F
+)
 ```
 
-
-: Descriptives
-
-|                    | famsize | region | hwkin12 |
-|:-------------------|--------:|-------:|--------:|
-| N                  |  500.00 | 500.00 |  497.00 |
-| Missing            |    0.00 |   0.00 |    3.00 |
-| Mean               |    4.69 |   2.46 |    3.43 |
-| Median             |    4.00 |   2.00 |    3.00 |
-| Standard deviation |    1.32 |   1.02 |    1.97 |
-| Minimum            |    2.00 |   1.00 |    0.00 |
-| Maximum            |    9.00 |   4.00 |    8.00 |
 
 <details>
 <summary>R code (optional)</summary>
@@ -176,6 +175,17 @@ cat("region:\n")
 attr(mydata$region, "labels")
 cat("hwkin12:\n")
 attr(mydata$hwkin12, "labels")
+
+options(digits = 3)
+mydata |>
+  mutate(across(c(region, hwkin12), haven::zap_labels)) |>
+  jmv::descriptives(
+  vars = c("famsize", "region", "hwkin12"),
+  mode = T,
+  sd = F,
+  min = F,
+  max = F
+)
 ```
 </details>
 
@@ -188,9 +198,9 @@ Exploration -> Descriptives (statistics can be selected under `Statistics`)
 <summary>Lecture notes and summary</summary>
 **Famsize** (number of people in the family) is a **continuous** variable, so both the mean (4.69) and median (4.00) are meaningful: a typical family in the sample has about 4 to 4.7 members.
 
-**Region** (1=Northeast, 2=North Central, 3=South, 4=West) is a **nominal** variable — the numeric codes are arbitrary labels. The mean (2.46) and median (2.00) should **not** be interpreted as a "typical region;" only the mode (the most common region) would be meaningful. In this case, the most common region is 2 (North Central). Avoid saying that "most people" are in the North Central region, which implies more than 50% of the data and is not necessarily true.
+**Region** (1=Northeast, 2=North Central, 3=South, 4=West) is a **nominal** variable — the numeric codes are arbitrary labels. The mean (2.46) and median (2.00) should **not** be interpreted; only the mode (the most common region) would be meaningful. In this case, the most common region is 2 (North Central). *Do not say that "most people" are in the North Central region, which implies more than 50% of the data are in the North Central region and is not necessarily true.*
 
-**Hwkin12** (weekly homework hours, coded 0=None up to 8=Over 20 hours) is an **ordinal** variable. The median (3.00, corresponding to the "4-6 hours" category) is the appropriate measure of a typical value; the mean (3.43) should not be used.
+**Hwkin12** (weekly homework hours, coded 0=None up to 8=Over 20 hours) is an **ordinal** variable. The median (3.00, corresponding to the "4-6 hours" category) is the appropriate measure of a typical value: (at least) 50% of students in the data spend between 4 and 6 hours per week or less on homework and (at least) 50% spend between 4 and 6 hours per week or more.  The mean (3.43) should not be used. The mode can be interpreted as the most common category, which is 2 ("1-3 hours").
 </details>
 
 
@@ -200,11 +210,37 @@ Exploration -> Descriptives (statistics can be selected under `Statistics`)
 
 Example 1: The following two classes both have an average of 77. Are their performances similar? How would you characterize their differences?
 
-```{r echo=TRUE}
+<details>
+<summary>R code (optional)</summary>
+```r
 class1 <- c(35, 61, 62, 68, 80, 82, 92, 95, 95, 99)
 class2 <- c(70, 70, 72, 75, 76, 77, 79, 81, 82, 88)
-sd(class1);var(class1);IQR(class1)
-sd(class2);var(class2);IQR(class2)
+cat("Class 1 values:", class1, "\n")
+cat("Mean:", mean(class1),
+  "SD:", sd(class1),
+  "Variance:", var(class1),
+  "IQR:", IQR(class1), "\n")
+cat("Class 2 values:", class2, "\n")
+cat("Mean:", mean(class2),
+  "SD:", sd(class2),
+  "Variance:", var(class2),
+  "IQR:", IQR(class2), "\n")
+```
+</details>
+
+```{r echo=FALSE}
+class1 <- c(35, 61, 62, 68, 80, 82, 92, 95, 95, 99)
+class2 <- c(70, 70, 72, 75, 76, 77, 79, 81, 82, 88)
+cat("Class 1 values:", class1, "\n")
+cat("Mean:", mean(class1),
+  "SD:", sd(class1),
+  "Variance:", var(class1),
+  "IQR:", IQR(class1), "\n")
+cat("Class 2 values:", class2, "\n")
+cat("Mean:", mean(class2),
+  "SD:", sd(class2),
+  "Variance:", var(class2),
+  "IQR:", IQR(class2), "\n")
 ```
 
 - **standard deviation** measures the average distance of each data point from the mean (**variance** is the square of the standard deviation)
@@ -227,7 +263,7 @@ Old Faithful's waiting times between eruptions have a small SD/consistent patter
 </details>
 
 
-## Example: writing a thorough statistical interpretation
+## Writing a thorough statistical interpretation
 
 A thorough statistical interpretation should include:
 
@@ -241,7 +277,7 @@ A thorough statistical interpretation should include:
 
 5) if applicable, a note on any other supporting or contradictory statistics.
 
-Example: what’s a *typical* math achievement score?  Also, as a review, explain how the range and IQR values are calculated.
+Example: (NELS dataset) what’s a *typical* math achievement score?  Also, as a review, explain how the range and IQR values are calculated.
 
 <details>
 <summary>R code (optional)</summary>
