@@ -8,14 +8,17 @@ You can find all course documents here as a reference page. Please refer to the 
 
 - [Lecture 1](all_lectures/Lecture_1.html)
 - [Lecture 2](all_lectures/Lecture_2.html)
+- [Lecture 3](all_lectures/Lecture_3.html)
 
 
 ## Homework
 
 - [Homework 1](homework/homework_1.qmd)
 - [Homework 2](homework/homework_2.qmd)
+- [Homework 3](homework/homework_3.qmd)
 
 
 ## Assignments
 
 - [Assignment 1 (Group discussion based on Homework 1)](assignment/assignment_1.qmd)
+- [Assignment 2 (Group discussion based on Homework 2)](assignment/assignment_2.qmd)
