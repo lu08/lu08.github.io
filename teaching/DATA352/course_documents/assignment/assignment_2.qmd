@@ -1,0 +1,23 @@
+---
+title: "DATA 352/551: Assignment 2"
+subtitle: "Group discussion based on Homework 2"
+format:
+  html:
+    toc: false
+---
+
+## Group activity
+
+Work in groups of 2-3. Your group will submit **one response** on [this](https://docs.google.com/document/d/1G_6v-tKkthK4-ye3FahW0Am9wQIe-if3QYYovmjqIss/edit?usp=sharing) Google doc. Make sure to put all group members' names on your response. We will discuss every group's response in class.
+
+## Part 1
+The flying-bomb example is a classic case where rare events are counted across many small areas:
+
+> **26.** Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into $24\times24=576$ small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly $k$ hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.
+
+
+1. What is the random variable here?  What is the range of the random variable?
+
+2. Could we also use a binomial model here?  If so, what would the parameters be?  
+
+3. Compare the meaning of the parameter $\lambda$ in the Poisson model with the meaning of $n$ and $p$ in the binomial model using this specific example.  Compare model assumptions as well.  Which model do you think is more appropriate here?  Why?

@@ -1,0 +1,274 @@
+---
+title: "Lecture 3: Implementing simulations"
+subtitle: "DATA 352/551: Modeling and Simulation"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    chalkboard:
+      buttons: true
+execute:
+  echo: true
+webr:
+  autorun: false
+---
+
+## Overview: recommended workflow for simulations
+
+1. Write a **dedicated function** for one simulation
+
+        Input: parameters of the ONE simulation
+        Output: a single result (i.e., "what do you want to save after ONE simulation?")        
+
+2. Test the function with a few calls to make sure it works as expected
+
+3. Initialize global simulation parameters
+
+        How many simulations do you want to run?  How should the results be stored?
+        Important: should always **pre-allocate** a vector (e.g. `rep(NA, 10000)`) to store results, rather than appending to a vector each time
+
+4. Repeat the function many times
+        
+        Can use a `for` loop, or functional wrappers like `replicate()` (in R), or functions that can handle parallelization (i.e., use multiple cores on your computer to run simulations faster)
+
+
+
+## Example: outcome of a fair die
+
+What is the expected value of the outcome of a fair die?  Design and implement a simulation to find out. 
+
+```{r}
+# 1. ONE simulation function
+sim_die <- function(n = 6) {
+  return(sample(1:n,size=1))
+}
+
+# 2. Test the function
+sim_die()
+
+# 3. Initialize global simulation parameters
+NSIM <- 10000
+result <- rep(NA, NSIM)
+
+# 4. Repeat the simulation NSIM times
+
+#### Method 1: 'for' loop
+for(i in 1:NSIM) {
+  result[i] <- sim_die()
+}
+mean(result)
+
+
+#### Method 2: Base R replicate()
+result <- replicate(NSIM, sim_die())
+mean(result)
+
+
+#### Method 3: parallel processing (optional)
+library(parallel)
+cl <- makeCluster(2) # use 2 cores
+clusterExport(cl, "sim_die")
+result <- parSapply(cl, 1:NSIM, function(i) sim_die())
+stopCluster(cl)
+mean(result)
+```
+
+
+Note: Method 1 and Method 2 are computational similar (provided that the `result` vector is pre-allocated).  Method 3 is more advanced and can be significantly faster for very large simulations.
+
+# R review
+
+## Functions
+
+An R function is a named piece of code that takes inputs, does some work, and returns an output.
+
+```r
+function_name <- function(input1, input2 = default_value) {
+  # code that uses the inputs
+  output
+}
+```
+
+- Give the function a descriptive name.
+- Put the inputs in the parentheses, with defaults when useful.
+- Write the calculation inside the braces.
+- The last expression is returned automatically; `return()` is optional.
+
+### Worked example
+
+```r
+square_plus_one <- function(x) {
+  x^2 + 1
+}
+
+square_plus_one(3)
+# 10
+```
+
+### Practice examples
+
+Write and test a function for each task:
+
+1. `double_value(x)`: return twice the value of `x`.
+2. `celsius_to_fahrenheit(celsius)`: convert a temperature using
+   $F = 32 + 9C/5$.
+3. `roll_die(n = 6)`: simulate one roll of a fair die with `n` sides.
+4. `mean_of_two(x, y)`: return the average of two numbers.
+
+For each function, test at least two inputs. For example, check that
+`roll_die()` returns a whole number between 1 and 6.
+
+
+
+
+## If statements
+
+An `if` statement allows you to run a chunk of code only when a condition is true. It is often used together with loops.
+
+Basic structure in R:
+
+```r
+if (condition) {
+  # code to run when the condition is TRUE
+}
+```
+
+You might need multiple `if` statements to cover more than one condition. You can also use an `else` statement.
+
+Example: We roll a fair die. If the outcome is 6, we win $20; if the outcome is 4 or 5, we win $10; otherwise we lose $15. Is this a fair game? How much would you expect to win or lose? Write a function to play this game one time.
+
+
+---
+
+## Loops
+
+Loops are used to repeat a chunk of code.
+
+- `for` loop: repeat a fixed number of times
+- `while` loop: repeat until a condition is met
+
+Open RStudio or RStudio Cloud and try the following code.
+
+```r
+for (i in 1:5) {
+  print(i)
+}
+```
+
+The index of a `for` loop (`i`) does not need to be created separately; other objects may need to be created beforehand.
+
+---
+
+## For loops
+
+A `for` loop has an index and a code chunk. For example, if the index is $i = 1, 2, 5$, then the code chunk runs with $i = 1$, then with $i = 2$, and then with $i = 5$.
+
+Basic structure in R:
+
+```r
+for (i in values) {
+  # code to be repeated
+}
+```
+
+A loop becomes useful when we want to repeat the same calculation many times, such as running a simulation repeatedly.
+
+---
+
+## “Fake coding” examples
+
+1. Repeat a task 10 times.
+2. Repeat a simulation 1000 times and store the result each time.
+3. Suppose there is a large dataset of 1000 cats. Extract the 3rd, 6th, 9th, ... cats from the dataset; for each cat, run a function `weighCat()` and store the weight in a vector.
+4. In a large dataset of cats, weigh and store the weights of the female cats.
+
+
+
+---
+
+## Exercise
+
+Use any language and loop structures to do the following.
+
+1. Print a sequence of texts: “1 moose 4 legs”, “2 moose 8 legs”, ..., “30 moose 120 legs”.
+2. Simulate the Martingale doubling system (Homework 1) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of $0.48$. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.
+
+
+---
+
+## While loops
+
+A `while` loop has three ingredients:
+
+- initialization
+- condition
+- code chunk
+
+The code runs as long as the condition is met.
+
+```r
+x <- 1
+while (x < 5) {
+  print(x)
+  x <- x + 1
+}
+```
+
+This is useful when the number of repetitions is not known in advance.
+
+---
+
+## While loops: caution
+
+It is important to properly update the objects involved in the while-loop condition.
+
+It is also recommended to set a safety upper bound so the loop cannot run forever.
+
+```r
+x <- 0
+count <- 0
+while (x < 5 && count < 1000) {
+  x <- x + 1
+  count <- count + 1
+}
+```
+
+This keeps the program under control and prevents accidental infinite loops.
+
+---
+
+## “Fake coding” examples
+
+- Play a game until you win $5$.
+- Play a game until you win $5$ or lose $100$.
+
+
+---
+
+## Exercise
+
+Use any language and loop structures to do the following.
+
+Simulate the Martingale doubling system until you win $5$ or lose $100$. Start the betting amount at $1$; if you win, you bet $1$; if you lose, you double your bet. Assume a winning probability of $0.48$. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

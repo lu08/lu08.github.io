@@ -1,0 +1,37 @@
+---
+title: "DATA 352/551: Quiz 1"
+subtitle: "Based on Homework 1"
+format:
+  html:
+    toc: false
+---
+
+1. Suppose you roll three fair dice and want to know if the sum is more likely to be 9 or 10 based on a simulation study. Let's say I did the experiment once and got 2, 5, 2 as the outcome. Which of the following is correct?
+
+- [ ] I can stop the simulation process since I already got a sum of 9.
+- [ ] I should stop the simulation process when I get a sum of 10.
+- [ ] I need to repeat this experiment many, many times.
+- [ ] Since the sum I got is 9, the sum is more likely to be a 9 than a 10.
+
+
+2. The homework described a martingale doubling system. Let's say you play a gambling game with this system. You put down one dollar and you win; then you put down one dollar again, but this time you lose. How much should you bet next according to the system?
+
+- [ ] One dollar.
+- [ ] Two dollars.
+- [ ] Three dollars.
+- [ ] Four dollars.
+
+
+3. Why do we repeat the same simulation many times?
+
+- [ ] To guarantee that every simulated result is identical.
+- [ ] To avoid deciding what to record in each simulation.
+- [ ] To create a larger set of results whose proportions can estimate probabilities.
+- [ ] To assess our computer's computation speed and power.
+
+
+4. Let $X$ be the number of heads in two tosses of a fair coin.
+
+    a. What is the range of $X$?
+    b. Give the probability mass function of $X$.
+    c. Verify that this probability mass function satisfies the two conditions.

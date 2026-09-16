@@ -1,0 +1,74 @@
+---
+title: "DATA 352/551: Quiz 2"
+subtitle: "Based on Homework 2"
+format:
+  html:
+    toc: false
+---
+
+1. Suppose a random variable $X$ can take values $\{1, 2, 3\}$ according to the probabilities $\{0.2, 0.3, 0.5\}$. You want to simulate values from this distribution using only random draws from a uniform distribution on $(0,1)$.
+
+    Which of the following is the correct rule?
+
+    - [ ] If $U < 0.2$, set $X = 1$; if $0.2 \le U < 0.5$, set $X = 2$; otherwise set $X = 3$.
+    - [ ] If $U < 0.3$, set $X = 1$; if $0.3 \le U < 0.8$, set $X = 2$; otherwise set $X = 3$.
+    - [ ] If $U < 0.5$, set $X = 1$; if $0.5 \le U < 0.8$, set $X = 2$; otherwise set $X = 3$.
+    - [ ] If $U < 0.2$, set $X = 3$; if $0.2 \le U < 0.5$, set $X = 2$; otherwise set $X = 1$.
+
+
+2. There is a $2\%$ click rate for an online advertisement. Suppose the number of people who click among the next $100$ people follows a binomial distribution.
+
+    Which of the following is correct?
+
+    - [ ] The parameters are $n = 0.02$ and $p = 100$.
+    - [ ] The parameters are $n = 100$ and $p = 2$.
+    - [ ] The parameters are $n = 100$ and $p = 0.02$.
+    - [ ] The parameters are $n = 2$ and $p = 0.01$.
+
+    Which of the following is a necessary assumption for the binomial model here?
+
+    - [ ] Each person clicks independently with the same probability of clicking.
+    - [ ] The probability of clicking changes after each person clicks.
+    - [ ] The number of clicks must be exactly 50.
+    - [ ] The click rate must be larger than 50% for the model to be valid.
+
+
+3. Consider the number of times you roll a 6 in five rolls of a BIASED die.  Which of the following is correct? 
+
+    - [ ] The model is binomial with $n = 6$ and $p = 0.5$.
+    - [ ] The model is binomial with $n = 5$ and $p = 6$.
+    - [ ] The model is binomial with $n = 5$ and $p$ not given in the problem.
+    - [ ] We cannot use a binomial model because the die is biased.
+
+
+4. In the flying-bomb hit model in Homework 2, the area was divided into 576 small squares and the total number of hit in the area was 537.
+
+    Which model was used to approxmiate the number of hits in each of the small squares?
+
+    - [ ] Uniform
+    - [ ] Binomial
+    - [ ] Poisson
+    - [ ] Normal
+
+    Specify the parameter(s) of the model you chose in the previous question.
+
+    <div style="margin-top: 3em;"></div>
+
+5. Let the random variable $X$ be the number of times you get a HEAD in 10 tosses of a fair coin.
+
+    What is the range of $X$?
+
+    <div style="margin-top: 3em;"></div>
+
+    Which of the following is the right R code to calculate the probablity that you get *exactly* 3 HEADS in 10 tosses of a fair coin?
+
+    - [ ] `dbinom(3, size = 10, prob = 0.5)`
+    - [ ] `dbinom(10, size = 3, prob = 0.5)`
+    - [ ] `pbinom(3, size = 10, prob = 0.5)`
+    - [ ] `pbinom(3, size = 10, prob = 0.5)`
+
+    Write the R code to calculate the probablity that you get 3 or MORE HEADS in 10 tosses of a fair coin?
+
+
+
+

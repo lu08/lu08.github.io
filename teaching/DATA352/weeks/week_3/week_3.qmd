@@ -1,0 +1,18 @@
+---
+title: "Week 3  (Sept 16)"
+---
+
+## In class
+
+We will start today's class with **Quiz 2** on [Homework 2](../../course_documents/homework/homework_2.qmd).  Next, we will have a group discussion for [**assignment 2**](../../course_documents/assignment/assignment_2.qmd).
+
+For the rest of the class, we will finish [Lecture 2](/teaching/DATA352/course_documents/all_lectures/Lecture_2.html) and start [Lecture 3](/teaching/DATA352/course_documents/all_lectures/Lecture_3.html).
+
+[Link to fullscreen](/teaching/DATA352/course_documents/all_lectures/Lecture_3.html)
+
+<iframe src="/teaching/DATA352/course_documents/all_lectures/Lecture_3.html" width="100%" height="650px" style="border:none;"></iframe>
+
+
+## Homework
+
+To be posted.

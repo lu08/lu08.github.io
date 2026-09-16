@@ -11,6 +11,7 @@ slides=(
   "teaching/STAT117/course_documents/all_lectures/chapter_3_slide.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_1.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_2.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_3.qmd"
 )
 
 for rel in "${slides[@]}"; do
