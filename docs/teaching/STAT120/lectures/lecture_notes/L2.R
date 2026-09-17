@@ -36,7 +36,9 @@ df.building$Location_F <- as.factor(df.building$Location)
 
 
 
-#-------- in class code -------#
+#------------------------------#
+# in class code: 9/15
+#------------------------------#
 df.building %>%
   mutate(Location_F = as.factor(Location)) %>%
   group_by(Location_F) %>%
@@ -82,5 +84,55 @@ plot(df.building$Year, df.building$Height_f, col=df.building$Location_F)
 
 
 
+#------------------------------#
+# in class code: 9/17
+#------------------------------#
+sample.size <- nrow(df.building)
+variables <- names(df.building)
 
 
+list.building <- list(D=df.building,
+                      sample.size = sample.size,
+                      variables = variables)
+list.building[[3]]
+
+
+
+
+# these code are equivalent
+plot(df.building$Height_m,df.building$Floors_num,xlab='Height')
+
+
+df.building$Height_m %>% 
+  plot(x=., y=df.building$Floors_num,xlab='Height')
+
+
+df.building$Floors_num %>%
+  plot(x=df.building$Height_m, y=., xlab="Height")
+
+
+
+
+
+df.building$Height_m %>% 
+  plot(df.building$Floors_num,xlab='Height')
+
+df.building$Height_m %>% 
+  plot(x=., y=df.building$Floors_num,xlab='Height')
+
+df.building$Height_m |>
+  plot(x=_, y=df.building$Floors_num,xlab='Height') 
+
+
+
+mycol <- rep(NA, nrow(df.building))
+
+mycol[which(df.building$Year <= 2009)] <- "red"
+mycol[which( df.building$Year <= 2015 & df.building$Year >= 2010)] <- "blue"
+mycol[df.building$Year>=2016] <- "green"
+
+plot(df.building$Height_m, df.building$Floors_num, 
+     col = mycol, pch=16,
+     xlab = "Height in meters",
+     ylab = "Num of floor",
+     main = "my scatterplot")

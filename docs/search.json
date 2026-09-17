@@ -44,7 +44,7 @@
     "href": "teaching/STAT120/schedule.html#week-3",
     "title": "Schedule and reminders",
     "section": "Week 3",
-    "text": "Week 3\n\nSep 15: We will continue with Lecture 2. You should finish Part I of Homework 2. If you want, you can also try Part II for extra practice.\nSep 17: Quiz 3, based on slides 1 to 13 from Lecture 2 and Part I of Homework 2.",
+    "text": "Week 3\n\nSep 15: We will continue with Lecture 2. You should finish Part I of Homework 2. If you want, you can also try Part II for extra practice.\nSep 17: Quiz 3, based on slides 1 to 13 from Lecture 2 and Part I of Homework 2. During class, we will continue with Lecture 2. You should finish Part II of Homework 2 before the next class.",
     "crumbs": [
       "Research",
       "Schedule and reminders"
@@ -274,7 +274,7 @@
     "href": "teaching/STAT117/course_documents/assignment/assignment_3.html",
     "title": "Assignment 3",
     "section": "",
-    "text": "This assignment will guide you through a practice question from Chapter 4 using Combined Class Song Data. Download the dataset and open it in Jamovi.\nWork in groups of 3-4 students. Submit your answers on Moodle. Each group only needs to make one submission, so make sure all group members names are included in the submission."
+    "text": "This assignment will guide you through a practice question from Chapter 4 using Combined Class Song Data. Download the dataset and open it in Jamovi."
   },
   {
     "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1-describe-the-distribution-of-length",
@@ -1173,7 +1173,7 @@
     "href": "teaching/STAT117/weeks/week_3/week_3.html#thursday-sep-17-in-person",
     "title": "Week 3",
     "section": "Thursday, Sep 17 (in-person)",
-    "text": "Thursday, Sep 17 (in-person)\nWe will finish Chapter 3. We will also start the discussion of Chapter 4 (slides to be posted) and do assignment 3.\nQuiz 2 (given at the beginning of the class) will be based on content from Chapter 2 and Homework 2. In addition, it involves Jamovi and you are expected to understand the basics of using Jamovi, as outlined in assignment 1.\nReminder: since we finished Chapter 3, you should do homework questions for Chapter 3.",
+    "text": "Thursday, Sep 17 (in-person)\nWe will finish Chapter 3. We will also start the discussion of Chapter 4 (slides to be posted).\nQuiz 2 (given at the beginning of the class) will be based on content from Chapter 2 and Homework 2. In addition, it involves Jamovi and you are expected to understand the basics of using Jamovi, as outlined in assignment 1.\nReminder: since we finished Chapter 3, you should do homework questions for Chapter 3.",
     "crumbs": [
       "Research",
       "Weeks",

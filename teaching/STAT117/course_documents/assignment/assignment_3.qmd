@@ -5,7 +5,6 @@ format: html
 
 This assignment will guide you through a practice question from Chapter 4 using **Combined Class Song Data**. [Download the dataset](../../data/index.html){target="_blank"} and open it in Jamovi.
 
-Work in groups of 3-4 students. Submit your answers on Moodle.  Each group only needs to make one submission, so make sure all group members names are included in the submission.
 
 ## Part 1: Describe the distribution of LENGTH
 
