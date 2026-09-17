@@ -28,3 +28,4 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 
 - [Assignment 1: Jamovi introduction](assignment/assignment_1.qmd)
 - [Assignment 2: NYC apartments](assignment/assignment_2.qmd)
+- [Assignment 3: Length of songs transformation](assignment/assignment_3.qmd)

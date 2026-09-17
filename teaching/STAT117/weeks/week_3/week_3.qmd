@@ -19,6 +19,8 @@ We will begin [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.ht
 
 ## Thursday, Sep 17 (in-person)
 
-We will continue [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}. 
+We will finish [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}. We will also start the discussion of Chapter 4 (slides to be posted) and do [assignment 3](../../course_documents/assignment/assignment_3.qmd){target="_blank"}.
 
 **Quiz 2** (given at the beginning of the class) will be based on content from [Chapter 2](../../course_documents/all_lectures/chapter_2_slide.html){target="_blank"} and [Homework 2](../../course_documents/homework/chapter_2.qmd){target="_blank"}.  In addition, it involves Jamovi and you are expected to understand the basics of using Jamovi, as outlined in [assignment 1](../../course_documents/assignment/assignment_1.qmd){target="_blank"}.
+
+Reminder: since we finished Chapter 3, you should do [homework questions for Chapter 3](../../course_documents/homework/chapter_3.qmd){target="_blank"}.
