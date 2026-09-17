@@ -1,0 +1,90 @@
+---
+title: "STAT120: Quiz 3 (9/17)"
+format:
+  pdf:
+    geometry: "top=0.5in,left=1in,right=1in,bottom=1in"
+    title-block-style: plain
+---
+
+\vspace{-5em}
+
+**Name:** ____________________________________________
+
+
+1. Which of the following creates a numeric vector with the values 2, 5, 8, and 11?
+
+[ ] `c(2, 5, 8, 11)`
+
+[ ] `c("2", "5", "8", "11")`
+
+[ ] `c(TRUE, FALSE, TRUE, FALSE)`
+
+[ ] `seq(2, 11, by = 3)`
+
+
+\vspace{0.75em}
+
+2. Suppose `x <- c(3, 7, 10, 15)`. What is the output of `x[x > 7]`?
+
+[ ] `3 7 10` 
+
+[ ] `10 15`
+
+[ ] `7 10 15`
+
+[ ] `15`
+
+
+\vspace{0.75em}
+
+3. Which statement about `class()` is correct?
+
+[ ] It creates a data frame called `class`.
+
+[ ] It can be used to check the type of an object in R.
+
+[ ] It is only used for data frames.
+
+[ ] It creates a new vector.
+
+
+\vspace{0.75em}
+
+4. What is the result of `as.numeric(c(TRUE, FALSE, TRUE))`?
+
+[ ] `1 0 1`
+
+[ ] `1`
+
+[ ] `"1" "0" "1"`
+
+[ ] An error
+
+
+\vspace{0.75em}
+
+
+5. Which of the following is an example of a character vector?
+
+[ ] `c(1, 2, 3, 4)`
+
+[ ] `c(TRUE, FALSE, TRUE)`
+
+[ ] `c("A", "B", "C")`
+
+[ ] `c(1L, 2L, 3L)`
+
+
+\vspace{0.75em}
+
+
+
+6. A factor vector, `year`, contains values such as `"Senior", "Freshman", "Sophomore"`. A numeric vector, `gpa`, contains values such as `3.62, 3.84, 3.95`. Write R code using `tapply()` to calculate the average GPA for each year.
+
+\vspace{3em}
+
+
+
+
+
+

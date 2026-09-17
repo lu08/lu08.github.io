@@ -411,17 +411,21 @@ plot(x=df.building$Height_m,y=df.building$Floors_num) #full version
 
 - Use `?function_name` to bring up the help menu
 
-## pipe operator (dplyr package)
+## pipe operator (tidyverse package)
 
 The pipe operator, **%\>%**, is a different syntax for calling R functions: **FUNCTION(x)** is the same as **x %\>% FUNCTION**
+
+In recent R versions, you can also use **|>** as the pipe operator (no package required); it has slightly different behavior than **%\>%** (will be discussed when the differences come up)
+
 
 ```{r, eval=F}
 vec <- c(1, 1, 5)
 mean(vec)
-vec %>% mean
+vec %>% mean()  # can omit the parentheses
+vec |> mean() # must have the parentheses
 ```
 
-**For functions with multiple arguments**: by default, R recognizes the argument being piped as the *first* argument; or you can use "." to specify
+**For functions with multiple arguments**: by default, R recognizes the argument being piped as the *first* argument; or you can use "." or "_" as a placeholder to specify which argument is being piped
 
 ```{r, eval=F}
 # these code are equivalent
@@ -432,6 +436,9 @@ df.building$Height_m %>%
 
 df.building$Height_m %>% 
   plot(x=., y=df.building$Floors_num,xlab='Height')
+
+df.building$Height_m |>
+  plot(x=_, y=df.building$Floors_num,xlab='Height') 
 ```
 
 

@@ -1,15 +1,15 @@
+#-------- Load data and packages -------#
 library(tidyverse)
-getwd()
-setwd("Google Drive/My Drive/Class/2026FA_STAT120/")
-
+#getwd()
+#setwd("Google Drive/My Drive/Class/2026FA_STAT120/")
 df.building <- read.csv("../../Dataset and resource/tallest building/tallest building_2026.csv")
 
+
+#-------- clean data -------#
 df.building$Height_f
 
-# Putting things together
 df.building$Height_f <- 
   as.numeric(gsub(pattern = ',', replacement = '', df.building$Height_f))
-
 
 # Equivalent code with pipe operator
 df.building$Height_f <- df.building$Height_f %>% 
@@ -30,8 +30,13 @@ df.building <- df.building %>%
 str(df.building)
 
 
+
+#-------- create new variables -------#
 df.building$Location_F <- as.factor(df.building$Location)
 
+
+
+#-------- in class code -------#
 df.building %>%
   mutate(Location_F = as.factor(Location)) %>%
   group_by(Location_F) %>%
@@ -40,8 +45,6 @@ df.building %>%
             max_height = max(Height_m),
             count = length(Year)) %>%
   arrange(desc(max_height))
-
-
 
 
 par(mfrow=c(1,2))
@@ -62,8 +65,6 @@ nrow(df.building) # number of rows
 str(df.building) # summary information
 head(df.building) # first few rows
 tail(df.building) # last few rows
-
-
 
 
 df.building$Name[1:5]

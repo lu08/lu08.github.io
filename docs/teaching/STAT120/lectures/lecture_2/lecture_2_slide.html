@@ -2645,15 +2645,17 @@ $sample.size
 <li>Use <code>?function_name</code> to bring up the help menu</li>
 </ul>
 </section>
-<section id="pipe-operator-dplyr-package" class="slide level2">
-<h2>pipe operator (dplyr package)</h2>
+<section id="pipe-operator-tidyverse-package" class="slide level2">
+<h2>pipe operator (tidyverse package)</h2>
 <p>The pipe operator, <strong>%&gt;%</strong>, is a different syntax for calling R functions: <strong>FUNCTION(x)</strong> is the same as <strong>x %&gt;% FUNCTION</strong></p>
+<p>In recent R versions, you can also use <strong>|&gt;</strong> as the pipe operator (no package required); it has slightly different behavior than <strong>%&gt;%</strong> (will be discussed when the differences come up)</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href=""></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
 <span id="cb71-2"><a href=""></a><span class="fu">mean</span>(vec)</span>
-<span id="cb71-3"><a href=""></a>vec <span class="sc">%&gt;%</span> mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb71-3"><a href=""></a>vec <span class="sc">%&gt;%</span> <span class="fu">mean</span>()  <span class="co"># can omit the parentheses</span></span>
+<span id="cb71-4"><a href=""></a>vec <span class="sc">|&gt;</span> <span class="fu">mean</span>() <span class="co"># must have the parentheses</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>For functions with multiple arguments</strong>: by default, R recognizes the argument being piped as the <em>first</em> argument; or you can use “.” to specify</p>
+<p><strong>For functions with multiple arguments</strong>: by default, R recognizes the argument being piped as the <em>first</em> argument; or you can use “.” or “_” as a placeholder to specify which argument is being piped</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href=""></a><span class="co"># these code are equivalent</span></span>
 <span id="cb72-2"><a href=""></a><span class="fu">plot</span>(df.building<span class="sc">$</span>Height_m,df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
@@ -2662,7 +2664,10 @@ $sample.size
 <span id="cb72-5"><a href=""></a>  <span class="fu">plot</span>(df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
 <span id="cb72-6"><a href=""></a></span>
 <span id="cb72-7"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">%&gt;%</span> </span>
-<span id="cb72-8"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>., <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb72-8"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>., <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>)</span>
+<span id="cb72-9"><a href=""></a></span>
+<span id="cb72-10"><a href=""></a>df.building<span class="sc">$</span>Height_m <span class="sc">|&gt;</span></span>
+<span id="cb72-11"><a href=""></a>  <span class="fu">plot</span>(<span class="at">x=</span>_, <span class="at">y=</span>df.building<span class="sc">$</span>Floors_num,<span class="at">xlab=</span><span class="st">'Height'</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-scatterplot" class="slide level2">

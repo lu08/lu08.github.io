@@ -157,7 +157,7 @@ df.student %>%
 
 ## Part II
 
-1. The dataset used in this part is [salaries-by-college-type-clean.csv](../../../dataset/salaries-by-college-type-clean.csv). Download the data and import it into R. Print the names of the variables.
+1. The dataset used in this part is [salaries-by-college-type-clean.csv](../../../dataset/salaries-by-college-type-clean.csv){download="salaries-by-college-type-clean.csv"}. Download the data and import it into R. Print the names of the variables.
 
 <details>
 <summary>Show solution</summary>
@@ -220,7 +220,7 @@ df.sal$School.Name[myindex]
 ```
 </details>
 
-7. Print out the *names* of schools with a **Starting.Median.Salary** of 65,000 or greater OR with a **Mid.Career.Median.Salary** of 130,000 or greater (hint: to do something like Condition 1 OR Condition 2, the code is Condition 1 \textbf{|} Condition 2).
+7. Print out the *names* of schools with a **Starting.Median.Salary** of 65,000 or greater OR with a **Mid.Career.Median.Salary** of 130,000 or greater (hint: to do something like Condition 1 OR Condition 2, the code is Condition 1 | Condition 2).
 
 <details>
 <summary>Show solution</summary>
