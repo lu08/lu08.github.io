@@ -15,4 +15,10 @@ For the rest of the class, we will finish [Lecture 2](/teaching/DATA352/course_d
 
 ## Homework
 
-To be posted.
+Take some time to practice writing R functions (especially for those of you who are new to R), following lecture examples and utilizing the abundent online resources. Note, however, that you can use a different programming language (e.g., Python) if you prefer. In that case, it is your responsibility to make sure that you know the equivalent code to any R code used in class.
+
+For homework, finish the leftover questions from [Homework 2](../../course_documents/homework/homework_2.qmd): Q4, Q5, and Q7.  
+
+[Homework 3](../../course_documents/homework/homework_3.qmd) has been posted.  Take a look at Q1, Q3, and Q5.  These questions ask you to run a simulation: for now, only do STEP 1 (write a function to perform ONE simulation).  The solution includes other steps, which you can skip for now.
+
+The quiz next week will be based on the above listed content from Homework 2 and Homework 3.
