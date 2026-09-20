@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter_3 – Yi Lu</title>
+<title>Chapter 3 – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Chapter 3</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,14 +157,161 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 3</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>(To be added)</p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="exercise-3.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.9">Exercise 3.9</h3>
+<p>Use Jamovi to find the following summary descriptive statistics for a student’s self-concept in eighth grade (<code>SLFCNC08</code>).</p>
+<ul>
+<li>Minimum</li>
+<li>Maximum</li>
+<li>40th percentile</li>
+<li>25th percentile</li>
+<li>Mean</li>
+<li>Median</li>
+<li>Mode</li>
+<li>Range</li>
+<li>Interquartile range</li>
+<li>Variance</li>
+<li>Standard deviation</li>
+<li>Skewness</li>
+<li>Standard error of the skewness</li>
+</ul>
+<details>
+<summary>
+### Solution
+</summary>
+<p>The following statistics were obtained using Jamovi:</p>
+<ul>
+<li>Minimum: 0</li>
+<li>Maximum: 32</li>
+<li>40th percentile: 19</li>
+<li>25th percentile: 17</li>
+<li>Mean: 21.06</li>
+<li>Median: 21</li>
+<li>Mode: 17</li>
+<li>Range: 32</li>
+<li>Interquartile range: 9</li>
+<li>Variance: 35.65</li>
+<li>Standard deviation: 5.97</li>
+<li>Skewness: -.286</li>
+<li>Standard error of the skewness: .109</li>
+</ul>
+</details>
+<hr>
+</section>
+<section id="exercise-3.10" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.10">Exercise 3.10</h3>
+<p>The following questions investigate how, among the students in the NELS data set, tenth grade math achievement (<code>ACHMAT10</code>) is related to whether or not the student’s family owned a computer when he or she was in eighth grade (<code>COMPUTER</code>). Use the Jamovi Exploration analyses to generate the values of appropriate statistics to answer the related questions.</p>
+<ol type="a">
+<li><p>Compare the shape of the distributions of <code>ACHMAT10</code> for those who did and those who did not own a computer in eighth grade. Begin by constructing boxplots of <code>ACHMAT10</code>, one for each value of <code>COMPUTER</code>, and follow up by calculating skewness ratios.</p></li>
+<li><p>Is tenth grade math achievement typically higher or lower for students whose families owned a computer when they were in eighth grade than students whose families did not own a computer when they were in eighth grade? Explain and support your answer with the value of at least one appropriate descriptive statistic, indicating if any other statistics contradict your conclusion.</p></li>
+<li><p>Among students in the NELS data set, is tenth grade math achievement more or less variable for students whose families owned a computer when they were in eighth grade? Explain and support your answer with the value of at least one appropriate descriptive statistic, indicating if any other statistics contradict your conclusion.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The boxplots indicate that both distributions are similarly severely negatively skewed. The skewness ratios (-.333 / .15 = -2.22 for those whose families did not own a computer and -.37 / .158 = -2.34 for those whose families did) corroborate this visual impression.</p></li>
+<li><p>Given the skewness of the two distributions, medians are used to answer this question. According to the respective medians, tenth grade math achievement is higher for students whose families owned a computer when they were in eighth grade (median = 59.01) than for those whose families did not (median = 55.76). Because the distributions have similar shapes, the respective means lead to the same conclusion.</p></li>
+<li><p>According to the interquartile range, tenth grade math achievement is slightly more variable for students whose families owned a computer when they were in eighth grade (IQR = 11.71) than for those whose families did not (IQR = 10.45). Because the standard deviation is even more sensitive to outliers than the mean, the results from the respective standard deviations (for those whose families owned computers, SD = 7.64; for those whose families did not, SD = 7.69) leads to a different conclusion. Like the IQR’s, however, the standard deviations are close in value.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-3.12" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.12">Exercise 3.12</h3>
+<p>Answer the following questions to compare eighth grade self-concept (<code>SLFCNC08</code>) to twelfth grade self-concept (<code>SLFCNC12</code>) for students in the NELS data set.</p>
+<ol type="a">
+<li><p>Is the distribution of self-concept scores in the NELS data set severely skewed in either eighth or twelfth grade? If the distribution is severely skewed, indicate the direction of the skew. If the distributions are severely skewed, indicate which is more skewed. Explain and support your answer using the value(s) of at least one appropriate statistic.</p></li>
+<li><p>Do students in the NELS data set typically have higher self-concept scores in eighth or twelfth grade? Explain and support your answer with the value(s) of at least one appropriate statistic.</p></li>
+<li><p>Are the self-concept scores of students in the NELS data set more heterogeneous in eighth or twelfth grade? Explain and support your answer with the value(s) of at least one appropriate statistic.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The distribution of self-concept scores is severely negatively skewed in both eighth grade (skewness ratio = -2.62) and twelfth grade (skewness ratio = -3.52). The distribution is more severely skewed in twelfth grade.</p></li>
+<li><p>According to both the mean and the median, students in the NELS typically have higher self-concept scores in twelfth grade (M = 31.48, Median = 31.00) than in eighth grade (M = 21.06, Median = 21.00).</p></li>
+<li><p>According to both the standard deviation and the range, the self-concept scores of students in the NELS are more heterogeneous in twelfth grade (SD = 7.23, IQR = 10.00) than in eighth grade (SD = 5.97, IQR = 9.00).</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-3.32" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.32">Exercise 3.32</h3>
+<p>Answer the following questions about statistics reported in the March 2013 article, “TheKnot.com and WeddingChannel.com Reveal Results of Largest Wedding Study of its Kind, Surveying more than 17,500 Brides.” The relevant information is contained in the questions themselves, but the interested reader may look up the article at <a href="http://www.prnewswire.com/news-releases/theknotcom-and-weddingchannelcom-reveal-results-of-largest-wedding-study-of-its-kind-surveying-more-than-17500-brides-195856281.html">prnewswire.com</a>.</p>
+<ol type="a">
+<li><p>According to the survey, the average wedding budget in 2012 was $28,427, excluding honeymoon. If someone wanted to encourage you to spend as much as possible on your wedding, which would be better to report, the mean or the median? Explain.</p></li>
+<li><p>The average marrying age for brides in the US is 29. Do you think that the standard deviation is closer to 3 days, 3 months, or 3 years? Explain.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The mean. It is probably higher than the median because the distribution is so severely positively skewed.</p></li>
+<li><p>3 years. Because there is a great deal of variability in terms of the age at which people get married, we expect a large standard deviation. Note that the units (years) for the mean and standard deviation do not need to match.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-3.33" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.33">Exercise 3.33</h3>
+<p>Consider the distribution, for all children in the United States, of the ages at which they enter kindergarten. Do you think that the standard deviation of this distribution is closer to 5 years or 5 months? Explain.</p>
+<details>
+<summary>
+### Solution
+</summary>
+<p>The standard deviation is closer to 5 months. Because almost all students enter kindergarten at age 5, they are within a year of each other’s ages. The mean, however, is closer to 5 years.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-3.36" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.36">Exercise 3.36</h3>
+<p>The following excerpt was taken from an editorial by Paul Krugman in the <em>New York Times</em> on January 21, 2003 (p.&nbsp;23):</p>
+<blockquote class="blockquote">
+<p>“On Saturday, in his weekly radio address, George W. Bush declared that ‘the tax relief I propose will give 23 million small-business owners an average tax cut of $2,042 this year.’ That remark is intended to give the impression that the typical small-business owner will get $2,000. But as the Center on Budget and Policy Priorities points out, most small businesses will get a tax break of less than $500; about 5 million of those 23 million small businesses will get no break at all. The average is more than $2,000 only because a small number of very wealthy businessmen will get huge tax cuts.”</p>
+</blockquote>
+<ol type="a">
+<li><p>What is the shape of the distribution of tax cuts for small business owners?</p></li>
+<li><p>What would you guess is the value of the median of the distribution of tax cuts for small business owners?</p></li>
+<li><p>Would you suppose that the standard deviation is smaller or larger than $500? Explain.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>Positively skewed.</p></li>
+<li><p>Since “most” tax breaks were less than $500, the median must be $500 or less.</p></li>
+<li><p>The standard deviation will be larger than $500. Because most tax cuts are less than $500, the distance to the mean of $2,042 for most values in the distribution will exceed $1,500 ($2,042 - $500 = $1,542), thus creating a standard deviation greater than $500. The presence of a small number of “huge tax cuts” given to a small number of “very wealthy businessmen” produces the very large mean relative to the bulk of the tax break values, and, in turn, a large standard deviation, greater than $500.</p></li>
+</ol>
+</details>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
