@@ -2871,10 +2871,55 @@ Show solution
 <li>Print the names and built years of the buildings built in 2010 OR in 2015</li>
 <li>Plot a histogram of the built year of the buildings. I’m interested to see there is a building built before 1940 - can you find out which building it is?</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href=""></a><span class="co"># 1. First three buildings</span></span>
+<span id="cb119-2"><a href=""></a>df.building[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-3"><a href=""></a></span>
+<span id="cb119-4"><a href=""></a><span class="co"># 2. Buildings in the United States</span></span>
+<span id="cb119-5"><a href=""></a>df.building[df.building<span class="sc">$</span>Location <span class="sc">==</span> <span class="st">"United States"</span>, <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-6"><a href=""></a></span>
+<span id="cb119-7"><a href=""></a><span class="co"># 3. Buildings in the United States built after 2015</span></span>
+<span id="cb119-8"><a href=""></a>df.building[df.building<span class="sc">$</span>Location <span class="sc">==</span> <span class="st">"United States"</span> <span class="sc">&amp;</span></span>
+<span id="cb119-9"><a href=""></a>              df.building<span class="sc">$</span>Year <span class="sc">&gt;</span> <span class="dv">2015</span>, <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-10"><a href=""></a></span>
+<span id="cb119-11"><a href=""></a><span class="co"># 4. Buildings in the United States or China</span></span>
+<span id="cb119-12"><a href=""></a>df.building[df.building<span class="sc">$</span>Location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States"</span>, <span class="st">"China"</span>),</span>
+<span id="cb119-13"><a href=""></a>            <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-14"><a href=""></a></span>
+<span id="cb119-15"><a href=""></a><span class="co"># 5. Buildings built between 2010 and 2015, inclusive</span></span>
+<span id="cb119-16"><a href=""></a>df.building[df.building<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2010</span> <span class="sc">&amp;</span> df.building<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2015</span>,</span>
+<span id="cb119-17"><a href=""></a>            <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-18"><a href=""></a></span>
+<span id="cb119-19"><a href=""></a><span class="co"># 6. Buildings built in 2010 or 2015</span></span>
+<span id="cb119-20"><a href=""></a>df.building[df.building<span class="sc">$</span>Year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2015</span>), <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-21"><a href=""></a></span>
+<span id="cb119-22"><a href=""></a><span class="co"># 7. Building built before 1940</span></span>
+<span id="cb119-23"><a href=""></a>df.building[df.building<span class="sc">$</span>Year <span class="sc">&lt;</span> <span class="dv">1940</span>, <span class="fu">c</span>(<span class="st">"Name"</span>, <span class="st">"Year"</span>)]</span>
+<span id="cb119-24"><a href=""></a></span>
+<span id="cb119-25"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb119-26"><a href=""></a><span class="fu">hist</span>((df.building<span class="sc">$</span>Year),</span>
+<span id="cb119-27"><a href=""></a>     <span class="at">col=</span><span class="st">'royalblue'</span>,</span>
+<span id="cb119-28"><a href=""></a>     <span class="at">main=</span><span class="st">'hist(df.building$Year)'</span>,</span>
+<span id="cb119-29"><a href=""></a>     <span class="at">xlab=</span><span class="cn">NA</span>,</span>
+<span id="cb119-30"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb119-31"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>)</span>
+<span id="cb119-32"><a href=""></a></span>
+<span id="cb119-33"><a href=""></a><span class="fu">plot</span>(<span class="fu">as.factor</span>(df.building<span class="sc">$</span>Year),</span>
+<span id="cb119-34"><a href=""></a>     <span class="at">col=</span><span class="st">'salmon'</span>,</span>
+<span id="cb119-35"><a href=""></a>     <span class="at">main=</span><span class="st">'plot(as.factor(df.building$Year))'</span>,</span>
+<span id="cb119-36"><a href=""></a>     <span class="at">xlab=</span><span class="cn">NA</span>,</span>
+<span id="cb119-37"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb119-38"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
 <p>Comment: <strong>Bar graph</strong> is like histogram for discrete variables; recall, <strong>plot( )</strong> gives a bar graph for factors</p>
 
 
-<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-47-1.png" class="quarto-figure quarto-figure-center r-stretch" width="300"></section></section>
+<img data-src="lecture_2_slide_files/figure-revealjs/unnamed-chunk-48-1.png" class="quarto-figure quarto-figure-center r-stretch" width="300"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

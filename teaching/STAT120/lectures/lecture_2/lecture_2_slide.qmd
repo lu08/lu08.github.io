@@ -595,6 +595,53 @@ subjects %in% c('MAT','STAT')
 5.  Print the names and built years of buildings built between 2010 and 2015
 6.  Print the names and built years of the buildings built in 2010 OR in 2015
 7.  Plot a histogram of the built year of the buildings. I'm interested to see there is a building built before 1940 - can you find out which building it is?
+
+<details>
+<summary>Show solution</summary>
+
+```{r, eval=F}
+# 1. First three buildings
+df.building[1:3, c("Name", "Year")]
+
+# 2. Buildings in the United States
+df.building[df.building$Location == "United States", c("Name", "Year")]
+
+# 3. Buildings in the United States built after 2015
+df.building[df.building$Location == "United States" &
+              df.building$Year > 2015, c("Name", "Year")]
+
+# 4. Buildings in the United States or China
+df.building[df.building$Location %in% c("United States", "China"),
+            c("Name", "Year")]
+
+# 5. Buildings built between 2010 and 2015, inclusive
+df.building[df.building$Year >= 2010 & df.building$Year <= 2015,
+            c("Name", "Year")]
+
+# 6. Buildings built in 2010 or 2015
+df.building[df.building$Year %in% c(2010, 2015), c("Name", "Year")]
+
+# 7. Building built before 1940
+df.building[df.building$Year < 1940, c("Name", "Year")]
+
+par(mfrow=c(1,2))
+hist((df.building$Year),
+     col='royalblue',
+     main='hist(df.building$Year)',
+     xlab=NA,
+     ylab=NA,
+     yaxt='n')
+
+plot(as.factor(df.building$Year),
+     col='salmon',
+     main='plot(as.factor(df.building$Year))',
+     xlab=NA,
+     ylab=NA,
+     yaxt='n')
+```
+
+
+</details>
   
 
 Comment: **Bar graph** is like histogram for discrete variables; recall, **plot( )** gives a bar graph for factors

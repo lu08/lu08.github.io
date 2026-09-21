@@ -231,7 +231,7 @@
 <span id="cb4-6"><a href=""></a><span class="co"># 2. Test the function</span></span>
 <span id="cb4-7"><a href=""></a><span class="fu">sim_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># 3. Initialize global simulation parameters</span></span>
 <span id="cb6-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -245,13 +245,13 @@
 <span id="cb6-10"><a href=""></a>}</span>
 <span id="cb6-11"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5013</code></pre>
+<pre><code>[1] 3.4873</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="do">#### Method 2: Base R replicate()</span></span>
 <span id="cb8-2"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">sim_die</span>())</span>
 <span id="cb8-3"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5027</code></pre>
+<pre><code>[1] 3.528</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="do">#### Method 3: parallel processing (optional)</span></span>
 <span id="cb10-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
@@ -261,7 +261,7 @@
 <span id="cb10-6"><a href=""></a><span class="fu">stopCluster</span>(cl)</span>
 <span id="cb10-7"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.4903</code></pre>
+<pre><code>[1] 3.511</code></pre>
 </div>
 </div>
 <p>Note: Method 1 and Method 2 are computational similar (provided that the <code>result</code> vector is pre-allocated). Method 3 is more advanced and can be significantly faster for very large simulations.</p>

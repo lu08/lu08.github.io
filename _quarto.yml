@@ -5,7 +5,7 @@ project:
     - "**/*.qmd"
     - "!teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd"
     - "!teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
-    - "!teaching/STAT120/lectures/lecture_3/lecture_3.qmd"
+    - "!teaching/STAT120/lectures/lecture_3/lecture_3_slide.qmd"
     - "!teaching/STAT117/course_documents/all_lectures/chapter_1_slide.qmd"
     - "!teaching/STAT117/course_documents/all_lectures/chapter_2_slide.qmd"
     - "!teaching/STAT117/course_documents/all_lectures/chapter_3_slide.qmd"
@@ -47,11 +47,11 @@ website:
           href: teaching/STAT120/lectures/index.qmd
           contents:
             - text: "Lecture 1"
-              href: teaching/STAT120/lectures/lecture_1/lecture_1_slide.html
+              href: teaching/STAT120/lectures/lecture_1/lecture_1.html
             - text: "Lecture 2"
-              href: teaching/STAT120/lectures/lecture_2/lecture_2_slide.html
+              href: teaching/STAT120/lectures/lecture_2/lecture_2.html
             - text: "Lecture 3"
-              href: teaching/STAT120/lectures/lecture_3/lecture_3_slide.html
+              href: teaching/STAT120/lectures/lecture_3/lecture_3.html
             - text: "Lecture code"
               href: teaching/STAT120/lectures/lecture_notes/index.qmd
         - text: "Homework"
