@@ -92,7 +92,12 @@
     "href": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
     "title": "Yi Lu",
     "section": "",
-    "text": "Link to fullscreen"
+    "text": "Link to fullscreen",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Lecture 1"
+    ]
   },
   {
     "objectID": "teaching/STAT120/index.html",
@@ -1286,7 +1291,12 @@
     "href": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
     "title": "Yi Lu",
     "section": "",
-    "text": "Link to fullscreen"
+    "text": "Link to fullscreen",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Lecture 2"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture_notes/index.html",

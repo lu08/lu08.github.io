@@ -72,16 +72,10 @@ sleep <- c(5,5,6,6,6,7,7,7,8,14)
     -   Median is more **robust to outliers**
     -   When mean and median are very different, it signals very **skewed** distribution and/or existence of outliers
 
--   For **categorical variables** (i.e., factor), use mode
-    -   Example: based on **mtcars**, what kind of transmission type (0=automatic,1=manual) do cars typically have?
-
-```{r}
-table(mtcars$am)
-```
 
 -   In R (note, there is no built-in function for mode):
 
-```{r,eval=F}
+```{r,eval=T}
 summary(sleep)
 mean(sleep)
 median(sleep)
@@ -90,6 +84,8 @@ summary(as.factor(sleep)) # summary() gives frequency for factor variables
 # equivalent code with pipe operator
 sleep |> as.factor() |> summary()
 ```
+
+
 
 -   Q: how can you convert the frequency to percentages?
 -   Q: how do you use R to automatically give you the mode?
@@ -107,27 +103,39 @@ table(sleep) %>%
 </details>
 
 
+-   For **categorical variables** (i.e., factor), use mode
+    -   Example: based on **mtcars**, what kind of transmission type (0=automatic,1=manual) do cars typically have?
+
+```{r}
+table(mtcars$am)
+```
+
+
+
+
 ## Percentiles
 
 -   The percentile (rank) of a value is the percentage **below** that value
 
-![](percentile_example.jpg){width=30%}
+
+      ![](percentile_example.jpg){width=100%}
+
 
 -   The kth percentile of a variable is a value such that k percent are below that value
 
-    -   Example: [Growth charts for children](https://www.cdc.gov/growthcharts/html_charts/wtageinf.htm#females)
-    -   Example: [SAT scores](https://en.wikipedia.org/wiki/SAT)
+    -   Example: [Growth charts for children](https://www.cdc.gov/growthcharts/cdc-charts.htm){target="_blank"}
+    -   Example: [SAT scores](https://en.wikipedia.org/wiki/SAT){target="_blank"}
 
-- Special percentiles: first, second and third quartiles (i.e., Q1, Q2, and Q3) correspond to the 25th, 50th, and 75th percentiles; Q2 is the median
+- Special percentiles: first, second and third **quartiles** (i.e., Q1, Q2, and Q3) correspond to the 25th, 50th, and 75th percentiles; Q2 is the median
 
-- Percentiles (especially Q1, Q2, and Q3) also provide a sense of the **location** of the distribution
+- Percentiles (especially Q1, Q2, and Q3) provide a sense of the **location** of the distribution
 
 ```{r}
 summary(NBAPlayers2024$pointsPerGame)
 quantile(NBAPlayers2024$pointsPerGame, c(0.95, 0.75, 0.05))
 ```
 
-## Spread: range and interquartile range (IQR)
+## Spread: range and IQR
 
 -   Spread can be measured by range and **interquartile range** (IQR)
 
@@ -208,14 +216,14 @@ var(GPA)
 
 -   For determining the direction of skewness, look for **tail values**; extreme tail values are referred to as **outliers**
 
-    - Tail values or extreme values are LARGE values: right skewed (positive skew); e.g., income, house price, etc.
-    - Tail values or extreme values are SMALL values: left skewed (negative skew); e.g., age at death, retirement age, etc.
+    - If tail values or extreme values are LARGE: right skewed (positive skew); e.g., income, house price, etc.
+    - If tail values or extreme values are SMALL: left skewed (negative skew); e.g., age at death, retirement age, etc.
 
 -   Histogram is a widely used **univariate** plot (in base R, use **hist()**)
 
 -   When describing shape, pay attention to: skewness, outliers, number of modes, and any other unusual pattern in the data
 
-```{r,echo=F,out.width="80%",fig.height=3,fig.width=9}
+```{r,echo=F,out.width="100%",fig.height=3,fig.width=9}
 par(mfrow=c(1,3))
 hist(rbeta(n=500,shape1 = 4,shape2 = 2),freq=F,
      cex.lab=1.5,
@@ -271,7 +279,7 @@ The field-goal percentages based on NBA data from 2024 range from **0.372 to 0.7
 
 The distribution is **right-skewed**: the mean is higher than the median, and the upper tail extends farther than the lower tail.
 
-```{r, eval=F}
+```{r, eval=T}
 range(NBAPlayers2024$FGPct, na.rm = TRUE)
 mean(NBAPlayers2024$FGPct, na.rm = TRUE)
 median(NBAPlayers2024$FGPct, na.rm = TRUE)
@@ -288,7 +296,7 @@ hist(NBAPlayers2024$FGPct, main = "Field-goal percentage", xlab = "FGPct", col =
 
 ## Z-score
 
--   **Z-score** (also called standardized score) of a variable is calculated as `(value - mean) / sd`
+-   **Z-score** (or standardized score) of a variable is calculated as `(value - mean) / sd`
 
 -   It's used to *standardize* a variable so that you can make sense of the value regardless of the scale or unit
 
@@ -316,7 +324,7 @@ in R:
 a <- NBAPlayers2024$FGPct
 z1 <- (a - mean(a))/sd(a)
 
-# using scale function: a matrix is created
+# using scale(): a matrix is created
 z2 <- scale(NBAPlayers2024$FGPct)
 ```
 
