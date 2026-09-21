@@ -9,6 +9,7 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 1](all_lectures/chapter_1_slide.html)
 - [Chapter 2](all_lectures/chapter_2_slide.html)
 - [Chapter 3](all_lectures/chapter_3_slide.html)
+- [Chapter 4](all_lectures/chapter_4_slide.html)
 
 
 ## Homework

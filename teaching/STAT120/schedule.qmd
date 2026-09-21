@@ -23,7 +23,10 @@ title: "Schedule and reminders"
 - Sep 17: **Quiz 3**, based on slides 1 to 13 from [Lecture 2](lectures/lecture_2/lectures_2.html) and **Part I** of [Homework 2](homework/homework_2.qmd).  During class, we will continue with [Lecture 2](lectures/lecture_2/lectures_2.html).  You should finish **Part II** of [Homework 2](homework/homework_2.qmd) before the next class.
 
  
+# Week 4
+- Sep 22: 
 
+- Sep 24: **Quiz 4**
 
 
 ## Overall schedule (from [syllabus](syllabus.qmd)):

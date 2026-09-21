@@ -1,0 +1,87 @@
+---
+title: "Chapter 4: Transforming Variables"
+subtitle: "STAT117: Introduction to Statistics"
+footnote-text: "Some narrative text in <em>Lecture notes and summary</em> are drafted by AI. They are fully proofread and verified by the instructor."
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    chalkboard:
+      buttons: true
+    template-partials:
+      - title-slide.html
+editor_options:
+  chunk_output_type: inline
+---
+
+## Why transform a variable?
+
+Transformations change the scale or location of a variable while preserving the ordering of its observations.
+
+- Convert measurements to a more useful unit
+- Make results easier to interpret
+- Compare the effect of a change in scale or location on summary statistics
+
+<details>
+<summary>Lecture notes and summary</summary>
+
+For example, song length can be recorded in seconds or minutes. Dividing by 60 changes the unit, but it does not change which songs are longer or shorter than one another.
+</details>
+
+## Multiplying or dividing by a constant
+
+If every value is multiplied by a constant $c$, then:
+
+- the mean, median, percentiles, and other location statistics are multiplied by $c$
+- the range, interquartile range, and standard deviation are multiplied by $|c|$
+- the variance is multiplied by $c^2$
+- the shape and skewness do not change when $c > 0$
+
+Example: `LENGTH2 = LENGTH / 60` changes song length from seconds to minutes.
+
+## Adding or subtracting a constant
+
+If a constant $c$ is added to every value, then:
+
+- the mean, median, and percentiles increase by $c$
+- measures of spread do not change
+- the shape and skewness do not change
+
+Example: `LENGTH3 = LENGTH + 2` shifts every song length upward by two seconds.
+
+## Worked comparison
+
+Suppose a variable has mean 80, median 78, standard deviation 10, and interquartile range 12.
+
+For $Y = X / 60$:
+
+- mean = $80/60$
+- median = $78/60$
+- standard deviation = $10/60$
+- interquartile range = $12/60$
+
+For $Z = X + 2$:
+
+- mean = $82$
+- median = $80$
+- standard deviation = $10$
+- interquartile range = $12$
+
+## Practice: song length
+
+Using the Combined Class Song Data dataset:
+
+1. Describe the distribution of `LENGTH` using statistics and a histogram.
+2. Create `LENGTH2 = LENGTH / 60` and compare its summaries with `LENGTH`.
+3. Create `LENGTH3 = LENGTH + 2` and compare its summaries with `LENGTH`.
+
+<details>
+<summary>Jamovi procedure</summary>
+
+Use **Data** to compute the transformed variable, then use **Exploration -> Descriptives** to compare the distributions.
+</details>
