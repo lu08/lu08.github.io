@@ -17,9 +17,6 @@ format:
     chalkboard:
       buttons: true
     css: lecture_2_slide.css
-    code-tools:
-      source: true
-      toggle: false
 editor_options: 
   chunk_output_type: inline
 ---
@@ -35,7 +32,7 @@ knitr::opts_chunk$set(fig.align='center',
 
 
 ## Exercise: tallest buildings
-- Go to [https://en.wikipedia.org/wiki/List_of_tallest_buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings)
+- Go to the Wikipedia page on [List of Tallest Buildings](https://en.wikipedia.org/wiki/List_of_tallest_buildings)
 - We will only look at the top 10 tallest buildings
   1. Create a vector that stores the Height (m) of the top 10 tallest buildings
   1. Use R to verify that the vector you created has a length of 10 
@@ -460,7 +457,8 @@ plot(df.building$Height_m,df.building$Floors_num,
      ylab='Number of floors')
 ```
 
-## Sample code 1
+<details>
+<summary>Show solution</summary>
 
 - Create an empty vector with the same length as the number of buildings
 
@@ -488,30 +486,22 @@ mycols[(df.building$Year >= 2010)
 mycols[df.building$Year >= 2016] <- 'green'
 ```
 
-## Sample code 2
 
-- Create three colors
+Alternatively, you can create three colors first and create index based on the year of the building, then use the index to subset the colors; this is beneficial since you can change the colors easily.
 
 ```{r, eval=F}
 cols3 <- c('red', 'blue', 'green')
-```
-
-- Create index based on the year of the building
-
-```{r, eval=F}
 myindex <- ifelse(df.building$Year <= 2009, 1, NA)
 myindex[(df.building$Year >= 2010)
   & (df.building$Year <= 2015)] <- 2
 myindex[df.building$Year >= 2016] <- 3
+
+# cols3 gives the same vector as mycols above
+cols3[myindex]
 ```
 
-- Use index to subset the colors
+</details>
 
-```{r, eval=F}
-cols3[myindex] # same as mycols
-```
-
-# NA values
 
 ## NA values
 
@@ -524,32 +514,21 @@ length(x)
 
 - Most operations will return NA (e.g.: you don't know the 4th value, so you cannot calculate the mean)
 
-```{r,eval=F}
+```{r,eval=T}
 mean(x)
 max(x)
 sd(x)
 ```
 
-## Exclude NA values
-
-To avoid the issue of getting NA's when you perform calculations, you might want to **exclude the NA values**
-
-- Some functions give you the option to remove NA
+- To avoid the issue of getting NA's when you perform calculations, you might want to **exclude the NA values**.  some functions give you the option to remove NA; more generally, use `na.omit()`
 
 ```{r}
 mean(x,na.rm=T)
 max(x,na.rm=T)
-```
-
-- More generally, use `na.omit(x)`
-
-```{r}
 mean(na.omit(x))
 ```
 
-## Check for NA values
-
-- Try to use R to tell you which value is NA
+- To **check for NA values**, these syntax options don't work as intended:
 
 ```{r}
 x
@@ -564,9 +543,8 @@ is.na(x)
 which(is.na(x))
 ```
 
-## Other types of NA values
-
 - **NaN** is also treated as NA; **Inf** is not treated as NA (represents infinity)
+
 - You should check the calculations and variable types when you see NA, NaN, or Inf
 
 ```{r}
@@ -576,11 +554,10 @@ is.na(v1/v2)
 as.numeric('4,000')
 ```
 
-# More on logicals
 
-## Composite logical statements
+## More on logicals
 
-You can combine two or more logical statements together
+**Composite logical statement**: you can combine two or more logical statements together
 
 - **!** NOT
 - **&** AND
@@ -593,7 +570,6 @@ x>3 & x<3.5
 (x>3.5) | (x<2)
 ```
 
-## %in%
 
 - Recall, logical operators are the ones that return T/F
 
@@ -619,8 +595,7 @@ subjects %in% c('MAT','STAT')
 5.  Print the names and built years of buildings built between 2010 and 2015
 6.  Print the names and built years of the buildings built in 2010 OR in 2015
 7.  Plot a histogram of the built year of the buildings. I'm interested to see there is a building built before 1940 - can you find out which building it is?
-
-## 
+  
 
 Comment: **Bar graph** is like histogram for discrete variables; recall, **plot( )** gives a bar graph for factors
 

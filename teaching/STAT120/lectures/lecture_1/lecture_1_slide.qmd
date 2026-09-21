@@ -16,9 +16,6 @@ format:
     code-font-size: 1.15em
     chalkboard:
       buttons: true
-    code-tools:
-      source: true
-      toggle: false
 editor_options: 
   chunk_output_type: inline
 ---

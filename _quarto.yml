@@ -28,14 +28,13 @@ website:
         menu:
           - text: Overview
             href: teaching/index.qmd
-          - text: Stat 120 Statistical Computing in R
+          - text: Stat 120/DATA505 Statistical Computing in R
             href: teaching/STAT120/index.qmd
           - text: Stat 117 Introduction to Statistics
             href: teaching/STAT117/index.qmd
           - text: DATA 352/551 Modeling and Simulation
             href: teaching/DATA352/index.qmd
-      - text: "Dataset"
-        href: dataset/index.qmd
+
   
   sidebar:
     - id: stat120
@@ -51,15 +50,12 @@ website:
               href: teaching/STAT120/lectures/lecture_1/lecture_1_slide.html
             - text: "Lecture 2"
               href: teaching/STAT120/lectures/lecture_2/lecture_2_slide.html
-            - text: "Lecture notes"
+            - text: "Lecture 3"
+              href: teaching/STAT120/lectures/lecture_3/lecture_3_slide.html
+            - text: "Lecture code"
               href: teaching/STAT120/lectures/lecture_notes/index.qmd
         - text: "Homework"
           href: teaching/STAT120/homework/index.qmd
-          contents:
-            - text: "Homework 1"
-              href: teaching/STAT120/homework/homework_1.qmd
-            - text: "Homework 2"
-              href: teaching/STAT120/homework/homework_2.qmd
         - text: "Datasets"
           href: teaching/STAT120/data/index.qmd
         - text: "Resources"
