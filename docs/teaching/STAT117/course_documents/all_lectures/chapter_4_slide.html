@@ -9,7 +9,7 @@
 <link href="chapter_4_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Chapter 4: Transforming Variables</title>
+  <title>Chapter 4: Transformations and Z-scores</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -132,7 +132,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Chapter 4: Transforming Variables</h1>
+  <h1 class="title">Chapter 4: Transformations and Z-scores</h1>
   <p class="subtitle">STAT117: Introduction to Statistics</p>
   <div style="position: absolute; bottom: 0; font-size: 0.5em; color: #888;">
   Some narrative text in <em>Lecture notes and summary</em> are drafted by AI. They are fully proofread and verified by the instructor.
@@ -140,71 +140,440 @@
 </section>
 <section id="why-transform-a-variable" class="slide level2">
 <h2>Why transform a variable?</h2>
-<p>Transformations change the scale or location of a variable while preserving the ordering of its observations.</p>
+<p>There are several common reasons to transform data:</p>
 <ul>
-<li>Convert measurements to a more useful unit</li>
-<li>Make results easier to interpret</li>
-<li>Compare the effect of a change in scale or location on summary statistics</li>
+<li>convert from one unit to another, such as inches to centimeters or Celsius to Fahrenheit;</li>
+<li>reverse the direction of a variable coding, such as changing (<code>1 = Agree</code> and <code>5 = Disagree</code>) to (<code>1 = Disagree</code> and <code>5 = Agree</code>);</li>
+<li><em>standardize</em> data so scores measured on different scales or unit can be compared.</li>
 </ul>
+<p>The central question is: <strong>How does a transformation affect the distribution of a variable?</strong></p>
+<p>Specifically, we want to consider what happens to:</p>
+<ul>
+<li><strong>location:</strong> mode, median, and mean</li>
+<li><strong>spread:</strong> range, IQR, and standard deviation</li>
+<li><strong>shape:</strong> skewness ratio</li>
+</ul>
+</section>
+<section id="linear-transformations" class="slide level2">
+<h2>Linear transformations</h2>
+<p>A <strong>linear transformation</strong> has the form</p>
+<p><span class="math display">\[
+    \text{new data} = K*(\text{old data}) + C,
+\]</span></p>
+<p>where <code>K</code> and <code>C</code> are constants.</p>
+<ul>
+<li><code>K</code> represents a <em>scale factor</em></li>
+<li><code>C</code> represents a <em>location shift</em></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><p><code>new = 2(old) + 3</code> (scale everything up by 2; shift everything to the right by 3)</p></li>
+<li><p><code>new = -1.5(old) - 10</code> (scale factor = -1.5; shift everything to the left by 10)</p></li>
+<li><p><code>new = (old)/10</code> (scale factor = 1/10, no location shift)</p></li>
+</ul>
+</section>
+<section id="effect-on-location" class="slide level2">
+<h2>Effect on location</h2>
+<p>Location statistics mimic the transformation:</p>
+<p><span class="math display">\[
+    \text{new statistic} = K*(\text{old statistic}) + C
+\]</span></p>
+<p>This rule applies to the <strong>mode</strong>, <strong>median</strong>, and <strong>mean</strong>.</p>
+<p>For example, if the original mean is 20 and <code>new = 3*(old) + 4</code>, then</p>
+<p><span class="math display">\[
+    \text{new mean} = 3*(20) + 4 = 64.
+\]</span></p>
+<p>If the original median is 15 and <code>new = -2*(old) + 5</code>, then <span class="math display">\[
+    \text{new median} = -2*(15) + 5 = -25.
+\]</span></p>
+</section>
+<section id="effect-on-spread" class="slide level2">
+<h2>Effect on spread</h2>
+<p>Spread statistics are affected by the <strong>magnitude</strong> of <code>K</code>, but not by <code>C</code>:</p>
+<p><span class="math display">\[
+    \text{new spread} = |K|*(\text{old spread})
+\]</span></p>
+<p>This rule applies to the <strong>range</strong>, <strong>IQR</strong>, and <strong>standard deviation</strong>.</p>
+<p>Note 1: These statistics are always positive, hence the absolute value in the formula.</p>
+<blockquote>
+<p>Intution: the spread of a distribution is a measure of distance, which is always positive: the distance from my house to Drew is 2 miles, and the distance from Drew to my house is also 2 miles. You would never say that the distance from my house to Drew is “-2 miles.”</p>
+</blockquote>
+<p>Note 2: The <strong>location shift</strong> <code>C</code> does not affect the spread of the distribution.</p>
+<blockquote>
+<p>Intuition: if you move the entire distribution to the right or left, the distance between the values does not change (neither does the shape, so C also does not affect the skewness ratio).</p>
+</blockquote>
+<p>For example, if the original data has a min of 0 and max of 4, then the range is 4. If <code>new = 2*(old) + 3</code>, then the new min is 3 and the new max is 11, so the new range is 8, or simply <code>|2|(4) = 8</code>. If <code>new = -3*(old) + 4</code>, then the new min is 4 and the new max is -8, so the new range is 12, or simply <code>|-3|(4) = 12</code>.</p>
+<p>If the original standard deviation is 5 and <code>new = -3*(old) + 4</code>, then</p>
+<p><span class="math display">\[
+    \text{new SD} = |-3|(5) = 15.
+\]</span></p>
+</section>
+<section id="effect-on-skewness" class="slide level2">
+<h2>Effect on skewness</h2>
+<p>The skewness ratio is affected only by the <strong>sign</strong> of <code>K</code>:</p>
+<p><span class="math display">\[
+    \text{new skewness ratio} =
+\begin{cases}
+    \text{old skewness ratio}, &amp; K &gt; 0 \\
+    -\text{old skewness ratio}, &amp; K &lt; 0
+\end{cases}
+\]</span></p>
+<p>In other words, multiplying by a positive number does not change the skewness ratio. Multiplying by a negative number reverses the sign of the skewness ratio.</p>
+<blockquote>
+<p>Intuition: imagine a distribution with a range of 0 to 10. If you multiply by 2, the range becomes 0 to 20, but the shape is the same. If you multiply by -2, the range becomes -20 to 0. The old minimum becomes the new maximum, and the shape is reversed: left skewed becomes right skewed, and right skewed becomes left skewed.</p>
+</blockquote>
+</section>
+<section id="example-1-celsius-to-fahrenheit" class="slide level2">
+<h2>Example 1: Celsius to Fahrenheit</h2>
+<p>The conversion from Celsius to Fahrenheit is</p>
+<p><span class="math display">\[
+F = \frac{9}{5}C + 32.
+\]</span></p>
+<p>Suppose a set of Celsius temperatures has mean 14.6, standard deviation 5, IQR 7, range 20, and skewness ratio 0.8. Calculate the corresponding Fahrenheit statistics.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Celsius</th>
+<th style="text-align: left;">Fahrenheit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">14.6</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Range</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>In addition, as a review, what does the skewness ratio tell us about the shape of the distribution?</p>
 <details>
 <summary>
-Lecture notes and summary
+Show solution
 </summary>
-For example, song length can be recorded in seconds or minutes. Dividing by 60 changes the unit, but it does not change which songs are longer or shorter than one another.
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Celsius</th>
+<th style="text-align: right;">Fahrenheit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">14.6</td>
+<td style="text-align: right;">58.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">12.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Range</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.8</td>
+</tr>
+</tbody>
+</table>
+The Fahrenheit distribution has the same shape, but a different center and spread because <code>K = 9/5</code> is positive. The skewness ratio of 0.8 indicates that the distribution is roughly symmetric.
 </details>
 </section>
-<section id="multiplying-or-dividing-by-a-constant" class="slide level2">
-<h2>Multiplying or dividing by a constant</h2>
-<p>If every value is multiplied by a constant <span class="math inline">\(c\)</span>, then:</p>
-<ul>
-<li>the mean, median, percentiles, and other location statistics are multiplied by <span class="math inline">\(c\)</span></li>
-<li>the range, interquartile range, and standard deviation are multiplied by <span class="math inline">\(|c|\)</span></li>
-<li>the variance is multiplied by <span class="math inline">\(c^2\)</span></li>
-<li>the shape and skewness do not change when <span class="math inline">\(c &gt; 0\)</span></li>
-</ul>
-<p>Example: <code>LENGTH2 = LENGTH / 60</code> changes song length from seconds to minutes.</p>
-</section>
-<section id="adding-or-subtracting-a-constant" class="slide level2">
-<h2>Adding or subtracting a constant</h2>
-<p>If a constant <span class="math inline">\(c\)</span> is added to every value, then:</p>
-<ul>
-<li>the mean, median, and percentiles increase by <span class="math inline">\(c\)</span></li>
-<li>measures of spread do not change</li>
-<li>the shape and skewness do not change</li>
-</ul>
-<p>Example: <code>LENGTH3 = LENGTH + 2</code> shifts every song length upward by two seconds.</p>
-</section>
-<section id="worked-comparison" class="slide level2">
-<h2>Worked comparison</h2>
-<p>Suppose a variable has mean 80, median 78, standard deviation 10, and interquartile range 12.</p>
-<p>For <span class="math inline">\(Y = X / 60\)</span>:</p>
-<ul>
-<li>mean = <span class="math inline">\(80/60\)</span></li>
-<li>median = <span class="math inline">\(78/60\)</span></li>
-<li>standard deviation = <span class="math inline">\(10/60\)</span></li>
-<li>interquartile range = <span class="math inline">\(12/60\)</span></li>
-</ul>
-<p>For <span class="math inline">\(Z = X + 2\)</span>:</p>
-<ul>
-<li>mean = <span class="math inline">\(82\)</span></li>
-<li>median = <span class="math inline">\(80\)</span></li>
-<li>standard deviation = <span class="math inline">\(10\)</span></li>
-<li>interquartile range = <span class="math inline">\(12\)</span></li>
-</ul>
-</section>
-<section id="practice-song-length" class="slide level2 scrollable">
-<h2>Practice: song length</h2>
-<p>Using the Combined Class Song Data dataset:</p>
-<ol type="1">
-<li>Describe the distribution of <code>LENGTH</code> using statistics and a histogram.</li>
-<li>Create <code>LENGTH2 = LENGTH / 60</code> and compare its summaries with <code>LENGTH</code>.</li>
-<li>Create <code>LENGTH3 = LENGTH + 2</code> and compare its summaries with <code>LENGTH</code>.</li>
-</ol>
+<section id="example-2-reversing-a-scale" class="slide level2">
+<h2>Example 2: reversing a scale</h2>
+<p><span class="math display">\[
+    \text{new data} = -2*(\text{old data}) + 5.
+\]</span></p>
+<p>If the old mean is 3, the old standard deviation is 1.5, the old IQR is 2, and the old skewness ratio is 2.4, calculate the new statistics.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Old data</th>
+<th style="text-align: right;">New data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>In addition, what does the skewness ratio tell us about the shape of the distribution?</p>
 <details>
 <summary>
-Jamovi procedure
+Show solution
 </summary>
-Use <strong>Data</strong> to compute the transformed variable, then use <strong>Exploration -&gt; Descriptives</strong> to compare the distributions.
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Old data</th>
+<th style="text-align: right;">New data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"><code>-2(3) + 5 = -1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;"><code>|-2|(1.5) = 3</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><code>|-2|(2) = 4</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;"><code>-2.4</code></td>
+</tr>
+</tbody>
+</table>
+The negative value of <code>K</code> reverses the direction of the distribution. The skewness ratio of the old distribution, 2.4, indicates that the distribution is severely right-skewed. The new skewness ratio of -2.4 indicates that the distribution is severely left-skewed. The shape is reversed because we multiplied by a negative number.
+</details>
+</section>
+<section id="example-3-transform-ses-in-nels" class="slide level2">
+<h2>Example 3: transform SES in NELS</h2>
+<p>Use the NELS variable <code>ses</code>, Socio-Economic Status, and define</p>
+<p><span class="math display">\[
+    \text{SESNEW} = -2*(\text{SES}) + 5.
+\]</span></p>
+<p>As practice, open the NELS dataset in Jamovi and verify the listed summary statistics for <code>ses</code>. Then, use the transformation rules to calculate the summary statistics for <code>SESNEW</code>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;"><code>ses</code></th>
+<th style="text-align: right;"><code>SESNEW = -2*(ses) + 5</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">18.434</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Median</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">6.924</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">10.25</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Range</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">-1.03</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Show solution
+</summary>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;"><code>ses</code></th>
+<th style="text-align: right;"><code>SESNEW = -2*(ses) + 5</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">18.434</td>
+<td style="text-align: right;">-31.868</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Median</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">-33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Standard deviation</td>
+<td style="text-align: right;">6.924</td>
+<td style="text-align: right;">13.849</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">10.25</td>
+<td style="text-align: right;">20.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Range</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">-1.03</td>
+<td style="text-align: right;">1.03</td>
+</tr>
+</tbody>
+</table>
+</details>
+</section>
+<section id="example-4-reverse-a-likert-scale" class="slide level2 scrollable">
+<h2>Example 4: reverse a Likert scale</h2>
+<p>Suppose a Likert scale variable measures agreement with the statement <strong>“I like statistics”</strong>:</p>
+<ul>
+<li><code>1 = Strongly Agree</code></li>
+<li><code>2 = Agree</code></li>
+<li><code>3 = Neither agree nor disagree</code></li>
+<li><code>4 = Disagree</code></li>
+<li><code>5 = Strongly Disagree</code></li>
+</ul>
+<p>Its summary statistics are mean = 2.56, median = 2, IQR = 2, and skewness ratio = 2.11.</p>
+<p>We want to recode the variable so that high scores correspond to more interest in statistics:</p>
+<ul>
+<li><code>1 = Strongly Disagree</code></li>
+<li><code>2 = Disagree</code></li>
+<li><code>3 = Neither agree nor disagree</code></li>
+<li><code>4 = Agree</code></li>
+<li><code>5 = Strongly Agree</code></li>
+</ul>
+<ol type="a">
+<li><p>Write down the linear transformation to do so.</p></li>
+<li><p>What are the mean, median, IQR, and skewness ratio of the transformed variable?</p></li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Original scale</th>
+<th style="text-align: right;">Reversed scale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Median</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The linear transformation is</p>
+<p><span class="math display">\[
+    \text{new} = -1*(\text{old}) + 6.
+\]</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Original scale</th>
+<th style="text-align: right;">Reversed scale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;"><code>-1(2.56) + 6 = 3.44</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Median</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><code>-1(2) + 6 = 4</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><code>|-1|(2) = 2</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewness ratio</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;"><code>-2.11</code></td>
+</tr>
+</tbody>
+</table>
 </details>
 
 </section>

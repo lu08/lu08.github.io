@@ -1,5 +1,5 @@
 ---
-title: "Chapter 4: Transforming Variables"
+title: "Chapter 4: Transformations and Z-scores"
 subtitle: "STAT117: Introduction to Statistics"
 footnote-text: "Some narrative text in <em>Lecture notes and summary</em> are drafted by AI. They are fully proofread and verified by the instructor."
 format:
@@ -21,67 +21,249 @@ editor_options:
 
 ## Why transform a variable?
 
-Transformations change the scale or location of a variable while preserving the ordering of its observations.
+There are several common reasons to transform data:
 
-- Convert measurements to a more useful unit
-- Make results easier to interpret
-- Compare the effect of a change in scale or location on summary statistics
+- convert from one unit to another, such as inches to centimeters or Celsius to Fahrenheit;
+- reverse the direction of a variable coding, such as changing (`1 = Agree` and `5 = Disagree`) to (`1 = Disagree` and `5 = Agree`);
+- *standardize* data so scores measured on different scales or unit can be compared.
+
+The central question is: **How does a transformation affect the distribution of a variable?**
+
+Specifically, we want to consider what happens to:
+
+- **location:** mode, median, and mean
+- **spread:** range, IQR, and standard deviation
+- **shape:** skewness ratio
+
+
+## Linear transformations
+
+A **linear transformation** has the form
+
+$$
+	\text{new data} = K*(\text{old data}) + C,
+$$
+
+where `K` and `C` are constants.
+
+- `K` represents a *scale factor*
+- `C` represents a *location shift*
+
+Examples:
+
+- `new = 2(old) + 3` (scale everything up by 2; shift everything to the right by 3)
+
+- `new = -1.5(old) - 10` (scale factor = -1.5; shift everything to the left by 10)
+
+- `new = (old)/10` (scale factor = 1/10, no location shift)
+
+
+## Effect on location
+
+Location statistics mimic the transformation:
+
+$$
+	\text{new statistic} = K*(\text{old statistic}) + C
+$$
+
+This rule applies to the **mode**, **median**, and **mean**.
+
+For example, if the original mean is 20 and `new = 3*(old) + 4`, then
+
+$$
+	\text{new mean} = 3*(20) + 4 = 64.
+$$
+
+If the original median is 15 and `new = -2*(old) + 5`, then 
+$$
+	\text{new median} = -2*(15) + 5 = -25.
+$$
+
+## Effect on spread
+
+Spread statistics are affected by the **magnitude** of `K`, but not by `C`:
+    
+$$
+	\text{new spread} = |K|*(\text{old spread})
+$$
+
+This rule applies to the **range**, **IQR**, and **standard deviation**.
+
+Note 1: These statistics are always positive, hence the absolute value in the formula.  
+
+> Intution: the spread of a distribution is a measure of distance, which is always positive: the distance from my house to Drew is 2 miles, and the distance from Drew to my house is also 2 miles.  You would never say that the distance from my house to Drew is "-2 miles."
+
+Note 2: The **location shift** `C` does not affect the spread of the distribution.
+
+> Intuition: if you move the entire distribution to the right or left, the distance between the values does not change (neither does the shape, so C also does not affect the skewness ratio).
+
+For example, if the original data has a min of 0 and max of 4, then the range is 4.  If `new = 2*(old) + 3`, then the new min is 3 and the new max is 11, so the new range is 8, or simply `|2|(4) = 8`.  If `new = -3*(old) + 4`, then the new min is 4 and the new max is -8, so the new range is 12, or simply `|-3|(4) = 12`.
+
+If the original standard deviation is 5 and `new = -3*(old) + 4`, then
+
+$$
+	\text{new SD} = |-3|(5) = 15.
+$$
+
+
+## Effect on skewness
+
+The skewness ratio is affected only by the **sign** of `K`:
+
+$$
+	\text{new skewness ratio} =
+\begin{cases}
+	\text{old skewness ratio}, & K > 0 \\
+	-\text{old skewness ratio}, & K < 0
+\end{cases}
+$$
+
+In other words, multiplying by a positive number does not change the skewness ratio.  Multiplying by a negative number reverses the sign of the skewness ratio.
+
+> Intuition: imagine a distribution with a range of 0 to 10.  If you multiply by 2, the range becomes 0 to 20, but the shape is the same.  If you multiply by -2, the range becomes -20 to 0.  The old minimum becomes the new maximum, and the shape is reversed: left skewed becomes right skewed, and right skewed becomes left skewed.
+
+## Example 1: Celsius to Fahrenheit
+
+The conversion from Celsius to Fahrenheit is
+
+$$
+F = \frac{9}{5}C + 32.
+$$
+
+Suppose a set of Celsius temperatures has mean 14.6, standard deviation 5, IQR 7, range 20, and skewness ratio 0.8. Calculate the corresponding Fahrenheit statistics.
+
+| Statistic | Celsius | Fahrenheit |
+|:--|--:|:--|
+| Mean | 14.6 | |
+| Standard deviation | 5 | |
+| IQR | 7 | |
+| Range | 20 | |
+| Skewness ratio | 0.8 | |
+
+In addition, as a review, what does the skewness ratio tell us about the shape of the distribution?
 
 <details>
-<summary>Lecture notes and summary</summary>
+<summary>Show solution</summary>
 
-For example, song length can be recorded in seconds or minutes. Dividing by 60 changes the unit, but it does not change which songs are longer or shorter than one another.
+| Statistic | Celsius | Fahrenheit |
+|:--|--:|--:|
+| Mean | 14.6 | 58.28 |
+| Standard deviation | 5 | 9 |
+| IQR | 7 | 12.6 |
+| Range | 20 | 36 |
+| Skewness ratio | 0.8 | 0.8 |
+
+The Fahrenheit distribution has the same shape, but a different center and spread because `K = 9/5` is positive. The skewness ratio of 0.8 indicates that the distribution is roughly symmetric.
 </details>
 
-## Multiplying or dividing by a constant
+## Example 2: reversing a scale
 
-If every value is multiplied by a constant $c$, then:
+$$
+	\text{new data} = -2*(\text{old data}) + 5.
+$$
 
-- the mean, median, percentiles, and other location statistics are multiplied by $c$
-- the range, interquartile range, and standard deviation are multiplied by $|c|$
-- the variance is multiplied by $c^2$
-- the shape and skewness do not change when $c > 0$
+If the old mean is 3, the old standard deviation is 1.5, the old IQR is 2, and the old skewness ratio is 2.4, calculate the new statistics.
 
-Example: `LENGTH2 = LENGTH / 60` changes song length from seconds to minutes.
+| Statistic | Old data | New data |
+|:--|--:|--:|
+| Mean | 3 | |
+| Standard deviation | 1.5 | |
+| IQR | 2 | |
+| Skewness ratio | 2.4 | |
 
-## Adding or subtracting a constant
-
-If a constant $c$ is added to every value, then:
-
-- the mean, median, and percentiles increase by $c$
-- measures of spread do not change
-- the shape and skewness do not change
-
-Example: `LENGTH3 = LENGTH + 2` shifts every song length upward by two seconds.
-
-## Worked comparison
-
-Suppose a variable has mean 80, median 78, standard deviation 10, and interquartile range 12.
-
-For $Y = X / 60$:
-
-- mean = $80/60$
-- median = $78/60$
-- standard deviation = $10/60$
-- interquartile range = $12/60$
-
-For $Z = X + 2$:
-
-- mean = $82$
-- median = $80$
-- standard deviation = $10$
-- interquartile range = $12$
-
-## Practice: song length
-
-Using the Combined Class Song Data dataset:
-
-1. Describe the distribution of `LENGTH` using statistics and a histogram.
-2. Create `LENGTH2 = LENGTH / 60` and compare its summaries with `LENGTH`.
-3. Create `LENGTH3 = LENGTH + 2` and compare its summaries with `LENGTH`.
+In addition, what does the skewness ratio tell us about the shape of the distribution?
 
 <details>
-<summary>Jamovi procedure</summary>
+<summary>Show solution</summary>
 
-Use **Data** to compute the transformed variable, then use **Exploration -> Descriptives** to compare the distributions.
+| Statistic | Old data | New data |
+|:--|--:|--:|
+| Mean | 3 | `-2(3) + 5 = -1` |
+| Standard deviation | 1.5 | `|-2|(1.5) = 3` |
+| IQR | 2 | `|-2|(2) = 4` |
+| Skewness ratio | 2.4 | `-2.4` |
+
+The negative value of `K` reverses the direction of the distribution. The skewness ratio of the old distribution, 2.4, indicates that the distribution is severely right-skewed. The new skewness ratio of -2.4 indicates that the distribution is severely left-skewed. The shape is reversed because we multiplied by a negative number.
 </details>
+
+## Example 3: transform SES in NELS
+
+Use the NELS variable `ses`, Socio-Economic Status, and define
+
+$$
+	\text{SESNEW} = -2*(\text{SES}) + 5.
+$$
+
+As practice, open the NELS dataset in Jamovi and verify the listed summary statistics for `ses`.  Then, use the transformation rules to calculate the summary statistics for `SESNEW`.
+
+| Statistic | `ses` | `SESNEW = -2*(ses) + 5` |
+|:--|--:|--:|
+| Mean | 18.434 | |
+| Median | 19 | |
+| Standard deviation | 6.924 | |
+| IQR | 10.25 | |
+| Range | 35 | |
+| Skewness ratio | -1.03 | |
+
+<details>
+<summary>Show solution</summary>
+
+| Statistic | `ses` | `SESNEW = -2*(ses) + 5` |
+|:--|--:|--:|
+| Mean | 18.434 | -31.868 |
+| Median | 19 | -33 |
+| Standard deviation | 6.924 | 13.849 |
+| IQR | 10.25 | 20.5 |
+| Range | 35 | 70 |
+| Skewness ratio | -1.03 | 1.03 |
+</details>
+
+## Example 4: reverse a Likert scale
+
+Suppose a Likert scale variable measures agreement with the statement **"I like statistics"**:
+
+- `1 = Strongly Agree`
+- `2 = Agree`
+- `3 = Neither agree nor disagree`
+- `4 = Disagree`
+- `5 = Strongly Disagree`
+
+Its summary statistics are mean = 2.56, median = 2, IQR = 2, and skewness ratio = 2.11.
+
+We want to recode the variable so that high scores correspond to more interest in statistics:
+
+- `1 = Strongly Disagree`
+- `2 = Disagree`
+- `3 = Neither agree nor disagree`
+- `4 = Agree`
+- `5 = Strongly Agree`
+
+a) Write down the linear transformation to do so.
+
+b) What are the mean, median, IQR, and skewness ratio of the transformed variable?
+
+| Statistic | Original scale | Reversed scale |
+|:--|--:|--:|
+| Mean | 2.56 | |
+| Median | 2 | |
+| IQR | 2 | |
+| Skewness ratio | 2.11 | |
+
+<details>
+<summary>Show solution</summary>
+
+The linear transformation is
+
+$$
+	\text{new} = -1*(\text{old}) + 6.
+$$
+
+| Statistic | Original scale | Reversed scale |
+|:--|--:|--:|
+| Mean | 2.56 | `-1(2.56) + 6 = 3.44` |
+| Median | 2 | `-1(2) + 6 = 4` |
+| IQR | 2 | `|-1|(2) = 2` |
+| Skewness ratio | 2.11 | `-2.11` |
+</details>
+
+

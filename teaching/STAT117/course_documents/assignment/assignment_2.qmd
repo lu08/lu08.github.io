@@ -1,5 +1,6 @@
 ---
-title: "Assignment 2"
+title: "STAT117 Assignment 2: NYC Apartments"
+subtitle: "Using the Combined Class NYC Apartments dataset"
 format: html
 ---
 

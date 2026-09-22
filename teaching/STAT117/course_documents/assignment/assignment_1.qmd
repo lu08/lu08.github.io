@@ -1,5 +1,5 @@
 ---
-title: "STAT117 Assignment 1: Jamovi introduction"
+title: "STAT117 Assignment 1: Jamovi Introduction"
 subtitle: "Using the NELS dataset"
 format:
   html:

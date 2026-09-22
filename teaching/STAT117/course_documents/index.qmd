@@ -23,10 +23,11 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Homework Chapter 1](homework/chapter_1.qmd)
 - [Homework Chapter 2](homework/chapter_2.qmd)
 - [Homework Chapter 3](homework/chapter_3.qmd)
+- [Homework Chapter 4](homework/chapter_4.qmd)
 
 
 ## Assignment
 
-- [Assignment 1: Jamovi introduction](assignment/assignment_1.qmd)
-- [Assignment 2: NYC apartments](assignment/assignment_2.qmd)
-- [Assignment 3: Length of songs transformation](assignment/assignment_3.qmd)
+- [Assignment 1: Jamovi Introduction](assignment/assignment_1.qmd)
+- [Assignment 2: NYC Apartments](assignment/assignment_2.qmd)
+- [Assignment 3: Song length transformation](assignment/assignment_3.qmd)

@@ -8,3 +8,17 @@ format: html
 
 - Sep 22 (Tuesday): asynchronous lecture
 - Sep 24 (Thursday): in-person lecture, **quiz 3**
+
+
+## Tuesday, Sep 22 (asynchronous)
+
+1. Study the posted slides of [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html){target="_blank"} on your own.  Note that the slides currently do not include the second half of Chapter 4 (Z-scores), which will be discussed after Exam 1.
+
+2. Submit [Assignment 3](../../course_documents/assignment/assignment_3.qmd){target="_blank"} on Moodle before Thursday's class.
+
+
+## Thursday, Sep 24 (in-person)
+
+**Quiz 3** (given at the beginning of the class) will be very similar to the NYC apartment example in [Assignment 2](../../course_documents/assignment/assignment_2.qmd){target="_blank"}. Relevant content were discussed in [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}.
+
+
