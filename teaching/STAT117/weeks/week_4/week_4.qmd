@@ -16,7 +16,7 @@ format: html
 
 2. Submit [Assignment 3](../../course_documents/assignment/assignment_3.qmd){target="_blank"} on Moodle before Thursday's class.
 
-3. For additional practice, do problems 4.1, 4.4, and 4.5 from [Chapter 4 homework](../../course_documents/homework/chapter_4_homework.qmd){target="_blank"}.
+3. For additional practice, do problems 4.1, 4.4, and 4.5 from [Chapter 4 homework](../../course_documents/homework/chapter_4.html){target="_blank"}.
 
 4. Note: there will be a quiz question based on the above material, as noted below.
 

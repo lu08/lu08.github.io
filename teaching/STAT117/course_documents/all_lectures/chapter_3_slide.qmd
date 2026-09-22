@@ -1,7 +1,7 @@
 ---
 title: "Chapter 3: Location, Spread, and Skewness"
 subtitle: "STAT117: Introduction to Statistics"
-footnote-text: "Some narrative text in <em>Lecture notes and summary</em> are drafted by AI.  They are fully proofread and verified by the instructor.  Also, R code for generating output are optional and can be ignored for now."
+footnote-text: "Some narrative text in <em>Lecture notes and summary</em> are drafted by AI.  They are fully proofread and verified by the instructor.  Also, R code for generating output are optional."
 format:
   revealjs:
     theme: default
