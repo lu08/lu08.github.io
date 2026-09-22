@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>homework_3 – Yi Lu</title>
+<title>STAT120 - Statistical Computing in R – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -85,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">STAT120 - Statistical Computing in R</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -169,14 +204,234 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">STAT120 - Statistical Computing in R</h1>
+<p class="subtitle lead">Homework 3</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>To be added.</p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="part-i" class="level2">
+<h2 class="anchored" data-anchor-id="part-i">Part I</h2>
+<p>The dataset used for this part is <a href="../../../dataset/salaries-by-college-type-clean.csv" download="salaries-by-college-type-clean.csv">salaries-by-college-type-clean.csv</a>. Import the dataset into R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df.sal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../../../dataset/salaries-by-college-type-clean.csv'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df.sal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "School.Name"                       "School.Type"                      
+[3] "Starting.Median.Salary"            "Mid.Career.Median.Salary"         
+[5] "Mid.Career.10th.Percentile.Salary" "Mid.Career.25th.Percentile.Salary"
+[7] "Mid.Career.75th.Percentile.Salary" "Mid.Career.90th.Percentile.Salary"</code></pre>
+</div>
+</div>
+<ol type="1">
+<li>Look at the variable <strong>Starting.Median.Salary</strong>. Report its 90th, 50th, and 10th percentiles. Provide an interpretation for the 90th percentile.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The 90th percentile is about $53,660. This means that 10% of schools have a starting median salary above this value, while 90% are at or below it.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(df.sal<span class="sc">$</span>Starting.Median.Salary, <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  90%   50%   10% 
+53660 44700 39740 </code></pre>
+</div>
+</div>
+</details>
+<ol start="2" type="1">
+<li>Using relevant information in R to give a thorough description of the variable <strong>Starting.Median.Salary</strong>. Mention properties of <em>location</em>, <em>spread</em>, and describe the <em>shape</em> (i.e., skewness) of the distribution.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The typical starting median salary is about $44,700 (median), with an average of about $46,068. The highest reported starting median salary is $75,500, from the California Institute of Technology, while the lowest is $34,800, from Morehead State University. The middle 50% of schools have starting median salaries ranging from $42,000 to $48,300. The distribution is right-skewed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df.sal<span class="sc">$</span>Starting.Median.Salary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  34800   42000   44700   46068   48300   75500 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df.sal<span class="sc">$</span>Starting.Median.Salary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_3_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<ol start="3" type="1">
+<li>Calculate the z-scores of <strong>Starting.Median.Salary</strong> and <strong>Mid.Career.Median.Salary</strong> and store the z-scores as separate variables (<strong>zstarting</strong> and <strong>zmid</strong>, respectively) in the data frame.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>zstarting <span class="ot">&lt;-</span> (df.sal<span class="sc">$</span>Starting.Median.Salary <span class="sc">-</span> <span class="fu">mean</span>(df.sal<span class="sc">$</span>Starting.Median.Salary)) <span class="sc">/</span> <span class="fu">sd</span>(df.sal<span class="sc">$</span>Starting.Median.Salary)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.sal<span class="sc">$</span>zmid <span class="ot">&lt;-</span> (df.sal<span class="sc">$</span>Mid.Career.Median.Salary <span class="sc">-</span> <span class="fu">mean</span>(df.sal<span class="sc">$</span>Mid.Career.Median.Salary)) <span class="sc">/</span> <span class="fu">sd</span>(df.sal<span class="sc">$</span>Mid.Career.Median.Salary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="4" type="1">
+<li>Print the information of schools whose <strong>zstarting</strong> is greater than 2.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.sal[df.sal<span class="sc">$</span>zstarting <span class="sc">&gt;</span> <span class="dv">2</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                    School.Name School.Type
+1   Massachusetts Institute of Technology (MIT) Engineering
+2      California Institute of Technology (CIT) Engineering
+3                           Harvey Mudd College Engineering
+4  Polytechnic University of New York, Brooklyn Engineering
+5                                  Cooper Union Engineering
+6         Worcester Polytechnic Institute (WPI) Engineering
+7              Carnegie Mellon University (CMU) Engineering
+8        Rensselaer Polytechnic Institute (RPI) Engineering
+11              Stevens Institute of Technology Engineering
+88                         Princeton University  Ivy League
+89                              Yale University  Ivy League
+90                           Harvard University  Ivy League
+91                   University of Pennsylvania  Ivy League
+92                           Cornell University  Ivy League
+94                          Columbia University  Ivy League
+95           University of California, Berkeley       State
+   Starting.Median.Salary Mid.Career.Median.Salary
+1                   72200                   126000
+2                   75500                   123000
+3                   71800                   122000
+4                   62400                   114000
+5                   62200                   114000
+6                   61000                   114000
+7                   61800                   111000
+8                   61100                   110000
+11                  60600                   105000
+88                  66500                   131000
+89                  59100                   126000
+90                  63400                   124000
+91                  60900                   120000
+92                  60300                   110000
+94                  59400                   107000
+95                  59900                   112000
+   Mid.Career.10th.Percentile.Salary Mid.Career.25th.Percentile.Salary
+1                              76800                             99200
+2                                 NA                            104000
+3                                 NA                             96000
+4                              66800                             94300
+5                                 NA                             80200
+6                              80000                             91200
+7                              63300                             80100
+8                              71600                             85500
+11                             68700                             81900
+88                             68900                            100000
+89                             58000                             80600
+90                             54800                             86200
+91                             55900                             79200
+92                             56800                             79800
+94                             50300                             71900
+95                             59500                             81000
+   Mid.Career.75th.Percentile.Salary Mid.Career.90th.Percentile.Salary
+1                             168000                            220000
+2                             161000                                NA
+3                             180000                                NA
+4                             143000                            190000
+5                             142000                                NA
+6                             137000                            180000
+7                             150000                            209000
+8                             140000                            182000
+11                            138000                            185000
+88                            190000                            261000
+89                            198000                            326000
+90                            179000                            288000
+91                            192000                            282000
+92                            160000                            210000
+94                            161000                            241000
+95                            149000                            201000
+   zstarting     zmid
+1   4.075029 2.934368
+2   4.589640 2.725107
+3   4.012652 2.655354
+4   2.546792 2.097325
+5   2.515603 2.097325
+6   2.328472 2.097325
+7   2.453226 1.888065
+8   2.344066 1.818311
+11  2.266095 1.469544
+88  3.186156 3.283136
+89  2.032181 2.934368
+90  2.702734 2.794861
+91  2.312878 2.515847
+92  2.219312 1.818311
+94  2.078964 1.609051
+95  2.156935 1.957818</code></pre>
+</div>
+</div>
+</details>
+<ol start="5" type="1">
+<li>Print the information for <em>Rutgers University</em>. Give an interpretation for its <strong>zstarting</strong> and <strong>zmid</strong> values.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Rutgers University’s starting median salary is 0.66 standard deviations above the mean, and its mid-career median salary is 0.55 standard deviations above the mean.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.sal[df.sal<span class="sc">$</span>School.Name <span class="sc">==</span> <span class="st">'Rutgers University'</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           School.Name School.Type Starting.Median.Salary
+114 Rutgers University       State                  50300
+    Mid.Career.Median.Salary Mid.Career.10th.Percentile.Salary
+114                    91800                             48100
+    Mid.Career.25th.Percentile.Salary Mid.Career.75th.Percentile.Salary
+114                             65100                            128000
+    Mid.Career.90th.Percentile.Salary zstarting     zmid
+114                            176000 0.6598864 0.548797</code></pre>
+</div>
+</div>
+</details>
+<ol start="6" type="1">
+<li>What is the mean of <strong>zstarting</strong> for <em>only the liberal arts colleges</em>? What about the mean of <strong>zmid</strong> for liberal arts colleges? What conclusion can you draw by comparing the two means?</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df.sal<span class="sc">$</span>zstarting[df.sal<span class="sc">$</span>School.Type <span class="sc">==</span> <span class="st">'Liberal Arts'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.05015004</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df.sal<span class="sc">$</span>zmid[df.sal<span class="sc">$</span>School.Type <span class="sc">==</span> <span class="st">'Liberal Arts'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3799044</code></pre>
+</div>
+</div>
+</details>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

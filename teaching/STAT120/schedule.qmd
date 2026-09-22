@@ -24,7 +24,7 @@ title: "Schedule and reminders"
 
  
 # Week 4
-- Sep 22: 
+- Sep 22: We will finish [Lecture 2](lectures/lecture_2/lectures_2.html) and get started with [Lecture 3](lectures/lecture_3/lectures_3.html). 
 
 - Sep 24: **Quiz 4**
 

@@ -11,3 +11,4 @@ The provided solution is usually not the only way to code the answer. Write your
 - [Homework 1](homework_1.qmd)
 - [Homework 2](homework_2.qmd)
 - [Homework 3](homework_3.qmd)
+- [Homework 4](homework_4.qmd)

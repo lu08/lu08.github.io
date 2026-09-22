@@ -70,7 +70,7 @@ sleep <- c(5,5,6,6,6,7,7,7,8,14)
 -   For **numeric variables**, use mean and/or median
     -   Example: typically, how many hours do students sleep?
     -   Median is more **robust to outliers**
-    -   When mean and median are very different, it signals very **skewed** distribution and/or existence of outliers
+    -   When mean and median values are very different, it signals very **skewed** distribution and the existence of outliers
 
 
 -   In R (note, there is no built-in function for mode):
@@ -118,7 +118,7 @@ table(mtcars$am)
 -   The percentile (rank) of a value is the percentage **below** that value
 
 
-      ![](percentile_example.jpg){width=100%}
+      ![](percentile_example.jpg){width=60%}
 
 
 -   The kth percentile of a variable is a value such that k percent are below that value

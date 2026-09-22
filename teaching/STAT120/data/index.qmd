@@ -13,3 +13,8 @@ title: "Dataset"
 - [Salaries by college type](../../../dataset/salaries-by-college-type-clean.csv){download="salaries-by-college-type-clean.csv"}
 
   Source: [Kaggle](https://www.kaggle.com/datasets/wsj/college-salaries)
+
+
+- [Video Games Sales](../../../dataset/video-game-sales/Video_Games_Sales_as_at_22_Dec_2016.csv){download="Video_Games_Sales_as_at_22_Dec_2016.csv"}
+
+  Source: [Kaggle](https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings)

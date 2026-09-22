@@ -1,1 +1,91 @@
-To be added.
+---
+title: "STAT120 - Statistical Computing in R"
+subtitle: "Homework 3"
+---
+
+## Part I
+The dataset used for this part is [salaries-by-college-type-clean.csv](../../../dataset/salaries-by-college-type-clean.csv){download="salaries-by-college-type-clean.csv"}. Import the dataset into R.
+
+```{r}
+df.sal <- read.csv('../../../dataset/salaries-by-college-type-clean.csv')
+names(df.sal)
+```
+
+
+1. Look at the variable **Starting.Median.Salary**. Report its 90th, 50th, and 10th percentiles. Provide an interpretation for the 90th percentile.
+
+<details>
+<summary>Show solution</summary>
+
+The 90th percentile is about $53,660. This means that 10% of schools have a starting median salary above this value, while 90% are at or below it.
+
+```{r}
+quantile(df.sal$Starting.Median.Salary, c(0.9, 0.5, 0.1))
+```
+
+</details>
+
+
+2. Using relevant information in R to give a thorough description of the variable **Starting.Median.Salary**. Mention properties of *location*, *spread*, and describe the *shape* (i.e., skewness) of the distribution.
+
+<details>
+<summary>Show solution</summary>
+
+The typical starting median salary is about $44,700 (median), with an average of about $46,068. The highest reported starting median salary is $75,500, from the California Institute of Technology, while the lowest is $34,800, from Morehead State University. The middle 50% of schools have starting median salaries ranging from $42,000 to $48,300. The distribution is right-skewed.
+
+```{r}
+summary(df.sal$Starting.Median.Salary)
+hist(df.sal$Starting.Median.Salary)
+```
+
+</details>
+
+3. Calculate the z-scores of **Starting.Median.Salary** and **Mid.Career.Median.Salary** and store the z-scores as separate variables (**zstarting** and **zmid**, respectively) in the data frame.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+df.sal$zstarting <- (df.sal$Starting.Median.Salary - mean(df.sal$Starting.Median.Salary)) / sd(df.sal$Starting.Median.Salary)
+df.sal$zmid <- (df.sal$Mid.Career.Median.Salary - mean(df.sal$Mid.Career.Median.Salary)) / sd(df.sal$Mid.Career.Median.Salary)
+```
+
+</details>
+
+4. Print the information of schools whose **zstarting** is greater than 2.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+df.sal[df.sal$zstarting > 2, ]
+```
+
+</details>
+
+5. Print the information for *Rutgers University*. Give an interpretation for its **zstarting** and **zmid** values.
+
+<details>
+<summary>Show solution</summary>
+
+Rutgers University’s starting median salary is 0.66 standard deviations above the mean, and its mid-career median salary is 0.55 standard deviations above the mean.
+
+```{r}
+df.sal[df.sal$School.Name == 'Rutgers University', ]
+```
+
+</details>
+
+
+6. What is the mean of **zstarting** for *only the liberal arts colleges*? What about the mean of **zmid** for liberal arts colleges? What conclusion can you draw by comparing the two means?
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+mean(df.sal$zstarting[df.sal$School.Type == 'Liberal Arts'])
+mean(df.sal$zmid[df.sal$School.Type == 'Liberal Arts'])
+```
+
+</details>
+
