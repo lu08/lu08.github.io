@@ -1,1 +1,365 @@
-to be added
+---
+title: "Chapter 4"
+---
+
+### Exercise 4.1
+
+The following questions examine the effects of linear transformations on summary statistics. These questions do not require Jamovi.
+
+a) If each value in a distribution with mean equal to 5 is tripled, what is the new mean?
+
+b) If each value in a distribution with standard deviation equal to 5 is tripled, what is the new standard deviation?
+
+c) If each value in a distribution with skewness ratio equal to 1.14 is tripled, what is the new skewness ratio?
+
+d) If each value in a distribution with mean equal to 5 has the constant 6 added to it, what is the new mean?
+
+e) If each value in a distribution with standard deviation equal to 5 has the constant 6 added to it, what is the new standard deviation?
+
+f) If each value in a distribution with skewness ratio equal to 1.14 has the constant 6 added to it, what is the new skewness ratio?
+
+g) If each value in a distribution with mean equal to 5 is multiplied by -2, what is the new mean?
+
+h) If each value in a distribution with standard deviation equal to 5 is multiplied by -2, what is the new standard deviation?
+
+i) If each value in a distribution with skewness ratio equal to 1.14 is multiplied by -2, what is the new skewness ratio?
+
+j) If each value in a distribution with mean equal to 5 has a constant equal to 6 subtracted from it, what is the new mean?
+
+k) If each value in a distribution with standard deviation equal to 5 has a constant equal to 6 subtracted from it, what is the new standard deviation?
+
+l) If each value in a distribution with skewness ratio equal to 1.14 has a constant equal to 6 subtracted from it, what is the new skewness ratio?
+
+<details>
+<summary>### Solution</summary>
+
+a) 15
+b) 15
+c) 1.14
+d) 11
+e) 5
+f) 1.14
+g) -10
+h) 10
+i) -1.14
+j) -1
+k) 5
+l) 1.14
+
+</details>
+
+---
+
+### Exercise 4.4
+
+The variable `SCHATTRT` in the NELS data set gives the average daily attendance rate for the school that the student attends.
+
+a) What are the mean, median, standard deviation, variance, range, interquartile range, and skewness ratio of `SCHATTRT`?
+
+b) Use Jamovi to compute a new variable `SCHATTPP` that expresses the average daily attendance as a decimal instead of as a percentage, giving the average daily attendance proportion for the school that the student attends. What is the numeric expression you used?
+
+c) Based on the summary statistics for `SCHATTRT` that you generated in part a), find the mean, median, standard deviation, variance, interquartile range, and skewness ratio of `SCHATTPP`.
+
+<details>
+<summary>### Solution</summary>
+
+b) `SCHATTPP = SCHATTRT / 100`.
+
+Because every value is multiplied by 0.01, divide the mean, median, standard deviation, range, and interquartile range by 100. Divide the variance by 10,000. The skewness ratio is unchanged because a positive linear transformation does not change distribution shape.
+
+Using the NELS data, the original summary statistics are approximately: mean = 93.650, median = 95, SD = 4.691, variance = 22.002, range = 56, IQR = 3, and skewness ratio = -6.190. Therefore, for `SCHATTPP`: mean = 0.937, median = 0.950, SD = 0.047, variance = 0.0022, range = 0.560, IQR = 0.030, and skewness ratio = -6.190.
+
+</details>
+
+---
+
+### Exercise 4.5
+
+The variable `EXPINC30` in the NELS data set measures the expected annual income at age 30 of students in the eighth grade.
+
+a) What are the mean, median, standard deviation, variance, range, interquartile range, and skewness ratio of `EXPINC30`?
+
+b) Use Jamovi to compute a new variable `EXPCENTS`, which gives the expected income at age 30 in terms of pennies, not dollars. What is the numeric expression you used?
+
+c) Based on the summary statistics for `EXPINC30` that you generated in part a), find the mean, median, standard deviation, variance, interquartile range, and skewness ratio of `EXPCENTS`.
+
+<details>
+<summary>### Solution</summary>
+
+b) `EXPCENTS = EXPINC30 * 100`.
+
+Multiply the mean, median, standard deviation, range, and interquartile range by 100. Multiply the variance by 10,000. The skewness ratio remains unchanged because the transformation is positive and linear.
+
+From the NELS data, the original values are approximately mean = 51,574.73, median = 40,000, SD = 58,265.76, variance = 3,394,898,600, range = 1,000,000, IQR = 25,000, and skewness ratio = 10.863. Thus, `EXPCENTS` has mean = 5,157,473, median = 4,000,000, SD = 5,826,576, variance = 33,948,986,000,000, range = 100,000,000, IQR = 2,500,000, and skewness ratio = 10.863.
+
+</details>
+
+---
+
+### Exercise 4.6
+
+The variable `COMPUTER` in the NELS data set indicates whether the student’s family owned a computer when the student was in eighth grade. The variable is coded so that 0 = No and 1 = Yes.
+
+a) Verify that, using this coding, the mean equals the proportion of Yes responses, or 1s. What is that value?
+
+b) Use Jamovi to compute the standard deviation of `COMPUTER`.
+
+c) What is the linear transformation to convert `COMPUTER` into `COMP1`, which is coded 1 for No and 2 for Yes?
+
+d) What is the linear transformation to convert `COMPUTER` into `COMP2`, which is coded 0 for Yes and 1 for No?
+
+e) Use the rules for the effects of linear transformations on summary statistics to determine the means and standard deviations of `COMP1` and `COMP2`.
+
+<details>
+<summary>### Solution</summary>
+
+a) The mean is **0.47**, which is the proportion of students whose families owned a computer.
+
+b) The standard deviation is **0.50**.
+
+c) `COMP1 = COMPUTER + 1`.
+
+d) `COMP2 = 1 - COMPUTER`.
+
+e) For `COMP1`, the mean is **1.47** and the standard deviation is **0.50**. For `COMP2`, the mean is **0.53** and the standard deviation is **0.50**.
+
+</details>
+
+---
+
+### Exercise 4.7
+
+The variable `CIGPDAY1` from the Framingham data set gives the number of cigarettes smoked per day by respondents at their first examination in 1956. Assume that the values of `CIGPDAY1` are multiplied by negative 2 and then 3 is added to each value to create `CIGTRANS`.
+
+a) What are the values of the mean, standard deviation, and skewness ratio of `CIGPDAY1`?
+
+b) What is the value of the mean of `CIGTRANS`?
+
+c) What is the value of the new standard deviation?
+
+d) What is the value of the new skewness ratio?
+
+<details>
+<summary>### Solution</summary>
+
+a) For `CIGPDAY1`, mean = **9.44**, SD = **12.37**, and skewness ratio = **9.42**.
+
+b) `CIGTRANS = -2 * CIGPDAY1 + 3`, so the new mean is `-2(9.44) + 3 = -15.88`.
+
+c) The new SD is `|-2| * 12.37 = 24.74`.
+
+d) Multiplication by a negative constant reverses the direction of the skewness ratio, so the new skewness ratio is **-9.42**.
+
+</details>
+
+---
+
+### Exercise 4.8
+
+In the Framingham data set, `SEX` is coded so that 1 = Men and 2 = Women. What is the mean of `SEX`? Apply appropriate linear transformations to interpret the mean of `SEX` as a proportion of women.
+
+<details>
+<summary>### Solution</summary>
+
+The mean of `SEX` is **1.5**. Subtracting 1 from every value gives a 0/1 variable coded 0 for men and 1 for women, with mean **0.5**. Thus, **50%** of the respondents are women.
+
+</details>
+
+---
+
+### Exercise 4.9
+
+Consider the variable representing the number of members in a student’s household, given by the NELS variable `FAMSIZE`.
+
+a) If a student has a z-score of -1.28, how many members are in her household?
+
+b) What is the z-score for a student with 6 members in her household?
+
+c) Using the z-score criteria for outliers, where a score is an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are in this distribution?
+
+<details>
+<summary>### Solution</summary>
+
+a) The student has approximately **3** household members.
+
+b) The z-score for a household of 6 members is approximately **0.99**.
+
+c) There are **31** outliers using the stated z-score rule.
+
+</details>
+
+---
+
+### Exercise 4.11
+
+The variable `UNITENGL` in the NELS data set gives the number of years of English taken in high school. The variable `UNITMATH` gives the number of years of math taken in high school. Advanced coursework enabled some recorded values of these variables to exceed four.
+
+a) What is the z-score of a student who took 5.5 years of high school English?
+
+b) How many years of high school English did a student with a z-score of -1.71 take?
+
+c) Using the z-score criteria for outliers, where a score is an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are in the distribution `UNITENGL`?
+
+d) According to cumulative percentages, if a student took 5.5 years of both math and English, relative to classmates, is that more unusual for English or math?
+
+e) According to z-scores, if a student took 5.5 years of both math and English, relative to classmates, is that more unusual for English or math?
+
+<details>
+<summary>### Solution</summary>
+
+a) The z-score for 5.5 years of English is **2.07**.
+
+b) A z-score of -1.71 corresponds to approximately **3.00 years** of English.
+
+c) There are **25** outliers in `UNITENGL`: 7 below -2 and 18 above 2.
+
+d) The cumulative percentage is 98.2% for English and 99.0% for math, so 5.5 years is slightly more unusual in math.
+
+e) The z-score is 2.07 for English and 2.31 for math, so it is more unusual in math.
+
+</details>
+
+---
+
+### Exercise 4.12
+
+The variables `SLFCNC08`, `SLFCNC10`, and `SLFCNC12` in the NELS data set measure self-concept in eighth, tenth, and twelfth grade, respectively. A self-concept score of 25 is relatively highest in which of these distributions?
+
+a) Base your answer on cumulative percentages.
+
+b) Base your answer on z-scores.
+
+<details>
+<summary>### Solution</summary>
+
+a) The score is relatively highest in **eighth grade**: the cumulative percentages are 74.8% for eighth grade, 67.2% for tenth grade, and 20.6% for twelfth grade.
+
+b) The score is also relatively highest in **eighth grade** by z-score: approximately 0.66 in eighth grade, 0.35 in tenth grade, and -0.90 in twelfth grade.
+
+</details>
+
+---
+
+### Exercise 4.16
+
+If Steve’s z-score on a test is +1.5, what is his raw score if the mean of the test is 75 and the standard deviation is 10?
+
+<details>
+<summary>### Solution</summary>
+
+Using `raw score = mean + z * SD`, Steve’s score is `75 + 1.5(10) = 90`.
+
+</details>
+
+---
+
+### Exercise 4.18
+
+The following questions involve the variable `GRADE` from the Learndis data set.
+
+a) What are the mean, standard deviation, and skewness ratio of `GRADE`?
+
+b) Assume that students start first grade at age 6 and go up one grade each year. Use a linear transformation to convert `GRADE` to `AGE`, the approximate age of the student in that grade.
+
+c) Use the information about the distribution of `GRADE` to find the mean age for students in the data set.
+
+d) Use the information about the distribution of `GRADE` to find the standard deviation for `AGE`.
+
+e) Use the information about the distribution of `GRADE` to find the skewness ratio for `AGE`. How would you describe the shape of the `AGE` distribution?
+
+<details>
+<summary>### Solution</summary>
+
+a) Mean = **2.54**, SD = **1.20**, and skewness ratio = **2.15**.
+
+b) `AGE = GRADE + 5`.
+
+c) Mean age = `2.54 + 5 = 7.54` years.
+
+d) The SD remains **1.20**.
+
+e) The skewness ratio remains **2.15**, so the age distribution is positively skewed.
+
+</details>
+
+---
+
+### Exercise 4.19
+
+Compare the distribution of reading comprehension scores (`READCOMP`) in the Learndis data set by whether the student was assigned part time to the resource room for additional instruction (`PLACEMEN = 0`) or full time in a self-contained classroom (`PLACEMEN = 1`).
+
+a) Is either of the two distributions severely skewed? If so, which one(s) and what is the direction of the skew? Explain and support your answer with appropriate descriptive statistics.
+
+b) In which type of placement do these students have a higher overall level of reading comprehension? Explain and support your answer with an appropriate descriptive statistic taking into account the varying skewness ratios in the two distributions. Is there another statistic that suggests an alternative conclusion?
+
+c) For which type of placement are the reading comprehension scores more consistent? Explain and support your answer with an appropriate descriptive statistic taking into account the varying skewness ratios in the two distributions. Is there another statistic that suggests an alternative conclusion?
+
+d) Does the student with the highest reading comprehension score in the data set have a resource room or a self-contained classroom placement? Provide statistical support for your answer.
+
+e) What is the z-score corresponding to a reading comprehension score of 75 for a student with a resource room placement?
+
+f) What is the reading comprehension score corresponding to a z-score of 2 for a student with a resource room placement?
+
+g) Would a student with a reading comprehension score of 75 be more unusual (further from the bulk of the scores in standard deviation units) relative to the resource room students or to the self-contained classroom students? Explain and support your answer.
+
+<details>
+<summary>### Solution</summary>
+
+a) The resource-room distribution is negatively skewed but not severely (skewness ratio about -0.45). The self-contained-classroom distribution is severely negatively skewed (skewness ratio about -2.01).
+
+b) Reading comprehension is higher in the resource-room placement by both mean (81.43 versus 68.87) and median (83 versus 69). The mean and median agree.
+
+c) The self-contained placement is slightly more consistent by IQR (12 versus 12.50). Range and standard deviation can suggest a different conclusion because they are more affected by outliers.
+
+d) The highest score is in the resource-room group: 107 versus 86.
+
+e) For the resource-room group, the z-score for 75 is approximately **-0.56**.
+
+f) A z-score of 2 in the resource-room group corresponds to approximately **104.28**.
+
+g) A score of 75 is more unusual relative to the resource-room group because its absolute z-score is larger there than in the self-contained group.
+
+</details>
+
+---
+
+### Exercise 4.20
+
+Consider the variable `AGE1` in the Framingham data set, which gives a respondent’s age in 1956, the first year of the study.
+
+a) How many people in the data set were 40 years old in 1956?
+
+b) What percentage of people in the data set were younger than or equal to 40 in 1956?
+
+c) Is 40 years old above or below the median in this data set? Explain.
+
+d) Is 40 years old above or below the mean in this data set? How many standard deviations is 40 years old above or below the mean?
+
+e) If we consider a score to be an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are there in the `AGE1` distribution?
+
+g) Write the formula for linearly transforming the variable `AGE1` to the new variable `BIRTHYR`, which gives the year in which the person was born.
+
+h) What is the median of the variable `BIRTHYR`?
+
+i) What is the standard deviation of the `BIRTHYR`?
+
+<details>
+<summary>### Solution</summary>
+
+a) **17** people were 40 years old.
+
+b) **18.5%** were age 40 or younger.
+
+c) Age 40 is below the median because the median is **48**.
+
+d) Age 40 is below the mean by approximately **1.07 standard deviations**.
+
+e) There are **10** outliers, all on the high-age side.
+
+g) `BIRTHYR = 1956 - AGE1`.
+
+h) The median birth year is `1956 - 48 = 1908`.
+
+i) The standard deviation remains **8.425**, because subtracting from a variable does not change its spread.
+
+</details>

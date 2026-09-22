@@ -1,5 +1,5 @@
 ---
-title: "STAT117 Assignment 3: Song Length Transformation"
+title: "Assignment 3: Song Length Transformation"
 subtitle: "Using the Combined Class Song Data dataset"
 format: html
 ---

@@ -6,11 +6,11 @@ You can find all course documents here as a reference page.  Please refer to the
 
 ## Lecture slides
 
-- [Chapter 1](all_lectures/chapter_1_slide.html)
-- [Chapter 2](all_lectures/chapter_2_slide.html)
-- [Chapter 3](all_lectures/chapter_3_slide.html)
-- [Chapter 4](all_lectures/chapter_4_slide.html)
-
+- [Chapter 1: Introduction](all_lectures/chapter_1_slide.html)
+- [Chapter 2: Examining Univariate Distributions](all_lectures/chapter_2_slide.html)
+- [Chapter 3: Locations, Spread, and Skewness](all_lectures/chapter_3_slide.html)
+- [Chapter 4: Transformations and Z-scores](all_lectures/chapter_4_slide.html)
+`
 
 ## Homework
 

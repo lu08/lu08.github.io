@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter_4 – Yi Lu</title>
+<title>Chapter 4 – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Chapter 4</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,14 +157,318 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 4</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>to be added</p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="exercise-4.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.1">Exercise 4.1</h3>
+<p>The following questions examine the effects of linear transformations on summary statistics. These questions do not require Jamovi.</p>
+<ol type="a">
+<li><p>If each value in a distribution with mean equal to 5 is tripled, what is the new mean?</p></li>
+<li><p>If each value in a distribution with standard deviation equal to 5 is tripled, what is the new standard deviation?</p></li>
+<li><p>If each value in a distribution with skewness ratio equal to 1.14 is tripled, what is the new skewness ratio?</p></li>
+<li><p>If each value in a distribution with mean equal to 5 has the constant 6 added to it, what is the new mean?</p></li>
+<li><p>If each value in a distribution with standard deviation equal to 5 has the constant 6 added to it, what is the new standard deviation?</p></li>
+<li><p>If each value in a distribution with skewness ratio equal to 1.14 has the constant 6 added to it, what is the new skewness ratio?</p></li>
+<li><p>If each value in a distribution with mean equal to 5 is multiplied by -2, what is the new mean?</p></li>
+<li><p>If each value in a distribution with standard deviation equal to 5 is multiplied by -2, what is the new standard deviation?</p></li>
+<li><p>If each value in a distribution with skewness ratio equal to 1.14 is multiplied by -2, what is the new skewness ratio?</p></li>
+<li><p>If each value in a distribution with mean equal to 5 has a constant equal to 6 subtracted from it, what is the new mean?</p></li>
+<li><p>If each value in a distribution with standard deviation equal to 5 has a constant equal to 6 subtracted from it, what is the new standard deviation?</p></li>
+<li><p>If each value in a distribution with skewness ratio equal to 1.14 has a constant equal to 6 subtracted from it, what is the new skewness ratio?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li>15</li>
+<li>15</li>
+<li>1.14</li>
+<li>11</li>
+<li>5</li>
+<li>1.14</li>
+<li>-10</li>
+<li>10</li>
+<li>-1.14</li>
+<li>-1</li>
+<li>5</li>
+<li>1.14</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.4">Exercise 4.4</h3>
+<p>The variable <code>SCHATTRT</code> in the NELS data set gives the average daily attendance rate for the school that the student attends.</p>
+<ol type="a">
+<li><p>What are the mean, median, standard deviation, variance, range, interquartile range, and skewness ratio of <code>SCHATTRT</code>?</p></li>
+<li><p>Use Jamovi to compute a new variable <code>SCHATTPP</code> that expresses the average daily attendance as a decimal instead of as a percentage, giving the average daily attendance proportion for the school that the student attends. What is the numeric expression you used?</p></li>
+<li><p>Based on the summary statistics for <code>SCHATTRT</code> that you generated in part a), find the mean, median, standard deviation, variance, interquartile range, and skewness ratio of <code>SCHATTPP</code>.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol start="2" type="a">
+<li><code>SCHATTPP = SCHATTRT / 100</code>.</li>
+</ol>
+<p>Because every value is multiplied by 0.01, divide the mean, median, standard deviation, range, and interquartile range by 100. Divide the variance by 10,000. The skewness ratio is unchanged because a positive linear transformation does not change distribution shape.</p>
+<p>Using the NELS data, the original summary statistics are approximately: mean = 93.650, median = 95, SD = 4.691, variance = 22.002, range = 56, IQR = 3, and skewness ratio = -6.190. Therefore, for <code>SCHATTPP</code>: mean = 0.937, median = 0.950, SD = 0.047, variance = 0.0022, range = 0.560, IQR = 0.030, and skewness ratio = -6.190.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-4.5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.5">Exercise 4.5</h3>
+<p>The variable <code>EXPINC30</code> in the NELS data set measures the expected annual income at age 30 of students in the eighth grade.</p>
+<ol type="a">
+<li><p>What are the mean, median, standard deviation, variance, range, interquartile range, and skewness ratio of <code>EXPINC30</code>?</p></li>
+<li><p>Use Jamovi to compute a new variable <code>EXPCENTS</code>, which gives the expected income at age 30 in terms of pennies, not dollars. What is the numeric expression you used?</p></li>
+<li><p>Based on the summary statistics for <code>EXPINC30</code> that you generated in part a), find the mean, median, standard deviation, variance, interquartile range, and skewness ratio of <code>EXPCENTS</code>.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol start="2" type="a">
+<li><code>EXPCENTS = EXPINC30 * 100</code>.</li>
+</ol>
+<p>Multiply the mean, median, standard deviation, range, and interquartile range by 100. Multiply the variance by 10,000. The skewness ratio remains unchanged because the transformation is positive and linear.</p>
+<p>From the NELS data, the original values are approximately mean = 51,574.73, median = 40,000, SD = 58,265.76, variance = 3,394,898,600, range = 1,000,000, IQR = 25,000, and skewness ratio = 10.863. Thus, <code>EXPCENTS</code> has mean = 5,157,473, median = 4,000,000, SD = 5,826,576, variance = 33,948,986,000,000, range = 100,000,000, IQR = 2,500,000, and skewness ratio = 10.863.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-4.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.6">Exercise 4.6</h3>
+<p>The variable <code>COMPUTER</code> in the NELS data set indicates whether the student’s family owned a computer when the student was in eighth grade. The variable is coded so that 0 = No and 1 = Yes.</p>
+<ol type="a">
+<li><p>Verify that, using this coding, the mean equals the proportion of Yes responses, or 1s. What is that value?</p></li>
+<li><p>Use Jamovi to compute the standard deviation of <code>COMPUTER</code>.</p></li>
+<li><p>What is the linear transformation to convert <code>COMPUTER</code> into <code>COMP1</code>, which is coded 1 for No and 2 for Yes?</p></li>
+<li><p>What is the linear transformation to convert <code>COMPUTER</code> into <code>COMP2</code>, which is coded 0 for Yes and 1 for No?</p></li>
+<li><p>Use the rules for the effects of linear transformations on summary statistics to determine the means and standard deviations of <code>COMP1</code> and <code>COMP2</code>.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The mean is <strong>0.47</strong>, which is the proportion of students whose families owned a computer.</p></li>
+<li><p>The standard deviation is <strong>0.50</strong>.</p></li>
+<li><p><code>COMP1 = COMPUTER + 1</code>.</p></li>
+<li><p><code>COMP2 = 1 - COMPUTER</code>.</p></li>
+<li><p>For <code>COMP1</code>, the mean is <strong>1.47</strong> and the standard deviation is <strong>0.50</strong>. For <code>COMP2</code>, the mean is <strong>0.53</strong> and the standard deviation is <strong>0.50</strong>.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.7" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.7">Exercise 4.7</h3>
+<p>The variable <code>CIGPDAY1</code> from the Framingham data set gives the number of cigarettes smoked per day by respondents at their first examination in 1956. Assume that the values of <code>CIGPDAY1</code> are multiplied by negative 2 and then 3 is added to each value to create <code>CIGTRANS</code>.</p>
+<ol type="a">
+<li><p>What are the values of the mean, standard deviation, and skewness ratio of <code>CIGPDAY1</code>?</p></li>
+<li><p>What is the value of the mean of <code>CIGTRANS</code>?</p></li>
+<li><p>What is the value of the new standard deviation?</p></li>
+<li><p>What is the value of the new skewness ratio?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>For <code>CIGPDAY1</code>, mean = <strong>9.44</strong>, SD = <strong>12.37</strong>, and skewness ratio = <strong>9.42</strong>.</p></li>
+<li><p><code>CIGTRANS = -2 * CIGPDAY1 + 3</code>, so the new mean is <code>-2(9.44) + 3 = -15.88</code>.</p></li>
+<li><p>The new SD is <code>|-2| * 12.37 = 24.74</code>.</p></li>
+<li><p>Multiplication by a negative constant reverses the direction of the skewness ratio, so the new skewness ratio is <strong>-9.42</strong>.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.8" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.8">Exercise 4.8</h3>
+<p>In the Framingham data set, <code>SEX</code> is coded so that 1 = Men and 2 = Women. What is the mean of <code>SEX</code>? Apply appropriate linear transformations to interpret the mean of <code>SEX</code> as a proportion of women.</p>
+<details>
+<summary>
+### Solution
+</summary>
+<p>The mean of <code>SEX</code> is <strong>1.5</strong>. Subtracting 1 from every value gives a 0/1 variable coded 0 for men and 1 for women, with mean <strong>0.5</strong>. Thus, <strong>50%</strong> of the respondents are women.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-4.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.9">Exercise 4.9</h3>
+<p>Consider the variable representing the number of members in a student’s household, given by the NELS variable <code>FAMSIZE</code>.</p>
+<ol type="a">
+<li><p>If a student has a z-score of -1.28, how many members are in her household?</p></li>
+<li><p>What is the z-score for a student with 6 members in her household?</p></li>
+<li><p>Using the z-score criteria for outliers, where a score is an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are in this distribution?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The student has approximately <strong>3</strong> household members.</p></li>
+<li><p>The z-score for a household of 6 members is approximately <strong>0.99</strong>.</p></li>
+<li><p>There are <strong>31</strong> outliers using the stated z-score rule.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.11" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.11">Exercise 4.11</h3>
+<p>The variable <code>UNITENGL</code> in the NELS data set gives the number of years of English taken in high school. The variable <code>UNITMATH</code> gives the number of years of math taken in high school. Advanced coursework enabled some recorded values of these variables to exceed four.</p>
+<ol type="a">
+<li><p>What is the z-score of a student who took 5.5 years of high school English?</p></li>
+<li><p>How many years of high school English did a student with a z-score of -1.71 take?</p></li>
+<li><p>Using the z-score criteria for outliers, where a score is an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are in the distribution <code>UNITENGL</code>?</p></li>
+<li><p>According to cumulative percentages, if a student took 5.5 years of both math and English, relative to classmates, is that more unusual for English or math?</p></li>
+<li><p>According to z-scores, if a student took 5.5 years of both math and English, relative to classmates, is that more unusual for English or math?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The z-score for 5.5 years of English is <strong>2.07</strong>.</p></li>
+<li><p>A z-score of -1.71 corresponds to approximately <strong>3.00 years</strong> of English.</p></li>
+<li><p>There are <strong>25</strong> outliers in <code>UNITENGL</code>: 7 below -2 and 18 above 2.</p></li>
+<li><p>The cumulative percentage is 98.2% for English and 99.0% for math, so 5.5 years is slightly more unusual in math.</p></li>
+<li><p>The z-score is 2.07 for English and 2.31 for math, so it is more unusual in math.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.12" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.12">Exercise 4.12</h3>
+<p>The variables <code>SLFCNC08</code>, <code>SLFCNC10</code>, and <code>SLFCNC12</code> in the NELS data set measure self-concept in eighth, tenth, and twelfth grade, respectively. A self-concept score of 25 is relatively highest in which of these distributions?</p>
+<ol type="a">
+<li><p>Base your answer on cumulative percentages.</p></li>
+<li><p>Base your answer on z-scores.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The score is relatively highest in <strong>eighth grade</strong>: the cumulative percentages are 74.8% for eighth grade, 67.2% for tenth grade, and 20.6% for twelfth grade.</p></li>
+<li><p>The score is also relatively highest in <strong>eighth grade</strong> by z-score: approximately 0.66 in eighth grade, 0.35 in tenth grade, and -0.90 in twelfth grade.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.16" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.16">Exercise 4.16</h3>
+<p>If Steve’s z-score on a test is +1.5, what is his raw score if the mean of the test is 75 and the standard deviation is 10?</p>
+<details>
+<summary>
+### Solution
+</summary>
+<p>Using <code>raw score = mean + z * SD</code>, Steve’s score is <code>75 + 1.5(10) = 90</code>.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-4.18" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.18">Exercise 4.18</h3>
+<p>The following questions involve the variable <code>GRADE</code> from the Learndis data set.</p>
+<ol type="a">
+<li><p>What are the mean, standard deviation, and skewness ratio of <code>GRADE</code>?</p></li>
+<li><p>Assume that students start first grade at age 6 and go up one grade each year. Use a linear transformation to convert <code>GRADE</code> to <code>AGE</code>, the approximate age of the student in that grade.</p></li>
+<li><p>Use the information about the distribution of <code>GRADE</code> to find the mean age for students in the data set.</p></li>
+<li><p>Use the information about the distribution of <code>GRADE</code> to find the standard deviation for <code>AGE</code>.</p></li>
+<li><p>Use the information about the distribution of <code>GRADE</code> to find the skewness ratio for <code>AGE</code>. How would you describe the shape of the <code>AGE</code> distribution?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>Mean = <strong>2.54</strong>, SD = <strong>1.20</strong>, and skewness ratio = <strong>2.15</strong>.</p></li>
+<li><p><code>AGE = GRADE + 5</code>.</p></li>
+<li><p>Mean age = <code>2.54 + 5 = 7.54</code> years.</p></li>
+<li><p>The SD remains <strong>1.20</strong>.</p></li>
+<li><p>The skewness ratio remains <strong>2.15</strong>, so the age distribution is positively skewed.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.19" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.19">Exercise 4.19</h3>
+<p>Compare the distribution of reading comprehension scores (<code>READCOMP</code>) in the Learndis data set by whether the student was assigned part time to the resource room for additional instruction (<code>PLACEMEN = 0</code>) or full time in a self-contained classroom (<code>PLACEMEN = 1</code>).</p>
+<ol type="a">
+<li><p>Is either of the two distributions severely skewed? If so, which one(s) and what is the direction of the skew? Explain and support your answer with appropriate descriptive statistics.</p></li>
+<li><p>In which type of placement do these students have a higher overall level of reading comprehension? Explain and support your answer with an appropriate descriptive statistic taking into account the varying skewness ratios in the two distributions. Is there another statistic that suggests an alternative conclusion?</p></li>
+<li><p>For which type of placement are the reading comprehension scores more consistent? Explain and support your answer with an appropriate descriptive statistic taking into account the varying skewness ratios in the two distributions. Is there another statistic that suggests an alternative conclusion?</p></li>
+<li><p>Does the student with the highest reading comprehension score in the data set have a resource room or a self-contained classroom placement? Provide statistical support for your answer.</p></li>
+<li><p>What is the z-score corresponding to a reading comprehension score of 75 for a student with a resource room placement?</p></li>
+<li><p>What is the reading comprehension score corresponding to a z-score of 2 for a student with a resource room placement?</p></li>
+<li><p>Would a student with a reading comprehension score of 75 be more unusual (further from the bulk of the scores in standard deviation units) relative to the resource room students or to the self-contained classroom students? Explain and support your answer.</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p>The resource-room distribution is negatively skewed but not severely (skewness ratio about -0.45). The self-contained-classroom distribution is severely negatively skewed (skewness ratio about -2.01).</p></li>
+<li><p>Reading comprehension is higher in the resource-room placement by both mean (81.43 versus 68.87) and median (83 versus 69). The mean and median agree.</p></li>
+<li><p>The self-contained placement is slightly more consistent by IQR (12 versus 12.50). Range and standard deviation can suggest a different conclusion because they are more affected by outliers.</p></li>
+<li><p>The highest score is in the resource-room group: 107 versus 86.</p></li>
+<li><p>For the resource-room group, the z-score for 75 is approximately <strong>-0.56</strong>.</p></li>
+<li><p>A z-score of 2 in the resource-room group corresponds to approximately <strong>104.28</strong>.</p></li>
+<li><p>A score of 75 is more unusual relative to the resource-room group because its absolute z-score is larger there than in the self-contained group.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-4.20" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.20">Exercise 4.20</h3>
+<p>Consider the variable <code>AGE1</code> in the Framingham data set, which gives a respondent’s age in 1956, the first year of the study.</p>
+<ol type="a">
+<li><p>How many people in the data set were 40 years old in 1956?</p></li>
+<li><p>What percentage of people in the data set were younger than or equal to 40 in 1956?</p></li>
+<li><p>Is 40 years old above or below the median in this data set? Explain.</p></li>
+<li><p>Is 40 years old above or below the mean in this data set? How many standard deviations is 40 years old above or below the mean?</p></li>
+<li><p>If we consider a score to be an outlier if its associated z-score is less than -2 or greater than 2, how many outliers are there in the <code>AGE1</code> distribution?</p></li>
+<li><p>Write the formula for linearly transforming the variable <code>AGE1</code> to the new variable <code>BIRTHYR</code>, which gives the year in which the person was born.</p></li>
+<li><p>What is the median of the variable <code>BIRTHYR</code>?</p></li>
+<li><p>What is the standard deviation of the <code>BIRTHYR</code>?</p></li>
+</ol>
+<details>
+<summary>
+### Solution
+</summary>
+<ol type="a">
+<li><p><strong>17</strong> people were 40 years old.</p></li>
+<li><p><strong>18.5%</strong> were age 40 or younger.</p></li>
+<li><p>Age 40 is below the median because the median is <strong>48</strong>.</p></li>
+<li><p>Age 40 is below the mean by approximately <strong>1.07 standard deviations</strong>.</p></li>
+<li><p>There are <strong>10</strong> outliers, all on the high-age side.</p></li>
+<li><p><code>BIRTHYR = 1956 - AGE1</code>.</p></li>
+<li><p>The median birth year is <code>1956 - 48 = 1908</code>.</p></li>
+<li><p>The standard deviation remains <strong>8.425</strong>, because subtracting from a variable does not change its spread.</p></li>
+</ol>
+</details>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

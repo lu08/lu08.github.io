@@ -16,9 +16,17 @@ format: html
 
 2. Submit [Assignment 3](../../course_documents/assignment/assignment_3.qmd){target="_blank"} on Moodle before Thursday's class.
 
+3. For additional practice, do problems 4.1, 4.4, and 4.5 from [Chapter 4 homework](../../course_documents/homework/chapter_4_homework.qmd){target="_blank"}.
+
+4. Note: there will be a quiz question based on the above material, as noted below.
+
 
 ## Thursday, Sep 24 (in-person)
 
-**Quiz 3** (given at the beginning of the class) will be very similar to the NYC apartment example in [Assignment 2](../../course_documents/assignment/assignment_2.qmd){target="_blank"}. Relevant content were discussed in [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}.
+**Quiz 3** (given at the beginning of the class) will have two main questions:
+
+1. Very similar to the NYC apartment example in [Assignment 2](../../course_documents/assignment/assignment_2.qmd){target="_blank"}. Relevant content were discussed in [Chapter 3](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}.
+
+2. I will give you a linear transformation (e.g., ``new data = old data * 2 + 1``) and ask you to calculate new values of the mean, IQR, and skewness ratio after the transformation.
 
 
