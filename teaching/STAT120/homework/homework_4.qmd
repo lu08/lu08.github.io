@@ -8,7 +8,7 @@ subtitle: "Homework 4"
 The dataset used for this part is [Video_Games_Sales_as_at_22_Dec_2016.csv](../../../dataset/Video_Games_Sales_as_at_22_Dec_2016.csv){download="Video_Games_Sales_as_at_22_Dec_2016.csv"}. You will practicing practice [tidyverse](https://tidyverse.org/) functions for data manipulation.
 
 
-```{r, echo=F, eval=T}
+```{r, echo=F, eval=T, message=F}
 library(tidyverse)
 games <- read.csv("../../../dataset/Video_Games_Sales_as_at_22_Dec_2016.csv")
 ```

@@ -136,3 +136,22 @@ plot(df.building$Height_m, df.building$Floors_num,
      xlab = "Height in meters",
      ylab = "Num of floor",
      main = "my scatterplot")
+
+
+#------------------------------#
+# in class code: 9/22
+#------------------------------#
+
+# names of buildings in the United States AND also built after 2015
+
+df.building %>%
+  filter(Location == "United States",Year>2015) %>%
+  select(Name)
+
+df.building[df.building$Location=="United States" & df.building$Year>2015, ]
+
+df.building$Name[df.building$Location=="United States" & df.building$Year>2015]
+
+df.building$Name[which(df.building$Location=="United States" & df.building$Year>2015)]
+
+

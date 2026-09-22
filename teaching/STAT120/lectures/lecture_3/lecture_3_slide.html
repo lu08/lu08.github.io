@@ -299,6 +299,10 @@
 Show code
 </summary>
 <div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">table</span>(sleep) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href=""></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">Percent =</span> Freq <span class="sc">/</span> <span class="fu">sum</span>(Freq)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  sleep Freq Percent
 1     6    3     0.3
@@ -316,7 +320,7 @@ Show code
 </ul></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  0  1 
@@ -338,12 +342,12 @@ Show code
 <li><p>Percentiles (especially Q1, Q2, and Q3) provide a sense of the <strong>location</strong> of the distribution</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>pointsPerGame)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>pointsPerGame)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   4.273   9.769  13.375  14.442  19.085  34.692 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>pointsPerGame, <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.75</span>, <span class="fl">0.05</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>pointsPerGame, <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.75</span>, <span class="fl">0.05</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      95%       75%        5% 
 26.032767 19.084507  6.121994 </code></pre>
@@ -360,26 +364,26 @@ Show code
 </ul></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
  0.0000  0.3360  0.3640  0.3501  0.3910  0.4610       5 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">range</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct,<span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">range</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct,<span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.000 0.461</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FGPct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FGPct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
  0.3720  0.4400  0.4620  0.4777  0.4980  0.7470 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  25%   75% 
 0.440 0.498 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">IQR</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">IQR</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.058</code></pre>
 </div>
@@ -397,17 +401,17 @@ Show code
 Show code
 </summary>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">boxplot</span>(NBAPlayers2024<span class="sc">$</span>FGPct,</span>
-<span id="cb32-2"><a href=""></a>        <span class="at">main=</span><span class="fu">paste</span>(<span class="st">'Field goal percentage'</span>),</span>
-<span id="cb32-3"><a href=""></a>        <span class="at">col=</span><span class="st">'pink'</span>,</span>
-<span id="cb32-4"><a href=""></a>        <span class="at">border=</span><span class="st">'royalblue'</span>,</span>
-<span id="cb32-5"><a href=""></a>        <span class="at">cex.main=</span><span class="fl">0.8</span>,<span class="at">range=</span><span class="dv">0</span>)</span>
-<span id="cb32-6"><a href=""></a></span>
-<span id="cb32-7"><a href=""></a><span class="co"># `text()` adds text to an *existing* plot at the specified coordinate</span></span>
-<span id="cb32-8"><a href=""></a><span class="fu">text</span>(<span class="fl">1.25</span>,<span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct,<span class="at">na.rm =</span> T),</span>
-<span id="cb32-9"><a href=""></a>     <span class="at">labels=</span><span class="fu">c</span>(<span class="st">'min'</span>,<span class="st">'Q1'</span>,<span class="st">'median'</span>,<span class="st">'Q3'</span>,<span class="st">'max'</span>),</span>
-<span id="cb32-10"><a href=""></a>     <span class="at">col=</span><span class="st">'royalblue'</span>,</span>
-<span id="cb32-11"><a href=""></a>     <span class="at">cex=</span><span class="fl">0.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">boxplot</span>(NBAPlayers2024<span class="sc">$</span>FGPct,</span>
+<span id="cb33-2"><a href=""></a>        <span class="at">main=</span><span class="fu">paste</span>(<span class="st">'Field goal percentage'</span>),</span>
+<span id="cb33-3"><a href=""></a>        <span class="at">col=</span><span class="st">'pink'</span>,</span>
+<span id="cb33-4"><a href=""></a>        <span class="at">border=</span><span class="st">'royalblue'</span>,</span>
+<span id="cb33-5"><a href=""></a>        <span class="at">cex.main=</span><span class="fl">0.8</span>,<span class="at">range=</span><span class="dv">0</span>)</span>
+<span id="cb33-6"><a href=""></a></span>
+<span id="cb33-7"><a href=""></a><span class="co"># `text()` adds text to an *existing* plot at the specified coordinate</span></span>
+<span id="cb33-8"><a href=""></a><span class="fu">text</span>(<span class="fl">1.25</span>,<span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct,<span class="at">na.rm =</span> T),</span>
+<span id="cb33-9"><a href=""></a>     <span class="at">labels=</span><span class="fu">c</span>(<span class="st">'min'</span>,<span class="st">'Q1'</span>,<span class="st">'median'</span>,<span class="st">'Q3'</span>,<span class="st">'max'</span>),</span>
+<span id="cb33-10"><a href=""></a>     <span class="at">col=</span><span class="st">'royalblue'</span>,</span>
+<span id="cb33-11"><a href=""></a>     <span class="at">cex=</span><span class="fl">0.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </details>
 
@@ -419,13 +423,13 @@ Show code
 <li>SD has the same unit as the data</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>GPA <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.2</span>,<span class="fl">3.3</span>,<span class="fl">3.4</span>)</span>
-<span id="cb33-2"><a href=""></a><span class="fu">sd</span>(GPA)  <span class="co">#small SD, consistent GPA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>GPA <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.2</span>,<span class="fl">3.3</span>,<span class="fl">3.4</span>)</span>
+<span id="cb34-2"><a href=""></a><span class="fu">sd</span>(GPA)  <span class="co">#small SD, consistent GPA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>TEMP <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">90</span>,<span class="dv">100</span>)</span>
-<span id="cb35-2"><a href=""></a><span class="fu">mean</span>(TEMP); <span class="fu">sd</span>(TEMP) <span class="co">#large SD, lots of variation in temp</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>TEMP <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">90</span>,<span class="dv">100</span>)</span>
+<span id="cb36-2"><a href=""></a><span class="fu">mean</span>(TEMP); <span class="fu">sd</span>(TEMP) <span class="co">#large SD, lots of variation in temp</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 75</code></pre>
 </div>
@@ -437,7 +441,7 @@ Show code
 <li>Variance is the square of SD</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="fu">var</span>(GPA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="fu">var</span>(GPA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.01</code></pre>
 </div>
@@ -466,32 +470,32 @@ Show solution
 <p>The field-goal percentages based on NBA data from 2024 range from <strong>0.372 to 0.747</strong>. The mean is <strong>0.478</strong>, while the median is <strong>0.462</strong>, so a typical player has a field-goal percentage of about <strong>46%</strong>. The middle 50% of players have field-goal percentages from <strong>0.440 to 0.498</strong>, giving an interquartile range of <strong>0.058</strong>. The standard deviation is <strong>0.062</strong>.</p>
 <p>The distribution is <strong>right-skewed</strong>: the mean is higher than the median, and the upper tail extends farther than the lower tail.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="fu">range</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a><span class="fu">range</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.372 0.747</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="fu">mean</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="fu">mean</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4776709</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="fu">median</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="fu">median</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.462</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a><span class="fu">quantile</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  25%   75% 
 0.440 0.498 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="fu">IQR</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">IQR</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.058</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="fu">sd</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a><span class="fu">sd</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.06157083</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="fu">hist</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">main =</span> <span class="st">"Field-goal percentage"</span>, <span class="at">xlab =</span> <span class="st">"FGPct"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="fu">hist</span>(NBAPlayers2024<span class="sc">$</span>FGPct, <span class="at">main =</span> <span class="st">"Field-goal percentage"</span>, <span class="at">xlab =</span> <span class="st">"FGPct"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -529,12 +533,12 @@ Show solution
 </details>
 <p>in R:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="co"># by hand: a vector is created</span></span>
-<span id="cb53-2"><a href=""></a>a <span class="ot">&lt;-</span> NBAPlayers2024<span class="sc">$</span>FGPct</span>
-<span id="cb53-3"><a href=""></a>z1 <span class="ot">&lt;-</span> (a <span class="sc">-</span> <span class="fu">mean</span>(a))<span class="sc">/</span><span class="fu">sd</span>(a)</span>
-<span id="cb53-4"><a href=""></a></span>
-<span id="cb53-5"><a href=""></a><span class="co"># using scale(): a matrix is created</span></span>
-<span id="cb53-6"><a href=""></a>z2 <span class="ot">&lt;-</span> <span class="fu">scale</span>(NBAPlayers2024<span class="sc">$</span>FGPct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="co"># by hand: a vector is created</span></span>
+<span id="cb54-2"><a href=""></a>a <span class="ot">&lt;-</span> NBAPlayers2024<span class="sc">$</span>FGPct</span>
+<span id="cb54-3"><a href=""></a>z1 <span class="ot">&lt;-</span> (a <span class="sc">-</span> <span class="fu">mean</span>(a))<span class="sc">/</span><span class="fu">sd</span>(a)</span>
+<span id="cb54-4"><a href=""></a></span>
+<span id="cb54-5"><a href=""></a><span class="co"># using scale(): a matrix is created</span></span>
+<span id="cb54-6"><a href=""></a>z2 <span class="ot">&lt;-</span> <span class="fu">scale</span>(NBAPlayers2024<span class="sc">$</span>FGPct)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-2" class="slide level2 scrollable">
@@ -551,25 +555,25 @@ Show solution
 Show solution
 </summary>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a>NBAPlayers2024 <span class="ot">&lt;-</span> NBAPlayers2024 <span class="sc">%&gt;%</span></span>
-<span id="cb54-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">FGPct.z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(FGPct)),</span>
-<span id="cb54-3"><a href=""></a>         <span class="at">FG3Pct.z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(FG3Pct)))</span>
-<span id="cb54-4"><a href=""></a></span>
-<span id="cb54-5"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
-<span id="cb54-6"><a href=""></a>  <span class="fu">filter</span>(Player <span class="sc">==</span> <span class="st">"Stephen Curry"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb54-7"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z)</span>
-<span id="cb54-8"><a href=""></a></span>
-<span id="cb54-9"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
-<span id="cb54-10"><a href=""></a>  <span class="fu">filter</span>(FGPct.z <span class="sc">&gt;</span> <span class="dv">0</span>, FG3Pct.z <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb54-11"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z,MinPerGame)<span class="sc">%&gt;%</span></span>
-<span id="cb54-12"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(MinPerGame))</span>
-<span id="cb54-13"><a href=""></a></span>
-<span id="cb54-14"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
-<span id="cb54-15"><a href=""></a>  <span class="fu">filter</span>(FGPct.z <span class="sc">&gt;</span> <span class="dv">1</span>, FG3Pct.z <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb54-16"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z)</span>
-<span id="cb54-17"><a href=""></a></span>
-<span id="cb54-18"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FGPct.z)</span>
-<span id="cb54-19"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct.z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a>NBAPlayers2024 <span class="ot">&lt;-</span> NBAPlayers2024 <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">FGPct.z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(FGPct)),</span>
+<span id="cb55-3"><a href=""></a>         <span class="at">FG3Pct.z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(FG3Pct)))</span>
+<span id="cb55-4"><a href=""></a></span>
+<span id="cb55-5"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
+<span id="cb55-6"><a href=""></a>  <span class="fu">filter</span>(Player <span class="sc">==</span> <span class="st">"Stephen Curry"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-7"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z)</span>
+<span id="cb55-8"><a href=""></a></span>
+<span id="cb55-9"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
+<span id="cb55-10"><a href=""></a>  <span class="fu">filter</span>(FGPct.z <span class="sc">&gt;</span> <span class="dv">0</span>, FG3Pct.z <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-11"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z,MinPerGame)<span class="sc">%&gt;%</span></span>
+<span id="cb55-12"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(MinPerGame))</span>
+<span id="cb55-13"><a href=""></a></span>
+<span id="cb55-14"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span></span>
+<span id="cb55-15"><a href=""></a>  <span class="fu">filter</span>(FGPct.z <span class="sc">&gt;</span> <span class="dv">1</span>, FG3Pct.z <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-16"><a href=""></a>  <span class="fu">select</span>(Player, Team, FGPct, FG3Pct, FGPct.z, FG3Pct.z)</span>
+<span id="cb55-17"><a href=""></a></span>
+<span id="cb55-18"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FGPct.z)</span>
+<span id="cb55-19"><a href=""></a><span class="fu">summary</span>(NBAPlayers2024<span class="sc">$</span>FG3Pct.z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="1">
 <li><p>Add the standardized variables with <code>scale()</code>, as shown in the code above.</p></li>

@@ -93,7 +93,7 @@ sleep |> as.factor() |> summary()
 <details>
 <summary>Show code</summary>
 
-```{r,echo=F}
+```{r,echo=T}
 table(sleep) %>% 
   as.data.frame() %>%
   mutate(Percent = Freq / sum(Freq)) %>%

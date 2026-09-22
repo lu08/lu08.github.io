@@ -24,10 +24,16 @@ title: "Schedule and reminders"
 
  
 # Week 4
-- Sep 22: We will finish [Lecture 2](lectures/lecture_2/lectures_2.html) and get started with [Lecture 3](lectures/lecture_3/lectures_3.html). 
+- Sep 22: We will finish [Lecture 2](lectures/lecture_2/lectures_2.html) and get started with [Lecture 3](lectures/lecture_3/lecture_3.qmd). 
 
-- Sep 24: **Quiz 4**
+- Sep 24: **Quiz 4**, which will be similar to the practice questions at the end of [Lecture 2](lectures/lecture_2/lectures_2.html).  For more practice, review Part II of [Homework 2](homework/homework_2.qmd).  You do NOT need to start Homework 3 and Homework 4 yet.
 
+
+# Week 5
+
+- Sep 29: 
+
+- Oct 1: **Exam 1**
 
 ## Overall schedule (from [syllabus](syllabus.qmd)):
 | Week | Date | Note |
