@@ -14,6 +14,12 @@ slides=(
   "teaching/DATA352/course_documents/all_lectures/Lecture_1.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_2.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_3.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_4.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_5.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_6.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_7.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_8.qmd"
+  "teaching/DATA352/course_documents/all_lectures/Lecture_9.qmd"
 )
 
 for rel in "${slides[@]}"; do
