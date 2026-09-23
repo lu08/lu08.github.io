@@ -27,3 +27,7 @@ You can find all course documents here as a reference page. Please refer to the 
 
 - [Assignment 1 (Group discussion based on Homework 1)](assignment/assignment_1.qmd)
 - [Assignment 2 (Group discussion based on Homework 2)](assignment/assignment_2.qmd)
+
+## Exam reviews
+
+- [Exam 1 Review](exam_reviews/exam_1_review.qmd)

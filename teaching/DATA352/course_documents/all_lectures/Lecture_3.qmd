@@ -133,9 +133,7 @@ summarize_values(4, 8)
 ```
 
 
-- Exercise:
-
-Write and test a function for each task:
+- Exercise: write and test a function for each task
 
 1. `double_value(x)`: return twice the value of `x`.
 2. `celsius_to_fahrenheit(celsius)`: convert a temperature using

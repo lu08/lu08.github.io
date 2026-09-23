@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DATA 352/551: Quiz 1 – Yi Lu</title>
+<title>DATA 352/551: Exam 1 Review – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DATA 352/551: Quiz 1</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DATA 352/551: Exam 1 Review</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -196,8 +196,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DATA 352/551: Quiz 1</h1>
-<p class="subtitle lead">Based on Homework 1</p>
+<h1 class="title">DATA 352/551: Exam 1 Review</h1>
 </div>
 
 
@@ -214,43 +213,78 @@ window.Quarto = {
 </header>
 
 
+<section id="exam-format" class="level2">
+<h2 class="anchored" data-anchor-id="exam-format">Exam format</h2>
+<p>Exam 1 covers Lectures <a href="../all_lectures/Lecture_1.html" target="_blank">1</a>, <a href="../all_lectures/Lecture_2.html" target="_blank">2</a>, and <a href="../all_lectures/Lecture_3.html" target="_blank">3</a>, with corresponding Homework <a href="../../../../teaching/DATA352/course_documents/homework/homework_1.html" target="_blank">1</a>, <a href="../../../../teaching/DATA352/course_documents/homework/homework_2.html" target="_blank">2</a>, and <a href="../../../../teaching/DATA352/course_documents/homework/homework_3.html" target="_blank">3</a>. These can be found under <a href="../../../../teaching/DATA352/course_documents/index.html" target="_blank">Course documents</a>. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.</p>
+</section>
+<section id="list-of-topics" class="level2">
+<h2 class="anchored" data-anchor-id="list-of-topics">List of topics</h2>
+<p>This is a very general list to help you study. I suggest that you go over relevant lecture examples and homework questions for each topic.</p>
 <ol type="1">
-<li>Suppose you roll three fair dice and want to know if the sum is more likely to be 9 or 10 based on a simulation study. Let’s say I did the experiment once and got 2, 5, 2 as the outcome. Which of the following is correct?</li>
+<li>Can write down the <strong>sample space</strong> and <strong>probability mass function</strong> of a discrete random variable; can check the two basic conditions of a <strong>probability mass function</strong> (<a href="../all_lectures/Lecture_1.html" target="_blank">lecture 1</a>);</li>
+<li>Can understand the basic idea of simulation and how the result of a simulation can be used to estimate certain quantities (<a href="../all_lectures/Lecture_1.html" target="_blank">lecture 1</a>);</li>
+<li>Can design a simulation (using the four steps; <a href="../all_lectures/Lecture_1.html" target="_blank">lecture 1</a>; you don’t have to use the four-step outline as long as you can design the simulation); can write code to carry out the simulation (<a href="../all_lectures/Lecture_3.html" target="_blank">lecture 3</a>);</li>
+<li>Can calculate the <strong>expectation</strong> of simple discrete random variables (<a href="../all_lectures/Lecture_2.html" target="_blank">lecture 2</a>);</li>
+<li>For the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution. You are also expected to know which distribution is appropriate to use given a specific scenario (<a href="../all_lectures/Lecture_2.html" target="_blank">lecture 2</a>).</li>
 </ol>
-<ul class="task-list">
-<li><label><input type="checkbox">I can stop the simulation process since I already got a sum of 9.</label></li>
-<li><label><input type="checkbox">I should stop the simulation process when I get a sum of 10.</label></li>
-<li><label><input type="checkbox">I need to repeat this experiment many, many times.</label></li>
-<li><label><input type="checkbox">Since the sum I got is 9, the sum is more likely to be a 9 than a 10.</label></li>
-</ul>
-<ol start="2" type="1">
-<li>The homework described a martingale doubling system. Let’s say you play a gambling game with this system. You put down one dollar and you win; then you put down one dollar again, but this time you lose. How much should you bet next according to the system?</li>
+</section>
+<section id="examples-for-choosing-a-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="examples-for-choosing-a-distribution">Examples for choosing a distribution</h2>
+<p>For each of the following scenarios, choose the most appropriate distribution to model <span class="math inline">\(X\)</span>.</p>
+<ol type="1">
+<li><p>In a certain population, <span class="math inline">\(28\%\)</span> are single. Let <span class="math inline">\(X\)</span> be the number of single person among the next 10 randomly sampled people from this population.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>In a certain population, <span class="math inline">\(28\%\)</span> are single. Let <span class="math inline">\(X\)</span> be the number of people you randomly select until you find a single person.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>Suppose we use numbers to represent birth months (i.e., 1 for Jan., …, 12 for Dec.) and let <span class="math inline">\(X\)</span> be the birth month of the next person you ask.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>Suppose a popular social media post receives “likes” at a constant rate of one like per 5 second. Let <span class="math inline">\(X\)</span> be the number of likes received in the next 10 minutes.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>A basketball player makes free throws independently, each with probability <span class="math inline">\(0.7\)</span> of success. Let <span class="math inline">\(X\)</span> be the number of shots she takes until she makes her 3rd successful free throw.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>A quality control inspector examines 50 items from a production line, where each item independently has a <span class="math inline">\(5\%\)</span> chance of being defective. Let <span class="math inline">\(X\)</span> be the number of defective items found among the 50 items.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>The number of typos on a page of a book averages 2 per page, and typos occur independently of one another. Let <span class="math inline">\(X\)</span> be the number of typos on a randomly selected page.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>A fair 20-sided die is rolled once. Let <span class="math inline">\(X\)</span> be the number showing on the die.</p>
+<div style="margin-top: 3em;">
+
+</div></li>
+<li><p>You repeatedly and independently ask random strangers whether they were born in July, where <span class="math inline">\(12\%\)</span> of the population was born in July. Let <span class="math inline">\(X\)</span> be the number of people you need to ask until you find someone born in July.</p></li>
 </ol>
-<ul class="task-list">
-<li><label><input type="checkbox">One dollar.</label></li>
-<li><label><input type="checkbox">Two dollars.</label></li>
-<li><label><input type="checkbox">Three dollars.</label></li>
-<li><label><input type="checkbox">Four dollars.</label></li>
-</ul>
-<ol start="3" type="1">
-<li>Why do we repeat the same simulation many times?</li>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li><p><strong>Binomial</strong> with <span class="math inline">\(n=10\)</span> and <span class="math inline">\(p=0.28\)</span>. (Since <span class="math inline">\(p=0.28\)</span> is not especially small, the Poisson approximation with <span class="math inline">\(\lambda = np = 2.8\)</span> would be a rougher approximation here, but it still illustrates how the binomial connects to the Poisson.)</p></li>
+<li><p><strong>Geometric</strong> with <span class="math inline">\(p=0.28\)</span>: <span class="math inline">\(X\)</span> is the number of people sampled up to and including the first single person found.</p></li>
+<li><p><strong>Discrete uniform</strong> on <span class="math inline">\(\{1, 2, \ldots, 12\}\)</span>.</p></li>
+<li><p><strong>Poisson</strong> with <span class="math inline">\(\lambda = 120\)</span> (a rate of 1 like per 5 seconds means <span class="math inline">\(600/5 = 120\)</span> likes expected in the 10-minute, i.e., 600-second, window).</p></li>
+<li><p><strong>Negative binomial</strong> with <span class="math inline">\(r=3\)</span> successes needed and <span class="math inline">\(p=0.7\)</span>.</p></li>
+<li><p><strong>Binomial</strong> with <span class="math inline">\(n=50\)</span> and <span class="math inline">\(p=0.05\)</span>. Because <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is small, this is well approximated by a <strong>Poisson</strong> distribution with <span class="math inline">\(\lambda = np = 2.5\)</span>.</p></li>
+<li><p><strong>Poisson</strong> with <span class="math inline">\(\lambda = 2\)</span>.</p></li>
+<li><p><strong>Discrete uniform</strong> on <span class="math inline">\(\{1, 2, \ldots, 20\}\)</span>.</p></li>
+<li><p><strong>Geometric</strong> with <span class="math inline">\(p=0.12\)</span>.</p></li>
 </ol>
-<ul class="task-list">
-<li><label><input type="checkbox">To guarantee that every simulated result is identical.</label></li>
-<li><label><input type="checkbox">To avoid deciding what to record in each simulation.</label></li>
-<li><label><input type="checkbox">To create a larger set of results whose proportions can estimate probabilities.</label></li>
-<li><label><input type="checkbox">To assess our computer’s computation speed and power.</label></li>
-</ul>
-<ol start="4" type="1">
-<li><p>Let <span class="math inline">\(X\)</span> be the number of heads in two tosses of a fair coin.</p>
-<ol type="a">
-<li>What is the range of <span class="math inline">\(X\)</span>?</li>
-<li>Give the probability mass function of <span class="math inline">\(X\)</span>.</li>
-<li>Verify that this probability mass function satisfies the two conditions.</li>
-</ol></li>
-</ol>
+</details>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

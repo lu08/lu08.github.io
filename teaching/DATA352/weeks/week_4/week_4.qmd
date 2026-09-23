@@ -1,5 +1,5 @@
 ---
-title: "Week 4"
+title: "Week 4 (Sept 23)"
 ---
 
 ## In class
@@ -18,4 +18,4 @@ For the rest of the class, we will finish [Lecture 3](/teaching/DATA352/course_d
 
 Finish [Homework 3](../../course_documents/homework/homework_3.qmd) on your own, in preparation for next week's exam. Recall, you can use a different programming language if you prefer.  The specific syntax of the code can vary based on personal preference (e.g., `for` loop vs `replicate()`), but the simulation design should remain consistent.
 
-Reminder: **Exam 1** is scheduled for next week.  It covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3.  These can be found under [Course documents](../../course_documents/).  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
+Reminder: **Exam 1** is scheduled for next week.  It covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3 (see [course documents](../../course_documents/index.qmd)).  Go over [**Exam 1 review**](../../course_documents/exam_reviews/exam_1_review.qmd).  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.

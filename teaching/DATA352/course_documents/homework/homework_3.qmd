@@ -7,7 +7,7 @@ format:
 
 ## Question 1
 
-Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in [Lecture 1](lectures/lecture_1/lecture_1.html) Example 3. Write code for this simulation and estimate his chance of winning.
+Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in [Lecture 1](../all_lectures/Lecture_1.html){target="_blank"} Example 3. Write code for this simulation and estimate his chance of winning.
 
 <details>
 <summary>Show solution</summary>
@@ -54,7 +54,7 @@ table(result)/NSIM
 
 ## Question 2
 
-You play a game with me as follows. A fair coin is tossed. If a head shows up, I give you a dollar. If a tail shows up, you give me a dollar. Suppose you keep playing this game until you win $\$5$. Let $Y$ be the length of the game you have to play. What is the distribution of $Y$? We wrote down the four steps to carry out this simulation in [Lecture 1](lectures/lecture_1/lecture_1.html) Example 4b. Write code for this simulation and produce a histogram to estimate the distribution of $Y$. Caution: as it is possible that you "never" reach $\$5$, it is important to set an upperbound to the length of the game (i.e., if the length of the game has reached 10000, say, you quit the `while` loop regardless of your winning.)
+You play a game with me as follows. A fair coin is tossed. If a head shows up, I give you a dollar. If a tail shows up, you give me a dollar. Suppose you keep playing this game until you win $\$5$. Let $Y$ be the length of the game you have to play. What is the distribution of $Y$? We wrote down the four steps to carry out this simulation in [Lecture 1](../all_lectures/Lecture_1.html){target="_blank"} Example 4b. Write code for this simulation and produce a histogram to estimate the distribution of $Y$. Caution: as it is possible that you "never" reach $\$5$, it is important to set an upperbound to the length of the game (i.e., if the length of the game has reached 10000, say, you quit the `while` loop regardless of your winning.)
 
 The following code visualizes **one round** of the game, for demonstration purposes.
 
@@ -133,7 +133,7 @@ mean(result==num.game.max) #prob. that game length >= num.game.max
 
 ## Question 3
 
-Write code to carry out the simulation in [Homework 1](homework_1.qmd), question 2.
+Write code to carry out the simulation in [Homework 1](homework_1.qmd){target="_blank"}, question 2.
 
 > Suppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on [random.org/dice](https://www.random.org/dice/){target="_blank"} for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.
 
@@ -166,7 +166,7 @@ plot(as.factor(result),main='sum of three dice rolls')
 
 ## Question 4
 
-Write code to carry out the simulation in [Homework 1](homework_1.qmd), question 4.
+Write code to carry out the simulation in [Homework 1](homework_1.qmd){target="_blank"}, question 4.
 
 > The psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:
 >

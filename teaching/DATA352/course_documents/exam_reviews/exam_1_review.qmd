@@ -1,0 +1,84 @@
+---
+title: "DATA 352/551: Exam 1 Review"
+format:
+  html:
+    toc: false
+---
+
+## Exam format
+
+Exam 1 covers Lectures [1](../all_lectures/Lecture_1.html){target="_blank"}, [2](../all_lectures/Lecture_2.html){target="_blank"}, and [3](../all_lectures/Lecture_3.html){target="_blank"}, with corresponding Homework [1](../homework/homework_1.qmd){target="_blank"}, [2](../homework/homework_2.qmd){target="_blank"}, and [3](../homework/homework_3.qmd){target="_blank"}.  These can be found under [Course documents](../index.qmd){target="_blank"}.  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
+
+## List of topics
+
+This is a very general list to help you study.   I suggest that you go over relevant lecture examples and homework questions for each topic.
+
+  1. Can write down the **sample space** and **probability mass function** of a discrete random variable; can check the two basic conditions of a **probability mass function** ([lecture 1](../all_lectures/Lecture_1.html){target="_blank"});
+  2. Can understand the basic idea of simulation and how the result of a simulation can be used to estimate certain quantities ([lecture 1](../all_lectures/Lecture_1.html){target="_blank"});
+  3. Can design a simulation (using the four steps; [lecture 1](../all_lectures/Lecture_1.html){target="_blank"}; you don't have to use the four-step outline as long as you can design the simulation); can write code to carry out the simulation ([lecture 3](../all_lectures/Lecture_3.html){target="_blank"});
+  4. Can calculate the **expectation** of simple discrete random variables ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"});
+  5. For the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution.  You are also expected to know which distribution is appropriate to use given a specific scenario ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"}).
+  
+
+## Examples for choosing a distribution
+
+For each of the following scenarios, choose the most appropriate distribution to model $X$.
+
+  1. In a certain population, $28\%$ are single.  Let $X$ be the number of single person among the next 10 randomly sampled people from this population.
+
+      <div style="margin-top: 3em;"></div>
+
+  2. In a certain population, $28\%$ are single.  Let $X$ be the number of people you randomly select until you find a single person.
+
+      <div style="margin-top: 3em;"></div>
+
+  3. Suppose we use numbers to represent birth months (i.e., 1 for Jan., ..., 12 for Dec.) and let $X$ be the birth month of the next person you ask.
+
+      <div style="margin-top: 3em;"></div>
+
+  4. Suppose a popular social media post receives "likes" at a constant rate of one like per 5 second.  Let $X$ be the number of likes received in the next 10 minutes.
+
+      <div style="margin-top: 3em;"></div>
+
+  5. A basketball player makes free throws independently, each with probability $0.7$ of success.  Let $X$ be the number of shots she takes until she makes her 3rd successful free throw.
+
+      <div style="margin-top: 3em;"></div>
+
+  6. A quality control inspector examines 50 items from a production line, where each item independently has a $5\%$ chance of being defective.  Let $X$ be the number of defective items found among the 50 items.
+
+      <div style="margin-top: 3em;"></div>
+
+  7. The number of typos on a page of a book averages 2 per page, and typos occur independently of one another.  Let $X$ be the number of typos on a randomly selected page.
+
+      <div style="margin-top: 3em;"></div>
+
+  8. A fair 20-sided die is rolled once.  Let $X$ be the number showing on the die.
+
+      <div style="margin-top: 3em;"></div>
+
+  9. You repeatedly and independently ask random strangers whether they were born in July, where $12\%$ of the population was born in July.  Let $X$ be the number of people you need to ask until you find someone born in July.
+
+<details>
+<summary>Show solution</summary>
+
+  1. **Binomial** with $n=10$ and $p=0.28$. (Since $p=0.28$ is not especially small, the Poisson approximation with $\lambda = np = 2.8$ would be a rougher approximation here, but it still illustrates how the binomial connects to the Poisson.)
+
+  2. **Geometric** with $p=0.28$: $X$ is the number of people sampled up to and including the first single person found.
+
+  3. **Discrete uniform** on $\{1, 2, \ldots, 12\}$.
+
+  4. **Poisson** with $\lambda = 120$ (a rate of 1 like per 5 seconds means $600/5 = 120$ likes expected in the 10-minute, i.e., 600-second, window).
+
+  5. **Negative binomial** with $r=3$ successes needed and $p=0.7$.
+
+  6. **Binomial** with $n=50$ and $p=0.05$. Because $n$ is large and $p$ is small, this is well approximated by a **Poisson** distribution with $\lambda = np = 2.5$.
+
+  7. **Poisson** with $\lambda = 2$.
+
+  8. **Discrete uniform** on $\{1, 2, \ldots, 20\}$.
+
+  9. **Geometric** with $p=0.12$.
+
+</details>
+
+

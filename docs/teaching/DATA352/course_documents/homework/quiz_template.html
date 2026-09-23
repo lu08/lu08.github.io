@@ -71,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="../../data352.css">
@@ -197,7 +168,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">DATA 352/551: Quiz 2</h1>
-<p class="subtitle lead">Based on Homework 2</p>
+<p class="subtitle lead">Based on Homework 2 and Homework 3</p>
 </div>
 
 
@@ -214,63 +185,7 @@ window.Quarto = {
 </header>
 
 
-<ol type="1">
-<li><p>Suppose a random variable <span class="math inline">\(X\)</span> can take values <span class="math inline">\(\{1, 2, 3\}\)</span> according to the probabilities <span class="math inline">\(\{0.2, 0.3, 0.5\}\)</span>. You want to simulate values from this distribution using only random draws from a uniform distribution on <span class="math inline">\((0,1)\)</span>.</p>
-<p>Which of the following is the correct rule?</p>
-<ul class="task-list">
-<li><label><input type="checkbox">If <span class="math inline">\(U &lt; 0.2\)</span>, set <span class="math inline">\(X = 1\)</span>; if <span class="math inline">\(0.2 \le U &lt; 0.5\)</span>, set <span class="math inline">\(X = 2\)</span>; otherwise set <span class="math inline">\(X = 3\)</span>.</label></li>
-<li><label><input type="checkbox">If <span class="math inline">\(U &lt; 0.3\)</span>, set <span class="math inline">\(X = 1\)</span>; if <span class="math inline">\(0.3 \le U &lt; 0.8\)</span>, set <span class="math inline">\(X = 2\)</span>; otherwise set <span class="math inline">\(X = 3\)</span>.</label></li>
-<li><label><input type="checkbox">If <span class="math inline">\(U &lt; 0.5\)</span>, set <span class="math inline">\(X = 1\)</span>; if <span class="math inline">\(0.5 \le U &lt; 0.8\)</span>, set <span class="math inline">\(X = 2\)</span>; otherwise set <span class="math inline">\(X = 3\)</span>.</label></li>
-<li><label><input type="checkbox">If <span class="math inline">\(U &lt; 0.2\)</span>, set <span class="math inline">\(X = 3\)</span>; if <span class="math inline">\(0.2 \le U &lt; 0.5\)</span>, set <span class="math inline">\(X = 2\)</span>; otherwise set <span class="math inline">\(X = 1\)</span>.</label></li>
-</ul></li>
-<li><p>There is a <span class="math inline">\(2\%\)</span> click rate for an online advertisement. Suppose the number of people who click among the next <span class="math inline">\(100\)</span> people follows a binomial distribution.</p>
-<p>Which of the following is correct?</p>
-<ul class="task-list">
-<li><label><input type="checkbox">The parameters are <span class="math inline">\(n = 0.02\)</span> and <span class="math inline">\(p = 100\)</span>.</label></li>
-<li><label><input type="checkbox">The parameters are <span class="math inline">\(n = 100\)</span> and <span class="math inline">\(p = 2\)</span>.</label></li>
-<li><label><input type="checkbox">The parameters are <span class="math inline">\(n = 100\)</span> and <span class="math inline">\(p = 0.02\)</span>.</label></li>
-<li><label><input type="checkbox">The parameters are <span class="math inline">\(n = 2\)</span> and <span class="math inline">\(p = 0.01\)</span>.</label></li>
-</ul>
-<p>Which of the following is a necessary assumption for the binomial model here?</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Each person clicks independently with the same probability of clicking.</label></li>
-<li><label><input type="checkbox">The probability of clicking changes after each person clicks.</label></li>
-<li><label><input type="checkbox">The number of clicks must be exactly 50.</label></li>
-<li><label><input type="checkbox">The click rate must be larger than 50% for the model to be valid.</label></li>
-</ul></li>
-<li><p>Consider the number of times you roll a 6 in five rolls of a BIASED die. Which of the following is correct?</p>
-<ul class="task-list">
-<li><label><input type="checkbox">The model is binomial with <span class="math inline">\(n = 6\)</span> and <span class="math inline">\(p = 0.5\)</span>.</label></li>
-<li><label><input type="checkbox">The model is binomial with <span class="math inline">\(n = 5\)</span> and <span class="math inline">\(p = 6\)</span>.</label></li>
-<li><label><input type="checkbox">The model is binomial with <span class="math inline">\(n = 5\)</span> and <span class="math inline">\(p\)</span> not given in the problem.</label></li>
-<li><label><input type="checkbox">We cannot use a binomial model because the die is biased.</label></li>
-</ul></li>
-<li><p>In the flying-bomb hit model in Homework 2, the area was divided into 576 small squares and the total number of hit in the area was 537.</p>
-<p>Which model was used to approxmiate the number of hits in each of the small squares?</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Uniform</label></li>
-<li><label><input type="checkbox">Binomial</label></li>
-<li><label><input type="checkbox">Poisson</label></li>
-<li><label><input type="checkbox">Normal</label></li>
-</ul>
-<p>Specify the parameter(s) of the model you chose in the previous question.</p>
-<div style="margin-top: 3em;">
-
-</div></li>
-<li><p>Let the random variable <span class="math inline">\(X\)</span> be the number of times you get a HEAD in 10 tosses of a fair coin.</p>
-<p>What is the range of <span class="math inline">\(X\)</span>?</p>
-<div style="margin-top: 3em;">
-
-</div>
-<p>Which of the following is the right R code to calculate the probablity that you get <em>exactly</em> 3 HEADS in 10 tosses of a fair coin?</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>dbinom(3, size = 10, prob = 0.5)</code></label></li>
-<li><label><input type="checkbox"><code>dbinom(10, size = 3, prob = 0.5)</code></label></li>
-<li><label><input type="checkbox"><code>pbinom(3, size = 10, prob = 0.5)</code></label></li>
-<li><label><input type="checkbox"><code>pbinom(3, size = 10, prob = 0.5)</code></label></li>
-</ul>
-<p>Write the R code to calculate the probablity that you get 3 or MORE HEADS in 10 tosses of a fair coin?</p></li>
-</ol>
+<!-- DO NOT PUBLISH PUBLICLY -->
 
 
 
