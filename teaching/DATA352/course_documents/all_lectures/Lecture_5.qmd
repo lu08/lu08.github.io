@@ -1,0 +1,26 @@
+---
+title: "Lecture 5: Rejection and SIR Sampling"
+subtitle: "DATA 352/551: Modeling and Simulation"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    chalkboard:
+         buttons: true
+execute:
+  echo: true
+webr:
+  autorun: false
+editor_options: 
+  chunk_output_type: inline
+---
+
+## To be added

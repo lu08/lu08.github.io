@@ -94,6 +94,10 @@ website:
               href: teaching/DATA352/weeks/week_2/week_2.qmd
             - text: "Week 3"
               href: teaching/DATA352/weeks/week_3/week_3.qmd
+            - text: "Week 4"
+              href: teaching/DATA352/weeks/week_4/week_4.qmd
+            - text: "Week 5"
+              href: teaching/DATA352/weeks/week_5/week_5.qmd
         - text: "Course documents"
           href: teaching/DATA352/course_documents/index.qmd
         - text: "Resources"

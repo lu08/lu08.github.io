@@ -21,23 +21,23 @@ webr:
   autorun: false
 ---
 
-## Overview: recommended workflow for simulations
+## Recommended workflow for simulations
 
 1. Write a **dedicated function** for one simulation
 
-        Input: parameters of the ONE simulation
-        Output: a single result (i.e., "what do you want to save after ONE simulation?")        
+> Input: parameters of the ONE simulation
+> Output: a single result (i.e., "what do you want to save after ONE simulation?")        
 
 2. Test the function with a few calls to make sure it works as expected
 
 3. Initialize global simulation parameters
 
-        How many simulations do you want to run?  How should the results be stored?
-        Important: should always **pre-allocate** a vector (e.g. `rep(NA, 10000)`) to store results, rather than appending to a vector each time
+> How many simulations do you want to run?  How should the results be stored?
+> Important: should always **pre-allocate** a vector (e.g. `rep(NA, 10000)`) to store results, rather than appending to a vector each time
 
 4. Repeat the function many times
         
-        Can use a `for` loop, or functional wrappers like `replicate()` (in R), or functions that can handle parallelization (i.e., use multiple cores on your computer to run simulations faster)
+> Can use a `for` loop, or functional wrappers like `replicate()` (in R), or functions that can handle parallelization (i.e., use multiple cores on your computer to run simulations faster)
 
 
 
@@ -82,18 +82,18 @@ mean(result)
 ```
 
 
-Note: Method 1 and Method 2 are computational similar (provided that the `result` vector is pre-allocated).  Method 3 is more advanced and can be significantly faster for very large simulations.
+Note: Method 1 and Method 2 are computational similar (provided that the `result` vector is **pre-allocated**).  Method 3 is more advanced and can be significantly faster for very large simulations.
 
 # R review
 
 ## Functions
 
-An R function is a named piece of code that takes inputs, does some work, and returns an output.
+An R function is a named piece of code that takes `inputs`, does some work, and returns an `output`.
 
 ```r
 function_name <- function(input1, input2 = default_value) {
-  # code that uses the inputs
-  output
+  # code that uses the inputs to generate result
+  return(result)
 }
 ```
 
@@ -101,19 +101,39 @@ function_name <- function(input1, input2 = default_value) {
 - Put the inputs in the parentheses, with defaults when useful.
 - Write the calculation inside the braces.
 - The last expression is returned automatically; `return()` is optional.
+- To return more than one value, you can put the values in a `list`.
 
-### Worked example
-
+- Basic example 1:
 ```r
 square_plus_one <- function(x) {
-  x^2 + 1
+  return(x^2 + 1)
 }
 
 square_plus_one(3)
 # 10
 ```
 
-### Practice examples
+
+- Basic example 2:
+```r
+summarize_values <- function(first_value, second_value, third_value = 10) {
+  result <- list(
+    total = first_value + second_value + third_value,
+    average = (first_value + second_value + third_value) / 3
+  )
+  return(result)
+}
+
+summarize_values(4, 8)
+# $total
+# [1] 22
+#
+# $average
+# [1] 7.333333
+```
+
+
+- Exercise:
 
 Write and test a function for each task:
 
@@ -123,11 +143,42 @@ Write and test a function for each task:
 3. `roll_die(n = 6)`: simulate one roll of a fair die with `n` sides.
 4. `mean_of_two(x, y)`: return the average of two numbers.
 
-For each function, test at least two inputs. For example, check that
-`roll_die()` returns a whole number between 1 and 6.
+<details>
+<summary>Show solution</summary>
+
+```{r}
+double_value <- function(x) {
+  result <- 2 * x
+  return(result)
+}
+
+result <- double_value(4)
+result
+
+temperature <- function(celsius) {
+  result <- 32 + 9 * celsius / 5
+  return(result)
+}
+temperature(20)
 
 
+roll_die <- function(n = 6) {
+  result <- sample(1:n, size = 1)
+  return(result)
+}
 
+roll_die()
+roll_die(20)
+
+mean_of_two <- function(x, y) {
+  result <- (x + y) / 2
+  return(result)
+}
+
+mean_of_two(3, 7)
+```
+
+</details>
 
 ## If statements
 
@@ -145,6 +196,47 @@ You might need multiple `if` statements to cover more than one condition. You ca
 
 Example: We roll a fair die. If the outcome is 6, we win $20; if the outcome is 4 or 5, we win $10; otherwise we lose $15. Is this a fair game? How much would you expect to win or lose? Write a function to play this game one time.
 
+<details>
+<summary>Show solution</summary>
+
+```{r}
+play_game <- function() {
+  outcome <- sample(1:6, size = 1)
+
+  if (outcome == 6) {
+    result <- 20
+  } else if (outcome %in% c(4, 5)) {
+    result <- 10
+  } else {
+    result <- -15
+  }
+
+  return(result)
+}
+
+# One play
+play_game()
+
+# Approximate expected value by simulating many plays
+NSIM <- 10000
+result <- rep(NA, NSIM)
+result <- replicate(NSIM, play_game())
+mean(result)
+```
+
+For comparison, the expected value is
+
+$$
+E[X] = \frac{1}{6}(20) + \frac{2}{6}(10) + \frac{3}{6}(-15)
+= \frac{20 + 20 - 45}{6}
+= -\frac{5}{6}
+\approx -0.83.
+$$
+
+So this is not a fair game: on average, you lose about $0.83 in the long run.
+
+</details>
+
 
 ---
 
@@ -155,65 +247,37 @@ Loops are used to repeat a chunk of code.
 - `for` loop: repeat a fixed number of times
 - `while` loop: repeat until a condition is met
 
-Open RStudio or RStudio Cloud and try the following code.
 
+
+## For loops
+
+Basic example:
 ```r
 for (i in 1:5) {
   print(i)
 }
 ```
 
-The index of a `for` loop (`i`) does not need to be created separately; other objects may need to be created beforehand.
+- A `for` loop has an index and a code chunk. For example, if the index is $i = 1, 2, 5$, then the code chunk runs with $i = 1$, then with $i = 2$, and then with $i = 5$. The index (`i` in the above example) does not need to be created separately.
 
----
-
-## For loops
-
-A `for` loop has an index and a code chunk. For example, if the index is $i = 1, 2, 5$, then the code chunk runs with $i = 1$, then with $i = 2$, and then with $i = 5$.
-
-Basic structure in R:
-
-```r
-for (i in values) {
-  # code to be repeated
-}
-```
-
-A loop becomes useful when we want to repeat the same calculation many times, such as running a simulation repeatedly.
-
----
-
-## “Fake coding” examples
+Exercise: "fake coding"
 
 1. Repeat a task 10 times.
 2. Repeat a simulation 1000 times and store the result each time.
 3. Suppose there is a large dataset of 1000 cats. Extract the 3rd, 6th, 9th, ... cats from the dataset; for each cat, run a function `weighCat()` and store the weight in a vector.
 4. In a large dataset of cats, weigh and store the weights of the female cats.
 
-
-
----
-
-## Exercise
-
-Use any language and loop structures to do the following.
+Exercise: Use any language and loop structures to do the following.
 
 1. Print a sequence of texts: “1 moose 4 legs”, “2 moose 8 legs”, ..., “30 moose 120 legs”.
-2. Simulate the Martingale doubling system (Homework 1) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of $0.48$. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.
+2. Simulate the Martingale doubling system` ([Homework 1](../homework/homework_1.qmd)) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of $0.48$. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.
 
 
 ---
 
 ## While loops
 
-A `while` loop has three ingredients:
-
-- initialization
-- condition
-- code chunk
-
-The code runs as long as the condition is met.
-
+Basic example:
 ```r
 x <- 1
 while (x < 5) {
@@ -222,15 +286,16 @@ while (x < 5) {
 }
 ```
 
-This is useful when the number of repetitions is not known in advance.
+A `while` loop has three ingredients:
 
----
+- initialization
+- condition
+- code chunk that updates the condition
 
-## While loops: caution
+The code runs as long as the condition is met.  This is useful when the number of repetitions is not known in advance.
 
-It is important to properly update the objects involved in the while-loop condition.
-
-It is also recommended to set a safety upper bound so the loop cannot run forever.
+- It is important to properly update the objects involved in the while-loop condition.
+- It is also recommended to set a safety upper bound so the loop cannot run forever.
 
 ```r
 x <- 0
@@ -241,23 +306,15 @@ while (x < 5 && count < 1000) {
 }
 ```
 
-This keeps the program under control and prevents accidental infinite loops.
+Exercise: "fake coding"
 
----
+1. Play a game until you win $5$.
+2. Play a game until you win $5$ or lose $100$.
 
-## “Fake coding” examples
+Exercise: Use any language and loop structures to do the following.
 
-- Play a game until you win $5$.
-- Play a game until you win $5$ or lose $100$.
-
-
----
-
-## Exercise
-
-Use any language and loop structures to do the following.
-
-Simulate the Martingale doubling system until you win $5$ or lose $100$. Start the betting amount at $1$; if you win, you bet $1$; if you lose, you double your bet. Assume a winning probability of $0.48$. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.
+1. Simulate the Martingale doubling system until you win $5$ or lose $100$. Start the betting amount at $1$; if you win, you bet $1$; if you lose, you double your bet. Assume a winning probability of $0.48$. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.
+2. Write an R function to perform the above simulation.  Carefully design the inputs and outputs of the function.
 
 
 

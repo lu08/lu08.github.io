@@ -414,7 +414,7 @@
     "href": "teaching/DATA352/weeks/index.html#weeks",
     "title": "Weekly schedule",
     "section": "Weeks",
-    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026\nWeek 3: September 16, 2026",
+    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026\nWeek 3: September 16, 2026\nWeek 4: September 23, 2026\nWeek 5: September 30, 2026",
     "crumbs": [
       "Research",
       "Weeks"
@@ -447,7 +447,7 @@
     "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
     "title": "Course documents",
     "section": "Lecture slides",
-    "text": "Lecture slides\n\nLecture 1\nLecture 2\nLecture 3",
+    "text": "Lecture slides\n\nLecture 1: Introduction and discrete random variables\nLecture 2: Common discrete distributions\nLecture 3: Implementing simulations\nLecture 4: Common continuous distributions\nLecture 5: Rejection and SIR sampling\nLecture 6: Model based inference\nLecture 7: Bootstrapping\nLecture 8: Empirical p-values\nLecture 9: Introduction to Bayesian inference and MCMC",
     "crumbs": [
       "Research",
       "Course documents"
@@ -1332,7 +1332,7 @@
     "href": "teaching/STAT120/lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture 1\nLecture 2\nLecture 3\nCode used for demonstration during each lecture can be found here",
+    "text": "Lecture 1: Introduction\nLecture 2: Data types\nLecture 3: Univariate distributions\nCode used for demonstration during each lecture can be found here",
     "crumbs": [
       "Research",
       "Lectures"
@@ -1389,6 +1389,204 @@
     "crumbs": [
       "Research",
       "Syllabus"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#distribution-name-reference-in-r",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#distribution-name-reference-in-r",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Distribution name reference in R",
+    "text": "Distribution name reference in R"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#continuous-random-variables",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#continuous-random-variables",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Continuous random variables",
+    "text": "Continuous random variables\nRecall, a random variable \\(X\\) is continuous if its sample space is continuous (and infinite). Can you think of some real life examples?\nFor discrete random variables, we calculate \\(P(X=x)\\) for each possible value. We cannot do the same with continuous random variables. Why?\nImportant property of a continuous random variable \\(X\\): \\(P(X=x) = 0\\) for any value \\(x\\). As a result:\n\nFor example: \\(P(1 &lt; X &lt;3) = P(1 &lt; X \\le3) = P(1 \\le X \\le3)\\).\nOnly makes sense to calculate \\(P(X\\in A)\\) for some subset \\(A \\subset \\mathbb{R}\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#probability-of-continuous-random-variables",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#probability-of-continuous-random-variables",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Probability of continuous random variables",
+    "text": "Probability of continuous random variables\nWe can use histograms to visualize univariate, continuous distributions (the discrete equivalent is called a bar graph).\nFor the following continuous distributions, how would you calculate something like \\(P( a&lt;X&lt;b)\\)?"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#density-function",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#density-function",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Density function",
+    "text": "Density function\nThe probability mass function \\(f(x)=P(X=x)\\) cannot be defined for continuous random variables. Instead, we use something called the probability density function, defined as a function \\(f(x)\\) such that \\(P(X\\in A)=\\int_A f(x) dx\\).\n\nA small digression: density estimation is a very big topic in statistics. We’ll do a simple demo in R (R code: density(data, kernel = \"Gaussian\", bw = 5)).\nFor an arbitrary continuous density, calculating probabilities involves integration; R can handle common continuous distributions (i.e., their densities have certain functional forms, specified by given parameters); these are also used a lot in modeling."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#uniform",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#uniform",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Uniform",
+    "text": "Uniform"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#uniform-1",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#uniform-1",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Uniform",
+    "text": "Uniform\nScenario: \\(X\\) is a random draw from the interval \\((a,b)\\)\nParameter: \\(a\\) and \\(b\\), end points of the range of \\(X\\)\nMean: \\((a+b)/2\\)\nProbability:\n\ndunif(2.3, min=0, max=3) does NOT give you probability!\npunif(2.3, min=0, max=3) gives \\(P(X\\le2.3)\\)\n\nSimulation:\n\nrunif(1000, min=0, max=3)"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exponential",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exponential",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Exponential",
+    "text": "Exponential"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exponential-1",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exponential-1",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Exponential",
+    "text": "Exponential\nScenario: Exponential is often used to model Poisson waiting time: if the number of times an event occurs follows a Poisson distribution, then the waiting time between two events follows an exponential distribution.\nQ: if you stand in front of a window and spot taxis at a constant rate of 12.5 taxis per hour, how long would you expect to wait for the next taxi?\nParameter: \\(\\lambda\\) = rate of occurrence\nMean: \\(1/\\lambda\\) = expected or average waiting time\nProbability:\n\npexp(..., rate = ...)\n\nSimulation:\n\nrexp(1000, rate = ...)"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exercise",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#exercise",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Exercise",
+    "text": "Exercise\n\nSuppose speeding cars occur at a constant rate. A policeman stands at a certain location and catches one speeding car per 10 minutes, on average. What is the chance that he has to wait for less than 5 minutes to catch the next speeding car? More than 15 minutes? Between 5 and 10 minutes?\nSimulate from the above distribution; print out a few numbers and discuss what the numbers represent; plot a histogram to see its shape (note: the actual density function can be plotted by curve(dexp(x, rate = ...)))."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#beta",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#beta",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Beta",
+    "text": "Beta\nScenario: Beta distribution has the range of \\((0,1)\\) and is often used to model percentages and probabilities, etc. (especially in Bayesian models as a prior distribution)\nParameter: \\(\\alpha\\) = shape 1; \\(\\beta\\) = shape 2\n\nMean: \\(\\alpha / (\\alpha + \\beta)\\)\nProbability:\n\npbeta(..., shape1 = ..., shape2 = ...)\n\nSimulation:\n\nrbeta(10000, shape1 = ..., shape2 = ...)"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#normal",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#normal",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "Normal",
+    "text": "Normal\nScenario: Normal distribution is typically used to model the sum, or average, of “identical and independent” random variables (e.g., distribution of the sample mean), due to the Central Limit Theorem.\nParameter: \\(\\mu\\) = mean, \\(\\sigma\\) = standard deviation\n\nProbability:\n\npnorm(..., mean = ..., sd = ...)\n\nSimulation:\n\nrnorm(10000, mean = ..., sd = ...)"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#the-central-limit-theorem",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#the-central-limit-theorem",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\nSuppose each of you is teaching a class with \\(n=25\\) students. Simulate \\(25\\) exam scores from uniform \\((0,100)\\) and calculate the class average of your simulated class. Plot a histogram of the \\(25\\) simulated exam scores.\n\n\nRepeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages.\nHow would you estimate the mean and standard deviation (sd) of the class average?\n\n\nRepeat 1, but simulating \\(25\\) exam scores from normal with \\(mean=80\\) and \\(sd=3\\).\nRepeat 1, but simulating \\(25\\) exam scores from beta with \\(shape1=6\\) and \\(shape2=2\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#the-central-limit-theorem-1",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_4.html#the-central-limit-theorem-1",
+    "title": "Lecture 4: Common Continuous Distributions",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\nKey result of the Central Limit Theorem: if you have a random sample of \\(n\\) scores, then the sample average is random, and the randomness can be described by a normal distribution for large \\(n\\).\nWhy useful? CLT enables us to make statistical inference based on the sample mean. For instance, you might make a hypothesis that the exam scores follow a beta distribution with shape1=6 and shape2=2; you then look at the average score of 25 (randomly selected) students. If the average is “too extreme,” you might decide to reject the hypothesis. The question of “how extreme is the observed average?” is calculated based on the normal distribution.\nImportant question: How large does \\(n\\) have to be for CLT to work well? It depends on the shape of the population; if the population is very “not normal” (esp. long tail), \\(n\\) needs to be very large to overcome the “unnormalness.”"
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Coming soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
+    "title": "Week 4",
+    "section": "",
+    "text": "Coming soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#homework",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html#homework",
+    "title": "Week 4",
+    "section": "Homework",
+    "text": "Homework\nComing soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_8.html#to-be-added",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_8.html#to-be-added",
+    "title": "Lecture 8: Empirical p-values",
+    "section": "To be added",
+    "text": "To be added"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_6.html#to-be-added",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_6.html#to-be-added",
+    "title": "Lecture 6: Model Based Inference",
+    "section": "To be added",
+    "text": "To be added"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_5.html#to-be-added",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_5.html#to-be-added",
+    "title": "Lecture 5: Rejection and SIR Sampling",
+    "section": "To be added",
+    "text": "To be added"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_7.html#to-be-added",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_7.html#to-be-added",
+    "title": "Lecture 7: Bootstrapping",
+    "section": "To be added",
+    "text": "To be added"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/all_lectures/Lecture_9.html#to-be-added",
+    "href": "teaching/DATA352/course_documents/all_lectures/Lecture_9.html#to-be-added",
+    "title": "Lecture 9: Introduction to Bayesian Inference and MCMC",
+    "section": "To be added",
+    "text": "To be added"
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_5/week_5.html",
+    "href": "teaching/DATA352/weeks/week_5/week_5.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "Coming soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_5/week_5.html#in-class",
+    "href": "teaching/DATA352/weeks/week_5/week_5.html#in-class",
+    "title": "Week 5",
+    "section": "",
+    "text": "Coming soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_5/week_5.html#homework",
+    "href": "teaching/DATA352/weeks/week_5/week_5.html#homework",
+    "title": "Week 5",
+    "section": "Homework",
+    "text": "Homework\nComing soon.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 5"
     ]
   }
 ]

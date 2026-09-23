@@ -205,66 +205,74 @@
 </div>
 
 </section>
-<section id="overview-recommended-workflow-for-simulations" class="slide level2 scrollable">
-<h2>Overview: recommended workflow for simulations</h2>
+<section id="recommended-workflow-for-simulations" class="slide level2 scrollable">
+<h2>Recommended workflow for simulations</h2>
 <ol type="1">
-<li><p>Write a <strong>dedicated function</strong> for one simulation</p>
-<pre><code> Input: parameters of the ONE simulation
- Output: a single result (i.e., "what do you want to save after ONE simulation?")        </code></pre></li>
-<li><p>Test the function with a few calls to make sure it works as expected</p></li>
-<li><p>Initialize global simulation parameters</p>
-<pre><code> How many simulations do you want to run?  How should the results be stored?
- Important: should always **pre-allocate** a vector (e.g. `rep(NA, 10000)`) to store results, rather than appending to a vector each time</code></pre></li>
-<li><p>Repeat the function many times</p>
-<pre><code> Can use a `for` loop, or functional wrappers like `replicate()` (in R), or functions that can handle parallelization (i.e., use multiple cores on your computer to run simulations faster)</code></pre></li>
+<li>Write a <strong>dedicated function</strong> for one simulation</li>
 </ol>
+<blockquote>
+<p>Input: parameters of the ONE simulation Output: a single result (i.e., “what do you want to save after ONE simulation?”)</p>
+</blockquote>
+<ol start="2" type="1">
+<li><p>Test the function with a few calls to make sure it works as expected</p></li>
+<li><p>Initialize global simulation parameters</p></li>
+</ol>
+<blockquote>
+<p>How many simulations do you want to run? How should the results be stored? Important: should always <strong>pre-allocate</strong> a vector (e.g.&nbsp;<code>rep(NA, 10000)</code>) to store results, rather than appending to a vector each time</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Repeat the function many times</li>
+</ol>
+<blockquote>
+<p>Can use a <code>for</code> loop, or functional wrappers like <code>replicate()</code> (in R), or functions that can handle parallelization (i.e., use multiple cores on your computer to run simulations faster)</p>
+</blockquote>
 </section>
 <section id="example-outcome-of-a-fair-die" class="slide level2">
 <h2>Example: outcome of a fair die</h2>
 <p>What is the expected value of the outcome of a fair die? Design and implement a simulation to find out.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># 1. ONE simulation function</span></span>
-<span id="cb4-2"><a href=""></a>sim_die <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">6</span>) {</span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">return</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="at">size=</span><span class="dv">1</span>))</span>
-<span id="cb4-4"><a href=""></a>}</span>
-<span id="cb4-5"><a href=""></a></span>
-<span id="cb4-6"><a href=""></a><span class="co"># 2. Test the function</span></span>
-<span id="cb4-7"><a href=""></a><span class="fu">sim_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># 1. ONE simulation function</span></span>
+<span id="cb1-2"><a href=""></a>sim_die <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">6</span>) {</span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">return</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="at">size=</span><span class="dv">1</span>))</span>
+<span id="cb1-4"><a href=""></a>}</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a><span class="co"># 2. Test the function</span></span>
+<span id="cb1-7"><a href=""></a><span class="fu">sim_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># 3. Initialize global simulation parameters</span></span>
-<span id="cb6-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb6-3"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, NSIM)</span>
-<span id="cb6-4"><a href=""></a></span>
-<span id="cb6-5"><a href=""></a><span class="co"># 4. Repeat the simulation NSIM times</span></span>
-<span id="cb6-6"><a href=""></a></span>
-<span id="cb6-7"><a href=""></a><span class="do">#### Method 1: 'for' loop</span></span>
-<span id="cb6-8"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NSIM) {</span>
-<span id="cb6-9"><a href=""></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">sim_die</span>()</span>
-<span id="cb6-10"><a href=""></a>}</span>
-<span id="cb6-11"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># 3. Initialize global simulation parameters</span></span>
+<span id="cb3-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb3-3"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, NSIM)</span>
+<span id="cb3-4"><a href=""></a></span>
+<span id="cb3-5"><a href=""></a><span class="co"># 4. Repeat the simulation NSIM times</span></span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a><span class="do">#### Method 1: 'for' loop</span></span>
+<span id="cb3-8"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NSIM) {</span>
+<span id="cb3-9"><a href=""></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">sim_die</span>()</span>
+<span id="cb3-10"><a href=""></a>}</span>
+<span id="cb3-11"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5004</code></pre>
+<pre><code>[1] 3.4574</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="do">#### Method 2: Base R replicate()</span></span>
-<span id="cb8-2"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">sim_die</span>())</span>
-<span id="cb8-3"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="do">#### Method 2: Base R replicate()</span></span>
+<span id="cb5-2"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">sim_die</span>())</span>
+<span id="cb5-3"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.4978</code></pre>
+<pre><code>[1] 3.5208</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="do">#### Method 3: parallel processing (optional)</span></span>
-<span id="cb10-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
-<span id="cb10-3"><a href=""></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">2</span>) <span class="co"># use 2 cores</span></span>
-<span id="cb10-4"><a href=""></a><span class="fu">clusterExport</span>(cl, <span class="st">"sim_die"</span>)</span>
-<span id="cb10-5"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">parSapply</span>(cl, <span class="dv">1</span><span class="sc">:</span>NSIM, <span class="cf">function</span>(i) <span class="fu">sim_die</span>())</span>
-<span id="cb10-6"><a href=""></a><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb10-7"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="do">#### Method 3: parallel processing (optional)</span></span>
+<span id="cb7-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
+<span id="cb7-3"><a href=""></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">2</span>) <span class="co"># use 2 cores</span></span>
+<span id="cb7-4"><a href=""></a><span class="fu">clusterExport</span>(cl, <span class="st">"sim_die"</span>)</span>
+<span id="cb7-5"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">parSapply</span>(cl, <span class="dv">1</span><span class="sc">:</span>NSIM, <span class="cf">function</span>(i) <span class="fu">sim_die</span>())</span>
+<span id="cb7-6"><a href=""></a><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb7-7"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.4893</code></pre>
+<pre><code>[1] 3.4938</code></pre>
 </div>
 </div>
-<p>Note: Method 1 and Method 2 are computational similar (provided that the <code>result</code> vector is pre-allocated). Method 3 is more advanced and can be significantly faster for very large simulations.</p>
+<p>Note: Method 1 and Method 2 are computational similar (provided that the <code>result</code> vector is <strong>pre-allocated</strong>). Method 3 is more advanced and can be significantly faster for very large simulations.</p>
 </section>
 <section>
 <section id="r-review" class="title-slide slide level1 center">
@@ -273,25 +281,45 @@
 </section>
 <section id="functions" class="slide level2 scrollable">
 <h2>Functions</h2>
-<p>An R function is a named piece of code that takes inputs, does some work, and returns an output.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, <span class="at">input2 =</span> default_value) {</span>
-<span id="cb12-2"><a href=""></a>  <span class="co"># code that uses the inputs</span></span>
-<span id="cb12-3"><a href=""></a>  output</span>
-<span id="cb12-4"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>An R function is a named piece of code that takes <code>inputs</code>, does some work, and returns an <code>output</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, <span class="at">input2 =</span> default_value) {</span>
+<span id="cb9-2"><a href=""></a>  <span class="co"># code that uses the inputs to generate result</span></span>
+<span id="cb9-3"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb9-4"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>Give the function a descriptive name.</li>
-<li>Put the inputs in the parentheses, with defaults when useful.</li>
-<li>Write the calculation inside the braces.</li>
-<li>The last expression is returned automatically; <code>return()</code> is optional.</li>
+<li><p>Give the function a descriptive name.</p></li>
+<li><p>Put the inputs in the parentheses, with defaults when useful.</p></li>
+<li><p>Write the calculation inside the braces.</p></li>
+<li><p>The last expression is returned automatically; <code>return()</code> is optional.</p></li>
+<li><p>To return more than one value, you can put the values in a <code>list</code>.</p></li>
+<li><p>Basic example 1:</p></li>
 </ul>
-<h3 id="worked-example">Worked example</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>square_plus_one <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb13-2"><a href=""></a>  x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb13-3"><a href=""></a>}</span>
-<span id="cb13-4"><a href=""></a></span>
-<span id="cb13-5"><a href=""></a><span class="fu">square_plus_one</span>(<span class="dv">3</span>)</span>
-<span id="cb13-6"><a href=""></a><span class="co"># 10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 id="practice-examples">Practice examples</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>square_plus_one <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-2"><a href=""></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb10-3"><a href=""></a>}</span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a><span class="fu">square_plus_one</span>(<span class="dv">3</span>)</span>
+<span id="cb10-6"><a href=""></a><span class="co"># 10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Basic example 2:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>summarize_values <span class="ot">&lt;-</span> <span class="cf">function</span>(first_value, second_value, <span class="at">third_value =</span> <span class="dv">10</span>) {</span>
+<span id="cb11-2"><a href=""></a>  result <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb11-3"><a href=""></a>    <span class="at">total =</span> first_value <span class="sc">+</span> second_value <span class="sc">+</span> third_value,</span>
+<span id="cb11-4"><a href=""></a>    <span class="at">average =</span> (first_value <span class="sc">+</span> second_value <span class="sc">+</span> third_value) <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb11-5"><a href=""></a>  )</span>
+<span id="cb11-6"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb11-7"><a href=""></a>}</span>
+<span id="cb11-8"><a href=""></a></span>
+<span id="cb11-9"><a href=""></a><span class="fu">summarize_values</span>(<span class="dv">4</span>, <span class="dv">8</span>)</span>
+<span id="cb11-10"><a href=""></a><span class="co"># $total</span></span>
+<span id="cb11-11"><a href=""></a><span class="co"># [1] 22</span></span>
+<span id="cb11-12"><a href=""></a><span class="co">#</span></span>
+<span id="cb11-13"><a href=""></a><span class="co"># $average</span></span>
+<span id="cb11-14"><a href=""></a><span class="co"># [1] 7.333333</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Exercise:</li>
+</ul>
 <p>Write and test a function for each task:</p>
 <ol type="1">
 <li><code>double_value(x)</code>: return twice the value of <code>x</code>.</li>
@@ -299,17 +327,105 @@
 <li><code>roll_die(n = 6)</code>: simulate one roll of a fair die with <code>n</code> sides.</li>
 <li><code>mean_of_two(x, y)</code>: return the average of two numbers.</li>
 </ol>
-<p>For each function, test at least two inputs. For example, check that <code>roll_die()</code> returns a whole number between 1 and 6.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>double_value <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-2"><a href=""></a>  result <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x</span>
+<span id="cb12-3"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb12-4"><a href=""></a>}</span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">double_value</span>(<span class="dv">4</span>)</span>
+<span id="cb12-7"><a href=""></a>result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>temperature <span class="ot">&lt;-</span> <span class="cf">function</span>(celsius) {</span>
+<span id="cb14-2"><a href=""></a>  result <span class="ot">&lt;-</span> <span class="dv">32</span> <span class="sc">+</span> <span class="dv">9</span> <span class="sc">*</span> celsius <span class="sc">/</span> <span class="dv">5</span></span>
+<span id="cb14-3"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb14-4"><a href=""></a>}</span>
+<span id="cb14-5"><a href=""></a><span class="fu">temperature</span>(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 68</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>roll_die <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">6</span>) {</span>
+<span id="cb16-2"><a href=""></a>  result <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb16-3"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb16-4"><a href=""></a>}</span>
+<span id="cb16-5"><a href=""></a></span>
+<span id="cb16-6"><a href=""></a><span class="fu">roll_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">roll_die</span>(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>mean_of_two <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb20-2"><a href=""></a>  result <span class="ot">&lt;-</span> (x <span class="sc">+</span> y) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb20-3"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb20-4"><a href=""></a>}</span>
+<span id="cb20-5"><a href=""></a></span>
+<span id="cb20-6"><a href=""></a><span class="fu">mean_of_two</span>(<span class="dv">3</span>, <span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</details>
 </section>
 <section id="if-statements" class="slide level2">
 <h2>If statements</h2>
 <p>An <code>if</code> statement allows you to run a chunk of code only when a condition is true. It is often used together with loops.</p>
 <p>Basic structure in R:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="cf">if</span> (condition) {</span>
-<span id="cb14-2"><a href=""></a>  <span class="co"># code to run when the condition is TRUE</span></span>
-<span id="cb14-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="cf">if</span> (condition) {</span>
+<span id="cb22-2"><a href=""></a>  <span class="co"># code to run when the condition is TRUE</span></span>
+<span id="cb22-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You might need multiple <code>if</code> statements to cover more than one condition. You can also use an <code>else</code> statement.</p>
 <p>Example: We roll a fair die. If the outcome is 6, we win $20; if the outcome is 4 or 5, we win $10; otherwise we lose $15. Is this a fair game? How much would you expect to win or lose? Write a function to play this game one time.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>play_game <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb23-2"><a href=""></a>  outcome <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb23-3"><a href=""></a></span>
+<span id="cb23-4"><a href=""></a>  <span class="cf">if</span> (outcome <span class="sc">==</span> <span class="dv">6</span>) {</span>
+<span id="cb23-5"><a href=""></a>    result <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb23-6"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span> (outcome <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)) {</span>
+<span id="cb23-7"><a href=""></a>    result <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb23-8"><a href=""></a>  } <span class="cf">else</span> {</span>
+<span id="cb23-9"><a href=""></a>    result <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">15</span></span>
+<span id="cb23-10"><a href=""></a>  }</span>
+<span id="cb23-11"><a href=""></a></span>
+<span id="cb23-12"><a href=""></a>  <span class="fu">return</span>(result)</span>
+<span id="cb23-13"><a href=""></a>}</span>
+<span id="cb23-14"><a href=""></a></span>
+<span id="cb23-15"><a href=""></a><span class="co"># One play</span></span>
+<span id="cb23-16"><a href=""></a><span class="fu">play_game</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -15</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># Approximate expected value by simulating many plays</span></span>
+<span id="cb25-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb25-3"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, NSIM)</span>
+<span id="cb25-4"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">play_game</span>())</span>
+<span id="cb25-5"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.936</code></pre>
+</div>
+</div>
+<p>For comparison, the expected value is</p>
+<p><span class="math display">\[
+E[X] = \frac{1}{6}(20) + \frac{2}{6}(10) + \frac{3}{6}(-15)
+= \frac{20 + 20 - 45}{6}
+= -\frac{5}{6}
+\approx -0.83.
+\]</span></p>
+<p>So this is not a fair game: on average, you lose about $0.83 in the long run.</p>
+</details>
 </section>
 <section id="loops" class="slide level2">
 <h2>Loops</h2>
@@ -318,77 +434,64 @@
 <li><code>for</code> loop: repeat a fixed number of times</li>
 <li><code>while</code> loop: repeat until a condition is met</li>
 </ul>
-<p>Open RStudio or RStudio Cloud and try the following code.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb15-2"><a href=""></a>  <span class="fu">print</span>(i)</span>
-<span id="cb15-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The index of a <code>for</code> loop (<code>i</code>) does not need to be created separately; other objects may need to be created beforehand.</p>
 </section>
-<section id="for-loops" class="slide level2">
+<section id="for-loops" class="slide level2 scrollable">
 <h2>For loops</h2>
-<p>A <code>for</code> loop has an index and a code chunk. For example, if the index is <span class="math inline">\(i = 1, 2, 5\)</span>, then the code chunk runs with <span class="math inline">\(i = 1\)</span>, then with <span class="math inline">\(i = 2\)</span>, and then with <span class="math inline">\(i = 5\)</span>.</p>
-<p>Basic structure in R:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> values) {</span>
-<span id="cb16-2"><a href=""></a>  <span class="co"># code to be repeated</span></span>
-<span id="cb16-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A loop becomes useful when we want to repeat the same calculation many times, such as running a simulation repeatedly.</p>
-</section>
-<section id="fake-coding-examples" class="slide level2 scrollable">
-<h2>“Fake coding” examples</h2>
+<p>Basic example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb27-2"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb27-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>A <code>for</code> loop has an index and a code chunk. For example, if the index is <span class="math inline">\(i = 1, 2, 5\)</span>, then the code chunk runs with <span class="math inline">\(i = 1\)</span>, then with <span class="math inline">\(i = 2\)</span>, and then with <span class="math inline">\(i = 5\)</span>. The index (<code>i</code> in the above example) does not need to be created separately.</li>
+</ul>
+<p>Exercise: “fake coding”</p>
 <ol type="1">
 <li>Repeat a task 10 times.</li>
 <li>Repeat a simulation 1000 times and store the result each time.</li>
 <li>Suppose there is a large dataset of 1000 cats. Extract the 3rd, 6th, 9th, … cats from the dataset; for each cat, run a function <code>weighCat()</code> and store the weight in a vector.</li>
 <li>In a large dataset of cats, weigh and store the weights of the female cats.</li>
 </ol>
-</section>
-<section id="exercise" class="slide level2 scrollable">
-<h2>Exercise</h2>
-<p>Use any language and loop structures to do the following.</p>
+<p>Exercise: Use any language and loop structures to do the following.</p>
 <ol type="1">
 <li>Print a sequence of texts: “1 moose 4 legs”, “2 moose 8 legs”, …, “30 moose 120 legs”.</li>
-<li>Simulate the Martingale doubling system (Homework 1) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.</li>
+<li>Simulate the Martingale doubling system` (<a href="../homework/homework_1.qmd">Homework 1</a>) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.</li>
 </ol>
 </section>
-<section id="while-loops" class="slide level2">
+<section id="while-loops" class="slide level2 scrollable">
 <h2>While loops</h2>
+<p>Basic example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb28-2"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
+<span id="cb28-3"><a href=""></a>  <span class="fu">print</span>(x)</span>
+<span id="cb28-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb28-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A <code>while</code> loop has three ingredients:</p>
 <ul>
 <li>initialization</li>
 <li>condition</li>
-<li>code chunk</li>
+<li>code chunk that updates the condition</li>
 </ul>
-<p>The code runs as long as the condition is met.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb17-2"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
-<span id="cb17-3"><a href=""></a>  <span class="fu">print</span>(x)</span>
-<span id="cb17-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb17-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is useful when the number of repetitions is not known in advance.</p>
-</section>
-<section id="while-loops-caution" class="slide level2">
-<h2>While loops: caution</h2>
-<p>It is important to properly update the objects involved in the while-loop condition.</p>
-<p>It is also recommended to set a safety upper bound so the loop cannot run forever.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb18-2"><a href=""></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb18-3"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">&amp;&amp;</span> count <span class="sc">&lt;</span> <span class="dv">1000</span>) {</span>
-<span id="cb18-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb18-5"><a href=""></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb18-6"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This keeps the program under control and prevents accidental infinite loops.</p>
-</section>
-<section id="fake-coding-examples-1" class="slide level2">
-<h2>“Fake coding” examples</h2>
+<p>The code runs as long as the condition is met. This is useful when the number of repetitions is not known in advance.</p>
 <ul>
+<li>It is important to properly update the objects involved in the while-loop condition.</li>
+<li>It is also recommended to set a safety upper bound so the loop cannot run forever.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-2"><a href=""></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-3"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">&amp;&amp;</span> count <span class="sc">&lt;</span> <span class="dv">1000</span>) {</span>
+<span id="cb29-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb29-5"><a href=""></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb29-6"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exercise: “fake coding”</p>
+<ol type="1">
 <li>Play a game until you win <span class="math inline">\(5\)</span>.</li>
 <li>Play a game until you win <span class="math inline">\(5\)</span> or lose <span class="math inline">\(100\)</span>.</li>
-</ul>
-</section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
-<p>Use any language and loop structures to do the following.</p>
-<p>Simulate the Martingale doubling system until you win <span class="math inline">\(5\)</span> or lose <span class="math inline">\(100\)</span>. Start the betting amount at <span class="math inline">\(1\)</span>; if you win, you bet <span class="math inline">\(1\)</span>; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.</p>
+</ol>
+<p>Exercise: Use any language and loop structures to do the following.</p>
+<ol type="1">
+<li>Simulate the Martingale doubling system until you win <span class="math inline">\(5\)</span> or lose <span class="math inline">\(100\)</span>. Start the betting amount at <span class="math inline">\(1\)</span>; if you win, you bet <span class="math inline">\(1\)</span>; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.</li>
+<li>Write an R function to perform the above simulation. Carefully design the inputs and outputs of the function.</li>
+</ol>
 
 </section></section>
     </div>

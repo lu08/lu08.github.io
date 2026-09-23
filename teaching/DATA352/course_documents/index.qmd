@@ -6,10 +6,15 @@ You can find all course documents here as a reference page. Please refer to the 
 
 ## Lecture slides
 
-- [Lecture 1](all_lectures/Lecture_1.html)
-- [Lecture 2](all_lectures/Lecture_2.html)
-- [Lecture 3](all_lectures/Lecture_3.html)
-
+- [Lecture 1: Introduction and discrete random variables](all_lectures/Lecture_1.html)
+- [Lecture 2: Common discrete distributions](all_lectures/Lecture_2.html)
+- [Lecture 3: Implementing simulations](all_lectures/Lecture_3.html)
+- [Lecture 4: Common continuous distributions](all_lectures/Lecture_4.html)
+- [Lecture 5: Rejection and SIR sampling](all_lectures/Lecture_5.html)
+- [Lecture 6: Model based inference](all_lectures/Lecture_6.html)
+- [Lecture 7: Bootstrapping](all_lectures/Lecture_7.html)
+- [Lecture 8: Empirical p-values](all_lectures/Lecture_8.html)
+- [Lecture 9: Introduction to Bayesian inference and MCMC](all_lectures/Lecture_9.html)
 
 ## Homework
 
