@@ -7,7 +7,7 @@ format:
 
 ## Exam format
 
-Exam 1 covers Lectures [1](../all_lectures/Lecture_1.html){target="_blank"}, [2](../all_lectures/Lecture_2.html){target="_blank"}, and [3](../all_lectures/Lecture_3.html){target="_blank"}, with corresponding Homework [1](../homework/homework_1.qmd){target="_blank"}, [2](../homework/homework_2.qmd){target="_blank"}, and [3](../homework/homework_3.qmd){target="_blank"}.  These can be found under [Course documents](../index.qmd){target="_blank"}.  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
+Exam 1 covers Lectures [1](../all_lectures/Lecture_1.html){target="_blank"}, [2](../all_lectures/Lecture_2.html){target="_blank"}, and [3](../all_lectures/Lecture_3.html){target="_blank"}, with corresponding Homework [1](../homework/homework_1.qmd){target="_blank"}, [2](../homework/homework_2.qmd){target="_blank"}, and [3](../homework/homework_3.qmd){target="_blank"}.  These can be found under [course documents](../index.qmd){target="_blank"}.  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
 
 ## List of topics
 
@@ -15,9 +15,10 @@ This is a very general list to help you study.   I suggest that you go over rele
 
   1. Can write down the **sample space** and **probability mass function** of a discrete random variable; can check the two basic conditions of a **probability mass function** ([lecture 1](../all_lectures/Lecture_1.html){target="_blank"});
   2. Can understand the basic idea of simulation and how the result of a simulation can be used to estimate certain quantities ([lecture 1](../all_lectures/Lecture_1.html){target="_blank"});
-  3. Can design a simulation (using the four steps; [lecture 1](../all_lectures/Lecture_1.html){target="_blank"}; you don't have to use the four-step outline as long as you can design the simulation); can write code to carry out the simulation ([lecture 3](../all_lectures/Lecture_3.html){target="_blank"});
-  4. Can calculate the **expectation** of simple discrete random variables ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"});
-  5. For the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution.  You are also expected to know which distribution is appropriate to use given a specific scenario ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"}).
+  3. Can calculate the **expectation** of simple discrete random variables ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"});
+  4. For the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution.  You are also expected to know which distribution is appropriate to use given a specific scenario ([lecture 2](../all_lectures/Lecture_2.html){target="_blank"}).
+  5. Can design a simulation (using the four steps; [lecture 1](../all_lectures/Lecture_1.html){target="_blank"}; you don't *have to* use the four-step outline as long as you can design the simulation);
+  6. Understand the simulation implementation process and can write code to carry out the simulation ([lecture 3](../all_lectures/Lecture_3.html){target="_blank"}).
   
 
 ## Examples for choosing a distribution

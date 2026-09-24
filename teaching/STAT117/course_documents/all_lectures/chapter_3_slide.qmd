@@ -473,6 +473,49 @@ For `achmat08`: skewness = 0.114, SE of skewness = 0.109, so the skewness ratio 
 </details>
 
 
+## Summary
+
+Use the appropriate statistic to describe properties of a distribution
+
+```{=html}
+<style>
+.summary-table-na {
+  background-image: repeating-linear-gradient(45deg, #6ca0dc, #6ca0dc 2px, transparent 2px, transparent 10px);
+}
+</style>
+<table style="width:100%; text-align:center; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border:1px solid black; padding:8px;">Level of measurement of the variable</th>
+  <th style="border:1px solid black; padding:8px;">Location<br><small>(average/typical value, central tendency)</small></th>
+  <th style="border:1px solid black; padding:8px;">Spread<br><small>(variability, consistency, dispersion)</small></th>
+  <th style="border:1px solid black; padding:8px;">Shape<br><small>(symmetric or skewed; outliers, modality)</small></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border:1px solid black; padding:8px;"><strong>NOMINAL</strong></td>
+  <td style="border:1px solid black; padding:8px;">mode</td>
+  <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
+  <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
+</tr>
+<tr>
+  <td style="border:1px solid black; padding:8px;"><strong>ORDINAL</strong></td>
+  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;"></td>
+  <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
+</tr>
+<tr>
+  <td style="border:1px solid black; padding:8px;"><strong>SCALE</strong></td>
+  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;"></td>
+</tr>
+</tbody>
+</table>
+```
+
+
 <!--
 
 ## Additional topics from Chapter 3
