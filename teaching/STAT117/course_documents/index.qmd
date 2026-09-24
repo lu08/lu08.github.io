@@ -31,3 +31,9 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Assignment 1: Jamovi Introduction](assignment/assignment_1.qmd)
 - [Assignment 2: NYC Apartments](assignment/assignment_2.qmd)
 - [Assignment 3: Song length transformation](assignment/assignment_3.qmd)
+
+
+## Practice exams
+
+- [Practice Exam 1](exam_reviews/practice_exam_1_blank.qmd/)
+- [Practice Exam 1 solution](exam_reviews/practice_exam_1_blank.qmd)

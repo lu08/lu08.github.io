@@ -41,8 +41,18 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 ### Other SPSS data
 
-- [General Social Survey 2016.sav](../../../dataset/General%20Social%20Survey%202016.sav){download="General Social Survey 2016.sav"}
+- [GSS_SP2026.sav](../../../dataset/GSS_SP2026.sav){download="GSS_SP2026.sav"}
+
+    The [General Social Survey](https://gss.norc.org/) is a large scale sociological survey conducted by [NORC at the University of Chicago](https://www.norc.org/). This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.
+
+
 - [Music.sav](../../../dataset/Music.sav){download="Music.sav"}
+
+
 - [Student Survey.sav](../../../dataset/Student%20Survey.sav){download="Student Survey.sav"}
+
+
 - [Young People Survey partial.sav](../../../dataset/Young%20People%20Survey%20partial.sav){download="Young People Survey partial.sav"}
+
+
 - [Young People Survey.sav](../../../dataset/Young%20People%20Survey.sav){download="Young People Survey.sav"}

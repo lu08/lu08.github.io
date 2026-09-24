@@ -548,6 +548,17 @@
     ]
   },
   {
+    "objectID": "teaching/STAT117/course_documents/index.html#practice-exams",
+    "href": "teaching/STAT117/course_documents/index.html#practice-exams",
+    "title": "Course documents",
+    "section": "Practice exams",
+    "text": "Practice exams\n\nPractice Exam 1\nPractice Exam 1 solution",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
     "objectID": "teaching/STAT117/course_documents/homework/chapter_3.html",
     "href": "teaching/STAT117/course_documents/homework/chapter_3.html",
     "title": "Chapter 3",
@@ -562,598 +573,102 @@
     "text": "Exercise 1.6\nA survey was administered to college students to learn about student participation in University sponsored extra-curricular activities. Identify the most likely measure type of each of the following variables taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nAGE\nHow old are you in years?\n\n\n\nEXTRAC\nAt which type of extra-curricular activity do you spend most of your time?\n1 = Sports2 = Student Government3 = Clubs and organizations4 = None\n\n\nTIME\nHow much time do you spend weekly on University sponsored extracurricular activities?\n0 = None1 = 1 – 2 hours2 = 3 – 5 hours3 = 6 – 10 hours4 = 10 – 20 hours5 = More than 20 hours\n\n\n\nWhat are the levels of measurement for: a) AGE b) EXTRAC c) TIME\n\n\n### Solution\n\n\nContinuous\nNominal\nOrdinal\n\n\n\n\n\nExercise 1.7\nThe Campus Survey of Alcohol and Other Drug Norms is administered to college students to collect information about drug and alcohol use on campus. Identify the most likely measure type of each of the following variables from that survey taking into account the coding used.\n\n\n\n\n\n\n\n\nVariable Name\nQuestion Asked\nCoding (if any)\n\n\n\n\nABSTAIN\nOverall, what percentage of students at this college do you think consume no alcoholic beverages at all?\n\n\n\nLIVING\nLiving arrangements\n1 = House/apartment/etc.2 = Residence Hall3 = Other\n\n\nSTATUS\nStudent status:\n1 = Full-time (12+ credits)2 = Part-time (1 – 11 credits)\n\n\nATTITUDE\nWhich statement about drinking alcoholic beverages do you feel best represents your own attitude?\n1 = Drinking is never a good thing to do.2 = Drinking is all right but a person should not get drunk3 = Occasionally getting drunk is okay as long as it doesn’t interfere with academics or other responsibilities.4 = Occasionally getting drunk is okay even if it does interfere with academics or other responsibilities.5 = Frequently getting drunk is okay if that’s what the individual wants to do.\n\n\nDRINK\nHow often do you typically consume alcohol (including beer, wine, wine coolers, liquor, and mixed drinks)?\n0 = Never1 = 1 – 2 times/year2 = 6 times/year3 = Once/month4 = Twice/month5 = Once/week6 = 3 times/week7 = 5 times/week8 = Every day\n\n\n\nWhat are the levels of measurement for: a) ABSTAIN b) LIVING c) STATUS d) ATTITUDE e) DRINK\n\n\n### Solution\n\n\nContinuous\nNominal\nDichotomous\nOrdinal\nOrdinal\n\n\n\n\n\nExercise 1.8\nExercise 1.8 includes descriptions of some of the variables in the Framingham data set. The Framingham data set is based on a longitudinal study investigating factors relating to coronary heart disease.\nFor each variable described from the Framingham data set, indicate the measure type.\n\nCURSMOKE1 indicates whether or not the individual smoked cigarettes in 1956. It is coded so that 0 represents no and 1 represents yes.\nCIGPDAY1 indicates the number of cigarettes the individual smoked per day, on average, in 1956.\nBMI1 indicates the body mass index of the individual in 1956.\nSYSBP1 and DIABP1 indicate the systolic and diastolic blood pressures, respectively, of the individuals in 1956. Blood is carried from the heart to all parts of your body in vessels called arteries. Blood pressure is the force of the blood pushing against the walls of the arteries. Each time the heart beats (about 60-70 times a minute at rest), it pumps out blood into the arteries. Your blood pressure is at its highest when the heart beats, pumping the blood. This is called systolic pressure. When the heart is at rest, between beats, your blood pressure falls. This is the diastolic pressure. Blood pressure is always given as these two numbers, the systolic and diastolic pressures. Both are important. Usually they are written one above or before the other, such as 120/80 mmHg. The top number is the systolic and the bottom the diastolic. When the two measurements are written down, the systolic pressure is the first or top number, and the diastolic pressure is the second or bottom number (for example, 120/80). If your blood pressure is 120/80, you say that it is “120 over 80.” Blood pressure changes during the day. It is lowest as you sleep and rises when you get up. It also can rise when you are excited, nervous, or active. Still, for most of your waking hours, your blood pressure stays pretty much the same when you are sitting or standing still. Normal values of blood pressure should be lower than 120/80. When the level remains too high, for example, 140/90 or higher, the individual is said to have high blood pressure. With high blood pressure, the heart works harder, your arteries take a beating, and your chances of a stroke, heart attack, and kidney problems are greater.\n\n\n\n### Solution\n\n\nDichotomous\nContinuous\nContinuous\nContinuous\n\n\n\n\n\nExercise 1.9\nExercise 1.9 includes descriptions of some of the variables in the NELS data set. The NELS data set is a subset of a data set collected by the National Center for Educational Statistics. They conducted a longitudinal study investigating factors relating to educational outcomes.\nRead the description of the following variables from the NELS data set and indicate their measure type.\n\nGENDER. Classifies the student as either male or female, where 0 = “male” and 1 = “female.”\nURBAN. Classifies the type of environment in which each student lives where 1 = “Urban,” 2 = “Suburban,” and 3 = “Rural.”\nSCHTYP8. Classifies the type of school each student attended in eighth grade where 1 = “Public,” 2 = “Private, Religious,” and 3 = “Private, Non-Religious.”\nTCHERINT. Classifies student agreement with the statement “My teachers are interested in students” using the Likert scale 1 = “strongly agree,” 2 = “agree,” 3 = “disagree,” and 4 = “strongly disagree.”\nNUMINST. Gives the number of post-secondary institutions the student attended.\nACHRDG08. Gives a score for the student’s performance in eighth grade on a standardized test of reading achievement. Actual values range from 36.61 to 77.2, from low to high achievement.\nSES. Gives a score representing the socioeconomic status (SES) of the student, a composite of father’s education level, mother’s education level, father’s occupation, mother’s occupation, and family income. Values range from 0 to 35, from low to high SES.\nSLFCNC12. Gives a score for student self-concept in twelfth grade. Values range from 0 to 43. Self-concept is defined as a person’s self-perceptions, or how a person feels about himself or herself. Four items comprise the self-concept scale in the NELS questionnaire: I feel good about myself; I feel I am a person of worth, the equal of other people; I am able to do things as well as most other people; and, on the whole, I am satisfied with myself. A self-concept score, based on the sum of scores on each of these items, is used to measure self-concept in the NELS study. Higher scores associate with higher self-concept and lower scores associate with lower self-concept.\nSCHATTRT. Gives the average daily attendance rate for the school.\nABSENT12. Classifies the number of times missed school. Assigns 0 to Never, 1 to 1–2 times, 2 to 3–6 times, etc.\n\n\n\n### Solution\n\n\nDichotomous\nNominal or Ordinal, depending on interpretation\nNominal\nContinuous (Likert scales are often treated as scale/continuous)\nContinuous\nContinuous\nContinuous\nContinuous\nContinuous\nOrdinal\n\n\n\n\n\nExercise 1.10\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Variable” tag on the top.\nAnswer the following questions:\n\nWhat is the first variable in the NELS data set?\nWhat is the second variable in the data set and what is its Description?\nWhat are the levels for this variable? That is, how is the variable coded?\nWhat is the measure type entered for this variable in Jamovi?\nWhat is the Description for the variable FAMSIZE?\nWhy are there no levels (i.e., code) for this variable?\nWhat is the measure type entered for this variable in Jamovi?\nHow many variables are there in the NELS data set?\n\n\n\n### Solution\n\n\nID.\nADVMAT8. The Description is “Advanced Math Taken in Eighth Grade.” This is a dichotomous variable indicating whether or not a student took advanced math in eighth grade.\n“no” is coded 0, “yes” is coded 1, and missing data are coded 8.\nThe measure type has been entered as nominal. The variable is dichotomous.\nFamily Size.\nThe variable gives the family size or the number of members in the person’s household. This variable is naturally numeric, so it does not require coded levels to explain what the numbers represent.\nThe measure type is listed as continuous, which refers to continuous variables.\n\n\n\n\n\n\n\n\nExercise 1.11\nOpen Jamovi and the NELS data set. If it is not already selected, click the “Data” tag on the top. Use the Data View window to answer the following questions about the particular values that different individual students attain in the NELS data set.\n\nHow many people are in the family (FAMSIZE) of the first student (ID=1) in the NELS data set?\nDid the first student in the NELS data set (ID = 1) take advanced math in eighth grade (ADVMATH8)?\nDid the second student in the NELS data set (ID = 2) take advanced math in eighth grade (ADVMATH8)?\nHow many people are in the NELS data set?\n\n\n\n### Solution\n\n\n\n\n\nYes.\nWe do not know. The second student’s information is missing from the data set."
   },
   {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html",
-    "title": "Assignment 3: Song Length Transformation",
+    "objectID": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_blank.html",
+    "href": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_blank.html",
+    "title": "STAT117 Spring 2026 Exam #1",
     "section": "",
-    "text": "This assignment will guide you through a practice question from Chapter 4 using Combined Class Song Data. Download the dataset and open it in Jamovi. Submit your answers on Moodle by Thursday’s class."
+    "text": "Ask if you have any questions about the exam.\nBe concise in your answers. You will be penalized for adding irrelevant or incorrect information to a response.\nYou don’t need to round decimals, but if you choose to, keep at least two decimals unless otherwise noted.\nYou are allowed a reference sheet. Use both sides of one 8.5 by 11 inch piece of paper and put whatever you want on it. You will turn this sheet in with your exam. Be sure to put your name on it so that it can be returned to you later.\nCalculator use is permitted. You may NOT use your phone as a calculator. You will need to use your laptop, but the only programs you are allowed to have open are Jamovi and the standard Windows or Mac calculator. You need to close (not just minimize) other programs (including your web browser and all messaging apps). You are not allowed to consult any papers (other than your reference sheet), websites, books, or any person except the instructor during the exam.\nYou need to download the dataset before the exam. You are not allowed to open a web browser during the exam. You must turn off WIFI on your computer.\nCases of suspected cheating will be referred to the dean. We take cheating very seriously because it benefits student learning when students get grades that reflect what they know. For this reason, you are allowed to have at your seat only your test, your reference sheet, your computer, a calculator, and writing implements (pen or pencils). You will need to put your jacket, backpack, cell phone, smart watch and anything else you carry to class at the front of the room during the exam.\nI might tell you where to sit, or move your seat, during the exam.\nThe dataset used for the exam is GSS_SP2026.sav. This dataset is gathered from the General Social Survey 2024, a large scale survey conducted by NORC at the University of Chicago. The levels of measurement in Jamovi are not set correctly, so you need to judge for yourself. Sometimes, the level of measurement is subjective or controversial, and the relevant question will tell you what to do.\n\n\nNote: the data is set up such that any value between -100 and -10 is automatically treated as a missing value. You don’t need to do anything about these as Jamovi knows how to handle them (for instance, they are excluded from calculations of any statistics).\n\n1. (15 points) We first examine some basic information about the dataset.\n(a) How many variables are recorded in the dataset? Give an example of a dichotomous variable.\n(b) Among respondents who answered the question, what percentage are males (sex)? You should not round and your answer should have at least one decimal place.\n(c) What does the variable degree represent? What is the mode of this variable? Provide an interpretation of the mode.\n2. (25 points) Answer the following questions about the variable childs, which represents the number of children of the respondents. Treat this variable as a NUMERIC variable.\nUse the following frequency table for reference (the one in Jamovi appears in the reverse order).\n\n(a) Find the respondent with id = 1. How many children does this person have, if any? Report the corresponding percentile rank. Provide an interpretation of the percentile rank in context.\n(b) Among respondents who answered this question, what percentage have 5 or fewer children?\n(c) Calculate the skewness ratio of the variable childs and draw a conclusion about the shape of the distribution based on this value.\n(d) Generate a boxplot for childs. You should see that there is no bottom whisker. Why? Choose one.\n\n\nThere is not enough number of participants in the dataset.\n\n\nThe minimum and Q1 (first quartile) of this distribution are the same value.\n\n\nBoxplot should not be used for numeric variables.\n\n\nBoxplot should not be used for variables with severe skewness.\n\n\n(e) The variable childs is actually not a numeric variable. What is the correct level of measurement? Briefly explain.\n3. (15 points) In this problem, we use statistics to compare the distribution of cohort (Year of birth of the respondents) between people who would continue to work and people who would stop working if they become rich (richwork).\n(a) Calculate the skewness ratios of cohort for people would “continue to work” and for people who would “stop working” (if they become rich). Is the distribution of cohort severely skewed for either of the groups? If so, indicate the direction of the skew. If not, briefly explain why you think the skewness is not severe.\n(b) Typically, which group of people are older (i.e., lower value for cohort), those who would “continue to work” or those who would “stop working”? Explain and support your answer with the name(s) and value(s) of appropriate statistics. If more than one statistic is appropriate, you must use one that is robust to skewness and outliers.\n(c) Which group are less consistent in terms of the distribution for cohort, those who would “continue to work” or those who would “stop working”? Explain and support your answer with the name(s) and value(s) of appropriate statistics. If more than one statistic is appropriate, you must use one that is robust to skewness and outliers.\n4. (15 points) Answer the following questions about the variable cohort (Year of birth of the respondents).\n(a) Given below is a histogram for the variable cohort. The distribution appears to be (circle one):\nuniform unimodal bimodal\nBriefly explain and interpret the shape you circled in context.\n\n(b) Report the mean and standard deviation values for the variable cohort.\n(c) The survey was conducted in 2024. If someone was born in 1990, what would be the corresponding age at the time of the survey? Suppose we create a new variable, AGE, which represents the age of the participants at the time of the survey. Write down a linear transformation that calculate AGE from cohort.\n(d) What is the mean and standard deviation of the new variable AGE (as defined in (c))? You must show your work to get full credit.\n5. (20 points) You do not need Jamovi for this question. Reproduced below are boxplots showing the distributions of cohort (Year of birth of the respondents) for four different groups of people based on the question “How important is it to have American citizenship?” (You do not have access to this variable).\n\n(a) Estimate the median value of cohort for respondents who answered “very important.” Mark on the graph how you came up with the estimate. Provide an interpretation in context for this value.\n(b) For people who answered “not important at all,” is the distribution of cohort symmetric, left skewed, or right skewed? Briefly explain.\n(c) Which group of people are typically older (smaller value for cohort)? Which part of the boxplots did you use to answer this question? Mention the name of at least one relevant statistic.\n(d) Which group of people are the most homogeneous (similar) in terms of the distribution of cohort? What part of the boxplots did you use to answer this question? Mention the name of at least one relevant statistic.\n6. (10 points) You do not need Jamovi for this question. The following graph is from a New York Times article “How Video Games Are Shaping a Generation of Boys, for Better and Worse.”\n\n(a) The article says that “In the last decade and a half, boys and young men ages 15 to 24 more than doubled their average time spent gaming, to about 10 hours a week, according to a major survey.” Which part of the graph support the estimate of “10 hours a week”? You can simply circle it on the graph.\n(b) What is a correct understanding of “10 hours a week” as quoted in (a)? Choose one.\n\n\nThe survey sampled one male in 2024. He is between 15 and 24 years old and spends 10 hours a week playing games.\n\n\nAmong sampled males ages 15 to 24, all of them spent 10 hours a week playing games.\n\n\nAmong sampled males ages 15 to 24, some spent more than 10 hours a week playing games and some spent less than 10 hours; the reported 10 hours is likely the average or median.\n\n\nAmong sampled males ages 15 to 24, none of them spent more than 10 hours a week playing games.\n\n\n(c) The trend shown on the graph that boys and young men are spending more time playing games can be misleading without considering the shape of the distribution. What do you think is the shape of the distribution for “time spent on games per week” (Uni/bi-modal? Left/right skewed? Outliers?) Why could the trend be misleading? This is an open ended question. Provide brief discussions in the context of this question."
   },
   {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1-describe-the-distribution-of-length",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1-describe-the-distribution-of-length",
-    "title": "Assignment 3: Song Length Transformation",
-    "section": "Part 1: Describe the distribution of LENGTH",
-    "text": "Part 1: Describe the distribution of LENGTH\n\nWrite down summary statistics for the variable LENGTH (length of the song in seconds) that would measure the Location, Spread, and Skewness of the distribution.\nGenerate a histogram of the variable LENGTH and describe the shape of the distribution."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2-transformations",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2-transformations",
-    "title": "Assignment 3: Song Length Transformation",
-    "section": "Part 2: Transformations",
-    "text": "Part 2: Transformations\n\nSuppose I create a new variable LENGTH_MIN calculated as LENGTH_MIN = LENGTH/60 (i.e., length of song in minutes). Calculate the values of the statistics you wrote down in Part I after the transformation.\nSuppose I create a new variable LENGTH_MIN_II calculated as LENGTH_MIN_II = LENGTH/60 + 2. Calculate the values of the statistics you wrote down in Part I after the transformation."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html",
-    "title": "Assignment 1: Jamovi Introduction",
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_2.html",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_2.html",
+    "title": "Assignment 2: NYC Apartments",
     "section": "",
-    "text": "This assignment uses the NELS dataset as an example. Download the dataset before beginning."
+    "text": "This assignment will guide you through a practice question from Chapter 3 using the Combined Class NYC Apartments dataset. Download the dataset and open it in Jamovi. Submit your answers on Moodle.\nWe want to compare the distributions of square footage (SQFT) for NYC apartments by TYPE (co-ops versus condos). Explain and support your answers with the value of at least one appropriate statistic.\n\nIs the distribution of square footage more skewed for condos or co-ops among the apartments in the dataset?\nAmong the apartments in the dataset, which type of apartment typically has more square footage?\nAmong the apartments in the dataset, which type of apartment has the more homogeneous distribution of square footage?\n\n\n\nShow solution\n\n\nThe square-footage distribution is more skewed for co-ops. The skewness ratio is approximately 7.830/0.236 = 33.2 for co-ops compared with 4.613/0.2 = 23.1 for condos. Both distributions are severely right-skewed.\nCondos typically have more square footage. Their median is approximately 1,150 square feet, compared with 975 square feet for co-ops.\nCo-ops have the more homogeneous distribution based on the interquartile range: the IQR is approximately 470 square feet for co-ops compared with 709 square feet for condos. The standard deviations give the opposite comparison, but IQR is more appropriate because both distributions are severely right-skewed."
   },
   {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#getting-started-in-jamovi",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#getting-started-in-jamovi",
-    "title": "Assignment 1: Jamovi Introduction",
-    "section": "Getting started in Jamovi",
-    "text": "Getting started in Jamovi\n\nOpen Jamovi.\nSelect menu (three lines) in the upper-left corner, choose Open, and select This PC. Click Browse to locate the downloaded NELS data file. You can also drag the file into the Jamovi window.\nJamovi displays the data in a spreadsheet. Each row is a student and each column is a variable.\nClosing Jamovi: my recommendation for this class is to NOT save anything. When you get a prompt to “save XXX?”, you should always choose “No.” If you need to re-access statistical results, you can simply re-run the analysis. Or, you can always take screenshots as needed.\n\n(Optional) If you really do want to save your work (e.g., for a future project), use the menu button and choose Save As. Jamovi saves the dataset and analyses together in a .omv file."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#data-and-variable-views",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#data-and-variable-views",
-    "title": "Assignment 1: Jamovi Introduction",
-    "section": "Data and variable views",
-    "text": "Data and variable views\n\nSelect the Data tab (at the top) to view the dataset and inspect variables.\nUnder data view, each column corresponds to a variable. To see a variable’s settings, select the column and choose Setup. You can also double-click a column header. Note that the setup panel shows the variable name, description, data type, and measure type. The measure types are Nominal, Ordinal, Continuous, and ID.\nFor this class: don’t worry too much about the “ID” measure type. Also, don’t worry about the “data type” (integer, decimal, text)."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#jamovi-analysis-examples",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#jamovi-analysis-examples",
-    "title": "Assignment 1: Jamovi Introduction",
-    "section": "Jamovi analysis examples",
-    "text": "Jamovi analysis examples\nThese tools are introduced in Chapter 2 and will be used throughout the semester.\n\nFrequency tables (Nominal or Ordinal)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove region into the Variables box.\nUnder Statistics, select Frequency tables. You can add several variables to the same analysis to create multiple tables.\nNote that this does NOT work for continuous variables.\n\n\n\nPercentile and percentile rank\n\nOpen Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics &gt; Percentile Values, select cut points for 10 equal groups (you need to enter 10).\nJamovi only allows up to 10 equally spaced cut points, so you cannot get precise percentile or percentile rank values for continuous variables beyond these cut points. With achmat08:\n\nExample 1: What is the 28th percentile? Answer: between 47.8 and 51.\nExample 2: What is the percentile rank of 50? Answer: between 20% and 30%.\n\n\n\n\nStatistic\nValue\n\n\n\n\nN\n500\n\n\nMissing\n0\n\n\nMean\n56.6\n\n\nMedian\n56.2\n\n\nStandard deviation\n9.34\n\n\nMinimum\n36.6\n\n\nMaximum\n77.2\n\n\n10th percentile\n44.2\n\n\n20th percentile\n47.8\n\n\n30th percentile\n51.0\n\n\n40th percentile\n53.7\n\n\n50th percentile\n56.2\n\n\n60th percentile\n58.9\n\n\n70th percentile\n62.1\n\n\n80th percentile\n65.7\n\n\n90th percentile\n68.9\n\n\n100th percentile\n77.2\n\n\n\n\n\n\nSummary statistics and plots (univariate)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics, select the desired numerical summaries (e.g., mean, median, standard deviation). Under Plots, select the desired visual summaries (e.g., histogram, box plot, bar plot)."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#practice-questions",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#practice-questions",
-    "title": "Assignment 1: Jamovi Introduction",
-    "section": "Practice Questions",
-    "text": "Practice Questions\nUse the NELS dataset in Jamovi. The same information can often be generated with more than one Jamovi option.\n\nHow many people are recorded in the NELS dataset? How many are women and how many are men (gender)?\nHow many variables are recorded in total?\nHow many regions are there? What are the regions?\nWhat does the variable parmarl8 represent? If a person has a value of 1 for this variable, what does it mean?\nFind the person whose ID is 10. What is the highest level of education this person expects to get?\nWhat percentage of students in the dataset have ever smoked marijuana (marijuan)?\nWhat is the biggest family size recorded?\nWhat is the recorded measure type for alcbinge? What is the actual appropriate measure type for this variable?\n\n\n\nShow solutions\n\n\nThere are 500 people recorded in the NELS dataset: 227 are male and 273 are female.\n47 variables are recorded in total.\nThere are 4 regions: Northeast, North Central, South, and West.\nparmarl8 represents a person’s parents’ marital status while they were in eighth grade. A value of 1 means that the person’s parents were divorced.\nThe person expects to earn a Ph.D., MD, JD, or another professional degree.\n18.4% of students in the dataset have ever smoked marijuana.\nThe biggest family size recorded is 9.\nThe recorded measure type for alcbinge is nominal, but the appropriate measure type is dichotomous."
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/week_4/week_4.html",
-    "href": "teaching/DATA352/weeks/week_4/week_4.html",
-    "title": "Week 4 (Sept 23)",
+    "objectID": "teaching/DATA352/weeks/week_5/week_5.html",
+    "href": "teaching/DATA352/weeks/week_5/week_5.html",
+    "title": "Week 5 (Sept 30)",
     "section": "",
-    "text": "We will start today’s class with Quiz 3 on Homework 2 (Q4, Q5, Q7) and Homework 3 (Q1, Q3, Q5).\nFor the rest of the class, we will finish Lecture 3.\nLink to fullscreen",
+    "text": "In-person Exam 1. There is no homework after the exam.\n\nExam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under Course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 4"
+      "Week 5"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
-    "href": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
-    "title": "Week 4 (Sept 23)",
+    "objectID": "teaching/DATA352/weeks/week_3/week_3.html",
+    "href": "teaching/DATA352/weeks/week_3/week_3.html",
+    "title": "Week 3 (Sept 16)",
     "section": "",
-    "text": "We will start today’s class with Quiz 3 on Homework 2 (Q4, Q5, Q7) and Homework 3 (Q1, Q3, Q5).\nFor the rest of the class, we will finish Lecture 3.\nLink to fullscreen",
+    "text": "We will start today’s class with Quiz 2 on Homework 2. Next, we will have a group discussion for assignment 2.\nFor the rest of the class, we will finish Lecture 2 and start Lecture 3.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 4"
+      "Week 3"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#homework",
-    "href": "teaching/DATA352/weeks/week_4/week_4.html#homework",
-    "title": "Week 4 (Sept 23)",
+    "objectID": "teaching/DATA352/weeks/week_3/week_3.html#in-class",
+    "href": "teaching/DATA352/weeks/week_3/week_3.html#in-class",
+    "title": "Week 3 (Sept 16)",
+    "section": "",
+    "text": "We will start today’s class with Quiz 2 on Homework 2. Next, we will have a group discussion for assignment 2.\nFor the rest of the class, we will finish Lecture 2 and start Lecture 3.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_3/week_3.html#homework",
+    "href": "teaching/DATA352/weeks/week_3/week_3.html#homework",
+    "title": "Week 3 (Sept 16)",
     "section": "Homework",
-    "text": "Homework\nFinish Homework 3 on your own, in preparation for next week’s exam. Recall, you can use a different programming language if you prefer. The specific syntax of the code can vary based on personal preference (e.g., for loop vs replicate()), but the simulation design should remain consistent.\nReminder: Exam 1 is scheduled for next week. It covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3 (see course documents). Go over Exam 1 review. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.",
+    "text": "Homework\nTake some time to practice writing R functions (especially for those of you who are new to R), following lecture examples and utilizing the abundent online resources. Note, however, that you can use a different programming language (e.g., Python) if you prefer. In that case, it is your responsibility to make sure that you know the equivalent code to any R code used in class.\nFor homework, finish the leftover questions from Homework 2: Q4, Q5, and Q7.\nHomework 3 has been posted. Take a look at Q1, Q3, and Q5. These questions ask you to run a simulation: for now, only do STEP 1 (write a function to perform ONE simulation). The solution includes other steps, which you can skip for now.\nThe quiz next week will be based on the above listed content from Homework 2 and Homework 3.",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 4"
+      "Week 3"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_2/week_2.html",
-    "href": "teaching/DATA352/weeks/week_2/week_2.html",
-    "title": "Week 2 (Sept 9)",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html",
+    "title": "Week 1 (Sept 2)",
     "section": "",
-    "text": "We will start today’s class with Quiz 1 on Homework 1. Next, we will have a group discussion also based on Homework 1 and your group will submit an assignment 1 by putting your answers on this Google doc.\nFor the rest of the class, we will go over Lecture 2.\nLink to fullscreen",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 2"
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_2/week_2.html#in-class",
-    "href": "teaching/DATA352/weeks/week_2/week_2.html#in-class",
-    "title": "Week 2 (Sept 9)",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
+    "title": "Week 1 (Sept 2)",
     "section": "",
-    "text": "We will start today’s class with Quiz 1 on Homework 1. Next, we will have a group discussion also based on Homework 1 and your group will submit an assignment 1 by putting your answers on this Google doc.\nFor the rest of the class, we will go over Lecture 2.\nLink to fullscreen",
+    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 2"
+      "Week 1"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_2/week_2.html#homework",
-    "href": "teaching/DATA352/weeks/week_2/week_2.html#homework",
-    "title": "Week 2 (Sept 9)",
+    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
+    "title": "Week 1 (Sept 2)",
     "section": "Homework",
-    "text": "Homework\nPlease finish Homework 2. There will be a quiz on this material at the beginning of the next class. You can skip some of the questions (marked) until next week (I’m keeping the questions in the homework for consistency.)",
+    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 2"
+      "Week 1"
     ]
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/index.html",
-    "href": "teaching/DATA352/weeks/index.html",
-    "title": "Weekly schedule",
-    "section": "",
-    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
-    "crumbs": [
-      "Research",
-      "Weeks"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/weeks/index.html#weeks",
-    "href": "teaching/DATA352/weeks/index.html#weeks",
-    "title": "Weekly schedule",
-    "section": "Weeks",
-    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026\nWeek 3: September 16, 2026\nWeek 4: September 23, 2026\nWeek 5: September 30, 2026",
-    "crumbs": [
-      "Research",
-      "Weeks"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/resources/index.html",
-    "href": "teaching/DATA352/resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
-    "crumbs": [
-      "Research",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html",
-    "href": "teaching/DATA352/course_documents/index.html",
-    "title": "Course documents",
-    "section": "",
-    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
-    "title": "Course documents",
-    "section": "Lecture slides",
-    "text": "Lecture slides\n\nLecture 1: Introduction and discrete random variables\nLecture 2: Common discrete distributions\nLecture 3: Implementing simulations\nLecture 4: Common continuous distributions\nLecture 5: Rejection and SIR sampling\nLecture 6: Model based inference\nLecture 7: Bootstrapping\nLecture 8: Empirical p-values\nLecture 9: Introduction to Bayesian inference and MCMC",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#homework",
-    "href": "teaching/DATA352/course_documents/index.html#homework",
-    "title": "Course documents",
-    "section": "Homework",
-    "text": "Homework\n\nHomework 1\nHomework 2\nHomework 3",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#assignments",
-    "href": "teaching/DATA352/course_documents/index.html#assignments",
-    "title": "Course documents",
-    "section": "Assignments",
-    "text": "Assignments\n\nAssignment 1 (Group discussion based on Homework 1)\nAssignment 2 (Group discussion based on Homework 2)",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/index.html#exam-reviews",
-    "href": "teaching/DATA352/course_documents/index.html#exam-reviews",
-    "title": "Course documents",
-    "section": "Exam reviews",
-    "text": "Exam reviews\n\nExam 1 Review",
-    "crumbs": [
-      "Research",
-      "Course documents"
-    ]
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_4.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_4.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "To be added."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html",
-    "title": "DATA 352/551: Homework 2",
-    "section": "",
-    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 16."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-1",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 1",
-    "text": "Question 1\nSuppose a random variable \\(X\\) can take values \\(\\{1,2,3\\}\\) according to the probabilities \\(\\{0.2,0.3,0.5\\}\\).\n\nSimulate 10,000 observations from the distribution of \\(X\\). Calculate the mean of the 10,000 simulated draws. Calculate the expectation of \\(X\\) mathematically to compare.\nSimulate another 10,000 observations from the distribution of \\(X\\), with the condition that you are only allowed to make random draws uniformly from \\((0,1)\\). In R, you cannot use the sample function, but can only use runif.\n\n\n\nShow solution\n\nThe mean should be very close to \\(0.2+0.3\\times2+0.5\\times3=2.3\\).\n\nmysim &lt;- sample(1:3, size = 10000,\n                prob = c(0.2, 0.3, 0.5), replace = TRUE)\nmean(mysim)\n\n[1] 2.2887\n\n\nSuppose \\(U\\) is a uniform random draw from \\((0,1)\\). To draw a value \\(x\\) from the distribution of \\(X\\):\n\nSet \\(x=1\\) if \\(U&lt;0.2\\).\nSet \\(x=2\\) if \\(0.2\\le U&lt;0.5\\).\nSet \\(x=3\\) if \\(0.5\\le U\\).\n\n\nsim_unif &lt;- runif(10000)\nsim_x &lt;- sim_unif\nsim_x[sim_unif &lt; 0.2] &lt;- 1\nsim_x[sim_unif &lt; 0.5 & sim_unif &gt;= 0.2] &lt;- 2\nsim_x[sim_unif &gt;= 0.5] &lt;- 3\nmean(sim_x)\n\n[1] 2.3047"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-2",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 2",
-    "text": "Question 2\nThere is a \\(2\\%\\) click rate for an online advertisement. The number of people that will click on the advertisement among the next \\(100\\) people can be modeled by a binomial distribution.\n\nWhat are the parameters of the binomial distribution?\nDiscuss the binomial model assumptions in the context of the problem.\nUse your computer to calculate, among the next \\(100\\) people: the probability that exactly two people click the advertisement; the probability that no one clicks the advertisement; and the probability that 5 or fewer people click the advertisement.\n\n\n\nShow solution\n\nWe model it as a binomial distribution with parameters \\(n=100\\) and \\(p=0.02\\). There are two assumptions. (1) We assume that each person clicks the advertisement independently of each other; one person’s action does not affect the action of the next person. (2) We assume that each person has the same probability of clicking the advertisement. This may be invalid if different populations have different click probabilities.\n\ndbinom(2, size = 100, prob = 0.02)  # P(exactly two)\n\n[1] 0.2734139\n\ndbinom(0, size = 100, prob = 0.02)  # P(no one)\n\n[1] 0.1326196\n\npbinom(5, size = 100, prob = 0.02)  # P(five or fewer)\n\n[1] 0.9845164"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-3",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 3",
-    "text": "Question 3\nThe number of times you get a 6 if you roll a fair, six-sided die for five times can be modeled by a binomial distribution.\n\nWhat are the parameters of the binomial distribution?\nDiscuss the binomial model assumptions in the context of the problem. If the die were biased, can we still use a binomial distribution?\nWhat is the probability that you get more than two 6’s in five rolls?\nDesign a simulation to verify your answer in part 3, using the four steps in Lecture 1.\n\n\n\nShow solution\n\nWe model it as a binomial distribution with parameters \\(n=5\\) and \\(p=1/6\\). We assume (1) each roll is independent of each other and (2) the probability of rolling a 6 is the same for each roll. We can still use a binomial model if the die is biased, as long as the probability of rolling a 6 stays the same.\n\n1 - pbinom(2, size = 5, prob = 1 / 6)  # P(more than two 6's)\n\n[1] 0.03549383\n\n\nFor verifying the above probability:\n\nOne simulation/outcome: Randomly sample five numbers from \\(\\{1,2,\\ldots,6\\}\\); for example, 2, 3, 2, 5, 6.\nWhat to record: The number of 6’s in the five numbers.\nRepeat many times: Results might look like 1, 1, 2, 0, 3, …\nSummarize results: Calculate the proportion of results greater than 2.\n\n\nnumber_of_sixes &lt;- numeric(10000)\nfor (simulation in seq_len(10000)) {\n  one_run &lt;- sample(1:6, size = 5, replace = TRUE)\n  number_of_sixes[simulation] &lt;- sum(one_run == 6)\n}\nmean(number_of_sixes &gt; 2)\n\n[1] 0.0381"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-4",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 4",
-    "text": "Question 4\nA typesetter makes, on average, one mistake per 1000 word. Let \\(X\\) be the number of mistakes that he makes on a page with \\(n\\) words.\n\nSuppose we model \\(X\\) with a binomial distribution. What are the model parameters? Discuss the binomial model assumptions in the context of the problem.\nWith a binomial model, calculate the probabilities that: (i) he makes no mistake on a page with 100 words; (ii) he makes exactly 1 mistake on a page with 100 words; (iii) he makes 1 or more mistake on a page with 100 words; (iv) he makes no mistake on a page with 200 words.\nSuppose we model \\(X\\) with a Poisson distribution. What is the model parameter? Discuss the Poisson model assumptions in the context of the problem.\nRe-calculate the probabilities in part 2 using a Poisson model.\nSimulate 1000 random observations from the binomial model in part 1 and plot a histogram; simulate another 1000 random observations from the Poisson model in part 3 and also plot a histogram. Compare the two histograms.\n\n\n\nShow solution\n\nWe can model \\(X\\) with binomial \\((n,p=0.001)\\). We assume that whether he makes a mistake on one word is independent from whether he makes mistakes on other words, and that each word has equal probability that he makes a mistake.\n\ndbinom(0, size = 100, prob = 0.001)\n\n[1] 0.9047921\n\ndbinom(1, size = 100, prob = 0.001)\n\n[1] 0.09056978\n\n1 - dbinom(0, size = 100, prob = 0.001)\n\n[1] 0.09520785\n\ndbinom(0, size = 200, prob = 0.001)\n\n[1] 0.8186488\n\n\nWe can also model \\(X\\) with Poisson \\((\\lambda=0.001n)\\). This is an approximation because the binomial sample space is \\(0,1,\\ldots,n\\), while the Poisson sample space is \\(0,1,\\ldots,\\infty\\). We assume independent mistakes and that he makes mistakes at a constant rate. The probabilities are very close to the binomial model.\n\ndpois(0, lambda = 0.1)\n\n[1] 0.9048374\n\ndpois(1, lambda = 0.1)\n\n[1] 0.09048374\n\n1 - dpois(0, lambda = 0.1)\n\n[1] 0.09516258\n\ndpois(0, lambda = 0.2)\n\n[1] 0.8187308\n\n\n\npar(mfrow = c(1, 2))\nplot(as.factor(rbinom(1000, size = 100, prob = 0.001)),\n     col = \"lightblue\", main = \"binomial\")\nplot(as.factor(rpois(1000, lambda = 0.1)),\n     col = \"purple\", main = \"Poisson\")\n\n\n\n\n\n\n\n\nIt is hard to estimate tail probabilities like \\(P(X=3,4,\\ldots,100)\\) using simulation because the probabilities are very small."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-5",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-5",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 5",
-    "text": "Question 5\nDo Question 18 on page 199 in Introduction to Probability.\n\n18. A baker blends 600 raisins and 400 chocolate chips into a dough mix and, from this, makes 500 cookies.\n\nFind the probability that a randomly picked cookie will have no raisins.\nFind the probability that a randomly picked cookie will have exactly two chocolate chips.\nFind the probability that a randomly chosen cookie will have at least two bits (raisins or chips) in it.\n\n\n\n\nShow solution\n\nThe number of raisins in a randomly picked cookie, \\(X\\), can be modeled using a Poisson distribution with \\(\\lambda=600/500\\). We can also model \\(X\\) with a binomial distribution with parameters \\(n=600\\), \\(p=1/500\\). The probabilities are very close, but the binomial model is more exact because it has the correct range \\(X\\in\\{0,\\ldots,600\\}\\).\n\ndpois(0, lambda = 6 / 5)\n\n[1] 0.3011942\n\ndbinom(0, size = 600, prob = 1 / 500)\n\n[1] 0.3008325\n\n\nFor part (b), use a Poisson model with \\(\\lambda=400/500\\):\n\ndpois(2, lambda = 4 / 5)\n\n[1] 0.1437853\n\n\nFor part (c), use a Poisson model with \\(\\lambda=1000/500\\):\n\n1 - ppois(1, lambda = 2)\n\n[1] 0.5939942"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-6",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-6",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 6",
-    "text": "Question 6\nUnder the setup of Question 26 on page 201 in Introduction to Probability, the number of hits in each of the 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that a small area would have 0, 1, 2, 3, 4, and 5 or more hits under the Poisson model, and compare the probabilities to the actual proportions.\n\n26. Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into \\(24\\times24=576\\) small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly \\(k\\) hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.\n\n\n\nShow solution\n\nThe number of hits can be modeled by a Poisson distribution with \\(\\lambda=537/576\\). Calculation below shows that the Poisson model works very well.\n\nprobability &lt;- dpois(0:4, lambda = 537 / 576)\nprobability &lt;- c(probability, 1 - ppois(4, lambda = 537 / 576))\n\nexpected &lt;- 576 * probability\nactual &lt;- c(229, 211, 93, 35, 7, 1)\n\ncomparison &lt;- cbind(expected, actual)\nrownames(comparison) &lt;- c(\n  \"0 hit\", \"1 hit\", \"2 hits\", \"3 hits\", \"4 hits\", \"5 or more hits\"\n)\nround(comparison, 1)\n\n               expected actual\n0 hit             226.7    229\n1 hit             211.4    211\n2 hits             98.5     93\n3 hits             30.6     35\n4 hits              7.1      7\n5 or more hits      1.6      1"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-7",
-    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-7",
-    "title": "DATA 352/551: Homework 2",
-    "section": "Question 7",
-    "text": "Question 7\nSuppose that the probabilities of having a male or a female child are both 0.5, and you do not have to consider cases like twins. Calculate the following probabilities using appropriate models.\n\nIf you plan to have three children, what is the probability that you have exactly one daughter? What is the probability that you have at least one daughter?\nWhat is the probability that your first daughter is your third child? (Hint: imagine the scenario of keeping having children until you have a daughter, and model the number of children when the first daughter “occurs.”)\nWhat is the probability that your second daughter is your third child?\nHow many children do you need to have to guarantee with more than 95% chance that you will have at least a daughter?\n\n\n\nShow solution\n\nFor parts (a), (b), and (c):\n\ndbinom(1, size = 3, prob = 0.5)       # a, exactly 1\n\n[1] 0.375\n\n1 - dbinom(0, size = 3, prob = 0.5)                   # a, at least 1\n\n[1] 0.875\n\ndgeom(2, prob = 0.5)                   # b\n\n[1] 0.125\n\ndnbinom(1, size = 2, prob = 0.5)       # c\n\n[1] 0.25\n\n\nFor part (d), let \\(M\\) be the number of children. The number of daughters, \\(X\\), can be modeled by a binomial distribution with parameters \\(n=M\\) and \\(p=0.5\\). We want \\(P(X\\ge1)=1-P(X=0)\\) to be greater than \\(95\\%\\). We calculate this probability for different values of \\(M\\); \\(M=5\\) is the smallest number of children that satisfies the condition.\n1 - pbinom(0, size = 1:10, prob = 0.5)"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html",
-    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html",
-    "title": "DATA 352/551: Exam 1 Review",
-    "section": "",
-    "text": "Exam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#exam-format",
-    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#exam-format",
-    "title": "DATA 352/551: Exam 1 Review",
-    "section": "",
-    "text": "Exam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#list-of-topics",
-    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#list-of-topics",
-    "title": "DATA 352/551: Exam 1 Review",
-    "section": "List of topics",
-    "text": "List of topics\nThis is a very general list to help you study. I suggest that you go over relevant lecture examples and homework questions for each topic.\n\nCan write down the sample space and probability mass function of a discrete random variable; can check the two basic conditions of a probability mass function (lecture 1);\nCan understand the basic idea of simulation and how the result of a simulation can be used to estimate certain quantities (lecture 1);\nCan calculate the expectation of simple discrete random variables (lecture 2);\nFor the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution. You are also expected to know which distribution is appropriate to use given a specific scenario (lecture 2).\nCan design a simulation (using the four steps; lecture 1; you don’t have to use the four-step outline as long as you can design the simulation);\nUnderstand the simulation implementation process and can write code to carry out the simulation (lecture 3)."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#examples-for-choosing-a-distribution",
-    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#examples-for-choosing-a-distribution",
-    "title": "DATA 352/551: Exam 1 Review",
-    "section": "Examples for choosing a distribution",
-    "text": "Examples for choosing a distribution\nFor each of the following scenarios, choose the most appropriate distribution to model \\(X\\).\n\nIn a certain population, \\(28\\%\\) are single. Let \\(X\\) be the number of single person among the next 10 randomly sampled people from this population.\n\n\n\nIn a certain population, \\(28\\%\\) are single. Let \\(X\\) be the number of people you randomly select until you find a single person.\n\n\n\nSuppose we use numbers to represent birth months (i.e., 1 for Jan., …, 12 for Dec.) and let \\(X\\) be the birth month of the next person you ask.\n\n\n\nSuppose a popular social media post receives “likes” at a constant rate of one like per 5 second. Let \\(X\\) be the number of likes received in the next 10 minutes.\n\n\n\nA basketball player makes free throws independently, each with probability \\(0.7\\) of success. Let \\(X\\) be the number of shots she takes until she makes her 3rd successful free throw.\n\n\n\nA quality control inspector examines 50 items from a production line, where each item independently has a \\(5\\%\\) chance of being defective. Let \\(X\\) be the number of defective items found among the 50 items.\n\n\n\nThe number of typos on a page of a book averages 2 per page, and typos occur independently of one another. Let \\(X\\) be the number of typos on a randomly selected page.\n\n\n\nA fair 20-sided die is rolled once. Let \\(X\\) be the number showing on the die.\n\n\n\nYou repeatedly and independently ask random strangers whether they were born in July, where \\(12\\%\\) of the population was born in July. Let \\(X\\) be the number of people you need to ask until you find someone born in July.\n\n\n\nShow solution\n\n\nBinomial with \\(n=10\\) and \\(p=0.28\\). (Since \\(p=0.28\\) is not especially small, the Poisson approximation with \\(\\lambda = np = 2.8\\) would be a rougher approximation here, but it still illustrates how the binomial connects to the Poisson.)\nGeometric with \\(p=0.28\\): \\(X\\) is the number of people sampled up to and including the first single person found.\nDiscrete uniform on \\(\\{1, 2, \\ldots, 12\\}\\).\nPoisson with \\(\\lambda = 120\\) (a rate of 1 like per 5 seconds means \\(600/5 = 120\\) likes expected in the 10-minute, i.e., 600-second, window).\nNegative binomial with \\(r=3\\) successes needed and \\(p=0.7\\).\nBinomial with \\(n=50\\) and \\(p=0.05\\). Because \\(n\\) is large and \\(p\\) is small, this is well approximated by a Poisson distribution with \\(\\lambda = np = 2.5\\).\nPoisson with \\(\\lambda = 2\\).\nDiscrete uniform on \\(\\{1, 2, \\ldots, 20\\}\\).\nGeometric with \\(p=0.12\\)."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "",
-    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members name on your response. We will discuss every group’s response in class."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "",
-    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members name on your response. We will discuss every group’s response in class."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "Part 1: Exact probability versus simulation",
-    "text": "Part 1: Exact probability versus simulation\n\nLet \\(X\\) be the number of heads in three tosses of a fair coin. Imagine simulating 20, 100, and 10000 sets of three tosses. What would you expect to happen to the simulated proportions as the number of repetitions increases?\nA group reports the following results from 20 repetitions:\n\n\n\nNumber of heads\n0\n1\n2\n3\n\n\n\n\nSimulated count\n1\n8\n7\n4\n\n\n\nWhich features of these results are consistent with the theoretical pmf? What would you avoid concluding from only 20 repetitions?"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "Part 2: Design a fair comparison",
-    "text": "Part 2: Design a fair comparison\nYour group wants to compare the probability that three fair dice have a sum of 9 with the probability that they have a sum of 10. One student proposes simulating until the first sum of 9 appears and then comparing the number of rolls with the number of rolls until the first sum of 10 appears. Discuss why this is less useful than recording both outcomes across the same fixed number of repetitions."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "Part 3: The martingale and misleading summaries",
-    "text": "Part 3: The martingale and misleading summaries\nIn the roulette martingale, a player stops after winning at least 5 dollars or losing more than 100 dollars. Red occurs with probability \\(18/38\\).\nDiscuss the following claim:\n\n“The strategy is safe because most simulated games end with a win of 5 dollars.”\n\nAs a group, respond to these questions:\n\nWhat additional quantities would help us understand the risk besides the proportion of games that end in a win?\nHow could a small number of large losses affect the average net winnings, the median net winnings, and the proportion of winning games differently?\nWrite a two- or three-sentence conclusion that would be more informative than the claim above."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
-    "title": "DATA 352/551: Assignment 1",
-    "section": "Part 4: Why do smaller hospitals vary more?",
-    "text": "Part 4: Why do smaller hospitals vary more?\nIn one town, a large hospital has about 45 births per day and a small hospital has about 15 births per day. The probability of a boy is 0.5 at both hospitals. Why can the small hospital have more days above 60% even though the underlying probability of a boy is the same?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yi Lu",
-    "section": "",
-    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Download the pdf version here."
-  },
-  {
-    "objectID": "cv/index.html#yi-lu",
-    "href": "cv/index.html#yi-lu",
-    "title": "Curriculum Vitae",
-    "section": "Yi Lu",
-    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
-  },
-  {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
-  },
-  {
-    "objectID": "cv/index.html#research-interests",
-    "href": "cv/index.html#research-interests",
-    "title": "Curriculum Vitae",
-    "section": "Research Interests",
-    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
-  },
-  {
-    "objectID": "cv/index.html#professional-experience",
-    "href": "cv/index.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional Experience",
-    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
-  },
-  {
-    "objectID": "cv/index.html#teaching",
-    "href": "cv/index.html#teaching",
-    "title": "Curriculum Vitae",
-    "section": "Teaching",
-    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
-  },
-  {
-    "objectID": "cv/index.html#advising",
-    "href": "cv/index.html#advising",
-    "title": "Curriculum Vitae",
-    "section": "Advising",
-    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
-  },
-  {
-    "objectID": "cv/index.html#publications",
-    "href": "cv/index.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "Publications",
-    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
-  },
-  {
-    "objectID": "cv/index.html#work-in-progress",
-    "href": "cv/index.html#work-in-progress",
-    "title": "Curriculum Vitae",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
-  },
-  {
-    "objectID": "cv/index.html#presentations",
-    "href": "cv/index.html#presentations",
-    "title": "Curriculum Vitae",
-    "section": "Presentations",
-    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
-  },
-  {
-    "objectID": "cv/index.html#grants",
-    "href": "cv/index.html#grants",
-    "title": "Curriculum Vitae",
-    "section": "Grants",
-    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
-  },
-  {
-    "objectID": "cv/index.html#awards",
-    "href": "cv/index.html#awards",
-    "title": "Curriculum Vitae",
-    "section": "Awards",
-    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
-  },
-  {
-    "objectID": "cv/index.html#services",
-    "href": "cv/index.html#services",
-    "title": "Curriculum Vitae",
-    "section": "Services",
-    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
-  },
-  {
-    "objectID": "cv/index.html#professional-memberships",
-    "href": "cv/index.html#professional-memberships",
-    "title": "Curriculum Vitae",
-    "section": "Professional Memberships",
-    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
-  },
-  {
-    "objectID": "cv/index.html#miscellaneous",
-    "href": "cv/index.html#miscellaneous",
-    "title": "Curriculum Vitae",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
-  },
-  {
-    "objectID": "dataset/index.html",
-    "href": "dataset/index.html",
-    "title": "Dataset",
-    "section": "",
-    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
-  },
-  {
-    "objectID": "dataset/index.html#csv-data",
-    "href": "dataset/index.html#csv-data",
-    "title": "Dataset",
-    "section": "CSV data",
-    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.\nSalaries by college type\nSalaries by college type. Source: Kaggle."
-  },
-  {
-    "objectID": "dataset/index.html#spss-data",
-    "href": "dataset/index.html#spss-data",
-    "title": "Dataset",
-    "section": "SPSS data",
-    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Content coming up soon!"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html",
-    "title": "DATA 352/551: Assignment 2",
-    "section": "",
-    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members’ names on your response. We will discuss every group’s response in class."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html#group-activity",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html#group-activity",
-    "title": "DATA 352/551: Assignment 2",
-    "section": "",
-    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members’ names on your response. We will discuss every group’s response in class."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html#part-1",
-    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html#part-1",
-    "title": "DATA 352/551: Assignment 2",
-    "section": "Part 1",
-    "text": "Part 1\nThe flying-bomb example is a classic case where rare events are counted across many small areas:\n\n26. Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into \\(24\\times24=576\\) small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly \\(k\\) hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.\n\n\nWhat is the random variable here? What is the range of the random variable?\nCould we also use a binomial model here? If so, what would the parameters be?\nCompare the meaning of the parameter \\(\\lambda\\) in the Poisson model with the meaning of \\(n\\) and \\(p\\) in the binomial model using this specific example. Compare model assumptions as well. Which model do you think is more appropriate here? Why?"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
-    "title": "DATA 352/551: Homework 1",
-    "section": "",
-    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 9.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 1",
-    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 2",
-    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 3",
-    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
-    "title": "DATA 352/551: Homework 1",
-    "section": "Question 4",
-    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html",
-    "title": "DATA 352/551: Homework 3",
-    "section": "",
-    "text": "Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in Lecture 1 Example 3. Write code for this simulation and estimate his chance of winning.\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_dice_pair &lt;- function(){\n  roll1 &lt;- sample(x=c(1:6),size=10,replace=T)\n  roll2 &lt;- sample(x=c(1:6),size=10,replace=T)\n  \n  ## save win/lose in each simulation\n  if(max(roll1+roll2)==12){\n    return('win')   # win if pair of six showed up\n  }else{\n    return('lose')\n  }\n}\n\n# 2. Test the function\nsim_dice_pair()\n\n[1] \"lose\"\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\n#### Method 1: 'for' loop\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_dice_pair()\n}\n\n#### Method 2: Base R replicate()\nresult &lt;- replicate(NSIM, sim_dice_pair())\n\n# 5. Summarize results\ntable(result)/NSIM\n\nresult\n lose   win \n0.776 0.224 \n\n## to compare: exact probability\n1-(35/36)^10\n\n[1] 0.2455066"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-1",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-1",
-    "title": "DATA 352/551: Homework 3",
-    "section": "",
-    "text": "Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in Lecture 1 Example 3. Write code for this simulation and estimate his chance of winning.\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_dice_pair &lt;- function(){\n  roll1 &lt;- sample(x=c(1:6),size=10,replace=T)\n  roll2 &lt;- sample(x=c(1:6),size=10,replace=T)\n  \n  ## save win/lose in each simulation\n  if(max(roll1+roll2)==12){\n    return('win')   # win if pair of six showed up\n  }else{\n    return('lose')\n  }\n}\n\n# 2. Test the function\nsim_dice_pair()\n\n[1] \"lose\"\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\n#### Method 1: 'for' loop\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_dice_pair()\n}\n\n#### Method 2: Base R replicate()\nresult &lt;- replicate(NSIM, sim_dice_pair())\n\n# 5. Summarize results\ntable(result)/NSIM\n\nresult\n lose   win \n0.776 0.224 \n\n## to compare: exact probability\n1-(35/36)^10\n\n[1] 0.2455066"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-2",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-2",
-    "title": "DATA 352/551: Homework 3",
-    "section": "Question 2",
-    "text": "Question 2\nYou play a game with me as follows. A fair coin is tossed. If a head shows up, I give you a dollar. If a tail shows up, you give me a dollar. Suppose you keep playing this game until you win \\(\\$5\\). Let \\(Y\\) be the length of the game you have to play. What is the distribution of \\(Y\\)? We wrote down the four steps to carry out this simulation in Lecture 1 Example 4b. Write code for this simulation and produce a histogram to estimate the distribution of \\(Y\\). Caution: as it is possible that you “never” reach \\(\\$5\\), it is important to set an upperbound to the length of the game (i.e., if the length of the game has reached 10000, say, you quit the while loop regardless of your winning.)\nThe following code visualizes one round of the game, for demonstration purposes.\n\n## global constant and initialization\ntarget &lt;- 5  # target winning\nnum.game.max &lt;- 10000 # maximum game length for the while loop \ncurrent  &lt;- 0 # current net winning\nnum.game &lt;- 0 # current game length\ncurrent.trace &lt;-  current # winning trajectory for plotting\n\nwhile((current&lt;target)&(num.game&lt;num.game.max)){\n  num.game &lt;- num.game+1\n  current &lt;- current + sample(c(-1,1),size=1,replace=T)\n  current.trace &lt;- c(current.trace,current)\n}\n\n# visualize result\nif(num.game&gt;=num.game.max){\n  mytitle='did not reach target in 10000 runs'\n}else{\n  mytitle=paste('target reached in',num.game,'runs')\n}\nplot(current.trace,type='b',main=mytitle,\n     xlab='number of runs',\n     ylab='winnings')\nabline(h=target,lty='dotted',col='red')\n\n\n\n\n\n\n\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_game_length &lt;- function(target=5, num.game.max=10000){\n  current &lt;- 0 # current net winning\n  num.game &lt;- 0 # current game length\n\n  while((current&lt;target)&(num.game&lt;num.game.max)){\n    num.game &lt;- num.game+1\n    current &lt;- current + sample(c(-1,1),size=1,replace=T)\n  }\n  return(num.game)\n}\n\n# 2. Test the function\nsim_game_length()\n\n[1] 343\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nnum.game.max &lt;- 10000 # maximum game length for the while loop\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_game_length(num.game.max=num.game.max)\n  \n  if(i %% 1000 == 0){\n    print(paste(Sys.time(),'...running simulation',i))\n  }\n}\n\n[1] \"2026-09-23 15:52:12.858851 ...running simulation 1000\"\n\n# 5. summarize results\nsummary(result)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    5.0    21.0    59.0   679.4   225.0 10000.0 \n\nhist(result,nclass=50)\n\n\n\n\n\n\n\n# we can take log transformation when histogram is severely right skewed\nhist(log(result,base=10),nclass = 50)\n\n\n\n\n\n\n\nmean(result==num.game.max) #prob. that game length &gt;= num.game.max\n\n[1] 0.03"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-3",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-3",
-    "title": "DATA 352/551: Homework 3",
-    "section": "Question 3",
-    "text": "Question 3\nWrite code to carry out the simulation in Homework 1, question 2.\n\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_three_dice &lt;- function(){\n  dices &lt;- sample(c(1:6),size=3,replace=T) #sample 3 dices\n  return(sum(dices)) #store the sum of dices\n}\n\n# 2. Test the function\nsim_three_dice()\n\n[1] 13\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\nresult &lt;- replicate(NSIM, sim_three_dice())\n\n# 5. Summarize results\nplot(as.factor(result),main='sum of three dice rolls')"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-4",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-4",
-    "title": "DATA 352/551: Homework 3",
-    "section": "Question 4",
-    "text": "Question 4\nWrite code to carry out the simulation in Homework 1, question 4.\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_hospital_year &lt;- function(births_per_day){\n  year &lt;- rep(NA,365) #to store percentage of boys each day\n  for(d in 1:365){\n    outcome &lt;- sample(c(0,1),size=births_per_day,replace=T)\n    year[d] &lt;- mean(outcome)\n  }\n  return(sum(year&gt;=0.6)) #number of days with &gt;=60% boys\n}\n\n# 2. Test the function\nsim_hospital_year(births_per_day=45)\n\n[1] 47\n\nsim_hospital_year(births_per_day=15)\n\n[1] 112\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 10000  #number of years to simulate\nresult.large &lt;- rep(NA,NSIM) \nresult.small &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\nresult.large &lt;- replicate(NSIM, sim_hospital_year(births_per_day=45))\nresult.small &lt;- replicate(NSIM, sim_hospital_year(births_per_day=15))\n\n# 5. summarize results\nsummary(result.large)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  20.00   38.00   42.00   42.48   47.00   67.00 \n\nsummary(result.small)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   79.0   105.0   111.0   110.8   117.0   142.0 \n\n# visualize results\npar(mfrow=c(1,2))\nhist(result.large, xlab='Num days with &gt;=60% boys', \n     col='salmon',\n     main='large hospital')\nhist(result.small, xlab='Num days with &gt;=60% boys', \n     col='lightblue',\n     main='small hospital')"
-  },
-  {
-    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-5",
-    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-5",
-    "title": "DATA 352/551: Homework 3",
-    "section": "Question 5",
-    "text": "Question 5\nSuppose that when cars drive past Drew toward downtown from 7am to 8am on a typical Sunday morning, \\(41\\%\\) will turn onto Kings Rd., \\(38\\%\\) will continue straight to Main St., and \\(21\\%\\) will turn onto Park Ave. Assume that the number of cars driving past Drew toward downtown during that hour follows a Poisson distribution with parameter \\(\\lambda=6\\). Let \\(X\\) be the number of cars that will drive on Main St. past the fork. Use simulation to answer the following questions.\n\nWhat is the probability that 5 or more cars will drive on Main street past the fork from 7am to 8am on a typical Sunday morning (i.e., \\(P(X\\ge5)\\))?\nEstimate the distribution of \\(X\\) by plotting a histogram.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_cars &lt;- function(lambda=6, prob=0.38){\n  numcar &lt;- rpois(1,lambda=lambda)\n  return(rbinom(1,size=numcar,prob=prob))\n}\n\n# 2. Test the function\nsim_cars()\n\n[1] 4\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\nresult &lt;- replicate(NSIM, sim_cars())\n\n# 5. summarize results\nmean(result&gt;=5)\n\n[1] 0.093\n\nplot(as.factor(result),main='Number of cars that go to Main Street',col='salmon')"
-  },
-  {
-    "objectID": "teaching/DATA352/index.html",
-    "href": "teaching/DATA352/index.html",
-    "title": "DATA 352/551: Modeling and Simulation",
-    "section": "",
-    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
   },
   {
     "objectID": "teaching/DATA352/syllabus.html",
@@ -1354,95 +869,605 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html",
-    "title": "Week 1 (Sept 2)",
+    "objectID": "teaching/DATA352/index.html",
+    "href": "teaching/DATA352/index.html",
+    "title": "DATA 352/551: Modeling and Simulation",
     "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
+    "text": "Welcome to the course site of DATA 352/551: Modeling and Simulation. Use the sidebar to navigate within this course.\nDescription. Covers techniques for modeling and simulating random systems that are otherwise complicated to study. Topics may include sampling from probability distributions, approximate sampling, Monte Carlo and MCMC methods, bootstrap, and simulation based inference. Prerequisite: CSCI 149 OR CSCI 150 OR STAT120 OR DATA 505."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html",
+    "title": "DATA 352/551: Homework 3",
+    "section": "",
+    "text": "Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in Lecture 1 Example 3. Write code for this simulation and estimate his chance of winning.\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_dice_pair &lt;- function(){\n  roll1 &lt;- sample(x=c(1:6),size=10,replace=T)\n  roll2 &lt;- sample(x=c(1:6),size=10,replace=T)\n  \n  ## save win/lose in each simulation\n  if(max(roll1+roll2)==12){\n    return('win')   # win if pair of six showed up\n  }else{\n    return('lose')\n  }\n}\n\n# 2. Test the function\nsim_dice_pair()\n\n[1] \"lose\"\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\n#### Method 1: 'for' loop\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_dice_pair()\n}\n\n#### Method 2: Base R replicate()\nresult &lt;- replicate(NSIM, sim_dice_pair())\n\n# 5. Summarize results\ntable(result)/NSIM\n\nresult\n lose   win \n0.776 0.224 \n\n## to compare: exact probability\n1-(35/36)^10\n\n[1] 0.2455066"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-1",
+    "title": "DATA 352/551: Homework 3",
+    "section": "",
+    "text": "Suppose we roll a pair of fair dice. A gambler bets that, in 10 rolls, a pair of six would show up. What is his chance of winning? We wrote down the four steps to carry out this simulation in Lecture 1 Example 3. Write code for this simulation and estimate his chance of winning.\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_dice_pair &lt;- function(){\n  roll1 &lt;- sample(x=c(1:6),size=10,replace=T)\n  roll2 &lt;- sample(x=c(1:6),size=10,replace=T)\n  \n  ## save win/lose in each simulation\n  if(max(roll1+roll2)==12){\n    return('win')   # win if pair of six showed up\n  }else{\n    return('lose')\n  }\n}\n\n# 2. Test the function\nsim_dice_pair()\n\n[1] \"lose\"\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\n#### Method 1: 'for' loop\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_dice_pair()\n}\n\n#### Method 2: Base R replicate()\nresult &lt;- replicate(NSIM, sim_dice_pair())\n\n# 5. Summarize results\ntable(result)/NSIM\n\nresult\n lose   win \n0.776 0.224 \n\n## to compare: exact probability\n1-(35/36)^10\n\n[1] 0.2455066"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-2",
+    "title": "DATA 352/551: Homework 3",
+    "section": "Question 2",
+    "text": "Question 2\nYou play a game with me as follows. A fair coin is tossed. If a head shows up, I give you a dollar. If a tail shows up, you give me a dollar. Suppose you keep playing this game until you win \\(\\$5\\). Let \\(Y\\) be the length of the game you have to play. What is the distribution of \\(Y\\)? We wrote down the four steps to carry out this simulation in Lecture 1 Example 4b. Write code for this simulation and produce a histogram to estimate the distribution of \\(Y\\). Caution: as it is possible that you “never” reach \\(\\$5\\), it is important to set an upperbound to the length of the game (i.e., if the length of the game has reached 10000, say, you quit the while loop regardless of your winning.)\nThe following code visualizes one round of the game, for demonstration purposes.\n\n## global constant and initialization\ntarget &lt;- 5  # target winning\nnum.game.max &lt;- 10000 # maximum game length for the while loop \ncurrent  &lt;- 0 # current net winning\nnum.game &lt;- 0 # current game length\ncurrent.trace &lt;-  current # winning trajectory for plotting\n\nwhile((current&lt;target)&(num.game&lt;num.game.max)){\n  num.game &lt;- num.game+1\n  current &lt;- current + sample(c(-1,1),size=1,replace=T)\n  current.trace &lt;- c(current.trace,current)\n}\n\n# visualize result\nif(num.game&gt;=num.game.max){\n  mytitle='did not reach target in 10000 runs'\n}else{\n  mytitle=paste('target reached in',num.game,'runs')\n}\nplot(current.trace,type='b',main=mytitle,\n     xlab='number of runs',\n     ylab='winnings')\nabline(h=target,lty='dotted',col='red')\n\n\n\n\n\n\n\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_game_length &lt;- function(target=5, num.game.max=10000){\n  current &lt;- 0 # current net winning\n  num.game &lt;- 0 # current game length\n\n  while((current&lt;target)&(num.game&lt;num.game.max)){\n    num.game &lt;- num.game+1\n    current &lt;- current + sample(c(-1,1),size=1,replace=T)\n  }\n  return(num.game)\n}\n\n# 2. Test the function\nsim_game_length()\n\n[1] 343\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nnum.game.max &lt;- 10000 # maximum game length for the while loop\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\nfor(i in 1:NSIM){\n  result[i] &lt;- sim_game_length(num.game.max=num.game.max)\n  \n  if(i %% 1000 == 0){\n    print(paste(Sys.time(),'...running simulation',i))\n  }\n}\n\n[1] \"2026-09-23 15:52:12.858851 ...running simulation 1000\"\n\n# 5. summarize results\nsummary(result)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    5.0    21.0    59.0   679.4   225.0 10000.0 \n\nhist(result,nclass=50)\n\n\n\n\n\n\n\n# we can take log transformation when histogram is severely right skewed\nhist(log(result,base=10),nclass = 50)\n\n\n\n\n\n\n\nmean(result==num.game.max) #prob. that game length &gt;= num.game.max\n\n[1] 0.03"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-3",
+    "title": "DATA 352/551: Homework 3",
+    "section": "Question 3",
+    "text": "Question 3\nWrite code to carry out the simulation in Homework 1, question 2.\n\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_three_dice &lt;- function(){\n  dices &lt;- sample(c(1:6),size=3,replace=T) #sample 3 dices\n  return(sum(dices)) #store the sum of dices\n}\n\n# 2. Test the function\nsim_three_dice()\n\n[1] 13\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\nresult &lt;- replicate(NSIM, sim_three_dice())\n\n# 5. Summarize results\nplot(as.factor(result),main='sum of three dice rolls')"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-4",
+    "title": "DATA 352/551: Homework 3",
+    "section": "Question 4",
+    "text": "Question 4\nWrite code to carry out the simulation in Homework 1, question 4.\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_hospital_year &lt;- function(births_per_day){\n  year &lt;- rep(NA,365) #to store percentage of boys each day\n  for(d in 1:365){\n    outcome &lt;- sample(c(0,1),size=births_per_day,replace=T)\n    year[d] &lt;- mean(outcome)\n  }\n  return(sum(year&gt;=0.6)) #number of days with &gt;=60% boys\n}\n\n# 2. Test the function\nsim_hospital_year(births_per_day=45)\n\n[1] 47\n\nsim_hospital_year(births_per_day=15)\n\n[1] 112\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 10000  #number of years to simulate\nresult.large &lt;- rep(NA,NSIM) \nresult.small &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\n\nresult.large &lt;- replicate(NSIM, sim_hospital_year(births_per_day=45))\nresult.small &lt;- replicate(NSIM, sim_hospital_year(births_per_day=15))\n\n# 5. summarize results\nsummary(result.large)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  20.00   38.00   42.00   42.48   47.00   67.00 \n\nsummary(result.small)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   79.0   105.0   111.0   110.8   117.0   142.0 \n\n# visualize results\npar(mfrow=c(1,2))\nhist(result.large, xlab='Num days with &gt;=60% boys', \n     col='salmon',\n     main='large hospital')\nhist(result.small, xlab='Num days with &gt;=60% boys', \n     col='lightblue',\n     main='small hospital')"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_3.html#question-5",
+    "href": "teaching/DATA352/course_documents/homework/homework_3.html#question-5",
+    "title": "DATA 352/551: Homework 3",
+    "section": "Question 5",
+    "text": "Question 5\nSuppose that when cars drive past Drew toward downtown from 7am to 8am on a typical Sunday morning, \\(41\\%\\) will turn onto Kings Rd., \\(38\\%\\) will continue straight to Main St., and \\(21\\%\\) will turn onto Park Ave. Assume that the number of cars driving past Drew toward downtown during that hour follows a Poisson distribution with parameter \\(\\lambda=6\\). Let \\(X\\) be the number of cars that will drive on Main St. past the fork. Use simulation to answer the following questions.\n\nWhat is the probability that 5 or more cars will drive on Main street past the fork from 7am to 8am on a typical Sunday morning (i.e., \\(P(X\\ge5)\\))?\nEstimate the distribution of \\(X\\) by plotting a histogram.\n\n\n\nShow solution\n\n\n# 1. ONE simulation function\nsim_cars &lt;- function(lambda=6, prob=0.38){\n  numcar &lt;- rpois(1,lambda=lambda)\n  return(rbinom(1,size=numcar,prob=prob))\n}\n\n# 2. Test the function\nsim_cars()\n\n[1] 4\n\n# 3. Initialize global simulation parameters\nNSIM &lt;- 1000\nresult &lt;- rep(NA,NSIM)\n\n# 4. Repeat the simulation NSIM times\nresult &lt;- replicate(NSIM, sim_cars())\n\n# 5. summarize results\nmean(result&gt;=5)\n\n[1] 0.093\n\nplot(as.factor(result),main='Number of cars that go to Main Street',col='salmon')"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html",
+    "title": "DATA 352/551: Homework 1",
+    "section": "",
+    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 9.\nYou do not need to write any code for this homework. You only need to describe how you would perform the simulations and analyze the results.\nRead Section 1.1, “Simulation of Discrete Probabilities,” in Introduction to Probability (pages 1-12). Do not worry about the programs mentioned in the reading. We will run some of the simulations in R, or another programming language, later."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-1",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 1",
+    "text": "Question 1\nLet \\(X\\) be the number of heads in three coin tosses. The coins are assumed to be fair.\n\nWhat is the probability mass function of \\(X\\)?\nVerify that this probability mass function satisfies the two conditions.\n\n\n\nShow solution\n\nThe probabilities can be calculated by listing all \\(2^3 = 8\\) outcomes:\n\\[\nP(X = 0) = 0.125, \\quad P(X = 1) = 0.375, \\quad P(X = 2) = 0.375, \\quad P(X = 3) = 0.125.\n\\]\nAll probabilities are nonnegative, and they add up to 1."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-2",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 2",
+    "text": "Question 2\nSuppose you roll three fair dice and calculate the sum of the three rolls. Is the sum more likely to be 9 or 10? You can simulate the result of three dice rolls on random.org/dice for a few times to get a sense. Use the four steps discussed in the lecture to describe how to estimate the probability that the sum is 9 and the probability that the sum is 10.\n\n\nShow solution\n\n\nOne simulation: Roll three fair dice; an example outcome is \\((3, 5, 3)\\).\nWhat to record: Record the sum of the three dice rolls (e.g., \\(3 + 5 + 3 = 11\\)).\nRepeat many times: The results might look like \\(11, 10, 5, 9, 9, \\ldots\\).\nSummarize the results: Compare the proportion of 9s with the proportion of 10s."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-3",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 3",
+    "text": "Question 3\nConsider Question 10 on page 14 of Introduction to Probability:\n\nAnother well-known gambling system is the martingale doubling system. Suppose that you are betting on red to turn up in roulette. Every time you win, bet 1 dollar next time. Every time you lose, double your previous bet. Suppose that you use this system until you have won at least 5 dollars or you have lost more than 100 dollars. Write a program to simulate this and play it a number of times and see how you do. In his book The Newcomes, W. M. Thackeray remarks, “You have not played as yet? Do not do so; above all avoid a martingale if you do.” Was this good advice?\n\nIn roulette, the probability of red is \\(18/38\\). Are you more likely to win 5 dollars or to lose 100 dollars? Use the four steps to describe how to estimate the probability of winning 5 dollars and the probability of losing 100 dollars.\n\n\nShow solution\n\n\nOne simulation: Initialize the net winnings with \\(X^0 = 0\\) and the current bet with \\(b^0 = 1\\). Randomly sample a roulette outcome: red with probability \\(18/38\\) and black with probability \\(20/38\\). If the outcome is red, set \\(X^{i+1} = X^i + b^i\\) and \\(b^{i+1} = 1\\). If the outcome is black, set \\(X^{i+1} = X^i - b^i\\) and \\(b^{i+1} = 2b^i\\). Stop when \\(X^i \\ge 5\\) or \\(X^i \\le -100\\).\nWhat to record: Record the net winnings when the game stops, and optionally record the game length.\nRepeat many times: The results might look like \\(5, 5, 5, -124, 5, \\ldots\\).\nSummarize the results: Compare the proportion of results that are 5 or above with the proportion that are -100 or below.\n\n\n\n\nExample martingale outcome"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_1.html#question-4",
+    "title": "DATA 352/551: Homework 1",
+    "section": "Question 4",
+    "text": "Question 4\nUse the four steps to design a simulation to answer Question 13 on page 14 of Introduction to Probability:\n\nThe psychologist Tversky and his colleagues say that about four out of five people will answer (a) to the following question:\nA certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital 15 babies are born each day. Although the overall proportion of boys is about 50 percent, the actual proportion at either hospital may be more or less than 50 percent on any day. At the end of a year, which hospital will have the greater number of days on which more than 60 percent of the babies born were boys?\n\nthe large hospital\n\nthe small hospital\n\nneither: the number of days will be about the same.\n\nAssume that the probability that a baby is a boy is 0.5. Decide, by simulation, what the right answer is and suggest why so many people go wrong.\n\n\n\nShow solution\n\nThe large hospital can be simulated as follows:\n\nOne simulation: For one day, generate 45 independent outcomes, each equal to 0 for a girl or 1 for a boy, with probability 0.5. Calculate the proportion of boys (e.g., \\(20/45\\)). Repeat this for 365 days for one simulated year: \\(20/45 (day 1), 18/45 (day 2), 23/45 (day 3), \\ldots\\).\nWhat to record: Record the number of days, out of 365, on which more than 60% of the babies were boys.\nRepeat many times: The results might look like \\(180, 185, 168, \\ldots\\).\nSummarize the results: Repeat the same simulation for the small hospital, using 15 births per day. Compare the average/median numbers of “boy days,” or compare their distributions with histograms."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html",
+    "title": "DATA 352/551: Assignment 2",
+    "section": "",
+    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members’ names on your response. We will discuss every group’s response in class."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html#group-activity",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html#group-activity",
+    "title": "DATA 352/551: Assignment 2",
+    "section": "",
+    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members’ names on your response. We will discuss every group’s response in class."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_2.html#part-1",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_2.html#part-1",
+    "title": "DATA 352/551: Assignment 2",
+    "section": "Part 1",
+    "text": "Part 1\nThe flying-bomb example is a classic case where rare events are counted across many small areas:\n\n26. Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into \\(24\\times24=576\\) small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly \\(k\\) hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.\n\n\nWhat is the random variable here? What is the range of the random variable?\nCould we also use a binomial model here? If so, what would the parameters be?\nCompare the meaning of the parameter \\(\\lambda\\) in the Poisson model with the meaning of \\(n\\) and \\(p\\) in the binomial model using this specific example. Compare model assumptions as well. Which model do you think is more appropriate here? Why?"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Content coming up soon!"
+  },
+  {
+    "objectID": "dataset/index.html",
+    "href": "dataset/index.html",
+    "title": "Dataset",
+    "section": "",
+    "text": "Here are some fun and relatively clean datasets that are mostly used for teaching."
+  },
+  {
+    "objectID": "dataset/index.html#csv-data",
+    "href": "dataset/index.html#csv-data",
+    "title": "Dataset",
+    "section": "CSV data",
+    "text": "CSV data\n\ntallest_buildings.csv\nTallest buildings in the world. Source: scraped from https://en.wikipedia.org/wiki/List_of_tallest_buildings.\nSalaries by college type\nSalaries by college type. Source: Kaggle."
+  },
+  {
+    "objectID": "dataset/index.html#spss-data",
+    "href": "dataset/index.html#spss-data",
+    "title": "Dataset",
+    "section": "SPSS data",
+    "text": "SPSS data\n\nCombined Class data\nThese data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\nTextbook data\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\nOther SPSS data\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download the pdf version here."
+  },
+  {
+    "objectID": "cv/index.html#yi-lu",
+    "href": "cv/index.html#yi-lu",
+    "title": "Curriculum Vitae",
+    "section": "Yi Lu",
+    "text": "Yi Lu\nDrew University, Department of Mathematics & Computer Science\nHall of Sciences 314, Madison, NJ 07940\n973-408-3769\nylu1@drew.edu"
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nPh.D. Statistics, The Ohio State University (Columbus, OH), August 2017\n\nAdvisors: Radu Herbei and Sebastian Kurtek\nDissertation: Function Registration from a Bayesian Perspective\n\nM.S. Statistics, The Ohio State University (Columbus, OH), May 2014\nB.S. Mathematics & B.A. History, Mars Hill University (Mars Hill, NC), May 2011\n\nHonor: Summa Cum Laude"
+  },
+  {
+    "objectID": "cv/index.html#research-interests",
+    "href": "cv/index.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "Research Interests",
+    "text": "Research Interests\nFunctional data analysis, MCMC algorithm, nonparametric Bayesian methods, computational statistics, simulation, curve and image registration, data visualization, applied statistics"
+  },
+  {
+    "objectID": "cv/index.html#professional-experience",
+    "href": "cv/index.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\nDrew University\n\nAssociate Professor, Department of Mathematics & Computer Science, Fall 2024 - Present\nNorma Gilbert Assistant Professor, Department of Mathematics & Computer Science, Fall 2017 - Summer 2024\n\nAnthology, Inc. (previously iModules Software)\n\nStatistical Consultant, Summer 2019 - Spring 2020\n\nProject: evaluate existing models and develop new metrics to measure alumni engagement in higher education institutions\n\n\nThe Ohio State University\n\nGraduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017\nConsultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017\nGraduate Research Assistant, Department of Statistics, Summer 2015\n\nAdvisor: Radu Herbei (Supported in part by NSF DMS 1209142)\nProject: compare different methods of parallel computing in executing the Metropolis-Hastings algorithm\n\n\nThe Progressive Corporation (Cleveland, OH)\n\nResearch & Development Analyst (internship), Summer 2016\n\nProject: develop and validate regression models for calculating auto insurance rates"
+  },
+  {
+    "objectID": "cv/index.html#teaching",
+    "href": "cv/index.html#teaching",
+    "title": "Curriculum Vitae",
+    "section": "Teaching",
+    "text": "Teaching\nDrew University\n(* indicates first offering of the course at Drew; ** indicates a graduate-level or crosslisted graduate level course)\n\nSTAT335/DATA503** Applied Regression Analysis: Fall 2022\nSTAT350 Statistical Theory: Spring 2018*, Spring 2020, Spring 2022, Spring 2023, Spring 2024\nSTAT207/STAT117 Introduction to Statistics: Fall 2017, Spring 2018, Summer 2018, Fall 2018, Spring 2019, Summer 2019, Fall 2019, Summer 2020, Spring 2022, Fall 2022, Fall 2023, Spring 2024, Summer 2024, Fall 2024, Spring 2025\nDATA200 Data Science: Introduction, History, and Case Studies: Spring 2018*, Spring 2022, Fall 2024\nDATA252/DATA551** Modeling and Simulation: Spring 2020*, Fall 2021, Spring 2023, Spring 2024, Spring 2025\nSTAT120 Statistical Computing in R: Fall 2019, Summer 2020, Fall 2021, Fall 2022, Fall 2023, Fall 2024\nSTAT220 Special Topics in Statistics: Bayesian Statistics: Spring 2021*\nFIN622** Computational Finance & Large Data Analysis (M.S. of Finance program): Spring 2019*\nDATA251 Data Visualization: Fall 2018*\n\nThe Ohio State University\n\nSTAT4201 Introduction to Mathematical Statistics: Fall 2015\nRecitation instructor, STAT2480 Statistics for Life Sciences: Spring 2015\nRecitation instructor, STAT4202 Introduction to Mathematical Statistics II: Fall 2014\nRecitation instructor, STAT2450 Introduction to Statistical Analysis: Fall 2014\nRecitation instructor, STAT1450 Introduction to the Practice of Statistics: Summer 2014\nRecitation instructor, STAT1350 Elementary Statistics: Spring 2014, Spring 2013, Fall 2012"
+  },
+  {
+    "objectID": "cv/index.html#advising",
+    "href": "cv/index.html#advising",
+    "title": "Curriculum Vitae",
+    "section": "Advising",
+    "text": "Advising\nCurrent students\n(* indicates students with an Honors Thesis project)\n\nArianna Mendez (Drew Summer Science Institute (DSSI), Summer 2024); project: Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia\n\nFormer students\n\nMuhammad Mir* (co-advisor with Jennifer Olmsted; MATH410: Specialized Honors in Mathematics I, Fall 2023); Honors thesis title: Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy\nJamie Connors* (STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023); Honors thesis title: Two Approaches to Statistical Research: Frequentist and Bayesian (co-advisor with Sarah Abramowitz)\nAlex Goebel (Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023); project: Analyzing Fencing Data\nPeter Antico (DATA551: Independent studies in Modeling and Simulation; Spring 2021)\nKatelynn Fleming (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\nKevin Lagerquist (MATH300: Independent studies in Mathematical Statistics, Spring 2021)\n\nMember, Honors Thesis Committee\n\nJoseph Rojek, Economics, Spring 2025\nGabriel Dutra, Computer Science and Statistics, Spring 2023\nMehek Agrawal, Biology, Spring 2023\nDavid Nesterov-Rappoport, Computer Science, Spring 2022"
+  },
+  {
+    "objectID": "cv/index.html#publications",
+    "href": "cv/index.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nA. de Voogt, Y. Lu, F. Pan, H. Zuckerman, “Abrupt maneuvers in General Aviation accidents,” Safety Science (2025): Vol. 185: https://doi.org/10.1016/j.ssci.2025.106785.\nY. Lu, A. de Voogt, F. Gobet, “Dominance, Streakiness, and Non-random Patterns in the Game of N!àì,” Journal of Expertise (2024): Vol. 6(4) & 7(1): https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html.\nA. de Voogt, A. Campos, Y. Lu “Amphibious Airplane Accidents: An Exploratory Analysis,” Applied Sciences 13(22): 12224 (2023): https://doi.org/10.3390/app132212224.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Function Registration with Random Truncation,” Plos one 18.7 (2023): e0287734.\nY. Lu, R. Herbei, S. Kurtek, “Bayesian Registration of Functions with a Gaussian Process Prior,” Journal of Computational and Graphical Statistics 26.4 (2017): 894-904."
+  },
+  {
+    "objectID": "cv/index.html#work-in-progress",
+    "href": "cv/index.html#work-in-progress",
+    "title": "Curriculum Vitae",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nM. Mir, Y. Lu, J. Olmsted, “Optimizing Water Usage and Revenue of Jordan’s Agricultural Economy”"
+  },
+  {
+    "objectID": "cv/index.html#presentations",
+    "href": "cv/index.html#presentations",
+    "title": "Curriculum Vitae",
+    "section": "Presentations",
+    "text": "Presentations\nConference Presentations\n\nBayesian Registration of Functions with a Gaussian Process Prior, Joint Statistical Meetings (JSM), Chicago, August 2016\nBayesian Registration of Functions with a Gaussian Process Prior, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016\nAnswer in Two Decimal Places Accuracy: How ‘Well’ Are You Prepared for a Test, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010\n\nInvited Talks and Workshops\n\nIntroduction to Decision Tree & Discussion on Data Analytics, workshop lecture, Drew Summer College, July 2022\nQuantitative Graphs: Principles of Effective Data Visualization, Drew Faculty Workshop Series, May 2022\nBayesian Registration of Real-valued Functions, Seminar Talk, Dr. Bing Zhang Department of Statistics, University of Kentucky, April 2022\nBayesian Registration of Functions, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018\n\nPosters\n\nBayesian Registration of Functions, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016\nBayesian Registration of Functions, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015\n\nMiscellaneous\n\nThe Magic Box: a Rating Engine for Auto Insurance Rate Comparisons with Stewart Zellars, R&D research meeting, Progressive Cooperation, Cleveland, August 2016\nA Tutorial on Majorize-Minimization (MM) algorithms with Sophie Nguyen and Andrew Landgraf, Department of Statistics, The Ohio State University, Fall 2014\nTemperature Trend of the past 118 Years in the United States with Po-hsu Chen and Hui Yang, Department of Statistics, The Ohio State University, Fall 2013"
+  },
+  {
+    "objectID": "cv/index.html#grants",
+    "href": "cv/index.html#grants",
+    "title": "Curriculum Vitae",
+    "section": "Grants",
+    "text": "Grants\n\nDigital Humanities (DH) mini-grant ($500) for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018\nDigital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018"
+  },
+  {
+    "objectID": "cv/index.html#awards",
+    "href": "cv/index.html#awards",
+    "title": "Curriculum Vitae",
+    "section": "Awards",
+    "text": "Awards\n\nApplied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016\nThe Thomas E. & Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015\nUniversity Fellowship, The Ohio State University, 2011 - 2012\nChair’s Fellowship, The Ohio State University, March 2011\nRobert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011\nBest Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011\nPresidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011"
+  },
+  {
+    "objectID": "cv/index.html#services",
+    "href": "cv/index.html#services",
+    "title": "Curriculum Vitae",
+    "section": "Services",
+    "text": "Services\nDepartment\n\nCoordinator of Statistics Instruction, Spring 2023 - Present\n\nUniversity\n\nInstitutional Review Board (IRB), Fall 2021 to present\nUniversity Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 to Spring 2023\nGlobal Education Faculty Advisory Committee (GEFAC), Spring 2021 to present\nAcademic Computing Advisory Committee (ACAC), Fall 2018 to Fall 2020\nStatistical Software Discussion Group, Spring 2018\nJudge, Fair for Emerging Researchers, March 2018\n\nProfessional\n\nArticle reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistic Education (June 2020, April 2018), Technometrics (October 2019)"
+  },
+  {
+    "objectID": "cv/index.html#professional-memberships",
+    "href": "cv/index.html#professional-memberships",
+    "title": "Curriculum Vitae",
+    "section": "Professional Memberships",
+    "text": "Professional Memberships\nAmerican Statistical Association (ASA)\nInternational Chinese Statistical Association (ICSA)"
+  },
+  {
+    "objectID": "cv/index.html#miscellaneous",
+    "href": "cv/index.html#miscellaneous",
+    "title": "Curriculum Vitae",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\nComputer Skills\nR, SPSS, some experience with SAS, C, C++, Java, Stata"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "Hi! I am an Associate Professor in the Department of Mathematics and Computer Science at Drew University in Madison, New Jersey. I teach courses in statistics and data science, and I enjoy working on applied research projects with students and collaborators.\nI earned a Ph.D. in Statistics from the Ohio State University. My research background is in functional data analysis, Bayesian models, and Markov chain Monte Carlo methods. I love simulation-based methods (the alternative—analytical derivations—is often daunting to me). I am a big fan of R.\nI love jogging and running in my spare time. I am always out on a run, and my statistics classes tend to have too many running examples. I want to run an ultra-marathon one day.\nYou can find my CV here.\nYou can email me at ylu1@drew.edu.\nThis website is built with Quarto, VS Code, and AI models enabled by GitHub Copilot, thanks to its Education Benefit program."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "",
+    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members name on your response. We will discuss every group’s response in class."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#group-activity",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "",
+    "text": "Work in groups of 2-3. Your group will submit one response on this Google doc. Make sure to put all group members name on your response. We will discuss every group’s response in class."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-1-exact-probability-versus-simulation",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "Part 1: Exact probability versus simulation",
+    "text": "Part 1: Exact probability versus simulation\n\nLet \\(X\\) be the number of heads in three tosses of a fair coin. Imagine simulating 20, 100, and 10000 sets of three tosses. What would you expect to happen to the simulated proportions as the number of repetitions increases?\nA group reports the following results from 20 repetitions:\n\n\n\nNumber of heads\n0\n1\n2\n3\n\n\n\n\nSimulated count\n1\n8\n7\n4\n\n\n\nWhich features of these results are consistent with the theoretical pmf? What would you avoid concluding from only 20 repetitions?"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-2-design-a-fair-comparison",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "Part 2: Design a fair comparison",
+    "text": "Part 2: Design a fair comparison\nYour group wants to compare the probability that three fair dice have a sum of 9 with the probability that they have a sum of 10. One student proposes simulating until the first sum of 9 appears and then comparing the number of rolls with the number of rolls until the first sum of 10 appears. Discuss why this is less useful than recording both outcomes across the same fixed number of repetitions."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-3-the-martingale-and-misleading-summaries",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "Part 3: The martingale and misleading summaries",
+    "text": "Part 3: The martingale and misleading summaries\nIn the roulette martingale, a player stops after winning at least 5 dollars or losing more than 100 dollars. Red occurs with probability \\(18/38\\).\nDiscuss the following claim:\n\n“The strategy is safe because most simulated games end with a win of 5 dollars.”\n\nAs a group, respond to these questions:\n\nWhat additional quantities would help us understand the risk besides the proportion of games that end in a win?\nHow could a small number of large losses affect the average net winnings, the median net winnings, and the proportion of winning games differently?\nWrite a two- or three-sentence conclusion that would be more informative than the claim above."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
+    "href": "teaching/DATA352/course_documents/assignment/assignment_1.html#part-4-why-do-smaller-hospitals-vary-more",
+    "title": "DATA 352/551: Assignment 1",
+    "section": "Part 4: Why do smaller hospitals vary more?",
+    "text": "Part 4: Why do smaller hospitals vary more?\nIn one town, a large hospital has about 45 births per day and a small hospital has about 15 births per day. The probability of a boy is 0.5 at both hospitals. Why can the small hospital have more days above 60% even though the underlying probability of a boy is the same?"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html",
+    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html",
+    "title": "DATA 352/551: Exam 1 Review",
+    "section": "",
+    "text": "Exam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#exam-format",
+    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#exam-format",
+    "title": "DATA 352/551: Exam 1 Review",
+    "section": "",
+    "text": "Exam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#list-of-topics",
+    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#list-of-topics",
+    "title": "DATA 352/551: Exam 1 Review",
+    "section": "List of topics",
+    "text": "List of topics\nThis is a very general list to help you study. I suggest that you go over relevant lecture examples and homework questions for each topic.\n\nCan write down the sample space and probability mass function of a discrete random variable; can check the two basic conditions of a probability mass function (lecture 1);\nCan understand the basic idea of simulation and how the result of a simulation can be used to estimate certain quantities (lecture 1);\nCan calculate the expectation of simple discrete random variables (lecture 2);\nFor the common discrete distributions (uniform, binomial, Poisson, geometric, negative binomial), know the parameters and interpretation of the parameters, know the model assumptions, can calculate corresponding probabilities, and can simulate from each distribution. You are also expected to know which distribution is appropriate to use given a specific scenario (lecture 2).\nCan design a simulation (using the four steps; lecture 1; you don’t have to use the four-step outline as long as you can design the simulation);\nUnderstand the simulation implementation process and can write code to carry out the simulation (lecture 3)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#examples-for-choosing-a-distribution",
+    "href": "teaching/DATA352/course_documents/exam_reviews/exam_1_review.html#examples-for-choosing-a-distribution",
+    "title": "DATA 352/551: Exam 1 Review",
+    "section": "Examples for choosing a distribution",
+    "text": "Examples for choosing a distribution\nFor each of the following scenarios, choose the most appropriate distribution to model \\(X\\).\n\nIn a certain population, \\(28\\%\\) are single. Let \\(X\\) be the number of single person among the next 10 randomly sampled people from this population.\n\n\n\nIn a certain population, \\(28\\%\\) are single. Let \\(X\\) be the number of people you randomly select until you find a single person.\n\n\n\nSuppose we use numbers to represent birth months (i.e., 1 for Jan., …, 12 for Dec.) and let \\(X\\) be the birth month of the next person you ask.\n\n\n\nSuppose a popular social media post receives “likes” at a constant rate of one like per 5 second. Let \\(X\\) be the number of likes received in the next 10 minutes.\n\n\n\nA basketball player makes free throws independently, each with probability \\(0.7\\) of success. Let \\(X\\) be the number of shots she takes until she makes her 3rd successful free throw.\n\n\n\nA quality control inspector examines 50 items from a production line, where each item independently has a \\(5\\%\\) chance of being defective. Let \\(X\\) be the number of defective items found among the 50 items.\n\n\n\nThe number of typos on a page of a book averages 2 per page, and typos occur independently of one another. Let \\(X\\) be the number of typos on a randomly selected page.\n\n\n\nA fair 20-sided die is rolled once. Let \\(X\\) be the number showing on the die.\n\n\n\nYou repeatedly and independently ask random strangers whether they were born in July, where \\(12\\%\\) of the population was born in July. Let \\(X\\) be the number of people you need to ask until you find someone born in July.\n\n\n\nShow solution\n\n\nBinomial with \\(n=10\\) and \\(p=0.28\\). (Since \\(p=0.28\\) is not especially small, the Poisson approximation with \\(\\lambda = np = 2.8\\) would be a rougher approximation here, but it still illustrates how the binomial connects to the Poisson.)\nGeometric with \\(p=0.28\\): \\(X\\) is the number of people sampled up to and including the first single person found.\nDiscrete uniform on \\(\\{1, 2, \\ldots, 12\\}\\).\nPoisson with \\(\\lambda = 120\\) (a rate of 1 like per 5 seconds means \\(600/5 = 120\\) likes expected in the 10-minute, i.e., 600-second, window).\nNegative binomial with \\(r=3\\) successes needed and \\(p=0.7\\).\nBinomial with \\(n=50\\) and \\(p=0.05\\). Because \\(n\\) is large and \\(p\\) is small, this is well approximated by a Poisson distribution with \\(\\lambda = np = 2.5\\).\nPoisson with \\(\\lambda = 2\\).\nDiscrete uniform on \\(\\{1, 2, \\ldots, 20\\}\\).\nGeometric with \\(p=0.12\\)."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html",
+    "title": "DATA 352/551: Homework 2",
+    "section": "",
+    "text": "Homework is not collected. The quiz based on this homework will be at the beginning of class, Sep 16."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-1",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-1",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 1",
+    "text": "Question 1\nSuppose a random variable \\(X\\) can take values \\(\\{1,2,3\\}\\) according to the probabilities \\(\\{0.2,0.3,0.5\\}\\).\n\nSimulate 10,000 observations from the distribution of \\(X\\). Calculate the mean of the 10,000 simulated draws. Calculate the expectation of \\(X\\) mathematically to compare.\nSimulate another 10,000 observations from the distribution of \\(X\\), with the condition that you are only allowed to make random draws uniformly from \\((0,1)\\). In R, you cannot use the sample function, but can only use runif.\n\n\n\nShow solution\n\nThe mean should be very close to \\(0.2+0.3\\times2+0.5\\times3=2.3\\).\n\nmysim &lt;- sample(1:3, size = 10000,\n                prob = c(0.2, 0.3, 0.5), replace = TRUE)\nmean(mysim)\n\n[1] 2.2887\n\n\nSuppose \\(U\\) is a uniform random draw from \\((0,1)\\). To draw a value \\(x\\) from the distribution of \\(X\\):\n\nSet \\(x=1\\) if \\(U&lt;0.2\\).\nSet \\(x=2\\) if \\(0.2\\le U&lt;0.5\\).\nSet \\(x=3\\) if \\(0.5\\le U\\).\n\n\nsim_unif &lt;- runif(10000)\nsim_x &lt;- sim_unif\nsim_x[sim_unif &lt; 0.2] &lt;- 1\nsim_x[sim_unif &lt; 0.5 & sim_unif &gt;= 0.2] &lt;- 2\nsim_x[sim_unif &gt;= 0.5] &lt;- 3\nmean(sim_x)\n\n[1] 2.3047"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-2",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-2",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nThere is a \\(2\\%\\) click rate for an online advertisement. The number of people that will click on the advertisement among the next \\(100\\) people can be modeled by a binomial distribution.\n\nWhat are the parameters of the binomial distribution?\nDiscuss the binomial model assumptions in the context of the problem.\nUse your computer to calculate, among the next \\(100\\) people: the probability that exactly two people click the advertisement; the probability that no one clicks the advertisement; and the probability that 5 or fewer people click the advertisement.\n\n\n\nShow solution\n\nWe model it as a binomial distribution with parameters \\(n=100\\) and \\(p=0.02\\). There are two assumptions. (1) We assume that each person clicks the advertisement independently of each other; one person’s action does not affect the action of the next person. (2) We assume that each person has the same probability of clicking the advertisement. This may be invalid if different populations have different click probabilities.\n\ndbinom(2, size = 100, prob = 0.02)  # P(exactly two)\n\n[1] 0.2734139\n\ndbinom(0, size = 100, prob = 0.02)  # P(no one)\n\n[1] 0.1326196\n\npbinom(5, size = 100, prob = 0.02)  # P(five or fewer)\n\n[1] 0.9845164"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-3",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-3",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nThe number of times you get a 6 if you roll a fair, six-sided die for five times can be modeled by a binomial distribution.\n\nWhat are the parameters of the binomial distribution?\nDiscuss the binomial model assumptions in the context of the problem. If the die were biased, can we still use a binomial distribution?\nWhat is the probability that you get more than two 6’s in five rolls?\nDesign a simulation to verify your answer in part 3, using the four steps in Lecture 1.\n\n\n\nShow solution\n\nWe model it as a binomial distribution with parameters \\(n=5\\) and \\(p=1/6\\). We assume (1) each roll is independent of each other and (2) the probability of rolling a 6 is the same for each roll. We can still use a binomial model if the die is biased, as long as the probability of rolling a 6 stays the same.\n\n1 - pbinom(2, size = 5, prob = 1 / 6)  # P(more than two 6's)\n\n[1] 0.03549383\n\n\nFor verifying the above probability:\n\nOne simulation/outcome: Randomly sample five numbers from \\(\\{1,2,\\ldots,6\\}\\); for example, 2, 3, 2, 5, 6.\nWhat to record: The number of 6’s in the five numbers.\nRepeat many times: Results might look like 1, 1, 2, 0, 3, …\nSummarize results: Calculate the proportion of results greater than 2.\n\n\nnumber_of_sixes &lt;- numeric(10000)\nfor (simulation in seq_len(10000)) {\n  one_run &lt;- sample(1:6, size = 5, replace = TRUE)\n  number_of_sixes[simulation] &lt;- sum(one_run == 6)\n}\nmean(number_of_sixes &gt; 2)\n\n[1] 0.0381"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-4",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-4",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nA typesetter makes, on average, one mistake per 1000 word. Let \\(X\\) be the number of mistakes that he makes on a page with \\(n\\) words.\n\nSuppose we model \\(X\\) with a binomial distribution. What are the model parameters? Discuss the binomial model assumptions in the context of the problem.\nWith a binomial model, calculate the probabilities that: (i) he makes no mistake on a page with 100 words; (ii) he makes exactly 1 mistake on a page with 100 words; (iii) he makes 1 or more mistake on a page with 100 words; (iv) he makes no mistake on a page with 200 words.\nSuppose we model \\(X\\) with a Poisson distribution. What is the model parameter? Discuss the Poisson model assumptions in the context of the problem.\nRe-calculate the probabilities in part 2 using a Poisson model.\nSimulate 1000 random observations from the binomial model in part 1 and plot a histogram; simulate another 1000 random observations from the Poisson model in part 3 and also plot a histogram. Compare the two histograms.\n\n\n\nShow solution\n\nWe can model \\(X\\) with binomial \\((n,p=0.001)\\). We assume that whether he makes a mistake on one word is independent from whether he makes mistakes on other words, and that each word has equal probability that he makes a mistake.\n\ndbinom(0, size = 100, prob = 0.001)\n\n[1] 0.9047921\n\ndbinom(1, size = 100, prob = 0.001)\n\n[1] 0.09056978\n\n1 - dbinom(0, size = 100, prob = 0.001)\n\n[1] 0.09520785\n\ndbinom(0, size = 200, prob = 0.001)\n\n[1] 0.8186488\n\n\nWe can also model \\(X\\) with Poisson \\((\\lambda=0.001n)\\). This is an approximation because the binomial sample space is \\(0,1,\\ldots,n\\), while the Poisson sample space is \\(0,1,\\ldots,\\infty\\). We assume independent mistakes and that he makes mistakes at a constant rate. The probabilities are very close to the binomial model.\n\ndpois(0, lambda = 0.1)\n\n[1] 0.9048374\n\ndpois(1, lambda = 0.1)\n\n[1] 0.09048374\n\n1 - dpois(0, lambda = 0.1)\n\n[1] 0.09516258\n\ndpois(0, lambda = 0.2)\n\n[1] 0.8187308\n\n\n\npar(mfrow = c(1, 2))\nplot(as.factor(rbinom(1000, size = 100, prob = 0.001)),\n     col = \"lightblue\", main = \"binomial\")\nplot(as.factor(rpois(1000, lambda = 0.1)),\n     col = \"purple\", main = \"Poisson\")\n\n\n\n\n\n\n\n\nIt is hard to estimate tail probabilities like \\(P(X=3,4,\\ldots,100)\\) using simulation because the probabilities are very small."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-5",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-5",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nDo Question 18 on page 199 in Introduction to Probability.\n\n18. A baker blends 600 raisins and 400 chocolate chips into a dough mix and, from this, makes 500 cookies.\n\nFind the probability that a randomly picked cookie will have no raisins.\nFind the probability that a randomly picked cookie will have exactly two chocolate chips.\nFind the probability that a randomly chosen cookie will have at least two bits (raisins or chips) in it.\n\n\n\n\nShow solution\n\nThe number of raisins in a randomly picked cookie, \\(X\\), can be modeled using a Poisson distribution with \\(\\lambda=600/500\\). We can also model \\(X\\) with a binomial distribution with parameters \\(n=600\\), \\(p=1/500\\). The probabilities are very close, but the binomial model is more exact because it has the correct range \\(X\\in\\{0,\\ldots,600\\}\\).\n\ndpois(0, lambda = 6 / 5)\n\n[1] 0.3011942\n\ndbinom(0, size = 600, prob = 1 / 500)\n\n[1] 0.3008325\n\n\nFor part (b), use a Poisson model with \\(\\lambda=400/500\\):\n\ndpois(2, lambda = 4 / 5)\n\n[1] 0.1437853\n\n\nFor part (c), use a Poisson model with \\(\\lambda=1000/500\\):\n\n1 - ppois(1, lambda = 2)\n\n[1] 0.5939942"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-6",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-6",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 6",
+    "text": "Question 6\nUnder the setup of Question 26 on page 201 in Introduction to Probability, the number of hits in each of the 576 small areas can be modeled by a Poisson distribution. What is the parameter? Calculate the probabilities that a small area would have 0, 1, 2, 3, 4, and 5 or more hits under the Poisson model, and compare the probabilities to the actual proportions.\n\n26. Feller discusses the statistics of flying bomb hits in an area in the south of London during the Second World War. The area in question was divided into \\(24\\times24=576\\) small areas. The total number of hits was 537. There were 229 squares with 0 hits, 211 with 1 hit, 93 with 2 hits, 35 with 3 hits, 7 with 4 hits, and 1 with 5 or more. Assuming the hits were purely random, use the Poisson approximation to find the probability that a particular square would have exactly \\(k\\) hits. Compute the expected number of squares that would have 0, 1, 2, 3, 4, and 5 or more hits and compare this with the observed results.\n\n\n\nShow solution\n\nThe number of hits can be modeled by a Poisson distribution with \\(\\lambda=537/576\\). Calculation below shows that the Poisson model works very well.\n\nprobability &lt;- dpois(0:4, lambda = 537 / 576)\nprobability &lt;- c(probability, 1 - ppois(4, lambda = 537 / 576))\n\nexpected &lt;- 576 * probability\nactual &lt;- c(229, 211, 93, 35, 7, 1)\n\ncomparison &lt;- cbind(expected, actual)\nrownames(comparison) &lt;- c(\n  \"0 hit\", \"1 hit\", \"2 hits\", \"3 hits\", \"4 hits\", \"5 or more hits\"\n)\nround(comparison, 1)\n\n               expected actual\n0 hit             226.7    229\n1 hit             211.4    211\n2 hits             98.5     93\n3 hits             30.6     35\n4 hits              7.1      7\n5 or more hits      1.6      1"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_2.html#question-7",
+    "href": "teaching/DATA352/course_documents/homework/homework_2.html#question-7",
+    "title": "DATA 352/551: Homework 2",
+    "section": "Question 7",
+    "text": "Question 7\nSuppose that the probabilities of having a male or a female child are both 0.5, and you do not have to consider cases like twins. Calculate the following probabilities using appropriate models.\n\nIf you plan to have three children, what is the probability that you have exactly one daughter? What is the probability that you have at least one daughter?\nWhat is the probability that your first daughter is your third child? (Hint: imagine the scenario of keeping having children until you have a daughter, and model the number of children when the first daughter “occurs.”)\nWhat is the probability that your second daughter is your third child?\nHow many children do you need to have to guarantee with more than 95% chance that you will have at least a daughter?\n\n\n\nShow solution\n\nFor parts (a), (b), and (c):\n\ndbinom(1, size = 3, prob = 0.5)       # a, exactly 1\n\n[1] 0.375\n\n1 - dbinom(0, size = 3, prob = 0.5)                   # a, at least 1\n\n[1] 0.875\n\ndgeom(2, prob = 0.5)                   # b\n\n[1] 0.125\n\ndnbinom(1, size = 2, prob = 0.5)       # c\n\n[1] 0.25\n\n\nFor part (d), let \\(M\\) be the number of children. The number of daughters, \\(X\\), can be modeled by a binomial distribution with parameters \\(n=M\\) and \\(p=0.5\\). We want \\(P(X\\ge1)=1-P(X=0)\\) to be greater than \\(95\\%\\). We calculate this probability for different values of \\(M\\); \\(M=5\\) is the smallest number of children that satisfies the condition.\n1 - pbinom(0, size = 1:10, prob = 0.5)"
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/homework/homework_4.html",
+    "href": "teaching/DATA352/course_documents/homework/homework_4.html",
+    "title": "Yi Lu",
+    "section": "",
+    "text": "To be added."
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html",
+    "href": "teaching/DATA352/course_documents/index.html",
+    "title": "Course documents",
+    "section": "",
+    "text": "You can find all course documents here as a reference page. Please refer to the weekly modules for specifics on what you need to do each week.",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#in-class",
-    "title": "Week 1 (Sept 2)",
-    "section": "",
-    "text": "Today we will introduce ourselves, go over the syllabus, and get started with Lecture 1.\nLink to fullscreen",
+    "objectID": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "href": "teaching/DATA352/course_documents/index.html#lecture-slides",
+    "title": "Course documents",
+    "section": "Lecture slides",
+    "text": "Lecture slides\n\nLecture 1: Introduction and discrete random variables\nLecture 2: Common discrete distributions\nLecture 3: Implementing simulations\nLecture 4: Common continuous distributions\nLecture 5: Rejection and SIR sampling\nLecture 6: Model based inference\nLecture 7: Bootstrapping\nLecture 8: Empirical p-values\nLecture 9: Introduction to Bayesian inference and MCMC",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "href": "teaching/DATA352/weeks/week_1/week_1.html#homework",
-    "title": "Week 1 (Sept 2)",
+    "objectID": "teaching/DATA352/course_documents/index.html#homework",
+    "href": "teaching/DATA352/course_documents/index.html#homework",
+    "title": "Course documents",
     "section": "Homework",
-    "text": "Homework\nPlease finish Homework 1. There will be a quiz on this material at the beginning of the next class.",
+    "text": "Homework\n\nHomework 1\nHomework 2\nHomework 3",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 1"
+      "Course documents"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_3/week_3.html",
-    "href": "teaching/DATA352/weeks/week_3/week_3.html",
-    "title": "Week 3 (Sept 16)",
+    "objectID": "teaching/DATA352/course_documents/index.html#assignments",
+    "href": "teaching/DATA352/course_documents/index.html#assignments",
+    "title": "Course documents",
+    "section": "Assignments",
+    "text": "Assignments\n\nAssignment 1 (Group discussion based on Homework 1)\nAssignment 2 (Group discussion based on Homework 2)",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/course_documents/index.html#exam-reviews",
+    "href": "teaching/DATA352/course_documents/index.html#exam-reviews",
+    "title": "Course documents",
+    "section": "Exam reviews",
+    "text": "Exam reviews\n\nExam 1 Review",
+    "crumbs": [
+      "Research",
+      "Course documents"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/resources/index.html",
+    "href": "teaching/DATA352/resources/index.html",
+    "title": "Resources",
     "section": "",
-    "text": "We will start today’s class with Quiz 2 on Homework 2. Next, we will have a group discussion for assignment 2.\nFor the rest of the class, we will finish Lecture 2 and start Lecture 3.\nLink to fullscreen",
+    "text": "R set up\n\nYou need to download and install BOTH R and RStudio for RStudio to work.\nAs a backup, you can use Posit Cloud to run RStudio in your web browser without installing anything locally.\n\n\n\nR learning resources\n\nR for Data Science (Wickham & Grolemund)\nAn Introduction to R (Venables et. al.) PDF\nPosit recipes: interactive tutorials\nAdvanced R (Wickham)\n\n\n\nClass resources\n\nAn introduction to Probability PDF",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 3"
+      "Resources"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_3/week_3.html#in-class",
-    "href": "teaching/DATA352/weeks/week_3/week_3.html#in-class",
-    "title": "Week 3 (Sept 16)",
+    "objectID": "teaching/DATA352/weeks/index.html",
+    "href": "teaching/DATA352/weeks/index.html",
+    "title": "Weekly schedule",
     "section": "",
-    "text": "We will start today’s class with Quiz 2 on Homework 2. Next, we will have a group discussion for assignment 2.\nFor the rest of the class, we will finish Lecture 2 and start Lecture 3.\nLink to fullscreen",
+    "text": "Here is the weekly schedule for the course. Please refer to this page to keep track of the topics and assignments for each week.",
     "crumbs": [
       "Research",
-      "Weeks",
-      "Week 3"
+      "Weeks"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_3/week_3.html#homework",
-    "href": "teaching/DATA352/weeks/week_3/week_3.html#homework",
-    "title": "Week 3 (Sept 16)",
+    "objectID": "teaching/DATA352/weeks/index.html#weeks",
+    "href": "teaching/DATA352/weeks/index.html#weeks",
+    "title": "Weekly schedule",
+    "section": "Weeks",
+    "text": "Weeks\n\nWeek 1: September 2, 2026\nWeek 2: September 9, 2026\nWeek 3: September 16, 2026\nWeek 4: September 23, 2026\nWeek 5: September 30, 2026",
+    "crumbs": [
+      "Research",
+      "Weeks"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_2/week_2.html",
+    "href": "teaching/DATA352/weeks/week_2/week_2.html",
+    "title": "Week 2 (Sept 9)",
+    "section": "",
+    "text": "We will start today’s class with Quiz 1 on Homework 1. Next, we will have a group discussion also based on Homework 1 and your group will submit an assignment 1 by putting your answers on this Google doc.\nFor the rest of the class, we will go over Lecture 2.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_2/week_2.html#in-class",
+    "href": "teaching/DATA352/weeks/week_2/week_2.html#in-class",
+    "title": "Week 2 (Sept 9)",
+    "section": "",
+    "text": "We will start today’s class with Quiz 1 on Homework 1. Next, we will have a group discussion also based on Homework 1 and your group will submit an assignment 1 by putting your answers on this Google doc.\nFor the rest of the class, we will go over Lecture 2.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_2/week_2.html#homework",
+    "href": "teaching/DATA352/weeks/week_2/week_2.html#homework",
+    "title": "Week 2 (Sept 9)",
     "section": "Homework",
-    "text": "Homework\nTake some time to practice writing R functions (especially for those of you who are new to R), following lecture examples and utilizing the abundent online resources. Note, however, that you can use a different programming language (e.g., Python) if you prefer. In that case, it is your responsibility to make sure that you know the equivalent code to any R code used in class.\nFor homework, finish the leftover questions from Homework 2: Q4, Q5, and Q7.\nHomework 3 has been posted. Take a look at Q1, Q3, and Q5. These questions ask you to run a simulation: for now, only do STEP 1 (write a function to perform ONE simulation). The solution includes other steps, which you can skip for now.\nThe quiz next week will be based on the above listed content from Homework 2 and Homework 3.",
+    "text": "Homework\nPlease finish Homework 2. There will be a quiz on this material at the beginning of the next class. You can skip some of the questions (marked) until next week (I’m keeping the questions in the homework for consistency.)",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 3"
+      "Week 2"
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_5/week_5.html",
-    "href": "teaching/DATA352/weeks/week_5/week_5.html",
-    "title": "Week 5 (Sept 30)",
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html",
+    "title": "Week 4 (Sept 23)",
     "section": "",
-    "text": "In-person Exam 1. There is no homework after the exam.\n\nExam 1 covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3. These can be found under Course documents. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.",
+    "text": "We will start today’s class with Quiz 3 on Homework 2 (Q4, Q5, Q7) and Homework 3 (Q1, Q3, Q5).\nFor the rest of the class, we will finish Lecture 3.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
-      "Week 5"
+      "Week 4"
     ]
   },
   {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_2.html",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_2.html",
-    "title": "Assignment 2: NYC Apartments",
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html#in-class",
+    "title": "Week 4 (Sept 23)",
     "section": "",
-    "text": "This assignment will guide you through a practice question from Chapter 3 using the Combined Class NYC Apartments dataset. Download the dataset and open it in Jamovi. Submit your answers on Moodle.\nWe want to compare the distributions of square footage (SQFT) for NYC apartments by TYPE (co-ops versus condos). Explain and support your answers with the value of at least one appropriate statistic.\n\nIs the distribution of square footage more skewed for condos or co-ops among the apartments in the dataset?\nAmong the apartments in the dataset, which type of apartment typically has more square footage?\nAmong the apartments in the dataset, which type of apartment has the more homogeneous distribution of square footage?\n\n\n\nShow solution\n\n\nThe square-footage distribution is more skewed for co-ops. The skewness ratio is approximately 7.830/0.236 = 33.2 for co-ops compared with 4.613/0.2 = 23.1 for condos. Both distributions are severely right-skewed.\nCondos typically have more square footage. Their median is approximately 1,150 square feet, compared with 975 square feet for co-ops.\nCo-ops have the more homogeneous distribution based on the interquartile range: the IQR is approximately 470 square feet for co-ops compared with 709 square feet for condos. The standard deviations give the opposite comparison, but IQR is more appropriate because both distributions are severely right-skewed."
+    "text": "We will start today’s class with Quiz 3 on Homework 2 (Q4, Q5, Q7) and Homework 3 (Q1, Q3, Q5).\nFor the rest of the class, we will finish Lecture 3.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_4/week_4.html#homework",
+    "href": "teaching/DATA352/weeks/week_4/week_4.html#homework",
+    "title": "Week 4 (Sept 23)",
+    "section": "Homework",
+    "text": "Homework\nFinish Homework 3 on your own, in preparation for next week’s exam. Recall, you can use a different programming language if you prefer. The specific syntax of the code can vary based on personal preference (e.g., for loop vs replicate()), but the simulation design should remain consistent.\nReminder: Exam 1 is scheduled for next week. It covers Lectures 1, 2, and 3, with corresponding Homework 1, 2, and 3 (see course documents). Go over Exam 1 review. Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html",
+    "title": "Assignment 1: Jamovi Introduction",
+    "section": "",
+    "text": "This assignment uses the NELS dataset as an example. Download the dataset before beginning."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#getting-started-in-jamovi",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#getting-started-in-jamovi",
+    "title": "Assignment 1: Jamovi Introduction",
+    "section": "Getting started in Jamovi",
+    "text": "Getting started in Jamovi\n\nOpen Jamovi.\nSelect menu (three lines) in the upper-left corner, choose Open, and select This PC. Click Browse to locate the downloaded NELS data file. You can also drag the file into the Jamovi window.\nJamovi displays the data in a spreadsheet. Each row is a student and each column is a variable.\nClosing Jamovi: my recommendation for this class is to NOT save anything. When you get a prompt to “save XXX?”, you should always choose “No.” If you need to re-access statistical results, you can simply re-run the analysis. Or, you can always take screenshots as needed.\n\n(Optional) If you really do want to save your work (e.g., for a future project), use the menu button and choose Save As. Jamovi saves the dataset and analyses together in a .omv file."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#data-and-variable-views",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#data-and-variable-views",
+    "title": "Assignment 1: Jamovi Introduction",
+    "section": "Data and variable views",
+    "text": "Data and variable views\n\nSelect the Data tab (at the top) to view the dataset and inspect variables.\nUnder data view, each column corresponds to a variable. To see a variable’s settings, select the column and choose Setup. You can also double-click a column header. Note that the setup panel shows the variable name, description, data type, and measure type. The measure types are Nominal, Ordinal, Continuous, and ID.\nFor this class: don’t worry too much about the “ID” measure type. Also, don’t worry about the “data type” (integer, decimal, text)."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#jamovi-analysis-examples",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#jamovi-analysis-examples",
+    "title": "Assignment 1: Jamovi Introduction",
+    "section": "Jamovi analysis examples",
+    "text": "Jamovi analysis examples\nThese tools are introduced in Chapter 2 and will be used throughout the semester.\n\nFrequency tables (Nominal or Ordinal)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove region into the Variables box.\nUnder Statistics, select Frequency tables. You can add several variables to the same analysis to create multiple tables.\nNote that this does NOT work for continuous variables.\n\n\n\nPercentile and percentile rank\n\nOpen Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics &gt; Percentile Values, select cut points for 10 equal groups (you need to enter 10).\nJamovi only allows up to 10 equally spaced cut points, so you cannot get precise percentile or percentile rank values for continuous variables beyond these cut points. With achmat08:\n\nExample 1: What is the 28th percentile? Answer: between 47.8 and 51.\nExample 2: What is the percentile rank of 50? Answer: between 20% and 30%.\n\n\n\n\nStatistic\nValue\n\n\n\n\nN\n500\n\n\nMissing\n0\n\n\nMean\n56.6\n\n\nMedian\n56.2\n\n\nStandard deviation\n9.34\n\n\nMinimum\n36.6\n\n\nMaximum\n77.2\n\n\n10th percentile\n44.2\n\n\n20th percentile\n47.8\n\n\n30th percentile\n51.0\n\n\n40th percentile\n53.7\n\n\n50th percentile\n56.2\n\n\n60th percentile\n58.9\n\n\n70th percentile\n62.1\n\n\n80th percentile\n65.7\n\n\n90th percentile\n68.9\n\n\n100th percentile\n77.2\n\n\n\n\n\n\nSummary statistics and plots (univariate)\n\nSelect Analyses &gt; Exploration &gt; Descriptives.\nMove achmat08 into the Variables box.\nUnder Statistics, select the desired numerical summaries (e.g., mean, median, standard deviation). Under Plots, select the desired visual summaries (e.g., histogram, box plot, bar plot)."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_1.html#practice-questions",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_1.html#practice-questions",
+    "title": "Assignment 1: Jamovi Introduction",
+    "section": "Practice Questions",
+    "text": "Practice Questions\nUse the NELS dataset in Jamovi. The same information can often be generated with more than one Jamovi option.\n\nHow many people are recorded in the NELS dataset? How many are women and how many are men (gender)?\nHow many variables are recorded in total?\nHow many regions are there? What are the regions?\nWhat does the variable parmarl8 represent? If a person has a value of 1 for this variable, what does it mean?\nFind the person whose ID is 10. What is the highest level of education this person expects to get?\nWhat percentage of students in the dataset have ever smoked marijuana (marijuan)?\nWhat is the biggest family size recorded?\nWhat is the recorded measure type for alcbinge? What is the actual appropriate measure type for this variable?\n\n\n\nShow solutions\n\n\nThere are 500 people recorded in the NELS dataset: 227 are male and 273 are female.\n47 variables are recorded in total.\nThere are 4 regions: Northeast, North Central, South, and West.\nparmarl8 represents a person’s parents’ marital status while they were in eighth grade. A value of 1 means that the person’s parents were divorced.\nThe person expects to earn a Ph.D., MD, JD, or another professional degree.\n18.4% of students in the dataset have ever smoked marijuana.\nThe biggest family size recorded is 9.\nThe recorded measure type for alcbinge is nominal, but the appropriate measure type is dichotomous."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html",
+    "title": "Assignment 3: Song Length Transformation",
+    "section": "",
+    "text": "This assignment will guide you through a practice question from Chapter 4 using Combined Class Song Data. Download the dataset and open it in Jamovi. Submit your answers on Moodle by Thursday’s class."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1-describe-the-distribution-of-length",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1-describe-the-distribution-of-length",
+    "title": "Assignment 3: Song Length Transformation",
+    "section": "Part 1: Describe the distribution of LENGTH",
+    "text": "Part 1: Describe the distribution of LENGTH\n\nWrite down summary statistics for the variable LENGTH (length of the song in seconds) that would measure the Location, Spread, and Skewness of the distribution.\nGenerate a histogram of the variable LENGTH and describe the shape of the distribution."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2-transformations",
+    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2-transformations",
+    "title": "Assignment 3: Song Length Transformation",
+    "section": "Part 2: Transformations",
+    "text": "Part 2: Transformations\n\nSuppose I create a new variable LENGTH_MIN calculated as LENGTH_MIN = LENGTH/60 (i.e., length of song in minutes). Calculate the values of the statistics you wrote down in Part I after the transformation.\nSuppose I create a new variable LENGTH_MIN_II calculated as LENGTH_MIN_II = LENGTH/60 + 2. Calculate the values of the statistics you wrote down in Part I after the transformation."
+  },
+  {
+    "objectID": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_solution.html",
+    "href": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_solution.html",
+    "title": "STAT117 Spring 2026 Exam #1",
+    "section": "",
+    "text": "Ask if you have any questions about the exam.\nBe concise in your answers. You will be penalized for adding irrelevant or incorrect information to a response.\nYou don’t need to round decimals, but if you choose to, keep at least two decimals unless otherwise noted.\nYou are allowed a reference sheet. Use both sides of one 8.5 by 11 inch piece of paper and put whatever you want on it. You will turn this sheet in with your exam. Be sure to put your name on it so that it can be returned to you later.\nCalculator use is permitted. You may NOT use your phone as a calculator. You will need to use your laptop, but the only programs you are allowed to have open are Jamovi and the standard Windows or Mac calculator. You need to close (not just minimize) other programs (including your web browser and all messaging apps). You are not allowed to consult any papers (other than your reference sheet), websites, books, or any person except the instructor during the exam.\nYou need to download the dataset before the exam. You are not allowed to open a web browser during the exam. You must turn off WIFI on your computer.\nCases of suspected cheating will be referred to the dean. We take cheating very seriously because it benefits student learning when students get grades that reflect what they know. For this reason, you are allowed to have at your seat only your test, your reference sheet, your computer, a calculator, and writing implements (pen or pencils). You will need to put your jacket, backpack, cell phone, smart watch and anything else you carry to class at the front of the room during the exam.\nI might tell you where to sit, or move your seat, during the exam.\nThe dataset used for the exam is GSS_SP2026.sav. This dataset is gathered from the General Social Survey 2024, a large scale survey conducted by NORC at the University of Chicago. The levels of measurement in Jamovi are not set correctly, so you need to judge for yourself. Sometimes, the level of measurement is subjective or controversial, and the relevant question will tell you what to do.\n\nNote: the data is set up such that any value between -100 and -10 is automatically treated as a missing value. You don’t need to do anything about these as Jamovi knows how to handle them (for instance, they are excluded from calculations of any statistics).\n1. (15 points) We first examine some basic information about the dataset.\n(a) How many variables are recorded in the dataset? Give an example of a dichotomous variable.\n 37 \n othlang, sex, gunlaw, cappun, etc. \n(b) Among respondents who answered the question, what percentage are males (sex)? You should not round and your answer should have at least one decimal place.\n 44.6% \n(c) What does the variable degree represent? What is the mode of this variable? Provide an interpretation of the mode.\n Respondent’s highest degree \n Mode is 1 or “high school” \n Interpretation: the most frequent reported highest degree for the participants is “high school” \n (-1) if interpretation said “most of the respondents…”, which implies more than 50% of participants said “high school” \n2. (25 points) Answer the following questions about the variable childs, which represents the number of children of the respondents. Treat this variable as a NUMERIC variable. Use the following frequency table (the one in Jamovi appears in the reverse order).\n\n(a) Find the respondent with id = 1. How many children does this person have, if any? Report the corresponding percentile rank. Provide an interpretation of the percentile rank in context.\n 2; 72.1%; 72.1% of participants have 2 or fewer children. \n(b) Among respondents who answered this question, what percentage have 5 or fewer children?\n 96.9% \n(c) Calculate the skewness ratio of the variable childs and draw a conclusion about the shape of the distribution based on this value.\n 1.01/0.043 = 23.44; the distribution of childs is severely right skewed. \n(d) Generate a boxplot for childs. You should see that there is no bottom whisker. Why? Choose one.\n\n\nThere is not enough number of participants in the dataset.\n\n (ii) The minimum and Q1 (first quartile) of this distribution are the same value. \n\nBoxplot should not be used for numeric variables.\n\n\nBoxplot should not be used for variables with severe skewness.\n\n\n(e) The variable childs is actually not a numeric variable. What is the correct level of measurement? Briefly explain.\n Ordinal since 8 = “8 or more” \n3. (15 points) In this problem, we use statistics to compare the distribution of cohort (Year of birth of the respondents) between people who would continue to work and people who would stop working if they become rich (richwork).\n(a) Calculate the skewness ratios of cohort for people would “continue to work” and for people who would “stop working” (if they become rich). Is the distribution of cohort severely skewed for either of the groups? If so, indicate the direction of the skew. If not, briefly explain why you think the skewness is not severe.\n Continue to work: -0.453/0.084 = -5.39; severely left skewed \n Stop working: 0.020/0.117 = 0.17; roughly symmetric since it’s less than 2 \n(b) Typically, which group of people are older (i.e., lower value for cohort), those who would “continue to work” or those who would “stop working”? Explain and support your answer with the name(s) and value(s) of appropriate statistics. If more than one statistic is appropriate, you must use one that is robust to skewness and outliers.\n Continue to work: 1982 median \n Stop working: 1977 median - typically older \n(c) Which group are less consistent in terms of the distribution for cohort, those who would “continue to work” or those who would “stop working”? Explain and support your answer with the name(s) and value(s) of appropriate statistics. If more than one statistic is appropriate, you must use one that is robust to skewness and outliers.\n Continue to work: 22 IQR – less consistent \n Stop working: 21 IQR \n4. (15 points) Answer the following questions about the variable cohort (Year of birth of the respondents).\n(a) Given below is a histogram for the variable cohort. The distribution appears to be (circle one):\nuniform unimodal bimodal\nBriefly explain and interpret the shape you circled in context.\n\n Explanation/interpretation: there are two clusters of people, born around 1950-1960 and around 1990. \n(b) Report the mean and standard deviation values for the variable cohort.\n mean = 1973; SD = 17.9 \n(c) The survey was conducted in 2024. If someone was born in 1990, what would be the corresponding age at the time of the survey? Suppose we create a new variable, AGE, which represents the age of the participants at the time of the survey. Write down a linear transformation that calculate AGE from cohort.\n 34 \n Age = 2024 - cohort \n(d) What is the mean and standard deviation of the new variable AGE (as defined in (c))? You must show your work to get full credit.\n mean = 2024 - 1973 = 51 \n SD = 17.9 \n5. (20 points) You do not need Jamovi for this question. Reproduced below are boxplots showing the distributions of cohort (Year of birth of the respondents) for four different groups of people based on the question “How important is it to have American citizenship?” (You do not have access to this variable).\n\n(a) Estimate the median value of cohort for respondents who answered “very important.” Mark on the graph how you came up with the estimate. Provide an interpretation in context for this value.\n 1970 \n Interpretation: Typically born in 1970; or half born before 1970. \n(b) For people who answered “not important at all,” is the distribution of cohort symmetric, left skewed, or right skewed? Briefly explain.\n Left skewed \n Longer tail / outlier on the left \n(c) Which group of people are typically older (smaller value for cohort)? Which part of the boxplots did you use to answer this question? Mention the name of at least one relevant statistic.\n “Very important” based on median (line in the middle) \n(d) Which group of people are the most homogeneous (similar) in terms of the distribution of cohort? What part of the boxplots did you use to answer this question? Mention the name of at least one relevant statistic.\n “Not important at all” based on IQR (width of the box) \n6. (10 points) You do not need Jamovi for this question. The following graph is from a New York Times article “How Video Games Are Shaping a Generation of Boys, for Better and Worse.”\n\n(a) The article says that “In the last decade and a half, boys and young men ages 15 to 24 more than doubled their average time spent gaming, to about 10 hours a week, according to a major survey.” Which part of the graph support the estimate of “10 hours a week”? You can simply circle it on the graph.\n Circle somewhere on the line graph near 2024 \n(b) What is a correct understanding of “10 hours a week” as quoted in (a)? Choose one.\n\n\nThe survey sampled one male in 2024. He is between 15 and 24 years old and spends 10 hours a week playing games.\n\n\nAmong sampled males ages 15 to 24, all of them spent 10 hours a week playing games.\n\n\n Among sampled males ages 15 to 24, some spent more than 10 hours a week playing games and some spent less than 10 hours; the reported 10 hours is likely the average or median. \n\n\nAmong sampled males ages 15 to 24, none of them spent more than 10 hours a week playing games.\n\n\n(c) The trend shown on the graph that boys and young men are spending more time playing games can be misleading without considering the shape of the distribution. What do you think is the shape of the distribution for “time spent on games per week” (Uni/bi-modal? Left/right skewed? Outliers?) Why could the trend be misleading? This is an open ended question. Provide brief discussions in the context of this question.\n the distribution is likely bimodal (none-gamers vs heavy gamers) and right skewed. An increase in the “average time” doesn’t necessarily mean that people are spending more times on games - it could signal the emergence of heavy gamers, or that the extreme values are getting more extreme. \n (-2) if incorrectly interpretating the shape of the line graph, which shows the time trend, NOT the univariate distribution of “time spent on games” in a given year."
   },
   {
     "objectID": "teaching/STAT117/course_documents/homework/chapter_2.html",
@@ -1463,7 +1488,7 @@
     "href": "teaching/STAT117/data/index.html",
     "title": "Dataset",
     "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
     "crumbs": [
       "Research",
       "Datasets"
@@ -1474,7 +1499,7 @@
     "href": "teaching/STAT117/data/index.html#spss-data",
     "title": "Dataset",
     "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGeneral Social Survey 2016.sav\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nYoung People Survey.sav",
     "crumbs": [
       "Research",
       "Datasets"
