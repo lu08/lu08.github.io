@@ -62,20 +62,6 @@
     ]
   },
   {
-    "objectID": "teaching/STAT120/quiz/quiz_3.html",
-    "href": "teaching/STAT120/quiz/quiz_3.html",
-    "title": "STAT120: Quiz 3 (9/17)",
-    "section": "",
-    "text": "Name: ____________________________________________\n\nWhich of the following creates a numeric vector with the values 2, 5, 8, and 11?\n\n[ ] c(2, 5, 8, 11)\n[ ] c(\"2\", \"5\", \"8\", \"11\")\n[ ] c(TRUE, FALSE, TRUE, FALSE)\n[ ] seq(2, 11, by = 3)\n\nSuppose x &lt;- c(3, 7, 10, 15). What is the output of x[x &gt; 7]?\n\n[ ] 3 7 10\n[ ] 10 15\n[ ] 7 10 15\n[ ] 15\n\nWhich statement about class() is correct?\n\n[ ] It creates a data frame called class.\n[ ] It can be used to check the type of an object in R.\n[ ] It is only used for data frames.\n[ ] It creates a new vector.\n\nWhat is the result of as.numeric(c(TRUE, FALSE, TRUE))?\n\n[ ] 1 0 1\n[ ] 1\n[ ] \"1\" \"0\" \"1\"\n[ ] An error\n\nWhich of the following is an example of a character vector?\n\n[ ] c(1, 2, 3, 4)\n[ ] c(TRUE, FALSE, TRUE)\n[ ] c(\"A\", \"B\", \"C\")\n[ ] c(1L, 2L, 3L)\n\nA factor vector, year, contains values such as \"Senior\", \"Freshman\", \"Sophomore\". A numeric vector, gpa, contains values such as 3.62, 3.84, 3.95. Write R code using tapply() to calculate the average GPA for each year."
-  },
-  {
-    "objectID": "teaching/STAT120/quiz/quiz_1.html",
-    "href": "teaching/STAT120/quiz/quiz_1.html",
-    "title": "STAT120: Quiz 1 (9/3)",
-    "section": "",
-    "text": "Name: ____________________________________________\n\nWhich statement about R and RStudio is correct?\n\n[ ] RStudio is a replacement for R, so R does not need to be installed.\n[ ] R is the programming language, and RStudio is an interface (IDE) for working with R.\n[ ] RStudio can only be used through an online environment like Posit Cloud.\n[ ] R and RStudio are two names for the same program.\n\nWhich statement about running code from an R script file is correct?\n\n[ ] You should not run code from an R script and should always type code directly into the console.\n[ ] You cannot save an R script file.\n[ ] You can highlight part of the code in an R script file and run only the highlighted portion.\n[ ] All lines of code in an R script must be run together.\n\nIf you don’t have highlighted code in an R script file, what happens when you try to run code (by hitting Command + Enter on a Mac, or Ctrl + Enter on Windows)?\n\n[ ] The current line of code where the cursor is located will be run.\n[ ] Nothing will happen.\n[ ] The entire script will be run.\n[ ] An error message will be displayed.\n\nWhich of the following is the correct code to calculate \\(\\sqrt{2}\\) in R?\n\n[ ] sqrt(2)\n[ ] sqrt: 2\n[ ] sqrt of 2\n[ ] R cannot calculate square roots.\n\nIf you run 2+5 in R, what will be the output?\n\n[ ] 7\n[ ] 25\n[ ] “2+5”\n[ ] An error message will be displayed."
-  },
-  {
     "objectID": "teaching/STAT120/lectures/lecture_3/lecture_3.html",
     "href": "teaching/STAT120/lectures/lecture_3/lecture_3.html",
     "title": "Yi Lu",
@@ -88,8 +74,8 @@
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
-    "href": "teaching/STAT120/lectures/lecture_1/lectures_1.html",
+    "objectID": "teaching/STAT120/lectures/lecture_1/lecture_1.html",
+    "href": "teaching/STAT120/lectures/lecture_1/lecture_1.html",
     "title": "Yi Lu",
     "section": "",
     "text": "Link to fullscreen",
@@ -1940,8 +1926,8 @@
     ]
   },
   {
-    "objectID": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
-    "href": "teaching/STAT120/lectures/lecture_2/lectures_2.html",
+    "objectID": "teaching/STAT120/lectures/lecture_2/lecture_2.html",
+    "href": "teaching/STAT120/lectures/lecture_2/lecture_2.html",
     "title": "Yi Lu",
     "section": "",
     "text": "Link to fullscreen",
@@ -1956,19 +1942,12 @@
     "href": "teaching/STAT120/lectures/lecture_notes/index.html",
     "title": "Lecture code and notes",
     "section": "",
-    "text": "You can find code and notes used during lectures here for your reference. Most of the code is also included in the lecture slides.\n\nCode used during class for Lecture 2",
+    "text": "You can find code and notes used during lectures here for your reference. Most of the code is also included in the lecture slides.\n\nCode used during class for Lecture 2\nCode used during class for Lecture 3",
     "crumbs": [
       "Research",
       "Lectures",
       "Lecture code"
     ]
-  },
-  {
-    "objectID": "teaching/STAT120/quiz/quiz_2.html",
-    "href": "teaching/STAT120/quiz/quiz_2.html",
-    "title": "STAT120: Quiz 2 (9/10)",
-    "section": "",
-    "text": "Name: ____________________________________________\n\nWhich line of R code creates a vector containing the values 1, 4, 7, and 10?\n\n[ ] c(1, 4, 7, 10)\n[ ] seq(from = 1, to = 10, by = 4)\n[ ] rep(c(1, 4), 7)\n[ ] 1:10\n\nSuppose v &lt;- c(10, 20, 30, 40, 50). What is the output of v[-2]?\n\n[ ] 20\n[ ] 10, 30, 40, 50\n[ ] 10, 20, 30, 40\n[ ] An error message\n\nWrite R code that creates a vector called x containing the numbers 1 through 100.\n\n\nWrite R code that calculates the mean of the vector x from Question 3.\n\n\nSuppose gpa &lt;- c(3.2, 3.8, 2.9, 3.9). Which line of R code returns the positions of the GPAs greater than 3.5 (i.e., should return 2 and 4)?\n\n[ ] gpa(gpa &gt; 3.5)\n[ ] which(gpa &gt; 3.5)\n[ ] which[gpa &gt; 3.5]\n[ ] gpa &gt; 3.5\n\nUsing the vector gpa from Question 5, write R code that prints the GPA values greater than 3.5 without manually typing their positions.\n\n\nThe mtcars data set has a variable called am, where 0 represents an automatic transmission and 1 represents a manual transmission. Write R code that prints the mpg values for cars with manual transmissions.\n\n\nUsing the mtcars data set, write R code that prints the car models whose mpg is less than 16. Assume that the car model names have been stored in a vector called model."
   },
   {
     "objectID": "teaching/STAT120/resources/index.html",

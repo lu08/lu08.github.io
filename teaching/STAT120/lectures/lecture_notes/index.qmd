@@ -5,4 +5,5 @@ title: "Lecture code and notes"
 You can find code and notes used during lectures here for your reference.  Most of the code is also included in the lecture slides.
 
 
-- [Code](L2.R) used during class for [Lecture 2](lecture_2/lecture_2_slide.html)
+- [Code](L2.R) used during class for [Lecture 2](lecture_2/lecture_2.qmd)
+- [Code](L3.R) used during class for [Lecture 3](lecture_3/lecture_3.qmd)

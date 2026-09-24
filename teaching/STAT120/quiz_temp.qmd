@@ -1,0 +1,12 @@
+---
+title: "STAT120: Quiz 4 (9/24)"
+format:
+  pdf:
+    geometry: "top=0.5in,left=1in,right=1in,bottom=1in"
+    title-block-style: plain
+---
+
+<!-- DO NOT PUBLISH -->
+
+\vspace{-5em}
+

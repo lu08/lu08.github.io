@@ -4,34 +4,36 @@ title: "Schedule and reminders"
 
 ## Week 1
 
-- Sep 1: Course introduction, [syllabus](syllabus.qmd), [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) setup, and getting started with [Lecture 1](lectures/lecture_1/lectures_1.html).  If not already done in class, please install R and RStudio on your computer before our next class.
+- Sep 1: Course introduction, [syllabus](syllabus.qmd), [R](https://cran.r-project.org/) and [RStudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads) setup, and getting started with [Lecture 1](lectures/lecture_1/lecture_1.html).  If not already done in class, please install R and RStudio on your computer before our next class.
 
 - Sep 3: **Quiz 1** on the basics of R.
 
 
 
 ## Week 2
-- Sep 8: **We are not meeting in person today (as I'll be travelling).** Instead, please study the remaining slides of [Lecture 1](lectures/lecture_1/lectures_1.html) on your own and do [Homework 1](homework/homework_1.qmd) for extra practice.  Recall that homework is not collected in this class.
+- Sep 8: **We are not meeting in person today (as I'll be travelling).** Instead, please study the remaining slides of [Lecture 1](lectures/lecture_1/lecture_1.html) on your own and do [Homework 1](homework/homework_1.qmd) for extra practice.  Recall that homework is not collected in this class.
 
-- Sep 10: **Quiz 2**, based on content from [Lecture 1](lectures/lecture_1/lectures_1.html) and [Homework 1](homework/homework_1.qmd). We will also get started with [Lecture 2](lectures/lecture_2/lectures_2.html).
+- Sep 10: **Quiz 2**, based on content from [Lecture 1](lectures/lecture_1/lecture_1.html) and [Homework 1](homework/homework_1.qmd). We will also get started with [Lecture 2](lectures/lecture_2/lecture_2.html).
 
 
 ## Week 3
 
-- Sep 15: We will continue with [Lecture 2](lectures/lecture_2/lectures_2.html).  You should finish **Part I** of [Homework 2](homework/homework_2.qmd).  If you want, you can also try **Part II** for extra practice.
+- Sep 15: We will continue with [Lecture 2](lectures/lecture_2/lecture_2.html).  You should finish **Part I** of [Homework 2](homework/homework_2.qmd).  If you want, you can also try **Part II** for extra practice.
 
-- Sep 17: **Quiz 3**, based on slides 1 to 13 from [Lecture 2](lectures/lecture_2/lectures_2.html) and **Part I** of [Homework 2](homework/homework_2.qmd).  During class, we will continue with [Lecture 2](lectures/lecture_2/lectures_2.html).  You should finish **Part II** of [Homework 2](homework/homework_2.qmd) before the next class.
+- Sep 17: **Quiz 3**, based on slides 1 to 13 from [Lecture 2](lectures/lecture_2/lecture_2.html) and **Part I** of [Homework 2](homework/homework_2.qmd).  During class, we will continue with [Lecture 2](lectures/lecture_2/lecture_2.html).  You should finish **Part II** of [Homework 2](homework/homework_2.qmd) before the next class.
 
  
 # Week 4
-- Sep 22: We will finish [Lecture 2](lectures/lecture_2/lectures_2.html) and get started with [Lecture 3](lectures/lecture_3/lecture_3.qmd). 
+- Sep 22: We will finish [Lecture 2](lectures/lecture_2/lecture_2.html) and get started with [Lecture 3](lectures/lecture_3/lecture_3.qmd). 
 
-- Sep 24: **Quiz 4**, which will be similar to the practice questions at the end of [Lecture 2](lectures/lecture_2/lectures_2.html).  For more practice, review Part II of [Homework 2](homework/homework_2.qmd).  You do NOT need to start Homework 3 and Homework 4 yet.
+- Sep 24: **Quiz 4**, which will be similar to the practice questions at the end of [Lecture 2](lectures/lecture_2/lecture_2.html).  For more practice, review Part II of [Homework 2](homework/homework_2.qmd).
+
+In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univariate distributions. You can get started on [Homework 3](homework/homework_3.qmd) (Questions 1 and 2).
 
 
 # Week 5
 
-- Sep 29: 
+- Sep 29: We will finish [Lecture 3](lectures/lecture_3/lecture_3.html) (Z-scores) and do a quick review for Exam 1.  Exam 1 will be based on [lectures](lectures/index.qmd) 1 to 3 and the corresponding [homework](homework/index.qmd) 1 to 3.
 
 - Oct 1: **Exam 1**
 

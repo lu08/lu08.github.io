@@ -2,9 +2,9 @@
 title: "Lectures"
 ---
 
-- [Lecture 1: Introduction](lecture_1/lectures_1.html)
-- [Lecture 2: Data types](lecture_2/lectures_2.html)
-- [Lecture 3: Univariate distributions](lecture_3/lectures_3.html)
+- [Lecture 1: Introduction](lecture_1/lecture_1.html)
+- [Lecture 2: Data types](lecture_2/lecture_2.html)
+- [Lecture 3: Univariate distributions](lecture_3/lecture_3.html)
 
 
 - Code used for demonstration during each lecture can be found [here](lecture_notes/index.qmd)
