@@ -495,7 +495,7 @@ Use the appropriate statistic to describe properties of a distribution
 <tbody>
 <tr>
   <td style="border:1px solid black; padding:8px;"><strong>NOMINAL</strong></td>
-  <td style="border:1px solid black; padding:8px;">mode</td>
+  <td style="border:1px solid black; padding:8px;"></td>
   <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
   <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
 </tr>
