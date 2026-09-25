@@ -1463,20 +1463,6 @@
     "text": "Part 2: Transformations\n\nSuppose I create a new variable LENGTH_MIN calculated as LENGTH_MIN = LENGTH/60 (i.e., length of song in minutes). Calculate the values of the statistics you wrote down in Part I after the transformation.\nSuppose I create a new variable LENGTH_MIN_II calculated as LENGTH_MIN_II = LENGTH/60 + 2. Calculate the values of the statistics you wrote down in Part I after the transformation.\n\n\n\nShow solution\n\nPart 1\n\n\nLocation: mean = 233 seconds and median = 231 seconds\nSpread: standard deviation = 52.1 seconds, IQR = 47 seconds, and range = 418 seconds\nSkewness ratio: 2.89 / 0.223 = 12.96 (severe right skew)\n\nThe histogram is right-skewed: most songs are concentrated at shorter lengths, with a smaller number of substantially longer songs extending the right tail.\n\n\n\n\n\n\n\n\n\n\nPart 2\n\n\n\n\n\n\n\n\n\nStatistic\nLENGTH\nLENGTH_MIN = LENGTH / 60\nLENGTH_MIN_II = LENGTH / 60 + 2\n\n\n\n\nMean\n233 sec\n3.88 min\n5.88 min\n\n\nMedian\n231 sec\n3.84 min\n5.84 min\n\n\nStandard deviation\n52.1 sec\n0.87 min\n0.87 min\n\n\nIQR\n47 sec\n0.78 min\n0.78 min\n\n\nRange\n418 sec\n6.97 min\n6.97 min\n\n\nSkewness ratio\n12.96\n12.96\n12.96"
   },
   {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-1",
-    "title": "Assignment 3: Song Length Transformation",
-    "section": "Part 1",
-    "text": "Part 1\n\n\nLocation: mean = 233 seconds and median = 231 seconds\nSpread: standard deviation = 52.1 seconds, IQR = 47 seconds, and range = 418 seconds\nSkewness ratio: 2.89 / 0.223 = 12.96 (severe right skew)\n\nThe histogram is right-skewed: most songs are concentrated at shorter lengths, with a smaller number of substantially longer songs extending the right tail."
-  },
-  {
-    "objectID": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2",
-    "href": "teaching/STAT117/course_documents/assignment/assignment_3.html#part-2",
-    "title": "Assignment 3: Song Length Transformation",
-    "section": "Part 2",
-    "text": "Part 2\n\n\n\n\n\n\n\n\n\nStatistic\nLENGTH\nLENGTH_MIN = LENGTH / 60\nLENGTH_MIN_II = LENGTH / 60 + 2\n\n\n\n\nMean\n233 sec\n3.88 min\n5.88 min\n\n\nMedian\n231 sec\n3.84 min\n5.84 min\n\n\nStandard deviation\n52.1 sec\n0.87 min\n0.87 min\n\n\nIQR\n47 sec\n0.78 min\n0.78 min\n\n\nRange\n418 sec\n6.97 min\n6.97 min\n\n\nSkewness ratio\n12.96\n12.96\n12.96"
-  },
-  {
     "objectID": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_solution.html",
     "href": "teaching/STAT117/course_documents/exam_reviews/practice_exam_1_solution.html",
     "title": "STAT117 Spring 2026 Exam #1",
