@@ -1,9 +1,15 @@
 ---
 title: "STAT117 Spring 2026 Exam #1"
-format: pdf
-header-includes: |
-  \usepackage{xcolor}
-  \definecolor{solutiongreen}{RGB}{0,100,0}
+format:
+  pdf:
+    geometry: "top=0.5in,left=1in,right=1in,bottom=1in"
+    title-block-style: plain
+    header-includes: |
+      \usepackage{xcolor}
+      \definecolor{solutiongreen}{RGB}{0,100,0}
+  html:
+    toc: false
+    css: exam-review.css
 ---
 
 \vspace{-7em}
@@ -30,6 +36,7 @@ Note: the data is set up such that any value between -100 and -10 is automatical
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **1. (15 points)** We first examine some basic information about the dataset.
 
 \color{black}
@@ -60,6 +67,7 @@ Note: the data is set up such that any value between -100 and -10 is automatical
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **2. (25 points)** Answer the following questions about the variable childs, which represents the number of children of the respondents. Treat this variable as a NUMERIC variable.  Use the following frequency table (the one in Jamovi appears in the reverse order).
 
 ![](e1_images/e1_p8.png){width=50%}
@@ -99,6 +107,7 @@ Note: the data is set up such that any value between -100 and -10 is automatical
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **3. (15 points)** In this problem, we use statistics to compare the distribution of cohort (Year of birth of the respondents) between people who would continue to work and people who would stop working if they become rich (richwork).
 
 \color{black}
@@ -127,6 +136,7 @@ Note: the data is set up such that any value between -100 and -10 is automatical
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **4. (15 points)** Answer the following questions about the variable cohort (Year of birth of the respondents).
 
 \color{black}
@@ -165,6 +175,7 @@ Briefly explain and interpret the shape you circled in context.
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **5. (20 points)** You do not need Jamovi for this question. Reproduced below are boxplots showing the distributions of cohort (Year of birth of the respondents) for four different groups of people based on the question “How important is it to have American citizenship?” (You do not have access to this variable).
 
 ![](e1_images/e1_p6.png){width=70%}
@@ -199,6 +210,7 @@ Briefly explain and interpret the shape you circled in context.
 
 \color{black}
 \newpage
+<div class="exam-page-break"></div>
 **6. (10 points)** You do not need Jamovi for this question. The following graph is from a New York Times article [“How Video Games Are Shaping a Generation of Boys, for Better and Worse.”](https://www.nytimes.com/2025/10/03/upshot/video-games-boys-young-men.html?eafs_enabled=false){target="_blank"}
 
 ![](e1_images/e1_p7.png){width=60%}

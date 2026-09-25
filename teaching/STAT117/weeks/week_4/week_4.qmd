@@ -29,4 +29,8 @@ format: html
 
 2. I will give you a linear transformation (e.g., ``new data = old data * 2 + 1``) and ask you to calculate new values of the mean, IQR, and skewness ratio after the transformation.
 
+We discussed a few additional topics of Chapter 3, including modality and the effect of outliers.  These have been added to the end of [Chapter 3 slides](../../course_documents/all_lectures/chapter_3_slide.html){target="_blank"}.
 
+To study for Exam 1, do the [practice Exam 1](../../course_documents/exam_reviews/practice_exam_1_blank.qmd){target="_blank"} and review the [solution](../../course_documents/exam_reviews/practice_exam_1_solution.qmd){target="_blank"}. I recommend downloading the pdf version of both files (slightly better formatted).
+
+Reminder that you can find everything under [course documents](../../course_documents/index.qmd){target="_blank"}. Solutions to assignments are added. If anything is missing or a link is not working, please let me know.

@@ -248,10 +248,10 @@ cat("Mean:", mean(class2),
 - **interquartile range (IQR)** measures the range within which the middle 50% of the data lie; **range** measures the difference between the maximum and minimum values
 
 
-Example 2: San Francisco and Washington D.C. has the [same annual average temperature](https://en.wikipedia.org/wiki/List_of_cities_by_temperature) of 14.6C/58.2F, however, their temperature distributions throughout the year are quite different.
+Example 2: San Francisco and Washington D.C. has the [same annual average temperature](https://en.wikipedia.org/wiki/List_of_cities_by_temperature){target="_blank"} of 14.6C/58.2F, however, their temperature distributions throughout the year are quite different.
 
 
-Example 3: [Eruption predictions of the geysers at Yellowstone National Park](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm); the Old faithful geyser is famously predictable due to **consistent** historical waiting times. 
+Example 3: [Eruption predictions of the geysers at Yellowstone National Park](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm){target="_blank"}; the Old faithful geyser is famously predictable due to **consistent** historical waiting times. 
 
 <details>
 <summary>Lecture notes and summary</summary>
@@ -515,7 +515,7 @@ Use the appropriate statistic to describe properties of a distribution
 </table>
 ```
 
-## Additional topic: modality
+## Additional topic 1: modality
 
 Using a histogram, we can see how many “bumps” or “modes” the distribution has.
 
@@ -565,13 +565,13 @@ hist(uniform, main = "Uniform", col = "lightgoldenrod", xlab = NA)
 </details>
 
 
-Example 1: [At what age do women first become mothers?](https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html)
+Example 1: [At what age do women first become mothers?](https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html){target="_blank"}
 
 ![](L3-age.png)
 
 > The age distribution of women at the time of their first childbirth in 2016 shows a bimodal pattern, with peaks around the early 20s and early 30s. It signals **two clusters**: two groups of women who are very different in terms of age at first childbirth. The article notes that this is highly correlated with location (i.e., urban vs. rural). For bimodal distributions like this, statistics like the mean or median can be insufficient and even misleading (e.g., we should not simply conclude that "women are giving birth at around 26 years old on average" - the median/average value likely falls between the two peaks and does not accurately represent either group of women).
 
-EXample 2: [Old faithful Geyser] (https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm)
+Example 2: [Old faithful Geyser](https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm){target="_blank"}
 
 ```{r, echo=FALSE}
 
@@ -584,7 +584,7 @@ hist(faithful$eruptions,
   main = "Eruption duration",
   xlab = "Minutes",
   col = "lightcoral")
-
+median(faithful$eruptions)
 ```
 
 
@@ -605,7 +605,11 @@ hist(faithful$eruptions,
 
 </details>
 
-## Additional topic: effect of outliers
+
+> These two histograms are generated using historical data of the Old Faithful Geyser at the Yellowstone National Park. Both are bimodal. The median waiting time is `r median(faithful$waiting)` minutes, and the median eruption duration is `r median(faithful$eruptions)` minutes.  These statistics alone do not accurately represent "typical" waiting times and eruption durations.
+
+
+## Additional topic 2: effect of outliers
 
 Recall, we can use outliers to determine the skewness of a distribution:
 
@@ -615,7 +619,7 @@ Recall, we can use outliers to determine the skewness of a distribution:
 
 Simple example: number of hours slept yesterday
 
-<p>No outlier: 5, 6, 7, 7, 7, 8, 9</p>
+<p>Without outlier: 5, 6, 7, 7, 7, 8, 9</p>
 
 - Median: 7
 
@@ -625,15 +629,15 @@ Simple example: number of hours slept yesterday
 
 - Range: 4
 
-<p>With outlier: 5, 6, 7, 7, 7, 8, 20</p>
+<p>With outlier: 5, 6, 7, 7, 7, 8, **20**</p>
 
-- Median: 7
+- Median: 7 (not affected by the outlier of 20)
 
-- Mean: 8.57
+- Mean: 8.57 (greatly affected by the outlier; we should not conclude that students "typically" sleep for 8.57 hours)
 
-- IQR: 2
+- IQR: 2 (not affected by the outlier of 20)
 
-- Range: 15
+- Range: 15 (greatly affected by the outlier)
 
 General pattern: 
 
@@ -645,11 +649,17 @@ General pattern:
 
 When you look for a “typical” value of a numeric variable, should you use mean or median?  Median is "safer" to use because it is more robust to outliers and extreme skewness. 
 
-- Example 1: [How much does it typically cost to rent in Manhattan?](https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1)
+- Example 1: [How much does it typically cost to rent in Manhattan?](https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1){target="_blank"}
 
-- Example 2: [Occupational wage statistics](https://data.bls.gov/oes/#/area/0000000/2025)
+> Mean is much higher than the median for rental prices in Manhattan; the article draws its main conclusion using the median, as it should.
 
-- Example 3: [Income disclosures in MLM](https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/)
+- Example 2: [Occupational wage statistics](https://data.bls.gov/oes/#/area/0000000/2025){target="_blank"}
+
+> In general, median wage is lower than the mean wage across occupations; the median is a better representation of a "typical" wage.
+
+- Example 3: [Income disclosures in MLM](https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/){target="_blank"}
+
+> Many [Multi-level marketing (MLM)](https://en.wikipedia.org/wiki/Multi-level_marketing){target="_blank"} companies quote the average earning to present a deceptive picture of typical participant earnings; the median is a more accurate representation.
 
 
 <!--

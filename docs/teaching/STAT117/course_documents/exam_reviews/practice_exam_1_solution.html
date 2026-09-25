@@ -70,15 +70,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-</head><body class="nav-sidebar floating quarto-light">\usepackage{xcolor}
-\definecolor{solutiongreen}{RGB}{0,100,0}
 
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="../../stat117.css">
+<link rel="stylesheet" href="exam-review.css">
+</head>
 
-
-
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -259,6 +258,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p>The dataset used for the exam is <code>GSS_SP2026.sav</code>. This dataset is gathered from the General Social Survey 2024, a large scale survey conducted by NORC at the University of Chicago. The levels of measurement in Jamovi are not set correctly, so you need to judge for yourself. Sometimes, the level of measurement is subjective or controversial, and the relevant question will tell you what to do.</p></li>
 </ul>
 <p>Note: the data is set up such that any value between -100 and -10 is automatically treated as a missing value. You don’t need to do anything about these as Jamovi knows how to handle them (for instance, they are excluded from calculations of any statistics).</p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>1. (15 points)</strong> We first examine some basic information about the dataset.</p>
 <p><strong>(a)</strong> How many variables are recorded in the dataset? Give an example of a dichotomous variable.</p>
 <p> 37 </p>
@@ -270,6 +272,9 @@ ul.task-list li input[type="checkbox"] {
 <p> Mode is 1 or “high school” </p>
 <p> Interpretation: the most frequent reported highest degree for the participants is “high school” </p>
 <p> (-1) if interpretation said “most of the respondents…”, which implies more than 50% of participants said “high school” </p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>2. (25 points)</strong> Answer the following questions about the variable childs, which represents the number of children of the respondents. Treat this variable as a NUMERIC variable. Use the following frequency table (the one in Jamovi appears in the reverse order).</p>
 <p><img src="e1_images/e1_p8.png" class="img-fluid" style="width:50.0%"></p>
 <p><strong>(a)</strong> Find the respondent with id = 1. How many children does this person have, if any? Report the corresponding percentile rank. Provide an interpretation of the percentile rank in context.</p>
@@ -293,6 +298,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>(e)</strong> The variable childs is actually not a numeric variable. What is the correct level of measurement? Briefly explain.</p>
 <p> Ordinal since 8 = “8 or more” </p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>3. (15 points)</strong> In this problem, we use statistics to compare the distribution of cohort (Year of birth of the respondents) between people who would continue to work and people who would stop working if they become rich (richwork).</p>
 <p><strong>(a)</strong> Calculate the skewness ratios of cohort for people would “continue to work” and for people who would “stop working” (if they become rich). Is the distribution of cohort severely skewed for either of the groups? If so, indicate the direction of the skew. If not, briefly explain why you think the skewness is not severe.</p>
 <p> Continue to work: -0.453/0.084 = -5.39; severely left skewed </p>
@@ -303,6 +311,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>(c)</strong> Which group are less consistent in terms of the distribution for cohort, those who would “continue to work” or those who would “stop working”? Explain and support your answer with the name(s) and value(s) of appropriate statistics. If more than one statistic is appropriate, you must use one that is robust to skewness and outliers.</p>
 <p> Continue to work: 22 IQR – less consistent </p>
 <p> Stop working: 21 IQR </p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>4. (15 points)</strong> Answer the following questions about the variable cohort (Year of birth of the respondents).</p>
 <p><strong>(a)</strong> Given below is a histogram for the variable cohort. The distribution appears to be (circle one):</p>
 <p>uniform unimodal bimodal</p>
@@ -317,6 +328,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>(d)</strong> What is the mean and standard deviation of the new variable AGE (as defined in (c))? You must show your work to get full credit.</p>
 <p> mean = 2024 - 1973 = 51 </p>
 <p> SD = 17.9 </p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>5. (20 points)</strong> You do not need Jamovi for this question. Reproduced below are boxplots showing the distributions of cohort (Year of birth of the respondents) for four different groups of people based on the question “How important is it to have American citizenship?” (You do not have access to this variable).</p>
 <p><img src="e1_images/e1_p6.png" class="img-fluid" style="width:70.0%"></p>
 <p><strong>(a)</strong> Estimate the median value of cohort for respondents who answered “very important.” Mark on the graph how you came up with the estimate. Provide an interpretation in context for this value.</p>
@@ -329,6 +343,9 @@ ul.task-list li input[type="checkbox"] {
 <p> “Very important” based on median (line in the middle) </p>
 <p><strong>(d)</strong> Which group of people are the most homogeneous (similar) in terms of the distribution of cohort? What part of the boxplots did you use to answer this question? Mention the name of at least one relevant statistic.</p>
 <p> “Not important at all” based on IQR (width of the box) </p>
+<div class="exam-page-break">
+
+</div>
 <p><strong>6. (10 points)</strong> You do not need Jamovi for this question. The following graph is from a New York Times article <a href="https://www.nytimes.com/2025/10/03/upshot/video-games-boys-young-men.html?eafs_enabled=false" target="_blank">“How Video Games Are Shaping a Generation of Boys, for Better and Worse.”</a></p>
 <p><img src="e1_images/e1_p7.png" class="img-fluid" style="width:60.0%"></p>
 <p><strong>(a)</strong> The article says that “In the last decade and a half, boys and young men ages 15 to 24 more than doubled their average time spent gaming, to about 10 hours a week, according to a major survey.” Which part of the graph support the estimate of “10 hours a week”? You can simply circle it on the graph.</p>

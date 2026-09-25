@@ -429,8 +429,8 @@ R code (optional)
 <li><p><strong>standard deviation</strong> measures the average distance of each data point from the mean (<strong>variance</strong> is the square of the standard deviation)</p></li>
 <li><p><strong>interquartile range (IQR)</strong> measures the range within which the middle 50% of the data lie; <strong>range</strong> measures the difference between the maximum and minimum values</p></li>
 </ul>
-<p>Example 2: San Francisco and Washington D.C. has the <a href="https://en.wikipedia.org/wiki/List_of_cities_by_temperature">same annual average temperature</a> of 14.6C/58.2F, however, their temperature distributions throughout the year are quite different.</p>
-<p>Example 3: <a href="https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm">Eruption predictions of the geysers at Yellowstone National Park</a>; the Old faithful geyser is famously predictable due to <strong>consistent</strong> historical waiting times.</p>
+<p>Example 2: San Francisco and Washington D.C. has the <a href="https://en.wikipedia.org/wiki/List_of_cities_by_temperature" target="_blank">same annual average temperature</a> of 14.6C/58.2F, however, their temperature distributions throughout the year are quite different.</p>
+<p>Example 3: <a href="https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm" target="_blank">Eruption predictions of the geysers at Yellowstone National Park</a>; the Old faithful geyser is famously predictable due to <strong>consistent</strong> historical waiting times.</p>
 <details>
 <summary>
 Lecture notes and summary
@@ -690,8 +690,8 @@ For <code>achmat08</code>: skewness = 0.114, SE of skewness = 0.109, so the skew
 </tbody>
 </table>
 </section>
-<section id="additional-topic-modality" class="slide level2">
-<h2>Additional topic: modality</h2>
+<section id="additional-topic-1-modality" class="slide level2">
+<h2>Additional topic 1: modality</h2>
 <p>Using a histogram, we can see how many “bumps” or “modes” the distribution has.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -723,12 +723,12 @@ Show code (optional)
 <span id="cb21-15"><a href=""></a><span class="fu">hist</span>(multimodal, <span class="at">main =</span> <span class="st">"Multimodal"</span>, <span class="at">col =</span> <span class="st">"lightcoral"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span>
 <span id="cb21-16"><a href=""></a><span class="fu">hist</span>(uniform, <span class="at">main =</span> <span class="st">"Uniform"</span>, <span class="at">col =</span> <span class="st">"lightgoldenrod"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<p>Example 1: <a href="https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html">At what age do women first become mothers?</a></p>
+<p>Example 1: <a href="https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html" target="_blank">At what age do women first become mothers?</a></p>
 <p><img data-src="L3-age.png"></p>
 <blockquote>
 <p>The age distribution of women at the time of their first childbirth in 2016 shows a bimodal pattern, with peaks around the early 20s and early 30s. It signals <strong>two clusters</strong>: two groups of women who are very different in terms of age at first childbirth. The article notes that this is highly correlated with location (i.e., urban vs.&nbsp;rural). For bimodal distributions like this, statistics like the mean or median can be insufficient and even misleading (e.g., we should not simply conclude that “women are giving birth at around 26 years old on average” - the median/average value likely falls between the two peaks and does not accurately represent either group of women).</p>
 </blockquote>
-<p>EXample 2: [Old faithful Geyser] (https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm)</p>
+<p>Example 2: <a href="https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm" target="_blank">Old faithful Geyser</a></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -737,31 +737,37 @@ Show code (optional)
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
 </div>
 <details>
 <summary>
 Show code (optional)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb22-2"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>waiting,</span>
-<span id="cb22-3"><a href=""></a>  <span class="at">main =</span> <span class="st">"Waiting time"</span>,</span>
-<span id="cb22-4"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes between eruptions"</span>,</span>
-<span id="cb22-5"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
-<span id="cb22-6"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>eruptions,</span>
-<span id="cb22-7"><a href=""></a>  <span class="at">main =</span> <span class="st">"Eruption duration"</span>,</span>
-<span id="cb22-8"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes"</span>,</span>
-<span id="cb22-9"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightcoral"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb23-2"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>waiting,</span>
+<span id="cb23-3"><a href=""></a>  <span class="at">main =</span> <span class="st">"Waiting time"</span>,</span>
+<span id="cb23-4"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes between eruptions"</span>,</span>
+<span id="cb23-5"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb23-6"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>eruptions,</span>
+<span id="cb23-7"><a href=""></a>  <span class="at">main =</span> <span class="st">"Eruption duration"</span>,</span>
+<span id="cb23-8"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes"</span>,</span>
+<span id="cb23-9"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightcoral"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<blockquote>
+<p>These two histograms are generated using historical data of the Old Faithful Geyser at the Yellowstone National Park. Both are bimodal. The median waiting time is 76 minutes, and the median eruption duration is 4 minutes. These statistics alone do not accurately represent “typical” waiting times and eruption durations.</p>
+</blockquote>
 </section>
-<section id="additional-topic-effect-of-outliers" class="slide level2">
-<h2>Additional topic: effect of outliers</h2>
+<section id="additional-topic-2-effect-of-outliers" class="slide level2">
+<h2>Additional topic 2: effect of outliers</h2>
 <p>Recall, we can use outliers to determine the skewness of a distribution:</p>
 <pre><code>- Large outliers → right skewed
 
 - Small outliers → left skewed</code></pre>
 <p>Simple example: number of hours slept yesterday</p>
 <p>
-No outlier: 5, 6, 7, 7, 7, 8, 9
+Without outlier: 5, 6, 7, 7, 7, 8, 9
 </p>
 <ul>
 <li><p>Median: 7</p></li>
@@ -770,13 +776,13 @@ No outlier: 5, 6, 7, 7, 7, 8, 9
 <li><p>Range: 4</p></li>
 </ul>
 <p>
-With outlier: 5, 6, 7, 7, 7, 8, 20
+With outlier: 5, 6, 7, 7, 7, 8, <strong>20</strong>
 </p>
 <ul>
-<li><p>Median: 7</p></li>
-<li><p>Mean: 8.57</p></li>
-<li><p>IQR: 2</p></li>
-<li><p>Range: 15</p></li>
+<li><p>Median: 7 (not affected by the outlier of 20)</p></li>
+<li><p>Mean: 8.57 (greatly affected by the outlier; we should not conclude that students “typically” sleep for 8.57 hours)</p></li>
+<li><p>IQR: 2 (not affected by the outlier of 20)</p></li>
+<li><p>Range: 15 (greatly affected by the outlier)</p></li>
 </ul>
 <p>General pattern:</p>
 <ul>
@@ -786,10 +792,23 @@ With outlier: 5, 6, 7, 7, 7, 8, 20
 </ul>
 <p>When you look for a “typical” value of a numeric variable, should you use mean or median? Median is “safer” to use because it is more robust to outliers and extreme skewness.</p>
 <ul>
-<li><p>Example 1: <a href="https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1">How much does it typically cost to rent in Manhattan?</a></p></li>
-<li><p>Example 2: <a href="https://data.bls.gov/oes/#/area/0000000/2025">Occupational wage statistics</a></p></li>
-<li><p>Example 3: <a href="https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/">Income disclosures in MLM</a></p></li>
+<li>Example 1: <a href="https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1" target="_blank">How much does it typically cost to rent in Manhattan?</a></li>
 </ul>
+<blockquote>
+<p>Mean is much higher than the median for rental prices in Manhattan; the article draws its main conclusion using the median, as it should.</p>
+</blockquote>
+<ul>
+<li>Example 2: <a href="https://data.bls.gov/oes/#/area/0000000/2025" target="_blank">Occupational wage statistics</a></li>
+</ul>
+<blockquote>
+<p>In general, median wage is lower than the mean wage across occupations; the median is a better representation of a “typical” wage.</p>
+</blockquote>
+<ul>
+<li>Example 3: <a href="https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/" target="_blank">Income disclosures in MLM</a></li>
+</ul>
+<blockquote>
+<p>Many <a href="https://en.wikipedia.org/wiki/Multi-level_marketing" target="_blank">Multi-level marketing (MLM)</a> companies quote the average earning to present a deceptive picture of typical participant earnings; the median is a more accurate representation.</p>
+</blockquote>
 <!--
 
 ## Additional topics from Chapter 3

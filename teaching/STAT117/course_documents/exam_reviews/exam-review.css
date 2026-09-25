@@ -1,0 +1,25 @@
+main.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+main.content > ul:first-of-type {
+  margin-bottom: 2rem;
+}
+
+.exam-page-break {
+  break-before: page;
+  border-top: 1px solid #dee2e6;
+  margin: 3rem 0;
+}
+
+img {
+  display: block;
+  margin: 1rem auto;
+}
+
+@media (min-width: 992px) {
+  .quarto-title-block {
+    margin-bottom: 2rem;
+  }
+}

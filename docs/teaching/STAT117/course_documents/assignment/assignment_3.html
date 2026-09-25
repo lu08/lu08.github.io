@@ -259,6 +259,88 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Suppose I create a new variable <code>LENGTH_MIN</code> calculated as <code>LENGTH_MIN = LENGTH/60</code> (i.e., length of song in minutes). Calculate the values of the statistics you wrote down in Part I after the transformation.</p></li>
 <li><p>Suppose I create a new variable <code>LENGTH_MIN_II</code> calculated as <code>LENGTH_MIN_II = LENGTH/60 + 2</code>. Calculate the values of the statistics you wrote down in Part I after the transformation.</p></li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+</details></section>
+<section id="part-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<ol type="1">
+<li><ul>
+<li><strong>Location:</strong> mean = 233 seconds and median = 231 seconds</li>
+<li><strong>Spread:</strong> standard deviation = 52.1 seconds, IQR = 47 seconds, and range = 418 seconds</li>
+<li><strong>Skewness ratio:</strong> 2.89 / 0.223 = 12.96 (severe right skew)</li>
+</ul></li>
+<li>The histogram is <strong>right-skewed</strong>: most songs are concentrated at shorter lengths, with a smaller number of substantially longer songs extending the right tail.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment_3_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th style="text-align: right;"><code>LENGTH</code></th>
+<th style="text-align: right;"><code>LENGTH_MIN = LENGTH / 60</code></th>
+<th style="text-align: right;"><code>LENGTH_MIN_II = LENGTH / 60 + 2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td style="text-align: right;">233 sec</td>
+<td style="text-align: right;">3.88 min</td>
+<td style="text-align: right;">5.88 min</td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td style="text-align: right;">231 sec</td>
+<td style="text-align: right;">3.84 min</td>
+<td style="text-align: right;">5.84 min</td>
+</tr>
+<tr class="odd">
+<td>Standard deviation</td>
+<td style="text-align: right;">52.1 sec</td>
+<td style="text-align: right;">0.87 min</td>
+<td style="text-align: right;">0.87 min</td>
+</tr>
+<tr class="even">
+<td>IQR</td>
+<td style="text-align: right;">47 sec</td>
+<td style="text-align: right;">0.78 min</td>
+<td style="text-align: right;">0.78 min</td>
+</tr>
+<tr class="odd">
+<td>Range</td>
+<td style="text-align: right;">418 sec</td>
+<td style="text-align: right;">6.97 min</td>
+<td style="text-align: right;">6.97 min</td>
+</tr>
+<tr class="even">
+<td>Skewness ratio</td>
+<td style="text-align: right;">12.96</td>
+<td style="text-align: right;">12.96</td>
+<td style="text-align: right;">12.96</td>
+</tr>
+</tbody>
+</table>
+
 
 
 </section>

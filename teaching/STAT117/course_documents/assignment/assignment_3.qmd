@@ -23,3 +23,45 @@ This assignment will guide you through a practice question from Chapter 4 using 
 
 
 2. Suppose I create a new variable `LENGTH_MIN_II` calculated as `LENGTH_MIN_II = LENGTH/60 + 2`.  Calculate the values of the statistics you wrote down in Part I after the transformation.
+
+<details>
+<summary>Show solution</summary>
+
+## Part 1
+
+1.
+	- **Location:** mean = 233 seconds and median = 231 seconds
+	- **Spread:** standard deviation = 52.1 seconds, IQR = 47 seconds, and range = 418 seconds
+	- **Skewness ratio:** 2.89 / 0.223 = 12.96 (severe right skew)
+
+
+2. The histogram is **right-skewed**: most songs are concentrated at shorter lengths, with a smaller number of substantially longer songs extending the right tail.
+
+```{r, echo=FALSE}
+library(haven)
+
+song_data <- read_sav("../../../../dataset/Combined Class Song Data.sav")
+song_length <- as.numeric(song_data$LENGTH)
+song_length <- song_length[!is.na(song_length)]
+
+hist(song_length,
+	  main = "Song length",
+	  xlab = "Length (seconds)",
+	  col = "lightblue")
+```
+
+## Part 2
+
+
+| Statistic | `LENGTH` | `LENGTH_MIN = LENGTH / 60` | `LENGTH_MIN_II = LENGTH / 60 + 2` |
+|---|---:|---:|---:|
+| Mean | 233 sec | 3.88 min | 5.88 min |
+| Median | 231 sec | 3.84 min | 5.84 min |
+| Standard deviation | 52.1 sec | 0.87 min | 0.87 min |
+| IQR | 47 sec | 0.78 min | 0.78 min |
+| Range | 418 sec | 6.97 min | 6.97 min |
+| Skewness ratio | 12.96 | 12.96 | 12.96 |
+
+
+
+</details>

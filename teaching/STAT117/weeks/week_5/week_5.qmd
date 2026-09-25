@@ -9,11 +9,9 @@ format: html
 - Oct 1 (Thursday): In person lecture, no quiz
 
 
-
-
 ## Tuesday, Sep 29
 
-
+In person **Exam 1**: covers Chapters 1, 2, 3, and first half of Chapter 4.  Practice exam can be found under [course documents](../../course_documents/index.qmd){target="_blank"}.
 
 
 ## Thursday, Oct 1
