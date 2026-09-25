@@ -671,24 +671,125 @@ For <code>achmat08</code>: skewness = 0.114, SE of skewness = 0.109, so the skew
 <tbody>
 <tr class="odd">
 <td style="border: 1px solid black; padding: 8px"><strong>NOMINAL</strong></td>
-<td style="border: 1px solid black; padding: 8px"></td>
+<td style="border: 1px solid black; padding: 8px">mode</td>
 <td class="summary-table-na" style="border: 1px solid black; padding: 8px"></td>
 <td class="summary-table-na" style="border: 1px solid black; padding: 8px"></td>
 </tr>
 <tr class="even">
 <td style="border: 1px solid black; padding: 8px"><strong>ORDINAL</strong></td>
-<td style="border: 1px solid black; padding: 8px"></td>
-<td style="border: 1px solid black; padding: 8px"></td>
+<td style="border: 1px solid black; padding: 8px">median</td>
+<td style="border: 1px solid black; padding: 8px">IQR</td>
 <td class="summary-table-na" style="border: 1px solid black; padding: 8px"></td>
 </tr>
 <tr class="odd">
 <td style="border: 1px solid black; padding: 8px"><strong>SCALE</strong></td>
-<td style="border: 1px solid black; padding: 8px"></td>
-<td style="border: 1px solid black; padding: 8px"></td>
-<td style="border: 1px solid black; padding: 8px"></td>
+<td style="border: 1px solid black; padding: 8px">median (mean)</td>
+<td style="border: 1px solid black; padding: 8px">IQR</td>
+<td style="border: 1px solid black; padding: 8px">skewness ratio</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="additional-topic-modality" class="slide level2">
+<h2>Additional topic: modality</h2>
+<p>Using a histogram, we can see how many “bumps” or “modes” the distribution has.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_3_slide_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Show code (optional)
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb21-2"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb21-3"><a href=""></a></span>
+<span id="cb21-4"><a href=""></a>unimodal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span>
+<span id="cb21-5"><a href=""></a>bimodal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n <span class="sc">/</span> <span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">35</span>, <span class="at">sd =</span> <span class="dv">4</span>),</span>
+<span id="cb21-6"><a href=""></a>             <span class="fu">rnorm</span>(n <span class="sc">/</span> <span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb21-7"><a href=""></a>multimodal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n <span class="sc">/</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">4</span>),</span>
+<span id="cb21-8"><a href=""></a>                <span class="fu">rnorm</span>(n <span class="sc">/</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb21-9"><a href=""></a>                <span class="fu">rnorm</span>(n <span class="sc">/</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="dv">6</span>))</span>
+<span id="cb21-10"><a href=""></a>uniform <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">20</span>, <span class="at">max =</span> <span class="dv">80</span>)</span>
+<span id="cb21-11"><a href=""></a></span>
+<span id="cb21-12"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb21-13"><a href=""></a><span class="fu">hist</span>(unimodal, <span class="at">main =</span> <span class="st">"Unimodal"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span>
+<span id="cb21-14"><a href=""></a><span class="fu">hist</span>(bimodal, <span class="at">main =</span> <span class="st">"Bimodal"</span>, <span class="at">col =</span> <span class="st">"lightgreen"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span>
+<span id="cb21-15"><a href=""></a><span class="fu">hist</span>(multimodal, <span class="at">main =</span> <span class="st">"Multimodal"</span>, <span class="at">col =</span> <span class="st">"lightcoral"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span>
+<span id="cb21-16"><a href=""></a><span class="fu">hist</span>(uniform, <span class="at">main =</span> <span class="st">"Uniform"</span>, <span class="at">col =</span> <span class="st">"lightgoldenrod"</span>, <span class="at">xlab =</span> <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<p>Example 1: <a href="https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html">At what age do women first become mothers?</a></p>
+<p><img data-src="L3-age.png"></p>
+<blockquote>
+<p>The age distribution of women at the time of their first childbirth in 2016 shows a bimodal pattern, with peaks around the early 20s and early 30s. It signals <strong>two clusters</strong>: two groups of women who are very different in terms of age at first childbirth. The article notes that this is highly correlated with location (i.e., urban vs.&nbsp;rural). For bimodal distributions like this, statistics like the mean or median can be insufficient and even misleading (e.g., we should not simply conclude that “women are giving birth at around 26 years old on average” - the median/average value likely falls between the two peaks and does not accurately represent either group of women).</p>
+</blockquote>
+<p>EXample 2: [Old faithful Geyser] (https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_3_slide_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Show code (optional)
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb22-2"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>waiting,</span>
+<span id="cb22-3"><a href=""></a>  <span class="at">main =</span> <span class="st">"Waiting time"</span>,</span>
+<span id="cb22-4"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes between eruptions"</span>,</span>
+<span id="cb22-5"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb22-6"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>eruptions,</span>
+<span id="cb22-7"><a href=""></a>  <span class="at">main =</span> <span class="st">"Eruption duration"</span>,</span>
+<span id="cb22-8"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Minutes"</span>,</span>
+<span id="cb22-9"><a href=""></a>  <span class="at">col =</span> <span class="st">"lightcoral"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</section>
+<section id="additional-topic-effect-of-outliers" class="slide level2">
+<h2>Additional topic: effect of outliers</h2>
+<p>Recall, we can use outliers to determine the skewness of a distribution:</p>
+<pre><code>- Large outliers → right skewed
+
+- Small outliers → left skewed</code></pre>
+<p>Simple example: number of hours slept yesterday</p>
+<p>
+No outlier: 5, 6, 7, 7, 7, 8, 9
+</p>
+<ul>
+<li><p>Median: 7</p></li>
+<li><p>Mean: 7</p></li>
+<li><p>IQR: 2</p></li>
+<li><p>Range: 4</p></li>
+</ul>
+<p>
+With outlier: 5, 6, 7, 7, 7, 8, 20
+</p>
+<ul>
+<li><p>Median: 7</p></li>
+<li><p>Mean: 8.57</p></li>
+<li><p>IQR: 2</p></li>
+<li><p>Range: 15</p></li>
+</ul>
+<p>General pattern:</p>
+<ul>
+<li><p>Symmetric distribution: mean ≈ median</p></li>
+<li><p>Right (or positive) skewed: mean &gt;&gt; median</p></li>
+<li><p>Left (or negative) skewed: mean &lt;&lt; median</p></li>
+</ul>
+<p>When you look for a “typical” value of a numeric variable, should you use mean or median? Median is “safer” to use because it is more robust to outliers and extreme skewness.</p>
+<ul>
+<li><p>Example 1: <a href="https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1">How much does it typically cost to rent in Manhattan?</a></p></li>
+<li><p>Example 2: <a href="https://data.bls.gov/oes/#/area/0000000/2025">Occupational wage statistics</a></p></li>
+<li><p>Example 3: <a href="https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/">Income disclosures in MLM</a></p></li>
+</ul>
 <!--
 
 ## Additional topics from Chapter 3
@@ -715,90 +816,7 @@ Median:
 
 Mode:
 
-## 3. Shape of a distribution (in addition to skewness)
 
-Using a histogram, we can see how many “bumps” or “modes” the distribution has; Keep *outliers* in mind!
-
-- unimodal
-- bimodal
-- multimodal
-- uniform
-
-At what age do women first become mothers? https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html
-
-## 4. Effect of outliers
-
-Recall, we can use outliers to determine the skewness of a distribution:
-
-Large outliers → right skewed
-
-Small outliers → left skewed
-
-Effect of outliers on summary statistics:
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 9</p>
-
-- Median: 7
-
-- Mean: 7
-
-- IQR: 2
-
-- Range: 4
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 20</p>
-
-- Median: 7
-
-- Mean: 8.57
-
-- IQR: 2
-
-- Range: 15
-
-In the previous example:
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 9</p>
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 20</p>
-
-- Symmetric: mean ≈ median
-
-- Right (or positive) skewed: mean >> median
-
-- Left (or negative) skewed: mean << median
-
-## 5. Mean vs median for scale variables
-
-When you look for a “typical” value of a scale variable, should you use mean or median?
-
-Example (1): What’s a typical grade for Quiz 1?
-
-A Counterexample: Typically, how many goals are scored in a World Cup game?
-
-Mean = 2.83
-
-Median = 3
-
-## 5. Mean vs median for scale variables
-
-Example (2): How much does it typically cost to rent in Manhattan?
-
-https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1
-
-Example (3): Typically, how much money do people make?
-
-https://www.bls.gov/oes/current/oes_nat.htm#15-0000
-
-## 5. Mean vs median for scale variables
-
-Example (4): Typically, how much do people make in MLM (Multi-level Marketing)?
-
-Example (5): Typically, how long do you have to wait for the next eruption of Old Faithful?  Typically, how long does the eruption last?
-
-https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/
-
-In these cases, mean/median are not sufficient to describe a typical value.
 
 ## Summary
 

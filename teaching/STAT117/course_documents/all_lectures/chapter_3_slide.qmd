@@ -495,25 +495,161 @@ Use the appropriate statistic to describe properties of a distribution
 <tbody>
 <tr>
   <td style="border:1px solid black; padding:8px;"><strong>NOMINAL</strong></td>
-  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;">mode</td>
   <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
   <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
 </tr>
 <tr>
   <td style="border:1px solid black; padding:8px;"><strong>ORDINAL</strong></td>
-  <td style="border:1px solid black; padding:8px;"></td>
-  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;">median</td>
+  <td style="border:1px solid black; padding:8px;">IQR</td>
   <td class="summary-table-na" style="border:1px solid black; padding:8px;"></td>
 </tr>
 <tr>
   <td style="border:1px solid black; padding:8px;"><strong>SCALE</strong></td>
-  <td style="border:1px solid black; padding:8px;"></td>
-  <td style="border:1px solid black; padding:8px;"></td>
-  <td style="border:1px solid black; padding:8px;"></td>
+  <td style="border:1px solid black; padding:8px;">median (mean) </td>
+  <td style="border:1px solid black; padding:8px;">IQR</td>
+  <td style="border:1px solid black; padding:8px;">skewness ratio</td>
 </tr>
 </tbody>
 </table>
 ```
+
+## Additional topic: modality
+
+Using a histogram, we can see how many “bumps” or “modes” the distribution has.
+
+```{r, echo= F}
+set.seed(1)
+n <- 1000
+
+unimodal <- rnorm(n, mean = 50, sd = 8)
+bimodal <- c(rnorm(n / 2, mean = 35, sd = 4),
+             rnorm(n / 2, mean = 65, sd = 5))
+multimodal <- c(rnorm(n / 3, mean = 25, sd = 4),
+                rnorm(n / 3, mean = 50, sd = 5),
+                rnorm(n / 3, mean = 75, sd = 6))
+uniform <- runif(n, min = 20, max = 80)
+
+par(mfrow = c(2, 2))
+hist(unimodal, main = "Unimodal", col = "lightblue", xlab = NA)
+hist(bimodal, main = "Bimodal", col = "lightgreen", xlab = NA)
+hist(multimodal, main = "Multimodal", col = "lightcoral", xlab = NA)
+hist(uniform, main = "Uniform", col = "lightgoldenrod", xlab = NA)
+
+```
+
+<details>
+<summary>Show code (optional)</summary>
+
+```r
+set.seed(1)
+n <- 1000
+
+unimodal <- rnorm(n, mean = 50, sd = 8)
+bimodal <- c(rnorm(n / 2, mean = 35, sd = 4),
+             rnorm(n / 2, mean = 65, sd = 5))
+multimodal <- c(rnorm(n / 3, mean = 25, sd = 4),
+                rnorm(n / 3, mean = 50, sd = 5),
+                rnorm(n / 3, mean = 75, sd = 6))
+uniform <- runif(n, min = 20, max = 80)
+
+par(mfrow = c(2, 2))
+hist(unimodal, main = "Unimodal", col = "lightblue", xlab = NA)
+hist(bimodal, main = "Bimodal", col = "lightgreen", xlab = NA)
+hist(multimodal, main = "Multimodal", col = "lightcoral", xlab = NA)
+hist(uniform, main = "Uniform", col = "lightgoldenrod", xlab = NA)
+
+```
+
+</details>
+
+
+Example 1: [At what age do women first become mothers?](https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html)
+
+![](L3-age.png)
+
+> The age distribution of women at the time of their first childbirth in 2016 shows a bimodal pattern, with peaks around the early 20s and early 30s. It signals **two clusters**: two groups of women who are very different in terms of age at first childbirth. The article notes that this is highly correlated with location (i.e., urban vs. rural). For bimodal distributions like this, statistics like the mean or median can be insufficient and even misleading (e.g., we should not simply conclude that "women are giving birth at around 26 years old on average" - the median/average value likely falls between the two peaks and does not accurately represent either group of women).
+
+EXample 2: [Old faithful Geyser] (https://www.nps.gov/features/yell/ofvec/exhibits/eruption/prediction/predict7.htm)
+
+```{r, echo=FALSE}
+
+par(mfrow = c(1, 2))
+hist(faithful$waiting,
+  main = "Waiting time",
+  xlab = "Minutes between eruptions",
+  col = "lightblue")
+hist(faithful$eruptions,
+  main = "Eruption duration",
+  xlab = "Minutes",
+  col = "lightcoral")
+
+```
+
+
+<details>
+<summary>Show code (optional)</summary>
+
+```r
+par(mfrow = c(1, 2))
+hist(faithful$waiting,
+  main = "Waiting time",
+  xlab = "Minutes between eruptions",
+  col = "lightblue")
+hist(faithful$eruptions,
+  main = "Eruption duration",
+  xlab = "Minutes",
+  col = "lightcoral")
+```
+
+</details>
+
+## Additional topic: effect of outliers
+
+Recall, we can use outliers to determine the skewness of a distribution:
+
+    - Large outliers → right skewed
+
+    - Small outliers → left skewed
+
+Simple example: number of hours slept yesterday
+
+<p>No outlier: 5, 6, 7, 7, 7, 8, 9</p>
+
+- Median: 7
+
+- Mean: 7
+
+- IQR: 2
+
+- Range: 4
+
+<p>With outlier: 5, 6, 7, 7, 7, 8, 20</p>
+
+- Median: 7
+
+- Mean: 8.57
+
+- IQR: 2
+
+- Range: 15
+
+General pattern: 
+
+- Symmetric distribution: mean ≈ median
+
+- Right (or positive) skewed: mean >> median
+
+- Left (or negative) skewed: mean << median
+
+When you look for a “typical” value of a numeric variable, should you use mean or median?  Median is "safer" to use because it is more robust to outliers and extreme skewness. 
+
+- Example 1: [How much does it typically cost to rent in Manhattan?](https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1)
+
+- Example 2: [Occupational wage statistics](https://data.bls.gov/oes/#/area/0000000/2025)
+
+- Example 3: [Income disclosures in MLM](https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/)
 
 
 <!--
@@ -542,90 +678,7 @@ Median:
 
 Mode:
 
-## 3. Shape of a distribution (in addition to skewness)
 
-Using a histogram, we can see how many “bumps” or “modes” the distribution has; Keep *outliers* in mind!
-
-- unimodal
-- bimodal
-- multimodal
-- uniform
-
-At what age do women first become mothers? https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html
-
-## 4. Effect of outliers
-
-Recall, we can use outliers to determine the skewness of a distribution:
-
-Large outliers → right skewed
-
-Small outliers → left skewed
-
-Effect of outliers on summary statistics:
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 9</p>
-
-- Median: 7
-
-- Mean: 7
-
-- IQR: 2
-
-- Range: 4
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 20</p>
-
-- Median: 7
-
-- Mean: 8.57
-
-- IQR: 2
-
-- Range: 15
-
-In the previous example:
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 9</p>
-
-<p># of hours slept yesterday: 5, 6, 7, 7, 7, 8, 20</p>
-
-- Symmetric: mean ≈ median
-
-- Right (or positive) skewed: mean >> median
-
-- Left (or negative) skewed: mean << median
-
-## 5. Mean vs median for scale variables
-
-When you look for a “typical” value of a scale variable, should you use mean or median?
-
-Example (1): What’s a typical grade for Quiz 1?
-
-A Counterexample: Typically, how many goals are scored in a World Cup game?
-
-Mean = 2.83
-
-Median = 3
-
-## 5. Mean vs median for scale variables
-
-Example (2): How much does it typically cost to rent in Manhattan?
-
-https://www.nytimes.com/2022/06/09/realestate/manhattan-rent-nyc.html?searchResultPosition=1
-
-Example (3): Typically, how much money do people make?
-
-https://www.bls.gov/oes/current/oes_nat.htm#15-0000
-
-## 5. Mean vs median for scale variables
-
-Example (4): Typically, how much do people make in MLM (Multi-level Marketing)?
-
-Example (5): Typically, how long do you have to wait for the next eruption of Old Faithful?  Typically, how long does the eruption last?
-
-https://www.reddit.com/r/antiMLM/wiki/incomedisclosures/
-
-In these cases, mean/median are not sufficient to describe a typical value.
 
 ## Summary
 
