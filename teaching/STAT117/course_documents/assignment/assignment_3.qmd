@@ -27,7 +27,7 @@ This assignment will guide you through a practice question from Chapter 4 using 
 <details>
 <summary>Show solution</summary>
 
-## Part 1
+**Part 1**
 
 1.
 	- **Location:** mean = 233 seconds and median = 231 seconds
@@ -50,8 +50,7 @@ hist(song_length,
 	  col = "lightblue")
 ```
 
-## Part 2
-
+**Part 2**
 
 | Statistic | `LENGTH` | `LENGTH_MIN = LENGTH / 60` | `LENGTH_MIN_II = LENGTH / 60 + 2` |
 |---|---:|---:|---:|
@@ -61,7 +60,5 @@ hist(song_length,
 | IQR | 47 sec | 0.78 min | 0.78 min |
 | Range | 418 sec | 6.97 min | 6.97 min |
 | Skewness ratio | 12.96 | 12.96 | 12.96 |
-
-
 
 </details>
