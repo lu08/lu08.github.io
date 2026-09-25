@@ -10,7 +10,6 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 2: Examining Univariate Distributions](all_lectures/chapter_2_slide.html)
 - [Chapter 3: Locations, Spread, and Skewness](all_lectures/chapter_3_slide.html)
 - [Chapter 4: Transformations and Z-scores](all_lectures/chapter_4_slide.html)
-`
 
 ## Homework
 
@@ -35,4 +34,5 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 
 ## Practice exams
 
-c
+- [Practice Exam 1](exam_reviews/practice_exam_1_blank.qmd)
+- [Practice Exam 1 solution](exam_reviews/practice_exam_1_solution.qmd)
