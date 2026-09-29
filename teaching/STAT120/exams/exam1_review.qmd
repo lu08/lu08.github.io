@@ -1,0 +1,435 @@
+---
+title: "STAT120: Exam 1 Review"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+This review summarizes [Lecture 1](../lectures/lecture_1/lecture_1.html){target="_blank"}, [Lecture 2](../lectures/lecture_2/lecture_2.html){target="_blank"}, [Lecture 3](../lectures/lecture_3/lecture_3.html){target="_blank"}, and [Homework 1](../homework/homework_1.qmd){target="_blank"}, [Homework 2](../homework/homework_2.qmd){target="_blank"}, and [Homework 3](../homework/homework_3.qmd){target="_blank"}.
+
+## Lecture 1: R basics, packages, and vectors
+
+### R and RStudio
+
+- R is the programming language; RStudio is an interface (IDE) for working with R.
+- Save code in an R script. Highlight code and press Command+Enter on macOS or Ctrl+Enter on Windows to run it.
+- If no code is highlighted, the current line is run.
+- Comments begin with `#` and are ignored by R.
+- Matching parentheses, quotation marks, and commas are required.
+
+### Basic R syntax
+
+Know the difference between assignment and comparison:
+
+```r
+x <- 5
+x == 5
+```
+
+Be able to use arithmetic operators and common functions:
+
+```r
+2 + 5
+2 * 5
+2^5
+sqrt(2)
+log(10)
+```
+
+### Packages and functions
+
+- Install a package once with `install.packages("package_name")`.
+- Load a package in each new R session with `library(package_name)`.
+- Functions have a name, parentheses, and possibly arguments.
+- Named arguments make code easier to read.
+
+```r
+mean(x)
+seq(from = 1, to = 10, by = 2)
+rep(c(1, 2), times = 5)
+```
+
+The pipe passes the object on the left into the function on the right:
+
+```r
+x |> mean()
+```
+
+### Vectors and object types
+
+- A vector is a one-dimensional collection of values with a common type.
+- Common types include numeric, character, logical, and factor.
+- Create vectors with `c()`, sequences with `:`, `seq()`, and repeated values with `rep()`.
+- Convert types with `as.numeric()`, `as.character()`, and `as.factor()`.
+- Use `length()`, `class()`, `str()`, `sum()`, `mean()`, `min()`, and `max()` to inspect objects.
+
+```r
+numbers <- c(2, 4, 6)
+sequence <- seq(from = 1, to = 10, by = 2)
+repeated <- rep(c("yes", "no"), times = 3)
+```
+
+### Vector arithmetic and indexing
+
+R performs arithmetic element by element when vector lengths are compatible:
+
+```r
+x + 4
+x * y
+sum(x * y)
+```
+
+R uses one-based indexing:
+
+```r
+x[2]
+x[c(2, 3)]
+x[1:4]
+x[-8]
+x[x > 10]
+which(x > 10)
+```
+
+`x[x > 10]` returns values; `which(x > 10)` returns positions.
+
+## Lecture 2: Data, objects, functions, and logical subsetting
+
+### Importing and inspecting data
+
+```r
+df <- read.csv("file_name.csv")
+names(df)
+str(df)
+head(df)
+df$variable_name
+```
+
+Use square brackets to select rows, columns, or both:
+
+```r
+df[1:3, ]
+df[, c("Name", "Year")]
+df[1:3, c("Name", "Year")]
+```
+
+### Factors, data frames, and missing values
+
+- Convert categorical values with `as.factor()`.
+- Build a data frame when vectors have the same length.
+- A matrix has one common type; a list can contain components of different types.
+- Missing values are `NA`; use `na.rm = TRUE` for summaries when appropriate.
+
+```r
+mean(x, na.rm = TRUE)
+```
+
+### Data modification and the pipe
+
+```r
+df$new_variable <- df$old_variable / 60
+
+df |>
+	group_by(group_variable) |>
+	summarise(mean_value = mean(value_variable))
+```
+
+Know that `%>%` is an alternative pipe operator used by tidyverse code.
+
+### Logical statements
+
+Comparison operators: `==`, `!=`, `>`, `>=`, `<`, `<=`.
+
+- `&` means AND; `|` means OR; `!` means NOT.
+- `%in%` checks membership in a set.
+
+```r
+df[df$Location == "United States", ]
+df[df$Location == "United States" & df$Year > 2015, ]
+df[df$Location %in% c("United States", "China"), ]
+df[df$Year >= 2010 & df$Year <= 2015, ]
+df[df$Year %in% c(2010, 2015), ]
+```
+
+R does not use chained inequalities such as `4 < x < 5`; write `x > 4 & x < 5`.
+
+## Lecture 3: Univariate distributions
+
+### Location
+
+- **Mean:** arithmetic average; sensitive to outliers and skewness.
+- **Median:** middle value; more robust to outliers and skewness.
+- **Mode:** most frequent value; especially useful for nominal variables.
+- **Percentile:** a value below which a specified percentage of observations fall.
+
+```r
+mean(x)
+median(x)
+quantile(x, c(0.1, 0.5, 0.9))
+```
+
+Choose statistics that match the level of measurement: nominal variables usually use the mode; ordinal variables use the median and mode; scale variables may use the mean, median, and mode.
+
+### Spread and shape
+
+- **Range:** maximum minus minimum; sensitive to extreme values.
+- **IQR:** third quartile minus first quartile; describes the middle 50%.
+- **Variance:** squared measure of spread.
+- **Standard deviation:** typical distance from the mean, in the original units.
+
+```r
+range(x)
+diff(range(x))
+IQR(x)
+var(x)
+sd(x)
+hist(x)
+boxplot(x)
+plot(as.factor(x))
+```
+
+- Use a histogram for the shape of a numeric distribution and a bar graph for categorical data.
+- A distribution may be symmetric, left-skewed, right-skewed, unimodal, bimodal, multimodal, or approximately uniform.
+- In a right-skewed distribution, the right tail is longer and the mean is often greater than the median.
+- In a left-skewed distribution, the left tail is longer and the mean is often less than the median.
+
+
+### Z-scores
+
+$$
+z = \frac{x - \bar{x}}{s}.
+$$
+
+```r
+z <- (x - mean(x)) / sd(x)
+z <- scale(x)
+```
+
+- Positive z-score: above the mean.
+- Negative z-score: below the mean.
+- A z-score of 2 means 2 standard deviations above the mean.
+- A z-score of 0 means the observation equals the mean.
+
+## Homework 1-3 skills to practice
+
+### Homework 1
+
+- Create, modify, append to, and delete values from vectors.
+- Use `seq()`, `rep()`, `c()`, `length()`, and `sum()`.
+- Use one vector to index another vector.
+- Create scatterplots with `plot()` and understand `col`, `xlab`, `ylab`, `type`, and `ylim`.
+- Work with the built-in `mtcars` data frame.
+- Use `$`, row names, numeric indices, and logical conditions to subset data.
+
+### Homework 2
+
+- Create numeric, character, logical, and factor vectors.
+- Calculate the mean of a 0/1 vector as the proportion of 1s.
+- Check an object's class and length.
+- Use `tapply()` to calculate a summary by groups.
+- Create a data frame and use `group_by()` and `summarise()`.
+- Import a CSV file and select rows and columns.
+- Use `which.max()` and `which.min()`.
+- Filter with AND, OR, ranges, and `%in%`.
+- Sort grouped summaries with `arrange()`.
+
+### Homework 3
+
+- Calculate percentiles with `quantile()` and interpret them in context.
+- Describe a distribution using location, spread, and shape.
+- Calculate and interpret z-scores.
+- Compare z-scores across variables and groups.
+- Interpret a z-score as a number of standard deviations from the mean.
+
+## Common exam mistakes
+
+- Confusing assignment (`<-`) with comparison (`==`).
+- Forgetting that R indexing starts at 1.
+- Reversing AND (`&`) and OR (`|`).
+- Using a chained inequality such as `55000 <= x <= 60000`.
+- Returning row positions with `which()` when the question asks for values.
+- Treating numeric category codes as automatically numeric variables.
+- Interpreting a mean as typical when the distribution is strongly skewed.
+- Forgetting units when interpreting a statistic.
+- Saying a percentile is the percentage equal to that value; it is the percentage at or below that value.
+- Interpreting a z-score as a percentage rather than a number of standard deviations.
+
+## Practice questions in addition to homework
+
+The following questions use one dataset from the `Lock5Data` package: `Cereal`. Run this setup code first.
+
+```r
+library(Lock5Data)
+library(tidyverse)
+data(Cereal)
+```
+
+### Question 1: Inspecting the data
+
+1. Print the names of the variables in `Cereal`.
+2. Print the first six rows.
+3. How many cereals are in the dataset?
+4. Print the `Name` variable.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+names(Cereal)
+head(Cereal)
+nrow(Cereal)
+Cereal$Name
+```
+
+`nrow()` counts observations, while `names()` displays the variables.
+</details>
+
+### Question 2: Creating and modifying variables
+
+Create a new variable called `health` equal to `Fiber - Sugar`. Then create `health_scaled` by dividing `health` by 2. Print the name and both health variables for the first five cereals.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+Cereal$health <- Cereal$Fiber - Cereal$Sugar
+Cereal$health_scaled <- Cereal$health / 2
+Cereal[1:5, c("Name", "health", "health_scaled")]
+```
+</details>
+
+### Question 3: Logical subsetting
+
+Write code to print the names of cereals that meet each condition:
+
+1. They are manufactured by Kellog.
+2. They have more than 3 grams of Fiber.
+3. They have more than 3 grams of Fiber **and** fewer than 10 grams of Sugar.
+4. They are manufactured by Kellog **or** have more than 5 grams of Fiber.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+Cereal$Name[Cereal$Manufacturer == "Kellog"]
+Cereal$Name[Cereal$Fiber > 3]
+Cereal$Name[Cereal$Fiber > 3 & Cereal$Sugar < 10]
+Cereal$Name[Cereal$Manufacturer == "Kellog" | Cereal$Fiber > 5]
+```
+
+Use `&` for AND and `|` for OR. The expression inside the brackets is a logical index.
+</details>
+
+### Question 4: Selecting rows and columns
+
+Print the `Name`, `Calories`, and `Sugar` variables for cereals with at least 100 calories and at most 5 grams of Sugar.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+Cereal[Cereal$Calories >= 100 & Cereal$Sugar <= 5,
+       c("Name", "Calories", "Sugar")]
+```
+</details>
+
+### Question 5: Summary statistics and interpretation
+
+Calculate the mean, median, standard deviation, IQR, and range of `Calories`. Which measure of location would be safer to report if the histogram is strongly right-skewed? Explain why.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+mean(Cereal$Calories)
+median(Cereal$Calories)
+sd(Cereal$Calories)
+IQR(Cereal$Calories)
+range(Cereal$Calories)
+diff(range(Cereal$Calories))
+```
+
+If the distribution is strongly right-skewed, report the median as the typical calorie value because the median is less affected by unusually high-calorie cereals than the mean. Report the IQR as a robust measure of spread.
+</details>
+
+### Question 6: Graphs and correlation
+
+1. Create a histogram of `Calories`.
+2. Create a boxplot of `Sugar`.
+3. Create a scatterplot with `Calories` on the x-axis and `health` on the y-axis.
+4. Calculate the correlation between `Calories` and `health`.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+hist(Cereal$Calories,
+     main = "Calories in cereal",
+     xlab = "Calories per serving",
+     col = "lightblue")
+
+boxplot(Cereal$Sugar,
+        main = "Sugar in cereal",
+        ylab = "Grams of sugar",
+        col = "lightgreen")
+
+plot(Cereal$Calories, Cereal$health,
+     xlab = "Calories per serving",
+     ylab = "Health score",
+     main = "Calories and health score")
+
+cor(Cereal$Calories, Cereal$health)
+```
+
+Correlation describes the direction and strength of a linear relationship. It does not prove that one variable causes the other.
+</details>
+
+### Question 7: Percentiles
+
+Calculate the 10th, 50th, and 90th percentiles of `Calories`. Write an interpretation of the 90th percentile in context.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+quantile(Cereal$Calories, c(0.10, 0.50, 0.90))
+```
+
+The 90th percentile is a calorie value such that approximately 90% of the cereals have that many calories or fewer, and approximately 10% have more calories.
+</details>
+
+### Question 8: Z-scores
+
+1. Calculate the z-score of every cereal's `Calories` value and store it as `zcalories`.
+2. Print the cereal with the largest positive z-score.
+3. Interpret a z-score of 1.5 in context.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+Cereal$zcalories <- (Cereal$Calories - mean(Cereal$Calories)) /
+  sd(Cereal$Calories)
+
+Cereal[which.max(Cereal$zcalories), c("Name", "Calories", "zcalories")]
+```
+
+A cereal with a calorie z-score of 1.5 has a calorie value 1.5 standard deviations above the mean calorie value in this dataset.
+</details>
+
+### Question 9: Grouped summaries
+
+Use `tapply()` and a tidyverse pipeline to calculate the mean `Calories` for each `Manufacturer`.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+tapply(Cereal$Calories, Cereal$Manufacturer, mean)
+
+Cereal |>
+  group_by(Manufacturer) |>
+  summarise(mean_calories = mean(Calories)) |>
+  arrange(mean_calories)
+```
+</details>
