@@ -41,6 +41,11 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 ### Other SPSS data
 
+- [child_care.sav](../../../dataset/child_care.sav){download="child_care.sav"}
+
+    Survey on Where Parents Look for and Find Information and How They Use Information When Selecting Child Care, United States, 2024 ([ICPSR 39220](https://www.childandfamilydataarchive.org/cfda/archives/cfda/studies/39220)), conducted by United States Department of Health and Human Services, Administration for Children and Families, Office of Planning, Research, and Evaluation (OPRE).  This dataset here has been edited to have fewer variables for easier handling in class exercises.
+
+
 - [GSS_SP2026.sav](../../../dataset/GSS_SP2026.sav){download="GSS_SP2026.sav"}
 
     The [General Social Survey](https://gss.norc.org/) is a large scale sociological survey conducted by [NORC at the University of Chicago](https://www.norc.org/). This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.
