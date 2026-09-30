@@ -1,0 +1,15 @@
+---
+title: "DATA352: Exam 1"
+date: "NAME: _______________"
+format:
+  pdf:
+    geometry: "left=2cm,right=2cm,top=1.5cm,bottom=1.5cm"
+    pdf-engine: lualatex
+  html:
+    toc: false
+fontsize: 11pt
+---
+
+<!-- DO NOT PUBLISH THIS DOCUMENT -->
+
+

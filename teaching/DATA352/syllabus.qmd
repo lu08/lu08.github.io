@@ -128,15 +128,15 @@ The schedule is subject to change.
 | September 16 | Review: R basics and loops | Homework quiz 2 |
 | September 23 | Continuous distributions | Homework quiz 3 |
 | September 30 | **Exam 1** | |
-| October 7 | Simulating the Central Limit Theorem | Homework quiz 4 |
-| October 14 | Rejection and SIR sampling | Homework quiz 5 |
-| October 21 | Model-based inference | Homework quiz 6 |
-| October 28 | Bootstrapping | Homework quiz 7 |
+| October 7 | Simulating the Central Limit Theorem |  |
+| October 14 | Rejection and SIR sampling | Homework quiz 4 |
+| October 21 | Model-based inference | Homework quiz 5 |
+| October 28 | Bootstrapping | Homework quiz 6 |
 | November 4 | **Exam 2** | |
-| November 11 | Monte Carlo methods | Homework quiz 8 |
-| November 18 | Bayesian modeling | Homework quiz 9 |
+| November 11 | Monte Carlo methods | |
+| November 18 | Bayesian modeling | Homework quiz 7|
 | November 25 | **Thanksgiving - no class** | |
-| December 2 | MCMC I | Homework quiz 10 |
-| December 9 | MCMC II | Homework quiz 11 |
+| December 2 | MCMC I | Homework quiz 8 |
+| December 9 | MCMC II | Homework quiz 9 |
 
 The in-person final exam is on **Wednesday, December 16, 7:30-10:30 p.m.**
