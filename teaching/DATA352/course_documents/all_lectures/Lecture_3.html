@@ -239,7 +239,7 @@
 <span id="cb1-6"><a href=""></a><span class="co"># 2. Test the function</span></span>
 <span id="cb1-7"><a href=""></a><span class="fu">sim_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
+<pre><code>[1] 5</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># 3. Initialize global simulation parameters</span></span>
 <span id="cb3-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -253,13 +253,13 @@
 <span id="cb3-10"><a href=""></a>}</span>
 <span id="cb3-11"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.5175</code></pre>
+<pre><code>[1] 3.4925</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="do">#### Method 2: Base R replicate()</span></span>
 <span id="cb5-2"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">sim_die</span>())</span>
 <span id="cb5-3"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.492</code></pre>
+<pre><code>[1] 3.5088</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="do">#### Method 3: parallel processing (optional)</span></span>
 <span id="cb7-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
@@ -269,7 +269,7 @@
 <span id="cb7-6"><a href=""></a><span class="fu">stopCluster</span>(cl)</span>
 <span id="cb7-7"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.4985</code></pre>
+<pre><code>[1] 3.499</code></pre>
 </div>
 </div>
 <p>Note: Method 1 and Method 2 are computational similar (provided that the <code>result</code> vector is <strong>pre-allocated</strong>). Method 3 is more advanced and can be significantly faster for very large simulations.</p>
@@ -356,11 +356,11 @@ Show solution
 <span id="cb16-5"><a href=""></a></span>
 <span id="cb16-6"><a href=""></a><span class="fu">roll_die</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">roll_die</span>(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
+<pre><code>[1] 7</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>mean_of_two <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
 <span id="cb20-2"><a href=""></a>  result <span class="ot">&lt;-</span> (x <span class="sc">+</span> y) <span class="sc">/</span> <span class="dv">2</span></span>
@@ -405,7 +405,7 @@ Show solution
 <span id="cb23-15"><a href=""></a><span class="co"># One play</span></span>
 <span id="cb23-16"><a href=""></a><span class="fu">play_game</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -15</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># Approximate expected value by simulating many plays</span></span>
 <span id="cb25-2"><a href=""></a>NSIM <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -413,7 +413,7 @@ Show solution
 <span id="cb25-4"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">replicate</span>(NSIM, <span class="fu">play_game</span>())</span>
 <span id="cb25-5"><a href=""></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.769</code></pre>
+<pre><code>[1] -0.846</code></pre>
 </div>
 </div>
 <p>For comparison, the expected value is</p>
@@ -450,20 +450,83 @@ E[X] = \frac{1}{6}(20) + \frac{2}{6}(10) + \frac{3}{6}(-15)
 <li>Suppose there is a large dataset of 1000 cats. Extract the 3rd, 6th, 9th, … cats from the dataset; for each cat, run a function <code>weighCat()</code> and store the weight in a vector.</li>
 <li>In a large dataset of cats, weigh and store the weights of the female cats.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb28-1"><a href=""></a># 1. Repeat a task 10 times</span>
+<span id="cb28-2"><a href=""></a>for (i in 1:10) {</span>
+<span id="cb28-3"><a href=""></a>  perform_task()</span>
+<span id="cb28-4"><a href=""></a>}</span>
+<span id="cb28-5"><a href=""></a></span>
+<span id="cb28-6"><a href=""></a># 2. Repeat a simulation 1000 times and store each result</span>
+<span id="cb28-7"><a href=""></a>results &lt;- rep(NA, 1000)</span>
+<span id="cb28-8"><a href=""></a>for (i in 1:1000) {</span>
+<span id="cb28-9"><a href=""></a>  results[i] &lt;- run_one_simulation()</span>
+<span id="cb28-10"><a href=""></a>}</span>
+<span id="cb28-11"><a href=""></a></span>
+<span id="cb28-12"><a href=""></a># 3. Weigh every 3rd cat and store the weights</span>
+<span id="cb28-13"><a href=""></a>weights &lt;- rep(NA, 1000/3)</span>
+<span id="cb28-14"><a href=""></a>result_index &lt;- 1</span>
+<span id="cb28-15"><a href=""></a>for (cat_index in seq(3, 999, by = 3)) {</span>
+<span id="cb28-16"><a href=""></a>  weights[result_index] &lt;- weighCat(cats[cat_index])</span>
+<span id="cb28-17"><a href=""></a>  result_index &lt;- result_index + 1</span>
+<span id="cb28-18"><a href=""></a>}</span>
+<span id="cb28-19"><a href=""></a></span>
+<span id="cb28-20"><a href=""></a># 4. Weigh and store the female cats</span>
+<span id="cb28-21"><a href=""></a>female_weights &lt;- rep(NA, 1000)</span>
+<span id="cb28-22"><a href=""></a>result_index &lt;- 1</span>
+<span id="cb28-23"><a href=""></a>for (cat_index in 1:1000) {</span>
+<span id="cb28-24"><a href=""></a>  if (cats$sex[cat_index] == "female") {</span>
+<span id="cb28-25"><a href=""></a>    female_weights[result_index] &lt;- weighCat(cats[cat_index])</span>
+<span id="cb28-26"><a href=""></a>    result_index &lt;- result_index + 1</span>
+<span id="cb28-27"><a href=""></a>  }</span>
+<span id="cb28-28"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <p>Exercise: Use any language and loop structures to do the following.</p>
 <ol type="1">
 <li>Print a sequence of texts: “1 moose 4 legs”, “2 moose 8 legs”, …, “30 moose 120 legs”.</li>
-<li>Simulate the Martingale doubling system` (<a href="../homework/homework_1.qmd">Homework 1</a>) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.</li>
+<li>Simulate the Martingale doubling system` (<a href="../homework/homework_1.html" target="_blank">Homework 1</a>) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="cf">for</span> (moose <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>) {</span>
+<span id="cb29-2"><a href=""></a>  <span class="fu">cat</span>(moose, <span class="st">"moose"</span>, <span class="dv">4</span> <span class="sc">*</span> moose, <span class="st">"legs</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb29-3"><a href=""></a>}</span>
+<span id="cb29-4"><a href=""></a></span>
+<span id="cb29-5"><a href=""></a></span>
+<span id="cb29-6"><a href=""></a>net <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-7"><a href=""></a>bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb29-8"><a href=""></a></span>
+<span id="cb29-9"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb29-10"><a href=""></a>  </span>
+<span id="cb29-11"><a href=""></a>  roll <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">'W'</span>,<span class="st">'L'</span>),</span>
+<span id="cb29-12"><a href=""></a>         <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb29-13"><a href=""></a>         <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.48</span>,<span class="fl">0.52</span>))</span>
+<span id="cb29-14"><a href=""></a>  </span>
+<span id="cb29-15"><a href=""></a>  <span class="cf">if</span>(roll <span class="sc">==</span> <span class="st">"W"</span>){</span>
+<span id="cb29-16"><a href=""></a>    net <span class="ot">&lt;-</span> net <span class="sc">+</span> bet</span>
+<span id="cb29-17"><a href=""></a>    bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb29-18"><a href=""></a>  }</span>
+<span id="cb29-19"><a href=""></a>  <span class="cf">if</span>(roll <span class="sc">==</span> <span class="st">"L"</span>){</span>
+<span id="cb29-20"><a href=""></a>    net <span class="ot">&lt;-</span> net <span class="sc">-</span> bet</span>
+<span id="cb29-21"><a href=""></a>    bet <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>bet</span>
+<span id="cb29-22"><a href=""></a>  }</span>
+<span id="cb29-23"><a href=""></a>  </span>
+<span id="cb29-24"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'game'</span>,i,<span class="st">'||result'</span>,roll,<span class="st">'||next bet'</span>,bet,<span class="st">'||net'</span>,net))</span>
+<span id="cb29-25"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </section>
 <section id="while-loops" class="slide level2 scrollable">
 <h2>While loops</h2>
 <p>Basic example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb28-2"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
-<span id="cb28-3"><a href=""></a>  <span class="fu">print</span>(x)</span>
-<span id="cb28-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb28-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb30-2"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
+<span id="cb30-3"><a href=""></a>  <span class="fu">print</span>(x)</span>
+<span id="cb30-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb30-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A <code>while</code> loop has three ingredients:</p>
 <ul>
 <li>initialization</li>
@@ -475,22 +538,116 @@ E[X] = \frac{1}{6}(20) + \frac{2}{6}(10) + \frac{3}{6}(-15)
 <li>It is important to properly update the objects involved in the while-loop condition.</li>
 <li>It is also recommended to set a safety upper bound so the loop cannot run forever.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb29-2"><a href=""></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb29-3"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">&amp;&amp;</span> count <span class="sc">&lt;</span> <span class="dv">1000</span>) {</span>
-<span id="cb29-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb29-5"><a href=""></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb29-6"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb31-2"><a href=""></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb31-3"><a href=""></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">&amp;&amp;</span> count <span class="sc">&lt;</span> <span class="dv">1000</span>) {</span>
+<span id="cb31-4"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-5"><a href=""></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-6"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Exercise: “fake coding”</p>
 <ol type="1">
 <li>Play a game until you win <span class="math inline">\(5\)</span>.</li>
 <li>Play a game until you win <span class="math inline">\(5\)</span> or lose <span class="math inline">\(100\)</span>.</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb32-1"><a href=""></a># 1. Play until the net winnings reach $5</span>
+<span id="cb32-2"><a href=""></a>net_winnings &lt;- 0</span>
+<span id="cb32-3"><a href=""></a>number_of_plays &lt;- 0</span>
+<span id="cb32-4"><a href=""></a>maximum_number_of_plays &lt;- 10000</span>
+<span id="cb32-5"><a href=""></a></span>
+<span id="cb32-6"><a href=""></a>while (net_winnings &lt; 5 &amp; number_of_plays &lt; maximum_number_of_plays) {</span>
+<span id="cb32-7"><a href=""></a>  # update net_winnings and number_of_plays</span>
+<span id="cb32-8"><a href=""></a>}</span>
+<span id="cb32-9"><a href=""></a></span>
+<span id="cb32-10"><a href=""></a># 2. Play until winning $5 or losing $100</span>
+<span id="cb32-11"><a href=""></a>net_winnings &lt;- 0</span>
+<span id="cb32-12"><a href=""></a>number_of_plays &lt;- 0</span>
+<span id="cb32-13"><a href=""></a>maximum_number_of_plays &lt;- 10000</span>
+<span id="cb32-14"><a href=""></a></span>
+<span id="cb32-15"><a href=""></a>while (net_winnings &lt; 5 &amp; net_winnings &gt; -100 &amp; number_of_plays &lt; maximum_number_of_plays) {</span>
+<span id="cb32-16"><a href=""></a>  # update net_winnings and number_of_plays</span>
+<span id="cb32-17"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <p>Exercise: Use any language and loop structures to do the following.</p>
 <ol type="1">
 <li>Simulate the Martingale doubling system until you win <span class="math inline">\(5\)</span> or lose <span class="math inline">\(100\)</span>. Start the betting amount at <span class="math inline">\(1\)</span>; if you win, you bet <span class="math inline">\(1\)</span>; if you lose, you double your bet. Assume a winning probability of <span class="math inline">\(0.48\)</span>. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.</li>
 <li>Write an R function to perform the above simulation. Carefully design the inputs and outputs of the function.</li>
 </ol>
+<details>
+<summary>
+Show solution: one simulation
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>net <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb33-2"><a href=""></a>bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-3"><a href=""></a>counter <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-4"><a href=""></a></span>
+<span id="cb33-5"><a href=""></a><span class="cf">while</span> ((net <span class="sc">&lt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (net <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">100</span>) <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">10000</span>) {</span>
+<span id="cb33-6"><a href=""></a>  roll <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"W"</span>, <span class="st">"L"</span>),</span>
+<span id="cb33-7"><a href=""></a>                 <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb33-8"><a href=""></a>                 <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.48</span>, <span class="fl">0.52</span>))</span>
+<span id="cb33-9"><a href=""></a></span>
+<span id="cb33-10"><a href=""></a>  <span class="cf">if</span> (roll <span class="sc">==</span> <span class="st">"W"</span>) {</span>
+<span id="cb33-11"><a href=""></a>    net <span class="ot">&lt;-</span> net <span class="sc">+</span> bet</span>
+<span id="cb33-12"><a href=""></a>    bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-13"><a href=""></a>  }</span>
+<span id="cb33-14"><a href=""></a>  <span class="cf">if</span> (roll <span class="sc">==</span> <span class="st">"L"</span>) {</span>
+<span id="cb33-15"><a href=""></a>    net <span class="ot">&lt;-</span> net <span class="sc">-</span> bet</span>
+<span id="cb33-16"><a href=""></a>    bet <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> bet</span>
+<span id="cb33-17"><a href=""></a>  }</span>
+<span id="cb33-18"><a href=""></a></span>
+<span id="cb33-19"><a href=""></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb33-20"><a href=""></a></span>
+<span id="cb33-21"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"game"</span>, counter,</span>
+<span id="cb33-22"><a href=""></a>              <span class="st">"||result"</span>, roll,</span>
+<span id="cb33-23"><a href=""></a>              <span class="st">"||next bet"</span>, bet,</span>
+<span id="cb33-24"><a href=""></a>              <span class="st">"||net"</span>, net))</span>
+<span id="cb33-25"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<details>
+<summary>
+Show solution: simulation function
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>simulate_martingale <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">win_probability =</span> <span class="fl">0.48</span>,</span>
+<span id="cb34-2"><a href=""></a>                                <span class="at">win_target =</span> <span class="dv">5</span>,</span>
+<span id="cb34-3"><a href=""></a>                                <span class="at">loss_limit =</span> <span class="sc">-</span><span class="dv">100</span>,</span>
+<span id="cb34-4"><a href=""></a>                                <span class="at">maximum_games =</span> <span class="dv">10000</span>) {</span>
+<span id="cb34-5"><a href=""></a>  net <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb34-6"><a href=""></a>  bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-7"><a href=""></a>  counter <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-8"><a href=""></a></span>
+<span id="cb34-9"><a href=""></a>  <span class="cf">while</span> ((net <span class="sc">&lt;</span> win_target) <span class="sc">&amp;</span></span>
+<span id="cb34-10"><a href=""></a>         (net <span class="sc">&gt;</span> loss_limit) <span class="sc">&amp;</span></span>
+<span id="cb34-11"><a href=""></a>         counter <span class="sc">&lt;</span> maximum_games) {</span>
+<span id="cb34-12"><a href=""></a>    roll <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"W"</span>, <span class="st">"L"</span>),</span>
+<span id="cb34-13"><a href=""></a>                   <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb34-14"><a href=""></a>                   <span class="at">prob =</span> <span class="fu">c</span>(win_probability, <span class="dv">1</span> <span class="sc">-</span> win_probability))</span>
+<span id="cb34-15"><a href=""></a></span>
+<span id="cb34-16"><a href=""></a>    <span class="cf">if</span> (roll <span class="sc">==</span> <span class="st">"W"</span>) {</span>
+<span id="cb34-17"><a href=""></a>      net <span class="ot">&lt;-</span> net <span class="sc">+</span> bet</span>
+<span id="cb34-18"><a href=""></a>      bet <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-19"><a href=""></a>    }</span>
+<span id="cb34-20"><a href=""></a>    <span class="cf">if</span> (roll <span class="sc">==</span> <span class="st">"L"</span>) {</span>
+<span id="cb34-21"><a href=""></a>      net <span class="ot">&lt;-</span> net <span class="sc">-</span> bet</span>
+<span id="cb34-22"><a href=""></a>      bet <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> bet</span>
+<span id="cb34-23"><a href=""></a>    }</span>
+<span id="cb34-24"><a href=""></a></span>
+<span id="cb34-25"><a href=""></a>    counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb34-26"><a href=""></a></span>
+<span id="cb34-27"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"game"</span>, counter,</span>
+<span id="cb34-28"><a href=""></a>                <span class="st">"||result"</span>, roll,</span>
+<span id="cb34-29"><a href=""></a>                <span class="st">"||next bet"</span>, bet,</span>
+<span id="cb34-30"><a href=""></a>                <span class="st">"||net"</span>, net))</span>
+<span id="cb34-31"><a href=""></a>  }</span>
+<span id="cb34-32"><a href=""></a></span>
+<span id="cb34-33"><a href=""></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">net =</span> net, <span class="at">games =</span> counter <span class="sc">-</span> <span class="dv">1</span>, <span class="at">next_bet =</span> bet))</span>
+<span id="cb34-34"><a href=""></a>}</span>
+<span id="cb34-35"><a href=""></a></span>
+<span id="cb34-36"><a href=""></a><span class="fu">simulate_martingale</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The function takes the winning probability, stopping targets, and maximum number of games as inputs. It returns the final net winnings, number of games played, and next betting value.</p>
+</details>
 
 </section></section>
     </div>

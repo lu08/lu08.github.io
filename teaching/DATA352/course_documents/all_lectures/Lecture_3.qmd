@@ -265,10 +265,79 @@ Exercise: "fake coding"
 3. Suppose there is a large dataset of 1000 cats. Extract the 3rd, 6th, 9th, ... cats from the dataset; for each cat, run a function `weighCat()` and store the weight in a vector.
 4. In a large dataset of cats, weigh and store the weights of the female cats.
 
+<details>
+<summary>Show solution</summary>
+
+```text
+# 1. Repeat a task 10 times
+for (i in 1:10) {
+  perform_task()
+}
+
+# 2. Repeat a simulation 1000 times and store each result
+results <- rep(NA, 1000)
+for (i in 1:1000) {
+  results[i] <- run_one_simulation()
+}
+
+# 3. Weigh every 3rd cat and store the weights
+weights <- rep(NA, 1000/3)
+result_index <- 1
+for (cat_index in seq(3, 999, by = 3)) {
+  weights[result_index] <- weighCat(cats[cat_index])
+  result_index <- result_index + 1
+}
+
+# 4. Weigh and store the female cats
+female_weights <- rep(NA, 1000)
+result_index <- 1
+for (cat_index in 1:1000) {
+  if (cats$sex[cat_index] == "female") {
+    female_weights[result_index] <- weighCat(cats[cat_index])
+    result_index <- result_index + 1
+  }
+}
+```
+
+
+</details>
+
 Exercise: Use any language and loop structures to do the following.
 
 1. Print a sequence of texts: “1 moose 4 legs”, “2 moose 8 legs”, ..., “30 moose 120 legs”.
-2. Simulate the Martingale doubling system` ([Homework 1](../homework/homework_1.qmd)) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of $0.48$. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.
+2. Simulate the Martingale doubling system` ([Homework 1](../homework/homework_1.html){target="_blank"}) 10 times. Start the betting amount at $1; if you win, you bet $1; if you lose, you double your bet. Assume a winning probability of $0.48$. For each of the 10 simulated games, print the game result (W or L), the current net winnings, and the current betting value.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+for (moose in 1:30) {
+  cat(moose, "moose", 4 * moose, "legs\n")
+}
+
+
+net <- 0
+bet <- 1
+
+for(i in 1:10){
+  
+  roll <- sample(x = c('W','L'),
+         size = 1,
+         prob = c(0.48,0.52))
+  
+  if(roll == "W"){
+    net <- net + bet
+    bet <- 1
+  }
+  if(roll == "L"){
+    net <- net - bet
+    bet <- 2*bet
+  }
+  
+  print(paste('game',i,'||result',roll,'||next bet',bet,'||net',net))
+}
+```
+</details>
 
 
 ---
@@ -309,10 +378,114 @@ Exercise: "fake coding"
 1. Play a game until you win $5$.
 2. Play a game until you win $5$ or lose $100$.
 
+<details>
+<summary>Show solution</summary>
+
+```text
+# 1. Play until the net winnings reach $5
+net_winnings <- 0
+number_of_plays <- 0
+maximum_number_of_plays <- 10000
+
+while (net_winnings < 5 & number_of_plays < maximum_number_of_plays) {
+  # update net_winnings and number_of_plays
+}
+
+# 2. Play until winning $5 or losing $100
+net_winnings <- 0
+number_of_plays <- 0
+maximum_number_of_plays <- 10000
+
+while (net_winnings < 5 & net_winnings > -100 & number_of_plays < maximum_number_of_plays) {
+  # update net_winnings and number_of_plays
+}
+```
+
+</details>
+
 Exercise: Use any language and loop structures to do the following.
 
 1. Simulate the Martingale doubling system until you win $5$ or lose $100$. Start the betting amount at $1$; if you win, you bet $1$; if you lose, you double your bet. Assume a winning probability of $0.48$. For each simulated game, print the game result (W or L), the current net winnings, and the current betting value.
 2. Write an R function to perform the above simulation.  Carefully design the inputs and outputs of the function.
+
+<details>
+<summary>Show solution: one simulation</summary>
+
+```r
+net <- 0
+bet <- 1
+counter <- 1
+
+while ((net < 5) & (net > -100) & counter < 10000) {
+  roll <- sample(x = c("W", "L"),
+                 size = 1,
+                 prob = c(0.48, 0.52))
+
+  if (roll == "W") {
+    net <- net + bet
+    bet <- 1
+  }
+  if (roll == "L") {
+    net <- net - bet
+    bet <- 2 * bet
+  }
+
+  counter <- counter + 1
+
+  print(paste("game", counter,
+              "||result", roll,
+              "||next bet", bet,
+              "||net", net))
+}
+```
+
+</details>
+
+<details>
+<summary>Show solution: simulation function</summary>
+
+```r
+simulate_martingale <- function(win_probability = 0.48,
+                                win_target = 5,
+                                loss_limit = -100,
+                                maximum_games = 10000) {
+  net <- 0
+  bet <- 1
+  counter <- 1
+
+  while ((net < win_target) &
+         (net > loss_limit) &
+         counter < maximum_games) {
+    roll <- sample(x = c("W", "L"),
+                   size = 1,
+                   prob = c(win_probability, 1 - win_probability))
+
+    if (roll == "W") {
+      net <- net + bet
+      bet <- 1
+    }
+    if (roll == "L") {
+      net <- net - bet
+      bet <- 2 * bet
+    }
+
+    counter <- counter + 1
+
+    print(paste("game", counter,
+                "||result", roll,
+                "||next bet", bet,
+                "||net", net))
+  }
+
+  return(list(net = net, games = counter - 1, next_bet = bet))
+}
+
+simulate_martingale()
+```
+
+The function takes the winning probability, stopping targets, and maximum number of games as inputs. It returns the final net winnings, number of games played, and next betting value.
+
+</details>
 
 
 
