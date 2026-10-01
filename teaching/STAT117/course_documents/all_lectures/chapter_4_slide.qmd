@@ -330,39 +330,7 @@ Interpretation examples:
 >If z-score is -1.2: The raw score is 1.2 standard deviations BELOW the mean.
 
 
-
-## Example: NBA
-
-The following information are given in the `NBAPlayers2024` data from [Statistics: Unlocking the Power of Data](https://www.lock5stat.com/datapage4e.html). Z-scores allow us to compare different players and skill sets.
-
-**LeBron James**
-
-| Statistic | Raw score | Mean | SD | z-score |
-|:--|--:|--:|--:|--:|
-| Rebounds per game | 7.30 | 5.11 | 2.41 | |
-| Field-goal percentage | 0.540 | 0.478 | 0.062 | |
-| Three-point percentage | 0.410 | 0.350 | 0.075 | |
-
-**Stephen Curry**
-
-| Statistic | Raw score | Mean | SD | z-score |
-|:--|--:|--:|--:|--:|
-| Rebounds per game | 4.46 | 5.11 | 2.41 | |
-| Field-goal percentage | 0.450 | 0.478 | 0.062 | |
-| Three-point percentage | 0.408 | 0.350 | 0.075 | |
-
-(a) Calculate each z-score.
-
-<br>
-
-(b) Which skill set is LeBron James better at relative to his peers? What about Stephen Curry?
-
-<br>
-
-(c) If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?
-
-
-## Example: achievement scores
+## Example: achievement scores (NELS)
 
 1. A tenth-grade student scored 53 on both the math achievement test (`achmat10`) and the reading achievement test (`achrdg10`).  The mean and standard deviation values for each variable can be found using `Jamovi - Analyses - Exploration - Descriptives`.
 
@@ -391,6 +359,40 @@ The following information are given in the `NBAPlayers2024` data from [Statistic
 2. Another 10th grade student from the NELS dataset has a z-score of 2.1 for the math achievement test (`achmat10`).  Is this a good score?  What is the student’s raw score?
 
 <br>
+
+
+
+## Example: NBA
+
+The following information are given in the `NBAPlayers2024` data from [Statistics: Unlocking the Power of Data](https://www.lock5stat.com/datapage4e.html).
+
+**LeBron James**
+
+| Statistic | Raw score | Mean | SD | z-score |
+|:--|--:|--:|--:|--:|
+| Rebounds per game | 7.30 | 5.11 | 2.41 | |
+| Field-goal percentage | 0.540 | 0.478 | 0.062 | |
+| Three-point percentage | 0.410 | 0.350 | 0.075 | |
+
+**Stephen Curry**
+
+| Statistic | Raw score | Mean | SD | z-score |
+|:--|--:|--:|--:|--:|
+| Rebounds per game | 4.46 | 5.11 | 2.41 | |
+| Field-goal percentage | 0.450 | 0.478 | 0.062 | |
+| Three-point percentage | 0.408 | 0.350 | 0.075 | |
+
+(a) Calculate each z-score.
+
+<br>
+
+(b) Which skill set is LeBron James better at relative to his peers? What about Stephen Curry?
+
+<br>
+
+(c) If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?
+
+
 
 
 ## Z-scores and outliers
