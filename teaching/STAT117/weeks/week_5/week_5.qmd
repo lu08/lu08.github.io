@@ -15,3 +15,9 @@ In person **Exam 1**: covers Chapters 1, 2, 3, and first half of Chapter 4.  Pra
 
 
 ## Thursday, Oct 1
+
+We will go over z-scores (second half of [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html){target="_blank"}).  Reminder: when we finish Chapter 4, you should do [Chapter 4 homework questions](../../course_documents/homework/homework_4.qmd){target="_blank"} for your own practice (not collected for submission).
+
+[Link to fullscreen](../../course_documents/all_lectures/chapter_4_slide.html){target="_blank"}
+
+<iframe src="../../course_documents/all_lectures/chapter_4_slide.html" width="100%" height="650px" style="border:none;"></iframe>

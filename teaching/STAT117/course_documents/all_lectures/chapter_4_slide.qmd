@@ -267,3 +267,168 @@ $$
 </details>
 
 
+# Z-scores
+
+## Why calculate z-scores?
+
+We want to **standardize** data so that we can compare scores regardless of their original unit or scale.
+
+- Motivating example 1: Tom has an SAT score of 1400. Jerry has an ACT score of 28. Who has the better score relative to the other students who took the same test?
+
+| Test | Raw score | Mean | SD |
+|:--|--:|--:|--:|
+| SAT | 1400 | 1100 | 150 |
+| ACT | 28 | 25 | 2 |
+
+<br>
+
+- Motivating example 2: In the NELS dataset, the `SES` score of student ID 1 is 23. How do we make sense of this value?  What about for student with ID 2? 
+
+
+## Z-score: definition
+
+The formula for calculating a z-score is:
+
+$$
+\textit{z-score} = \frac{\textit{raw score} - \textit{mean}}{\textit{sd}}
+$$
+
+To convert a z-score back to the raw score:
+$$
+\textit{raw score} = \textit{z-score} \times \textit{sd} + \textit{mean}
+$$
+
+
+---
+For example, the z-score for SES is calculated as
+
+$$
+z_{SES} = \frac{\text{SES} - 18.4}{6.92}
+$$
+
+- Why is this a linear transformation?
+
+<br>
+
+- What is the mean of $z_{SES}$?
+
+<br>
+
+- What is the standard deviation of $z_{SES}$?
+
+<br>
+
+- What is the skewness ratio of $z_{SES}$?
+
+<br>
+
+
+Interpretation examples:
+
+>If z-score is 0.7: The raw score is 0.7 standard deviations ABOVE the mean.
+
+>If z-score is -1.2: The raw score is 1.2 standard deviations BELOW the mean.
+
+
+
+## Example: NBA
+
+The following information are given in the `NBAPlayers2024` data from [Statistics: Unlocking the Power of Data](https://www.lock5stat.com/datapage4e.html). Z-scores allow us to compare different players and skill sets.
+
+**LeBron James**
+
+| Statistic | Raw score | Mean | SD | z-score |
+|:--|--:|--:|--:|--:|
+| Rebounds per game | 7.30 | 5.11 | 2.41 | |
+| Field-goal percentage | 0.540 | 0.478 | 0.062 | |
+| Three-point percentage | 0.410 | 0.350 | 0.075 | |
+
+**Stephen Curry**
+
+| Statistic | Raw score | Mean | SD | z-score |
+|:--|--:|--:|--:|--:|
+| Rebounds per game | 4.46 | 5.11 | 2.41 | |
+| Field-goal percentage | 0.450 | 0.478 | 0.062 | |
+| Three-point percentage | 0.408 | 0.350 | 0.075 | |
+
+(a) Calculate each z-score.
+
+<br>
+
+(b) Which skill set is LeBron James better at relative to his peers? What about Stephen Curry?
+
+<br>
+
+(c) If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?
+
+
+## Example: achievement scores
+
+1. A tenth-grade student scored 53 on both the math achievement test (`achmat10`) and the reading achievement test (`achrdg10`).  The mean and standard deviation values for each variable can be found using `Jamovi - Analyses - Exploration - Descriptives`.
+
+| Test | Student score | Mean | SD |
+|:--|--:|--:|--:|
+| Math (`achmat10`) | 53 | 57 | 7.84 |
+| Reading (`achrdg10`) | 53 | 56.1 | 8.30 |
+
+(a) What is the z-score for her math achievement?
+
+<br>
+
+(b) What is the z-score for her reading achievement?
+
+<br>
+
+(c) Based on z-scores, on which test did she do better relative to her peers?
+
+<br>
+
+(d) Based on cumulative percentage, on which test did she do better relative to her peers?
+
+<br>
+
+
+2. Another 10th grade student from the NELS dataset has a z-score of 2.1 for the math achievement test (`achmat10`).  Is this a good score?  What is the student’s raw score?
+
+<br>
+
+
+## Z-scores and outliers
+
+What kind of z-score values would be considered **unusual**?
+
+Exercise: pick a numeric variable from the NELS dataset and calculate the raw scores for the following z-scores.
+
+| z-score | raw-score |
+|:--:|:--:|
+| 0 | |
+| -0.5 | |
+| 1.5 | |
+| -4.5 | |
+| 12.5 | |
+
+
+- For many numerical variables, it is *unlikely* to be more than 2 SD’s away from the mean ([4.5% chance if the distribution is normal](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) – more on this later).
+
+- As a result, if a z-score is greater than 2 or less than -2, we could consider the corresponding raw score as an outlier.
+
+
+
+
+## Summary
+
+- [Z-score](https://en.wikipedia.org/wiki/Standard_score) (also called "standard score") is defined via the linear transformation formula.
+
+<br>
+
+- The distribution of z-scores for any variable would have a mean of 0 and a standard deviation of 1 (by definition).
+
+- Because the definition of a z-score involves the mean and standard deviation, it only really makes sense to talk about z-scores with numeric variables.
+
+- We can use z-scores to determine **outliers**. For instance, we can call a raw score an outlier if its z-score is greater than 2 or less than -2.
+
+- We can standardize a variable using:
+
+		- z-score
+
+		- cumulative percentage (i.e., percentile rank)

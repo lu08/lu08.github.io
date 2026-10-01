@@ -5,8 +5,8 @@ format: html
 
 ## Overview
 
-- Oct 13 (Tuesday):
-- Oct 15 (Thursday):
+- Oct 13 (Tuesday): No class (fall break)
+- Oct 15 (Thursday): in-person lecture; no quiz
 
 
 ## Tuesday, Oct 13

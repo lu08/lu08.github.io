@@ -5,8 +5,8 @@ format: html
 
 ## Overview
 
-- Oct 6 (Tuesday):
-- Oct 8 (Thursday):
+- Oct 6 (Tuesday): asynchronous lecture
+- Oct 8 (Thursday): in-person lecture, **quiz 4**
 
 
 ## Tuesday, Oct 6

@@ -575,8 +575,278 @@ Show solution
 </tbody>
 </table>
 </details>
+</section>
+<section>
+<section id="z-scores" class="title-slide slide level1 center">
+<h1>Z-scores</h1>
 
 </section>
+<section id="why-calculate-z-scores" class="slide level2">
+<h2>Why calculate z-scores?</h2>
+<p>We want to <strong>standardize</strong> data so that we can compare scores regardless of their original unit or scale.</p>
+<ul>
+<li>Motivating example 1: Tom has an SAT score of 1400. Jerry has an ACT score of 28. Who has the better score relative to the other students who took the same test?</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Test</th>
+<th style="text-align: right;">Raw score</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SAT</td>
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">1100</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACT</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ul>
+<li>Motivating example 2: In the NELS dataset, the <code>SES</code> score of student ID 1 is 23. How do we make sense of this value? What about for student with ID 2?</li>
+</ul>
+</section>
+<section id="z-score-definition" class="slide level2">
+<h2>Z-score: definition</h2>
+<p>The formula for calculating a z-score is:</p>
+<p><span class="math display">\[
+\textit{z-score} = \frac{\textit{raw score} - \textit{mean}}{\textit{sd}}
+\]</span></p>
+<p>To convert a z-score back to the raw score: <span class="math display">\[
+\textit{raw score} = \textit{z-score} \times \textit{sd} + \textit{mean}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>For example, the z-score for SES is calculated as</p>
+<p><span class="math display">\[
+z_{SES} = \frac{\text{SES} - 18.4}{6.92}
+\]</span></p>
+<ul>
+<li>Why is this a linear transformation?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>What is the mean of <span class="math inline">\(z_{SES}\)</span>?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>What is the standard deviation of <span class="math inline">\(z_{SES}\)</span>?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>What is the skewness ratio of <span class="math inline">\(z_{SES}\)</span>?</li>
+</ul>
+<p><br></p>
+<p>Interpretation examples:</p>
+<blockquote>
+<p>If z-score is 0.7: The raw score is 0.7 standard deviations ABOVE the mean.</p>
+</blockquote>
+<blockquote>
+<p>If z-score is -1.2: The raw score is 1.2 standard deviations BELOW the mean.</p>
+</blockquote>
+</section>
+<section id="example-nba" class="slide level2 scrollable">
+<h2>Example: NBA</h2>
+<p>The following information are given in the <code>NBAPlayers2024</code> data from <a href="https://www.lock5stat.com/datapage4e.html">Statistics: Unlocking the Power of Data</a>. Z-scores allow us to compare different players and skill sets.</p>
+<p><strong>LeBron James</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Raw score</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">z-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rebounds per game</td>
+<td style="text-align: right;">7.30</td>
+<td style="text-align: right;">5.11</td>
+<td style="text-align: right;">2.41</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field-goal percentage</td>
+<td style="text-align: right;">0.540</td>
+<td style="text-align: right;">0.478</td>
+<td style="text-align: right;">0.062</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Three-point percentage</td>
+<td style="text-align: right;">0.410</td>
+<td style="text-align: right;">0.350</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stephen Curry</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Raw score</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">z-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rebounds per game</td>
+<td style="text-align: right;">4.46</td>
+<td style="text-align: right;">5.11</td>
+<td style="text-align: right;">2.41</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field-goal percentage</td>
+<td style="text-align: right;">0.450</td>
+<td style="text-align: right;">0.478</td>
+<td style="text-align: right;">0.062</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Three-point percentage</td>
+<td style="text-align: right;">0.408</td>
+<td style="text-align: right;">0.350</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Calculate each z-score.</li>
+</ol>
+<p><br></p>
+<ol start="2" type="a">
+<li>Which skill set is LeBron James better at relative to his peers? What about Stephen Curry?</li>
+</ol>
+<p><br></p>
+<ol start="3" type="a">
+<li>If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?</li>
+</ol>
+</section>
+<section id="example-achievement-scores" class="slide level2 scrollable">
+<h2>Example: achievement scores</h2>
+<ol type="1">
+<li>A tenth-grade student scored 53 on both the math achievement test (<code>achmat10</code>) and the reading achievement test (<code>achrdg10</code>). The mean and standard deviation values for each variable can be found using <code>Jamovi - Analyses - Exploration - Descriptives</code>.</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Test</th>
+<th style="text-align: right;">Student score</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Math (<code>achmat10</code>)</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">7.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reading (<code>achrdg10</code>)</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">56.1</td>
+<td style="text-align: right;">8.30</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>What is the z-score for her math achievement?</li>
+</ol>
+<p><br></p>
+<ol start="2" type="a">
+<li>What is the z-score for her reading achievement?</li>
+</ol>
+<p><br></p>
+<ol start="3" type="a">
+<li>Based on z-scores, on which test did she do better relative to her peers?</li>
+</ol>
+<p><br></p>
+<ol start="4" type="a">
+<li>Based on cumulative percentage, on which test did she do better relative to her peers?</li>
+</ol>
+<p><br></p>
+<ol start="2" type="1">
+<li>Another 10th grade student from the NELS dataset has a z-score of 2.1 for the math achievement test (<code>achmat10</code>). Is this a good score? What is the student’s raw score?</li>
+</ol>
+<p><br></p>
+</section>
+<section id="z-scores-and-outliers" class="slide level2">
+<h2>Z-scores and outliers</h2>
+<p>What kind of z-score values would be considered <strong>unusual</strong>?</p>
+<p>Exercise: pick a numeric variable from the NELS dataset and calculate the raw scores for the following z-scores.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">z-score</th>
+<th style="text-align: center;">raw-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-0.5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-4.5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12.5</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>For many numerical variables, it is <em>unlikely</em> to be more than 2 SD’s away from the mean (<a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">4.5% chance if the distribution is normal</a> – more on this later).</p></li>
+<li><p>As a result, if a z-score is greater than 2 or less than -2, we could consider the corresponding raw score as an outlier.</p></li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Standard_score">Z-score</a> (also called “standard score”) is defined via the linear transformation formula.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>The distribution of z-scores for any variable would have a mean of 0 and a standard deviation of 1 (by definition).</p></li>
+<li><p>Because the definition of a z-score involves the mean and standard deviation, it only really makes sense to talk about z-scores with numeric variables.</p></li>
+<li><p>We can use z-scores to determine <strong>outliers</strong>. For instance, we can call a raw score an outlier if its z-score is greater than 2 or less than -2.</p></li>
+<li><p>We can standardize a variable using:</p>
+<pre><code>  - z-score
+
+  - cumulative percentage (i.e., percentile rank)</code></pre></li>
+</ul>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
