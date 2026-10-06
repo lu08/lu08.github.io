@@ -1,0 +1,341 @@
+---
+title: "Lecture 4: Hollywood movies"
+subtitle: "Tidyverse for data manipulation"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    code-font-size: 1.15em
+    chalkboard:
+      buttons: true
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r setup}
+#| include: false
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+
+## Prep work
+
+- **tidyverse** packages: https://www.tidyverse.org/packages/
+
+- A popular collection of R packages for working with data in a **tidy** format: each variable is a column, each observation is a row, and each value is a cell.
+
+```{r}
+library(tidyverse)
+library(Lock5Data)
+```
+
+
+- We'll use the `HollywoodMovies` dataset.
+```{r}
+#| eval: false
+str(HollywoodMovies)
+head(HollywoodMovies)
+?HollywoodMovies
+```
+
+## A tidyverse workflow
+
+Tidyverse functions take a data frame as their first input and return a data frame, so functions can be chained with the native R pipe `|>`.
+
+```{r}
+#| eval: false
+HollywoodMovies |>
+  filter(Genre == "Action") |>
+  select(Movie, Genre, WorldwideBO)
+```
+
+Read the pipe as **“then”**: start with `HollywoodMovies`, keep action movies, then keep the three named columns.
+
+## Choose rows and columns
+
+- `filter()` keeps rows that meet logical conditions.
+- `select()` keeps or drops columns.
+- `slice()` chooses rows by position.
+
+```{r}
+#| eval: false
+HollywoodMovies |>
+  filter(Genre == "Comedy", RottenTomatoes >= 80) |>
+  select(Movie, Genre, RottenTomatoes)
+
+HollywoodMovies |>
+  slice(1:5)
+```
+
+## Create and order variables
+
+- `mutate()` creates or changes columns.
+- `arrange()` sorts rows; use `desc()` for descending order.
+- `slice_max()` selects rows with the largest values of a column.
+
+```{r}
+#| eval: false
+HollywoodMovies |>
+  mutate(score_gap = abs(RottenTomatoes - AudienceScore)) |>
+  arrange(desc(score_gap)) |>
+  select(Movie, RottenTomatoes, AudienceScore, score_gap) |>
+  slice_head(n = 5)
+```
+
+## Summarize by group
+
+- `group_by()` defines groups for subsequent calculations.
+- `summarise()` returns one row per group.
+- `count()` is a concise way to count rows in each group.
+
+```{r}
+#| eval: false
+HollywoodMovies |>
+  group_by(Genre) |>
+  summarise(
+    mean_audience = mean(AudienceScore, na.rm = TRUE),
+    movie_count = n(),
+    .groups = "drop"
+  ) |>
+  arrange(desc(mean_audience))
+
+HollywoodMovies |>
+  count(Genre, sort = TRUE)
+```
+
+
+## Review questions
+- How many genres are there?  How many movies are in each genre?
+- What are the 10 movies with largest difference (in absolute value) between RottenTomatoes and AudienceScore?
+- Compare the mean AudienceScore by Genre of the movies.
+- What are the five action movies with the largest `WorldwideBO`?
+- Which movie has the largest `WorldwideBO` in each genre?
+
+
+
+## Subsetting: **'['**
+The square bracket syntax can be used as a function, with the function name **'['**
+```{r}
+#| eval: false
+HollywoodMovies$Movie[1:5]
+'['(HollywoodMovies$Movie, 1:5)  # as a function
+HollywoodMovies$Movie |> '['(1:5) # pipe version
+
+HollywoodMovies[5,1]
+HollywoodMovies |> '['(5,1)
+
+HollywoodMovies[5,]
+HollywoodMovies |> '['(5,)
+```
+
+
+
+
+## Subsetting: **filter**
+```{r}
+#| eval: false
+# Get info of action movies
+HollywoodMovies |>
+  filter(Genre == "Action")
+
+# Multiple conditions are combined with AND
+HollywoodMovies |>
+  filter(Genre == "Action", Profitability > 500)
+
+# OR conditions use |
+HollywoodMovies |>
+  filter(Genre == "Action" | Genre == "Adventure")
+```
+
+(Use `?dplyr::filter` to read the help page.)
+
+
+## Subsetting: **slice** and **select**
+
+```{r}
+#| eval: false
+# Keep selected rows by position
+HollywoodMovies |>
+  slice(c(1, 3, 5))
+
+# Keep or drop selected columns
+HollywoodMovies |>
+  select(Movie, Genre, WorldwideBO)
+
+HollywoodMovies |>
+  select(-Distributor, -TheatersOpen)
+```
+
+## Sampling: `slice_sample()`
+
+```{r}
+#| eval: false
+# Randomly sample 10% of rows, without replacement
+HollywoodMovies |>
+  slice_sample(prop = 0.1)
+
+# Sample five rows, allowing repeats
+HollywoodMovies |>
+  slice_sample(n = 5, replace = TRUE)
+```
+
+
+## Sorting and selecting top rows
+
+```{r}
+#| eval: false
+# Smallest five worldwide grosses
+HollywoodMovies |>
+  arrange(WorldwideBO) |>
+  slice_head(n = 5)
+
+# Largest five worldwide grosses
+HollywoodMovies |>
+  slice_max(order_by = WorldwideBO, n = 5, na_rm = TRUE) |>
+  select(Movie, Genre, WorldwideBO)
+
+# Top three values of a derived quantity; ties are retained by default
+HollywoodMovies |>
+  mutate(score_difference = abs(RottenTomatoes - AudienceScore)) |>
+  slice_max(order_by = score_difference, n = 3)
+```
+
+
+## Grouping and summaries
+
+```{r}
+#| eval: false
+# Summarise one row per genre
+HollywoodMovies |>
+  group_by(Genre) |>
+  summarise(mean_worldwide = mean(WorldwideBO, na.rm = TRUE), .groups = "drop")
+
+# Summarise by genre and year; n() counts rows in each group
+HollywoodMovies |>
+  group_by(Genre, Year) |>
+  summarise(
+    mean_worldwide = mean(WorldwideBO, na.rm = TRUE),
+    movie_count = n(),
+    .groups = "drop"
+  )
+```
+
+
+## Example: top 5 most profitable genres
+
+```{r}
+#| eval: false
+HollywoodMovies |>
+  filter(!is.na(Profitability)) |>
+  group_by(Genre) |>
+  summarise(
+    mean_profit = mean(Profitability),
+    movie_count = n(),
+    .groups = "drop"
+  ) |>
+  slice_max(order_by = mean_profit, n = 5)
+```
+
+- Nothing is stored; no change is made in the data frame.
+
+
+## Creating new variables
+
+```{r}
+#| eval: false
+# Create a derived column and select the five largest values
+HollywoodMovies |>
+  mutate(score_gap = abs(RottenTomatoes - AudienceScore)) |>
+  slice_max(order_by = score_gap, n = 5) |>
+  select(Movie, RottenTomatoes, AudienceScore, score_gap)
+
+# Save the updated data frame using explicit assignment
+movies_with_gap <- HollywoodMovies |>
+  mutate(score_gap = abs(RottenTomatoes - AudienceScore))
+
+# Keep only selected columns while creating a derived column
+HollywoodMovies |>
+  transmute(Movie, score_gap = abs(RottenTomatoes - AudienceScore))
+
+# Rename existing columns
+HollywoodMovies |>
+  rename(open_weekend_gross = OpenBO, theaters_at_open = TheatersOpen)
+```
+
+
+
+## Tibble
+
+A **tibble** is a modern version of an R data frame. It prints a compact preview and preserves familiar data-frame behavior while integrating with tidyverse functions.
+
+```{r}
+#| eval: false
+tbl_movie <- tibble::as_tibble(HollywoodMovies)
+class(tbl_movie)
+```
+
+## Warm-up solutions
+
+```{r}
+#| eval: false
+# Count movies by genre
+HollywoodMovies |>
+  count(Genre, name = "movie_count", sort = TRUE)
+
+# Find the 10 largest absolute score differences
+HollywoodMovies |>
+  mutate(score_gap = abs(RottenTomatoes - AudienceScore)) |>
+  slice_max(order_by = score_gap, n = 10) |>
+  select(Movie, RottenTomatoes, AudienceScore, score_gap)
+```
+
+## Warm-up solutions (continued)
+
+```{r}
+#| eval: false
+# Mean audience score by genre
+HollywoodMovies |>
+  group_by(Genre) |>
+  summarise(
+    mean_audience = mean(AudienceScore, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  arrange(desc(mean_audience))
+
+# Five highest-grossing action movies
+HollywoodMovies |>
+  filter(Genre == "Action") |>
+  slice_max(order_by = WorldwideBO, n = 5) |>
+  select(Movie, Genre, WorldwideBO)
+```
+
+## Warm-up solutions (continued)
+
+```{r}
+#| eval: false
+# Highest worldwide gross by genre (ties are retained)
+HollywoodMovies |>
+  group_by(Genre) |>
+  slice_max(order_by = WorldwideBO, n = 1) |>
+  ungroup() |>
+  select(Movie, Genre, WorldwideBO)
+```
+
+
+
+
+
+
+

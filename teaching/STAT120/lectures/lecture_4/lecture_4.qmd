@@ -1,0 +1,7 @@
+---
+format: html
+---
+
+[Link to fullscreen](lecture_4_slide.html)
+
+<iframe src="lecture_4_slide.html" width="100%" height="650px" style="border:none;"></iframe>

@@ -3,6 +3,9 @@ title: "Chapter 5: Bivariate Relationships"
 subtitle: "STAT117: Introduction to Statistics"
 format:
   revealjs:
+    width: 1050
+    height: 1050
+    margin: 0
     theme: default
     slide-number: true
     transition: fade
@@ -21,7 +24,7 @@ editor_options:
 
 ## Introduction
 
-Among runners, is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
+[Among runners](https://youtu.be/xWy2PzISjco), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
 
 In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
 
@@ -43,8 +46,11 @@ Example: In the `NELS` dataset, (`achrdg12`, `achmat12`) values can be considere
 - Student 1: (52.56, 59.69)
 - Student 2: (53.12, 55.36)
 - Student 3: (54.79, 56.73)
+- $\ldots$
 
 The scatterplot shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1. 
+
+## NELS achievement scatterplot
 
 ```{r}
 #| echo: true
@@ -74,7 +80,7 @@ text(52.56, 59.69, labels = "Student 1", pos = 4, col = "red", cex=2)
 
 ## Other Scatterplot Examples
 
-Here are a few examples of scatterplots (as discussed in [StatChat2](https://youtu.be/F24R1WWqiKM))
+Here are a few examples of scatterplots (see [StatChat2](https://youtu.be/F24R1WWqiKM))
 
 - [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)
 - [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)

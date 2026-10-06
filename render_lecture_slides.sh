@@ -7,6 +7,7 @@ slides=(
   "teaching/STAT120/lectures/lecture_1/lecture_1_slide.qmd"
   "teaching/STAT120/lectures/lecture_2/lecture_2_slide.qmd"
   "teaching/STAT120/lectures/lecture_3/lecture_3_slide.qmd"
+  "teaching/STAT120/lectures/lecture_4/lecture_4_slide.qmd"
   "teaching/STAT117/course_documents/all_lectures/chapter_1_slide.qmd"
   "teaching/STAT117/course_documents/all_lectures/chapter_2_slide.qmd"
   "teaching/STAT117/course_documents/all_lectures/chapter_3_slide.qmd"
