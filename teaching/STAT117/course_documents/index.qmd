@@ -13,7 +13,7 @@ You can find all course documents here as a reference page.  Please refer to the
 
 ## StatChat
 
-- [StatChat1: What is a bivariate relationship](youtube.com/watch?v=xWy2PzISjco&feature=youtu.be)
+- [StatChat1: What is a bivariate relationship](https://youtu.be/xWy2PzISjco)
 - [StatChat2: Scatterplot examples](https://youtu.be/F24R1WWqiKM)
 
 

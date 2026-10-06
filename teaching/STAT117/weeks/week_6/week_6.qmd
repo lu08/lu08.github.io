@@ -11,9 +11,9 @@ format: html
 
 ## Tuesday, Oct 6 (asynchronous)
 
-1. Watch the first two (yay!) StatChat videos. These videos offer none-technical additioanal examples and hopefully fun discussions of relevant course content.  In my mind, you could listen to them somewhat casually - when you are driving, folding laundtry, or (best of all) jogging.  The key points will always be summarized in lecture slides.
+1. Watch the first two (yay!) StatChat videos. These videos offer none-technical additioanal examples and (hopefully) fun discussions of relevant course content.  In my mind, you could listen to them somewhat casually - when you are driving, folding laundry, or (best of all) jogging.  The key points will  be summarized in lecture slides.
 
-   - [StatChat1: What is a bivariate relationship](youtube.com/watch?v=xWy2PzISjco&feature=youtu.be)
+   - [StatChat1: What is a bivariate relationship](https://youtu.be/xWy2PzISjco)
    - [StatChat2: Scatterplot examples](https://youtu.be/F24R1WWqiKM) 
 
 2. Go over slides 1 -  5 of [Chapter 5 slides](../../course_documents/all_lectures/chapter_5_slide.html).  Stop at "Linear Relationship."

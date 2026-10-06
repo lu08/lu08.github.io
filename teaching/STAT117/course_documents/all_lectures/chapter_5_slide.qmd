@@ -8,7 +8,7 @@ format:
     transition: fade
     toc: false
     self-contained: false
-    smaller: true
+    smaller: false
     scrollable: true
     chalkboard:
       buttons: true
@@ -23,15 +23,15 @@ editor_options:
 
 Among runners, is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
 
-In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
+In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
 
 How you answer these questions vary largely based on the **measurement type** of the variables.  You should use appropriate **statistics** (e.g., correlation coefficients and percentages comparisons) and **visualizations** (e.g., scatterplots).
 
-- ⚠️ **Correlation does not imply causation.**
+⚠️ [**Correlation does not imply causation.**](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)
 
 
 
-# Cases WITHOUT nominal variables
+# Bivariate relationship WITHOUT nominal variables
 
 
 ## Scatterplot 📊
@@ -52,7 +52,7 @@ The scatterplot shows 500 dots, each corresponding to one student in the dataset
 #| code-summary: "R code (optional)"
 #| fig-width: 6
 #| fig-height: 6
-#| out-width: "65%"
+#| out-width: "100%"
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 
 plot(
@@ -74,7 +74,7 @@ text(52.56, 59.69, labels = "Student 1", pos = 4, col = "red", cex=2)
 
 ## Other Scatterplot Examples
 
-Here are a few examples of scatterplots:
+Here are a few examples of scatterplots (as discussed in [StatChat2](https://youtu.be/F24R1WWqiKM))
 
 - [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)
 - [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)
@@ -222,9 +222,11 @@ When describing an association with a correlation coefficient, report:
 10. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
 
 
+# Bivariate relationship WITH nominal variables
 
+## To be added
 
-## Appendix: Choice of method summary
+## Appendix: choice of method summary
 
 Bivariate relationships without any nominal variable:
 
