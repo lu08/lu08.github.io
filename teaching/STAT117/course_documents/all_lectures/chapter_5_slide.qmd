@@ -166,9 +166,9 @@ Notes:
 
 ## Example
 
-Download the `AllCountries` dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
+Download the [AllCountries](../../data/AllCountries.csv) dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
 
-One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to [this separate document](../data/AllCountries_doc.qmd).  It is a standard procedure in statistical analysis to provide data and the codebook/documentation separately.
+One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the [AllCountries variable codebook](../../data/AllCountries_doc.html). It is standard practice to provide data and its codebook separately.
 
 Based on the `AllCountries` dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
 
