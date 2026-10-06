@@ -94,7 +94,7 @@ games %>%
 
 </details>
 
-6. Subset the dataset so that the only games you see are those that are played on N64 (Nintendo 64) and that had at least one million units sold in North America (**NA_Sales** > 2). Print the **Name**, **Genre**, and **NA_Sales** number for these games.
+6. Subset the dataset so that the only games you see are those that are played on N64 (Nintendo 64) and that had more than two million units sold in North America (**NA_Sales** > 2). Print the **Name**, **Genre**, and **NA_Sales** number for these games.
 
 <details>
 <summary>Show solution</summary>
@@ -129,7 +129,7 @@ games %>%
 
 ```{r}
 games %>%
-  filter(Genre == "Role-Playing", User_Score != "tbd") %>%
+  filter(Genre == "Role-Playing", !is.na(User_Score)) %>%
   arrange(desc(User_Score)) %>%
   slice(1:10) %>%
   select(Name, Platform, Year_of_Release, Genre, User_Score)
@@ -145,7 +145,8 @@ games %>%
 ```{r}
 games %>%
   group_by(Genre) %>%
-  top_n(1, Global_Sales) %>%
+  slice_max(order_by = Global_Sales, n = 1) %>%
+  ungroup() %>%
   select(Name, Genre, Global_Sales)
 ```
 
@@ -159,8 +160,11 @@ games %>%
 ```{r}
 games %>%
   group_by(Genre) %>%
-  summarise(globalMean = mean(Global_Sales)) %>%
-  arrange(desc(globalMean))
+  summarise(
+    global_mean = mean(Global_Sales),
+    .groups = "drop"
+  ) %>%
+  slice_max(order_by = global_mean, n = 3)
 ```
 
 </details>
@@ -221,9 +225,10 @@ platforms <- games %>%
   summarize(
     number_of_games = n(),
     average_critic_score = mean(Critic_Score, na.rm = TRUE),
-    median_release_year = median(Year_of_Release, na.rm = TRUE)
+    median_release_year = median(Year_of_Release, na.rm = TRUE),
+    .groups = "drop"
   ) %>%
-  top_n(10, number_of_games)
+  slice_max(order_by = number_of_games, n = 10)
 platforms
 ```
 

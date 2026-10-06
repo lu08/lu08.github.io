@@ -203,7 +203,7 @@
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
-<p><a href="https://youtu.be/xWy2PzISjco">Among runners</a>, is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?</p>
+<p>Among runners (<a href="https://youtu.be/xWy2PzISjco">StatChat discussion</a>), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?</p>
 <p>In this chapter, we look at TWO variables. We want to ask: do they have an <strong>association</strong>? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?</p>
 <p>How you answer these questions vary largely based on the <strong>measurement type</strong> of the variables. You should use appropriate <strong>statistics</strong> (e.g., correlation coefficients and percentages comparisons) and <strong>visualizations</strong> (e.g., scatterplots).</p>
 <p>⚠️ <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation"><strong>Correlation does not imply causation.</strong></a></p>
@@ -223,7 +223,7 @@
 <li>Student 3: (54.79, 56.73)</li>
 <li><span class="math inline">\(\ldots\)</span></li>
 </ul>
-<p>The scatterplot shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1.</p>
+<p>The scatterplot (next page) shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1.</p>
 </section>
 <section id="nels-achievement-scatterplot" class="slide level2">
 <h2>NELS achievement scatterplot</h2>
@@ -253,7 +253,7 @@
 <img data-src="chapter_5_slide_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="other-scatterplot-examples" class="slide level2">
 <h2>Other Scatterplot Examples</h2>
-<p>Here are a few examples of scatterplots (see <a href="https://youtu.be/F24R1WWqiKM">StatChat2</a>)</p>
+<p>Here are more examples of scatterplots (see <a href="https://youtu.be/F24R1WWqiKM">StatChat2</a>)</p>
 <ul>
 <li><a href="https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/">Best dogs</a></li>
 <li><a href="https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/">Ranking of Large Language Models (LLMs)</a></li>
@@ -268,7 +268,7 @@
 <summary>R code (optional)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">data</span>(<span class="st">"AllCountries"</span>, <span class="at">package =</span> <span class="st">"Lock5Data"</span>)</span>
 <span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span>
+<span id="cb2-3"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
 <span id="cb2-4"><a href=""></a></span>
 <span id="cb2-5"><a href=""></a><span class="fu">plot</span>(</span>
 <span id="cb2-6"><a href=""></a>  AllCountries<span class="sc">$</span>CO2, AllCountries<span class="sc">$</span>Energy,</span>
@@ -352,7 +352,9 @@
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>Download the <code>AllCountries</code> dataset and open it in Jamovi. Based on this dataset, is there a relationship between carbon dioxide emissions (<code>CO2</code>) and energy use (<code>Energy</code>)?</p>
+<p>Download the <code>AllCountries</code> dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.</p>
+<p>One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to <a href="../data/AllCountries_doc.qmd">this separate document</a>. It is a standard procedure in statistical analysis to provide data and the codebook/documentation separately.</p>
+<p>Based on the <code>AllCountries</code> dataset, is there a relationship between carbon dioxide emissions (<code>CO2</code>) and energy use (<code>Energy</code>)?</p>
 <blockquote>
 <p>Jamovi procedure: Analyses - Regression - Correlation Matrix - Put the two variables (<code>CO2</code> and <code>Energy</code> in this example) into the Variables box - (optional) check <strong>Correlation matrix</strong> under <strong>Plot</strong> to generate a scatterplot.</p>
 </blockquote>
@@ -375,33 +377,31 @@
 <li>Scale + dichotomous</li>
 <li>Dichotomous + dichotomous</li>
 </ul>
-<p>Spearman’s rank correlation coefficient, denoted by <span class="math inline">\(\rho\)</span>, is based on ranks and is suitable for:</p>
+<p><strong>Spearman</strong> correlation coefficient, denoted by <span class="math inline">\(\rho\)</span> (“rho”), is based on ranks and is suitable for:</p>
 <ul>
 <li>Ordinal + ordinal</li>
 <li>Ordinal + scale</li>
 <li>Ordinal + dichotomous</li>
 </ul>
 <blockquote>
-<p>Jamovi: Spearman <span class="math inline">\(\rho\)</span> is obtained using the same procedure as Pearson <span class="math inline">\(r\)</span>, but select <strong>Spearman</strong> under the <strong>Correlation Coefficients</strong> option.</p>
+<p>Jamovi: Spearman <span class="math inline">\(\rho\)</span> is obtained using the same procedure as Pearson <span class="math inline">\(r\)</span>, by selecting <strong>Spearman</strong> under the <strong>Correlation Coefficients</strong> option.</p>
 </blockquote>
-<p>When describing an association with a correlation coefficient, report:</p>
+<p>When using a correlation coefficient, report:</p>
 <ul>
-<li><strong>Direction</strong></li>
-<li><strong>Strength</strong></li>
-<li><strong>Interpretation in context</strong></li>
+<li>Direction</li>
+<li>Strength</li>
+<li>Interpretation in context</li>
 </ul>
 </section>
-<section id="exercise-contd" class="slide level2 scrollable">
+<section id="exercise-contd" class="slide level2">
 <h2>Exercise (cont’d)</h2>
-<ol start="4" type="1">
-<li><p>(<code>NELS</code>) Describe the direction and strength, using Cohen’s scale, of the linear relationship between eighth-grade math achievement (<code>achmat08</code>) and teacher interest (<code>tcherint</code>).</p></li>
-<li><p>(<code>NELS</code>) Is there an association between gender (<code>gender</code>; 0 = male, 1 = female) and eighth-grade math achievement (<code>achmat08</code>)?</p></li>
-<li><p>(<code>United States Colleges</code>) Among schools in the <code>United States Colleges</code> dataset, is there an association between faculty size (<code>faculty</code>) and whether the school is a university (<code>univ</code>)?</p></li>
-<li><p>(<code>United States Colleges</code>) Is there an association between affiliation (<code>public</code>; 0 = private, 1 = public) and institution type (<code>univ</code>; 0 = college, 1 = university)?</p></li>
-<li><p>(<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its student-faculty ratio (<code>facratio</code>)?</p></li>
-<li><p>(<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its faculty salary rank (<code>facsal</code>)?</p></li>
-<li><p>(<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and affiliation (<code>public</code>)?</p></li>
-</ol>
+<p><strong>4.</strong> (<code>NELS</code>) Describe the direction and strength, using Cohen’s scale, of the linear relationship between eighth-grade math achievement (<code>achmat08</code>) and teacher interest (<code>tcherint</code>).</p>
+<p><strong>5.</strong> (<code>NELS</code>) Is there an association between gender (<code>gender</code>; 0 = male, 1 = female) and eighth-grade math achievement (<code>achmat08</code>)?</p>
+<p><strong>6.</strong> (<code>United States Colleges</code>) Among schools in the <code>United States Colleges</code> dataset, is there an association between faculty size (<code>faculty</code>) and whether the school is a university (<code>univ</code>)?</p>
+<p><strong>7.</strong> (<code>United States Colleges</code>) Is there an association between affiliation (<code>public</code>; 0 = private, 1 = public) and institution type (<code>univ</code>; 0 = college, 1 = university)?</p>
+<p><strong>8.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its student-faculty ratio (<code>facratio</code>)?</p>
+<p><strong>9.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its faculty salary rank (<code>facsal</code>)?</p>
+<p><strong>10.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and affiliation (<code>public</code>)?</p>
 </section></section>
 <section>
 <section id="bivariate-relationship-with-nominal-variables" class="title-slide slide level1 center">
@@ -410,9 +410,14 @@
 </section>
 <section id="to-be-added" class="slide level2">
 <h2>To be added</h2>
+</section></section>
+<section>
+<section id="appendix" class="title-slide slide level1 center">
+<h1>Appendix</h1>
+
 </section>
-<section id="appendix-choice-of-method-summary" class="slide level2">
-<h2>Appendix: choice of method summary</h2>
+<section id="choice-of-method-summary" class="slide level2">
+<h2>Choice of method summary</h2>
 <p>Bivariate relationships without any nominal variable:</p>
 <ul>
 <li><strong>Scale + scale:</strong> Pearson <span class="math inline">\(r\)</span></li>
@@ -427,7 +432,13 @@
 <li><strong>Nominal + scale/ordinal:</strong> compare outcome distributions across nominal groups</li>
 <li><strong>Nominal + dichotomous/nominal:</strong> compare category percentages using a contingency table</li>
 </ul>
-<p><strong>Visualizing relationships:</strong> - Scatterplots: two numerical variables - Side-by-side boxplots: one numerical variable and one categorical variable - Clustered bar graphs: two categorical variables - Contingency tables: two categorical variables</p>
+<p><strong>Visualizing relationships:</strong></p>
+<ul>
+<li>Scatterplots: two numerical variables</li>
+<li>Side-by-side boxplots: one numerical variable and one categorical variable</li>
+<li>Clustered bar graphs: two categorical variables</li>
+<li>Contingency tables: two categorical variables</li>
+</ul>
 
 </section></section>
     </div>

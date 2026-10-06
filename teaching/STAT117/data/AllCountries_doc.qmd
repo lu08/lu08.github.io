@@ -1,0 +1,56 @@
+
+---
+title: "AllCountries Dataset"
+subtitle: "Variable codebook"
+---
+
+The `AllCountries` dataset contains country-level measures of population, health, economics, energy, and human development.
+
+## Dataset structure
+
+The data frame contains **217 countries** and **29 variables**. Most values describe 2023 or the most recently available year.
+
+## Variables
+
+| Variable | Description |
+|:--|:--|
+| `Country` | Country name. |
+| `Code` | Three-letter country code. |
+| `LandArea` | Land area in thousands of square kilometers. |
+| `Population` | Population in millions. |
+| `Density` | Number of people per square kilometer. |
+| `GDP` | Gross domestic product per capita, in US dollars. |
+| `Rural` | Percentage of the population living in rural areas. |
+| `CO2` | Carbon dioxide emissions in metric tons per capita. |
+| `PumpPrice` | Price of one liter of gasoline, in US dollars. |
+| `Military` | Percentage of government expenditures directed toward the military. |
+| `Health` | Percentage of government expenditures directed toward healthcare. |
+| `ArmedForces` | Number of active-duty military personnel, in thousands. |
+| `Internet` | Percentage of the population with internet access. |
+| `Cell` | Cell-phone subscriptions per 100 people. |
+| `HIV` | Percentage of the population with HIV. |
+| `Hunger` | Percentage of the population considered undernourished. |
+| `Diabetes` | Percentage of the population diagnosed with diabetes. |
+| `BirthRate` | Births per 1,000 people. |
+| `DeathRate` | Deaths per 1,000 people. |
+| `ElderlyPop` | Percentage of the population aged 65 or older. |
+| `LifeExpectancy` | Average life expectancy, in years. |
+| `FemaleLabor` | Percentage of females aged 15 to 64 in the labor force. |
+| `Unemployment` | Percentage of the labor force that is unemployed. |
+| `Renewable` | Percentage of energy from renewable sources. |
+| `Energy` | Total energy consumption in million BTU per capita. |
+| `Electricity` | Electric power consumption in kWh per capita. |
+| `Developed` | Electricity-use category: 1 = under 2,500 kWh per capita; 2 = 2,500 to 5,000; 3 = over 5,000. |
+| `HDI` | Human Development Index, the United Nations measure of social and economic well-being, on a 0 to 1 scale. |
+| `HDIGroup` | Human Development Index category: Very High, High, Medium, or Low. |
+
+## Data notes and sources
+
+This version is updated for the fourth edition and replaces earlier editions (`AllCountries1e`, `AllCountries2e`, and `AllCountries3e`).
+
+- Most indicators: [World Bank Open Data](https://data.worldbank.org/)
+- Gasoline prices: [Trading Economics](https://tradingeconomics.com/country-list/gasoline-prices?continent=world)
+- Energy and electricity: [U.S. Energy Information Administration](https://www.eia.gov/international/data/world#/)
+- Human Development Index: [United Nations Human Development Reports](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
+
+Sources were accessed in January 2025. The dataset is distributed through the [`Lock5Data` package](https://www.lock5stat.com/datapage4e.html), version 4.0.1.

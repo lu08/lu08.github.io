@@ -173,6 +173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../teaching/STAT120/lectures/lecture_4/lecture_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../teaching/STAT120/lectures/lecture_notes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture code</span></a>
   </div>
@@ -183,6 +189,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../../teaching/STAT120/homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/STAT120/final_project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -422,7 +434,7 @@ Show solution
 </div>
 </details>
 <ol start="6" type="1">
-<li>Subset the dataset so that the only games you see are those that are played on N64 (Nintendo 64) and that had at least one million units sold in North America (<strong>NA_Sales</strong> &gt; 2). Print the <strong>Name</strong>, <strong>Genre</strong>, and <strong>NA_Sales</strong> number for these games.</li>
+<li>Subset the dataset so that the only games you see are those that are played on N64 (Nintendo 64) and that had more than two million units sold in North America (<strong>NA_Sales</strong> &gt; 2). Print the <strong>Name</strong>, <strong>Genre</strong>, and <strong>NA_Sales</strong> number for these games.</li>
 </ol>
 <details>
 <summary>
@@ -485,7 +497,7 @@ Show solution
 </summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>games <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Role-Playing"</span>, User_Score <span class="sc">!=</span> <span class="st">"tbd"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Role-Playing"</span>, <span class="sc">!</span><span class="fu">is.na</span>(User_Score)) <span class="sc">%&gt;%</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(User_Score)) <span class="sc">%&gt;%</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Name, Platform, Year_of_Release, Genre, User_Score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -525,26 +537,26 @@ Show solution
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>games <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Genre) <span class="sc">%&gt;%</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">1</span>, Global_Sales) <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Name, Genre, Global_Sales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> Global_Sales, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Name, Genre, Global_Sales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 3
-# Groups:   Genre [13]
    Name                                 Genre          Global_Sales
    &lt;chr&gt;                                &lt;chr&gt;                 &lt;dbl&gt;
- 1 "Wii Sports"                         "Sports"              82.5 
- 2 "Super Mario Bros."                  "Platform"            40.2 
- 3 "Mario Kart Wii"                     "Racing"              35.5 
- 4 "Pokemon Red/Pokemon Blue"           "Role-Playing"        31.4 
- 5 "Tetris"                             "Puzzle"              30.3 
- 6 "Wii Play"                           "Misc"                28.9 
- 7 "Duck Hunt"                          "Shooter"             28.3 
- 8 "Nintendogs"                         "Simulation"          24.7 
- 9 "Grand Theft Auto V"                 "Action"              21.0 
-10 "Super Smash Bros. Brawl"            "Fighting"            12.8 
-11 "Super Mario Land 2: 6 Golden Coins" "Adventure"           11.2 
-12 "Pokemon Stadium"                    "Strategy"             5.45
-13 ""                                   ""                     2.39</code></pre>
+ 1 ""                                   ""                     2.39
+ 2 "Grand Theft Auto V"                 "Action"              21.0 
+ 3 "Super Mario Land 2: 6 Golden Coins" "Adventure"           11.2 
+ 4 "Super Smash Bros. Brawl"            "Fighting"            12.8 
+ 5 "Wii Play"                           "Misc"                28.9 
+ 6 "Super Mario Bros."                  "Platform"            40.2 
+ 7 "Tetris"                             "Puzzle"              30.3 
+ 8 "Mario Kart Wii"                     "Racing"              35.5 
+ 9 "Pokemon Red/Pokemon Blue"           "Role-Playing"        31.4 
+10 "Duck Hunt"                          "Shooter"             28.3 
+11 "Nintendogs"                         "Simulation"          24.7 
+12 "Wii Sports"                         "Sports"              82.5 
+13 "Pokemon Stadium"                    "Strategy"             5.45</code></pre>
 </div>
 </div>
 </details>
@@ -558,25 +570,18 @@ Show solution
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>games <span class="sc">%&gt;%</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Genre) <span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">globalMean =</span> <span class="fu">mean</span>(Global_Sales)) <span class="sc">%&gt;%</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(globalMean))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">global_mean =</span> <span class="fu">mean</span>(Global_Sales),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> global_mean, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 13 × 2
-   Genre          globalMean
-   &lt;chr&gt;               &lt;dbl&gt;
- 1 ""                  1.21 
- 2 "Platform"          0.933
- 3 "Shooter"           0.796
- 4 "Role-Playing"      0.623
- 5 "Racing"            0.584
- 6 "Sports"            0.567
- 7 "Fighting"          0.527
- 8 "Action"            0.518
- 9 "Misc"              0.459
-10 "Simulation"        0.447
-11 "Puzzle"            0.419
-12 "Strategy"          0.255
-13 "Adventure"         0.182</code></pre>
+<pre><code># A tibble: 3 × 2
+  Genre      global_mean
+  &lt;chr&gt;            &lt;dbl&gt;
+1 ""               1.21 
+2 "Platform"       0.933
+3 "Shooter"        0.796</code></pre>
 </div>
 </div>
 </details>
@@ -691,24 +696,25 @@ Show solution
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">number_of_games =</span> <span class="fu">n</span>(),</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">average_critic_score =</span> <span class="fu">mean</span>(Critic_Score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_release_year =</span> <span class="fu">median</span>(Year_of_Release, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, number_of_games)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>platforms</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_release_year =</span> <span class="fu">median</span>(Year_of_Release, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> number_of_games, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>platforms</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    Platform number_of_games average_critic_score median_release_year
    &lt;chr&gt;              &lt;int&gt;                &lt;dbl&gt;               &lt;dbl&gt;
- 1 DS                  2152                 63.8                2008
- 2 GBA                  822                 67.4                2003
- 3 PC                   974                 75.9                2010
- 4 PS                  1197                 71.5                1998
- 5 PS2                 2161                 68.7                2005
- 6 PS3                 1331                 70.4                2011
- 7 PSP                 1209                 67.4                2009
- 8 Wii                 1320                 62.8                2009
- 9 X360                1262                 68.6                2010
-10 XB                   824                 69.9                2004</code></pre>
+ 1 PS2                 2161                 68.7                2005
+ 2 DS                  2152                 63.8                2008
+ 3 PS3                 1331                 70.4                2011
+ 4 Wii                 1320                 62.8                2009
+ 5 X360                1262                 68.6                2010
+ 6 PSP                 1209                 67.4                2009
+ 7 PS                  1197                 71.5                1998
+ 8 PC                   974                 75.9                2010
+ 9 XB                   824                 69.9                2004
+10 GBA                  822                 67.4                2003</code></pre>
 </div>
 </div>
 </details>

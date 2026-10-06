@@ -24,7 +24,8 @@ editor_options:
 
 ## Introduction
 
-[Among runners](https://youtu.be/xWy2PzISjco), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
+
+Among runners ([StatChat discussion](https://youtu.be/xWy2PzISjco)), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
 
 In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
 
@@ -48,7 +49,7 @@ Example: In the `NELS` dataset, (`achrdg12`, `achmat12`) values can be considere
 - Student 3: (54.79, 56.73)
 - $\ldots$
 
-The scatterplot shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1. 
+The scatterplot (next page) shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1.
 
 ## NELS achievement scatterplot
 
@@ -80,7 +81,7 @@ text(52.56, 59.69, labels = "Student 1", pos = 4, col = "red", cex=2)
 
 ## Other Scatterplot Examples
 
-Here are a few examples of scatterplots (see [StatChat2](https://youtu.be/F24R1WWqiKM))
+Here are more examples of scatterplots (see [StatChat2](https://youtu.be/F24R1WWqiKM))
 
 - [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)
 - [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)
@@ -95,12 +96,12 @@ A scatterplot can visually display the linear relationship (positive or negative
 #| echo: true
 #| code-fold: true
 #| code-summary: "R code (optional)"
-#| fig-width: 8
-#| fig-height: 12
+#| fig-width: 12
+#| fig-height: 7
 #| out-width: "100%"
 data("AllCountries", package = "Lock5Data")
 
-par(mfrow = c(3, 2))
+par(mfrow = c(2, 3))
 
 plot(
   AllCountries$CO2, AllCountries$Energy,
@@ -165,7 +166,11 @@ Notes:
 
 ## Example
 
-Download the `AllCountries` dataset and open it in Jamovi. Based on this dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
+Download the `AllCountries` dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
+
+One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to [this separate document](../data/AllCountries_doc.qmd).  It is a standard procedure in statistical analysis to provide data and the codebook/documentation separately.
+
+Based on the `AllCountries` dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
 
 > Jamovi procedure: Analyses - Regression - Correlation Matrix - Put the two variables (`CO2` and `Energy` in this example) into the Variables box - (optional) check **Correlation matrix** under **Plot** to generate a scatterplot.
 
@@ -195,45 +200,46 @@ Pearson $r$ is suitable for:
 - Dichotomous + dichotomous
 
 
-Spearman's rank correlation coefficient, denoted by $\rho$, is based on ranks and is suitable for:
+**Spearman** correlation coefficient, denoted by $\rho$ ("rho"), is based on ranks and is suitable for:
 
 - Ordinal + ordinal
 - Ordinal + scale
 - Ordinal + dichotomous
 
-> Jamovi: Spearman $\rho$ is obtained using the same procedure as Pearson $r$, but select **Spearman** under the **Correlation Coefficients** option.
+> Jamovi: Spearman $\rho$ is obtained using the same procedure as Pearson $r$, by selecting **Spearman** under the **Correlation Coefficients** option.
 
 
-When describing an association with a correlation coefficient, report:
+When using a correlation coefficient, report:
 
-- **Direction**
-- **Strength**
-- **Interpretation in context**
+- Direction
+- Strength
+- Interpretation in context
 
 
 ## Exercise (cont'd)
 
-4. (`NELS`) Describe the direction and strength, using Cohen's scale, of the linear relationship between eighth-grade math achievement (`achmat08`) and teacher interest (`tcherint`).
+<strong>4.</strong> (`NELS`) Describe the direction and strength, using Cohen's scale, of the linear relationship between eighth-grade math achievement (`achmat08`) and teacher interest (`tcherint`).
 
-5. (`NELS`) Is there an association between gender (`gender`; 0 = male, 1 = female) and eighth-grade math achievement (`achmat08`)?
+<strong>5.</strong> (`NELS`) Is there an association between gender (`gender`; 0 = male, 1 = female) and eighth-grade math achievement (`achmat08`)?
 
-6. (`United States Colleges`) Among schools in the `United States Colleges` dataset, is there an association between faculty size (`faculty`) and whether the school is a university (`univ`)?
+<strong>6.</strong> (`United States Colleges`) Among schools in the `United States Colleges` dataset, is there an association between faculty size (`faculty`) and whether the school is a university (`univ`)?
 
-7. (`United States Colleges`) Is there an association between affiliation (`public`; 0 = private, 1 = public) and institution type (`univ`; 0 = college, 1 = university)?
+<strong>7.</strong> (`United States Colleges`) Is there an association between affiliation (`public`; 0 = private, 1 = public) and institution type (`univ`; 0 = college, 1 = university)?
 
-8. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its student-faculty ratio (`facratio`)?
+<strong>8.</strong> (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its student-faculty ratio (`facratio`)?
 
-9. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its faculty salary rank (`facsal`)?
+<strong>9.</strong> (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its faculty salary rank (`facsal`)?
 
-10. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
+<strong>10.</strong> (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
 
 
 # Bivariate relationship WITH nominal variables
 
 ## To be added
 
-## Appendix: choice of method summary
+# Appendix
 
+## Choice of method summary
 Bivariate relationships without any nominal variable:
 
 - **Scale + scale:** Pearson $r$
@@ -250,6 +256,7 @@ Bivariate relationships with at least one **nominal** variable:
 
 
 **Visualizing relationships:**
+
 - Scatterplots: two numerical variables
 - Side-by-side boxplots: one numerical variable and one categorical variable
 - Clustered bar graphs: two categorical variables

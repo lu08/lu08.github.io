@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course documents – Yi Lu</title>
+<title>AllCountries Dataset – Yi Lu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/STAT117/course_documents/index.html">Course documents</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AllCountries Dataset</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../teaching/STAT117/course_documents/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../teaching/STAT117/course_documents/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course documents</span></a>
   </div>
 </li>
@@ -227,7 +227,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course documents</h1>
+<h1 class="title">AllCountries Dataset</h1>
+<p class="subtitle lead">Variable codebook</p>
 </div>
 
 
@@ -244,50 +245,154 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>You can find all course documents here as a reference page. Please refer to the <a href="../../../teaching/STAT117/weeks/index.html">weekly modules</a> for specifics on what you need to do each week.</p>
-<section id="lecture-slides" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-slides">Lecture slides</h2>
-<ul>
-<li><a href="all_lectures/chapter_1_slide.html">Chapter 1: Introduction</a></li>
-<li><a href="all_lectures/chapter_2_slide.html">Chapter 2: Examining Univariate Distributions</a></li>
-<li><a href="all_lectures/chapter_3_slide.html">Chapter 3: Locations, Spread, and Skewness</a></li>
-<li><a href="all_lectures/chapter_4_slide.html">Chapter 4: Transformations and Z-scores</a></li>
-<li><a href="all_lectures/chapter_5_slide.html">Chapter 5: Bivariate relationships</a></li>
-</ul>
+<p>The <code>AllCountries</code> dataset contains country-level measures of population, health, economics, energy, and human development.</p>
+<section id="dataset-structure" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-structure">Dataset structure</h2>
+<p>The data frame contains <strong>217 countries</strong> and <strong>29 variables</strong>. Most values describe 2023 or the most recently available year.</p>
 </section>
-<section id="statchat" class="level2">
-<h2 class="anchored" data-anchor-id="statchat">StatChat</h2>
-<ul>
-<li><a href="https://youtu.be/xWy2PzISjco">StatChat1: What is a bivariate relationship</a></li>
-<li><a href="https://youtu.be/F24R1WWqiKM">StatChat2: Scatterplot examples</a></li>
-</ul>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Country</code></td>
+<td style="text-align: left;">Country name.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Code</code></td>
+<td style="text-align: left;">Three-letter country code.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>LandArea</code></td>
+<td style="text-align: left;">Land area in thousands of square kilometers.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Population</code></td>
+<td style="text-align: left;">Population in millions.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Density</code></td>
+<td style="text-align: left;">Number of people per square kilometer.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>GDP</code></td>
+<td style="text-align: left;">Gross domestic product per capita, in US dollars.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Rural</code></td>
+<td style="text-align: left;">Percentage of the population living in rural areas.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>CO2</code></td>
+<td style="text-align: left;">Carbon dioxide emissions in metric tons per capita.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>PumpPrice</code></td>
+<td style="text-align: left;">Price of one liter of gasoline, in US dollars.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Military</code></td>
+<td style="text-align: left;">Percentage of government expenditures directed toward the military.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Health</code></td>
+<td style="text-align: left;">Percentage of government expenditures directed toward healthcare.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ArmedForces</code></td>
+<td style="text-align: left;">Number of active-duty military personnel, in thousands.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Internet</code></td>
+<td style="text-align: left;">Percentage of the population with internet access.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Cell</code></td>
+<td style="text-align: left;">Cell-phone subscriptions per 100 people.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>HIV</code></td>
+<td style="text-align: left;">Percentage of the population with HIV.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Hunger</code></td>
+<td style="text-align: left;">Percentage of the population considered undernourished.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Diabetes</code></td>
+<td style="text-align: left;">Percentage of the population diagnosed with diabetes.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>BirthRate</code></td>
+<td style="text-align: left;">Births per 1,000 people.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>DeathRate</code></td>
+<td style="text-align: left;">Deaths per 1,000 people.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ElderlyPop</code></td>
+<td style="text-align: left;">Percentage of the population aged 65 or older.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>LifeExpectancy</code></td>
+<td style="text-align: left;">Average life expectancy, in years.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>FemaleLabor</code></td>
+<td style="text-align: left;">Percentage of females aged 15 to 64 in the labor force.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Unemployment</code></td>
+<td style="text-align: left;">Percentage of the labor force that is unemployed.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Renewable</code></td>
+<td style="text-align: left;">Percentage of energy from renewable sources.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Energy</code></td>
+<td style="text-align: left;">Total energy consumption in million BTU per capita.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Electricity</code></td>
+<td style="text-align: left;">Electric power consumption in kWh per capita.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Developed</code></td>
+<td style="text-align: left;">Electricity-use category: 1 = under 2,500 kWh per capita; 2 = 2,500 to 5,000; 3 = over 5,000.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>HDI</code></td>
+<td style="text-align: left;">Human Development Index, the United Nations measure of social and economic well-being, on a 0 to 1 scale.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>HDIGroup</code></td>
+<td style="text-align: left;">Human Development Index category: Very High, High, Medium, or Low.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="homework" class="level2">
-<h2 class="anchored" data-anchor-id="homework">Homework</h2>
-<p>Homework exercise questions are adopted from the textbook <em>Statistics Using IBM SPSS (3rd edition)</em>, by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222.</p>
-<p>Solutions are provided in the same document.</p>
-<p>If a dataset is missing, or if you find a typo/error, please let me know.</p>
+<section id="data-notes-and-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-notes-and-sources">Data notes and sources</h2>
+<p>This version is updated for the fourth edition and replaces earlier editions (<code>AllCountries1e</code>, <code>AllCountries2e</code>, and <code>AllCountries3e</code>).</p>
 <ul>
-<li><a href="../../../teaching/STAT117/course_documents/homework/chapter_1.html">Homework Chapter 1</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/homework/chapter_2.html">Homework Chapter 2</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/homework/chapter_3.html">Homework Chapter 3</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/homework/chapter_4.html">Homework Chapter 4</a></li>
+<li>Most indicators: <a href="https://data.worldbank.org/">World Bank Open Data</a></li>
+<li>Gasoline prices: <a href="https://tradingeconomics.com/country-list/gasoline-prices?continent=world">Trading Economics</a></li>
+<li>Energy and electricity: <a href="https://www.eia.gov/international/data/world#/">U.S. Energy Information Administration</a></li>
+<li>Human Development Index: <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">United Nations Human Development Reports</a></li>
 </ul>
-</section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
-<ul>
-<li><a href="../../../teaching/STAT117/course_documents/assignment/assignment_1.html">Assignment 1: Jamovi Introduction</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/assignment/assignment_2.html">Assignment 2: NYC Apartments</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/assignment/assignment_3.html">Assignment 3: Song length transformation</a></li>
-</ul>
-</section>
-<section id="practice-exams" class="level2">
-<h2 class="anchored" data-anchor-id="practice-exams">Practice exams</h2>
-<ul>
-<li><a href="../../../teaching/STAT117/course_documents/exam_reviews/practice_exam_1_blank.html">Practice Exam 1</a></li>
-<li><a href="../../../teaching/STAT117/course_documents/exam_reviews/practice_exam_1_solution.html">Practice Exam 1 solution</a></li>
-</ul>
+<p>Sources were accessed in January 2025. The dataset is distributed through the <a href="https://www.lock5stat.com/datapage4e.html"><code>Lock5Data</code> package</a>, version 4.0.1.</p>
 
 
 </section>

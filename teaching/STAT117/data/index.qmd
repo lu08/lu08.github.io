@@ -61,3 +61,12 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 
 - [Young People Survey.sav](../../../dataset/Young%20People%20Survey.sav){download="Young People Survey.sav"}
+
+
+
+
+## CSV data
+
+- [AllCountries.csv](../../../dataset/AllCountries.csv){download="AllCountries.csv"}
+
+    Information on 217 countries collected for 2023 (or most recent available year). Source: [Lock5Data](https://www.lock5stat.com/datapage4e.html). Variable documentation can be found [here](AllCountries_doc.qmd).

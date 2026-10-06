@@ -1,0 +1,18 @@
+---
+title: "Final project"
+---
+
+## Data selection
+
+Due: Oct 15 before class.
+
+For the final project, you will work with a dataset of your interest.  Please decide on a dataset.  If you need help, let me know.
+
+- A few useful sources: [Data.gov](https://www.data.gov/), [Kaggle Datasets](https://www.kaggle.com/datasets), [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php), and [Responsible Datasets in Context](https://www.responsible-datasets-in-context.com/datasets.html).
+- You **cannot** use a dataset that is part of an R package.
+- You **cannot** use a dataset that we have used in class or in homework.
+- You can use a dataset that you have used for a different project in a different class.
+- The dataset must contain at least 5 variables and 100 observations.
+- The dataset must contain at least one numeric variable (like age) and at least one categorical variable (like gender).
+
+Once you have decided on a dataset, import it to R and pick ONE variable from the data.  For the ONE variable, write a thorough description of its univariate distribution.  Submit your code, code output, your description, and a link to your dataset on Moodle **by Oct 15, 2:40 pm.**

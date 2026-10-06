@@ -9,7 +9,7 @@
 <link href="lecture_4_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Lecture 4: Hollywood movies</title>
+  <title>Lecture 4: tidyverse for data manipulation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -198,8 +198,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 4: Hollywood movies</h1>
-  <p class="subtitle">Tidyverse for data manipulation</p>
+  <h1 class="title">Lecture 4: tidyverse for data manipulation</h1>
+  <p class="subtitle">Data: Hollywood movies</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -208,8 +208,7 @@
 <section id="prep-work" class="slide level2">
 <h2>Prep work</h2>
 <ul>
-<li><p><strong>tidyverse</strong> packages: https://www.tidyverse.org/packages/</p></li>
-<li><p>A popular collection of R packages for working with data in a <strong>tidy</strong> format: each variable is a column, each observation is a row, and each value is a cell.</p></li>
+<li><a href="https://www.tidyverse.org/packages/">Tidyverse</a> is a popular collection of R packages for working with data in a <strong>tidy</strong> format: each variable is a column, each observation is a row, and each value is a cell.</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
@@ -224,68 +223,6 @@
 <span id="cb2-3"><a href=""></a>?HollywoodMovies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="a-tidyverse-workflow" class="slide level2">
-<h2>A tidyverse workflow</h2>
-<p>Tidyverse functions take a data frame as their first input and return a data frame, so functions can be chained with the native R pipe <code>|&gt;</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Read the pipe as <strong>“then”</strong>: start with <code>HollywoodMovies</code>, keep action movies, then keep the three named columns.</p>
-</section>
-<section id="choose-rows-and-columns" class="slide level2">
-<h2>Choose rows and columns</h2>
-<ul>
-<li><code>filter()</code> keeps rows that meet logical conditions.</li>
-<li><code>select()</code> keeps or drops columns.</li>
-<li><code>slice()</code> chooses rows by position.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Comedy"</span>, RottenTomatoes <span class="sc">&gt;=</span> <span class="dv">80</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, RottenTomatoes)</span>
-<span id="cb4-4"><a href=""></a></span>
-<span id="cb4-5"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href=""></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="create-and-order-variables" class="slide level2">
-<h2>Create and order variables</h2>
-<ul>
-<li><code>mutate()</code> creates or changes columns.</li>
-<li><code>arrange()</code> sorts rows; use <code>desc()</code> for descending order.</li>
-<li><code>slice_max()</code> selects rows with the largest values of a column.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(score_gap)) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap) <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="summarize-by-group" class="slide level2">
-<h2>Summarize by group</h2>
-<ul>
-<li><code>group_by()</code> defines groups for subsequent calculations.</li>
-<li><code>summarise()</code> returns one row per group.</li>
-<li><code>count()</code> is a concise way to count rows in each group.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href=""></a>  <span class="fu">summarise</span>(</span>
-<span id="cb6-4"><a href=""></a>    <span class="at">mean_audience =</span> <span class="fu">mean</span>(AudienceScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-5"><a href=""></a>    <span class="at">movie_count =</span> <span class="fu">n</span>(),</span>
-<span id="cb6-6"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb6-7"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-8"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_audience))</span>
-<span id="cb6-9"><a href=""></a></span>
-<span id="cb6-10"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb6-11"><a href=""></a>  <span class="fu">count</span>(Genre, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
 <section id="review-questions" class="slide level2">
 <h2>Review questions</h2>
 <ul>
@@ -296,105 +233,145 @@
 <li>Which movie has the largest <code>WorldwideBO</code> in each genre?</li>
 </ul>
 </section>
+<section id="a-tidyverse-workflow" class="slide level2">
+<h2>A tidyverse workflow</h2>
+<p>Tidyverse functions take a data frame as their first input and return a data frame, so functions can be chained with the native R pipe <code>|&gt;</code> or tidyverse pipe <code>%&gt;%</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Read the pipe as <strong>“then”</strong>: start with <code>HollywoodMovies</code>, then keep action movies, then select the three named columns.</p>
+</section>
 <section id="subsetting" class="slide level2">
 <h2>Subsetting: <strong>‘[’</strong></h2>
 <p>The square bracket syntax can be used as a function, with the function name <strong>‘[’</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>HollywoodMovies<span class="sc">$</span>Movie[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb7-2"><a href=""></a><span class="st">'['</span>(HollywoodMovies<span class="sc">$</span>Movie, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)  <span class="co"># as a function</span></span>
-<span id="cb7-3"><a href=""></a>HollywoodMovies<span class="sc">$</span>Movie <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="co"># pipe version</span></span>
-<span id="cb7-4"><a href=""></a></span>
-<span id="cb7-5"><a href=""></a>HollywoodMovies[<span class="dv">5</span>,<span class="dv">1</span>]</span>
-<span id="cb7-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">5</span>,<span class="dv">1</span>)</span>
-<span id="cb7-7"><a href=""></a></span>
-<span id="cb7-8"><a href=""></a>HollywoodMovies[<span class="dv">5</span>,]</span>
-<span id="cb7-9"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">5</span>,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>HollywoodMovies<span class="sc">$</span>Movie[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb4-2"><a href=""></a><span class="st">'['</span>(HollywoodMovies<span class="sc">$</span>Movie, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)  <span class="co"># as a function</span></span>
+<span id="cb4-3"><a href=""></a>HollywoodMovies<span class="sc">$</span>Movie <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="co"># pipe version</span></span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a>HollywoodMovies[<span class="dv">5</span>,<span class="dv">1</span>]</span>
+<span id="cb4-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">5</span>,<span class="dv">1</span>)</span>
+<span id="cb4-7"><a href=""></a></span>
+<span id="cb4-8"><a href=""></a>HollywoodMovies[<span class="dv">5</span>,]</span>
+<span id="cb4-9"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span> <span class="st">'['</span>(<span class="dv">5</span>,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="subsetting-filter" class="slide level2">
 <h2>Subsetting: <strong>filter</strong></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Get info of action movies</span></span>
-<span id="cb8-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>)</span>
-<span id="cb8-4"><a href=""></a></span>
-<span id="cb8-5"><a href=""></a><span class="co"># Multiple conditions are combined with AND</span></span>
-<span id="cb8-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb8-7"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>, Profitability <span class="sc">&gt;</span> <span class="dv">500</span>)</span>
-<span id="cb8-8"><a href=""></a></span>
-<span id="cb8-9"><a href=""></a><span class="co"># OR conditions use |</span></span>
-<span id="cb8-10"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb8-11"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span> <span class="sc">|</span> Genre <span class="sc">==</span> <span class="st">"Adventure"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Get info of action movies</span></span>
+<span id="cb5-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>)</span>
+<span id="cb5-4"><a href=""></a></span>
+<span id="cb5-5"><a href=""></a><span class="co"># Multiple conditions</span></span>
+<span id="cb5-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>, Profitability <span class="sc">&gt;</span> <span class="dv">500</span>)</span>
+<span id="cb5-8"><a href=""></a></span>
+<span id="cb5-9"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span> <span class="sc">|</span> Genre <span class="sc">==</span> <span class="st">"Adventure"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>(Use <code>?dplyr::filter</code> to read the help page.)</p>
+<p>(Use <code>?dplyr::filter</code> to read the help page)</p>
 </section>
 <section id="subsetting-slice-and-select" class="slide level2">
 <h2>Subsetting: <strong>slice</strong> and <strong>select</strong></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Keep selected rows by position</span></span>
-<span id="cb9-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href=""></a>  <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>))</span>
-<span id="cb9-4"><a href=""></a></span>
-<span id="cb9-5"><a href=""></a><span class="co"># Keep or drop selected columns</span></span>
-<span id="cb9-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb9-7"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span>
-<span id="cb9-8"><a href=""></a></span>
-<span id="cb9-9"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb9-10"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>Distributor, <span class="sc">-</span>TheatersOpen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Keep selected rows by position</span></span>
+<span id="cb6-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>))</span>
+<span id="cb6-4"><a href=""></a></span>
+<span id="cb6-5"><a href=""></a><span class="co"># Select top rows</span></span>
+<span id="cb6-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb6-8"><a href=""></a></span>
+<span id="cb6-9"><a href=""></a><span class="co"># Keep or drop selected columns</span></span>
+<span id="cb6-10"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb6-11"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span>
+<span id="cb6-12"><a href=""></a></span>
+<span id="cb6-13"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb6-14"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>Distributor, <span class="sc">-</span>TheatersOpen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="sampling-slice_sample" class="slide level2">
 <h2>Sampling: <code>slice_sample()</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Randomly sample 10% of rows, without replacement</span></span>
-<span id="cb10-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href=""></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.1</span>)</span>
-<span id="cb10-4"><a href=""></a></span>
-<span id="cb10-5"><a href=""></a><span class="co"># Sample five rows, allowing repeats</span></span>
-<span id="cb10-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb10-7"><a href=""></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Randomly sample 10% of rows, without replacement</span></span>
+<span id="cb7-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.1</span>)</span>
+<span id="cb7-4"><a href=""></a></span>
+<span id="cb7-5"><a href=""></a><span class="co"># Sample five rows, allowing repeats</span></span>
+<span id="cb7-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href=""></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="sorting-and-selecting-top-rows" class="slide level2">
-<h2>Sorting and selecting top rows</h2>
+<section id="sorting-arrange-and-slice_max" class="slide level2">
+<h2>Sorting: <code>arrange()</code> and <code>slice_max()</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># Smallest five worldwide grosses</span></span>
-<span id="cb11-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href=""></a>  <span class="fu">arrange</span>(WorldwideBO) <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
-<span id="cb11-5"><a href=""></a></span>
-<span id="cb11-6"><a href=""></a><span class="co"># Largest five worldwide grosses</span></span>
-<span id="cb11-7"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb11-8"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">na_rm =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-9"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span>
-<span id="cb11-10"><a href=""></a></span>
-<span id="cb11-11"><a href=""></a><span class="co"># Top three values of a derived quantity; ties are retained by default</span></span>
-<span id="cb11-12"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb11-13"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_difference =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
-<span id="cb11-14"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_difference, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Smallest five worldwide grosses</span></span>
+<span id="cb8-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">arrange</span>(WorldwideBO) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb8-5"><a href=""></a></span>
+<span id="cb8-6"><a href=""></a><span class="co"># Largest five worldwide grosses</span></span>
+<span id="cb8-7"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">na_rm =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-9"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb8-12"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(WorldwideBO)) <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href=""></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb8-14"><a href=""></a></span>
+<span id="cb8-15"><a href=""></a><span class="co"># Top three values of a derived quantity; ties are retained by default</span></span>
+<span id="cb8-16"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb8-17"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_difference =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
+<span id="cb8-18"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_difference, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="grouping-and-summaries" class="slide level2">
-<h2>Grouping and summaries</h2>
+<section id="summary-statistics-summarise" class="slide level2">
+<h2>Summary statistics: summarise()</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co"># Summarise one row per genre</span></span>
-<span id="cb12-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
-<span id="cb12-4"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
-<span id="cb12-5"><a href=""></a></span>
-<span id="cb12-6"><a href=""></a><span class="co"># Summarise by genre and year; n() counts rows in each group</span></span>
-<span id="cb12-7"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb12-8"><a href=""></a>  <span class="fu">group_by</span>(Genre, Year) <span class="sc">|&gt;</span></span>
-<span id="cb12-9"><a href=""></a>  <span class="fu">summarise</span>(</span>
-<span id="cb12-10"><a href=""></a>    <span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb12-11"><a href=""></a>    <span class="at">movie_count =</span> <span class="fu">n</span>(),</span>
-<span id="cb12-12"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb12-13"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb9-3"><a href=""></a>            <span class="at">median_worldwide =</span> <span class="fu">median</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb9-4"><a href=""></a>            <span class="at">movie_count =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="grouping-group_by" class="slide level2">
+<h2>Grouping: group_by()</h2>
+<p>If you are only interested in action movies, say, you might use <code>filter()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb10-4"><a href=""></a>            <span class="at">median_worldwide =</span> <span class="fu">median</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb10-5"><a href=""></a>            <span class="at">movie_count =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you now want to generalize to other genres, rather than manually changing “Action” to other genres, you can group by genre instead.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb11-4"><a href=""></a>            <span class="at">median_worldwide =</span> <span class="fu">median</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb11-5"><a href=""></a>            <span class="at">movie_count =</span> <span class="fu">n</span>(),</span>
+<span id="cb11-6"><a href=""></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <code>.groups = "drop"</code> argument ensures that the resulting data frame is no longer grouped by genre, so that later operations are not affected.</p>
+<p>Can group by multiple variables.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href=""></a>  <span class="fu">group_by</span>(Genre, Year) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">mean_worldwide =</span> <span class="fu">mean</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb12-4"><a href=""></a>            <span class="at">median_worldwide =</span> <span class="fu">median</span>(WorldwideBO, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb12-5"><a href=""></a>            <span class="at">movie_count =</span> <span class="fu">n</span>(),</span>
+<span id="cb12-6"><a href=""></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="example-top-5-most-profitable-genres" class="slide level2">
 <h2>Example: top 5 most profitable genres</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href=""></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Profitability)) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
@@ -404,83 +381,131 @@
 <span id="cb13-7"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb13-8"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb13-9"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> mean_profit, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  Genre               mean_profit movie_count
+  &lt;chr&gt;                     &lt;dbl&gt;       &lt;int&gt;
+1 Concert/Performance       1743.           1
+2 Horror                     812.          59
+3 Black Comedy               359.           6
+4 Romantic Comedy            354.           7
+5 Drama                      325.          75</code></pre>
 </div>
-<ul>
-<li>Nothing is stored; no change is made in the data frame.</li>
-</ul>
+</div>
+<p>Note: nothing is stored; no change is made in the data frame.</p>
 </section>
-<section id="creating-new-variables" class="slide level2">
-<h2>Creating new variables</h2>
+<section id="modify-and-create-variables-mutate" class="slide level2">
+<h2>Modify and create variables: mutate</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co"># Create a derived column and select the five largest values</span></span>
-<span id="cb14-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_gap, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap)</span>
-<span id="cb14-6"><a href=""></a></span>
-<span id="cb14-7"><a href=""></a><span class="co"># Save the updated data frame using explicit assignment</span></span>
-<span id="cb14-8"><a href=""></a>movies_with_gap <span class="ot">&lt;-</span> HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb14-9"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore))</span>
-<span id="cb14-10"><a href=""></a></span>
-<span id="cb14-11"><a href=""></a><span class="co"># Keep only selected columns while creating a derived column</span></span>
-<span id="cb14-12"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb14-13"><a href=""></a>  <span class="fu">transmute</span>(Movie, <span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore))</span>
-<span id="cb14-14"><a href=""></a></span>
-<span id="cb14-15"><a href=""></a><span class="co"># Rename existing columns</span></span>
-<span id="cb14-16"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb14-17"><a href=""></a>  <span class="fu">rename</span>(<span class="at">open_weekend_gross =</span> OpenBO, <span class="at">theaters_at_open =</span> TheatersOpen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># Create a derived column and select the five largest values</span></span>
+<span id="cb15-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_gap, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap)</span>
+<span id="cb15-6"><a href=""></a></span>
+<span id="cb15-7"><a href=""></a><span class="co"># Save the updated data frame using explicit assignment</span></span>
+<span id="cb15-8"><a href=""></a>movies_with_gap <span class="ot">&lt;-</span> HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore))</span>
+<span id="cb15-10"><a href=""></a></span>
+<span id="cb15-11"><a href=""></a><span class="co"># Keep only selected columns while creating a derived column</span></span>
+<span id="cb15-12"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a href=""></a>  <span class="fu">transmute</span>(Movie, <span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore))</span>
+<span id="cb15-14"><a href=""></a></span>
+<span id="cb15-15"><a href=""></a><span class="co"># Rename existing columns</span></span>
+<span id="cb15-16"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb15-17"><a href=""></a>  <span class="fu">rename</span>(<span class="at">open_weekend_gross =</span> OpenBO, <span class="at">theaters_at_open =</span> TheatersOpen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="tibble" class="slide level2">
 <h2>Tibble</h2>
 <p>A <strong>tibble</strong> is a modern version of an R data frame. It prints a compact preview and preserves familiar data-frame behavior while integrating with tidyverse functions.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>tbl_movie <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(HollywoodMovies)</span>
-<span id="cb15-2"><a href=""></a><span class="fu">class</span>(tbl_movie)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>tbl_movie <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(HollywoodMovies)</span>
+<span id="cb16-2"><a href=""></a><span class="fu">class</span>(tbl_movie)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="warm-up-solutions" class="slide level2">
-<h2>Warm-up solutions</h2>
+<section id="review-question-solutions" class="slide level2">
+<h2>Review question solutions</h2>
+<h3 id="movie-counts-by-genre">1. Movie counts by genre</h3>
+<p>How many genres are there, and how many movies are in each genre?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Count movies by genre</span></span>
-<span id="cb16-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href=""></a>  <span class="fu">count</span>(Genre, <span class="at">name =</span> <span class="st">"movie_count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-4"><a href=""></a></span>
-<span id="cb16-5"><a href=""></a><span class="co"># Find the 10 largest absolute score differences</span></span>
-<span id="cb16-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb16-7"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
-<span id="cb16-8"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_gap, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-9"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="warm-up-solutions-continued" class="slide level2">
-<h2>Warm-up solutions (continued)</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="co"># Mean audience score by genre</span></span>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="co"># Concise approach</span></span>
 <span id="cb17-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a href=""></a>  <span class="fu">summarise</span>(</span>
-<span id="cb17-5"><a href=""></a>    <span class="at">mean_audience =</span> <span class="fu">mean</span>(AudienceScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb17-6"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb17-7"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb17-8"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_audience))</span>
-<span id="cb17-9"><a href=""></a></span>
-<span id="cb17-10"><a href=""></a><span class="co"># Five highest-grossing action movies</span></span>
-<span id="cb17-11"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb17-12"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-13"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-14"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-3"><a href=""></a>  <span class="fu">count</span>(Genre, <span class="at">name =</span> <span class="st">"movie_count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-4"><a href=""></a></span>
+<span id="cb17-5"><a href=""></a><span class="co"># Alternative using group_by(), summarise(), and n()</span></span>
+<span id="cb17-6"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
+<span id="cb17-8"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">movie_count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(movie_count))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
-</section>
-<section id="warm-up-solutions-continued-1" class="slide level2">
-<h2>Warm-up solutions (continued)</h2>
+<h3 id="largest-score-differences">2. Largest score differences</h3>
+<p>What are the 10 movies with the largest absolute difference between <code>RottenTomatoes</code> and <code>AudienceScore</code>?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Highest worldwide gross by genre (ties are retained)</span></span>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># slice_max() approach</span></span>
 <span id="cb18-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
-<span id="cb18-4"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-5"><a href=""></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb18-6"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> score_gap, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap)</span>
+<span id="cb18-6"><a href=""></a></span>
+<span id="cb18-7"><a href=""></a><span class="co"># Alternative using arrange() and slice()</span></span>
+<span id="cb18-8"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb18-9"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">score_gap =</span> <span class="fu">abs</span>(RottenTomatoes <span class="sc">-</span> AudienceScore)) <span class="sc">|&gt;</span></span>
+<span id="cb18-10"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(score_gap)) <span class="sc">|&gt;</span></span>
+<span id="cb18-11"><a href=""></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href=""></a>  <span class="fu">select</span>(Movie, RottenTomatoes, AudienceScore, score_gap)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<h3 id="mean-audience-score-by-genre">3. Mean audience score by genre</h3>
+<p>Compare the mean <code>AudienceScore</code> by genre. This uses the grouped summary method introduced above.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href=""></a>  <span class="fu">summarise</span>(</span>
+<span id="cb19-4"><a href=""></a>    <span class="at">mean_audience =</span> <span class="fu">mean</span>(AudienceScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb19-5"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb19-6"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb19-7"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_audience))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<h3 id="highest-grossing-action-movies">4. Highest-grossing action movies</h3>
+<p>What are the five action movies with the largest <code>WorldwideBO</code>?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="co"># slice_max() approach</span></span>
+<span id="cb20-2"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-5"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span>
+<span id="cb20-6"><a href=""></a></span>
+<span id="cb20-7"><a href=""></a><span class="co"># Alternative using arrange() and slice()</span></span>
+<span id="cb20-8"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb20-9"><a href=""></a>  <span class="fu">filter</span>(Genre <span class="sc">==</span> <span class="st">"Action"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-10"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(WorldwideBO)) <span class="sc">|&gt;</span></span>
+<span id="cb20-11"><a href=""></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-12"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<h3 id="highest-grossing-movie-in-each-genre">5. Highest-grossing movie in each genre</h3>
+<p>Which movie has the largest <code>WorldwideBO</code> in each genre? <code>slice_max()</code> retains ties.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>HollywoodMovies <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href=""></a>  <span class="fu">group_by</span>(Genre) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href=""></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> WorldwideBO, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href=""></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href=""></a>  <span class="fu">select</span>(Movie, Genre, WorldwideBO)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 </section>
@@ -522,7 +547,7 @@
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': true,
+'smaller': false,
  
         // Display controls in the bottom right corner
         controls: false,
