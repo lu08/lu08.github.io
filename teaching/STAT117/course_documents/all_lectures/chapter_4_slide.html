@@ -611,10 +611,22 @@ Show solution
 </tr>
 </tbody>
 </table>
+<details>
+<summary>
+Show solution
+</summary>
+Tom’s SAT z-score is <code>(1400 - 1100) / 150 = 2</code>. Jerry’s ACT z-score is <code>(28 - 25) / 2 = 1.5</code>. Tom scored higher relative to test-takers on his exam.
+</details>
 <p><br></p>
 <ul>
 <li>Motivating example 2: In the NELS dataset, the <code>SES</code> score of student ID 1 is 23. How do we make sense of this value? What about for student with ID 2?</li>
 </ul>
+<details>
+<summary>
+Show solution
+</summary>
+In NELS, student 1 has <code>SES = 23</code> and student 2 has <code>SES = 20</code>. Using the SES mean of 18.434 and standard deviation of 6.924, their z-scores are approximately <code>(23 - 18.434) / 6.924 = 0.66</code> and <code>(20 - 18.434) / 6.924 = 0.23</code>. Both are above the mean; student 1 is farther above it.
+</details>
 </section>
 <section id="z-score-definition" class="slide level2">
 <h2>Z-score: definition</h2>
@@ -648,6 +660,17 @@ z_{SES} = \frac{\text{SES} - 18.4}{6.92}
 <li>What is the skewness ratio of <span class="math inline">\(z_{SES}\)</span>?</li>
 </ul>
 <p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The z-score is a linear transformation because it can be written as <code>z_SES = (1/6.92)*SES - 18.4/6.92</code>, which has the form <code>K*(old data) + C</code>.</p>
+<ul>
+<li>The mean is 0.</li>
+<li>The standard deviation is 1.</li>
+<li>The skewness ratio is unchanged because the scale factor <code>1/6.92</code> is positive; for SES, it is approximately -1.03.</li>
+</ul>
+</details>
 <p>Interpretation examples:</p>
 <blockquote>
 <p>If z-score is 0.7: The raw score is 0.7 standard deviations ABOVE the mean.</p>
@@ -705,6 +728,18 @@ z_{SES} = \frac{\text{SES} - 18.4}{6.92}
 <li>Another 10th grade student from the NELS dataset has a z-score of 2.1 for the math achievement test (<code>achmat10</code>). Is this a good score? What is the student’s raw score?</li>
 </ol>
 <p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p>Math: <code>(53 - 57) / 7.84 = -0.51</code>.</p></li>
+<li><p>Reading: <code>(53 - 56.1) / 8.30 = -0.37</code>.</p></li>
+<li><p>She did better relative to peers on reading: its z-score is higher (less below the mean).</p></li>
+<li><p>The empirical cumulative percentages in NELS are 28.6% for math and 32.0% for reading, so reading is also higher by cumulative percentage.</p></li>
+</ol>
+For the second student, a z-score of 2.1 is unusually high. The raw score is <code>2.1*7.84 + 57 = 73.464</code>, or about 73.5.
+</details>
 </section>
 <section id="example-nba" class="slide level2 scrollable">
 <h2>Example: NBA</h2>
@@ -790,6 +825,42 @@ z_{SES} = \frac{\text{SES} - 18.4}{6.92}
 <ol start="3" type="a">
 <li>If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?</li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Player</th>
+<th style="text-align: right;">Rebounds z-score</th>
+<th style="text-align: right;">Field-goal z-score</th>
+<th style="text-align: right;">Three-point z-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LeBron James</td>
+<td style="text-align: right;"><code>(7.30 - 5.11) / 2.41 = 0.91</code></td>
+<td style="text-align: right;"><code>(0.540 - 0.478) / 0.062 = 1.00</code></td>
+<td style="text-align: right;"><code>(0.410 - 0.350) / 0.075 = 0.80</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stephen Curry</td>
+<td style="text-align: right;"><code>(4.46 - 5.11) / 2.41 = -0.27</code></td>
+<td style="text-align: right;"><code>(0.450 - 0.478) / 0.062 = -0.45</code></td>
+<td style="text-align: right;"><code>(0.408 - 0.350) / 0.075 = 0.77</code></td>
+</tr>
+</tbody>
+</table>
+LeBron is above average in all three skills; Curry is above average in three-point shooting and below average in the other two. If the three skills are weighted equally, LeBron’s average z-score is about 0.90, compared with about 0.02 for Curry, so LeBron is better overall on this limited comparison.
+</details>
 </section>
 <section id="z-scores-and-outliers" class="slide level2">
 <h2>Z-scores and outliers</h2>
@@ -825,6 +896,43 @@ z_{SES} = \frac{\text{SES} - 18.4}{6.92}
 </tr>
 </tbody>
 </table>
+<details>
+<summary>
+Show solution
+</summary>
+<p>For an example, use <code>SES</code>, with mean 18.4 and standard deviation 6.92. Convert each z-score with <code>raw score = z-score*6.92 + 18.4</code>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">z-score</th>
+<th style="text-align: right;">Example SES raw score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">18.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-0.5</td>
+<td style="text-align: right;">14.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1.5</td>
+<td style="text-align: right;">28.78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-4.5</td>
+<td style="text-align: right;">-12.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12.5</td>
+<td style="text-align: right;">104.90</td>
+</tr>
+</tbody>
+</table>
+The last two are mathematical extrapolations and would be far outside the plausible SES range; the exercise can use any numeric variable, so answers vary with the selected variable.
+</details>
 <ul>
 <li><p>For many numerical variables, it is <em>unlikely</em> to be more than 2 SD’s away from the mean (<a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">4.5% chance if the distribution is normal</a> – more on this later).</p></li>
 <li><p>As a result, if a z-score is greater than 2 or less than -2, we could consider the corresponding raw score as an outlier.</p></li>

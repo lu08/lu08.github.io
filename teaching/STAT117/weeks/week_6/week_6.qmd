@@ -9,7 +9,16 @@ format: html
 - Oct 8 (Thursday): in-person lecture, **quiz 4**
 
 
-## Tuesday, Oct 6
+## Tuesday, Oct 6 (asynchronous)
+
+1. Watch the first two (yay!) StatChat videos. These videos offer none-technical additioanal examples and hopefully fun discussions of relevant course content.  In my mind, you could listen to them somewhat casually - when you are driving, folding laundtry, or (best of all) jogging.  The key points will always be summarized in lecture slides.
+
+   - [StatChat1: What is a bivariate relationship](youtube.com/watch?v=xWy2PzISjco&feature=youtu.be)
+   - [StatChat2: Scatterplot examples](https://youtu.be/F24R1WWqiKM) 
+
+2. Go over slides 1 -  5 of [Chapter 5 slides](../../course_documents/all_lectures/chapter_5_slide.html).  Stop at "Linear Relationship."
+
+3. Thursday's quiz will be on z-scores (second half of [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html)), as well as some simple (non-technical) questions from the content listed in 1 and 2 above (e.g., "What example was discussed in the StatChat video on scatterplot?" - If you went over the content as instructed, you should be fine.)
 
 
 ## Thursday, Oct 8

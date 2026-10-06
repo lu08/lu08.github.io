@@ -280,9 +280,21 @@ We want to **standardize** data so that we can compare scores regardless of thei
 | SAT | 1400 | 1100 | 150 |
 | ACT | 28 | 25 | 2 |
 
+<details>
+<summary>Show solution</summary>
+
+Tom's SAT z-score is `(1400 - 1100) / 150 = 2`. Jerry's ACT z-score is `(28 - 25) / 2 = 1.5`. Tom scored higher relative to test-takers on his exam.
+</details>
+
 <br>
 
 - Motivating example 2: In the NELS dataset, the `SES` score of student ID 1 is 23. How do we make sense of this value?  What about for student with ID 2? 
+
+<details>
+<summary>Show solution</summary>
+
+In NELS, student 1 has `SES = 23` and student 2 has `SES = 20`. Using the SES mean of 18.434 and standard deviation of 6.924, their z-scores are approximately `(23 - 18.434) / 6.924 = 0.66` and `(20 - 18.434) / 6.924 = 0.23`. Both are above the mean; student 1 is farther above it.
+</details>
 
 
 ## Z-score: definition
@@ -322,6 +334,16 @@ $$
 
 <br>
 
+<details>
+<summary>Show solution</summary>
+
+The z-score is a linear transformation because it can be written as `z_SES = (1/6.92)*SES - 18.4/6.92`, which has the form `K*(old data) + C`.
+
+- The mean is 0.
+- The standard deviation is 1.
+- The skewness ratio is unchanged because the scale factor `1/6.92` is positive; for SES, it is approximately -1.03.
+</details>
+
 
 Interpretation examples:
 
@@ -360,6 +382,20 @@ Interpretation examples:
 
 <br>
 
+<details>
+<summary>Show solution</summary>
+
+(a) Math: `(53 - 57) / 7.84 = -0.51`.
+
+(b) Reading: `(53 - 56.1) / 8.30 = -0.37`.
+
+(c) She did better relative to peers on reading: its z-score is higher (less below the mean).
+
+(d) The empirical cumulative percentages in NELS are 28.6% for math and 32.0% for reading, so reading is also higher by cumulative percentage.
+
+For the second student, a z-score of 2.1 is unusually high. The raw score is `2.1*7.84 + 57 = 73.464`, or about 73.5.
+</details>
+
 
 
 ## Example: NBA
@@ -392,6 +428,16 @@ The following information are given in the `NBAPlayers2024` data from [Statistic
 
 (c) If you only consider the three skill sets listed above, who is a better player, overall, Lebron James or Stephen Curry?
 
+<details>
+<summary>Show solution</summary>
+
+| Player | Rebounds z-score | Field-goal z-score | Three-point z-score |
+|:--|--:|--:|--:|
+| LeBron James | `(7.30 - 5.11) / 2.41 = 0.91` | `(0.540 - 0.478) / 0.062 = 1.00` | `(0.410 - 0.350) / 0.075 = 0.80` |
+| Stephen Curry | `(4.46 - 5.11) / 2.41 = -0.27` | `(0.450 - 0.478) / 0.062 = -0.45` | `(0.408 - 0.350) / 0.075 = 0.77` |
+
+LeBron is above average in all three skills; Curry is above average in three-point shooting and below average in the other two. If the three skills are weighted equally, LeBron's average z-score is about 0.90, compared with about 0.02 for Curry, so LeBron is better overall on this limited comparison.
+</details>
 
 
 
@@ -408,6 +454,22 @@ Exercise: pick a numeric variable from the NELS dataset and calculate the raw sc
 | 1.5 | |
 | -4.5 | |
 | 12.5 | |
+
+<details>
+<summary>Show solution</summary>
+
+For an example, use `SES`, with mean 18.4 and standard deviation 6.92. Convert each z-score with `raw score = z-score*6.92 + 18.4`:
+
+| z-score | Example SES raw score |
+|:--:|--:|
+| 0 | 18.40 |
+| -0.5 | 14.94 |
+| 1.5 | 28.78 |
+| -4.5 | -12.74 |
+| 12.5 | 104.90 |
+
+The last two are mathematical extrapolations and would be far outside the plausible SES range; the exercise can use any numeric variable, so answers vary with the selected variable.
+</details>
 
 
 - For many numerical variables, it is *unlikely* to be more than 2 SD’s away from the mean ([4.5% chance if the distribution is normal](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) – more on this later).

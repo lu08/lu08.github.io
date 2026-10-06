@@ -1,0 +1,248 @@
+---
+title: "Chapter 5: Bivariate Relationships"
+subtitle: "STAT117: Introduction to Statistics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    chalkboard:
+      buttons: true
+    template-partials:
+      - title-slide.html
+editor_options:
+  chunk_output_type: inline
+---
+
+
+## Introduction
+
+Among runners, is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
+
+In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
+
+How you answer these questions vary largely based on the **measurement type** of the variables.  You should use appropriate **statistics** (e.g., correlation coefficients and percentages comparisons) and **visualizations** (e.g., scatterplots).
+
+- ⚠️ **Correlation does not imply causation.**
+
+
+
+# Cases WITHOUT nominal variables
+
+
+## Scatterplot 📊
+
+A scatterplot is a **bivariate** graph of two numeric variables. 
+
+Example: In the `NELS` dataset, (`achrdg12`, `achmat12`) values can be considered in pairs:
+
+- Student 1: (52.56, 59.69)
+- Student 2: (53.12, 55.36)
+- Student 3: (54.79, 56.73)
+
+The scatterplot shows 500 dots, each corresponding to one student in the dataset. The highlighted dot represents Student 1. 
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-width: 6
+#| fig-height: 6
+#| out-width: "65%"
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+
+plot(
+  nels$achrdg12,
+  nels$achmat12,
+  xlab = "Reading achievement in 12th grade (achrdg12)",
+  ylab = "Math achievement in 12th grade (achmat12)",
+  pch = 16,
+  col = "gray70",
+  asp = 1,
+  cex = 1.5
+)
+
+abline(v = 52.56, lty = 2, col = "steelblue")
+abline(h = 59.69, lty = 2, col = "steelblue")
+points(52.56, 59.69, pch = 21, cex = 1.5, bg = "red", col = "black")
+text(52.56, 59.69, labels = "Student 1", pos = 4, col = "red", cex=2)
+```
+
+## Other Scatterplot Examples
+
+Here are a few examples of scatterplots:
+
+- [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)
+- [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)
+- [Is Sushi ‘Healthy’? What About Granola? Where Americans and Nutritionists Disagree](https://www.nytimes.com/interactive/2016/07/05/upshot/is-sushi-healthy-what-about-granola-where-americans-and-nutritionists-disagree.html?eafs_enabled=false)
+
+
+## Linear relationship
+
+A scatterplot can visually display the linear relationship (positive or negative) between two numeric variables. The following graphs are based on the `AllCountries` dataset.
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-width: 8
+#| fig-height: 12
+#| out-width: "100%"
+data("AllCountries", package = "Lock5Data")
+
+par(mfrow = c(3, 2))
+
+plot(
+  AllCountries$CO2, AllCountries$Energy,
+  xlab = "CO2", ylab = "Energy", pch = 16, cex = 0.7, col = "gray55",
+  cex.lab = 1.5, cex.axis = 1.5
+)
+mtext("(a)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
+
+plot(
+  AllCountries$Internet, AllCountries$LifeExpectancy,
+  xlab = "Internet", ylab = "LifeExpectancy", pch = 16, cex = 0.7, col = "gray55",
+  cex.lab = 1.5, cex.axis = 1.5
+)
+mtext("(b)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
+
+plot(
+  AllCountries$Rural, AllCountries$Internet,
+  xlab = "Rural", ylab = "Internet", pch = 16, cex = 0.7, col = "gray55",
+  cex.lab = 1.5, cex.axis = 1.5
+)
+mtext("(c)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
+
+plot(
+  AllCountries$Diabetes, AllCountries$Unemployment,
+  xlab = "Diabetes", ylab = "Unemployment", pch = 16, cex = 0.7, col = "gray55",
+  cex.lab = 1.5, cex.axis = 1.5
+)
+mtext("(d)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
+
+plot(
+  AllCountries$GDP, AllCountries$BirthRate,
+  xlab = "GDP", ylab = "BirthRate", pch = 16, cex = 0.7, col = "gray55",
+  cex.lab = 1.5, cex.axis = 1.5
+)
+mtext("(e)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
+```
+
+
+## Pearson Correlation Coefficient
+
+The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient), denoted by $r$, is a statistic that measures the direction and strength of the linear relationship between two numeric variables.
+
+- Direction: positive or negative (based on the sign of $r$)
+- Strength: Cohen scale
+
+| Absolute value of correlation | Strength |
+| --- | --- |
+| $0.50 \le |r| \le 1$ | Strong |
+| $0.30 \le |r| < 0.50$ | Moderate |
+| $0.10 \le |r| < 0.30$ | Weak |
+| $|r| < 0.10$ | Negligible |
+
+
+Notes:
+
+- *Any* correlation coefficient is between $-1$ and $1$.
+- $r$ can be strongly affected by outliers.
+- $|r|$ is unchanged by a nonzero linear transformation of either variable, but the sign of $r$ changes if exactly one variable is multiplied by a negative constant.
+- A steeper slope does not mean a stronger correlation.
+- $r = 0$ means no linear relationship, but a nonlinear relationship may still exist.
+
+
+## Example
+
+Download the `AllCountries` dataset and open it in Jamovi. Based on this dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
+
+> Jamovi procedure: Analyses - Regression - Correlation Matrix - Put the two variables (`CO2` and `Energy` in this example) into the Variables box - (optional) check **Correlation matrix** under **Plot** to generate a scatterplot.
+
+
+
+
+## Exercise
+
+In the following bivariate relationship questions, support your answer with an appropriate statistic. If there is a linear relationship, describe its direction and strength using Cohen's scale. Interpret your answer in context.
+
+Use the `AllCountries` dataset for these questions.
+
+1. Is there a relationship between internet access (`Internet`) and life expectancy (`LifeExpectancy`)? 
+
+2. Is there a relationship between the rural population percentage (`Rural`) and internet access (`Internet`)?
+
+3. Is there a relationship between diabetes prevalence (`Diabetes`) and unemployment (`Unemployment`)? 
+
+
+
+## Correlation Coefficient: Other Cases
+
+Pearson $r$ is suitable for:
+
+- Scale + scale
+- Scale + dichotomous
+- Dichotomous + dichotomous
+
+
+Spearman's rank correlation coefficient, denoted by $\rho$, is based on ranks and is suitable for:
+
+- Ordinal + ordinal
+- Ordinal + scale
+- Ordinal + dichotomous
+
+> Jamovi: Spearman $\rho$ is obtained using the same procedure as Pearson $r$, but select **Spearman** under the **Correlation Coefficients** option.
+
+
+When describing an association with a correlation coefficient, report:
+
+- **Direction**
+- **Strength**
+- **Interpretation in context**
+
+
+## Exercise (cont'd)
+
+4. (`NELS`) Describe the direction and strength, using Cohen's scale, of the linear relationship between eighth-grade math achievement (`achmat08`) and teacher interest (`tcherint`).
+
+5. (`NELS`) Is there an association between gender (`gender`; 0 = male, 1 = female) and eighth-grade math achievement (`achmat08`)?
+
+6. (`United States Colleges`) Among schools in the `United States Colleges` dataset, is there an association between faculty size (`faculty`) and whether the school is a university (`univ`)?
+
+7. (`United States Colleges`) Is there an association between affiliation (`public`; 0 = private, 1 = public) and institution type (`univ`; 0 = college, 1 = university)?
+
+8. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its student-faculty ratio (`facratio`)?
+
+9. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and its faculty salary rank (`facsal`)?
+
+10. (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
+
+
+
+
+## Appendix: Choice of method summary
+
+Bivariate relationships without any nominal variable:
+
+- **Scale + scale:** Pearson $r$
+- **Scale + ordinal:** Spearman $\rho$
+- **Scale + dichotomous:** Pearson $r$ (the point-biserial correlation); compare the scale-variable distributions across groups
+- **Ordinal + ordinal:** Spearman $\rho$; compare ordinal-response distributions across groups; contingency table
+- **Ordinal + dichotomous:** Spearman $\rho$; compare ordinal-response distributions across groups; contingency table
+- **Dichotomous + dichotomous:** Pearson $r$ (the phi coefficient); contingency table
+
+Bivariate relationships with at least one **nominal** variable:
+
+- **Nominal + scale/ordinal:** compare outcome distributions across nominal groups
+- **Nominal + dichotomous/nominal:** compare category percentages using a contingency table
+
+
+**Visualizing relationships:**
+- Scatterplots: two numerical variables
+- Side-by-side boxplots: one numerical variable and one categorical variable
+- Clustered bar graphs: two categorical variables
+- Contingency tables: two categorical variables
