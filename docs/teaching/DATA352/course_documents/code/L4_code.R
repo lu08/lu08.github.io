@@ -8,10 +8,6 @@ sleephour=c(4, 4.5,  5, 5, 8, 5, 7,
 
 hist(sleephour)
 
-hist(mtcars$hp)
-
-
-
 hist(sleephour,
      xlab='Hours',
      main='Hours of sleep',
@@ -21,10 +17,9 @@ hist(sleephour,
      nclass =10)
 
 
-
 #larger bandwidth (bw) = smoother fitting
 #choice of bandwidth also depends of the scale of data
-dest = density(sleephour,kernel="gaussian",bw=0.2)
+dest <- density(sleephour,kernel="gaussian",bw=0.2)
 lines(dest,col="red",lwd=2)
 
 
