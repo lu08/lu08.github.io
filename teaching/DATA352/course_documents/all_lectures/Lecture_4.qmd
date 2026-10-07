@@ -54,6 +54,7 @@ For the following continuous distributions, how would you calculate something li
 ```{r}
 #| code-fold: true
 #| code-summary: "Show code"
+#| out-width: 80%
 
 par(mar=c(5.1,2,4.1,2),oma=c(0,0,2,0),mfrow=c(1,3))
 hist(rnorm(n=1000,mean=162,sd=10),freq=F,
@@ -94,10 +95,10 @@ hist(faithful$waiting,xlab='min', main='Wait time b/t eruptions',probability=T,
 
 The probability mass function $f(x)=P(X=x)$ cannot be defined for continuous random variables. Instead, we use something called the **probability density function**, defined as a function $f(x)$ such that $P(X\in A)=\int_A f(x) dx$.
 
-
 ```{r}
 #| code-fold: true
 #| code-summary: "Show code"
+#| out-width: 80%
 
 par(mar=c(5.1,2,4.1,2),oma=c(0,0,2,0),mfrow=c(1,3))
 hist(rnorm(n=1000,mean=162,sd=10),freq=F,
@@ -138,7 +139,10 @@ lines(dest, col = "red",lwd=4)
 
 
 ## Density estimation
-A small digression: **density estimation** is a very big topic in statistics. We'll do a simple demo in R (R code: `density(data, kernel = "Gaussian", bw = 5)`).
+A small digression: **density estimation** is a very big topic in statistics. We'll do a [simple demo](../code/L4_code.R) in R (R code: `density(data, kernel = "Gaussian", bw = 5)`).
+
+
+<br>
 
 For an *arbitrary* continuous density, calculating probabilities involves integration; R can handle **common continuous distributions** (i.e., their densities have certain functional forms, specified by given **parameters**); these are also used a lot in modeling.
 
@@ -169,7 +173,7 @@ For an *arbitrary* continuous density, calculating probabilities involves integr
 
 **Scenario:** Exponential is often used to model *Poisson waiting time*: if the number of times an event occurs follows a Poisson distribution, then the waiting time between two events follows an exponential distribution.
 
-*Q: if you stand in front of a window and spot taxis at a constant **rate** of 12.5 taxis per hour, how long would you **expect** to wait for the next taxi?*
+>Question: if you stand in front of a window and spot taxis at a constant **rate** of 12.5 taxis per hour, how long would you **expect** to wait for the next taxi?
 
 **Parameter:** $\lambda$ = rate of occurrence
 
@@ -196,7 +200,7 @@ For an *arbitrary* continuous density, calculating probabilities involves integr
 
 ## Beta
 
-## Beta
+## Beta {.nostretch}
 
 **Scenario:** Beta distribution has the range of $(0,1)$ and is often used to model percentages and probabilities, etc. (especially in Bayesian models as a prior distribution)
 
@@ -207,6 +211,8 @@ For an *arbitrary* continuous density, calculating probabilities involves integr
 #| code-summary: "Show code"
 #| fig-width: 12
 #| fig-height: 3
+#| out-width: 80%
+#| fig-align: center
 
 beta_shapes <- list(
      c(1, 1), c(1, 5), c(2, 2), c(2, 8), c(6, 4), c(0.2, 0.3)
@@ -243,13 +249,37 @@ for (i in seq_along(beta_shapes)) {
 ## Normal
 
 
-## Normal
+## Normal {.nostretch}
 
-**Scenario:** Normal distribution is typically used to model the sum, or average, of "identical and independent" random variables (e.g., distribution of the sample mean), due to the *Central Limit Theorem*.
+**Scenario:** Normal distribution is typically used to model the sum, or the average, of "identical and independent" random variables (e.g., distribution of the sample mean), due to the *Central Limit Theorem*.
 
 **Parameter:** $\mu$ = mean, $\sigma$ = standard deviation
 
-![](fig3){width=45%}
+```{r}
+#| code-fold: true
+#| code-summary: "Show code"
+#| fig-width: 12
+#| fig-height: 3
+#| out-width: 80%
+#| fig-align: center
+
+normal_means <- c(0, 2.5, 162)
+normal_sds <- c(1, 0.5, 10)
+normal_titles <- c("mean=0,sd=1", "mean=2.5,sd=0.5", "mean=162,sd=10")
+
+par(mfrow = c(1, 3), mar = c(4, 2, 3, 1))
+for (i in seq_along(normal_means)) {
+  sample_values <- rnorm(1000, mean = normal_means[i], sd = normal_sds[i])
+  hist(sample_values, probability = TRUE,
+       main = normal_titles[i], xlab = "", ylab = "",
+       col = "lightblue", border = "blue", lty = "dashed",
+       ylim = c(0, 1.1 * dnorm(normal_means[i],
+                              mean = normal_means[i], sd = normal_sds[i])),
+       xlim = normal_means[i] + c(-3, 3) * normal_sds[i])
+  curve(dnorm(x, mean = normal_means[i], sd = normal_sds[i]),
+        add = TRUE, col = "red", lwd = 2)
+}
+```
 
 **Probability:**
 
@@ -269,14 +299,14 @@ for (i in seq_along(beta_shapes)) {
 
 <br><br>
 
-Notes on notation: `something` is distributed as a certain distribution is typically written as: `something ~ Distribution(parameters)`; example: `X ~ Beta(6, 2)` or `Y ~ Normal(mean = 80, sd = 3)`
+Notation for "distributed as": `% support ~ Beta(6, 2)`; `score ~ Normal(mean = 80, sd = 3)`
 
 
 ## The Central Limit Theorem
 
 ## Intuition: birthday example
 
-If I pick a random student and ask their birth month, what number (between 1 and 12) would I get? **Choose one:**
+If I pick a random student and ask their birth month, what number (between 1 and 12) would I get?
 
     A. A small number (like 1 or 2)
 
@@ -284,7 +314,7 @@ If I pick a random student and ask their birth month, what number (between 1 and
 
     C. Around 6
 
-    D. Any number is possible
+    D. No idea: any number is possible
 
 Now, what if I ask a random sample of more than 1 students and calculate the **average** birth month? What would I get?
 
@@ -294,9 +324,7 @@ Now, what if I ask a random sample of more than 1 students and calculate the **a
 
 1. Suppose each of you is teaching a class with $n=25$ students. Simulate $25$ exam scores from uniform $(0,100)$ (try: plot a histogram of your simulated 25 exam scores; you should see a roughly uniform shape). Calculate the class **average** of your simulated class.
 
-    Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages.
-    
-    How would you estimate the mean and standard deviation (sd) of the class average?
+    Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages. Estimate the mean and standard deviation (sd) of the class average?
 
 
 2. Repeat 1, but simulating $25$ exam scores from normal with $mean=80$ and $sd=3$.
@@ -304,15 +332,14 @@ Now, what if I ask a random sample of more than 1 students and calculate the **a
 3. Repeat 1, but simulating $25$ exam scores from beta with $shape1=6$ and $shape2=2$.
 
 
-> Your results should show that, regardless of your starting distribution (uniform, normal, or beta), the simulated class AVERAGES are very "well-behaved": the histogram of the 10000 simulated averages should look *normal* (symmetric bell-curve) in each case.  The key result of the Central Limit Theorem implies that: if you have a random sample of n scores (these scores can be from ANY distribution!), then the sample average is random, and the randomness can be described by a normal distribution for large n.  
-
+> Your results should show that, regardless of your starting distribution (uniform, normal, or beta), the simulated class AVERAGES are very "well-behaved": the histogram of the 10000 simulated averages should look *normal* (symmetric bell-curve) in each case.
 
 
 ## The Central Limit Theorem
 
-**Key result of the Central Limit Theorem:** if you have a random sample of $n$ scores, then the **sample average** is random, and the randomness can be described by a **normal distribution** for large $n$.
+**Key result:** if you have a random sample of $n$ scores (these scores can be from ANY distribution!), then the **sample average** is random, and the randomness can be described by a **normal distribution** (for large $n$).
 
-> **Why useful?** CLT enables us to make statistical inference based on the sample mean. For instance, you might make a *hypothesis* that the exam scores follow a beta distribution with shape1=6 and shape2=2; CLT tells you what the average **should** look like under this hypothesis. You then look at the average score of 25 (randomly selected) students. If the average is "too extreme," you might decide to reject the hypothesis.
+> **Why useful?** CLT enables us to make statistical inference based on the sample mean. For instance, you might make a *hypothesis* that the exam scores follow a beta distribution with shape1=6 and shape2=2.  To verify, you look at the average score of your 25 (randomly selected) students.  CLT tells you what this average **should** look like under your hypothesis.  If the observed average is "too extreme," you might decide to reject the hypothesis.
 
 **Important question:** How large does $n$ have to be for CLT to work well? 
 

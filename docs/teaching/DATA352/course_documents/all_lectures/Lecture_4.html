@@ -262,7 +262,7 @@
 </details>
 
 </div>
-<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:80.0%" class="r-stretch"></section>
 <section id="density-function" class="slide level2">
 <h2>Density function</h2>
 <p>The probability mass function <span class="math inline">\(f(x)=P(X=x)\)</span> cannot be defined for continuous random variables. Instead, we use something called the <strong>probability density function</strong>, defined as a function <span class="math inline">\(f(x)\)</span> such that <span class="math inline">\(P(X\in A)=\int_A f(x) dx\)</span>.</p>
@@ -307,10 +307,11 @@
 </details>
 
 </div>
-<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:80.0%" class="r-stretch"></section>
 <section id="density-estimation" class="slide level2">
 <h2>Density estimation</h2>
-<p>A small digression: <strong>density estimation</strong> is a very big topic in statistics. We’ll do a simple demo in R (R code: <code>density(data, kernel = "Gaussian", bw = 5)</code>).</p>
+<p>A small digression: <strong>density estimation</strong> is a very big topic in statistics. We’ll do a <a href="../code/L4_code.R">simple demo</a> in R (R code: <code>density(data, kernel = "Gaussian", bw = 5)</code>).</p>
+<p><br></p>
 <p>For an <em>arbitrary</em> continuous density, calculating probabilities involves integration; R can handle <strong>common continuous distributions</strong> (i.e., their densities have certain functional forms, specified by given <strong>parameters</strong>); these are also used a lot in modeling.</p>
 </section>
 <section id="uniform" class="slide level2">
@@ -337,7 +338,9 @@
 <section id="exponential-1" class="slide level2">
 <h2>Exponential</h2>
 <p><strong>Scenario:</strong> Exponential is often used to model <em>Poisson waiting time</em>: if the number of times an event occurs follows a Poisson distribution, then the waiting time between two events follows an exponential distribution.</p>
-<p><em>Q: if you stand in front of a window and spot taxis at a constant <strong>rate</strong> of 12.5 taxis per hour, how long would you <strong>expect</strong> to wait for the next taxi?</em></p>
+<blockquote>
+<p>Question: if you stand in front of a window and spot taxis at a constant <strong>rate</strong> of 12.5 taxis per hour, how long would you <strong>expect</strong> to wait for the next taxi?</p>
+</blockquote>
 <p><strong>Parameter:</strong> <span class="math inline">\(\lambda\)</span> = rate of occurrence</p>
 <p><strong>Mean:</strong> <span class="math inline">\(1/\lambda\)</span> = expected or average waiting time</p>
 <p><strong>Probability:</strong></p>
@@ -362,11 +365,11 @@
 <section id="beta" class="slide level2">
 <h2>Beta</h2>
 </section>
-<section id="beta-1" class="slide level2">
+<section id="beta-1" class="slide level2 nostretch">
 <h2>Beta</h2>
 <p><strong>Scenario:</strong> Beta distribution has the range of <span class="math inline">\((0,1)\)</span> and is often used to model percentages and probabilities, etc. (especially in Bayesian models as a prior distribution)</p>
 <p><strong>Parameter:</strong> <span class="math inline">\(\alpha\)</span> = shape 1; <span class="math inline">\(\beta\)</span> = shape 2</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>beta_shapes <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -388,9 +391,15 @@
 <span id="cb3-17"><a href=""></a>     )</span>
 <span id="cb3-18"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
 </div>
-<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-3-1.png" width="1152" class="r-stretch"><p><strong>Mean:</strong> <span class="math inline">\(\alpha / (\alpha + \beta)\)</span></p>
+</div>
+</div>
+<p><strong>Mean:</strong> <span class="math inline">\(\alpha / (\alpha + \beta)\)</span></p>
 <p><strong>Probability:</strong></p>
 <ul>
 <li><strong><code>pbeta(..., shape1 = ..., shape2 = ...)</code></strong></li>
@@ -403,12 +412,39 @@
 <section id="normal" class="slide level2">
 <h2>Normal</h2>
 </section>
-<section id="normal-1" class="slide level2">
+<section id="normal-1" class="slide level2 nostretch">
 <h2>Normal</h2>
-<p><strong>Scenario:</strong> Normal distribution is typically used to model the sum, or average, of “identical and independent” random variables (e.g., distribution of the sample mean), due to the <em>Central Limit Theorem</em>.</p>
+<p><strong>Scenario:</strong> Normal distribution is typically used to model the sum, or the average, of “identical and independent” random variables (e.g., distribution of the sample mean), due to the <em>Central Limit Theorem</em>.</p>
 <p><strong>Parameter:</strong> <span class="math inline">\(\mu\)</span> = mean, <span class="math inline">\(\sigma\)</span> = standard deviation</p>
-
-<img data-src="fig3.png" style="width:45.0%" class="r-stretch"><p><strong>Probability:</strong></p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>normal_means <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.5</span>, <span class="dv">162</span>)</span>
+<span id="cb4-2"><a href=""></a>normal_sds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">10</span>)</span>
+<span id="cb4-3"><a href=""></a>normal_titles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mean=0,sd=1"</span>, <span class="st">"mean=2.5,sd=0.5"</span>, <span class="st">"mean=162,sd=10"</span>)</span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="cb4-6"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(normal_means)) {</span>
+<span id="cb4-7"><a href=""></a>  sample_values <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> normal_means[i], <span class="at">sd =</span> normal_sds[i])</span>
+<span id="cb4-8"><a href=""></a>  <span class="fu">hist</span>(sample_values, <span class="at">probability =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-9"><a href=""></a>       <span class="at">main =</span> normal_titles[i], <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>,</span>
+<span id="cb4-10"><a href=""></a>       <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb4-11"><a href=""></a>       <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.1</span> <span class="sc">*</span> <span class="fu">dnorm</span>(normal_means[i],</span>
+<span id="cb4-12"><a href=""></a>                              <span class="at">mean =</span> normal_means[i], <span class="at">sd =</span> normal_sds[i])),</span>
+<span id="cb4-13"><a href=""></a>       <span class="at">xlim =</span> normal_means[i] <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>) <span class="sc">*</span> normal_sds[i])</span>
+<span id="cb4-14"><a href=""></a>  <span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> normal_means[i], <span class="at">sd =</span> normal_sds[i]),</span>
+<span id="cb4-15"><a href=""></a>        <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb4-16"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Probability:</strong></p>
 <ul>
 <li><strong><code>pnorm(..., mean = ..., sd = ...)</code></strong></li>
 </ul>
@@ -427,41 +463,40 @@
 <li>Exam scores are approximately normal with mean 80 and standard deviation 3. What proportion of students score between 75 and 85?</li>
 </ol>
 <p><br><br></p>
-<p>Notes on notation: <code>something</code> is distributed as a certain distribution is typically written as: <code>something ~ Distribution(parameters)</code>; example: <code>X ~ Beta(6, 2)</code> or <code>Y ~ Normal(mean = 80, sd = 3)</code></p>
+<p>Notation for “distributed as”: <code>% support ~ Beta(6, 2)</code>; <code>score ~ Normal(mean = 80, sd = 3)</code></p>
 </section>
 <section id="the-central-limit-theorem" class="slide level2">
 <h2>The Central Limit Theorem</h2>
 </section>
 <section id="intuition-birthday-example" class="slide level2">
 <h2>Intuition: birthday example</h2>
-<p>If I pick a random student and ask their birth month, what number (between 1 and 12) would I get? <strong>Choose one:</strong></p>
+<p>If I pick a random student and ask their birth month, what number (between 1 and 12) would I get?</p>
 <pre><code>A. A small number (like 1 or 2)
 
 B. A large number (like 11 or 12)
 
 C. Around 6
 
-D. Any number is possible</code></pre>
+D. No idea: any number is possible</code></pre>
 <p>Now, what if I ask a random sample of more than 1 students and calculate the <strong>average</strong> birth month? What would I get?</p>
 </section>
 <section id="simulation" class="slide level2 scrollable">
 <h2>Simulation</h2>
 <ol type="1">
 <li><p>Suppose each of you is teaching a class with <span class="math inline">\(n=25\)</span> students. Simulate <span class="math inline">\(25\)</span> exam scores from uniform <span class="math inline">\((0,100)\)</span> (try: plot a histogram of your simulated 25 exam scores; you should see a roughly uniform shape). Calculate the class <strong>average</strong> of your simulated class.</p>
-<p>Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages.</p>
-<p>How would you estimate the mean and standard deviation (sd) of the class average?</p></li>
+<p>Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages. Estimate the mean and standard deviation (sd) of the class average?</p></li>
 <li><p>Repeat 1, but simulating <span class="math inline">\(25\)</span> exam scores from normal with <span class="math inline">\(mean=80\)</span> and <span class="math inline">\(sd=3\)</span>.</p></li>
 <li><p>Repeat 1, but simulating <span class="math inline">\(25\)</span> exam scores from beta with <span class="math inline">\(shape1=6\)</span> and <span class="math inline">\(shape2=2\)</span>.</p></li>
 </ol>
 <blockquote>
-<p>Your results should show that, regardless of your starting distribution (uniform, normal, or beta), the simulated class AVERAGES are very “well-behaved”: the histogram of the 10000 simulated averages should look <em>normal</em> (symmetric bell-curve) in each case. The key result of the Central Limit Theorem implies that: if you have a random sample of n scores (these scores can be from ANY distribution!), then the sample average is random, and the randomness can be described by a normal distribution for large n.&nbsp;</p>
+<p>Your results should show that, regardless of your starting distribution (uniform, normal, or beta), the simulated class AVERAGES are very “well-behaved”: the histogram of the 10000 simulated averages should look <em>normal</em> (symmetric bell-curve) in each case.</p>
 </blockquote>
 </section>
 <section id="the-central-limit-theorem-1" class="slide level2">
 <h2>The Central Limit Theorem</h2>
-<p><strong>Key result of the Central Limit Theorem:</strong> if you have a random sample of <span class="math inline">\(n\)</span> scores, then the <strong>sample average</strong> is random, and the randomness can be described by a <strong>normal distribution</strong> for large <span class="math inline">\(n\)</span>.</p>
+<p><strong>Key result:</strong> if you have a random sample of <span class="math inline">\(n\)</span> scores (these scores can be from ANY distribution!), then the <strong>sample average</strong> is random, and the randomness can be described by a <strong>normal distribution</strong> (for large <span class="math inline">\(n\)</span>).</p>
 <blockquote>
-<p><strong>Why useful?</strong> CLT enables us to make statistical inference based on the sample mean. For instance, you might make a <em>hypothesis</em> that the exam scores follow a beta distribution with shape1=6 and shape2=2; CLT tells you what the average <strong>should</strong> look like under this hypothesis. You then look at the average score of 25 (randomly selected) students. If the average is “too extreme,” you might decide to reject the hypothesis.</p>
+<p><strong>Why useful?</strong> CLT enables us to make statistical inference based on the sample mean. For instance, you might make a <em>hypothesis</em> that the exam scores follow a beta distribution with shape1=6 and shape2=2. To verify, you look at the average score of your 25 (randomly selected) students. CLT tells you what this average <strong>should</strong> look like under your hypothesis. If the observed average is “too extreme,” you might decide to reject the hypothesis.</p>
 </blockquote>
 <p><strong>Important question:</strong> How large does <span class="math inline">\(n\)</span> have to be for CLT to work well?</p>
 <p>It depends on the shape of the population; if the population is very “not normal” (esp.&nbsp;long tail), <span class="math inline">\(n\)</span> needs to be very large to overcome the “un-normalness.”</p>
