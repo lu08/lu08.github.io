@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="Lecture_4_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="Lecture_4_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -146,7 +212,9 @@
 <section id="continuous-random-variables" class="slide level2">
 <h2>Continuous random variables</h2>
 <p>Recall, a random variable <span class="math inline">\(X\)</span> is <strong>continuous</strong> if its sample space is continuous (and infinite). Can you think of some real life examples?</p>
+<p><br></p>
 <p>For discrete random variables, we calculate <span class="math inline">\(P(X=x)\)</span> for each possible value. We <strong>cannot</strong> do the same with continuous random variables. Why?</p>
+<p><br></p>
 <p><strong>Important property of a continuous random variable <span class="math inline">\(X\)</span></strong>: <span class="math inline">\(P(X=x) = 0\)</span> for any value <span class="math inline">\(x\)</span>. As a result:</p>
 <ul>
 <li>For example: <span class="math inline">\(P(1 &lt; X &lt;3) = P(1 &lt; X \le3) = P(1 \le X \le3)\)</span>.</li>
@@ -155,15 +223,94 @@
 </section>
 <section id="probability-of-continuous-random-variables" class="slide level2">
 <h2>Probability of continuous random variables</h2>
-<p>We can use <strong>histograms</strong> to visualize <em>univariate</em>, continuous distributions (the discrete equivalent is called a bar graph).</p>
+<p>We can use <a href="https://en.wikipedia.org/wiki/Histogram"><strong>histograms</strong></a> to visualize <em>univariate</em>, continuous distributions (the discrete equivalent is called a <a href="https://en.wikipedia.org/wiki/Bar_chart">bar graph</a>).</p>
 <p>For the following continuous distributions, how would you calculate something like <span class="math inline">\(P( a&lt;X&lt;b)\)</span>?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">5.1</span>,<span class="dv">2</span>,<span class="fl">4.1</span>,<span class="dv">2</span>),<span class="at">oma=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb1-2"><a href=""></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">mean=</span><span class="dv">162</span>,<span class="at">sd=</span><span class="dv">10</span>),<span class="at">freq=</span>F,</span>
+<span id="cb1-3"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb1-4"><a href=""></a>     <span class="at">xlab=</span><span class="st">'cm'</span>,</span>
+<span id="cb1-5"><a href=""></a>     <span class="at">main=</span><span class="st">'Female height'</span>,</span>
+<span id="cb1-6"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,</span>
+<span id="cb1-7"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,</span>
+<span id="cb1-8"><a href=""></a>     <span class="co">#border='blue',lty='dashed',</span></span>
+<span id="cb1-9"><a href=""></a>     <span class="at">nclass=</span><span class="dv">20</span>,</span>
+<span id="cb1-10"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-11"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-12"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span>
+<span id="cb1-13"><a href=""></a></span>
+<span id="cb1-14"><a href=""></a><span class="fu">hist</span>(<span class="fu">rgamma</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">shape =</span> <span class="dv">2</span>,<span class="at">scale =</span> <span class="dv">28000</span>),<span class="at">freq=</span>F,</span>
+<span id="cb1-15"><a href=""></a>     <span class="at">xlab=</span><span class="st">'dollars'</span>,</span>
+<span id="cb1-16"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb1-17"><a href=""></a>     <span class="at">main=</span><span class="st">'Annual income'</span>,</span>
+<span id="cb1-18"><a href=""></a>     <span class="co">#cex.main=2,</span></span>
+<span id="cb1-19"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,</span>
+<span id="cb1-20"><a href=""></a>     <span class="at">col=</span><span class="st">'orange'</span>,</span>
+<span id="cb1-21"><a href=""></a>     <span class="co">#border='blue',lty='dashed',</span></span>
+<span id="cb1-22"><a href=""></a>     <span class="at">nclass=</span><span class="dv">20</span>,</span>
+<span id="cb1-23"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-24"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-25"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span>
+<span id="cb1-26"><a href=""></a></span>
+<span id="cb1-27"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>waiting,<span class="at">xlab=</span><span class="st">'min'</span>, <span class="at">main=</span><span class="st">'Wait time b/t eruptions'</span>,<span class="at">probability=</span>T, </span>
+<span id="cb1-28"><a href=""></a>     <span class="at">col=</span><span class="st">'lightgreen'</span>,<span class="at">nclass=</span><span class="dv">20</span>, <span class="at">yaxt=</span><span class="st">'n'</span>, <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb1-29"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-30"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-31"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
-<img data-src="fig1.png" style="width:55.0%" class="r-stretch"></section>
+</div>
+<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
 <section id="density-function" class="slide level2">
 <h2>Density function</h2>
 <p>The probability mass function <span class="math inline">\(f(x)=P(X=x)\)</span> cannot be defined for continuous random variables. Instead, we use something called the <strong>probability density function</strong>, defined as a function <span class="math inline">\(f(x)\)</span> such that <span class="math inline">\(P(X\in A)=\int_A f(x) dx\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">5.1</span>,<span class="dv">2</span>,<span class="fl">4.1</span>,<span class="dv">2</span>),<span class="at">oma=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb2-2"><a href=""></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">mean=</span><span class="dv">162</span>,<span class="at">sd=</span><span class="dv">10</span>),<span class="at">freq=</span>F,</span>
+<span id="cb2-3"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb2-4"><a href=""></a>     <span class="at">xlab=</span><span class="st">'cm'</span>,</span>
+<span id="cb2-5"><a href=""></a>     <span class="at">main=</span><span class="st">'Female height'</span>,</span>
+<span id="cb2-6"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,</span>
+<span id="cb2-7"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,</span>
+<span id="cb2-8"><a href=""></a>     <span class="co">#border='blue',lty='dashed',</span></span>
+<span id="cb2-9"><a href=""></a>     <span class="at">nclass=</span><span class="dv">20</span>,</span>
+<span id="cb2-10"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-11"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-12"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span>
+<span id="cb2-13"><a href=""></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="at">mean=</span><span class="dv">162</span>,<span class="at">sd=</span><span class="dv">10</span>),<span class="at">add=</span>T,<span class="at">col=</span><span class="st">'red'</span>,<span class="at">lwd=</span><span class="dv">4</span>)</span>
+<span id="cb2-14"><a href=""></a></span>
+<span id="cb2-15"><a href=""></a><span class="fu">hist</span>(<span class="fu">rgamma</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">shape =</span> <span class="dv">2</span>,<span class="at">scale =</span> <span class="dv">28000</span>),<span class="at">freq=</span>F,</span>
+<span id="cb2-16"><a href=""></a>     <span class="at">xlab=</span><span class="st">'dollars'</span>,</span>
+<span id="cb2-17"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb2-18"><a href=""></a>     <span class="at">main=</span><span class="st">'Annual income'</span>,</span>
+<span id="cb2-19"><a href=""></a>     <span class="co">#cex.main=2,</span></span>
+<span id="cb2-20"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,</span>
+<span id="cb2-21"><a href=""></a>     <span class="at">col=</span><span class="st">'orange'</span>,</span>
+<span id="cb2-22"><a href=""></a>     <span class="co">#border='blue',lty='dashed',</span></span>
+<span id="cb2-23"><a href=""></a>     <span class="at">nclass=</span><span class="dv">20</span>,</span>
+<span id="cb2-24"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-25"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-26"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span>
+<span id="cb2-27"><a href=""></a><span class="fu">curve</span>(<span class="fu">dgamma</span>(x,<span class="at">shape =</span> <span class="dv">2</span>,<span class="at">scale=</span><span class="dv">28000</span>),<span class="at">add=</span>T,<span class="at">col=</span><span class="st">'red'</span>,<span class="at">lwd=</span><span class="dv">4</span>)</span>
+<span id="cb2-28"><a href=""></a></span>
+<span id="cb2-29"><a href=""></a><span class="fu">hist</span>(faithful<span class="sc">$</span>waiting,<span class="at">xlab=</span><span class="st">'min'</span>, <span class="at">main=</span><span class="st">'Wait time b/t eruptions'</span>,<span class="at">probability=</span>T, </span>
+<span id="cb2-30"><a href=""></a>     <span class="at">col=</span><span class="st">'lightgreen'</span>,<span class="at">nclass=</span><span class="dv">20</span>, <span class="at">yaxt=</span><span class="st">'n'</span>, <span class="at">ylab=</span><span class="cn">NA</span>,</span>
+<span id="cb2-31"><a href=""></a>     <span class="at">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-32"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-33"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span>
+<span id="cb2-34"><a href=""></a>dest <span class="ot">=</span> <span class="fu">density</span>(faithful<span class="sc">$</span>waiting,<span class="at">kernel =</span> <span class="st">"gaussian"</span>,<span class="at">bw=</span><span class="dv">2</span>)</span>
+<span id="cb2-35"><a href=""></a><span class="fu">lines</span>(dest, <span class="at">col =</span> <span class="st">"red"</span>,<span class="at">lwd=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
-<img data-src="fig2.png" style="width:35.0%" class="r-stretch"><p>A small digression: <strong>density estimation</strong> is a very big topic in statistics. We’ll do a simple demo in R (R code: <code>density(data, kernel = "Gaussian", bw = 5)</code>).</p>
+</div>
+<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="density-estimation" class="slide level2">
+<h2>Density estimation</h2>
+<p>A small digression: <strong>density estimation</strong> is a very big topic in statistics. We’ll do a simple demo in R (R code: <code>density(data, kernel = "Gaussian", bw = 5)</code>).</p>
 <p>For an <em>arbitrary</em> continuous density, calculating probabilities involves integration; R can handle <strong>common continuous distributions</strong> (i.e., their densities have certain functional forms, specified by given <strong>parameters</strong>); these are also used a lot in modeling.</p>
 </section>
 <section id="uniform" class="slide level2">
@@ -205,16 +352,45 @@
 <section id="exercise" class="slide level2 scrollable">
 <h2>Exercise</h2>
 <ol type="1">
-<li><p>Suppose speeding cars occur at a constant rate. A policeman stands at a certain location and catches one speeding car per 10 minutes, on average. What is the chance that he has to wait for less than 5 minutes to catch the next speeding car? More than 15 minutes? Between 5 and 10 minutes?</p></li>
-<li><p>Simulate from the above distribution; print out a few numbers and discuss what the numbers represent; plot a histogram to see its shape (note: the actual density function can be plotted by <code>curve(dexp(x, rate = ...))</code>).</p></li>
+<li>Suppose speeding cars occur at a constant rate. A policeman stands at a certain location and catches one speeding car per 10 minutes, on average. What is the chance that he has to wait for less than 5 minutes to catch the next speeding car? More than 15 minutes? Between 5 and 10 minutes?</li>
+</ol>
+<p><br><br></p>
+<ol start="2" type="1">
+<li>Simulate from the above distribution; print out a few numbers and discuss what the numbers represent; plot a histogram to see its shape (note: the actual density function can be plotted by <code>curve(dexp(x, rate = ...))</code>).</li>
 </ol>
 </section>
 <section id="beta" class="slide level2">
 <h2>Beta</h2>
+</section>
+<section id="beta-1" class="slide level2">
+<h2>Beta</h2>
 <p><strong>Scenario:</strong> Beta distribution has the range of <span class="math inline">\((0,1)\)</span> and is often used to model percentages and probabilities, etc. (especially in Bayesian models as a prior distribution)</p>
 <p><strong>Parameter:</strong> <span class="math inline">\(\alpha\)</span> = shape 1; <span class="math inline">\(\beta\)</span> = shape 2</p>
-<p><embed data-src="densitybeta.pdf" style="width:50.0%"></p>
-<p><strong>Mean:</strong> <span class="math inline">\(\alpha / (\alpha + \beta)\)</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>beta_shapes <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-2"><a href=""></a>     <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">8</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>)</span>
+<span id="cb3-3"><a href=""></a>)</span>
+<span id="cb3-4"><a href=""></a>beta_titles <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-5"><a href=""></a>     <span class="st">"alpha=1, beta=1"</span>, <span class="st">"alpha=1, beta=5"</span>, <span class="st">"alpha=2, beta=2"</span>,</span>
+<span id="cb3-6"><a href=""></a>     <span class="st">"alpha=2, beta=8"</span>, <span class="st">"alpha=6, beta=4"</span>, <span class="st">"alpha=0.2, beta=0.3"</span></span>
+<span id="cb3-7"><a href=""></a>)</span>
+<span id="cb3-8"><a href=""></a></span>
+<span id="cb3-9"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">3</span>, <span class="fl">0.5</span>))</span>
+<span id="cb3-10"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(beta_shapes)) {</span>
+<span id="cb3-11"><a href=""></a>     <span class="fu">curve</span>(</span>
+<span id="cb3-12"><a href=""></a>          <span class="fu">dbeta</span>(x, <span class="at">shape1 =</span> beta_shapes[[i]][<span class="dv">1</span>], <span class="at">shape2 =</span> beta_shapes[[i]][<span class="dv">2</span>]),</span>
+<span id="cb3-13"><a href=""></a>          <span class="at">from =</span> <span class="fl">0.001</span>, <span class="at">to =</span> <span class="fl">0.999</span>,</span>
+<span id="cb3-14"><a href=""></a>          <span class="at">col =</span> <span class="st">"royalblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb3-15"><a href=""></a>          <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-16"><a href=""></a>          <span class="at">main =</span> beta_titles[i]</span>
+<span id="cb3-17"><a href=""></a>     )</span>
+<span id="cb3-18"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-3-1.png" width="1152" class="r-stretch"><p><strong>Mean:</strong> <span class="math inline">\(\alpha / (\alpha + \beta)\)</span></p>
 <p><strong>Probability:</strong></p>
 <ul>
 <li><strong><code>pbeta(..., shape1 = ..., shape2 = ...)</code></strong></li>
@@ -225,6 +401,9 @@
 </ul>
 </section>
 <section id="normal" class="slide level2">
+<h2>Normal</h2>
+</section>
+<section id="normal-1" class="slide level2">
 <h2>Normal</h2>
 <p><strong>Scenario:</strong> Normal distribution is typically used to model the sum, or average, of “identical and independent” random variables (e.g., distribution of the sample mean), due to the <em>Central Limit Theorem</em>.</p>
 <p><strong>Parameter:</strong> <span class="math inline">\(\mu\)</span> = mean, <span class="math inline">\(\sigma\)</span> = standard deviation</p>
@@ -238,25 +417,62 @@
 <li><strong><code>rnorm(10000, mean = ..., sd = ...)</code></strong></li>
 </ul>
 </section>
-<section id="the-central-limit-theorem" class="slide level2 scrollable">
-<h2>The Central Limit Theorem</h2>
+<section id="exercise-1" class="slide level2 scrollable">
+<h2>Exercise</h2>
 <ol type="1">
-<li>Suppose each of you is teaching a class with <span class="math inline">\(n=25\)</span> students. Simulate <span class="math inline">\(25\)</span> exam scores from uniform <span class="math inline">\((0,100)\)</span> and calculate the class average of your simulated class. Plot a histogram of the <span class="math inline">\(25\)</span> simulated exam scores.</li>
+<li>A community survey uses a Beta(6, 2) model for the proportion of residents who support a proposal. What is the probability that support exceeds 80%?</li>
 </ol>
-<ul>
-<li>Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages.</li>
-<li>How would you estimate the mean and standard deviation (sd) of the class average?</li>
-</ul>
+<p><br><br></p>
 <ol start="2" type="1">
+<li>Exam scores are approximately normal with mean 80 and standard deviation 3. What proportion of students score between 75 and 85?</li>
+</ol>
+<p><br><br></p>
+<p>Notes on notation: <code>something</code> is distributed as a certain distribution is typically written as: <code>something ~ Distribution(parameters)</code>; example: <code>X ~ Beta(6, 2)</code> or <code>Y ~ Normal(mean = 80, sd = 3)</code></p>
+</section>
+<section id="the-central-limit-theorem" class="slide level2">
+<h2>The Central Limit Theorem</h2>
+</section>
+<section id="intuition-birthday-example" class="slide level2">
+<h2>Intuition: birthday example</h2>
+<p>If I pick a random student and ask their birth month, what number (between 1 and 12) would I get? <strong>Choose one:</strong></p>
+<pre><code>A. A small number (like 1 or 2)
+
+B. A large number (like 11 or 12)
+
+C. Around 6
+
+D. Any number is possible</code></pre>
+<p>Now, what if I ask a random sample of more than 1 students and calculate the <strong>average</strong> birth month? What would I get?</p>
+</section>
+<section id="simulation" class="slide level2 scrollable">
+<h2>Simulation</h2>
+<ol type="1">
+<li><p>Suppose each of you is teaching a class with <span class="math inline">\(n=25\)</span> students. Simulate <span class="math inline">\(25\)</span> exam scores from uniform <span class="math inline">\((0,100)\)</span> (try: plot a histogram of your simulated 25 exam scores; you should see a roughly uniform shape). Calculate the class <strong>average</strong> of your simulated class.</p>
+<p>Repeat for 10000 times, each time recording the class average. Plot a histogram of the 10000 simulated class averages.</p>
+<p>How would you estimate the mean and standard deviation (sd) of the class average?</p></li>
 <li><p>Repeat 1, but simulating <span class="math inline">\(25\)</span> exam scores from normal with <span class="math inline">\(mean=80\)</span> and <span class="math inline">\(sd=3\)</span>.</p></li>
 <li><p>Repeat 1, but simulating <span class="math inline">\(25\)</span> exam scores from beta with <span class="math inline">\(shape1=6\)</span> and <span class="math inline">\(shape2=2\)</span>.</p></li>
 </ol>
+<blockquote>
+<p>Your results should show that, regardless of your starting distribution (uniform, normal, or beta), the simulated class AVERAGES are very “well-behaved”: the histogram of the 10000 simulated averages should look <em>normal</em> (symmetric bell-curve) in each case. The key result of the Central Limit Theorem implies that: if you have a random sample of n scores (these scores can be from ANY distribution!), then the sample average is random, and the randomness can be described by a normal distribution for large n.&nbsp;</p>
+</blockquote>
 </section>
 <section id="the-central-limit-theorem-1" class="slide level2">
 <h2>The Central Limit Theorem</h2>
 <p><strong>Key result of the Central Limit Theorem:</strong> if you have a random sample of <span class="math inline">\(n\)</span> scores, then the <strong>sample average</strong> is random, and the randomness can be described by a <strong>normal distribution</strong> for large <span class="math inline">\(n\)</span>.</p>
-<p><strong>Why useful?</strong> CLT enables us to make statistical inference based on the sample mean. For instance, you might make a <em>hypothesis</em> that the exam scores follow a beta distribution with shape1=6 and shape2=2; you then look at the average score of 25 (randomly selected) students. If the average is “too extreme,” you might decide to reject the hypothesis. The question of “how extreme is the observed average?” is calculated based on the normal distribution.</p>
-<p><strong>Important question:</strong> How large does <span class="math inline">\(n\)</span> have to be for CLT to work well? It depends on the shape of the population; if the population is very “not normal” (esp.&nbsp;long tail), <span class="math inline">\(n\)</span> needs to be very large to overcome the “unnormalness.”</p>
+<blockquote>
+<p><strong>Why useful?</strong> CLT enables us to make statistical inference based on the sample mean. For instance, you might make a <em>hypothesis</em> that the exam scores follow a beta distribution with shape1=6 and shape2=2; CLT tells you what the average <strong>should</strong> look like under this hypothesis. You then look at the average score of 25 (randomly selected) students. If the average is “too extreme,” you might decide to reject the hypothesis.</p>
+</blockquote>
+<p><strong>Important question:</strong> How large does <span class="math inline">\(n\)</span> have to be for CLT to work well?</p>
+<p>It depends on the shape of the population; if the population is very “not normal” (esp.&nbsp;long tail), <span class="math inline">\(n\)</span> needs to be very large to overcome the “un-normalness.”</p>
+</section>
+<section id="supplementary-material" class="slide level2">
+<h2>Supplementary material</h2>
+<ul>
+<li>(Recommended) <a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo&amp;t=532s">3Blue1Brown: But what is the Central Limit Theorem</a></li>
+<li><a href="https://www.youtube.com/watch?v=JNm3M9cqWyc&amp;t=352s">Khan Academy: Central Limit Theorem lecture</a></li>
+<li><a href="https://onlinestatbook.com/stat_sim/sampling_dist/">Interactive simulation</a></li>
+</ul>
 
 </section>
     </div>
@@ -297,7 +513,7 @@
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': true,
+'smaller': false,
  
         // Display controls in the bottom right corner
         controls: false,

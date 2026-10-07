@@ -16,6 +16,10 @@ You can find all course documents here as a reference page. Please refer to the 
 - [Lecture 8: Empirical p-values](all_lectures/Lecture_8.html)
 - [Lecture 9: Introduction to Bayesian inference and MCMC](all_lectures/Lecture_9.html)
 
+## R Code
+
+- [Lecture 4 code](code/L4_code.R)
+
 ## Homework
 
 - [Homework 1](homework/homework_1.qmd)
