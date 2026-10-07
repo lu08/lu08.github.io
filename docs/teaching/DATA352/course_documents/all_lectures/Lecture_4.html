@@ -221,14 +221,14 @@
 <li>Only makes sense to calculate <span class="math inline">\(P(X\in A)\)</span> for some subset <span class="math inline">\(A \subset \mathbb{R}\)</span>.</li>
 </ul>
 </section>
-<section id="probability-of-continuous-random-variables" class="slide level2">
+<section id="probability-of-continuous-random-variables" class="slide level2 nostretch">
 <h2>Probability of continuous random variables</h2>
 <p>We can use <a href="https://en.wikipedia.org/wiki/Histogram"><strong>histograms</strong></a> to visualize <em>univariate</em>, continuous distributions (the discrete equivalent is called a <a href="https://en.wikipedia.org/wiki/Bar_chart">bar graph</a>).</p>
 <p>For the following continuous distributions, how would you calculate something like <span class="math inline">\(P( a&lt;X&lt;b)\)</span>?</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">5.1</span>,<span class="dv">2</span>,<span class="fl">4.1</span>,<span class="dv">2</span>),<span class="at">oma=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
 <span id="cb1-2"><a href=""></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">mean=</span><span class="dv">162</span>,<span class="at">sd=</span><span class="dv">10</span>),<span class="at">freq=</span>F,</span>
 <span id="cb1-3"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
 <span id="cb1-4"><a href=""></a>     <span class="at">xlab=</span><span class="st">'cm'</span>,</span>
@@ -260,16 +260,22 @@
 <span id="cb1-30"><a href=""></a>     <span class="at">cex.axis=</span><span class="fl">1.5</span>,</span>
 <span id="cb1-31"><a href=""></a>     <span class="at">cex.main=</span><span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:80.0%" class="r-stretch"></section>
-<section id="density-function" class="slide level2">
+</div>
+</div>
+</section>
+<section id="density-function" class="slide level2 nostretch">
 <h2>Density function</h2>
 <p>The probability mass function <span class="math inline">\(f(x)=P(X=x)\)</span> cannot be defined for continuous random variables. Instead, we use something called the <strong>probability density function</strong>, defined as a function <span class="math inline">\(f(x)\)</span> such that <span class="math inline">\(P(X\in A)=\int_A f(x) dx\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">5.1</span>,<span class="dv">2</span>,<span class="fl">4.1</span>,<span class="dv">2</span>),<span class="at">oma=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
 <span id="cb2-2"><a href=""></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">mean=</span><span class="dv">162</span>,<span class="at">sd=</span><span class="dv">10</span>),<span class="at">freq=</span>F,</span>
 <span id="cb2-3"><a href=""></a>     <span class="at">ylab=</span><span class="cn">NA</span>,</span>
 <span id="cb2-4"><a href=""></a>     <span class="at">xlab=</span><span class="st">'cm'</span>,</span>
@@ -305,9 +311,15 @@
 <span id="cb2-34"><a href=""></a>dest <span class="ot">=</span> <span class="fu">density</span>(faithful<span class="sc">$</span>waiting,<span class="at">kernel =</span> <span class="st">"gaussian"</span>,<span class="at">bw=</span><span class="dv">2</span>)</span>
 <span id="cb2-35"><a href=""></a><span class="fu">lines</span>(dest, <span class="at">col =</span> <span class="st">"red"</span>,<span class="at">lwd=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-<img data-src="Lecture_4_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:80.0%" class="r-stretch"></section>
+</div>
+</div>
+</section>
 <section id="density-estimation" class="slide level2">
 <h2>Density estimation</h2>
 <p>A small digression: <strong>density estimation</strong> is a very big topic in statistics. We’ll do a <a href="../code/L4_code.R">simple demo</a> in R (R code: <code>density(data, kernel = "Gaussian", bw = 5)</code>).</p>
@@ -380,16 +392,18 @@
 <span id="cb3-6"><a href=""></a>     <span class="st">"alpha=2, beta=8"</span>, <span class="st">"alpha=6, beta=4"</span>, <span class="st">"alpha=0.2, beta=0.3"</span></span>
 <span id="cb3-7"><a href=""></a>)</span>
 <span id="cb3-8"><a href=""></a></span>
-<span id="cb3-9"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">3</span>, <span class="fl">0.5</span>))</span>
+<span id="cb3-9"><a href=""></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">0.5</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
 <span id="cb3-10"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(beta_shapes)) {</span>
 <span id="cb3-11"><a href=""></a>     <span class="fu">curve</span>(</span>
 <span id="cb3-12"><a href=""></a>          <span class="fu">dbeta</span>(x, <span class="at">shape1 =</span> beta_shapes[[i]][<span class="dv">1</span>], <span class="at">shape2 =</span> beta_shapes[[i]][<span class="dv">2</span>]),</span>
 <span id="cb3-13"><a href=""></a>          <span class="at">from =</span> <span class="fl">0.001</span>, <span class="at">to =</span> <span class="fl">0.999</span>,</span>
 <span id="cb3-14"><a href=""></a>          <span class="at">col =</span> <span class="st">"royalblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb3-15"><a href=""></a>          <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-15"><a href=""></a>          <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">axes =</span> <span class="cn">TRUE</span>, <span class="at">cex.axis =</span> <span class="fl">0.65</span>,</span>
 <span id="cb3-16"><a href=""></a>          <span class="at">main =</span> beta_titles[i]</span>
 <span id="cb3-17"><a href=""></a>     )</span>
-<span id="cb3-18"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-18"><a href=""></a>}</span>
+<span id="cb3-19"><a href=""></a><span class="fu">mtext</span>(<span class="st">"x"</span>, <span class="at">side =</span> <span class="dv">1</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>, <span class="at">line =</span> <span class="fl">0.5</span>)</span>
+<span id="cb3-20"><a href=""></a><span class="fu">mtext</span>(<span class="st">"Density"</span>, <span class="at">side =</span> <span class="dv">2</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>, <span class="at">line =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -463,7 +477,7 @@
 <li>Exam scores are approximately normal with mean 80 and standard deviation 3. What proportion of students score between 75 and 85?</li>
 </ol>
 <p><br><br></p>
-<p>Notation for “distributed as”: <code>% support ~ Beta(6, 2)</code>; <code>score ~ Normal(mean = 80, sd = 3)</code></p>
+<p>Notation for “distributed as”: <code>%support ~ Beta(6, 2)</code>; <code>score ~ Normal(mean = 80, sd = 3)</code></p>
 </section>
 <section id="the-central-limit-theorem" class="slide level2">
 <h2>The Central Limit Theorem</h2>
@@ -498,11 +512,12 @@ D. No idea: any number is possible</code></pre>
 <blockquote>
 <p><strong>Why useful?</strong> CLT enables us to make statistical inference based on the sample mean. For instance, you might make a <em>hypothesis</em> that the exam scores follow a beta distribution with shape1=6 and shape2=2. To verify, you look at the average score of your 25 (randomly selected) students. CLT tells you what this average <strong>should</strong> look like under your hypothesis. If the observed average is “too extreme,” you might decide to reject the hypothesis.</p>
 </blockquote>
+</section>
+<section id="discussions" class="slide level2">
+<h2>Discussions</h2>
 <p><strong>Important question:</strong> How large does <span class="math inline">\(n\)</span> have to be for CLT to work well?</p>
 <p>It depends on the shape of the population; if the population is very “not normal” (esp.&nbsp;long tail), <span class="math inline">\(n\)</span> needs to be very large to overcome the “un-normalness.”</p>
-</section>
-<section id="supplementary-material" class="slide level2">
-<h2>Supplementary material</h2>
+<p>Supplementary material:</p>
 <ul>
 <li>(Recommended) <a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo&amp;t=532s">3Blue1Brown: But what is the Central Limit Theorem</a></li>
 <li><a href="https://www.youtube.com/watch?v=JNm3M9cqWyc&amp;t=352s">Khan Academy: Central Limit Theorem lecture</a></li>
