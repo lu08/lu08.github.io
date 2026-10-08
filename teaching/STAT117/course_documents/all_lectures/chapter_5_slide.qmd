@@ -25,13 +25,13 @@ editor_options:
 ## Introduction
 
 
-Among runners ([StatChat discussion](https://youtu.be/xWy2PzISjco)), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
+Among runners ([StatChat discussion](https://youtu.be/xWy2PzISjco){target="_blank"}), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?
 
 In this chapter, we look at TWO variables.  We want to ask: do they have an **association**? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?
 
 How you answer these questions vary largely based on the **measurement type** of the variables.  You should use appropriate **statistics** (e.g., correlation coefficients and percentages comparisons) and **visualizations** (e.g., scatterplots).
 
-⚠️ [**Correlation does not imply causation.**](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)
+⚠️ [**Correlation does not imply causation.**](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation){target="_blank"}
 
 
 
@@ -81,11 +81,11 @@ text(52.56, 59.69, labels = "Student 1", pos = 4, col = "red", cex=2)
 
 ## Other Scatterplot Examples
 
-Here are more examples of scatterplots (see [StatChat2](https://youtu.be/F24R1WWqiKM))
+Here are more examples of scatterplots (see [StatChat2](https://youtu.be/F24R1WWqiKM){target="_blank"})
 
-- [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)
-- [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)
-- [Is Sushi ‘Healthy’? What About Granola? Where Americans and Nutritionists Disagree](https://www.nytimes.com/interactive/2016/07/05/upshot/is-sushi-healthy-what-about-granola-where-americans-and-nutritionists-disagree.html?eafs_enabled=false)
+- [Best dogs](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/){target="_blank"}
+- [Ranking of Large Language Models (LLMs)](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/){target="_blank"}
+- [Is Sushi ‘Healthy’? What About Granola? Where Americans and Nutritionists Disagree](https://www.nytimes.com/interactive/2016/07/05/upshot/is-sushi-healthy-what-about-granola-where-americans-and-nutritionists-disagree.html?eafs_enabled=false){target="_blank"}
 
 
 ## Linear relationship
@@ -142,7 +142,7 @@ mtext("(e)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
 
 ## Pearson Correlation Coefficient
 
-The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient), denoted by $r$, is a statistic that measures the direction and strength of the linear relationship between two numeric variables.
+The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient){target="_blank"}, denoted by $r$, is a statistic that measures the direction and strength of the linear relationship between two numeric variables.
 
 - Direction: positive or negative (based on the sign of $r$)
 - Strength: Cohen scale
@@ -155,20 +155,20 @@ The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_corr
 | $|r| < 0.10$ | Negligible |
 
 
-Notes:
+## Notes
 
 - *Any* correlation coefficient is between $-1$ and $1$.
 - $r$ can be strongly affected by outliers.
-- $|r|$ is unchanged by a nonzero linear transformation of either variable, but the sign of $r$ changes if exactly one variable is multiplied by a negative constant.
+- $|r|$ (i.e. the magnitude of the correlation) is unchanged by a linear transformation of either variable, but the sign of $r$ changes if exactly one variable is multiplied by a negative constant.
 - A steeper slope does not mean a stronger correlation.
-- $r = 0$ means no linear relationship, but a nonlinear relationship may still exist.
+- $r = 0$ only means no linear relationship, but a nonlinear relationship may still exist.
 
 
 ## Example
 
-Download the [AllCountries](../../data/AllCountries.csv) dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
+Download the [AllCountries](../../data/AllCountries.csv){target="_blank"} dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
 
-One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the [AllCountries variable codebook](../../data/AllCountries_doc.html). It is standard practice to provide data and its codebook separately.
+One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the [AllCountries variable codebook](../../data/AllCountries_doc.html){target="_blank"}. It is a standard practice to provide data and its codebook separately.
 
 Based on the `AllCountries` dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
 
@@ -208,13 +208,17 @@ Pearson $r$ is suitable for:
 
 > Jamovi: Spearman $\rho$ is obtained using the same procedure as Pearson $r$, by selecting **Spearman** under the **Correlation Coefficients** option.
 
-
+## Correlation Coefficients: Summary
 When using a correlation coefficient, report:
 
 - Direction
-- Strength
-- Interpretation in context
+<br>
 
+- Strength
+<br>
+
+- Interpretation in context
+<br>
 
 ## Exercise (cont'd)
 

@@ -203,10 +203,10 @@
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
-<p>Among runners (<a href="https://youtu.be/xWy2PzISjco">StatChat discussion</a>), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?</p>
+<p>Among runners (<a href="https://youtu.be/xWy2PzISjco" target="_blank">StatChat discussion</a>), is there a relationship between finishing time and gender? Between finishing time and BMI? Between age categories and runner types (e.g., elite, intermediate, recreational)?</p>
 <p>In this chapter, we look at TWO variables. We want to ask: do they have an <strong>association</strong>? For different groups of people (e.g., by gender or by age bracket), does the distribution of one variable (e.g., finishing time) differ? If there is an association, how strong is it?</p>
 <p>How you answer these questions vary largely based on the <strong>measurement type</strong> of the variables. You should use appropriate <strong>statistics</strong> (e.g., correlation coefficients and percentages comparisons) and <strong>visualizations</strong> (e.g., scatterplots).</p>
-<p>⚠️ <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation"><strong>Correlation does not imply causation.</strong></a></p>
+<p>⚠️ <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation" target="_blank"><strong>Correlation does not imply causation.</strong></a></p>
 </section>
 <section>
 <section id="bivariate-relationship-without-nominal-variables" class="title-slide slide level1 center">
@@ -253,11 +253,11 @@
 <img data-src="chapter_5_slide_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="other-scatterplot-examples" class="slide level2">
 <h2>Other Scatterplot Examples</h2>
-<p>Here are more examples of scatterplots (see <a href="https://youtu.be/F24R1WWqiKM">StatChat2</a>)</p>
+<p>Here are more examples of scatterplots (see <a href="https://youtu.be/F24R1WWqiKM" target="_blank">StatChat2</a>)</p>
 <ul>
-<li><a href="https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/">Best dogs</a></li>
-<li><a href="https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/">Ranking of Large Language Models (LLMs)</a></li>
-<li><a href="https://www.nytimes.com/interactive/2016/07/05/upshot/is-sushi-healthy-what-about-granola-where-americans-and-nutritionists-disagree.html?eafs_enabled=false">Is Sushi ‘Healthy’? What About Granola? Where Americans and Nutritionists Disagree</a></li>
+<li><a href="https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/" target="_blank">Best dogs</a></li>
+<li><a href="https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/" target="_blank">Ranking of Large Language Models (LLMs)</a></li>
+<li><a href="https://www.nytimes.com/interactive/2016/07/05/upshot/is-sushi-healthy-what-about-granola-where-americans-and-nutritionists-disagree.html?eafs_enabled=false" target="_blank">Is Sushi ‘Healthy’? What About Granola? Where Americans and Nutritionists Disagree</a></li>
 </ul>
 </section>
 <section id="linear-relationship" class="slide level2">
@@ -310,7 +310,7 @@
 <img data-src="chapter_5_slide_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="pearson-correlation-coefficient" class="slide level2">
 <h2>Pearson Correlation Coefficient</h2>
-<p>The <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Pearson correlation coefficient</a>, denoted by <span class="math inline">\(r\)</span>, is a statistic that measures the direction and strength of the linear relationship between two numeric variables.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank">Pearson correlation coefficient</a>, denoted by <span class="math inline">\(r\)</span>, is a statistic that measures the direction and strength of the linear relationship between two numeric variables.</p>
 <ul>
 <li>Direction: positive or negative (based on the sign of <span class="math inline">\(r\)</span>)</li>
 <li>Strength: Cohen scale</li>
@@ -341,19 +341,21 @@
 </tr>
 </tbody>
 </table>
-<p>Notes:</p>
+</section>
+<section id="notes" class="slide level2">
+<h2>Notes</h2>
 <ul>
 <li><em>Any</em> correlation coefficient is between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</li>
 <li><span class="math inline">\(r\)</span> can be strongly affected by outliers.</li>
-<li><span class="math inline">\(|r|\)</span> is unchanged by a nonzero linear transformation of either variable, but the sign of <span class="math inline">\(r\)</span> changes if exactly one variable is multiplied by a negative constant.</li>
+<li><span class="math inline">\(|r|\)</span> (i.e.&nbsp;the magnitude of the correlation) is unchanged by a linear transformation of either variable, but the sign of <span class="math inline">\(r\)</span> changes if exactly one variable is multiplied by a negative constant.</li>
 <li>A steeper slope does not mean a stronger correlation.</li>
-<li><span class="math inline">\(r = 0\)</span> means no linear relationship, but a nonlinear relationship may still exist.</li>
+<li><span class="math inline">\(r = 0\)</span> only means no linear relationship, but a nonlinear relationship may still exist.</li>
 </ul>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>Download the <a href="../../data/AllCountries.csv">AllCountries</a> dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.</p>
-<p>One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the <a href="../../data/AllCountries_doc.html">AllCountries variable codebook</a>. It is standard practice to provide data and its codebook separately.</p>
+<p>Download the <a href="../../data/AllCountries.csv" target="_blank">AllCountries</a> dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.</p>
+<p>One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the <a href="../../data/AllCountries_doc.html" target="_blank">AllCountries variable codebook</a>. It is a standard practice to provide data and its codebook separately.</p>
 <p>Based on the <code>AllCountries</code> dataset, is there a relationship between carbon dioxide emissions (<code>CO2</code>) and energy use (<code>Energy</code>)?</p>
 <blockquote>
 <p>Jamovi procedure: Analyses - Regression - Correlation Matrix - Put the two variables (<code>CO2</code> and <code>Energy</code> in this example) into the Variables box - (optional) check <strong>Correlation matrix</strong> under <strong>Plot</strong> to generate a scatterplot.</p>
@@ -386,11 +388,14 @@
 <blockquote>
 <p>Jamovi: Spearman <span class="math inline">\(\rho\)</span> is obtained using the same procedure as Pearson <span class="math inline">\(r\)</span>, by selecting <strong>Spearman</strong> under the <strong>Correlation Coefficients</strong> option.</p>
 </blockquote>
+</section>
+<section id="correlation-coefficients-summary" class="slide level2">
+<h2>Correlation Coefficients: Summary</h2>
 <p>When using a correlation coefficient, report:</p>
 <ul>
-<li>Direction</li>
-<li>Strength</li>
-<li>Interpretation in context</li>
+<li><p>Direction <br></p></li>
+<li><p>Strength <br></p></li>
+<li><p>Interpretation in context <br></p></li>
 </ul>
 </section>
 <section id="exercise-contd" class="slide level2">

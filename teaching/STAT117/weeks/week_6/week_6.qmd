@@ -11,7 +11,7 @@ format: html
 
 ## Tuesday, Oct 6 (asynchronous)
 
-1. Watch the first two (yay!) StatChat videos. These videos offer non-technical additioanal examples and (hopefully) fun discussions of relevant course content.  In my mind, you could listen to them somewhat casually - when you are driving, folding laundry, or (best of all) jogging.  The key points will  be summarized in lecture slides.
+1. Watch the first two (yay!) StatChat videos. These videos offer non-technical additional examples and (hopefully) fun discussions of relevant course content.  In my mind, you could listen to them somewhat casually - when you are driving, folding laundry, or (best of all) jogging.  The key points will  be summarized in lecture slides.
 
    - [StatChat1: What is a bivariate relationship](https://youtu.be/xWy2PzISjco)
    - [StatChat2: Scatterplot examples](https://youtu.be/F24R1WWqiKM) 
