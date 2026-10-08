@@ -43,3 +43,7 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 
 - [Practice Exam 1](exam_reviews/practice_exam_1_blank.qmd)
 - [Practice Exam 1 solution](exam_reviews/practice_exam_1_solution.qmd)
+
+## Exam solutions
+
+- [Exam 1 solution](FA2026_exam1_JMV_solution.pdf)

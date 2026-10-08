@@ -166,11 +166,17 @@ The [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_corr
 
 ## Example
 
-Download the [AllCountries](../../data/AllCountries.csv){target="_blank"} dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
+Download the [AllCountries](../../../../dataset/AllCountries.csv){target="_blank"} dataset and open it in Jamovi. Note that this is a CSV (comma-separated values) file, which is the preferred format for many statistical projects.
 
-One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the [AllCountries variable codebook](../../data/AllCountries_doc.html){target="_blank"}. It is a standard practice to provide data and its codebook separately.
+One downside is that descriptions of the variables are not included within the CSV file itself, but you can refer to the [AllCountries variable codebook](../../../../dataset/AllCountries_doc.html){target="_blank"}. It is a standard practice to provide data and its codebook separately.
 
 Based on the `AllCountries` dataset, is there a relationship between carbon dioxide emissions (`CO2`) and energy use (`Energy`)?
+
+<details>
+<summary>Show solution</summary>
+
+$r = 0.913$. There is a strong, positive linear relationship between carbon dioxide emissions and energy use: countries with higher CO2 emissions tend to use more energy, on average.
+</details>
 
 > Jamovi procedure: Analyses - Regression - Correlation Matrix - Put the two variables (`CO2` and `Energy` in this example) into the Variables box - (optional) check **Correlation matrix** under **Plot** to generate a scatterplot.
 
