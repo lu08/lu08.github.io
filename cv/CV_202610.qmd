@@ -1,0 +1,320 @@
+---
+format:
+  pdf:
+    documentclass: amsart
+    classoption:
+      - 11pt
+      - reqno
+      - oneside
+    geometry:
+      - a4paper
+      - margin=1in
+    pdf-engine: xelatex
+header-includes:
+  - '\usepackage{amsmath,amssymb,amscd,amsthm,graphicx,float,mathrsfs,fancyvrb,color,accents,comment,enumitem,setspace}'
+  - '\usepackage{hyperref,url,etaremune}'
+  - '\usepackage{array}'
+  - '\usepackage{fancyhdr}'
+  - '\pagestyle{fancy}\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}'
+  - '\usepackage{parskip}'
+  - '\setlength{\parskip}{2pt}'
+  - '\setlength{\parindent}{0pt}'
+  - '\setlist{itemsep=1pt,parsep=0pt,topsep=2pt,partopsep=0pt}'
+  - '\newcommand{\n}{\noindent}'
+  - '\newcommand{\p}{\vspace{0.04 in}}'
+  - '\newcommand{\h}{\hspace{0.1 in}}'
+  - '\newcommand{\hh}{\hspace{0.05 in}}'
+  - '\def\spacingset#1{\renewcommand{\baselinestretch}{#1}\small\normalsize} \spacingset{1}'
+  - '\renewcommand{\baselinestretch}{1}'
+---
+
+\begin{center}
+\large
+\textbf{\scshape{Yi Lu}}
+\end{center}
+
+\begin{center}
+\setstretch{1.0}
+Associate Professor and Chair of the Mathematics and Computer Science Department\\
+Drew University, Madison, New Jersey\\
+Phone: 424-264-1145 \qquad Email: \href{mailto:lu08stat@gmail.com}{lu08stat@gmail.com} \\
+\href{https://www.linkedin.com/in/lu08}{linkedin.com/in/lu08} \qquad
+\href{https://lu08.github.io/}{lu08.github.io}
+\end{center}
+
+\p
+\section*{Education}
+Ph.D. Statistics, The Ohio State University (Columbus, Ohio), August 2017
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item[-] Advisors: Radu Herbei and Sebastian Kurtek
+\item[-] Dissertation: Function Registration from a Bayesian Perspective
+\end{itemize}
+
+\p
+M.S. Statistics, The Ohio State University (Columbus, Ohio), May 2014
+
+\p
+B.S. Mathematics and B.A. History, Mars Hill University (Mars Hill, North Carolina), May 2011
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item[-] Graduated Summa Cum Laude
+\end{itemize}
+
+\p
+\section*{Research Interests}
+Functional data analysis, Bayesian methods and MCMC algorithms, computational statistics, simulation, curve registration, data visualization, applied statistics
+
+\p
+\section*{Professional Experience}
+
+\textit{Drew University (Madison, New Jersey)}
+
+\begin{itemize}[leftmargin=*]
+\item[-] Chair of the Department of Mathematics \& Computer Science, Fall 2025 - Present
+
+\begin{itemize}
+\item[\quad] Key responsibilities: develop curricula for an evolving higher education landscape; oversee the hiring, assessment, and reappointment of 8 to 12 adjunct instructors and junior faculty; manage departmental operations (such as course scheduling) while ensuring budget compliance; communicate departmental strategy to university leadership
+\end{itemize}
+
+\item[-] Associate Professor, Department of Mathematics \& Computer Science, Fall 2024 - Present
+\item[-] Norma Gilbert Assistant Professor, Department of Mathematics \& Computer Science, Fall 2017 - Summer 2024
+\end{itemize}
+
+\p\p
+\textit{iModules Software (later Anthology; Remote)}
+
+\begin{itemize}[leftmargin=*]
+\item[-] Statistical Consultant, Summer 2019 - Spring 2020
+\begin{itemize}
+\item[\quad] Project: Updated and developed metrics and models to measure alumni engagement in higher education institutions (clients include Ivy League institutions and large public university systems)
+\end{itemize}
+\end{itemize}
+
+\p\p
+\textit{The Ohio State University (Columbus, Ohio)}
+\begin{itemize}[leftmargin=*]
+\item[-] Graduate Teaching Assistant, Department of Statistics, Fall 2012 - Spring 2017
+\item[-] Consultant, Statistical Consulting Service (SCS), Spring 2016 - Summer 2017
+\item[-] Graduate Research Assistant, Department of Statistics, Summer 2015
+\begin{itemize}
+\item[\quad] Advisor: Radu Herbei (Supported in part by NSF DMS 1209142)
+\item[\quad] Project: Compared different methods of parallel computing in executing the Metropolis-Hastings algorithm
+\end{itemize}
+\end{itemize}
+
+\p\p
+\textit{The Progressive Corporation (Cleveland, Ohio)}
+\begin{itemize}[leftmargin=*]
+\item[-] Research \& Development Analyst (internship), Summer 2016
+
+\begin{itemize}
+\item[\quad] Project: developed and validated regression models for calculating auto insurance rates
+\end{itemize}
+
+\end{itemize}
+
+
+\p
+\section*{Technical Skills}
+\begin{itemize}[leftmargin=*]
+\item[-] Statistical computing: R, Jamovi, SPSS, AI-assisted workflow in Visual Studio Code
+\item[-] Technical publishing: Quarto, R Markdown, Shiny, \LaTeX
+\end{itemize}
+
+
+\p
+\section*{Publications}
+\begin{etaremune}[leftmargin=20pt,parsep=0pt,itemsep=2pt]
+\item A. de Voogt, T. C. Koh, \underline{Y. Lu},  ``Low-Level Helicopter Flights: Safety and Operational Specificity," Safety (2026): 12(2), 48: \url{https://doi.org/10.3390/safety12020048}.
+\item A. de Voogt, \underline{Y. Lu}, F. Pan, H. Zuckerman,  ``Abrupt maneuvers in General Aviation accidents," Safety Science (2025): Vol. 185: \url{https://doi.org/10.1016/j.ssci.2025.106785}.
+\item \underline{Y. Lu}, A. de Voogt, F. Gobet, ``Dominance, Streakiness, and Non-random Patterns in the Game of N!àì," Journal of Expertise (2024): Vol. 6(4) \& 7(1): \url{https://www.journalofexpertise.org/articles/volume6_issue4_and_volume7_issue1/JoE_6_4_7_1_Lu_etal.html}.
+\item A. de Voogt, A. Campos, \underline{Y. Lu} ``Amphibious Airplane Accidents: An Exploratory Analysis," Applied Sciences 13(22): 12224 (2023): \url{https://doi.org/10.3390/app132212224}.
+\item \underline{Y. Lu}, R. Herbei, S. Kurtek, ``Bayesian Function Registration with Random Truncation," PLOS ONE 18.7 (2023): e0287734. \url{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287734}
+\item \underline{Y. Lu}, R. Herbei, S. Kurtek, ``Bayesian Registration of Functions with a Gaussian Process Prior," Journal of Computational and Graphical Statistics 26.4 (2017): 894-904.
+\end{etaremune}
+
+
+\p
+\section*{Teaching}
+
+\textit{Drew University}
+
+(* indicates first offering of the course at Drew)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt,parsep=0pt]
+
+\item[-] \textbf{Data Science Research Project} (DATA775)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2026}
+
+\item[-] \textbf{Introduction to Statistics} (STAT117/STAT207)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2026, Spring 2026, Fall 2025, Spring 2025, Fall 2024, Summer 2024, Spring 2024, Fall 2023, Fall 2022, Spring 2022, Summer 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018, Summer 2018, Spring 2018, Fall 2017}
+
+\item[-] \textbf{Modeling and Simulation} (DATA352/DATA551; crosslisted course for the M.S. Data Science program)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2026, Spring 2025, Spring 2024, Spring 2023, Fall 2021, Spring 2021 (as independent study), Spring 2020*}
+
+\item[-] \textbf{Statistical Computing in R} (STAT120)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2026, Summer 2026, Fall 2024, Fall 2023, Fall 2022, Fall 2021, Summer 2020, Fall 2019}
+
+\item[-] \textbf{Statistical Theory} (STAT350)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2026, Spring 2024, Spring 2023, Spring 2022, Spring 2020, Spring 2018*}
+
+\item[-] \textbf{Probability} (MATH320)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2025}
+
+\item[-] \textbf{Data Science: Introduction, History, and Case Studies} (DATA200)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2024, Spring 2022, Spring 2018*}
+
+\item[-] \textbf{Applied Regression Analysis} (STAT335/DATA503; crosslisted course for the M.S. Data Science program)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2022}
+
+\item[-] \textbf{Independent Studies in Mathematical Statistics} (MATH300)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2021}
+
+\item[-] \textbf{Special Topics in Statistics: Bayesian Statistics} (STAT220)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2021*}
+
+\item[-] \textbf{Computational Finance \& Large Data Analysis} (FIN622; course for the M.S. Finance program)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2019*}
+
+\item[-] \textbf{Data Visualization} (DATA251)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2018*}
+
+\end{itemize}
+
+\p\p
+\textit{The Ohio State University}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt,parsep=0pt]
+\item[-] \textbf{Introduction to Mathematical Statistics} (STAT4201)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2015}
+\item[-] \textbf{Statistics for Life Sciences} (STAT2480; recitation instructor)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2015}
+\item[-] \textbf{Introduction to Mathematical Statistics II} (STAT4202; recitation instructor)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2014}
+\item[-] \textbf{Introduction to Statistical Analysis} (STAT2450; recitation instructor)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Fall 2014}
+\item[-] \textbf{Introduction to the Practice of Statistics} (STAT1450; recitation instructor)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Summer 2014}
+\item[-] \textbf{Elementary Statistics} (STAT1350; recitation instructor)\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Spring 2014, Spring 2013, Fall 2012}
+\end{itemize}
+
+\p
+\section*{Advising Projects}
+
+(* indicates an Honors Thesis project)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt,parsep=0pt]
+\item[-] \textit{Analyzing runners' pace trajectory using functional data analysis methods}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Emily Camlet; Drew Summer Science Institute (DSSI), Summer 2026}
+
+\item[-] \textit{Comparative Analysis of the Effects of Mountaintop Removal Mining on Air and Water Quality In West Virginia}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Arianna Mendez; Drew Summer Science Institute (DSSI), Summer 2024}
+
+\item[-] \textit{Optimizing Water Usage and Revenue of Jordan's Agricultural Economy*} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BA/2024/Mir/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Muhammad Mir; MATH410: Specialized Honors in Mathematics I, Fall 2023; co-advisor with Jennifer Olmsted}
+
+\item[-] \textit{Two Approaches to Statistical Research: Frequentist and Bayesian*} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BA/2023/Connors/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Jamie Connors; STAT300, Independent Study in Statistics, Fall 2022; MATH410: Specialized Honors in Mathematics I, Fall 2022; MATH411: Specialized Honors in Mathematics II, Spring 2023; co-advisor with Sarah Abramowitz}
+
+\item[-] \textit{Fencing Data Analysis}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Alex Goebel; Drew Summer Science Institute (DSSI), Summer 2022; STAT410: Specialized Honors in Statistics I, Fall 2022; STAT300: Independent Study in Statistics, Spring 2023}
+\end{itemize}
+
+\p\p
+\textit{Honors Thesis Committee Member}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt,parsep=0pt]
+
+\item[-] \textit{Wombs as weapons: pronatalism as an instrument of authoritarianism under Trump} \href{https://drew.locate.ebsco.com/instances/0ee73938-9319-42fe-9fde-41654b323071?option=keyword&pageNumber=1&query=remondelli&recordsPerPage=25}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Grace Remondelli (Political Science), Spring 2026}
+
+
+\item[-] \textit{The role of intersectionality in predicting participation in and support for normative and nonnormative collective action} \href{https://drew.locate.ebsco.com/instances/9e92bae4-2364-4fef-a28c-d439ff1a76b1?option=keyword&pageNumber=1&query=sumyyah&recordsPerPage=25}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Sumyyah Kadam (Psychology), Spring 2026}
+
+
+\item[-] \textit{The Effects of ESG on the Energy Sector: A Cross-Regional Analysis of Stock Price Volatility} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BA/2025/Rojek/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Joseph Rojek (Economics), Spring 2025}
+
+\item[-] \textit{Forecasting Financial Time Series: An Empirical Analysis of LSTM Model Performance Across Minute, Hourly, and Daily Time Frames} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BS/2023/Dutra/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Gabriel Dutra (Computer Science and Statistics), Spring 2023}
+
+\item[-] \textit{Integrative taxonomy of New Jersey tardigrades} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BS/2023/Agrawal/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize Mehek Agrawal (Biology), Spring 2023}
+
+\item[-] \textit{The Evolution of Trust: Understanding Prosocial Behavior in Multi-Agent Reinforcement Learning Systems} \href{https://digitalcollections.drew.edu/UniversityArchives/ThesesAndDissertations/CLA/BA/2022/Nesterov-Rappoport/}{link}\\[-2pt]
+\hspace*{1.5em}\parbox[t]{\dimexpr\linewidth-1.5em\relax}{\footnotesize David Nesterov-Rappoport (Computer Science), Spring 2022}
+\end{itemize}
+
+
+\p
+\section*{Presentations}
+\begin{etaremune}[leftmargin=20pt,parsep=0pt,itemsep=2pt]
+\item \textit{Introduction to Decision Tree \& Discussion on Data Analytics}, Drew Summer College, July 2022 (workshop)
+
+\item \textit{Quantitative Graphs: 
+Principles of Effective Data Visualization}, Drew Faculty Workshop Series, May 2022 (workshop)
+
+\item \textit{Bayesian Registration of Real-valued Functions}, Dr. Bing Zhang Department of Statistics,  University of Kentucky, April 2022 (invited seminar talk)
+
+\item \textit{Bayesian Registration of Functions}, Research Institute for Scientists Emeriti (RISE), Drew University, November 2018 (invited seminar talk)
+
+\item \textit{Bayesian Registration of Functions}, Translational Data Analytics Forum, The Ohio State University, October 2015 and November 2016 (poster)
+
+\item \textit{Bayesian Registration of Functions with a Gaussian Process Prior}, Joint Statistical Meetings (JSM), Chicago, August 2016 (conference presentation)
+
+\item \textit{Bayesian Registration of Functions with a Gaussian Process Prior}, International Chinese Statistical Association (ICSA) Applied Statistics Symposium, Atlanta, June 2016 (conference presentation)
+
+\item \textit{Bayesian Registration of Functions}, Statistics and Biostatistics Graduate Student Poster Session, Department of Statistics, The Ohio State University, September 2015 (poster)
+
+%\item \textit{Answer in Two Decimal Places Accuracy: How `Well' Are You Prepared for a Test}, The State of North Carolina Undergraduate Research and Creativity Symposium (SNCURCS), Meredith College, Fall 2010 (conference presentation)
+\end{etaremune}
+
+\p
+\section*{Grants}
+\begin{etaremune}[leftmargin=20pt,parsep=0pt,itemsep=2pt]
+\item Core Innovation Fund for experimenting with AI applications in Statistical Aviation Research (with Alex de Voogt), Drew University, Spring 2026
+\item Digital Humanities (DH) mini-grant for experimenting classroom technology in DATA251: data visualization, Drew University, Spring 2018
+\item Digital Humanities (DH) Faculty Development grant for supporting the co-teaching of DATA251: data visualization (with Lee Arnold), Drew University, Spring 2018
+\end{etaremune}
+
+\p
+\section*{Awards}
+\begin{etaremune}[leftmargin=20pt,parsep=0pt,itemsep=2pt]
+%\setlength\itemsep{0.1em}
+\item Applied Statistics Symposium Student Travel Award (for contributed paper), International Chinese Statistical Association (ICSA), June 2016
+\item The Thomas E. \& Jean D. Powers Award for Outstanding Teaching Associate, Department of Statistics, The Ohio State University, May 2015
+\item University Fellowship, The Ohio State University, 2011 - 2012 
+\item Chair’s Fellowship, The Ohio State University, March 2011
+\item Robert W. Sledge Fellowship, Alpha Chi National College Honor Society, April 2011
+\item Best Undergraduate Paper Award, University of North Carolina at Charlotte, April 2011
+\item Presidential Scholarship and Grayson Scholarship, Mars Hill University, 2007 - 2011
+\end{etaremune}
+
+\p
+\section*{Service}
+
+
+\textit{University}
+\begin{itemize}[leftmargin=*]
+\item[-] Coordinator of Statistics Instruction for the Department of Mathematics and Computer Science, Spring 2023 - Fall 2025
+\item[-] Institutional Review Board (IRB), Fall 2021 - Summer 2025
+\item[-] University Survey Working Group (initialized by the Office of Institutional Research), Fall 2021 - Spring 2023
+\item[-] Global Education Faculty Advisory Committee (GEFAC), Spring 2021 - Summer 2022
+\item[-] Academic Computing Advisory Committee (ACAC), Fall 2018 - Fall 2020
+\item[-] Statistical Software Discussion Group, Spring 2018
+\item[-] Judge, Fair for Emerging Researchers, March 2018
+\end{itemize}
+
+\textit{Professional}
+\begin{itemize}[leftmargin=*]
+\item[-] Article reviews: Annals of Applied Statistics (June 2022), Bayesian Analysis (May 2022), Journal of Statistics Education (June 2020, April 2018), Technometrics (October 2019)
+\end{itemize}
+
+\p
+\section*{References}
+
+\textit{Available upon request.}
+
