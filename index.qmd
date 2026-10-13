@@ -10,7 +10,7 @@ title: "Yi Lu"
 
 - I love running in my spare time.  I am always out on a run, and my statistics classes tend to have too many running examples.  I want to run an ultra-marathon one day.
 
-- You can find my CV [here](cv/index.qmd){target="_blank"}.
+- You can find my CV [here](cv/index.pdf){target="_blank"}.
 
 - You can email me at <a href="mailto: ylu1@drew.edu">ylu1@drew.edu</a>.
 
