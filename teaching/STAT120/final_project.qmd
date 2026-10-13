@@ -19,7 +19,6 @@ Once you have decided on a dataset, import it to R and pick ONE variable from th
 
 
 
-
 ## Content and Grading Guidelines
 
 ### Presentation + Defense (20pt) + Participation (10pt)
