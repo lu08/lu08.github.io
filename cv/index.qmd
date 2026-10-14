@@ -8,18 +8,21 @@ Download a PDF version [here](CV_202610.pdf){download="CV_YILU.pdf"}.
 
 <div class="center">
 
-Yi Lu
+**Yi Lu**
 
 Associate Professor and Chair of the Mathematics and Computer Science
-Department, Drew University, Madison, New Jersey
+Department
 
-Phone: 424-264-1145
+Drew University, Madison, New Jersey
 
-Email: <lu08stat@gmail.com>
+- Phone: 424-264-1145
 
-[linkedin.com/in/lu08](https://www.linkedin.com/in/lu08)
+- Email: <lu08stat@gmail.com>
 
-[lu08.github.io](https://lu08.github.io/)
+- [linkedin.com/in/lu08](https://www.linkedin.com/in/lu08)
+
+- [lu08.github.io](https://lu08.github.io/)
+
 
 </div>
 

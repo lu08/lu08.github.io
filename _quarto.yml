@@ -32,6 +32,8 @@ website:
   navbar:
     left:
       - research.qmd
+      - text: CV
+        href: cv/index.qmd
       - text: Teaching
         menu:
           - text: Overview
@@ -42,7 +44,6 @@ website:
             href: teaching/STAT117/index.qmd
           - text: DATA 352/551 Modeling and Simulation
             href: teaching/DATA352/index.qmd
-
   
   sidebar:
     - id: stat120

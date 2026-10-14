@@ -30,14 +30,13 @@ We can make random draws from common distributions (e.g. beta) using software di
 
 Generating from common distributions can usually be done using **transformation**, which usually only requires drawing from uniform (0,1). See table below from *Computational Statistics* (Givens and Hoeting, 2013).
 
-![](transformation.jpg)
+![](transformation.jpg){width="200%"}
 
 
 ## Review and set-up
 
 Recall, in general, the distribution of a (continuous) random variable $X$ can be specified by its **probability density function** $f(x)$. In many cases we want to sample from this **target distribution**.
 
-<br>
 <br>
 
 Challenges:
@@ -73,18 +72,19 @@ _Algorithm_:
 - **Step 2:** Sample $u$ from uniform $(0,1)$
 - **Step 3:** If $u < f(x')/(Cg(x'))$, accept $x'$; otherwise reject $x'$.
 
-_Example_:
 
 ## Exercise
 
 Our goal is to sample from the density function: $f(x) = 6x(1-x), 0<x<1$.
 
-1. Discussion: sketch this function (on paper or on the computer) and come up with a proposal density.
-2. Implement the acceptance-rejection algorithm for a total of $nsim=10000$ updates.
-3. Calculate the mean of the resulting random draws (should be close to $0.5$).
-4. Plot a histogram of the resulting random draws (should be close to the functional form of $f(x)$, which is actually the density of a beta distribution with shape parameters 2, 2).
-5. Calculate the *acceptance rate*.
-6. Redo the sampling with a different envelope; compare the acceptance rate.
+> Discussion: sketch this function (on paper or on the computer) and come up with a proposal density.
+
+Use the provided [sample code](../code/L5_code.R) to implement the algorithm for a total of $nsim=10000$ updates.
+
+1. Calculate the mean of the resulting random draws (should be close to $0.5$).
+2. Plot a histogram of the resulting random draws (should be close to the functional form of $f(x)$, which is actually the density of a beta distribution with shape parameters 2, 2).
+3. Calculate the *acceptance rate*.
+4. Redo the sampling with a different envelope; compare the acceptance rate.
 
 **Note: The larger the value of $C$, the less efficient the algorithm is. The acceptance rate is expected to be $1/C$.**
 
@@ -110,6 +110,10 @@ Why? The estimate we obtained from the second method has less variation!
 **Importance sampling** is a general _variance reduction technique_ when we use random samples to perform some statistical inference (e.g. estimating $P(1)$).
 
 - The alternative distribution (e.g., new dice with values 2 and 3 replaced by 1) is called an **importance sampling function** $g(x)$ (more specifically, $g(x)$ is the density of this distribution)
+
+<br> 
+<br>
+
 - The correcting multiplier (e.g., 1/3) is called the **importance weight**; it is calculated as $f(\cdot)/g(\cdot)$
 
 ## Sampling importance resampling (SIR)
@@ -121,7 +125,7 @@ _Ingredients_:
 - **i. Target** density: $f(x)$
 - **ii. Importance sampling function** $g(x)$; the range of $g(x)$ must include the entire range of $f(x)$, and $g(x)$ must have heavier tails than $f(x)$.
 
-_Algorithm_:
+_Algorithm_: (for $m >> n$)
 
 - **Step 1:** Sample $y_1, \ldots, y_m$ from $g(x)$
 - **Step 2:** Calculate the importance weights $w_i, \ldots, w_m$, where $w_i = f(y_i) / g(y_i)$
@@ -129,7 +133,7 @@ _Algorithm_:
 
 ## Exercise
 
-Use SIR to redo the previous exercise, where the goal is to sample from the density function: $f(x) = 6x(1-x), 0<x<1$.
+Use SIR to redo the previous exercise ([sample code](../code/L5_code.R)), where the goal is to sample from the density function: $f(x) = 6x(1-x), 0<x<1$.
 
 1. Use a uniform importance sampling function to sample 10000 values from the target.
 
