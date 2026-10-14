@@ -28,9 +28,7 @@ editor_options:
 
 We can make random draws from common distributions (e.g. beta) using software directly (e.g. `rbeta`).
 
-Generating from common distributions can usually be done using **transformation**, which usually only requires drawing from uniform (0,1). See table below from *Computational Statistics* (Givens and Hoeting, 2013).
-
-[Open the transformation table](transformation.jpg){target="_blank"}
+Generating from common distributions can usually be done using **transformation**, which usually only requires drawing from uniform (0,1). See [transformation table](transformation.jpg){target="_blank"} from *Computational Statistics* (Givens and Hoeting, 2013).
 
 
 ## Review and set-up

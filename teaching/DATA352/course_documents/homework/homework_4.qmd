@@ -73,7 +73,7 @@ pnorm(9, mean = 8, sd = 2.2) - pnorm(7, mean = 8, sd = 2.2)  # Between 7 and 9 l
 
 In *Introduction to Probability*, do Question 26 on page 222.
 
-> Bridies’ Bearing Works manufactures bearing shafts whose diameters are normally distributed with parameters $\mu = 1$, $\sigma = .002$. The buyer’s specifications require these diameters to be 1.000 ± .003 cm. What fraction of the manu- facturer’s shafts are likely to be rejected? If the manufacturer improves her quality control, she can reduce the value of $\sigma$. What value of $\sigma$ will ensure that no more than 1 percent of her shafts are likely to be rejected?
+> Bridies’ Bearing Works manufactures bearing shafts whose diameters are normally distributed with parameters $\mu = 1$, $\sigma = .002$. The buyer’s specifications require these diameters to be 1.000 ± .003 cm. What fraction of the manufacturer’s shafts are likely to be rejected? If the manufacturer improves her quality control, she can reduce the value of $\sigma$. What value of $\sigma$ will ensure that no more than 1 percent of her shafts are likely to be rejected?
 
 <details>
 <summary>Show solution</summary>
