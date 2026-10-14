@@ -21,7 +21,7 @@ In class, we discussed the example of estimating the probability of rolling a 1 
 <summary>Show solution</summary>
 
 ```{r}
-dice1 = sample(c(1:6), size = 1000, replace = TRUE)
+dice1 <- sample(c(1:6), size = 1000, replace = TRUE)
 mean(dice1 == 1)  # should be close to 1/6 = 0.1667
 ```
 
@@ -43,7 +43,7 @@ See (d).
 The importance weight is calculated as $$\frac{f(1)}{g(1)} = \frac{P(1 | \text{old dice})}{P(1 | \text{new dice})} = \frac{1/6}{4/6}.$$
 
 ```{r}
-dice2 = sample(c(1, 1, 1, 1, 5, 6), size = 1000, replace = TRUE)
+dice2 <- sample(c(1, 1, 1, 1, 5, 6), size = 1000, replace = TRUE)
 mean(dice2 == 1) * (1 / 4)
 ```
 
@@ -55,16 +55,16 @@ mean(dice2 == 1) * (1 / 4)
 <summary>Show solution</summary>
 
 ```{r, fig.height=3, fig.width=7, out.width="0.9\\linewidth"}
-nsim=10000
-result1=rep(NA,nsim)
-result2=rep(NA,nsim)
+nsim <- 10000
+result1 <- rep(NA,nsim)
+result2 <- rep(NA,nsim)
 
 for(i in 1:nsim){
-  dice1=sample(c(1:6),size=1000,replace = T)
-  result1[i]=mean(dice1==1)
+  dice1 <- sample(c(1:6),size=1000,replace = T)
+  result1[i] <- mean(dice1==1)
 
-  dice2=sample(c(1,1,1,1,5,6),size=1000,replace=T)
-  result2[i]=mean(dice2==1) * (1/4)
+  dice2 <- sample(c(1,1,1,1,5,6),size=1000,replace=T)
+  result2[i] <- mean(dice2==1) * (1/4)
 }
 # compare SD's and proportions within 0.01 error range
 sd(result1);sd(result2)
@@ -93,19 +93,19 @@ Suppose we want to sample from the density function $f(x)=4(1-x)^3, 0<x<1$. You 
 <details>
 <summary>Show solution</summary>
 
-```{r, fig.height=3, fig.width=5, out.width="0.2\\linewidth"}
-target=function(x){
-  result=4*(1-x)^3
-  result[x<0 | x>1]=0
+```{r, fig.height=3, fig.width=5, out.width="0.6\\linewidth"}
+target <- function(x){
+  result <- 4*(1-x)^3
+  result[x<0 | x>1] <- 0
   return(result)
 }
-nsim=10000
-result=numeric()
+nsim <- 10000
+result <- numeric()
 for(i in 1:nsim){
-  prop=runif(1)
-  acc.rate=target(prop)/((4)*dunif(prop))
+  prop <- runif(1)
+  acc.rate <- target(prop)/((4)*dunif(prop))
   if(runif(1) < acc.rate){
-    result=c(result,prop)
+    result <- c(result,prop)
   }
 }
 mean(result) #mean; should be close to 0.2
@@ -130,20 +130,20 @@ Similar to (a). The choice of $C$ must be larger than $f(0) = 4$ (max of the tar
 <details>
 <summary>Show solution</summary>
 
-```{r, fig.height=3, fig.width=7, out.width="0.5\\linewidth"}
-target=function(x){
-  result=4*(1-x)^3
-  result[x<0 | x>1]=0
+```{r, fig.height=3, fig.width=7, out.width="0.9\\linewidth"}
+target <- function(x){
+  result <- 4*(1-x)^3
+  result[x<0 | x>1] <- 0
   return(result)
 }
-nsim.target=1000
-nsim.initial=nsim.target*10
-candidates=runif(nsim.initial)
-weights=target(candidates)/dunif(candidates)
-result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+nsim.target <- 1000
+nsim.initial <- nsim.target*10
+candidates <- runif(nsim.initial)
+weights <- target(candidates)/dunif(candidates)
+result <- sample(candidates,size=nsim.target,replace=T,prob=weights)
 mean(result)  #should be close to 0.2
 par(mfrow=c(1,2))
-curve(target(x),col='red',main="target (red) \\n importance function (blue)",
+curve(target(x),col='red',main="target (red) \n importance function (blue)",
       xlab=NA,ylab=NA)
 curve(dunif(x),col='blue',add=T,lty='dashed')
 hist(result,nclass=50,prob=T,xlab=NA,ylab=NA,yaxt='n',main='simulated draws')
@@ -158,14 +158,14 @@ curve(target(x),add=T,col='red',lwd=2)
 <summary>Show solution</summary>
 
 ```{r, fig.height=3, fig.width=7, out.width="0.9\\linewidth"}
-nsim.target=1000
-nsim.initial=nsim.target*10
-candidates=rbeta(nsim.initial,shape1=1,shape2=2)
-weights=target(candidates)/dbeta(candidates,shape1=1,shape2=2)
-result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+nsim.target <- 1000
+nsim.initial <- nsim.target*10
+candidates <- rbeta(nsim.initial,shape1=1,shape2=2)
+weights <- target(candidates)/dbeta(candidates,shape1=1,shape2=2)
+result <- sample(candidates,size=nsim.target,replace=T,prob=weights)
 mean(result)  #should be close to 0.2
 par(mfrow=c(1,2))
-curve(target(x),col='red',main="target (red) \\n importance function (blue)",
+curve(target(x),col='red',main="target (red) \n importance function (blue)",
       xlab=NA,ylab=NA)
 curve(dbeta(x,shape1=1,shape2=2),col='blue',add=T,lty='dashed')
 hist(result,nclass=50,prob=T,xlab=NA,ylab=NA,yaxt='n')
@@ -176,11 +176,11 @@ curve(target(x),add=T,col='red')
 
 ## Question 3
 
-Suppose we want to sample from the density function $f(x)=\\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}, -\\infty<x<\\infty$ (this is a normal density, but pretend we don't know that). We want to use an acceptance-rejection algorithm with the proposal density given by the **Cauchy distribution** (in R, you can use functions **dcauchy()**, **rcauchy()** etc. as usual; recall that the density function $g()$ is given by **dcauchy()**). The following plot shows the target density (in red) and the proposal density (in blue). Both distributions center at 0.
+Suppose we want to sample from the density function $f(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}, \quad -\infty<x<\infty$ (this is a normal density, but pretend we don't know that). We want to use an acceptance-rejection algorithm with the proposal density given by the **Cauchy distribution** (in R, you can use functions **dcauchy()**, **rcauchy()** etc. as usual; recall that the density function $g()$ is given by **dcauchy()**). The following plot shows the target density (in red) and the proposal density (in blue). Both distributions center at 0.
 
 ```{r, echo=TRUE, fig.height=4, fig.width=5, out.width="40%"}
-target=function(x){
-  result=1/sqrt(2*pi)*exp(-x^2/2)
+target <- function(x){
+  result <- 1/sqrt(2*pi)*exp(-x^2/2)
   return(result)
 }
 curve(target(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,xlab=NA)
@@ -196,7 +196,7 @@ grid()
 If we plot $f(x)/g(x)$, we can see that the maximum occurs around 1 and -1. Using R we can approximate the maximum to be around $1.52$, so the choice of C should be bigger than this value.
 
 ```{r, fig.height=3, fig.width=8, out.width="0.9\\linewidth"}
-x=seq(from=-5,to=5,by=0.01)
+x <- seq(from=-5,to=5,by=0.01)
 max(target(x)/dcauchy(x)) # to approximate the max
 par(mfrow=c(1,2))
 curve(target(x)/dcauchy(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,
@@ -229,17 +229,17 @@ rcauchy(5)
 <details>
 <summary>Show solution</summary>
 
-Each acceptance rate is calculated as $\\frac{f(x)}{C \\cdot g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be accepted.
+Each acceptance rate is calculated as $\frac{f(x)}{C \cdot g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be accepted.
 
 ```{r}
-value = c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
-acc.rate = target(value)/((2)*dcauchy(value))
+value <- c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
+acc.rate <- target(value)/((2)*dcauchy(value))
 round(data.frame(value,acc.rate),3)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=5, out.width="50%"}
-target=function(x){
-  result=1/sqrt(2*pi)*exp(-x^2/2)
+target <- function(x){
+  result <- 1/sqrt(2*pi)*exp(-x^2/2)
   return(result)
 }
 curve(target(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,xlab=NA)
@@ -256,13 +256,13 @@ grid()
 
 ```{r, fig.height=3, fig.width=5, out.width="0.4\\linewidth"}
 # rejection algorithm with C=2
-nsim=10000
-result=numeric()
+nsim <- 10000
+result <- numeric()
 for(i in 1:nsim){
-  prop=rcauchy(1)
-  acc.rate=target(prop)/((2)*dcauchy(prop))
+  prop <- rcauchy(1)
+  acc.rate <- target(prop)/((2)*dcauchy(prop))
   if(runif(1) < acc.rate){
-    result=c(result,prop)
+    result <- c(result,prop)
   }
 }
 mean(result) #mean: should be close to 0
@@ -278,11 +278,11 @@ curve(target(x),add=T,col='red',lwd=2)
 <details>
 <summary>Show solution</summary>
 
-The importance weight for each value is calculated as $\\frac{f(x)}{g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be resampled.
+The importance weight for each value is calculated as $\frac{f(x)}{g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be resampled.
 
 ```{r}
-value = c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
-weight = target(value)/(dcauchy(value))
+value <- c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
+weight <- target(value)/(dcauchy(value))
 round(data.frame(value,weight),3)
 ```
 
@@ -294,11 +294,11 @@ round(data.frame(value,weight),3)
 <summary>Show solution</summary>
 
 ```{r, fig.height=3, fig.width=5, out.width="0.4\\linewidth"}
-nsim.target=1000
-nsim.initial=nsim.target*10
-candidates=rcauchy(nsim.initial)
-weights=target(candidates)/dcauchy(candidates)
-result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+nsim.target <- 1000
+nsim.initial <- nsim.target*10
+candidates <- rcauchy(nsim.initial)
+weights <- target(candidates)/dcauchy(candidates)
+result <- sample(candidates,size=nsim.target,replace=T,prob=weights)
 mean(result) #should be close to 0.5
 hist(result,nclass=20,probability=T,xlab=NA,ylab=NA,yaxt='n')
 curve(target(x),add=T,col='red',lwd=2)

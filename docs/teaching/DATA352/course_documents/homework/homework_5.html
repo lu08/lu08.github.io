@@ -318,10 +318,10 @@ window.Quarto = {
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dice1 <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dice1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dice1 <span class="sc">==</span> <span class="dv">1</span>)  <span class="co"># should be close to 1/6 = 0.1667</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.155</code></pre>
+<pre><code>[1] 0.154</code></pre>
 </div>
 </div>
 </details>
@@ -339,10 +339,10 @@ Show solution
 </summary>
 <p>The importance weight is calculated as <span class="math display">\[\frac{f(1)}{g(1)} = \frac{P(1 | \text{old dice})}{P(1 | \text{new dice})} = \frac{1/6}{4/6}.\]</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dice2 <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dice2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dice2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1655</code></pre>
+<pre><code>[1] 0.16</code></pre>
 </div>
 </div>
 </details>
@@ -352,32 +352,32 @@ Show solution
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nsim<span class="ot">=</span><span class="dv">10000</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>result1<span class="ot">=</span><span class="fu">rep</span>(<span class="cn">NA</span>,nsim)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>result2<span class="ot">=</span><span class="fu">rep</span>(<span class="cn">NA</span>,nsim)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nsim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nsim)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>result2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nsim)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  dice1<span class="ot">=</span><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">1000</span>,<span class="at">replace =</span> T)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  result1[i]<span class="ot">=</span><span class="fu">mean</span>(dice1<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  dice1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">1000</span>,<span class="at">replace =</span> T)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  result1[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(dice1<span class="sc">==</span><span class="dv">1</span>)</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  dice2<span class="ot">=</span><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">size=</span><span class="dv">1000</span>,<span class="at">replace=</span>T)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  result2[i]<span class="ot">=</span><span class="fu">mean</span>(dice2<span class="sc">==</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  dice2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">size=</span><span class="dv">1000</span>,<span class="at">replace=</span>T)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  result2[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(dice2<span class="sc">==</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># compare SD's and proportions within 0.01 error range</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(result1);<span class="fu">sd</span>(result2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01188544</code></pre>
+<pre><code>[1] 0.01187306</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.003737104</code></pre>
+<pre><code>[1] 0.003730628</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>( (result1 <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span><span class="fl">+0.01</span>)<span class="sc">&amp;</span>(result1 <span class="sc">&gt;</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span><span class="fl">-0.01</span>) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6017</code></pre>
+<pre><code>[1] 0.5969</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>( (result2 <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span><span class="fl">+0.01</span>)<span class="sc">&amp;</span>(result2 <span class="sc">&gt;</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span><span class="fl">-0.01</span>) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9922</code></pre>
+<pre><code>[1] 0.992</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare histograms</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
@@ -406,34 +406,34 @@ Show solution
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>target<span class="ot">=</span><span class="cf">function</span>(x){</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  result<span class="ot">=</span><span class="dv">4</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  result[x<span class="sc">&lt;</span><span class="dv">0</span> <span class="sc">|</span> x<span class="sc">&gt;</span><span class="dv">1</span>]<span class="ot">=</span><span class="dv">0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  result[x<span class="sc">&lt;</span><span class="dv">0</span> <span class="sc">|</span> x<span class="sc">&gt;</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>nsim<span class="ot">=</span><span class="dv">10000</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">numeric</span>()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>nsim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  prop<span class="ot">=</span><span class="fu">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  acc.rate<span class="ot">=</span><span class="fu">target</span>(prop)<span class="sc">/</span>((<span class="dv">4</span>)<span class="sc">*</span><span class="fu">dunif</span>(prop))</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  prop <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  acc.rate <span class="ot">&lt;-</span> <span class="fu">target</span>(prop)<span class="sc">/</span>((<span class="dv">4</span>)<span class="sc">*</span><span class="fu">dunif</span>(prop))</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> acc.rate){</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    result<span class="ot">=</span><span class="fu">c</span>(result,prop)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="fu">c</span>(result,prop)</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result) <span class="co">#mean; should be close to 0.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.201362</code></pre>
+<pre><code>[1] 0.2066233</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(result)<span class="sc">/</span>nsim <span class="co">#acceptance rate; should be close to 0.25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2497</code></pre>
+<pre><code>[1] 0.2403</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(result,<span class="at">nclass=</span><span class="dv">50</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">main=</span><span class="st">'simulated draws'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">add=</span>T,<span class="at">col=</span><span class="st">'red'</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_5_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:20.0%"></p>
+<p><img src="homework_5_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -452,22 +452,22 @@ Show solution
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>target<span class="ot">=</span><span class="cf">function</span>(x){</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  result<span class="ot">=</span><span class="dv">4</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  result[x<span class="sc">&lt;</span><span class="dv">0</span> <span class="sc">|</span> x<span class="sc">&gt;</span><span class="dv">1</span>]<span class="ot">=</span><span class="dv">0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  result[x<span class="sc">&lt;</span><span class="dv">0</span> <span class="sc">|</span> x<span class="sc">&gt;</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>nsim.target<span class="ot">=</span><span class="dv">1000</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>nsim.initial<span class="ot">=</span>nsim.target<span class="sc">*</span><span class="dv">10</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>candidates<span class="ot">=</span><span class="fu">runif</span>(nsim.initial)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>weights<span class="ot">=</span><span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dunif</span>(candidates)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>nsim.target <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>nsim.initial <span class="ot">&lt;-</span> nsim.target<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>candidates <span class="ot">&lt;-</span> <span class="fu">runif</span>(nsim.initial)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dunif</span>(candidates)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result)  <span class="co">#should be close to 0.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1933386</code></pre>
+<pre><code>[1] 0.20078</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">col=</span><span class="st">'red'</span>,<span class="at">main=</span><span class="st">"target (red) </span><span class="sc">\\</span><span class="st">n importance function (blue)"</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">col=</span><span class="st">'red'</span>,<span class="at">main=</span><span class="st">"target (red) </span><span class="sc">\n</span><span class="st"> importance function (blue)"</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>)</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dunif</span>(x),<span class="at">col=</span><span class="st">'blue'</span>,<span class="at">add=</span>T,<span class="at">lty=</span><span class="st">'dashed'</span>)</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(result,<span class="at">nclass=</span><span class="dv">50</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">yaxt=</span><span class="st">'n'</span>,<span class="at">main=</span><span class="st">'simulated draws'</span>)</span>
@@ -475,7 +475,7 @@ Show solution
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_5_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="homework_5_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -487,17 +487,17 @@ Show solution
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>nsim.target<span class="ot">=</span><span class="dv">1000</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>nsim.initial<span class="ot">=</span>nsim.target<span class="sc">*</span><span class="dv">10</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>candidates<span class="ot">=</span><span class="fu">rbeta</span>(nsim.initial,<span class="at">shape1=</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">2</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>weights<span class="ot">=</span><span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dbeta</span>(candidates,<span class="at">shape1=</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">2</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>nsim.target <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>nsim.initial <span class="ot">&lt;-</span> nsim.target<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>candidates <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(nsim.initial,<span class="at">shape1=</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">2</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dbeta</span>(candidates,<span class="at">shape1=</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">2</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result)  <span class="co">#should be close to 0.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2050157</code></pre>
+<pre><code>[1] 0.2065179</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">col=</span><span class="st">'red'</span>,<span class="at">main=</span><span class="st">"target (red) </span><span class="sc">\\</span><span class="st">n importance function (blue)"</span>,</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">col=</span><span class="st">'red'</span>,<span class="at">main=</span><span class="st">"target (red) </span><span class="sc">\n</span><span class="st"> importance function (blue)"</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>)</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dbeta</span>(x,<span class="at">shape1=</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">2</span>),<span class="at">col=</span><span class="st">'blue'</span>,<span class="at">add=</span>T,<span class="at">lty=</span><span class="st">'dashed'</span>)</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(result,<span class="at">nclass=</span><span class="dv">50</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">yaxt=</span><span class="st">'n'</span>)</span>
@@ -514,10 +514,10 @@ Show solution
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Suppose we want to sample from the density function <span class="math inline">\(f(x)=\\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}, -\\infty&lt;x&lt;\\infty\)</span> (this is a normal density, but pretend we don’t know that). We want to use an acceptance-rejection algorithm with the proposal density given by the <strong>Cauchy distribution</strong> (in R, you can use functions <strong>dcauchy()</strong>, <strong>rcauchy()</strong> etc. as usual; recall that the density function <span class="math inline">\(g()\)</span> is given by <strong>dcauchy()</strong>). The following plot shows the target density (in red) and the proposal density (in blue). Both distributions center at 0.</p>
+<p>Suppose we want to sample from the density function <span class="math inline">\(f(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}, \quad -\infty&lt;x&lt;\infty\)</span> (this is a normal density, but pretend we don’t know that). We want to use an acceptance-rejection algorithm with the proposal density given by the <strong>Cauchy distribution</strong> (in R, you can use functions <strong>dcauchy()</strong>, <strong>rcauchy()</strong> etc. as usual; recall that the density function <span class="math inline">\(g()\)</span> is given by <strong>dcauchy()</strong>). The following plot shows the target density (in red) and the proposal density (in blue). Both distributions center at 0.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>target<span class="ot">=</span><span class="cf">function</span>(x){</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  result<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">target</span>(x),<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="at">col=</span><span class="st">'red'</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="cn">NA</span>)</span>
@@ -538,7 +538,7 @@ Show solution
 </summary>
 <p>If we plot <span class="math inline">\(f(x)/g(x)\)</span>, we can see that the maximum occurs around 1 and -1. Using R we can approximate the maximum to be around <span class="math inline">\(1.52\)</span>, so the choice of C should be bigger than this value.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>,<span class="at">to=</span><span class="dv">5</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>,<span class="at">to=</span><span class="dv">5</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">target</span>(x)<span class="sc">/</span><span class="fu">dcauchy</span>(x)) <span class="co"># to approximate the max</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.520347</code></pre>
@@ -577,10 +577,10 @@ Show solution
 <summary>
 Show solution
 </summary>
-<p>Each acceptance rate is calculated as <span class="math inline">\(\\frac{f(x)}{C \\cdot g(x)}\)</span>. Values where <span class="math inline">\(f(x)\)</span> is large (relative to <span class="math inline">\(g(x)\)</span>) are more likely to be accepted.</p>
+<p>Each acceptance rate is calculated as <span class="math inline">\(\frac{f(x)}{C \cdot g(x)}\)</span>. Values where <span class="math inline">\(f(x)\)</span> is large (relative to <span class="math inline">\(g(x)\)</span>) are more likely to be accepted.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.1025199</span>, <span class="fl">2.3538306</span>, <span class="sc">-</span><span class="fl">4.2926262</span>, <span class="sc">-</span><span class="fl">0.2966426</span>, <span class="fl">0.7346469</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>acc.rate <span class="ot">=</span> <span class="fu">target</span>(value)<span class="sc">/</span>((<span class="dv">2</span>)<span class="sc">*</span><span class="fu">dcauchy</span>(value))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.1025199</span>, <span class="fl">2.3538306</span>, <span class="sc">-</span><span class="fl">4.2926262</span>, <span class="sc">-</span><span class="fl">0.2966426</span>, <span class="fl">0.7346469</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>acc.rate <span class="ot">&lt;-</span> <span class="fu">target</span>(value)<span class="sc">/</span>((<span class="dv">2</span>)<span class="sc">*</span><span class="fu">dcauchy</span>(value))</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">data.frame</span>(value,acc.rate),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   value acc.rate
@@ -608,13 +608,13 @@ Show solution
 </summary>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rejection algorithm with C=2</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>nsim<span class="ot">=</span><span class="dv">10000</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">numeric</span>()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>nsim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  prop<span class="ot">=</span><span class="fu">rcauchy</span>(<span class="dv">1</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  acc.rate<span class="ot">=</span><span class="fu">target</span>(prop)<span class="sc">/</span>((<span class="dv">2</span>)<span class="sc">*</span><span class="fu">dcauchy</span>(prop))</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  prop <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(<span class="dv">1</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  acc.rate <span class="ot">&lt;-</span> <span class="fu">target</span>(prop)<span class="sc">/</span>((<span class="dv">2</span>)<span class="sc">*</span><span class="fu">dcauchy</span>(prop))</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> acc.rate){</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    result<span class="ot">=</span><span class="fu">c</span>(result,prop)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="fu">c</span>(result,prop)</span>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result) <span class="co">#mean: should be close to 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -641,10 +641,10 @@ Show solution
 <summary>
 Show solution
 </summary>
-<p>The importance weight for each value is calculated as <span class="math inline">\(\\frac{f(x)}{g(x)}\)</span>. Values where <span class="math inline">\(f(x)\)</span> is large (relative to <span class="math inline">\(g(x)\)</span>) are more likely to be resampled.</p>
+<p>The importance weight for each value is calculated as <span class="math inline">\(\frac{f(x)}{g(x)}\)</span>. Values where <span class="math inline">\(f(x)\)</span> is large (relative to <span class="math inline">\(g(x)\)</span>) are more likely to be resampled.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.1025199</span>, <span class="fl">2.3538306</span>, <span class="sc">-</span><span class="fl">4.2926262</span>, <span class="sc">-</span><span class="fl">0.2966426</span>, <span class="fl">0.7346469</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">=</span> <span class="fu">target</span>(value)<span class="sc">/</span>(<span class="fu">dcauchy</span>(value))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.1025199</span>, <span class="fl">2.3538306</span>, <span class="sc">-</span><span class="fl">4.2926262</span>, <span class="sc">-</span><span class="fl">0.2966426</span>, <span class="fl">0.7346469</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">target</span>(value)<span class="sc">/</span>(<span class="fu">dcauchy</span>(value))</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">data.frame</span>(value,weight),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   value weight
@@ -662,11 +662,11 @@ Show solution
 Show solution
 </summary>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>nsim.target<span class="ot">=</span><span class="dv">1000</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>nsim.initial<span class="ot">=</span>nsim.target<span class="sc">*</span><span class="dv">10</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>candidates<span class="ot">=</span><span class="fu">rcauchy</span>(nsim.initial)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>weights<span class="ot">=</span><span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dcauchy</span>(candidates)</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>nsim.target <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>nsim.initial <span class="ot">&lt;-</span> nsim.target<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>candidates <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(nsim.initial)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">target</span>(candidates)<span class="sc">/</span><span class="fu">dcauchy</span>(candidates)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sample</span>(candidates,<span class="at">size=</span>nsim.target,<span class="at">replace=</span>T,<span class="at">prob=</span>weights)</span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result) <span class="co">#should be close to 0.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.0716877</code></pre>

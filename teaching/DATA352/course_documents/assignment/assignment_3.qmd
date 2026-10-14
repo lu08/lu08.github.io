@@ -1,6 +1,6 @@
 ---
 title: "DATA 352/551: Assignment 3"
-subtitle: "More on Central Limit Theorem"
+subtitle: "Central Limit Theorem simulation"
 format:
   html:
     toc: false
@@ -39,9 +39,9 @@ Work in groups and submit your groups' findings in [this Google doc](https://doc
 
 Design and run a simulation by repeating what you have done above but with different values of $n$, as well as different starting distributions. For instance,  you can start with:
     
-    - different shapes of the Beta distribution (by changing the values of the shape1, shape2 parameters)
-    - exponential distribution (try picking parameter values that would give a very skewed shape)
-    - discrete distribution (for instance, imagine the exam scores can only be 100, 80, or 50; random sampling can be done by using **sample** instead of **runif**/**rnorm**/**rbeta** etc. )
+- different shapes of the Beta distribution (by changing the values of the shape1, shape2 parameters)
+- exponential distribution (try picking parameter values that would give a very skewed shape)
+- discrete distribution (for instance, imagine the exam scores can only be 100, 80, or 50; random sampling can be done by using **sample** instead of **runif**/**rnorm**/**rbeta** etc. )
 
-You should try **three or more** different settings.  In each case, as before, plot a histogram of the simulated averages to assess normality.  In text, summarize your findings: what would you recommend as a sufficient sample size for the Central Limit Theorem to work in different settings?  In introductory level statistics courses, we tell students to make sure that the sample size is at least 30.  Do you think this is a reasonable cutoff?  If someone asks, "my sample size is only 10, do you think I can run hypothesis tests that are based on the Central Limit Theorem?"  What would you say?
+Your group should try **three or more** different settings.  In each case, as before, plot a histogram of the simulated averages to assess normality.  In text, summarize your findings: what would you recommend as a sufficient sample size for the Central Limit Theorem to work in different settings?  In introductory level statistics courses, we tell students to make sure that the sample size is at least 30.  Do you think this is a reasonable cutoff?  If someone asks, "my sample size is only 10, do you think I can run hypothesis tests that are based on the Central Limit Theorem?"  What would you say?
 

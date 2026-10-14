@@ -4,7 +4,7 @@ title: "Week 7"
 
 ## In class
 
-We will start with quiz 4 based on [homework 4](homework/homework_4.qmd).  We will then go over [Lecture 5](/teaching/DATA352/course_documents/all_lectures/Lecture_5.html).  We will also discuss [Assignment 3](assignment/assignment_3.qmd) toward the end of today's class.
+We will start with quiz 4 based on [homework 4](../../course_documents/homework/homework_4.html).  We will then go over [Lecture 5](/teaching/DATA352/course_documents/all_lectures/Lecture_5.html).  We will also discuss [Assignment 3](../../course_documents/assignment/assignment_3.html) toward the end of today's class.
 
 [Link to fullscreen](/teaching/DATA352/course_documents/all_lectures/Lecture_5.html)
 
@@ -12,5 +12,5 @@ We will start with quiz 4 based on [homework 4](homework/homework_4.qmd).  We wi
 
 ## Homework
 
-Finish [Homework 5](../../course_documents/homework/homework_5.qmd) on your own, in preparation for next week's quiz.
+Finish [Homework 5](../../course_documents/homework/homework_5.qmd) on your own, in preparation for next week's quiz. You should use the [sample code](../../course_documents/code/L5_code.R) from Lecture 5 and make sure you understand the code fully.
 

@@ -18,7 +18,9 @@ You can find all course documents here as a reference page. Please refer to the 
 
 ## R Code
 
-- [Lecture 4 code](code/L4_code.R)
+- [Lecture 4 code](code/L4_code.R): contains sample code for the Central Limit Theorem Simulation.
+- [Lecture 5 code](code/L5_code.R): contains sample code for performing Acceptance-Rejection sampling and SIR sampling.
+
 
 ## Homework
 

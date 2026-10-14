@@ -292,7 +292,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">DATA 352/551: Assignment 3</h1>
-<p class="subtitle lead">More on Central Limit Theorem</p>
+<p class="subtitle lead">Central Limit Theorem simulation</p>
 </div>
 
 
@@ -337,11 +337,11 @@ Show code
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 49.9667</code></pre>
+<pre><code>[1] 49.9073</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.847486</code></pre>
+<pre><code>[1] 5.749079</code></pre>
 </div>
 </div>
 </details>
@@ -351,10 +351,12 @@ Show code
 <h2 class="anchored" data-anchor-id="effect-of-sample-size">Effect of sample size</h2>
 <p>Work in groups and submit your groups’ findings in <a href="https://docs.google.com/document/d/1vy4H3QZGGdgGwVtmC-y0DzWFPAy2fRIByrukpsbFTi0/edit?usp=sharing" target="_blank">this Google doc</a>. Use screenshot (for code output or plots) as needed.</p>
 <p>Design and run a simulation by repeating what you have done above but with different values of <span class="math inline">\(n\)</span>, as well as different starting distributions. For instance, you can start with:</p>
-<pre><code>- different shapes of the Beta distribution (by changing the values of the shape1, shape2 parameters)
-- exponential distribution (try picking parameter values that would give a very skewed shape)
-- discrete distribution (for instance, imagine the exam scores can only be 100, 80, or 50; random sampling can be done by using **sample** instead of **runif**/**rnorm**/**rbeta** etc. )</code></pre>
-<p>You should try <strong>three or more</strong> different settings. In each case, as before, plot a histogram of the simulated averages to assess normality. In text, summarize your findings: what would you recommend as a sufficient sample size for the Central Limit Theorem to work in different settings? In introductory level statistics courses, we tell students to make sure that the sample size is at least 30. Do you think this is a reasonable cutoff? If someone asks, “my sample size is only 10, do you think I can run hypothesis tests that are based on the Central Limit Theorem?” What would you say?</p>
+<ul>
+<li>different shapes of the Beta distribution (by changing the values of the shape1, shape2 parameters)</li>
+<li>exponential distribution (try picking parameter values that would give a very skewed shape)</li>
+<li>discrete distribution (for instance, imagine the exam scores can only be 100, 80, or 50; random sampling can be done by using <strong>sample</strong> instead of <strong>runif</strong>/<strong>rnorm</strong>/<strong>rbeta</strong> etc. )</li>
+</ul>
+<p>Your group should try <strong>three or more</strong> different settings. In each case, as before, plot a histogram of the simulated averages to assess normality. In text, summarize your findings: what would you recommend as a sufficient sample size for the Central Limit Theorem to work in different settings? In introductory level statistics courses, we tell students to make sure that the sample size is at least 30. Do you think this is a reasonable cutoff? If someone asks, “my sample size is only 10, do you think I can run hypothesis tests that are based on the Central Limit Theorem?” What would you say?</p>
 
 
 </section>
