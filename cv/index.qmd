@@ -1,5 +1,5 @@
 ---
-title: "Yi Lu"
+title: "Curriculum Vitae"
 format: html
 ---
 
@@ -8,10 +8,10 @@ Download a PDF version [here](CV_202610.pdf){download="CV_YILU.pdf"}.
 
 <div class="center">
 
-Associate Professor and Chair of the Mathematics and Computer Science
-Department
+Yi Lu
 
-Drew University, Madison, New Jersey
+Associate Professor and Chair of the Mathematics and Computer Science
+Department, Drew University, Madison, New Jersey
 
 Phone: 424-264-1145
 
@@ -376,10 +376,9 @@ Presidential Scholarship and Grayson Scholarship, Mars Hill University,
 
 # Service
 
+*University*
 - Coordinator of Statistics Instruction for the Department of
   Mathematics and Computer Science, Spring 2023 - Fall 2025
-
-*University*
 
 - Institutional Review Board (IRB), Fall 2021 - Summer 2025
 

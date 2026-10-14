@@ -1,1 +1,307 @@
-to be added
+---
+title: "DATA 352/551: Homework 5"
+format:
+  html:
+    toc: false
+---
+
+<!-- do not alter this first chunk below  -->
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Question 1
+
+In class, we discussed the example of estimating the probability of rolling a 1 of a fair die using simulation. In this question, we will compare the estimates obtained with and without using importance sampling.
+
+**a.** Simulate $1000$ outcomes of a fair die. Report the proportion of 1's as your estimate (we'll call this estimator **p1hat**).
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+dice1 = sample(c(1:6), size = 1000, replace = TRUE)
+mean(dice1 == 1)  # should be close to 1/6 = 0.1667
+```
+
+</details>
+**b.** Estimate the standard deviation of **p1hat** (hint: run a for loop to repeat (a) for many times and record the values of **p1hat** each time; calculate the standard deviation of those values. In R, you can use **sd( )**). Also, estimate the probability that **p1hat** falls within the range $\frac{1}{6}\pm 0.01$ (i.e., within 0.01 estimation error of the truth).
+
+<details>
+<summary>Show solution</summary>
+
+See (d).
+
+</details>
+
+**c.** Simulate $1000$ outcomes of a new die, where the values *2,3,4* are recorded as 1's. Calculate the importance weight. Report the proportion of 1's and multiply it by the importance weight as your estimate (we'll call this estimator **p2hat**).
+
+<details>
+<summary>Show solution</summary>
+
+The importance weight is calculated as $$\frac{f(1)}{g(1)} = \frac{P(1 | \text{old dice})}{P(1 | \text{new dice})} = \frac{1/6}{4/6}.$$
+
+```{r}
+dice2 = sample(c(1, 1, 1, 1, 5, 6), size = 1000, replace = TRUE)
+mean(dice2 == 1) * (1 / 4)
+```
+
+</details>
+
+**d.** Similar to (b), estimate the standard deviation of **p2hat** and the probability that **p2hat** falls within the range $\frac{1}{6}\pm 0.01$. Briefly comment on how importance sampling improves the estimate.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=7, out.width="0.9\\linewidth"}
+nsim=10000
+result1=rep(NA,nsim)
+result2=rep(NA,nsim)
+
+for(i in 1:nsim){
+  dice1=sample(c(1:6),size=1000,replace = T)
+  result1[i]=mean(dice1==1)
+
+  dice2=sample(c(1,1,1,1,5,6),size=1000,replace=T)
+  result2[i]=mean(dice2==1) * (1/4)
+}
+# compare SD's and proportions within 0.01 error range
+sd(result1);sd(result2)
+mean( (result1 < 1/6+0.01)&(result1 >1/6-0.01) )
+mean( (result2 < 1/6+0.01)&(result2 >1/6-0.01) )
+# compare histograms
+par(mfrow=c(1,2))
+hist(result1,xlim=range(result1),nclass=50,main="p1hat",xlab=NA,ylab=NA,yaxt='n')
+abline(v=1/6,col='red',lty='dashed',lwd=2)
+hist(result2,xlim=range(result1),nclass=50,main='p2hat',xlab=NA,ylab=NA,yaxt='n')
+abline(v=1/6,col='red',lty='dashed',lwd=2)
+```
+
+</details>
+
+## Question 2
+
+Suppose we want to sample from the density function $f(x)=4(1-x)^3, 0<x<1$. You can find sample code on Moodle (under Lecture 5 code) for the examples we did in class; you should be able to modify the code to do this question.
+
+**a.** Use an acceptance-rejection sampling algorithm to sample from the target distribution, with a uniform proposal density and a constant $C=4$. What is the mean of the simulated draws?
+
+**b.** What is the acceptance rate of the simulation in (a)?
+
+**c.** Graph $f(x)$ on the computer and plot a histogram of your simulated draws to compare. They should look similar in shape.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=5, out.width="0.2\\linewidth"}
+target=function(x){
+  result=4*(1-x)^3
+  result[x<0 | x>1]=0
+  return(result)
+}
+nsim=10000
+result=numeric()
+for(i in 1:nsim){
+  prop=runif(1)
+  acc.rate=target(prop)/((4)*dunif(prop))
+  if(runif(1) < acc.rate){
+    result=c(result,prop)
+  }
+}
+mean(result) #mean; should be close to 0.2
+length(result)/nsim #acceptance rate; should be close to 0.25
+hist(result,nclass=50,prob=T,xlab=NA,ylab=NA,main='simulated draws')
+curve(target(x),add=T,col='red',lwd=2)
+```
+
+</details>
+
+**d.** Redo the sampling with a uniform proposal density but a different constant $C$ of your choice. Verify your sample by calculating the mean of the sampled values and plotting a histogram. Briefly discuss your choice of $C$ and how it affects the acceptance rate.
+
+<details>
+<summary>Show solution</summary>
+
+Similar to (a). The choice of $C$ must be larger than $f(0) = 4$ (max of the target distribution). The acceptance rate should be close to $1/C$.
+
+</details>
+
+**e.** Redo the sampling with the SIR algorithm, using a uniform(0,1) density as the importance function. Verify your sample by calculating the mean of the sampled values and plotting a histogram.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=7, out.width="0.5\\linewidth"}
+target=function(x){
+  result=4*(1-x)^3
+  result[x<0 | x>1]=0
+  return(result)
+}
+nsim.target=1000
+nsim.initial=nsim.target*10
+candidates=runif(nsim.initial)
+weights=target(candidates)/dunif(candidates)
+result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+mean(result)  #should be close to 0.2
+par(mfrow=c(1,2))
+curve(target(x),col='red',main="target (red) \\n importance function (blue)",
+      xlab=NA,ylab=NA)
+curve(dunif(x),col='blue',add=T,lty='dashed')
+hist(result,nclass=50,prob=T,xlab=NA,ylab=NA,yaxt='n',main='simulated draws')
+curve(target(x),add=T,col='red',lwd=2)
+```
+
+</details>
+
+**f.** Redo the sampling with the SIR algorithm, using a beta(1,2) density as the importance function. Verify your sample by calculating the mean of the sampled values and plotting a histogram.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=7, out.width="0.9\\linewidth"}
+nsim.target=1000
+nsim.initial=nsim.target*10
+candidates=rbeta(nsim.initial,shape1=1,shape2=2)
+weights=target(candidates)/dbeta(candidates,shape1=1,shape2=2)
+result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+mean(result)  #should be close to 0.2
+par(mfrow=c(1,2))
+curve(target(x),col='red',main="target (red) \\n importance function (blue)",
+      xlab=NA,ylab=NA)
+curve(dbeta(x,shape1=1,shape2=2),col='blue',add=T,lty='dashed')
+hist(result,nclass=50,prob=T,xlab=NA,ylab=NA,yaxt='n')
+curve(target(x),add=T,col='red')
+```
+
+</details>
+
+## Question 3
+
+Suppose we want to sample from the density function $f(x)=\\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}, -\\infty<x<\\infty$ (this is a normal density, but pretend we don't know that). We want to use an acceptance-rejection algorithm with the proposal density given by the **Cauchy distribution** (in R, you can use functions **dcauchy()**, **rcauchy()** etc. as usual; recall that the density function $g()$ is given by **dcauchy()**). The following plot shows the target density (in red) and the proposal density (in blue). Both distributions center at 0.
+
+```{r, echo=TRUE, fig.height=4, fig.width=5, out.width="40%"}
+target=function(x){
+  result=1/sqrt(2*pi)*exp(-x^2/2)
+  return(result)
+}
+curve(target(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,xlab=NA)
+curve(dcauchy(x),add=T,col='blue',lwd=2)
+grid()
+```
+
+**a.** Discuss what values of $C$ would work for the acceptance-rejection algorithm.
+
+<details>
+<summary>Show solution</summary>
+
+If we plot $f(x)/g(x)$, we can see that the maximum occurs around 1 and -1. Using R we can approximate the maximum to be around $1.52$, so the choice of C should be bigger than this value.
+
+```{r, fig.height=3, fig.width=8, out.width="0.9\\linewidth"}
+x=seq(from=-5,to=5,by=0.01)
+max(target(x)/dcauchy(x)) # to approximate the max
+par(mfrow=c(1,2))
+curve(target(x)/dcauchy(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,
+      main="f(x)/g(x)")
+grid()
+curve(target(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,ylim=c(0,0.5),
+      main="target (red); 1.52*proposal (blue)")
+curve(1.52*dcauchy(x),add=T,col='blue',lwd=2)
+grid()
+```
+
+</details>
+
+**b.** If we use $C=2$ and want to obtain around $1000$ values, how many values should we propose?
+
+<details>
+<summary>Show solution</summary>
+
+The acceptance rate should be around $1/2=0.5$, so we should propose around $2000$ values.
+
+</details>
+
+**c.** If we use $C=2$, what are the acceptance rates of the following $5$ proposed values? Briefly comment on what kind of values are more likely to be accepted.
+
+```{r, echo=FALSE}
+set.seed(1)
+rcauchy(5)
+```
+
+<details>
+<summary>Show solution</summary>
+
+Each acceptance rate is calculated as $\\frac{f(x)}{C \\cdot g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be accepted.
+
+```{r}
+value = c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
+acc.rate = target(value)/((2)*dcauchy(value))
+round(data.frame(value,acc.rate),3)
+```
+
+```{r, echo=FALSE, fig.height=4, fig.width=5, out.width="50%"}
+target=function(x){
+  result=1/sqrt(2*pi)*exp(-x^2/2)
+  return(result)
+}
+curve(target(x),xlim=c(-5,5),col='red',ylab=NA,lwd=2,xlab=NA)
+curve(dcauchy(x),add=T,col='blue',lwd=2)
+grid()
+```
+
+</details>
+
+**d.** Run the acceptance-rejection algorithm to sample from the target distribution with your choice of $C$. Verify the sampled values by calculating the mean (should be close to $0$) and plotting a histogram to compare to the target distribution.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=5, out.width="0.4\\linewidth"}
+# rejection algorithm with C=2
+nsim=10000
+result=numeric()
+for(i in 1:nsim){
+  prop=rcauchy(1)
+  acc.rate=target(prop)/((2)*dcauchy(prop))
+  if(runif(1) < acc.rate){
+    result=c(result,prop)
+  }
+}
+mean(result) #mean: should be close to 0
+length(result)/nsim #acceptance rate: should be close to 1/C
+hist(result,nclass=20,probability=T,xlab=NA,ylab=NA,yaxt='n')
+curve(target(x),add=T,col='red',lwd=2)
+```
+
+</details>
+
+**e.** We now use SIR to sample from the target distribution with the Cauchy density as the importance function. This is especially suitable because the Cauchy density has much heavier tails than the target distribution. Calculate the importance weights for the $5$ proposed values given in (c). Briefly comment on what kind of values are more likely to be resampled.
+
+<details>
+<summary>Show solution</summary>
+
+The importance weight for each value is calculated as $\\frac{f(x)}{g(x)}$. Values where $f(x)$ is large (relative to $g(x)$) are more likely to be resampled.
+
+```{r}
+value = c(1.1025199, 2.3538306, -4.2926262, -0.2966426, 0.7346469)
+weight = target(value)/(dcauchy(value))
+round(data.frame(value,weight),3)
+```
+
+</details>
+
+**f.** Run the SIR algorithm to obtain $1000$ simulated values from the target distribution. Verify the sampled values by calculating the mean and plotting a histogram.
+
+<details>
+<summary>Show solution</summary>
+
+```{r, fig.height=3, fig.width=5, out.width="0.4\\linewidth"}
+nsim.target=1000
+nsim.initial=nsim.target*10
+candidates=rcauchy(nsim.initial)
+weights=target(candidates)/dcauchy(candidates)
+result=sample(candidates,size=nsim.target,replace=T,prob=weights)
+mean(result) #should be close to 0.5
+hist(result,nclass=20,probability=T,xlab=NA,ylab=NA,yaxt='n')
+curve(target(x),add=T,col='red',lwd=2)
+```
+
+</details>

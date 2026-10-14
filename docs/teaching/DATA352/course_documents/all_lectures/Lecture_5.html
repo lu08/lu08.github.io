@@ -35,8 +35,6 @@
   <link href="Lecture_5_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Lecture_5_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Lecture_5_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Lecture_5_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="Lecture_5_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="Lecture_5_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -49,7 +47,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -139,8 +136,103 @@
 </div>
 
 </section>
-<section id="to-be-added" class="slide level2">
-<h2>To be added</h2>
+<section class="slide level2">
+
+<h3 id="review-and-set-up">Review and set-up</h3>
+<p>We can make random draws from common distributions (e.g.&nbsp;beta) using software directly (e.g.&nbsp;<code>rbeta</code>).</p>
+<p>Generating from common distributions can usually be done using <strong>transformation</strong>, which usually only requires drawing from uniform (0,1). See table below from <em>Computational Statistics</em> (Givens and Hoeting, 2013).</p>
+
+<img data-src="transformation.jpg" class="r-stretch"><h3 id="review-and-set-up-1">Review and set-up</h3>
+<p>Recall, in general, the distribution of a (continuous) random variable <span class="math inline">\(X\)</span> can be specified by its <strong>probability density function</strong> <span class="math inline">\(f(x)\)</span>. In many cases we want to sample from this <strong>target distribution</strong>.</p>
+<p><br> <br></p>
+<p>Challenges:</p>
+<ul>
+<li><span class="math inline">\(f(x)\)</span> is not a standard parametric distribution</li>
+<li><span class="math inline">\(f(x)\)</span> is only known up to a constant (and the constant is hard to calculate)</li>
+<li><span class="math inline">\(f(x)\)</span> is computationally expensive to evaluate</li>
+</ul>
+<p>Many algorithms exist to tackle these challenges and allow sampling from a general target density <span class="math inline">\(f(x)\)</span>; the distribution of the resulting sample can be <strong>exactly</strong> <span class="math inline">\(f(x)\)</span> (e.g., acceptance-rejection sampling) or <strong>approximately</strong> <span class="math inline">\(f(x)\)</span> (e.g., SIR algorithm).</p>
+</section>
+<section id="acceptance-rejection-sampling" class="slide level2">
+<h2>Acceptance-rejection sampling</h2>
+<h3 id="accept-with-probability">“Accept with probability …”</h3>
+<p>Many simulation methods involve an <strong>acceptance-rejection</strong> step. Suppose your goal is to simulate some data <span class="math inline">\(\{x_1, x_2, \ldots x_{nsim}\}\)</span>. Key idea of acceptance-rejection:</p>
+<ul>
+<li>Make a <strong>proposal</strong> <span class="math inline">\(x'\)</span></li>
+<li>Calculate the <strong>acceptance probability</strong> <span class="math inline">\(p(x')\)</span></li>
+<li><strong>Accept <span class="math inline">\(x'\)</span> with probability (w.p.) <span class="math inline">\(p(x')\)</span></strong>; reject it with probability <span class="math inline">\(1-p(x')\)</span></li>
+</ul>
+<p>Q: How do you write code to “accept with probability <span class="math inline">\(p(x')\)</span>”?</p>
+<h3 id="simulating-from-a-random-distribution">Simulating from a random distribution</h3>
+<p><em>Ingredients</em>:</p>
+<ul>
+<li><strong>i. Target</strong> density: <span class="math inline">\(f(x)\)</span></li>
+<li><strong>ii. Proposal</strong> density that is easy to sample from: <span class="math inline">\(g(x)\)</span>, satisfying <span class="math inline">\(f(x) \le C \cdot g(x)\)</span> for all <span class="math inline">\(x\)</span> and some positive constant <span class="math inline">\(C\)</span>. You can think of <span class="math inline">\(C \cdot g(X)\)</span> as an <strong>envelope</strong>.</li>
+</ul>
+<p><em>Algorithm</em>:</p>
+<ul>
+<li><strong>Step 1:</strong> Sample <span class="math inline">\(x'\)</span> from <span class="math inline">\(g(x)\)</span></li>
+<li><strong>Step 2:</strong> Sample <span class="math inline">\(u\)</span> from uniform <span class="math inline">\((0,1)\)</span></li>
+<li><strong>Step 3:</strong> If <span class="math inline">\(u &lt; f(x')/(Cg(x'))\)</span>, accept <span class="math inline">\(x'\)</span>; otherwise reject <span class="math inline">\(x'\)</span>.</li>
+</ul>
+<p><em>Example</em>:</p>
+<h3 id="exercise">Exercise</h3>
+<p>Our goal is to sample from the density function: <span class="math inline">\(f(x) = 6x(1-x), 0&lt;x&lt;1\)</span>.</p>
+<ol type="1">
+<li>Discussion: sketch this function (on paper or on the computer) and come up with a proposal density.</li>
+<li>Implement the acceptance-rejection algorithm for a total of <span class="math inline">\(nsim=10000\)</span> updates.</li>
+<li>Calculate the mean of the resulting random draws (should be close to <span class="math inline">\(0.5\)</span>).</li>
+<li>Plot a histogram of the resulting random draws (should be close to the functional form of <span class="math inline">\(f(x)\)</span>, which is actually the density of a beta distribution with shape parameters 2, 2).</li>
+<li>Calculate the <em>acceptance rate</em>.</li>
+<li>Redo the sampling with a different envelope; compare the acceptance rate.</li>
+</ol>
+<p><strong>Note: The larger the value of <span class="math inline">\(C\)</span>, the less efficient the algorithm is. The acceptance rate is expected to be <span class="math inline">\(1/C\)</span>.</strong></p>
+</section>
+<section id="importance-sampling-and-sir" class="slide level2">
+<h2>Importance Sampling and SIR</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Suppose we want to estimate the <strong>probability of rolling a 1</strong> of a fair dice using simulation:</p>
+<ul>
+<li>Sample from the target distribution: <span class="math inline">\(1, 3, 3, 2, 5, 6, 6, 1, 2, 3, 4, 4, \ldots\)</span></li>
+<li>Calculate the proportion of 1’s in the sample</li>
+</ul>
+<p>Alternatively, since the value of 1 is more “important” for our estimate, we want to <strong>oversample</strong> this value, and then correct for the oversampling bias:</p>
+<ul>
+<li>Sample from another dice where the values 2 and 3 are also recorded as 1: <span class="math inline">\(5, 1, 6, 1, 4, 1, 6, 1, 4, 1, 1, 1, \ldots\)</span></li>
+<li>Calculate the proportion of 1’s in the sample</li>
+<li>Multiply the proportion by <span class="math inline">\(1/3\)</span></li>
+</ul>
+<p>Why? The estimate we obtained from the second method has less variation!</p>
+<h3 id="introduction-1">Introduction</h3>
+<p><strong>Importance sampling</strong> is a general <em>variance reduction technique</em> when we use random samples to perform some statistical inference (e.g.&nbsp;estimating <span class="math inline">\(P(1)\)</span>).</p>
+<ul>
+<li>The alternative distribution (e.g., new dice with values 2 and 3 replaced by 1) is called an <strong>importance sampling function</strong> <span class="math inline">\(g(x)\)</span> (more specifically, <span class="math inline">\(g(x)\)</span> is the density of this distribution)</li>
+<li>The correcting multiplier (e.g., 1/3) is called the <strong>importance weight</strong>; it is calculated as <span class="math inline">\(f(\cdot)/g(\cdot)\)</span></li>
+</ul>
+<h3 id="sampling-importance-resampling-sir">Sampling importance resampling (SIR)</h3>
+<p><strong>The sampling importance resampling (SIR)</strong> algorithm is an algorithm that generates <em>approximate</em> samples from a target distribution <span class="math inline">\(f(x)\)</span>, based upon the notion of importance sampling.</p>
+<p><em>Ingredients</em>:</p>
+<ul>
+<li><strong>i. Target</strong> density: <span class="math inline">\(f(x)\)</span></li>
+<li><strong>ii. Importance sampling function</strong> <span class="math inline">\(g(x)\)</span>; the range of <span class="math inline">\(g(x)\)</span> must include the entire range of <span class="math inline">\(f(x)\)</span>, and <span class="math inline">\(g(x)\)</span> must have heavier tails than <span class="math inline">\(f(x)\)</span>.</li>
+</ul>
+<p><em>Algorithm</em>:</p>
+<ul>
+<li><strong>Step 1:</strong> Sample <span class="math inline">\(y_1, \ldots, y_m\)</span> from <span class="math inline">\(g(x)\)</span></li>
+<li><strong>Step 2:</strong> Calculate the importance weights <span class="math inline">\(w_i, \ldots, w_m\)</span>, where <span class="math inline">\(w_i = f(y_i) / g(y_i)\)</span></li>
+<li><strong>Step 3:</strong> Resample <span class="math inline">\(x_1, \ldots, x_n\)</span> from <span class="math inline">\(y_1, \ldots, y_m\)</span> with replacement, with probabilities <span class="math inline">\(w_1, \ldots , w_m\)</span>.</li>
+</ul>
+<h3 id="exercise-1">Exercise</h3>
+<p>Use SIR to redo the previous exercise, where the goal is to sample from the density function: <span class="math inline">\(f(x) = 6x(1-x), 0&lt;x&lt;1\)</span>.</p>
+<ol type="1">
+<li><p>Use a uniform importance sampling function to sample 10000 values from the target.</p>
+<ul>
+<li>Note 1: To obtain a target of 10000 resampled values, how many values should we generate in the first step? It is recommended that <strong><span class="math inline">\(m \ge 10\cdot n\)</span></strong> (<em>Computational Statistics</em>, Givens and Hoeting).</li>
+<li>Note 2: you can standardize the importance weights so that they add up to 1, but this is not required when using the R function <strong>sample( )</strong>.</li>
+</ul></li>
+<li><p>Double check the random draws: calculate the mean (should be close to <span class="math inline">\(0.5\)</span>); plot a histogram (should be close to <span class="math inline">\(f(x)\)</span>).</p></li>
+<li><p>Redo the sampling with a normal distribution importance sampling function.</p></li>
+</ol>
 
 </section>
     </div>
@@ -157,7 +249,6 @@
   <script src="Lecture_5_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="Lecture_5_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="Lecture_5_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Lecture_5_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="Lecture_5_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -179,9 +270,8 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -201,7 +291,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -306,7 +396,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'fade',
+        transition: 'none',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -351,7 +441,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
