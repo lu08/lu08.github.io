@@ -22,3 +22,7 @@ format: html
 
 
 ## Thursday, Oct 8
+
+[Link to fullscreen](../../course_documents/all_lectures/chapter_5_slide.html){target="_blank"}
+
+<iframe src="../../course_documents/all_lectures/chapter_5_slide.html" width="100%" height="650px" style="border:none;"></iframe>

@@ -11,5 +11,12 @@ format: html
 
 ## Tuesday, Oct 13
 
+No class.
 
 ## Thursday, Oct 15
+
+Continue Chapter 5; using correlation coefficients to describe bivariate relationship. Submit assignment 4 on Moodle.
+
+[Link to fullscreen](../../course_documents/all_lectures/chapter_5_slide.html){target="_blank"}
+
+<iframe src="../../course_documents/all_lectures/chapter_5_slide.html" width="100%" height="650px" style="border:none;"></iframe>
