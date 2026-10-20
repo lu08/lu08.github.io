@@ -11,9 +11,9 @@ format: html
 
 ## Tuesday, Oct 20 (asynchronous)
 
-1. Go over slides 13 -  18 of [Chapter 5 slides](../../course_documents/all_lectures/chapter_5_slide.html).  Stop at "Compare percentages."  These slides cover two examples of bivariate relationship (nominal + continuous, nominal + ordinal).  These examples are very similar and the relevant Jamovi procedure (summary statistics by group) should be familiar.
+1. Go over slides 15 -  20 of [Chapter 5 slides](../../course_documents/all_lectures/chapter_5_slide.html){target="_blank"}.  Stop at "Compare percentages."  These slides cover two very similar examples of bivariate relationship (nominal + continuous, nominal + ordinal).  The relevant Jamovi procedure (summary statistics by group) should be familiar.
 
-2. Go over [assignment 5](../../course_documents/assignment/assignment_5.qmd). Submit your answers to **Part 3** of this assignment on Moodle, as instructed.  The assignment familiarizes you with contingency table, which will be discussed further in class.
+2. Go over [assignment 5](../../course_documents/assignment/assignment_5.qmd){target="_blank"}. Submit your answers to **Part 3** of this assignment on Moodle, as instructed.  The assignment familiarizes you with contingency table, which will be discussed further in class.
 
 3. For Thursday's quiz, I will ask you about the bivariate relationship between pairs of variables.  I will choose THREE out of the following cases:
 
