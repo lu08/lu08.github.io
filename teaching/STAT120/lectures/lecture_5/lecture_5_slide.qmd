@@ -1,0 +1,544 @@
+---
+title: "Lecture 5"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: false
+    scrollable: true
+    code-font-size: 1.15em
+    chalkboard:
+      buttons: true
+editor_options:
+  chunk_output_type: inline
+---
+
+
+## Prep work
+Today's data comes from [The Changing Childhood Project](https://changingchildhood.unicef.org/){target="_blank"} (conducted by UNICEF).  The New York Times published an intresting [article](https:www.nytimes.com/2021/11/17/upshot/global-survey-optimism.html) based on this dataset.
+
+- Survey data with around 1000 respondents *per country* from 21 countries
+- Two age cohorts: young (15-24) vs old (40 or older)
+- Most variables are Likert Scale; naming is not very intuitive (see [codebook](../../../../dataset/UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf))
+    
+```{r}
+library(tidyverse)
+df.child <- read_csv("../../../../dataset/unicef-changing-childhood-data.csv")
+
+# create a smaller dataset for simplicity
+df.child.small <- df.child %>%
+  filter(COUNTRYNEW %in% c("United States", "Japan", "Nigeria")) %>%
+  select(COUNTRYNEW, AGE, WP22110, WP22109, WP30, WP22091)
+```
+
+- `COUNTRYNEW`: respondent's country.
+- `AGE`: respondent's age group (the survey compares ages 15-24 with ages 40 and older).
+- `WP22110`: minimum acceptable age for men to get married. `97` means 97 or older; `98` is "Don't know"; `99` is "Refused".
+- `WP22109`: minimum acceptable age for women to get married. `97` means 97 or older; `98` is "Don't know"; `99` is "Refused".
+- `WP30`: satisfaction with standard of living: `1` = satisfied, `2` = dissatisfied, `3` = "Don't know", `4` = refused.
+- `WP22091`: which group the respondent most identifies with: `1` = city or area where they live, `2` = their country, `3` = the world, `8` = "Don't know", `9` = refused.
+
+
+
+# Base R plots
+
+## Boxplot
+```{r}
+#| echo: true
+#| fig-height: 4
+#| fig-width: 3
+boxplot(df.child.small$WP22110,
+  ylab = "Minimum acceptable age for men")
+```
+
+
+## Stem and leaf plot
+
+- Different software often produce stem-and-leaf plots that look differently
+- In R, can change *scale* and *width* arguments
+- Only sometimes useful
+
+```{r}
+stem(df.child.small$WP22110)
+```
+
+## Histogram
+
+- In base R, visualization elements can be modified by adding arguments within the function
+
+```{r}
+#| echo: true
+#| fig-height: 3
+#| fig-width: 4
+hist(df.child.small$WP22110,
+  nclass=30,
+  main='Minimum acceptable age for men',
+    col='lightblue', 
+     ylab=NA, 
+     yaxt='n',
+    xlab=NA)
+```
+
+
+## Side-by-side boxplots
+```{r}
+#| fig-height: 4
+#| fig-width: 6
+boxplot(df.child.small$WP22110 ~ df.child.small$COUNTRYNEW,
+  col='salmon',
+        border='darkblue',
+  xlab='Country',
+  ylab='Minimum acceptable age for men')
+```
+
+
+## Scatterplot
+
+```{r}
+#| echo: true
+#| fig-height: 4
+#| fig-width: 4
+plot(df.child.small$WP22110, df.child.small$WP22109,
+  col = as.factor(df.child.small$COUNTRYNEW),
+    xlab = "Minimum acceptable age for men",
+    ylab = "Minimum acceptable age for women")
+
+abline(a=0,b=1)
+```
+
+
+Comment: with base R, plotting can be fast, but it's not very easy to incooperate other steps (like removing invalid values 97, 98, 99). Adding layers (e.g., a reference line) is also not very convenient.
+
+
+# ggplot
+
+## Introduction
+
+- **ggplot2** is an alternative framework for creating plots and graphics; the package is loaded as part of **tidyverse** 
+
+| Feature | ggplot2 | Base R plot functions |
+|---|---|---|
+| Syntax | Unified, intuitive syntax (the "grammar of graphics") | Syntax depends on the plot type, such as `plot()` or `hist()` |
+| Storing plots | Plots can be stored as ggplot objects | Plots are drawn directly rather than stored as R objects |
+| Adding layers | Add layers to an existing plot with `+` | Add to the current plot with additional plotting commands |
+
+## Example 1
+
+```{r}
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: 60%
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x=WP22110, y=WP22109, color=COUNTRYNEW)) +
+  geom_point() +
+  theme_bw() +
+  labs(x="Minimum acceptable age for men", y="Minimum acceptable age for women", color="Country")
+```
+
+## Example 2
+
+```{r}
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: 60%
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x = COUNTRYNEW, y = WP22110)) +
+  geom_boxplot() +
+  theme_bw() +
+  labs(x="Country", y="Minimum acceptable age for men")
+```
+
+## Basic ingredients of a ggplot
+
+1. Data
+    - **Data frame** containing all the raw observations
+    
+2. Aesthetic mapping
+    - An aesthetic is a visual property of the plot, such as x-axis, y-axis, color, size, etc.
+    - Use **aes** to specify which **variable** is mapped to which **aesthetic**
+    - Example: minimum acceptable age for men -> x-axis; minimum acceptable age for women -> y-axis; country -> color
+    
+3. Geoms
+    - What **types** of layers should be added to the plots
+
+
+## Example 1 explained
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+
+ggplot(
+  data=subset(df.child.small, WP22110 < 97 & WP22109 < 97), # data
+  mapping=aes(
+    x=WP22110, # minimum acceptable age for men maps to the x-axis
+    y=WP22109, # minimum acceptable age for women maps to the y-axis
+    color=COUNTRYNEW)) + # country maps to color
+  geom_point() # add a scatterplot geom
+```
+
+## Example 2 explained
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+ggplot(data=subset(df.child.small, WP22110 < 97), # data
+    mapping=aes(x=COUNTRYNEW, # country maps to the x-axis
+      y=WP22110)) + # minimum acceptable age for men maps to the y-axis
+  geom_boxplot() # add a boxplot geom
+```
+
+
+# geom examples
+
+## Geom's from the first two examples
+
+- Example 1: **geom\_point** draws scatterplot-type points for each observation
+- Example 2: **geom\_boxplot** draws boxplots
+
+
+## geom_violin
+
+Use the same code for example 2, but change **geom\_boxplot** to **geom\_violin**.
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x = COUNTRYNEW, y = WP22110)) +
+  geom_violin() +
+  theme_bw() +
+  labs(x="Country", y="Minimum acceptable age for men")
+```
+
+
+## geom_histogram
+- Recall: histogram is univariate; y-axis is always frequency, so we don't need a **y=\_** mapping
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97) %>%
+  ggplot(aes(x = WP22110)) +
+  geom_histogram() +
+  labs(x="Minimum acceptable age for men")
+```
+
+
+
+## 
+- Add arguments in geoms
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97) %>%
+  ggplot(aes(x = WP22110)) +
+  geom_histogram(binwidth=5, fill="grey", color="blue") +
+  theme_minimal() +
+  labs(x="Minimum acceptable age for men")
+```
+
+- Note the differences in the syntax convention:
+  + base R **col** vs ggplot **fill**
+  + base R **border** vs ggplot **color**
+  + esp. "color" (ggplot) vs "col" (base R)
+  
+  
+  
+##
+- Add another dimension (i.e., map another variable to another aesthetic)
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97) %>%
+  ggplot(aes(x = WP22110, fill=COUNTRYNEW)) +
+  geom_histogram(binwidth=5, color="blue") +
+  theme_minimal() +
+  labs(x="Minimum acceptable age for men", fill="Country")
+```
+
+
+
+## geom_bar
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP30 < 3) %>%
+  ggplot(aes(x=COUNTRYNEW, fill=as.factor(WP30))) +
+  geom_bar() +
+  labs(x="Country", fill="Standard of living\n1 = satisfied, 2 = dissatisfied")
+```
+
+
+## geom_jitter
+Scatterplots can be hard to read when both variables are categorical. Jitter separates overlapping responses.
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP30 < 3) %>%
+  ggplot(aes(x=COUNTRYNEW, y=WP30, color=COUNTRYNEW)) +
+  geom_point() +
+  theme_bw() +
+  labs(x="Country", y="Standard of living")
+```
+
+##
+Change **geom_point()** to **geom_jitter()**
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP30 < 3) %>%
+  ggplot(aes(x=COUNTRYNEW, y=WP30, color=COUNTRYNEW)) +
+  geom_jitter() +
+  theme_bw() +
+  labs(x="Country", y="Standard of living")
+```
+
+
+## geom_text
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  group_by(COUNTRYNEW) %>%
+  summarise(mean_male_age=mean(WP22110), 
+            mean_female_age=mean(WP22109),
+            .groups="drop") %>%
+  ggplot(aes(x=mean_female_age, y=mean_male_age, label=COUNTRYNEW)) +
+  geom_text() +
+  labs(x="mean min age for women", y="mean min age for men")
+```
+
+- Try: change **geom_text** to **geom_label**
+- Try: add **geom_point**
+
+Comment: it is very easy to combine data manipulation steps with ggplot.
+
+
+
+
+# Layering and Customization to ggplot
+
+## Customize ggplot with + 
+ggplot offers a very convenient syntax (+) to add elements and layers
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x=WP22110, y=WP22109, color=WP22110)) +
+  geom_point() +
+  theme_bw() +
+  ggtitle('Marriage-age views by country') +
+  labs(x='Minimum acceptable age for men', y='Minimum acceptable age for women', color='Minimum acceptable age for men')
+```
+
+## Example: change gradient color
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x=WP22110, y=WP22109, color=WP22110)) +
+  geom_point() +
+  theme_bw() +
+  ggtitle('Marriage-age views by country') +
+  labs(x='Minimum acceptable age for men', y='Minimum acceptable age for women', color='Minimum acceptable age for men') +
+  scale_color_gradient(low="lightblue",high="orange") 
+```
+
+
+
+## Example: change categorical color
+
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP30 < 3) %>%
+  ggplot(aes(x=COUNTRYNEW, fill=as.factor(WP30))) +
+  geom_bar() +
+  scale_fill_manual(values=c("1"='seagreen3',"2"='tomato')) +
+  theme_minimal() +
+  labs(x="Country", fill="Standard of living\n1 = satisfied, 2 = dissatisfied")
+```
+
+
+## Example: add a line
+```{r}
+#| fig-width: 3.5
+#| fig-height: 2
+df.child.small %>%
+  filter(WP22110 < 97, WP22109 < 97) %>%
+  ggplot(aes(x=WP22110, y=WP22109, color=COUNTRYNEW)) +
+  geom_point() +
+  geom_abline(slope=1, intercept=0, linetype='dashed') +
+  theme_minimal() +
+  labs(x="Minimum acceptable age for men", y="Minimum acceptable age for women", color="Country")
+```
+
+
+## There's more!
+- There are many other geoms and customizations available!
+- Each geom has its own set of aesthetics to which variables can be mapped.
+- Bring up the help page to check what aesthetics are needed.
+- Many references can be found online: they all share the same, unified structure that you can now understand.
+
+
+## Example
+
+`WP22091` records whether respondents identify most with their city or area (`1`), their country (`2`), or the world (`3`). `WP30` records satisfaction with standard of living: satisfied (`1`) or dissatisfied (`2`).
+
+```{r}
+#| fig-width: 6
+#| fig-height: 3.5
+df.child %>%
+  filter(COUNTRYNEW %in% c("Germany", "United States"),
+         WP22091 %in% 1:3, WP30 %in% 1:2) %>%
+  ggplot(aes(x = as.factor(WP22091), y = as.factor(WP30))) +
+  geom_jitter() +
+  theme_bw() +
+  facet_wrap(~COUNTRYNEW) +
+  ggtitle("Identity and standard-of-living satisfaction") +
+  labs(
+    x = "Identity (1 = city/area, 2 = country, 3 = world)",
+    y = "Standard of living (1 = satisfied, 2 = dissatisfied)"
+  )
+```
+
+
+
+# Interactive plots
+
+## Interactive plots
+- Wide variety, very flexible; can generate quite complicated graphs (for example, see [HTML widgets](http://www.htmlwidgets.org/showcase_leaflet.html))
+- Many new packages and functions are being published (esp. on github)
+- Currently, no "go-to" package, no unified approach
+- We'll try a few simple examples to give you an idea, mostly using the [plotly](https://plot.ly/r/) package
+
+```{r}
+#| message: false
+#install.packages('plotly')
+library(plotly)
+```
+
+
+## Example 1: Histogram
+- Note the difference in syntax convention (e.g.: <font color='red'> ~ </font>varname)
+```{r}
+#| message: false
+plot_ly(data=filter(df.child.small, WP22110 < 97),
+        x=~WP22110, type='histogram') %>%
+  layout(xaxis=list(title="Minimum acceptable age for men"))
+```
+
+## Example 2: Boxplot
+```{r}
+#| message: false
+plot_ly(data=filter(df.child.small, WP22110 < 97),
+    y=~WP22110, x=~COUNTRYNEW, type='box') %>%
+  layout(xaxis=list(title="Country"),
+    yaxis=list(title="Minimum acceptable age for men"))
+```
+
+
+
+
+## Example 3: 2D scatterplot
+```{r}
+#| message: false
+plot_ly(data=filter(df.child.small, WP22110 < 97, WP22109 < 97),
+  x=~WP22110, y=~WP22109,
+  color=~COUNTRYNEW, text=~COUNTRYNEW) %>%
+  layout(xaxis=list(title="Minimum acceptable age for men"),
+   yaxis=list(title="Minimum acceptable age for women"))
+```
+
+
+
+## Example 4: 3D scatterplot
+```{r}
+#| message: false
+#| out-width: 90%
+plot_ly(data=filter(df.child.small, WP22110 < 97, WP22109 < 97, WP22091 < 4),
+  x=~WP22110, y=~WP22109,
+  z=~WP22091, text=~COUNTRYNEW,
+  color=~COUNTRYNEW, size=I(4)) %>%
+    layout(scene=list(xaxis=list(title="Minimum acceptable age for men"),
+      yaxis=list(title="Minimum acceptable age for women"),
+        zaxis=list(title="Identity (1-3)")))
+```
+
+
+## Example 5: integration with ggplot
+- plotly offers an easy way to make a ggplot interactive
+```{r}
+#| message: false
+#| fig-height: 3
+#| fig-width: 5
+#| out-width: 80%
+
+p1 <- df.child %>%
+  filter(COUNTRYNEW %in% c("Germany", "United States"),
+         WP22091 %in% 1:3, WP30 %in% 1:2) %>%
+  ggplot(aes(x = as.factor(WP22091), y = as.factor(WP30))) +
+  geom_jitter() +
+  theme_bw() +
+  facet_wrap(~COUNTRYNEW) +
+  ggtitle("Identity and standard-of-living satisfaction") +
+  labs(
+    x = "Identity (1 = city/area, 2 = country, 3 = world)",
+    y = "Standard of living (1 = satisfied, 2 = dissatisfied)"
+  )
+ggplotly(p1)
+```
+
+
+## Exercise
+
+- `WP22071`: whether digital technology helps children with education.
+- `WP22072`: whether digital technology helps children have fun.
+- For both questions, `1` = a lot, `2` = a little, and `3` = not at all. Other response codes are excluded.
+
+Try to reproduce the following graph.  You can also use other variables of your interest (refer to the codebook).  
+
+```{r}
+#| fig-width: 7
+#| fig-height: 5
+df.child %>%
+  filter(WP22071 %in% 1:3, WP22072 %in% 1:3) %>%
+  group_by(COUNTRYNEW) %>%
+  summarise(
+    mean_education = mean(WP22071),
+    mean_fun = mean(WP22072),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = mean_education, y = mean_fun, label = COUNTRYNEW)) +
+  geom_abline(slope=1, intercept=0, linetype="dashed") +
+  geom_label() +
+  theme_bw() +
+  labs(
+    title = "Average views on digital technology by country",
+    x = "Not helpful with education",
+    y = "Not helpful with fun"
+  )
+```

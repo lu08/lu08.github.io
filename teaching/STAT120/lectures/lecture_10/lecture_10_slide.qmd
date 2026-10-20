@@ -1,0 +1,20 @@
+---
+title: "Lecture 10"
+engine: knitr
+filters:
+  - ../../../../_extensions/coatless/webr/webr.lua
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: false
+    scrollable: true
+    code-font-size: 1.15em
+    chalkboard:
+      buttons: true
+editor_options:
+  chunk_output_type: inline
+---
