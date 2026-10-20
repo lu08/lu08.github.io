@@ -376,6 +376,16 @@ Show solution
 <li><p>Is there a relationship between the rural population percentage (<code>Rural</code>) and internet access (<code>Internet</code>)?</p></li>
 <li><p>Is there a relationship between diabetes prevalence (<code>Diabetes</code>) and unemployment (<code>Unemployment</code>)?</p></li>
 </ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(r = 0.812\)</span>. There is a strong, positive linear relationship between internet access and life expectancy. Countries with greater internet access tend to have higher life expectancy, on average.</p></li>
+<li><p><span class="math inline">\(r = -0.690\)</span>. There is a strong, negative linear relationship between rural population percentage and internet access. Countries with a larger rural population percentage tend to have lower internet access, on average.</p></li>
+<li><p><span class="math inline">\(r = 0.004\)</span>. There is a negligible linear relationship between diabetes prevalence and unemployment.</p></li>
+</ol>
+</details>
 </section>
 <section id="correlation-coefficient-other-cases" class="slide level2">
 <h2>Correlation Coefficient: Other Cases</h2>
@@ -404,7 +414,7 @@ Show solution
 <li><p>Interpretation in context <br></p></li>
 </ul>
 </section>
-<section id="exercise-contd" class="slide level2">
+<section id="exercise-contd" class="slide level2 scrollable">
 <h2>Exercise (cont’d)</h2>
 <p><strong>4.</strong> (<code>NELS</code>) Describe the direction and strength, using Cohen’s scale, of the linear relationship between eighth-grade math achievement (<code>achmat08</code>) and teacher interest (<code>tcherint</code>).</p>
 <p><strong>5.</strong> (<code>NELS</code>) Is there an association between gender (<code>gender</code>; 0 = male, 1 = female) and eighth-grade math achievement (<code>achmat08</code>)?</p>
@@ -413,14 +423,236 @@ Show solution
 <p><strong>8.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its student-faculty ratio (<code>facratio</code>)?</p>
 <p><strong>9.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and its faculty salary rank (<code>facsal</code>)?</p>
 <p><strong>10.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and affiliation (<code>public</code>)?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol start="4" type="1">
+<li><p><span class="math inline">\(r = -0.203\)</span>. There is a weak, negative linear relationship between eighth-grade math achievement and teacher interest. The <code>tcherint</code> scale is coded so that lower values indicate greater teacher interest; students with higher math scores therefore tend to report greater teacher interest, on average.</p></li>
+<li><p><span class="math inline">\(r = -0.132\)</span>. There is a weak, negative relationship between gender and eighth-grade math achievement. With gender coded 0 = male and 1 = female, female students tend to have slightly lower math scores than male students, on average.</p></li>
+<li><p><span class="math inline">\(r = 0.499\)</span>. There is a moderate, positive relationship between faculty size and university status. Schools with larger faculties tend to be more likely to be universities.</p></li>
+<li><p><span class="math inline">\(r = 0.501\)</span>. There is a strong, positive association between affiliation and institution type. Public schools tend to be universities, while private schools tend to be colleges.</p></li>
+<li><p><span class="math inline">\(\rho = -0.343\)</span>. There is a moderate, negative linear relationship between competitive rank and student-faculty ratio. More competitive schools tend to have lower student-faculty ratios, on average.</p></li>
+<li><p><span class="math inline">\(\rho = 0.594\)</span>. There is a strong, positive linear relationship between competitive rank and faculty salary rank. Schools with higher competitive-rank values tend to have higher faculty-salary-rank values.</p></li>
+<li><p><span class="math inline">\(\rho = -0.234\)</span>. There is a weak, negative relationship between competitive rank and affiliation. Private schools tend to be more competitive, on average.</p></li>
+</ol>
+</details>
 </section></section>
 <section>
-<section id="bivariate-relationship-with-nominal-variables" class="title-slide slide level1 center">
-<h1>Bivariate relationship WITH nominal variables</h1>
+<section id="bivariate-relationships-involving-nominal-variables" class="title-slide slide level1 center">
+<h1>Bivariate Relationships Involving Nominal Variables</h1>
 
 </section>
-<section id="to-be-added" class="slide level2">
-<h2>To be added</h2>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<p><span style="font-size: 1.3em; color: red;">If there is a nominal variable, we CANNOT! use a correlation coefficient to describe the bivariate relationship.</span></p>
+<blockquote>
+<p>Intuitively, nominal variables are not ordered and do not have high or low values, so a correlation coefficient cannot be meaningfully interpreted.</p>
+</blockquote>
+<p>A nominal variable is typically used as a <strong>grouping</strong> variable. In cases involving nominal variables, we compare <strong>different groups</strong> of people.</p>
+<p>Compare medians:</p>
+<ul>
+<li>Nominal + continuous</li>
+<li>Nominal + ordinal</li>
+</ul>
+<p>Compare percentages:</p>
+<ul>
+<li>Nominal + dichotomous</li>
+<li>Nominal + nominal</li>
+</ul>
+</section></section>
+<section>
+<section id="compare-medians" class="title-slide slide level1 center">
+<h1>Compare medians</h1>
+
+</section>
+<section id="nominal-continuous" class="slide level2">
+<h2>Nominal + Continuous</h2>
+<p>Example: (NELS dataset) is there a relationship between <code>achmat8</code> (math achievement in 8th grade) and <code>region</code>?</p>
+<p>Step 1: Identify the nominal variable (<code>region</code>)</p>
+<p>Step 2: Write down the groups as defined by the nominal variable:</p>
+<ul>
+<li>Northeast</li>
+<li>North Central</li>
+<li>South</li>
+<li>West</li>
+</ul>
+<p>Step 3: Write down the MEDIANS of the other variable (<code>achmat8</code>) for each group.</p>
+<blockquote>
+<p>Jamovi procedure: <code>Explore</code> -&gt; <code>Descriptives</code> -&gt; <code>Variables</code> -&gt; <code>achmat8</code> -&gt; <code>Split by</code> -&gt; <code>region</code>.</p>
+</blockquote>
+<p>Step 4: If you detect relatively large differences in the medians, you can conclude that there is a relationship between <code>region</code> and <code>achmat8</code>. In your interpretation, describe the differences you see.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Medians of <code>achmat8</code> for each region:</p>
+<ul>
+<li>Northeast: 58.6</li>
+<li>North Central: 55.7</li>
+<li>South: 54.9</li>
+<li>West: 57.1</li>
+</ul>
+<p>There is a relationship between <code>region</code> and <code>achmat8</code>: for instance, students from Northeast typically score higher than students from the South (medians: 58.6 vs 54.9).</p>
+</details>
+</section>
+<section id="nominal-ordinal" class="slide level2">
+<h2>Nominal + Ordinal</h2>
+<p>Example: (NELS dataset) is there a relationship between <code>late12</code> (number of times late for school in 12th grade) and <code>region</code>? This is very similar to the previous example. Use the same steps to answer this question.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Medians of <code>late12</code> for each region:</p>
+<ul>
+<li>Northeast: 1</li>
+<li>North Central: 1</li>
+<li>South: 1</li>
+<li>West: 1</li>
+</ul>
+<p>There is no relationship between <code>region</code> and <code>late12</code>. Regardless of region, students are typically late for school “1-2” times in 12th grade (median = 1 across all regions). Remember to check coding of the variable <code>late12</code>!</p>
+</details>
+</section>
+<section id="additional-notes" class="slide level2">
+<h2>Additional notes</h2>
+<ul>
+<li><p>When asking if there is a “relationship” between <code>region</code> and <code>achmat8</code>, we want to know if there is a <strong>regional difference</strong> in terms of math achievement. Essentially, we are asking if the distribution of <code>achmat8</code> differs across the four regions. The distribution can be different in many ways (think: location, spread, skewness). For instance, some regions might have more <em>consistent</em> performances (measure of spread); some regions might have more outliers (measure of shape). These are valid interpretations. For this class, however, we only require you to compare the <strong>medians</strong> (i.e., measure of location).</p></li>
+<li><p>Can we also compare the means instead of the medians? Not in the second example, since <code>late12</code> is an ordinal variable and the mean should not be used. In the first example (<code>achmat8</code> - a continuous variable), the mean could be used IF there is no severe skewness and outliers, but the median is the more robust (“safer”) option.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="compare-percentages" class="title-slide slide level1 center">
+<h1>Compare percentages</h1>
+
+</section>
+<section id="nominal-dichotomous" class="slide level2">
+<h2>Nominal + Dichotomous</h2>
+<p>Example: (NELS dataset) is there a relationship between <code>alcbinge</code> (binged on alcohol ever) and <code>region</code>?</p>
+<p>Option 1: Using <code>region</code> as a grouping variable:</p>
+<ul>
+<li>Northeast:</li>
+<li>North Central:</li>
+<li>South:</li>
+<li>West:</li>
+</ul>
+<p>Option 2: Using <code>alcbinge</code> as a grouping variable:</p>
+<ul>
+<li>Never binged:</li>
+<li>Have binged:</li>
+</ul>
+</section>
+<section id="option-1-grouping-by-region" class="slide level2">
+<h2>Option 1: grouping by <code>region</code></h2>
+<blockquote>
+<p>Jamovi procedure: <code>Analyses</code> -&gt; <code>Frequencies</code> -&gt; <code>Independent samples</code> -&gt; put one variable in <code>Rows</code> and the other in <code>Columns</code>. If the table looks hard to interpret, you can try switching row/column variables.</p>
+</blockquote>
+<blockquote>
+<p>Percentages can be calcuated by checking relevant boxes under <code>Cells</code> - <code>Percentages</code>. I suggest that you only check “Row” percentages. You should never use “Total” percentages for bivariable relationships.</p>
+</blockquote>
+<blockquote>
+<p>Visualizations can be obtained by checking <code>Bar Plot</code> under the <code>Plots</code> option. The “side by side” bar plot is sometimes referred to as a <strong>clustered bar graph</strong>.</p>
+</blockquote>
+<p>For each region, calculate the percent that <strong>have</strong> binged on alcohol:</p>
+<ul>
+<li>Northeast:</li>
+<li>North Central:</li>
+<li>South:</li>
+<li>West:</li>
+</ul>
+<p>Conclusion:</p>
+</section>
+<section id="option-2-grouping-by-alcbinge" class="slide level2">
+<h2>Option 2: grouping by <code>alcbinge</code></h2>
+<ul>
+<li>Among people who have <strong>never</strong> binged on alcohol, what percentage comes from the South?</li>
+<li>Among people who <strong>have</strong> binged on alcohol, what percentage comes from the South?</li>
+</ul>
+<p>Conclusion:</p>
+<p><br> <br> <br> <br> <br> <br></p>
+<blockquote>
+<p>In practice: choose a column and compare the “row” percentages in that column.</p>
+</blockquote>
+</section>
+<section id="nominal-nominal" class="slide level2">
+<h2>Nominal + Nominal</h2>
+<p>Example: Is there a relationship between <code>schtyp8</code> (school type in 8th grade) and <code>region</code>? Calculate relevant percentages to support your answer. Make sure to interpret the percentages correctly.</p>
+</section>
+<section id="common-mistakes-when-interpreting-contingency-tables" class="slide level2">
+<h2>Common mistakes when interpreting contingency tables</h2>
+<p>Mistake 1: only describing ONE group to establish a bivariate relationship (i.e., if the percentages you “compare” add up to 100%, or they have the same denominator, you are probably making this mistake!)</p>
+<details>
+<summary>
+Show example
+</summary>
+<ul>
+<li><p>“Among students from the NE, 67.9% went to public school vs 32.1% didn’t.” This only describes the NE group and does not establish a relationship between region and school type. Maybe other regions also have about 67.9% of students attending public school.</p></li>
+<li><p>“Among violent adults, 98% drank milk as a kid vs 2% didn’t” - would this establish a relationship between violent behavior and milk consumption?</p></li>
+</ul>
+</details>
+<p>Mistake 2: incorrectly interpretating a percentage</p>
+<details>
+<summary>
+Show example
+</summary>
+<ul>
+<li>How to interpret “67.9%”? You can say, among students from NE, 67.9% went to public school. You should NOT say “67.9% of students went to public school and are from the NE” (denominator would be 500). You should NOT say “67.9% of public school students are from NE” (denominator would be 370). Be precise about the denominator in your interpretation!</li>
+</ul>
+</details>
+<p>Mistake 3: draw a conclusion based on extremely imbalanced group sizes or small sample sizes</p>
+<details>
+<summary>
+Show example
+</summary>
+<ul>
+<li>A company surveys workers about whether they had a workplace injury in the past year. One of the two overnight-shift workers reports an injury (50%), compared with 8 of 100 day-shift workers (8%). It would be misleading to conclude that overnight workers are much more likely to be injured based on only two overnight workers; one person’s response changes that group’s percentage by 50 percentage points. The company should collect data from more overnight workers and account for hours worked before comparing injury risk.</li>
+</ul>
+</details>
+<p>See StatChat 3 for discussions.</p>
+</section></section>
+<section>
+<section id="additional-examples" class="title-slide slide level1 center">
+<h1>Additional examples</h1>
+
+</section>
+<section id="contingency-table" class="slide level2">
+<h2>Contingency table</h2>
+<p>Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.</p>
+<p>Example 1: relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Example 2: relationship between Urbanicity and <code>edexpect</code> (highest level of education expected)?</p>
+</section>
+<section id="review-are-these-answers-correct-or-incorrect" class="slide level2">
+<h2>Review: are these answers correct or incorrect?</h2>
+<p>E1. In the Combined Class Charities dataset, is there a relationship between <code>Type</code> (1=‘Animals’; 2=‘Environment’, 3=‘Human and civil rights’) and <code>OS</code> (Overall score)?</p>
+<ul>
+<li><p>Since <span class="math inline">\(r = -0.028\)</span>, there is no relationship.</p></li>
+<li><p>Since Type is nominal, there is no relationship.</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>E2. In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>COST</code> (cost of food)?</p>
+<ul>
+<li><p>Since <span class="math inline">\(r = -0.382\)</span>, there is a negative, moderate relationship. French restaurants tend to have higher cost.</p></li>
+<li><p>Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.</p></li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>E3. In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>Sunday</code> (does it open on Sunday, 0 = No, 1 = Yes)?</p>
+<ul>
+<li>There is no relationship, since they have the same medians.</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>E4. In the United States Colleges dataset, is there a relationship between <code>Competitiveness Ranking</code> and <code>College or University</code> (0 = college, 1 = university)?</p>
+<ul>
+<li><p>Since <span class="math inline">\(r = 0.099\)</span>, there is a positive, very weak relationship.</p></li>
+<li><p>Colleges have lower competitiveness rank (mean = 3.02); universities have higher competitiveness rank (mean = 3.49).</p></li>
+</ul>
 </section></section>
 <section>
 <section id="appendix" class="title-slide slide level1 center">

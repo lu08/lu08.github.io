@@ -30,6 +30,7 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Homework Chapter 2](homework/chapter_2.qmd)
 - [Homework Chapter 3](homework/chapter_3.qmd)
 - [Homework Chapter 4](homework/chapter_4.qmd)
+- [Homework Chapter 5](homework/chapter_5.qmd)
 
 
 ## Assignment
@@ -37,6 +38,8 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Assignment 1: Jamovi Introduction](assignment/assignment_1.qmd)
 - [Assignment 2: NYC Apartments](assignment/assignment_2.qmd)
 - [Assignment 3: Song length transformation](assignment/assignment_3.qmd)
+- Assignment 4: Bivariate relationship in-class exercise (see Moodle)
+- [Assignment 5: Contingency table (and clustered bar graph)](assignment/assignment_5.qmd)
 
 
 ## Practice exams

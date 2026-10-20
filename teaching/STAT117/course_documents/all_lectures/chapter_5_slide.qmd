@@ -196,6 +196,17 @@ Use the `AllCountries` dataset for these questions.
 3. Is there a relationship between diabetes prevalence (`Diabetes`) and unemployment (`Unemployment`)? 
 
 
+<details>
+<summary>Show solutions</summary>
+
+1. $r = 0.812$. There is a strong, positive linear relationship between internet access and life expectancy. Countries with greater internet access tend to have higher life expectancy, on average.
+
+2. $r = -0.690$. There is a strong, negative linear relationship between rural population percentage and internet access. Countries with a larger rural population percentage tend to have lower internet access, on average.
+
+3. $r = 0.004$. There is a negligible linear relationship between diabetes prevalence and unemployment.
+
+</details>
+
 
 ## Correlation Coefficient: Other Cases
 
@@ -242,10 +253,257 @@ When using a correlation coefficient, report:
 
 <strong>10.</strong> (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
 
+<details>
+<summary>Show solutions</summary>
 
-# Bivariate relationship WITH nominal variables
+4. $r = -0.203$. There is a weak, negative linear relationship between eighth-grade math achievement and teacher interest. The `tcherint` scale is coded so that lower values indicate greater teacher interest; students with higher math scores therefore tend to report greater teacher interest, on average.
 
-## To be added
+5. $r = -0.132$. There is a weak, negative relationship between gender and eighth-grade math achievement. With gender coded 0 = male and 1 = female, female students tend to have slightly lower math scores than male students, on average.
+
+6. $r = 0.499$. There is a moderate, positive relationship between faculty size and university status. Schools with larger faculties tend to be more likely to be universities.
+
+7. $r = 0.501$. There is a strong, positive association between affiliation and institution type. Public schools tend to be universities, while private schools tend to be colleges.
+
+8. $\rho = -0.343$. There is a moderate, negative linear relationship between competitive rank and student-faculty ratio. More competitive schools tend to have lower student-faculty ratios, on average.
+
+9. $\rho = 0.594$. There is a strong, positive linear relationship between competitive rank and faculty salary rank. Schools with higher competitive-rank values tend to have higher faculty-salary-rank values.
+
+10. $\rho = -0.234$. There is a weak, negative relationship between competitive rank and affiliation. Private schools tend to be more competitive, on average.
+
+</details>
+
+
+# Bivariate Relationships Involving Nominal Variables
+
+
+## Introduction
+<span style="font-size: 1.3em; color: red;">If there is a nominal variable, we CANNOT! use a correlation coefficient to describe the bivariate relationship.</span>
+
+> Intuitively, nominal variables are not ordered and do not have high or low values, so a correlation coefficient cannot be meaningfully interpreted.
+
+A nominal variable is typically used as a **grouping** variable. In cases involving nominal variables, we compare **different groups** of people.
+
+Compare medians:
+
+- Nominal + continuous
+- Nominal + ordinal
+
+Compare percentages:
+
+- Nominal + dichotomous
+- Nominal + nominal
+
+# Compare medians
+
+## Nominal + Continuous
+
+Example: (NELS dataset) is there a relationship between `achmat8` (math achievement in 8th grade) and `region`?
+
+Step 1: Identify the nominal variable (`region`)
+
+Step 2: Write down the groups as defined by the nominal variable:
+
+  - Northeast
+  - North Central 
+  - South
+  - West
+
+Step 3: Write down the MEDIANS of the other variable (`achmat8`) for each group.
+
+> Jamovi procedure: `Explore` -> `Descriptives` -> `Variables` -> `achmat8` -> `Split by` -> `region`.
+
+Step 4: If you detect relatively large differences in the medians, you can conclude that there is a relationship between `region` and `achmat8`.  In your interpretation, describe the differences you see.
+
+
+<details>
+<summary>Show solution</summary>
+
+Medians of `achmat8` for each region:
+
+- Northeast: 58.6
+- North Central: 55.7
+- South: 54.9
+- West: 57.1
+
+There is a relationship between `region` and `achmat8`: for instance, students from Northeast typically score higher than students from the South (medians: 58.6 vs 54.9).
+
+</details>
+
+
+
+## Nominal + Ordinal
+
+Example: (NELS dataset) is there a relationship between `late12` (number of times late for school in 12th grade) and `region`?  This is very similar to the previous example.  Use the same steps to answer this question.
+
+
+<details>
+<summary>Show solution</summary>
+
+Medians of `late12` for each region:
+
+- Northeast: 1
+- North Central: 1
+- South: 1
+- West: 1
+
+There is no relationship between `region` and `late12`.  Regardless of region, students are typically late for school "1-2" times in 12th grade (median = 1 across all regions).  Remember to check coding of the variable `late12`!
+
+</details>
+
+
+
+## Additional notes
+
+- When asking if there is a "relationship" between `region` and `achmat8`, we want to know if there is a **regional difference** in terms of math achievement.  Essentially, we are asking if the distribution of `achmat8` differs across the four regions.  The distribution can be different in many ways (think: location, spread, skewness). For instance, some regions might have more *consistent* performances (measure of spread); some regions might have more outliers (measure of shape).  These are valid interpretations.  For this class, however, we only require you to compare the **medians** (i.e., measure of location).
+
+- Can we also compare the means instead of the medians?  Not in the second example, since `late12` is an ordinal variable and the mean should not be used.  In the first example (`achmat8` - a continuous variable), the mean could be used IF there is no severe skewness and outliers, but the median is the more robust ("safer") option.
+
+# Compare percentages
+
+
+## Nominal + Dichotomous
+
+Example: (NELS dataset) is there a relationship between `alcbinge` (binged on alcohol ever) and `region`?
+
+Option 1: Using `region` as a grouping variable:
+
+- Northeast:
+- North Central:
+- South:
+- West:
+
+Option 2: Using `alcbinge` as a grouping variable:
+
+- Never binged:
+- Have binged:
+
+
+
+## Option 1: grouping by `region`
+
+> Jamovi procedure: `Analyses` -> `Frequencies` -> `Independent samples` -> put one variable in `Rows` and the other in `Columns`. If the table looks hard to interpret, you can try switching row/column variables.
+
+> Percentages can be calcuated by checking relevant boxes under `Cells` -  `Percentages`.  I suggest that you only check "Row" percentages.  You should never use "Total" percentages for bivariable relationships.
+
+> Visualizations can be obtained by checking `Bar Plot` under the `Plots` option. The "side by side" bar plot is sometimes referred to as a **clustered bar graph**.
+
+
+For each region, calculate the percent that **have** binged on alcohol:
+
+- Northeast:
+- North Central:
+- South:
+- West:
+
+Conclusion:
+
+
+## Option 2: grouping by `alcbinge`
+
+
+- Among people who have **never** binged on alcohol, what percentage comes from the South?
+- Among people who **have** binged on alcohol, what percentage comes from the South?
+
+Conclusion:
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+> In practice: choose a column and compare the "row" percentages in that column.
+
+## Nominal + Nominal
+
+Example: Is there a relationship between `schtyp8` (school type in 8th grade) and `region`? Calculate relevant percentages to support your answer. Make sure to interpret the percentages correctly.
+
+
+
+
+## Common mistakes when interpreting contingency tables
+
+Mistake 1: only describing ONE group to establish a bivariate relationship (i.e., if the percentages you "compare" add up to 100%, or they have the same denominator, you are probably making this mistake!)
+
+<details>
+<summary>Show example</summary>
+
+- "Among students from the NE, 67.9% went to public school vs 32.1% didn't."  This only describes the NE group and does not establish a relationship between region and school type.  Maybe other regions also have about 67.9% of students attending public school.
+
+- "Among violent adults, 98% drank milk as a kid vs 2% didn't" - would this establish a relationship between violent behavior and milk consumption?
+</details>
+
+
+Mistake 2: incorrectly interpretating a percentage
+
+<details>
+<summary>Show example</summary>
+
+- How to interpret "67.9%"?  You can say, among students from NE, 67.9% went to public school. You should NOT say "67.9% of students went to public school and are from the NE" (denominator would be 500).  You should NOT say "67.9% of public school students are from NE" (denominator would be 370). Be precise about the denominator in your interpretation!
+
+</details>
+
+Mistake 3: draw a conclusion based on extremely imbalanced group sizes or small sample sizes
+
+<details>
+<summary>Show example</summary>
+
+- A company surveys workers about whether they had a workplace injury in the past year. One of the two overnight-shift workers reports an injury (50%), compared with 8 of 100 day-shift workers (8%). It would be misleading to conclude that overnight workers are much more likely to be injured based on only two overnight workers; one person's response changes that group's percentage by 50 percentage points. The company should collect data from more overnight workers and account for hours worked before comparing injury risk.
+</details>
+
+
+See StatChat 3 for discussions.
+
+
+
+# Additional examples
+
+## Contingency table
+
+Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.
+
+Example 1: relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).
+
+
+##
+Example 2: relationship between Urbanicity and `edexpect` (highest level of education expected)?
+
+
+## Review: are these answers correct or incorrect?
+
+E1. In the Combined Class Charities dataset, is there a relationship between `Type` (1='Animals'; 2='Environment', 3='Human and civil rights') and `OS` (Overall score)?
+
+- Since $r = -0.028$, there is no relationship.
+
+- Since Type is nominal, there is no relationship.
+
+## 
+E2. In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `COST` (cost of food)?
+
+- Since $r = -0.382$, there is a negative, moderate relationship. French restaurants tend to have higher cost.
+
+
+- Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.
+
+## 
+
+E3. In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `Sunday` (does it open on Sunday, 0 = No, 1 = Yes)?
+
+- There is no relationship, since they have the same medians.
+
+## 
+
+E4. In the United States Colleges dataset, is there a relationship between `Competitiveness Ranking` and `College or University` (0 = college, 1 = university)?
+
+- Since $r = 0.099$, there is a positive, very weak relationship.
+
+
+- Colleges have lower competitiveness rank (mean = 3.02); universities have higher competitiveness rank (mean = 3.49).
+
+
 
 # Appendix
 

@@ -5,8 +5,8 @@ format: html
 
 ## Overview
 
-- Oct 27 (Tuesday):
-- Oct 29 (Thursday):
+- Oct 27 (Tuesday): in-person lecture
+- Oct 29 (Thursday): in-person lecture, **quiz 6**
 
 
 ## Tuesday, Oct 27

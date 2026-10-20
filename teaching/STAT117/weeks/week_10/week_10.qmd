@@ -5,8 +5,8 @@ format: html
 
 ## Overview
 
-- Nov 3 (Tuesday):
-- Nov 5 (Thursday):
+- Nov 3 (Tuesday): in-person **Exam 2**
+- Nov 5 (Thursday): in-person lecture, no quiz
 
 
 ## Tuesday, Nov 3

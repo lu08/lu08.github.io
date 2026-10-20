@@ -1,0 +1,57 @@
+---
+title: "Assignment 5: Contingency table (and clustered bar graph) worksheet"
+subtitle: "Using the NELS dataset"
+format: html
+---
+
+This assignment will guide you through generating and interpreting contingency tables (and clustered bar graphs), using the **NELS** dataset.  [Download the dataset](../../data/index.html){target="_blank"} and open it in Jamovi.  Go through this document as instructed, and submit your answers to **Part 3** only on Moodle by Thursday's class.
+
+
+## Part 1: hand calculation
+
+Generate a contingency table between `region` and `cigarett` and answer the following questions:
+
+> Jamovi procedure: `Analyses` -> `Frequencies` -> `Independent samples` -> put `region` in `Rows` and `cigarett` in `Columns`.
+
+1. Among students from the Northeast, what percentage have never smoked cigarettes?
+2. Among students from the Northeast, what percentage have smoked cigarettes?
+3. Among students from the North Central region, what percentage have never smoked cigarettes?
+4. Among students from the South, what percentage have smoked cigarettes?
+5. Among students who have never smoked cigarettes, what percentage are from the Northeast?
+6. Among students who have smoked cigarettes, what percentage are from the North Central?
+
+<details>
+<summary>Show solutions</summary>
+
+1. Among the 106 students from the Northeast, 93 (87.7%) have never smoked cigarettes.
+2. Among the 106 students from the Northeast, 13 (12.3%) have smoked cigarettes.
+3. Among the 151 students from the North Central region, 125 (82.8%) have never smoked cigarettes.
+4. Among the 150 students from the South, 20 (13.3%) have smoked cigarettes.
+5. Among the 429 students who have never smoked cigarettes, 93 (21.7%) are from the Northeast.
+6. Among the 71 students who have smoked cigarettes, 26 (36.6%) are from the North Central region.
+
+</details>
+
+## Part 2: comparing Jamovi procedures
+
+1. Try the same contingency table, but switch the row and column variables (i.e., put `cigarett` in `Rows` and `region` in `Columns`).  Compare the infomation in both tables. Which table do you prefer?
+
+2. Using either table, check "Row" and "Column" percentages under `Cells` -> `Percentages`.  Find your hand-calculated percentages in **Part 1** from the table and think about the difference between row and column percentages.
+
+3. Visualize the contingency table: check `Bar Plot` under the `Plots` option; try both "side by side" and "stacked" bar types. What does the Y-axis represent? Do the counts match the numbers in the contingency table?
+
+## Part 3: exercise
+
+Generate a contingency table between `region` and `schtyp8` and answer the following questions. Submit your answers to this part on Moodle.
+
+1. Among NELS students from the Northeast, what percentage attended a public school?
+2. Among NELS students from the Northeast, what percentage attended a private, religious school?
+3. Among NELS students from the North Central region, what percentage attended a public school?
+4. Among NELS students from the North Central region, what percentage attended a private, religious school?
+5. Among NELS students from the South, what percentage attended a private, religious school?
+6. Among NELS students from the West, what percentage attended a private, religious school?
+7. Among NELS students who attended a public school, what percentage are from the Northeast?
+8. Among NELS students who attended a private, religious school, what percentage are from the North Central region?
+
+
+
