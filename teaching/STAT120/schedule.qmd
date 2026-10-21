@@ -55,7 +55,7 @@ In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univ
 
 - Oct 20: Data visualization ([Lecture 5](lectures/lecture_5/lecture_5.html)).
 
-- Oct 22: **Quiz 6** based on content from [Lecture 5](lectures/lecture_5/lecture_5.html) and [Homework 5](homework/homework_5.qmd).
+- Oct 22: **Quiz 6** based on content from [Lecture 5](lectures/lecture_5/lecture_5.html) and [Homework 5](homework/homework_5.qmd) **Part I**.
 
 
 

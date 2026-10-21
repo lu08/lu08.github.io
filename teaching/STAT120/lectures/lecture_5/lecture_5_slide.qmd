@@ -1,5 +1,6 @@
 ---
-title: "Lecture 5"
+title: "Lecture 5: data visualization"
+subtitle: "Data: the changing childhood project by UNICEF"
 engine: knitr
 filters:
   - ../../../../_extensions/coatless/webr/webr.lua
@@ -13,6 +14,7 @@ format:
     smaller: false
     scrollable: true
     code-font-size: 1.15em
+    css: lecture_5_slide.css
     chalkboard:
       buttons: true
 editor_options:
@@ -21,14 +23,24 @@ editor_options:
 
 
 ## Prep work
-Today's data comes from [The Changing Childhood Project](https://changingchildhood.unicef.org/){target="_blank"} (conducted by UNICEF).  The New York Times published an intresting [article](https:www.nytimes.com/2021/11/17/upshot/global-survey-optimism.html) based on this dataset.
+Today's data comes from [The Changing Childhood Project](https://changingchildhood.unicef.org/){target="_blank"} (conducted by UNICEF).  The New York Times published an intresting [article](https://www.nytimes.com/2021/11/17/upshot/global-survey-optimism.html){target="_blank"} based on this dataset.
 
 - Survey data with around 1000 respondents *per country* from 21 countries
 - Two age cohorts: young (15-24) vs old (40 or older)
-- Most variables are Likert Scale; naming is not very intuitive (see [codebook](../../../../dataset/UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf))
-    
+- Most variables are Likert Scale; naming is not very intuitive (see [codebook](../../../../dataset/unicef-changing-childhood-codebook.pdf){download="unicef-changing-childhood-codebook.pdf"})
+
+##     
 ```{r}
+#| echo: true
 library(tidyverse)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 5,
+  fig.height = 3,
+  out.width = "75%"
+)
 df.child <- read_csv("../../../../dataset/unicef-changing-childhood-data.csv")
 
 # create a smaller dataset for simplicity
