@@ -87,7 +87,7 @@ summary(ncov_simple$incubation)
 
 
 
-## Model-based Inference
+## Model-based Inference {.nostretch}
 ```{r,fig.height=4,fig.width=6}
 #| code-fold: true
 #| code-summary: "Show code"
