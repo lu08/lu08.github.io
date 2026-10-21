@@ -27,11 +27,14 @@ Today's data comes from [The Changing Childhood Project](https://changingchildho
 
 - Survey data with around 1000 respondents *per country* from 21 countries
 - Two age cohorts: young (15-24) vs old (40 or older)
-- Most variables are Likert Scale; naming is not very intuitive (see [codebook](../../../../dataset/unicef-changing-childhood-codebook.pdf){download="unicef-changing-childhood-codebook.pdf"})
+- Most variables are Likert Scale; naming is not very intuitive (see the [codebook](../../../../dataset/UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf){target="_blank" download="UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf"})
 
 ##     
+
+Import the CSV file into R and call it `df.child`; for simplicity, create a smaller dataset `df.child.small` containing only three countries and a few variables.
+
 ```{r}
-#| echo: true
+#| echo: false
 library(tidyverse)
 knitr::opts_chunk$set(
   echo = TRUE,
@@ -48,6 +51,16 @@ df.child.small <- df.child %>%
   filter(COUNTRYNEW %in% c("United States", "Japan", "Nigeria")) %>%
   select(COUNTRYNEW, AGE, WP22110, WP22109, WP30, WP22091)
 ```
+
+
+```{r, echo=TRUE, eval=FALSE}
+df.child <- read_csv("unicef-changing-childhood-data.csv")
+
+df.child.small <- df.child %>%
+  filter(COUNTRYNEW %in% c("United States", "Japan", "Nigeria")) %>%
+  select(COUNTRYNEW, AGE, WP22110, WP22109, WP30, WP22091)
+```
+
 
 - `COUNTRYNEW`: respondent's country.
 - `AGE`: respondent's age group (the survey compares ages 15-24 with ages 40 and older).
@@ -185,8 +198,8 @@ df.child.small %>%
 ## Example 1 explained
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 
 ggplot(
   data=subset(df.child.small, WP22110 < 97 & WP22109 < 97), # data
@@ -200,8 +213,8 @@ ggplot(
 ## Example 2 explained
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 ggplot(data=subset(df.child.small, WP22110 < 97), # data
     mapping=aes(x=COUNTRYNEW, # country maps to the x-axis
       y=WP22110)) + # minimum acceptable age for men maps to the y-axis
@@ -221,8 +234,8 @@ ggplot(data=subset(df.child.small, WP22110 < 97), # data
 
 Use the same code for example 2, but change **geom\_boxplot** to **geom\_violin**.
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97, WP22109 < 97) %>%
   ggplot(aes(x = COUNTRYNEW, y = WP22110)) +
@@ -236,8 +249,8 @@ df.child.small %>%
 - Recall: histogram is univariate; y-axis is always frequency, so we don't need a **y=\_** mapping
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97) %>%
   ggplot(aes(x = WP22110)) +
@@ -250,8 +263,8 @@ df.child.small %>%
 ## 
 - Add arguments in geoms
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97) %>%
   ggplot(aes(x = WP22110)) +
@@ -271,8 +284,8 @@ df.child.small %>%
 - Add another dimension (i.e., map another variable to another aesthetic)
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97) %>%
   ggplot(aes(x = WP22110, fill=COUNTRYNEW)) +
@@ -285,8 +298,8 @@ df.child.small %>%
 
 ## geom_bar
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 6
+#| fig-height: 3
 df.child.small %>%
   filter(WP30 < 3) %>%
   ggplot(aes(x=COUNTRYNEW, fill=as.factor(WP30))) +
@@ -299,8 +312,8 @@ df.child.small %>%
 Scatterplots can be hard to read when both variables are categorical. Jitter separates overlapping responses.
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 5
+#| fig-height: 3
 df.child.small %>%
   filter(WP30 < 3) %>%
   ggplot(aes(x=COUNTRYNEW, y=WP30, color=COUNTRYNEW)) +
@@ -313,8 +326,8 @@ df.child.small %>%
 Change **geom_point()** to **geom_jitter()**
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 5
+#| fig-height: 3
 df.child.small %>%
   filter(WP30 < 3) %>%
   ggplot(aes(x=COUNTRYNEW, y=WP30, color=COUNTRYNEW)) +
@@ -326,8 +339,8 @@ df.child.small %>%
 
 ## geom_text
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97, WP22109 < 97) %>%
   group_by(COUNTRYNEW) %>%
@@ -335,7 +348,7 @@ df.child.small %>%
             mean_female_age=mean(WP22109),
             .groups="drop") %>%
   ggplot(aes(x=mean_female_age, y=mean_male_age, label=COUNTRYNEW)) +
-  geom_text() +
+  geom_text(size=0.5) +
   labs(x="mean min age for women", y="mean min age for men")
 ```
 
@@ -353,28 +366,30 @@ Comment: it is very easy to combine data manipulation steps with ggplot.
 ggplot offers a very convenient syntax (+) to add elements and layers
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 6
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97, WP22109 < 97) %>%
   ggplot(aes(x=WP22110, y=WP22109, color=WP22110)) +
   geom_point() +
   theme_bw() +
   ggtitle('Marriage-age views by country') +
-  labs(x='Minimum acceptable age for men', y='Minimum acceptable age for women', color='Minimum acceptable age for men')
+  labs(x='Min for men', y='Min for women', color='Min for men')
 ```
+
+Comment: in this example, the same variable (`WP22110`) is mapped to both the x-axis and the color aesthetic. This is not recommended as it is redundant.
 
 ## Example: change gradient color
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 6
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97, WP22109 < 97) %>%
   ggplot(aes(x=WP22110, y=WP22109, color=WP22110)) +
   geom_point() +
   theme_bw() +
   ggtitle('Marriage-age views by country') +
-  labs(x='Minimum acceptable age for men', y='Minimum acceptable age for women', color='Minimum acceptable age for men') +
+  labs(x='Min for men', y='Min for women', color='Min for men') +
   scale_color_gradient(low="lightblue",high="orange") 
 ```
 
@@ -383,8 +398,8 @@ df.child.small %>%
 ## Example: change categorical color
 
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 6
+#| fig-height: 3  
 df.child.small %>%
   filter(WP30 < 3) %>%
   ggplot(aes(x=COUNTRYNEW, fill=as.factor(WP30))) +
@@ -397,32 +412,25 @@ df.child.small %>%
 
 ## Example: add a line
 ```{r}
-#| fig-width: 3.5
-#| fig-height: 2
+#| fig-width: 4
+#| fig-height: 3
 df.child.small %>%
   filter(WP22110 < 97, WP22109 < 97) %>%
   ggplot(aes(x=WP22110, y=WP22109, color=COUNTRYNEW)) +
   geom_point() +
   geom_abline(slope=1, intercept=0, linetype='dashed') +
   theme_minimal() +
-  labs(x="Minimum acceptable age for men", y="Minimum acceptable age for women", color="Country")
+  labs(x="Min age for men", y="Min age for women", color="Country")
 ```
 
 
-## There's more!
-- There are many other geoms and customizations available!
-- Each geom has its own set of aesthetics to which variables can be mapped.
-- Bring up the help page to check what aesthetics are needed.
-- Many references can be found online: they all share the same, unified structure that you can now understand.
-
-
-## Example
+## Example: multiple panels by a grouping variable
 
 `WP22091` records whether respondents identify most with their city or area (`1`), their country (`2`), or the world (`3`). `WP30` records satisfaction with standard of living: satisfied (`1`) or dissatisfied (`2`).
 
 ```{r}
-#| fig-width: 6
-#| fig-height: 3.5
+#| fig-width: 4
+#| fig-height: 3
 df.child %>%
   filter(COUNTRYNEW %in% c("Germany", "United States"),
          WP22091 %in% 1:3, WP30 %in% 1:2) %>%
@@ -437,14 +445,55 @@ df.child %>%
   )
 ```
 
+Comment: ggplot works very well with tidyverse functions; as you can see in this example, we actually do not need to use the smaller dataset, since it's easy to filter information from the large dataset before visualization.
+
+## There's more!
+- There are many other geoms and customizations available!
+- Each geom has its own set of aesthetics to which variables can be mapped.
+- Bring up the help page to check what aesthetics are needed.
+- Many references can be found online: they all share the same, unified structure that you can now understand.
+
+
+## Exercise
+
+- `WP22071`: whether digital technology helps children with education.
+- `WP22072`: whether digital technology helps children have fun.
+- For both questions, `1` = a lot, `2` = a little, and `3` = not at all. Other response codes are excluded.
+
+Try to reproduce the following graph.  You can also use other variables of your interest (refer to the codebook).  
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show code"
+#| fig-width: 7
+#| fig-height: 5
+df.child %>%
+  filter(WP22071 %in% 1:3, WP22072 %in% 1:3) %>%
+  group_by(COUNTRYNEW) %>%
+  summarise(
+    mean_education = mean(WP22071),
+    mean_fun = mean(WP22072),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = mean_education, y = mean_fun, label = COUNTRYNEW)) +
+  geom_abline(slope=1, intercept=0, linetype="dashed") +
+  geom_label() +
+  theme_bw() +
+  labs(
+    title = "Average views on digital technology by country",
+    x = "Not helpful with education",
+    y = "Not helpful with fun"
+  )
+```
+
+
 
 
 # Interactive plots
 
 ## Interactive plots
 - Wide variety, very flexible; can generate quite complicated graphs (for example, see [HTML widgets](http://www.htmlwidgets.org/showcase_leaflet.html))
-- Many new packages and functions are being published (esp. on github)
-- Currently, no "go-to" package, no unified approach
+- Many new packages and functions are being published; currently, no "go-to" package, no unified approach
 - We'll try a few simple examples to give you an idea, mostly using the [plotly](https://plot.ly/r/) package
 
 ```{r}
@@ -458,15 +507,17 @@ library(plotly)
 - Note the difference in syntax convention (e.g.: <font color='red'> ~ </font>varname)
 ```{r}
 #| message: false
-plot_ly(data=filter(df.child.small, WP22110 < 97),
+plot_ly(data=filter(df.child, WP22110 < 97),
         x=~WP22110, type='histogram') %>%
   layout(xaxis=list(title="Minimum acceptable age for men"))
 ```
 
+Comment: `filter` is a function in the `dplyr` package, but it can be used without the pipe operator, just as any other R function.
+
 ## Example 2: Boxplot
 ```{r}
 #| message: false
-plot_ly(data=filter(df.child.small, WP22110 < 97),
+plot_ly(data=filter(df.child, WP22110 < 97),
     y=~WP22110, x=~COUNTRYNEW, type='box') %>%
   layout(xaxis=list(title="Country"),
     yaxis=list(title="Minimum acceptable age for men"))
@@ -478,7 +529,7 @@ plot_ly(data=filter(df.child.small, WP22110 < 97),
 ## Example 3: 2D scatterplot
 ```{r}
 #| message: false
-plot_ly(data=filter(df.child.small, WP22110 < 97, WP22109 < 97),
+plot_ly(data=filter(df.child, WP22110 < 97, WP22109 < 97),
   x=~WP22110, y=~WP22109,
   color=~COUNTRYNEW, text=~COUNTRYNEW) %>%
   layout(xaxis=list(title="Minimum acceptable age for men"),
@@ -491,7 +542,7 @@ plot_ly(data=filter(df.child.small, WP22110 < 97, WP22109 < 97),
 ```{r}
 #| message: false
 #| out-width: 90%
-plot_ly(data=filter(df.child.small, WP22110 < 97, WP22109 < 97, WP22091 < 4),
+plot_ly(data=filter(df.child, WP22110 < 97, WP22109 < 97, WP22091 < 4),
   x=~WP22110, y=~WP22109,
   z=~WP22091, text=~COUNTRYNEW,
   color=~COUNTRYNEW, size=I(4)) %>%
@@ -525,32 +576,3 @@ ggplotly(p1)
 ```
 
 
-## Exercise
-
-- `WP22071`: whether digital technology helps children with education.
-- `WP22072`: whether digital technology helps children have fun.
-- For both questions, `1` = a lot, `2` = a little, and `3` = not at all. Other response codes are excluded.
-
-Try to reproduce the following graph.  You can also use other variables of your interest (refer to the codebook).  
-
-```{r}
-#| fig-width: 7
-#| fig-height: 5
-df.child %>%
-  filter(WP22071 %in% 1:3, WP22072 %in% 1:3) %>%
-  group_by(COUNTRYNEW) %>%
-  summarise(
-    mean_education = mean(WP22071),
-    mean_fun = mean(WP22072),
-    .groups = "drop"
-  ) %>%
-  ggplot(aes(x = mean_education, y = mean_fun, label = COUNTRYNEW)) +
-  geom_abline(slope=1, intercept=0, linetype="dashed") +
-  geom_label() +
-  theme_bw() +
-  labs(
-    title = "Average views on digital technology by country",
-    x = "Not helpful with education",
-    y = "Not helpful with fun"
-  )
-```
