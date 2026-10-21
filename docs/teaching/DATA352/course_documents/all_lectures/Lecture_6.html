@@ -101,6 +101,8 @@
   <link href="Lecture_6_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Lecture_6_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Lecture_6_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Lecture_6_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Lecture_6_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="Lecture_6_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -113,6 +115,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -204,6 +207,16 @@
 </section>
 <section id="set-up" class="slide level2">
 <h2>Set-up</h2>
+<p>This lecture is a very brief introduction to model-based inference. Material is based on <a href="Incubation%20period%20paper.pdf">The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application</a>, Lauer et. al., Annals of Internal Medicine, published online on March 10, 2020. Data and code are publically <a href="https://github.com/HopkinsIDD/ncov_incubation">available</a>.</p>
+<p>Please download:</p>
+<ul>
+<li><a href="nCoV_simple.csv">nCoV_simple.csv</a>: a simplified version of the original dataset; contains the incubation periods of <span class="math inline">\(50\)</span> patients</li>
+<li><a href="nCoV-IDD-data-dictionary.xlsx">nCoV-IDD-data-dictionary.xlsx</a>: original data</li>
+<li>Code used during today’s lecture will be posted <a href="../code/L6_code.R">here</a></li>
+</ul>
+</section>
+<section id="set-up-1" class="slide level2">
+<h2>Set-up</h2>
 <p>Our goal is to estimate the incubation period of COVID-19, or, more precisely, the <strong>distribution</strong> of the incubation period.</p>
 <ul>
 <li>What properties of this distribution are especially of interest?</li>
@@ -212,7 +225,9 @@
 </section>
 <section id="data" class="slide level2">
 <h2>Data</h2>
-<p>On Moodle, <strong>nCoV_simple.csv</strong> contains the incubation periods of <span class="math inline">\(50\)</span> patients. Download this file and import it to R.</p>
+<ul>
+<li>Import <code>nCov_simple.csv</code> to R.</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>ncov_simple <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'nCoV_simple.csv'</span>)</span>
 <span id="cb1-2"><a href=""></a><span class="co"># or:</span></span>
@@ -241,13 +256,21 @@
 </div>
 <ul>
 <li><p>Does this imply that the true median of incubation period is 4 days? Does this imply that the true maximum of the incubation period is 11 days?</p></li>
-<li><p><strong>Statistical inference</strong> is the process of making ``an educated guess” about the parameters of interest (such as the median), based on data.</p></li>
+<li><p><strong>Statistical inference</strong> is the process of making “an educated guess” about the parameters of interest (such as the median), based on data.</p></li>
 </ul>
 </section>
 <section id="model-based-inference" class="slide level2">
 <h2>Model-based Inference</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">hist</span>(ncov_simple<span class="sc">$</span>incubation,<span class="at">main=</span><span class="st">'Incubation periods of 50 patients'</span>,</span>
+<span id="cb5-2"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,<span class="at">freq =</span> F,</span>
+<span id="cb5-3"><a href=""></a>     <span class="at">xlab=</span><span class="st">'days'</span>,<span class="at">nclass=</span><span class="dv">10</span>,<span class="at">cex.main=</span><span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
-<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"><p>We want to model the incubation period with a pre-determined distribution (e.g., Normal) that can be specified by a fixed number of parameters (e.g., mean and variance). This is called a ``parametric” method.</p>
+</div>
+<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><p>We want to model the incubation period with a pre-determined distribution (e.g., Normal) that can be specified by a fixed number of parameters (e.g., mean and variance). This is called a “parametric” method.</p>
 <ul>
 <li><p>Step 1: Choose a model</p></li>
 <li><p>Step 2: Estimate parameters of the model</p></li>
@@ -257,19 +280,19 @@
 <h2>Estimate parameters</h2>
 <p>Use R to perform parameter estimation of the chosen model</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(<span class="st">'MASS'</span>)  <span class="co">#need to install first, if not installed</span></span>
-<span id="cb5-2"><a href=""></a>result<span class="ot">=</span><span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation,<span class="st">'normal'</span>)</span>
-<span id="cb5-3"><a href=""></a>result<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(<span class="st">'MASS'</span>)  <span class="co">#need to install first, if not installed</span></span>
+<span id="cb6-2"><a href=""></a>result<span class="ot">=</span><span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation,<span class="st">'normal'</span>)</span>
+<span id="cb6-3"><a href=""></a>result<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    mean       sd 
 4.107600 2.316638 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>result<span class="sc">$</span>sd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>result<span class="sc">$</span>sd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     mean        sd 
 0.3276220 0.2316638 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>result<span class="sc">$</span>loglik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>result<span class="sc">$</span>loglik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -112.9528</code></pre>
 </div>
@@ -278,28 +301,29 @@
 <section id="estimate-parameters-1" class="slide level2">
 <h2>Estimate parameters</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">hist</span>(ncov_simple<span class="sc">$</span>incubation,</span>
-<span id="cb11-2"><a href=""></a>     <span class="at">main=</span><span class="st">'Incubation periods of 50 patients'</span>,</span>
-<span id="cb11-3"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">'days'</span>,<span class="at">nclass=</span><span class="dv">10</span>)</span>
-<span id="cb11-4"><a href=""></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="at">mean=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sd=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>]),</span>
-<span id="cb11-5"><a href=""></a>      <span class="at">add=</span>T,<span class="at">col=</span><span class="st">'red'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="st">'dashed'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">hist</span>(ncov_simple<span class="sc">$</span>incubation,</span>
+<span id="cb12-2"><a href=""></a>     <span class="at">main=</span><span class="st">'Incubation periods of 50 patients'</span>,</span>
+<span id="cb12-3"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">'days'</span>,<span class="at">nclass=</span><span class="dv">10</span>)</span>
+<span id="cb12-4"><a href=""></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="at">mean=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sd=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>]),</span>
+<span id="cb12-5"><a href=""></a>      <span class="at">add=</span>T,<span class="at">col=</span><span class="st">'red'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="st">'dashed'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="log-likelihood" class="slide level2">
 <h2>(Log) likelihood</h2>
 <ul>
 <li>The <strong>likelihood function</strong>, usually written as <span class="math inline">\(L(\mu, \sigma | \textit{data})\)</span>, is a function of model parameters.</li>
-<li>Parameter values that ``fit the data better” will produce a larger likelihood, or, equivalently, a larger <strong>log-likelihood</strong>.</li>
+<li>Parameter values that “fit the data better” will produce a larger likelihood, or, equivalently, a larger <strong>log-likelihood</strong>.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">log</span>(<span class="fu">prod</span>(<span class="fu">dnorm</span>(ncov_simple<span class="sc">$</span>incubation,<span class="at">mean=</span><span class="dv">8</span>,<span class="at">sd=</span><span class="fl">1.8</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># "Hand calculation" of the log likelihood</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">log</span>(<span class="fu">prod</span>(<span class="fu">dnorm</span>(ncov_simple<span class="sc">$</span>incubation,<span class="at">mean=</span><span class="dv">8</span>,<span class="at">sd=</span><span class="fl">1.8</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -233.651</code></pre>
 </div>
 </div>
 
-<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%"><ul>
+<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><ul>
 <li>Estimates obtained by <strong>fitdistr</strong> (i.e., 4.1076 and 2.3166 here) are the values that maximize the log-likelihood (called <strong>maximum likelihood estimators</strong>)</li>
 </ul>
 </section>
@@ -323,8 +347,8 @@
 <li>Estimate the parameters of the lognormal model</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>result<span class="ot">=</span><span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation,<span class="st">'lognormal'</span>,<span class="at">lower=</span><span class="fl">0.01</span>)</span>
-<span id="cb14-2"><a href=""></a>result<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>result<span class="ot">=</span><span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation,<span class="st">'lognormal'</span>,<span class="at">lower=</span><span class="fl">0.01</span>)</span>
+<span id="cb15-2"><a href=""></a>result<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  meanlog     sdlog 
 1.2092543 0.7307774 </code></pre>
@@ -334,27 +358,27 @@
 <li>Add the estimated density to histogram</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">hist</span>(ncov_simple<span class="sc">$</span>incubation,<span class="at">main=</span><span class="cn">NA</span>,</span>
-<span id="cb16-2"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">'days'</span>,<span class="at">nclass=</span><span class="dv">10</span>)</span>
-<span id="cb16-3"><a href=""></a><span class="fu">curve</span>(<span class="fu">dlnorm</span>(x,<span class="at">meanlog=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sdlog=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>]),</span>
-<span id="cb16-4"><a href=""></a>      <span class="at">add=</span>T,<span class="at">col=</span><span class="st">'darkgreen'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="st">'dashed'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">hist</span>(ncov_simple<span class="sc">$</span>incubation,<span class="at">main=</span><span class="cn">NA</span>,</span>
+<span id="cb17-2"><a href=""></a>     <span class="at">col=</span><span class="st">'lightblue'</span>,<span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">'days'</span>,<span class="at">nclass=</span><span class="dv">10</span>)</span>
+<span id="cb17-3"><a href=""></a><span class="fu">curve</span>(<span class="fu">dlnorm</span>(x,<span class="at">meanlog=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sdlog=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>]),</span>
+<span id="cb17-4"><a href=""></a>      <span class="at">add=</span>T,<span class="at">col=</span><span class="st">'darkgreen'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="st">'dashed'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+<img data-src="Lecture_6_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="lognormal-1" class="slide level2">
 <h2>Lognormal</h2>
 <ul>
 <li>Calculate the log-likelihood</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="co"># by hand</span></span>
-<span id="cb17-2"><a href=""></a><span class="fu">log</span>(<span class="fu">prod</span>(<span class="fu">dlnorm</span>(ncov_simple<span class="sc">$</span>incubation,</span>
-<span id="cb17-3"><a href=""></a>                <span class="at">meanlog=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sdlog=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># by hand</span></span>
+<span id="cb18-2"><a href=""></a><span class="fu">log</span>(<span class="fu">prod</span>(<span class="fu">dlnorm</span>(ncov_simple<span class="sc">$</span>incubation,</span>
+<span id="cb18-3"><a href=""></a>                <span class="at">meanlog=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">sdlog=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -115.7273</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="co"># in R</span></span>
-<span id="cb19-2"><a href=""></a>result<span class="sc">$</span>loglik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="co"># in R</span></span>
+<span id="cb20-2"><a href=""></a>result<span class="sc">$</span>loglik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -115.7273</code></pre>
 </div>
@@ -369,7 +393,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="exercise-gamma" class="slide level2">
+<section id="exercise-gamma" class="slide level2 scrollable">
 <h2>Exercise: gamma</h2>
 <ol type="1">
 <li><p>Estimate the parameters of the gamma distribution.</p></li>
@@ -413,6 +437,7 @@
   <script src="Lecture_6_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="Lecture_6_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="Lecture_6_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Lecture_6_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="Lecture_6_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -434,7 +459,8 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -455,7 +481,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -560,7 +586,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -605,7 +631,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
