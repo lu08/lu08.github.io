@@ -1,0 +1,54 @@
+---
+title: "DATA 352/551: Homework 6"
+format:
+  html:
+    toc: false
+---
+
+<!-- do not alter this first chunk below  -->
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+1. In class, we used the **nCoV\_simple** dataset and fit normal, lognormal and gamma models.  Fit a Weibull model to the same dataset and answer the following questions.
+
+    a. What are the parameter estimates of the Weibull model?
+    
+    b. What is the log likelihood of the Weibull model?  Calculate this likelihood using the formula first and then verify your result with the value given by **fitdistr**.   
+    
+    c. Write down the log likelihood of the normal, lognormal, and gamma models we used in class.  Based on the log likelihood, which model is the best fit?
+    
+    The loglikelihoods are (rounded): normal (-113); lognormal (-116); gamma (-111); weibull (-110). The Weibull model is a slightly better fit based on the log-likelihood.
+    
+    d. Using the Weibull model and the estimated parameters, what is the probability that the incubation period is shorter than 14 days?  What is the probability that the incubation period is longer than 5 days?
+
+
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show solution"
+library('MASS')
+ncov_simple <- read.csv('../all_lectures/nCoV_simple.csv')
+result <- fitdistr(ncov_simple$incubation,'weibull')
+result$estimate
+result$loglik
+log(prod(dweibull(ncov_simple$incubation,
+               shape=result$estimate[1],
+               scale=result$estimate[2]))) #by hand
+pweibull(14,shape=result$estimate[1],scale=result$estimate[2])
+1-pweibull(5,shape=result$estimate[1],scale=result$estimate[2])
+```
+
+
+2. Skim through the [incubation period paper](../all_lectures/Incubation%20period%20paper.pdf) and answer the following questions.  You should be able to find the answers within the paper, so a solution is not provided here.  You should have a basic familiarity with the paper (at least to the extent of these questions) for next week's quiz.
+
+    a. Based on results of this paper, what is the estimated median incubation period? Why do you think the the paper uses the median instead of the mean?
+
+    b. What is the sample size of the dataset used?  Discuss at least one reason that the dataset might be biased and not a representative sample.
+
+    c. For the main results of the paper, what distribution is used to model the incubation period?  Why is this model chosen?  Name another model mentioned as a comparison to the main model.
+
+
+
+

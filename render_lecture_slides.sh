@@ -51,5 +51,12 @@ for rel in "${slides[@]}"; do
     fi
     find . -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' \) -exec cp {} "$dest/" \;
     rm -f "$dest/$file"
+
+    if [ "$rel" = "teaching/DATA352/course_documents/all_lectures/Lecture_6.qmd" ]; then
+      cp "Incubation period paper.pdf" nCoV_simple.csv nCoV-IDD-data-dictionary.xlsx "$dest/"
+      mkdir -p "$root/docs/teaching/DATA352/course_documents/code"
+      cp "$root/teaching/DATA352/course_documents/code/L6_code.R" \
+        "$root/docs/teaching/DATA352/course_documents/code/L6_code.R"
+    fi
   )
 done

@@ -33,6 +33,13 @@ knitr::opts_chunk$set(fig.align='center',
 ```
 
 ## Set-up
+Our goal is to estimate the incubation period of COVID-19, or, more precisely, the **distribution** of the incubation period.
+
+- What properties of this distribution are especially of interest?
+- What are some challenges of obtaining data for the incubation period estimation?
+
+
+## Set-up
 
 This lecture is a very brief introduction to model-based inference.  Material is based on [The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application](Incubation%20period%20paper.pdf), Lauer et. al., Annals of Internal Medicine, published online on March 10, 2020. Data and code are publically [available](https://github.com/HopkinsIDD/ncov_incubation).
 
@@ -43,11 +50,17 @@ Please download:
 - Code used during today's lecture will be posted [here](../code/L6_code.R)
 
 
-## Set-up
-Our goal is to estimate the incubation period of COVID-19, or, more precisely, the **distribution** of the incubation period.
+## Data
 
-- What properties of this distribution are especially of interest?
-- What are some challenges of obtaining data for the incubation period estimation?
+Open `nCoV-IDD-data-dictionary.xlsx` and find the following information to get a sense of the data.  Submit your answers [here](https://docs.google.com/document/d/1NAmdAtFgf2kWUBDYESGv9dWF90lJdWZbB5zlzGT5k_A/edit?usp=sharing){target="_blank"} for an assignment grade.
+
+    a. What do these variable names stand for: EL, ER, SL, SR, PL, PR?
+
+    b. Find the case whose UID is U0021. When did he arrive in Wuhan?  When did he leave Wuhan?  If you had to make one estimate of his incubation period, what would it be?
+
+    c. Find the case whose UID is U0001.  Why would it be very hard to determine this person's incubation period?
+
+    d. Find another case whose incubation period would be hard to determine.  Discuss why.
 
 
 ## Data
@@ -56,7 +69,7 @@ Our goal is to estimate the incubation period of COVID-19, or, more precisely, t
 ```{r, echo=T}
 ncov_simple <- read.csv('nCoV_simple.csv')
 # or:
-# ncov_simple=read.csv(file.choose())
+# ncov_simple <- read.csv(file.choose())
 head(ncov_simple)
 ```
 
@@ -75,7 +88,7 @@ summary(ncov_simple$incubation)
 
 
 ## Model-based Inference
-```{r}
+```{r,fig.height=4,fig.width=6}
 #| code-fold: true
 #| code-summary: "Show code"
 hist(ncov_simple$incubation,main='Incubation periods of 50 patients',
@@ -95,7 +108,7 @@ We want to model the incubation period with a pre-determined distribution (e.g.,
 Use R to perform parameter estimation of the chosen model
 ```{r, echo=T}
 library('MASS')  #need to install first, if not installed
-result=fitdistr(ncov_simple$incubation,'normal')
+result <- fitdistr(ncov_simple$incubation,'normal')
 result$estimate
 result$sd
 result$loglik
@@ -115,6 +128,7 @@ curve(dnorm(x,mean=result$estimate[1],sd=result$estimate[2]),
 ## (Log) likelihood
 
 - The **likelihood function**, usually written as $L(\mu, \sigma | \textit{data})$, is a function of model parameters.
+
 - Parameter values that "fit the data better" will produce a larger likelihood, or, equivalently, a larger **log-likelihood**. 
 
 ```{r,echo=T}
@@ -122,7 +136,7 @@ curve(dnorm(x,mean=result$estimate[1],sd=result$estimate[2]),
 log(prod(dnorm(ncov_simple$incubation,mean=8,sd=1.8)))
 ```
 
-```{r, echo=F,fig.height=4,fig.width=8}
+```{r,fig.height=4,fig.width=8}
 #| code-fold: true
 #| code-summary: "Show code"
 par(mfrow=c(1,2))
@@ -159,7 +173,7 @@ Recall:
 - Estimate the parameters of the lognormal model
 
 ```{r}
-result=fitdistr(ncov_simple$incubation,'lognormal',lower=0.01)
+result <- fitdistr(ncov_simple$incubation,'lognormal',lower=0.01)
 result$estimate
 ```
 
