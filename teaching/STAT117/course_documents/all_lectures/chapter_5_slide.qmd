@@ -378,15 +378,18 @@ Option 2: Using `alcbinge` as a grouping variable:
 - Have binged:
 
 
+## Jamovi procedure
 
-## Option 1: grouping by `region`
+Refer to [assignment 5](../../course_documents/assignment/assignment_5.qmd){target="_blank"} for more examples of contingency tables.
 
-> Jamovi procedure: `Analyses` -> `Frequencies` -> `Independent samples` -> put one variable in `Rows` and the other in `Columns`. If the table looks hard to interpret, you can try switching row/column variables.
+> `Analyses` -> `Frequencies` -> `Independent samples` -> put one variable in `Rows` and the other in `Columns`. If the table looks hard to interpret, you can try switching row/column variables.
 
 > Percentages can be calcuated by checking relevant boxes under `Cells` -  `Percentages`.  I suggest that you only check "Row" percentages.  You should never use "Total" percentages for bivariable relationships.
 
 > Visualizations can be obtained by checking `Bar Plot` under the `Plots` option. The "side by side" bar plot is sometimes referred to as a **clustered bar graph**.
 
+
+## Option 1: grouping by `region`
 
 For each region, calculate the percent that **have** binged on alcohol:
 
@@ -397,6 +400,12 @@ For each region, calculate the percent that **have** binged on alcohol:
 
 Conclusion:
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Option 2: grouping by `alcbinge`
 
@@ -431,7 +440,7 @@ Mistake 1: only describing ONE group to establish a bivariate relationship (i.e.
 <details>
 <summary>Show example</summary>
 
-- "Among students from the NE, 67.9% went to public school vs 32.1% didn't."  This only describes the NE group and does not establish a relationship between region and school type.  Maybe other regions also have about 67.9% of students attending public school.
+- "Among students from the NE, 67.9% went to public school vs 9.7% went to private, non-religious school."  This only describes the NE group and does not establish a relationship between region and school type.  Maybe other regions also have about 67.9% of students attending public school and 9.7% attending private, non-religious school.
 
 - "Among violent adults, 98% drank milk as a kid vs 2% didn't" - would this establish a relationship between violent behavior and milk consumption?
 </details>
@@ -461,42 +470,44 @@ See StatChat 3 for discussions.
 
 # Additional examples
 
-## Contingency table
-
 Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.
 
-Example 1: relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).
+Example 1: (United States Colleges) relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).
 
+<br>
+<br>
+<br>
 
-##
-Example 2: relationship between Urbanicity and `edexpect` (highest level of education expected)?
+Example 2: (NELS) relationship between Urbanicity and `edexpect` (highest level of education expected)?
 
+<br>
 
-## Review: are these answers correct or incorrect?
+# Review questions: fix and improve answers
 
-E1. In the Combined Class Charities dataset, is there a relationship between `Type` (1='Animals'; 2='Environment', 3='Human and civil rights') and `OS` (Overall score)?
+## Fix and improve: example 1
+In the Combined Class Charities dataset, is there a relationship between `Type` (1='Animals'; 2='Environment', 3='Human and civil rights') and `OS` (Overall score)?
 
 - Since $r = -0.028$, there is no relationship.
 
 - Since Type is nominal, there is no relationship.
 
-## 
-E2. In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `COST` (cost of food)?
+## Fix and improve: example 2
+In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `COST` (cost of food)?
 
 - Since $r = -0.382$, there is a negative, moderate relationship. French restaurants tend to have higher cost.
 
 
 - Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.
 
-## 
+## Fix and improve: example 3
 
-E3. In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `Sunday` (does it open on Sunday, 0 = No, 1 = Yes)?
+In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `Sunday` (does it open on Sunday, 0 = No, 1 = Yes)?
 
 - There is no relationship, since they have the same medians.
 
-## 
+## Fix and improve: example 4
 
-E4. In the United States Colleges dataset, is there a relationship between `Competitiveness Ranking` and `College or University` (0 = college, 1 = university)?
+In the United States Colleges dataset, is there a relationship between `Competitiveness Ranking` and `College or University` (0 = college, 1 = university)?
 
 - Since $r = 0.099$, there is a positive, very weak relationship.
 

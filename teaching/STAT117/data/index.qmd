@@ -59,8 +59,8 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 - [Young People Survey partial.sav](../../../dataset/Young%20People%20Survey%20partial.sav){download="Young People Survey partial.sav"}
 
+    A smaller dataset (with selective variables) based on the [Young People Survey](https://www.kaggle.com/datasets/miroslavsabo/young-people-survey/data).  Participants include students of a Statistics class at [Comenius University Bratislava](https://uniba.sk/en/) (Slovakia), as well as their invited friends. 
 
-- [Young People Survey.sav](../../../dataset/Young%20People%20Survey.sav){download="Young People Survey.sav"}
 
 - [United States Colleges.sav](../../../dataset/United%20States%20Colleges.sav){download="United States Colleges.sav"}
 

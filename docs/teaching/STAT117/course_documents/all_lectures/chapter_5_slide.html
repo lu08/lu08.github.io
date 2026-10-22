@@ -541,10 +541,11 @@ Show solution
 <li>Have binged:</li>
 </ul>
 </section>
-<section id="option-1-grouping-by-region" class="slide level2">
-<h2>Option 1: grouping by <code>region</code></h2>
+<section id="jamovi-procedure" class="slide level2">
+<h2>Jamovi procedure</h2>
+<p>Refer to <a href="../../course_documents/assignment/assignment_5.qmd" target="_blank">assignment 5</a> for more examples of contingency tables.</p>
 <blockquote>
-<p>Jamovi procedure: <code>Analyses</code> -&gt; <code>Frequencies</code> -&gt; <code>Independent samples</code> -&gt; put one variable in <code>Rows</code> and the other in <code>Columns</code>. If the table looks hard to interpret, you can try switching row/column variables.</p>
+<p><code>Analyses</code> -&gt; <code>Frequencies</code> -&gt; <code>Independent samples</code> -&gt; put one variable in <code>Rows</code> and the other in <code>Columns</code>. If the table looks hard to interpret, you can try switching row/column variables.</p>
 </blockquote>
 <blockquote>
 <p>Percentages can be calcuated by checking relevant boxes under <code>Cells</code> - <code>Percentages</code>. I suggest that you only check “Row” percentages. You should never use “Total” percentages for bivariable relationships.</p>
@@ -552,6 +553,9 @@ Show solution
 <blockquote>
 <p>Visualizations can be obtained by checking <code>Bar Plot</code> under the <code>Plots</code> option. The “side by side” bar plot is sometimes referred to as a <strong>clustered bar graph</strong>.</p>
 </blockquote>
+</section>
+<section id="option-1-grouping-by-region" class="slide level2">
+<h2>Option 1: grouping by <code>region</code></h2>
 <p>For each region, calculate the percent that <strong>have</strong> binged on alcohol:</p>
 <ul>
 <li>Northeast:</li>
@@ -560,6 +564,7 @@ Show solution
 <li>West:</li>
 </ul>
 <p>Conclusion:</p>
+<p><br> <br> <br> <br> <br> <br></p>
 </section>
 <section id="option-2-grouping-by-alcbinge" class="slide level2">
 <h2>Option 2: grouping by <code>alcbinge</code></h2>
@@ -585,7 +590,7 @@ Show solution
 Show example
 </summary>
 <ul>
-<li><p>“Among students from the NE, 67.9% went to public school vs 32.1% didn’t.” This only describes the NE group and does not establish a relationship between region and school type. Maybe other regions also have about 67.9% of students attending public school.</p></li>
+<li><p>“Among students from the NE, 67.9% went to public school vs 9.7% went to private, non-religious school.” This only describes the NE group and does not establish a relationship between region and school type. Maybe other regions also have about 67.9% of students attending public school and 9.7% attending private, non-religious school.</p></li>
 <li><p>“Among violent adults, 98% drank milk as a kid vs 2% didn’t” - would this establish a relationship between violent behavior and milk consumption?</p></li>
 </ul>
 </details>
@@ -609,46 +614,46 @@ Show example
 </details>
 <p>See StatChat 3 for discussions.</p>
 </section></section>
-<section>
 <section id="additional-examples" class="title-slide slide level1 center">
 <h1>Additional examples</h1>
+<p>Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.</p>
+<p>Example 1: (United States Colleges) relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).</p>
+<p><br> <br> <br></p>
+<p>Example 2: (NELS) relationship between Urbanicity and <code>edexpect</code> (highest level of education expected)?</p>
+<p><br></p>
+</section>
+
+<section>
+<section id="review-questions-fix-and-improve-answers" class="title-slide slide level1 center">
+<h1>Review questions: fix and improve answers</h1>
 
 </section>
-<section id="contingency-table" class="slide level2">
-<h2>Contingency table</h2>
-<p>Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.</p>
-<p>Example 1: relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).</p>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>Example 2: relationship between Urbanicity and <code>edexpect</code> (highest level of education expected)?</p>
-</section>
-<section id="review-are-these-answers-correct-or-incorrect" class="slide level2">
-<h2>Review: are these answers correct or incorrect?</h2>
-<p>E1. In the Combined Class Charities dataset, is there a relationship between <code>Type</code> (1=‘Animals’; 2=‘Environment’, 3=‘Human and civil rights’) and <code>OS</code> (Overall score)?</p>
+<section id="fix-and-improve-example-1" class="slide level2">
+<h2>Fix and improve: example 1</h2>
+<p>In the Combined Class Charities dataset, is there a relationship between <code>Type</code> (1=‘Animals’; 2=‘Environment’, 3=‘Human and civil rights’) and <code>OS</code> (Overall score)?</p>
 <ul>
 <li><p>Since <span class="math inline">\(r = -0.028\)</span>, there is no relationship.</p></li>
 <li><p>Since Type is nominal, there is no relationship.</p></li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p>E2. In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>COST</code> (cost of food)?</p>
+<section id="fix-and-improve-example-2" class="slide level2">
+<h2>Fix and improve: example 2</h2>
+<p>In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>COST</code> (cost of food)?</p>
 <ul>
 <li><p>Since <span class="math inline">\(r = -0.382\)</span>, there is a negative, moderate relationship. French restaurants tend to have higher cost.</p></li>
 <li><p>Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.</p></li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p>E3. In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>Sunday</code> (does it open on Sunday, 0 = No, 1 = Yes)?</p>
+<section id="fix-and-improve-example-3" class="slide level2">
+<h2>Fix and improve: example 3</h2>
+<p>In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>Sunday</code> (does it open on Sunday, 0 = No, 1 = Yes)?</p>
 <ul>
 <li>There is no relationship, since they have the same medians.</li>
 </ul>
 </section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p>E4. In the United States Colleges dataset, is there a relationship between <code>Competitiveness Ranking</code> and <code>College or University</code> (0 = college, 1 = university)?</p>
+<section id="fix-and-improve-example-4" class="slide level2">
+<h2>Fix and improve: example 4</h2>
+<p>In the United States Colleges dataset, is there a relationship between <code>Competitiveness Ranking</code> and <code>College or University</code> (0 = college, 1 = university)?</p>
 <ul>
 <li><p>Since <span class="math inline">\(r = 0.099\)</span>, there is a positive, very weak relationship.</p></li>
 <li><p>Colleges have lower competitiveness rank (mean = 3.02); universities have higher competitiveness rank (mean = 3.49).</p></li>

@@ -15,7 +15,7 @@ format: html
 
 2. Go over [assignment 5](../../course_documents/assignment/assignment_5.qmd){target="_blank"}. Submit your answers to **Part 3** of this assignment on Moodle, as instructed.  The assignment familiarizes you with contingency table, which will be discussed further in class.
 
-3. For Thursday's quiz, I will ask you about the bivariate relationship between pairs of variables.  I will choose THREE out of the following cases:
+3. For Thursday's quiz, I will ask you about the bivariate relationship between pairs of variables.  I will choose TWO out of the following cases:
 
 - Continuous + continuous (pearson r)
 - Continuous + dichotomous (pearson r)
