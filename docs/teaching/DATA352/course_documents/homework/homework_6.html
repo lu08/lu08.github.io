@@ -286,55 +286,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>What are the parameter estimates of the Weibull model?</p></li>
 <li><p>What is the log likelihood of the Weibull model? Calculate this likelihood using the formula first and then verify your result with the value given by <strong>fitdistr</strong>.</p></li>
 <li><p>Write down the log likelihood of the normal, lognormal, and gamma models we used in class. Based on the log likelihood, which model is the best fit?</p></li>
-</ol>
-<p>The loglikelihoods are (rounded): normal (-113); lognormal (-116); gamma (-111); weibull (-110). The Weibull model is a slightly better fit based on the log-likelihood.</p>
-<ol start="4" type="a">
-<li>Using the Weibull model and the estimated parameters, what is the probability that the incubation period is shorter than 14 days? What is the probability that the incubation period is longer than 5 days?</li>
+<li><p>Using the Weibull model and the estimated parameters, what is the probability that the incubation period is shorter than 14 days? What is the probability that the incubation period is longer than 5 days?</p></li>
 </ol></li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
 <div class="cell">
-<details class="code-fold">
-<summary>Show solution</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'MASS'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ncov_simple <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../all_lectures/nCoV_simple.csv'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation,<span class="st">'weibull'</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>result<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   shape    scale 
 1.819250 4.611153 </code></pre>
 </div>
-<details class="code-fold">
-<summary>Show solution</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>result<span class="sc">$</span>loglik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -109.5789</code></pre>
 </div>
-<details class="code-fold">
-<summary>Show solution</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">prod</span>(<span class="fu">dweibull</span>(ncov_simple<span class="sc">$</span>incubation,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">shape=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">scale=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>]))) <span class="co">#by hand</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -109.5789</code></pre>
 </div>
-<details class="code-fold">
-<summary>Show solution</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pweibull</span>(<span class="dv">14</span>,<span class="at">shape=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">scale=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9994694</code></pre>
 </div>
-<details class="code-fold">
-<summary>Show solution</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pweibull</span>(<span class="dv">5</span>,<span class="at">shape=</span>result<span class="sc">$</span>estimate[<span class="dv">1</span>],<span class="at">scale=</span>result<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3138984</code></pre>
 </div>
 </div>
+<p>For (c): The loglikelihoods are (rounded): normal (-113); lognormal (-116); gamma (-111); weibull (-110). The Weibull model is a slightly better fit based on the log-likelihood.</p>
+</details>
 <ol start="2" type="1">
 <li><p>Skim through the <a href="../all_lectures/Incubation period paper.pdf">incubation period paper</a> and answer the following questions. You should be able to find the answers within the paper, so a solution is not provided here. You should have a basic familiarity with the paper (at least to the extent of these questions) for next week’s quiz.</p>
 <ol type="a">

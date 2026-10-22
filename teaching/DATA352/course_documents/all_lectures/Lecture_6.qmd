@@ -136,6 +136,8 @@ curve(dnorm(x,mean=result$estimate[1],sd=result$estimate[2]),
 log(prod(dnorm(ncov_simple$incubation,mean=8,sd=1.8)))
 ```
 
+## 
+
 ```{r,fig.height=4,fig.width=8}
 #| code-fold: true
 #| code-summary: "Show code"
