@@ -380,7 +380,7 @@ Option 2: Using `alcbinge` as a grouping variable:
 
 ## Jamovi procedure
 
-Refer to [assignment 5](../../course_documents/assignment/assignment_5.qmd){target="_blank"} for more examples of contingency tables.
+Refer to [assignment 5](../../course_documents/assignment/assignment_5.html){target="_blank"} for more examples of contingency tables.
 
 > `Analyses` -> `Frequencies` -> `Independent samples` -> put one variable in `Rows` and the other in `Columns`. If the table looks hard to interpret, you can try switching row/column variables.
 
