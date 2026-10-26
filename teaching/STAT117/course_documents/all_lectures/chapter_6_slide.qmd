@@ -1,0 +1,420 @@
+---
+title: "Chapter 6: Simple Linear Regression"
+subtitle: "STAT117: Introduction to Statistics"
+format:
+  revealjs:
+    width: 1050
+    height: 1050
+    margin: 0
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: false
+    scrollable: true
+    chalkboard:
+      buttons: true
+    template-partials:
+      - title-slide.html
+editor_options:
+  chunk_output_type: inline
+---
+
+## Setup
+
+You want to *predict* something (e.g., predict stock prices; predict a person's marathon finish time; predict a student's social economic status `SES`)
+
+> In reality, the main goal can be the prediction itself, or can be understanding what variables are important for making the prediction.
+
+I) The “something” you are predicting:
+
+II) The variable(s) you would use to make a prediction:
+
+- For instance, what variables would you use to predict a student `SES`?
+
+<br>
+<br>
+<br>
+<br>
+
+We'll only cover these two cases:
+
+- Case 1: Y is scale and X is scale (called `Covariate`)
+- Case 2: Y is scale and X is dichotomous (called `Factor`)
+
+
+## Example
+
+Label the dependent (Y) and independent (X) variables:
+
+1. Use a student's SAT score to predict the student's GPA in college
+<br>
+
+2. Predict a student's satisfaction with Drew's dining service by whether the student is an international student
+<br>
+
+3. Predict your future salary based on your GPA in college
+<br>
+
+4. Use `achmat08` to predict `achrdg08`
+<br>
+
+
+> Jamovi procedure: Analyze – Regression – Linear Regression; Numeric predictors go in the `Covariates` box, and categorical predictors go in the `Factors` box.
+
+# Case 1: Numeric predictor
+
+## SES and achmat08
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
+#| out-width: "120%"
+#| fig-width: 10
+#| fig-height: 10
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+
+plot(
+  nels$achmat08,
+  nels$ses,
+  xlab = "Math achievement in 8th grade (achmat08)",
+  ylab = "SES",
+  pch = 16
+)
+```
+
+
+As a review, is there a relationship between `achmat08` and `SES`?  (Pearson r = 0.318)
+
+<br><br>
+
+Can you provide an estimate of SES, if a student's `achmat08` score is 
+
+- around 45?
+- around 70?
+
+
+
+## Regression line
+
+The goal is to find the line that “best fits” the data. The (least squares) regression line minimizes the total “distance” of each point to the line, where distance is measured by the squared difference.
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
+#| out-width: "120%"
+#| fig-width: 10
+#| fig-height: 10
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+
+plot(
+  nels$achmat08,
+  nels$ses,
+  xlab = "Math achievement in 8th grade (achmat08)",
+  ylab = "SES",
+  pch = 16
+)
+
+abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
+```
+
+
+
+## Jamovi output
+
+**Model Fit Measures**
+
+| Model | R | R$^2$ |
+|---:|---:|---:|
+| 1 | 0.318 | 0.101 |
+
+**Model Coefficients - ses**
+
+| Predictor | Estimate | SE | t | p |
+|---|---:|---:|---:|---:|
+| Intercept | 5.082 | 1.8064 | 2.81 | .005 |
+| achmat08 | 0.236 | 0.0315 | 7.49 | <.001 |
+
+
+Recall, the form of a line is given by:
+<br>
+<br>
+
+> HAT notation is very important!
+
+## Predictions  
+
+$\hat{Y} = 5.082 + 0.236 \cdot X$ 
+
+$\hat{SES} = 5.082 + 0.236 \cdot achmat08$
+
+
+- What is the predicted SES for a student with an `achmat08` score of 45?
+
+<br>
+
+Be cautious about predicting out of the range of X
+
+- What is the predicted SES for a student with an `achmat08` score of 10?
+
+
+## Residuals
+
+$\hat{SES} = 5.082 + 0.236 \cdot achmat08$
+
+
+Selected students from the NELS dataset:
+
+| Student ID | `achmat08` | `ses` |
+|---:|---:|---:|
+| 374 | 44.80 | 21 |
+| 489 | 44.80 | 20 |
+| 67 | 70.04 | 27 |
+| 207 | 69.93 | 11 |
+
+- Residual = actual - predicted = `ses` - $\hat{SES}$ 
+
+What is the residual for student with ID 374?
+
+
+
+
+## Interpretations
+$\hat{SES} = 5.082 + 0.236 \cdot achmat08$
+
+
+- Slope
+
+<br>
+<br>
+<br>
+
+- Intercept
+
+<br>
+<br>
+<br>
+
+
+
+## Regression and scatterplot
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
+#| out-width: "120%"
+#| fig-width: 10
+#| fig-height: 10
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+
+plot(
+  nels$achmat08,
+  nels$ses,
+  xlab = "Math achievement in 8th grade (achmat08)",
+  ylab = "SES",
+  pch = 16
+)
+
+abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
+```
+
+
+
+
+## Example: Icecream
+
+(Icecream.sav) We want to use temperature to predict the number of ice cream bars sold.
+
+  a) Write down the regression line.
+<br>
+<br>
+
+  b) Provide the value of the intercept and give an interpretation.
+<br>
+<br>
+
+  c) Provide the value of the slope and give an interpretation.
+<br>
+<br>
+
+  d) For a day with a temperature of ____ Fahrenheit, how many ice cream bars do you estimate to be sold?
+<br>
+<br>
+
+  e) For day ID=12, are we over-predicting or under-predicting? Calculate the residual.
+
+# Case 2: dichotomous predictor
+
+## SES and nursery school (yes/no)
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "R code (optional)"
+#| fig-alt: "Scatterplot of nursery school attendance and socioeconomic status, with a fitted regression line"
+#| out-width: "120%"
+#| fig-width: 10
+#| fig-height: 10
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+
+plot(
+  nels$nursery,
+  nels$ses,
+  xlab = "Nursery school attendance (nursery)",
+  ylab = "SES",
+  pch = 16
+)
+```
+
+Can you estimate a student's SES if the student...
+
+- has not attend nursery school?
+- has attended nursery school?
+
+
+
+
+
+## General idea
+
+Predict `SES` based on `Nursery`: essentially, this means we predict `SES` for the two values of `Nursery`:
+
+- If `Nursery` = Yes, we predict `SES` to be ________
+- If `Nursery` = No, we predict `SES` to be ________
+
+<details>
+<summary>Show descriptives</summary>
+
+(Analyses -> Exploration -> Descriptives)
+
+**Descriptives**
+
+| Statistic | `nursery` | `ses` |
+|---|---|---:|
+| N | No | 139 |
+|  | Yes | 281 |
+| Mean | No | 15.1 |
+|  | Yes | 20.7 |
+| Median | No | 16.0 |
+|  | Yes | 21.0 |
+
+</details>
+
+We can get the same results from a regression analysis!
+
+
+
+## Example: Nursery 
+
+Use regression to predict `SES` using `Nursery` (coded as 0=No, 1=Yes).
+> Make sure to put `Nursery` as a **factor**!  (For dichotomous predictors, you can get the same correct coefficients if you put it as a covariate, but this is not recommended, as you will get incorrect information when the variable is nominal or ordinal, or is coded in a non-standard way.)
+
+  a) Write down the regression line.
+<br>
+<br>
+
+  b) For a student who did attend nursery, what is the estimated SES?
+<br>
+<br>
+
+  c) For a student who did not attend nursery, what is the estimated SES?
+<br>
+<br>
+
+  d) Provide the value of the intercept and give an interpretation.
+<br>
+<br>
+
+  e) Provide the value of the slope and give an interpretation.
+<br>
+<br>
+
+  f) For student with ID=1, what is the residual? Are we over-predicting or under-predicting?
+
+
+## Example: Computer
+
+Use regression to predict `SES` by whether or not the family owned a `computer` (coded as 0=No, 1=Yes).
+
+  a) Write down the regression line.
+<br>
+<br>
+
+  b) For a student whose family had a computer, what is the estimated `SES`?
+<br>
+<br>
+
+  c) For a student whose family did not have a computer, what is the estimated `SES`?
+<br>
+<br>
+
+  d) Provide the value of the intercept and give an interpretation.
+<br>
+<br>
+
+  e) Provide the value of the slope and give an interpretation.
+<br>
+<br>
+
+  f) For student with ID=1, what is the residual? Are we over-predicting or under-predicting?
+
+
+## Example: slope interpretation
+
+The following table is adapted from a 2020 publication, [*Training for a (half‐)marathon: Training volume and longest endurance run related to performance and running injuries*](https://pmc.ncbi.nlm.nih.gov/articles/PMC7496388/).
+
+For each predictor, interpret the number given in the "Estimate" column.
+
+Significant predictors of marathon finish time (in min):
+
+| Predictor | Estimate |
+|---|---:|
+| Sex (female) | 10.78 |
+| BMI (kg/m²) | 1.58 |
+| Running experience (years) | -0.42 |
+| Longest endurance run (km): <25 | 13.44 |
+
+
+
+
+
+
+<!-- 
+## Example
+
+4. The graph below shows the relationship between two variables, X and Y, for two different subgroups. Group 1 is illustrated with triangular points and Group 2 is illustrated with circular points.
+
+  a) Match each group with the most plausible value for its Pearson's Correlation Coefficient.
+
+  1.25, 0.96, 0.87, -0.87, -0.96, -1.25
+
+  Group 1: ______
+
+  Group 2: ______
+
+  b) Match each group with the most plausible value for its slope of the regression line.
+
+  1.9, 0.49, 0, -0.49, -1.9
+
+  Group 1: ______
+
+  Group 2: ______
+
+## Example
+
+5. The following scatterplot depicts the regression line for predicting a student's satisfaction with their ability to sleep in the dorm room from the satisfaction with the ability to study in their room. Both of these variables are measured on a Likert scale with 1 = Very Dissatisfied and 7 = Very Satisfied.
+
+  a) Give an interpretation in context for the relationship between the two variables.
+
+  b) Report the predicted score on satisfaction with ability to sleep in your room for a person who responded with a 1 on their satisfaction with their ability to study in their room.
+
+  c) Use the graph to approximate the value of the residual for the case that is indicated with the arrow.
+-->

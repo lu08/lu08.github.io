@@ -69,4 +69,4 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 - [AllCountries.csv](../../../dataset/AllCountries.csv){download="AllCountries.csv"}
 
-    Information on 217 countries collected for 2023 (or most recent available year). Source: [Lock5Data](https://www.lock5stat.com/datapage4e.html). Variable documentation can be found [here](AllCountries_doc.qmd).
+    Information on 217 countries collected for 2023 (or most recent available year). Source: [Lock5Data](https://www.lock5stat.com/datapage4e.html). Variable documentation can be found [here](../../../dataset/AllCountries_doc.qmd).

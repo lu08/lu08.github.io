@@ -1,0 +1,269 @@
+---
+title: "Chapter 8"
+---
+
+### Exercise 8.14
+
+If a single score is selected at random from a standard normal distribution, find the probability that:
+
+1. The score is above $z = 1.36$.
+2. The score is above $z = -2.08$.
+3. The score is below $z = 1.36$.
+4. The score is below $z = -2.08$.
+5. The score is between $z = -2.08$ and $z = 1.36$.
+6. The score is between $z = .40$ and $z = 1.36$.
+7. The score is between $z = -.40$ and $z = -1.36$.
+8. The score is less than $z = -.40$ or greater than $z = .40$.
+
+<details>
+<summary>Show solution</summary>
+
+1. `.09`
+2. `.98`
+3. `.91`
+4. `.02`
+5. `.89`
+6. `.26`
+7. `.26`
+8. `.69`
+
+</details>
+
+---
+
+### Exercise 8.15
+
+If a single score is selected at random from a standard normal distribution, find the value of $z$ such that:
+
+1. The probability of selecting a score greater than or equal to $z$ is approximately 30%.
+2. The probability of selecting a score greater than or equal to $z$ is approximately 65%.
+3. The probability of selecting a score less than or equal to $z$ is approximately 30%.
+4. The probability of selecting a score less than or equal to $z$ is approximately 65%.
+
+<details>
+<summary>Show solution</summary>
+
+1. `z = .52`
+2. `z = -.39`
+3. `z = -.52`
+4. `z = .39`
+
+</details>
+
+---
+
+### Exercise 8.19
+
+If a single score is selected at random from a normal distribution with mean 50 and standard deviation 10, find the probability that:
+
+1. The score is above 70.
+2. The score is above 40.
+3. The score is below 70.
+4. The score is below 40.
+5. The score is between 40 and 70.
+6. The score is between 60 and 70.
+7. The score is between 30 and 40.
+8. The score is 10 or more points away from the mean.
+
+<details>
+<summary>Show solution</summary>
+
+1. `.02`
+2. `.84`
+3. `.98`
+4. `.16`
+5. `.82`
+6. `.14`
+7. `.14`
+8. `.32`
+
+</details>
+
+---
+
+### Exercise 8.20
+
+If a single score is selected at random from a normal distribution with mean 50 and standard deviation 10, find the value of $X$ such that:
+
+1. The probability of selecting a score greater than or equal to $X$ is 10%.
+2. The probability of selecting a score greater than or equal to $X$ is 90%.
+3. The probability of selecting a score less than or equal to $X$ is 90%.
+4. The probability of selecting a score less than or equal to $X$ is 10%.
+
+<details>
+<summary>Show solution</summary>
+
+1. `62.8`
+2. `37.2`
+3. `62.8`
+4. `37.2`
+
+</details>
+
+---
+
+### Exercise 8.21
+
+Suppose a distribution is normally distributed with mean 75 and standard deviation 10.
+
+a. What is the value of $X$ such that the probability of selecting a score less than or equal to $X$ is 5%?
+b. What is the value of $X$ such that the probability of selecting a score greater than or equal to $X$ is 5%?
+c. What is the probability that a randomly selected score falls above 90?
+d. What is the probability that a randomly selected score falls at 90 or above?
+e. What is the probability that a randomly selected score falls between 70 and 80?
+f. What is the probability that a randomly selected score falls below 50?
+g. What is the probability that a randomly selected score falls between 70 and 90?
+
+<details>
+<summary>Show solution</summary>
+
+a. `58.55`
+b. `91.45`
+c. `.067`
+d. `.067`
+e. `.383`
+f. `.006`
+g. `.625`
+
+</details>
+
+---
+
+### Exercise 8.23
+
+Find the z-score that has the following percentage of area under the standard normal curve contained between $-z$ and $z$:
+
+a. 90 percent
+b. 95 percent
+c. 99 percent
+
+<details>
+<summary>Show solution</summary>
+
+a. `z = 1.645`
+b. `z = 1.960`
+c. `z = 2.576`
+
+</details>
+
+---
+
+### Exercise 8.24
+
+Given a set of scores that is normally distributed with mean 90 and standard deviation 8, what proportion of individuals will score:
+
+a. Between 92 and 96 inclusive?
+b. At least 94?
+c. At most 98?
+
+<details>
+<summary>Show solution</summary>
+
+a. `.175`
+b. `.309`
+c. `.841`
+
+</details>
+
+---
+
+### Exercise 8.25
+
+One way to qualify to join Mensa, a high-IQ society, is to score in the top 2 percent on a standardized IQ test such as the Wechsler Adult Intelligence Scales Full Scale IQ Test. Scores are normally distributed and standardized to have a mean of 100 and a standard deviation of 15. What score is necessary on this test to qualify for Mensa?
+
+<details>
+<summary>Show solution</summary>
+
+Using Jamovi: `130.81`. Using Table 1: `130.75`.
+
+</details>
+
+---
+
+### Exercise 8.26
+
+Suppose the distribution of maximum daily temperatures for a 1,000-day period in a certain tropical area is normal in shape with a mean of 87 degrees Fahrenheit and a standard deviation of 3 degrees Fahrenheit.
+
+a. How many of these days had maximum daily temperatures above 80 degrees Fahrenheit?
+b. What would be the percentile rank for a day that had a maximum temperature of 80 degrees Fahrenheit?
+
+<details>
+<summary>Show solution</summary>
+
+a. `990` days.
+b. Approximately `1 percent`.
+
+</details>
+
+---
+
+### Exercise 8.27
+
+Suppose 1,000 scores from a nationally administered achievement test are normally distributed with mean 50 and standard deviation 5.
+
+a. How many people would you expect to score greater than 57?
+b. What is the percentile rank of a score of 52?
+c. What raw score would you expect 10 percent of the scores to fall above?
+
+<details>
+<summary>Show solution</summary>
+
+a. `80.8`, or about `81` people.
+b. `65.54` percent, or `.655`.
+c. `56.4`.
+
+</details>
+
+---
+
+### Exercise 8.28
+
+The weights of all 12-month-old males in the United States are normally distributed with a mean of 18 pounds and a standard deviation of 3 pounds. If your son is 12 months old and weighs 22.5 pounds:
+
+a. What proportion of the 12-month-old male population weighs less than your son?
+b. What is your son's percentile rank relative to this population?
+
+<details>
+<summary>Show solution</summary>
+
+a. `.933`
+b. `.933`, or `93.3 percent`.
+
+</details>
+
+---
+
+### Exercise 8.31
+
+Consider `SUPPORTC`, which gives the percentage of voter support for Clinton. Unless otherwise specified, use the normal curve to approximate the distribution of `SUPPORTC`.
+
+**Part (a), the histogram task, is omitted as requested.**
+
+b. What `SUPPORTC` score has $z = 1.3$?
+c. If `SUPPORTC = 35` percent, what is $z$?
+d. Use the normal curve to estimate the proportion of states with voter support for Clinton at or below 35 percent.
+e. Use a frequency distribution table to find the actual proportion of states with voter support for Clinton at or below 35 percent.
+f. What is the approximate percentile rank of a score of 35 percent in `SUPPORTC`?
+g. What proportion or percent of senators score above `SUPPORTC = 55` percent for their states?
+h. What proportion or percent of senators score below `SUPPORTC = 55` percent for their states?
+i. What proportion or percent of senators score between `SUPPORTC = 35` percent and `SUPPORTC = 55` percent for their states?
+j. What `SUPPORTC` score cuts off the bottom 30 percent of `SUPPORTC` values?
+k. What `SUPPORTC` score would place you in the top 5 percent of scores?
+l. Use the normal curve to estimate the state voter support for Clinton percentage that would place a state at the 50th percentile.
+
+<details>
+<summary>Show solution</summary>
+
+b. `56.049`
+c. `-1.83`
+d. `.033`
+e. According to the cumulative percent column, `8 percent`.
+f. `.033`, or `3.3 percent`.
+g. `.1271`
+h. `.8729`
+i. `.8393`
+j. `43.80`
+k. `58.37`
+l. `47.3`
+
+</details>

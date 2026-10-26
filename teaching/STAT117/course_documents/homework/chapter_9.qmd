@@ -1,0 +1,85 @@
+---
+title: "Chapter 9"
+---
+
+### Exercise 9.4
+
+Suppose we are given a normally distributed population of scores with mean equal to 500 and standard deviation equal to 100.
+
+a. Describe the shape of the sampling distribution of means of size $N = 30$ (with replacement).
+b. What is the mean of the sampling distribution of means of size $N = 30$ (with replacement)?
+c. What is the standard deviation of the sampling distribution of means of size $N = 30$ (with replacement), also called the standard error of the mean?
+d. If we select a single sample of size $N = 30$ at random from this population, what is the probability that the sample mean will be more than two standard errors away from the actual population mean?
+e. What will the sampling distribution of means of size $N = 9$ (with replacement) look like?
+
+<details>
+<summary>Show solution</summary>
+
+a. The sampling distribution will be normally distributed.
+b. The mean is `500`.
+c. The standard error is `18.26`.
+d. Approximately `.046`.
+e. It will be normally distributed with mean `500` and standard error approximately `33.33`.
+
+</details>
+
+---
+
+### Exercise 9.5
+
+Suppose we are given a uniformly distributed population of scores with mean equal to 500 and standard deviation equal to 100.
+
+a. Describe the shape of the sampling distribution of means of size $N = 50$ (with replacement).
+b. What is the mean of the sampling distribution of means of size $N = 50$ (with replacement)?
+c. What is the standard deviation of the sampling distribution of means of size $N = 50$ (with replacement), also called the standard error of the mean?
+d. If we select a single sample of size $N = 50$ at random from this population, what is the probability that the sample mean will be more than two standard errors away from the actual population mean?
+e. What will the sampling distribution of means of size $N = 9$ (with replacement) look like?
+
+<details>
+<summary>Show solution</summary>
+
+a. According to the Central Limit Theorem, it will be approximately normally distributed.
+b. The mean is `500`.
+c. The standard error is `14.14`.
+d. Approximately `.046`.
+e. Because the uniform distribution is symmetric, the Central Limit Theorem is likely to apply. The sampling distribution will be approximately normal with mean `500` and standard deviation `33.33`.
+
+</details>
+
+---
+
+### Exercise 9.6
+
+Suppose we are given a negatively skewed population with mean 100 and standard deviation 10.
+
+1. Describe or give the value of the following characteristics of the sampling distribution of means of size $N = 64$ (with replacement): shape, mean, and standard error.
+2. What proportion of sample means falls below 98?
+
+<details>
+<summary>Show solution</summary>
+
+1. The sampling distribution is approximately normal, with mean `100` and standard error $10/\sqrt{64} = 1.25$.
+2. $z = (98 - 100)/1.25 = -1.6$, so the proportion below 98 is `.0548`.
+
+</details>
+
+---
+
+### Exercise 9.13
+
+Given the population of 5,000 scores with $\mu = 8$ and $\sigma = 4$ shown in the source homework document:
+
+1. If a researcher randomly draws a single sample of 300 values from this population, what is the likely shape of the distribution of sample scores: negatively skewed, positively skewed, approximately normal, or exactly normal?
+2. If a researcher randomly draws 200 samples, each containing 300 values, from this population and computes the sample mean for each sample, what is the likely shape of the distribution of sample means: negatively skewed, positively skewed, approximately normal, or exactly normal?
+3. What is an appropriate label for the horizontal axis of the distribution described in part 1?
+4. What is an appropriate label for the horizontal axis of the distribution described in part 2?
+
+<details>
+<summary>Show solution</summary>
+
+1. Positively skewed.
+2. Approximately normal, according to the Central Limit Theorem.
+3. Score or $X$.
+4. Sample mean, or $\bar{X}$.
+
+</details>

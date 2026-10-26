@@ -11,6 +11,7 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 3: Locations, Spread, and Skewness](all_lectures/chapter_3_slide.html)
 - [Chapter 4: Transformations and Z-scores](all_lectures/chapter_4_slide.html)
 - [Chapter 5: Bivariate relationships](all_lectures/chapter_5_slide.html)
+- [Chapter 6: Simple Linear Regression](all_lectures/chapter_6_slide.html)
 
 ## StatChat
 
@@ -31,6 +32,12 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Homework Chapter 3](homework/chapter_3.qmd)
 - [Homework Chapter 4](homework/chapter_4.qmd)
 - [Homework Chapter 5](homework/chapter_5.qmd)
+- [Homework Chapter 6](homework/chapter_6.qmd)
+- [Homework Chapter 7](homework/chapter_7.qmd)
+- [Homework Chapter 8](homework/chapter_8.qmd)
+- [Homework Chapter 9](homework/chapter_9.qmd)
+- [Homework Chapter 11](homework/chapter_11.qmd)
+- [Homework Chapter 13](homework/chapter_13.qmd)
 
 
 ## Assignment

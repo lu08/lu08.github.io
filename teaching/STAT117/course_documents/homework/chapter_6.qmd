@@ -1,0 +1,268 @@
+---
+title: "Chapter 6"
+---
+
+### Exercise 6.1
+
+In Exercise 5.6, we used the States data set to determine that there was a positive linear relationship between `EDUCEXPE`, the average educational expenditure per pupil, and `TEACHPAY`, the average salary of public school teachers in the state. In this exercise, create and interpret a model to predict `EDUCEXPE` from `TEACHPAY`.
+
+1. Verify that regression is appropriate in this case.
+2. Find the regression equation for predicting `EDUCEXPE` from `TEACHPAY`.
+3. Interpret the value of the slope in context, using language that someone who has not taken statistics would understand.
+4. Interpret the value of the intercept in context, or indicate why it is not meaningful.
+5. What is the predicted educational expenditure for a state with teacher pay of $40,000?
+6. Is it appropriate to use the regression equation to predict educational expenditure for a state with teacher pay of $80,000?
+7. Report the value of $R$ and interpret it in context.
+
+<details>
+<summary>Show solution</summary>
+
+1. `EDUCEXPE` and `TEACHPAY` are scale/ratio variables, and the scatterplot indicates that the pattern is effectively approximated by a line.
+2. $\widehat{EDUCEXPE} = 0.276(TEACHPAY) - 3372.988$.
+3. A one-dollar increase in average teacher salary corresponds to an average increase of about 28 cents in per-pupil educational expenditure.
+4. The intercept is not meaningful because no state's average teacher salary is close to $0.
+5. $0.276(40{,}000) - 3372.988 = \$7{,}667.01$.
+6. No. $80{,}000$ is well beyond the largest teacher salary value in the data used to create the model.
+7. $R = .72$, indicating a strong correlation between actual and predicted educational expenditures.
+
+</details>
+
+---
+
+### Exercise 6.3
+
+Using the NELS data set, investigate whether twelfth-grade math achievement (`ACHMAT12`) can be predicted from eighth-grade socioeconomic status (`SES`). Create a scatterplot of `ACHMAT12` by `SES` with the regression line and use the results to answer the following.
+
+1. Determine whether regression is appropriate for predicting `ACHMAT12` from `SES`.
+2. What is the regression equation?
+3. Is there a meaningful interpretation of the slope? If so, explain what additional information it provides.
+4. Is there a meaningful interpretation of the y-intercept? If so, explain what additional information it provides.
+5. What is the predicted twelfth-grade math achievement score for a student with `SES = 20`?
+6. For the first student in the NELS data set (`ID = 1`), what is the actual twelfth-grade math achievement score?
+7. For this student, what is the predicted twelfth-grade math achievement score?
+
+<details>
+<summary>Show solution</summary>
+
+1. Both variables are interval-level, and the scatterplot pattern is sufficiently modeled by a line.
+2. $\widehat{ACHMAT12} = 0.368(SES) + 50.123$.
+3. Each one-point increase in SES is associated with an average increase of 0.368 points in twelfth-grade math achievement.
+4. A student with `SES = 0` is predicted to score 50.123 in twelfth-grade math achievement.
+5. The predicted score is 57.483.
+6. The actual score is 59.69.
+7. The predicted score is 58.59.
+
+</details>
+
+---
+
+### Exercise 6.4
+
+Use the Impeach data set to perform a simple linear regression analysis predicting a senator's conservatism (`CONSERVA`) from the state voter support for Clinton (`SUPPORTC`).
+
+1. Create a scatterplot and verify that the data have an approximately linear shape.
+2. What is the correlation, $r$, between conservatism and state voter support for Clinton?
+3. What is the value of $R$, a measure of the goodness of fit? Describe the goodness of fit.
+4. Write the regression equation for predicting conservatism ($Y$) from state voter support for Clinton ($X$).
+5. Interpret the slope in context.
+6. Interpret the y-intercept, or explain why it is not meaningful.
+7. Use the regression equation to predict conservatism for a senator whose state gave Clinton 50 percent of the vote in the 1996 presidential election.
+
+<details>
+<summary>Show solution</summary>
+
+1. The shape is not exactly linear, but no other simple curve provides a better approximation.
+2. $r = -.447$.
+3. $R = .447$, indicating a moderate-to-strong goodness of fit.
+4. $\widehat{CONSERVA} = -2.488(SUPPORTC) + 164.911$.
+5. Each one-percentage-point increase in state voter support for Clinton is associated with an average 2.488-point decrease in the senator's conservatism rating.
+6. The intercept is not meaningful because the data include no states with voter support near zero; the lowest support value was above 30%.
+7. $-2.488(50) + 164.911 = 40.51$.
+
+</details>
+
+---
+
+### Exercise 6.5
+
+The following scatterplot, created using variables from the Framingham data set, shows the relationship between initial body mass index (`BMI1`) and initial diastolic blood pressure (`DIABP1`). Points are labeled by the person's ID number. Use the scatterplot to answer the following questions.
+
+1. Is linear regression appropriate for analyzing the relationship? Explain.
+2. Is the slope positive, negative, or near zero? What does that tell you about the relationship?
+3. Use the regression line to estimate initial diastolic blood pressure for a person with an initial BMI of 19.
+4. Explain why the regression model should not be used to estimate initial diastolic blood pressure for a person with an initial BMI of 50.
+
+<details>
+<summary>Show solution</summary>
+
+1. Yes. Both variables are ratio-level, and the data are effectively modeled by a line, although a few outliers warrant investigation.
+2. The slope is positive: adults with relatively high BMI tend also to have relatively high diastolic blood pressure.
+3. Approximately 75 mmHg.
+4. A BMI of 50 is above the highest value measured in the data set, so using the model there would be extrapolation.
+
+</details>
+
+---
+
+### Exercise 6.8
+
+In Exercise 6.1, a model was created to predict `EDUCEXPE` from `TEACHPAY`. Use that model to examine the residuals for Alabama, the first state in the data set.
+
+a. What is the predicted average educational expenditure for Alabama?
+b. What is Alabama's actual average educational expenditure?
+c. What is the value of the residual?
+d. Does the model overpredict or underpredict `EDUCEXPE` for Alabama?
+
+<details>
+<summary>Show solution</summary>
+
+a. $7{,}125.70$.
+b. $6{,}300$.
+c. The residual is $-825.70$.
+d. The model overpredicts Alabama's educational expenditure.
+
+</details>
+
+---
+
+### Exercise 6.13
+
+In this exercise, use the NELS data set to create a model predicting socioeconomic status (`SES`) from eighth-grade computer ownership (`COMPUTER`), a dichotomous variable. **Part (a), the scatterplot task, is omitted as requested.**
+
+b. What is the regression equation for predicting SES from computer ownership?
+c. Interpret the slope in context.
+d. Interpret the intercept in context, or explain why it is not meaningful.
+e. Use the equation to predict SES for those who owned a computer in eighth grade.
+f. Use the equation to predict SES for those who did not own a computer in eighth grade.
+g. Use Jamovi to find the mean SES of those who did and did not own a computer in eighth grade.
+h. If `COMPUTER` were recoded as `COMP1`, with 1 = did not own and 2 = did own, what would the regression equation be?
+i. If `COMPUTER` were recoded as `COMP2`, with 1 = did not own and 0 = did own, what would the regression equation be?
+j. Is it ever not meaningful to interpret the intercept when the independent variable is dichotomous?
+
+<details>
+<summary>Show solution</summary>
+
+b. $\widehat{SES} = 4.83(COMPUTER) + 16.144$.
+c. Students who owned a computer in eighth grade have an average SES 4.83 points higher than those who did not.
+d. The intercept, 16.14, is the predicted mean SES for students who did not own a computer in eighth grade (`COMPUTER = 0`).
+e. For owners, the predicted SES is $4.83(1) + 16.144 = 20.97$.
+f. For non-owners, the predicted SES is $4.83(0) + 16.144 = 16.14$.
+g. Comparing means gives those same group means: 20.97 for computer owners and 16.14 for non-owners.
+h. $\widehat{SES} = 4.83(COMP1) + 11.31$.
+i. $\widehat{SES} = -4.83(COMP2) + 20.97$.
+j. Yes. The intercept is meaningful when one category is coded 0. If neither category is coded 0, the intercept does not represent either group's mean.
+
+</details>
+
+---
+
+### Exercise 6.14
+
+Students in an introductory college statistics course took the SATS (Survey of Attitudes Toward Statistics). A regression model predicted `VALUE` (attitudes about the usefulness, relevance, and worth of statistics in personal and professional life, rated as the average of several 1-to-7 Likert-scale items) from `GENDER`, coded 1 = male and 2 = female. The regression equation is $\widehat{VALUE} = .573(GENDER) + 4.059$. Use the equation and coding to answer the questions.
+
+1. What is the sign of the correlation between `GENDER` and `VALUE`?
+2. Which gender tended to give a higher rating to the value of the course?
+3. What is the predicted `VALUE` score for females?
+4. What is the average `VALUE` score for males?
+
+<details>
+<summary>Show solution</summary>
+
+1. Positive, as indicated by the positive slope.
+2. Females.
+3. $.573(2) + 4.059 = 5.21$.
+4. $.573(1) + 4.059 = 4.63$.
+
+</details>
+
+---
+
+### Exercise 6.16
+
+If there is a positive linear correlation between $X$ and $Y$, then the regression equation for predicting $Y$ from $X$ will have a:
+
+a. Positive slope
+b. Negative slope
+c. Positive y-intercept
+d. Negative y-intercept
+
+<details>
+<summary>Show solution</summary>
+
+a. Positive slope.
+
+</details>
+
+---
+
+### Exercise 6.20
+
+During the semester, students in a statistics class provided their average weekly study time and course grade (on a 0.0-to-4.0 scale). The regression equation for predicting grade from hours studied was $\widehat{Y} = 1.2X + 0.3$. If a student studies 3 hours per week on average, what is her predicted numerical course grade?
+
+a. 2.25
+b. 3.90
+c. 3.60
+d. Cannot be determined from the data
+
+<details>
+<summary>Show solution</summary>
+
+b. $1.2(3) + 0.3 = 3.90$.
+
+</details>
+
+---
+
+### Exercise 6.21
+
+Given the scenario in Exercise **6.20**, which conclusion is warranted?
+
+a. For each additional hour of study per week, the predicted grade increases by 1.2 on average.
+b. For each additional hour of study per week, the predicted grade increases by 0.3 on average.
+c. For each additional hour of study per week, the predicted grade decreases by 1.2 on average.
+d. For each additional hour of study per week, the predicted grade decreases by 0.3 on average.
+
+<details>
+<summary>Show solution</summary>
+
+a. For each additional hour of study per week, the predicted grade increases by 1.2 points on average. The 1.2 is the regression slope.
+
+</details>
+
+---
+
+### Exercise 6.22
+
+The correlation between exhaustion level and performance on an essay exam was $r = -.90$. If Alejandro scores below the mean on exhaustion level, it is likely that he will score:
+
+a. Above the mean on the essay exam
+b. Below the mean on the essay exam
+c. On the mean on the essay exam
+d. In an unpredictable way on the essay exam
+
+<details>
+<summary>Show solution</summary>
+
+a. Above the mean on the essay exam. With a strong negative correlation, a below-average exhaustion score tends to be paired with an above-average exam performance score.
+
+</details>
+
+---
+
+### Exercise 6.24
+
+The following question relates to the scatterplot in the [original Chapter 6 homework document](word_files/Chapter%206%20Third%20Edition%20HW.docx), which shows the relationship between $X$ and $Y$ for four subgroups. For each subgroup, select the slope of the regression line, $b$, that best represents the relationship between $X$ and $Y$. You may select a value more than once.
+
+- Group 1: _____
+- Group 2: _____
+- Group 3: _____
+- Group 4: _____
+
+Choices: $b = .95$, $b = -.95$, $b = 1.80$, $b = -1.80$, $b = 0$.
+
+<details>
+<summary>Show solution</summary>
+
+Using the labels in the source document: Group 1 = a ($b = .95$); Group 2 = b ($b = -.95$); Group 3 = c ($b = 1.80$); Group 4 = d ($b = -1.80$).
+
+</details>

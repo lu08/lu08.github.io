@@ -1,0 +1,317 @@
+---
+title: "Chapter 11"
+---
+
+<u>Note:</u> The book talks about the paired samples t-test after the independent samples t-test, but the order of the problems here is switched according to how the materials are taught in class. If some text in the Word document appears as gibberish, try changing the font to Times New Roman or Calibri.
+
+### Exercise 11.1
+
+The mean intellectual ability (`IQ`) score for all children attending public elementary school in the city is 100 with standard deviation $\sigma = 15$. The children in the sample are a random subset of children in this city who are diagnosed with learning disabilities. Use Jamovi to construct a 95% confidence interval to estimate the mean IQ score for this population. Do not assume that the population standard deviation for children with learning disabilities is 15; estimate it from the sample. Use the results to answer the questions below.
+
+a. Why use a t-test rather than a z-test in this case?
+b. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+c. What is the 95% confidence interval for the mean IQ score of children in this population?
+d. State the null and alternative hypotheses for determining whether the population mean IQ is 100.
+e. Using the 95% confidence interval, can the null hypothesis be rejected? Why or why not?
+f. State the results of the hypothesis test in context.
+
+<details>
+<summary>Show solution</summary>
+
+a. A t-test is used because $\sigma$ is not assumed to be known and must be estimated from the sample.
+b. The one-sample t-test is robust to violations of normality here because the sample size is large ($N = 105$).
+c. The 95% confidence interval is `(79.38, 83.61)`.
+d. $H_0: \mu = 100$; $H_1: \mu \ne 100$.
+e. Yes. The interval does not contain 100, so 100 is not a plausible value for the population mean.
+f. All values in the interval are below 100, so the mean IQ of children with learning disabilities in this city is statistically significantly lower than 100.
+
+</details>
+
+---
+
+### Exercise 11.2
+
+Use a one-sample t-test to determine whether the mean reading comprehension score (`READCOMP`) of children with learning disabilities attending public elementary school in this city is 75. Use $\alpha = .05$.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+b. State the null and alternative hypotheses.
+c. What is the p-value for the one-sample t-test?
+d. Use the p-value to determine whether the null hypothesis can be rejected in favor of the alternative.
+e. State the results of the hypothesis test in context.
+f. What is the 95% confidence interval for the population mean reading comprehension score?
+g. Using the confidence interval, can the null hypothesis be rejected? Why or why not?
+
+<details>
+<summary>Show solution</summary>
+
+a. The one-sample t-test is robust to violations of normality because the sample size is large ($N = 76$).
+b. $H_0: \mu = 75$; $H_1: \mu \ne 75$.
+c. $p = .083$.
+d. No. We cannot reject the null hypothesis in favor of the alternative.
+e. The mean reading comprehension score is not statistically significantly different from 75, $M = 77.63$, $SD = 13.08$, $t(75) = 1.754$, $p = .083$.
+f. The 95% confidence interval is `(74.64, 80.62)`.
+g. No. The interval contains 75, so 75 remains a plausible population mean.
+
+</details>
+
+---
+
+### Exercise 11.3
+
+A person with a body mass index higher than 25 is classified as overweight. Determine whether the mean body mass index at the first examination (`BMI1`) for the population of non-institutionalized adults is greater than 25. Use $\alpha = .05$.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+b. State the null and alternative hypotheses.
+c. Conduct the one-sample t-test and use its p-value to determine whether the population mean BMI is greater than 25.
+d. Calculate and interpret Cohen's $d$.
+e. Why is the confidence interval in the one-sample t-test output not appropriate for determining whether the mean BMI is greater than 25?
+
+<details>
+<summary>Show solution</summary>
+
+a. The one-sample t-test is robust to violations of normality because the sample size is large ($N = 400$).
+b. $H_0: \mu = 25$; $H_1: \mu > 25$.
+c. The sample mean supports the hypothesized direction ($M = 25.74 > 25$). The test gives $t(399) = 3.80$ and a two-tailed $p < .0005$, so the one-tailed p-value is $p < .00025$. The population mean BMI is greater than 25.
+d. The mean BMI is 0.19 standard deviations above 25, a small effect.
+e. Confidence intervals are not appropriate for testing directional hypotheses.
+
+</details>
+
+---
+
+### Exercise 11.5 a–d
+
+Use `FAMSIZE`, the number of people in a household, to construct a 95% confidence interval to determine whether average family size is 4.5 for college-bound high school students who have always been at grade level. Do not create a Syntax file.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the analysis.
+b. What is the 95% confidence interval for average family size?
+c. Use the confidence interval to determine whether the population average family size is 4.5. If not, indicate whether it is higher or lower.
+d. Calculate and interpret Cohen's $d$.
+
+<details>
+<summary>Show solution</summary>
+
+a. The one-sample t-test is robust to violations of normality because the sample size is large ($N = 500$).
+b. The 95% confidence interval is `(4.58, 4.81)`.
+c. Average family size is statistically significantly higher than 4.5.
+d. $d = (4.69 - 4.5)/1.319 = .14$. The mean is 0.14 standard deviations above 4.5, a negligible effect. This is a case of statistical significance without practical significance.
+
+</details>
+
+---
+
+### Exercise 11.8
+
+For college-bound students from the Northeast (`REGION = 1`) who have always been at grade level, use a 95% confidence interval to estimate the average number of years of English taken in high school (`UNITENGL`).
+
+a. Restrict the sample to students from the Northeast.
+b. Evaluate the normality assumption, or explain why a violation would not compromise the analysis.
+c. What is the 95% confidence interval for the population mean number of years of English?
+d. According to the interval, is the population mean equal to three years?
+e. Calculate and interpret Cohen's $d$.
+f. Reset Jamovi to analyze all NELS students, not just those from the Northeast.
+
+<details>
+<summary>Show solution</summary>
+
+a. Select cases where `REGION = 1`.
+b. The one-sample t-test is robust to violations of normality because the sample size is large ($N = 106$).
+c. The 95% confidence interval is `(3.957, 4.153)`.
+d. No. The estimate is greater than three years.
+e. $d = 2.06$. The mean is 2.06 standard deviations above three years, a very large effect.
+f. In Jamovi, reset the data filter to include all cases, not just students from the Northeast.
+
+</details>
+
+---
+
+### Exercise 11.22
+
+Use a paired samples t-test to determine whether children with learning disabilities attending public elementary school in this city perform better in math comprehension (`MATHCOMP`) or reading comprehension (`READCOMP`). Use $\alpha = .05$.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+c. State the null and alternative hypotheses.
+d. Use the paired samples test to determine whether students perform better in math or reading comprehension.
+e. Use the 95% confidence interval to determine whether students perform better in math or reading comprehension.
+f. Report and interpret Cohen's $d$ as a measure of practical significance.
+
+<details>
+<summary>Show solution</summary>
+
+a. The sample size is large enough that a violation of normality will not compromise the validity of the test.
+c. $H_0: \mu_{MATHCOMP} = \mu_{READCOMP}$; $H_1: \mu_{MATHCOMP} \ne \mu_{READCOMP}$.
+d. Students scored significantly higher in math comprehension ($M = 86.41$, $SD = 14.59$) than in reading comprehension ($M = 77.78$, $SD = 13.14$), $t(73) = 5.298$, $p < .0005$.
+e. The 95% confidence interval for the mean difference is `(5.38, 11.87)`. Because it does not include zero, math comprehension scores are significantly higher.
+f. Students scored about 0.62 standard deviations (of the paired differences) higher in math comprehension, a moderate effect.
+
+</details>
+
+---
+
+### Exercise 11.23
+
+Use a paired samples t-test to determine whether systolic blood pressure (`SYSBP1`, `SYSBP3`) increases over time, on average, among non-institutionalized adults. Assume the normality and equal-variance assumptions are tenable. Do not create a Syntax file.
+
+a. What is the p-value associated with the paired t-test for determining whether systolic blood pressure increases over time?
+b. According to the p-value, does systolic blood pressure increase over time?
+c. Report and interpret Cohen's $d$ as a measure of effect size.
+
+<details>
+<summary>Show solution</summary>
+
+a. The one-tailed p-value is $p < .00025$; the means support the hypothesized direction.
+b. Yes. Mean systolic blood pressure at time 3 (1968) ($M = 137.99$, $SD = 22.10$) is significantly higher than at time 1 (1956) ($M = 127.43$, $SD = 19.15$), $t(307) = -9.51$, $p < .00025$.
+c. Time 3 systolic blood pressure is 0.54 standard deviations (of the paired differences) higher than time 1, a moderate effect.
+
+</details>
+
+---
+
+### Exercise 11.26
+
+Among college-bound students who have always been at grade level, does science achievement relative to all students in the grade change from eighth (`ACHSCI08`) to twelfth grade (`ACHSCI12`)?
+
+a. Explain why a paired samples t-test is more appropriate than a one-sample or independent samples test.
+b. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+c. State the null and alternative hypotheses.
+d. Find the p-value for the paired samples t-test.
+e. According to the p-value, does science achievement change from eighth to twelfth grade?
+f. Find the 95% confidence interval for the mean difference in science achievement between eighth and twelfth grade.
+g. According to the confidence interval, does science achievement change from eighth to twelfth grade?
+
+<details>
+<summary>Show solution</summary>
+
+a. The two scores come from the same students, so they are paired. A paired t-test is equivalent to a one-sample t-test on each student's difference score.
+b. There are 497 scores at both time points, so a violation of normality will not compromise the test.
+c. $H_0: \mu_{ACHSCI08} = \mu_{ACHSCI12}$; $H_1: \mu_{ACHSCI08} \ne \mu_{ACHSCI12}$.
+d. $p = .75$.
+e. No. Achievement changes from $M = 55.67$ ($SD = 9.39$) in eighth grade to $M = 55.77$ ($SD = 8.57$) in twelfth grade, which is not statistically significant, $t(496) = -.32$, $p = .75$.
+f. The 95% confidence interval is `(-.76, .54)` or, with the difference reversed, `(-.54, .76)`.
+g. Zero is included in the interval, so the change is not statistically significant.
+
+</details>
+
+---
+
+### Exercise 11.27
+
+Use a paired samples t-test to determine whether self-concept relative to all students in the grade increases from eighth (`SLFCNC08`) to twelfth grade (`SLFCNC12`) among college-bound students who have always been at grade level. Address the assumptions and interpret the results using either a hypothesis test with $\alpha = .05$ or a 95% confidence interval. If significant, report and interpret an effect size.
+
+<details>
+<summary>Show solution</summary>
+
+All 500 students completed the self-concept questionnaires in both grades. The paired sample size exceeds 30, so a violation of normality would not compromise the test; equal sample sizes also mean unequal variances are not a concern. Self-concept increased significantly from eighth grade ($M = 21.05$, $SD = 5.97$) to twelfth grade ($M = 31.48$, $SD = 7.23$), $t(499) = -33.06$, $p < .00025$. The increase is 1.48 standard deviations of the paired differences, a large effect.
+
+</details>
+
+---
+
+### Exercise 11.12
+
+Conduct an independent samples t-test to determine whether there are gender (`GENDER`) differences in average math comprehension (`MATHCOMP`) among children with learning disabilities attending public elementary school in this city. Use $\alpha = .05$.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+b. According to Levene's test, should the t-ratio use equal or unequal variances?
+c. State the null and alternative hypotheses.
+d. Are there statistically significant gender differences in average math comprehension? If so, describe them.
+e. Calculate and interpret Cohen's $d$.
+
+<details>
+<summary>Show solution</summary>
+
+a. Both group sample sizes exceed 30, so the test is robust to violations of normality.
+b. Use equal variances; Levene's test is not significant, $F(1, 92) = .57$, $p = .45$.
+c. $H_0: \mu_{males} = \mu_{females}$; $H_1: \mu_{males} \ne \mu_{females}$.
+d. Females ($M = 90.21$, $SD = 14.42$) scored significantly higher than males ($M = 84.05$, $SD = 12.96$), $t(92) = -2.12$, $p = .04$.
+e. Females scored about 0.46 standard deviations higher than males, a moderate effect.
+
+</details>
+
+---
+
+### Exercise 11.13
+
+Conduct an independent samples t-test to determine whether mean intellectual ability (`IQ`) differs by placement type (`PLACEMEN`: self-contained classroom or resource room) among children with learning disabilities attending public elementary school in this city. Do not create a Syntax file.
+
+a. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+b. According to Levene's test, should the t-ratio use equal or unequal variances?
+c. According to the 95% confidence interval, are there statistically significant differences in mean IQ by placement type? If so, describe them.
+d. Calculate and interpret Cohen's $d$.
+
+<details>
+<summary>Show solution</summary>
+
+a. Both group sample sizes exceed 30, so the test is robust to violations of normality.
+b. Use equal variances; Levene's test is not significant, $F(1, 103) = 1.30$, $p = .26$.
+c. The 95% confidence interval for the difference is `(4.95, 13.03)`, which excludes zero. Resource-room students ($M = 84.83$, $SD = 10.37$) scored higher on average than students in self-contained classrooms ($M = 75.85$, $SD = 9.57$).
+d. Resource-room students scored about 0.89 standard deviations higher, a large effect.
+
+</details>
+
+---
+
+### Exercise 11.14 b–e
+
+Use the independent samples t-test to investigate whether initial age (`AGE1`) differs on average between the sexes (`SEX`) in the population of non-institutionalized adults. Complete parts b–e only.
+
+b. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+c. According to Levene's test, should the t-ratio use equal or unequal variances?
+d. According to the p-value, are there initial age differences between the sexes? If so, describe them.
+e. Use the 95% confidence interval to estimate the average age difference between males and females.
+
+<details>
+<summary>Show solution</summary>
+
+b. Both group sample sizes exceed 30, so the test is robust to violations of normality.
+c. Use equal variances; Levene's test is not significant, $F(1, 396) = 1.21$, $p = .27$.
+d. No. Females ($M = 48.63$, $SD = 8.18$) are not significantly different in age from males ($M = 49.36$, $SD = 8.67$), $t(396) = .87$, $p = .37$.
+e. The 95% confidence interval for the mean difference is `(-.93, 2.37)`, which includes zero, consistent with the non-significant test.
+
+</details>
+
+---
+
+### Exercise 11.18
+
+Use an independent samples t-test to determine whether total serum cholesterol (`TOTCHOL3`) differs by sex (`SEX`) among non-institutionalized adults. Address the assumptions and interpret the results using either a hypothesis test with $\alpha = .05$ or a 95% confidence interval. If statistically significant, report and interpret an effect size.
+
+<details>
+<summary>Show solution</summary>
+
+Both group sample sizes exceed 30, so the test is robust to violations of normality. Levene's test supports equal variances, $F(1, 284) = .50$, $p = .48$. Women ($M = 245.57$, $SD = 48.31$) had significantly higher mean cholesterol than men ($M = 226.70$, $SD = 42.31$), $t(284) = -3.51$, $p = .001$. The 95% confidence interval for the mean difference (men minus women) is `(-29.45, -8.30)`, excluding zero. Cohen's $d = .42$, a weak-to-moderate effect.
+
+</details>
+
+---
+
+### Exercise 11.19
+
+Among college-bound students who have always been at grade level, do students whose families owned a computer in eighth grade (`COMPUTER`) score differently in twelfth-grade math achievement (`ACHMAT12`), on average, than students whose families did not own a computer?
+
+a. Explain why an independent samples t-test is more appropriate than a one-sample or paired samples test.
+b. Evaluate the normality assumption, or explain why a violation would not compromise the test.
+c. According to Levene's test, is there reason to believe a violation of the homogeneity of variances assumption would compromise the test?
+d. State the null and alternative hypotheses.
+e. Find the p-value for determining whether the population group means differ.
+f. Interpret the test result in context.
+g. Find the 95% confidence interval for the mean difference in twelfth-grade math achievement.
+h. According to the confidence interval, do the population group means differ?
+i. Calculate and interpret Cohen's $d$.
+j. Which is longer, the 99% or 95% confidence interval?
+
+<details>
+<summary>Show solution</summary>
+
+a. The question compares two population means for separate, unpaired groups, making an independent samples t-test appropriate.
+b. Both group sample sizes exceed 30 (263 non-owners and 237 owners), so a violation of normality should not compromise the test.
+c. Levene's test supports equal variances, $F(1, 496) = 2.21$, $p = .14$.
+d. $H_0: \mu_{computer} = \mu_{\text{no computer}}$; $H_1: \mu_{computer} \ne \mu_{\text{no computer}}$.
+e. $p < .0005$.
+f. Students whose families owned a computer scored significantly higher ($M = 58.36$, $SD = 7.93$) than those whose families did not ($M = 55.60$, $SD = 7.62$), $t(498) = -3.97$, $p < .0005$.
+g. The 95% confidence interval for the difference is `(-4.13, -1.40)` if calculated as non-owners minus owners, or `(1.40, 4.13)` in the reverse order.
+h. Yes. The interval excludes zero, and the sample means show that computer owners score higher.
+i. Computer owners score about 0.36 standard deviations higher, a small-to-moderate effect.
+j. The 99% confidence interval is longer. It is `(-4.56, -.97)` or `( .97, 4.56)`, compared with the 95% interval.
+
+</details>

@@ -1,0 +1,149 @@
+---
+title: "Chapter 13"
+---
+
+### Exercise 13.1
+
+Does average eighth-grade math achievement (`ACHMAT08`) of college-bound students who have always been at grade level vary by whether they are enrolled in a rigorous academic, academic, or vocational/other high school program (`HSPROG`)? Use $\alpha = .05$.
+
+a. Why is a one-way ANOVA appropriate for this question?
+c. Evaluate the normality assumption, or explain why a violation would not compromise the analysis.
+d. Use Levene's test to evaluate the homogeneity of variance assumption, or explain why a violation would not compromise the analysis.
+e. State the null and alternative hypotheses.
+f. What is the p-value associated with the one-way ANOVA?
+g. Use the p-value to determine whether the null hypothesis can be rejected.
+h. State the ANOVA results in context.
+i. Calculate and interpret $R^2$ as a measure of effect size.
+j. Are post-hoc tests necessary? If so, report and interpret the LSD and Tukey HSD results.
+
+<details>
+<summary>Show solution</summary>
+
+a. One-way ANOVA compares means of an interval-level variable across two or more independent groups. Here it compares math achievement across high-school program types.
+c. Skewness ratios for all program types are less than 2 in magnitude, so the normality assumption is tenable.
+d. Levene's test supports homogeneity of variance, $F(3, 496) = .78$, $p = .51$.
+e. $H_0: \mu_{RA} = \mu_A = \mu_{SV} = \mu_O$; $H_1$: not all population means are equal.
+f. $p < .0005$.
+g. Reject the null hypothesis.
+h. Average eighth-grade math achievement varies by high-school program type, $F(3, 496) = 8.23$, $p < .0005$.
+i. Approximately 4.74% of the variance in eighth-grade math achievement is explained by high-school program type, a relatively small effect.
+j. Post-hoc tests are needed because the ANOVA is significant and compares more than two means. LSD indicates rigorous academic students score higher than students in all other programs, and academic students score higher than vocational/other students; vocational and other do not differ. Tukey HSD indicates rigorous academic students score higher than vocational and other students, but not academic students; academic students score higher than other students, but not vocational students. Tukey HSD is more conservative than LSD.
+
+</details>
+
+---
+
+### Exercise 13.2
+
+Does eighth-grade self-concept (`SLFCNC08`) of college-bound students who have always been at grade level vary by whether they live in an urban, suburban, or rural setting (`URBAN`)? Use $\alpha = .05$.
+
+a. Why choose a one-way ANOVA over an independent samples t-test?
+c. Evaluate the normality and homogeneity of variance assumptions, or explain why violations would not compromise the analysis.
+d. Conduct the ANOVA and interpret the results in context.
+e. Calculate and interpret $R^2$ as an effect size.
+f. Are post-hoc tests necessary? If so, report and interpret the LSD and Tukey HSD results.
+
+<details>
+<summary>Show solution</summary>
+
+a. There are three independent urbanicity groups, so a one-way ANOVA is appropriate; an independent samples t-test compares only two groups.
+c. The group sizes are 123 urban, 215 suburban, and 162 rural. All exceed 30, so the ANOVA is robust to normality violations. Levene's test supports equal variances, $F(2, 497) = .45$, $p = .64$.
+d. Mean eighth-grade self-concept varies by urbanicity, $F(2, 497) = 3.79$, $p = .02$.
+e. Urbanicity explains approximately 1.5% of the variance in eighth-grade self-concept, a small effect.
+f. Post-hoc tests are necessary. Both LSD and Tukey HSD find that students from urban environments have significantly higher self-concept than students from rural environments; no other pairwise differences are significant.
+
+</details>
+
+---
+
+### Exercise 13.3
+
+Does twelfth-grade math achievement (`ACHMAT12`) of college-bound students who have always been at grade level vary by whether or not they ever tried cigarettes (`CIGARETT`)? Use $\alpha = .05$.
+
+b. Evaluate the underlying assumptions, or explain why violations would not compromise the analysis.
+c. Conduct the ANOVA and interpret the results in context.
+d. Calculate and interpret $R^2$ as a measure of effect size.
+e. Are post-hoc tests necessary? If so, report and interpret the LSD and Tukey HSD results.
+f. Compare the ANOVA results to an independent samples t-test. Are they consistent, and is that expected?
+
+<details>
+<summary>Show solution</summary>
+
+b. Group sizes are 429 students who never smoked and 71 who tried cigarettes. These sizes make the ANOVA robust to normality violations. Levene's test supports equal variances, $F(1, 498) = .001$, $p = .98$.
+c. Twelfth-grade math achievement differs by cigarette use, $F(1, 498) = 18.53$, $p < .0005$.
+d. Cigarette use explains approximately 3.59% of the variance in math achievement, a relatively small effect.
+e. Post-hoc tests are not needed because there are only two groups. Students who never smoked ($M = 57.51$, $SD = 7.71$) scored significantly higher than students who had tried cigarettes ($M = 53.24$, $SD = 8.00$).
+f. The independent samples t-test gives the same conclusion: students who never smoked scored higher, $t(498) = 4.31$, $p < .0005$. This is expected because a one-way ANOVA with two groups is mathematically equivalent to a two-tailed independent samples t-test.
+
+</details>
+
+---
+
+### Exercise 13.4
+
+Perform a one-way ANOVA to determine whether the number of math units taken (`UNITMATH`) by college-bound students who have always been at grade level varies by the highest degree they expect to earn (`EDEXPECT`). Do not create a Syntax file.
+
+b. Evaluate the underlying assumptions, or explain why violations would not compromise the analysis.
+c. Conduct the ANOVA and interpret the results in context.
+d. Calculate and interpret $R^2$ as a measure of effect size.
+e. Are post-hoc tests necessary? If so, report and interpret the LSD and Tukey HSD results.
+
+<details>
+<summary>Show solution</summary>
+
+b. The group sizes are 48 (less than a college degree), 159 (bachelor's), 190 (master's), and 103 (terminal degree). All exceed 30, so the ANOVA is robust to normality violations. Levene's test supports equal variances, $F(3, 496) = .37$, $p = .77$.
+c. The average number of math units varies by expected educational attainment, $F(3, 496) = 15.70$, $p < .0005$.
+d. Expected educational attainment explains approximately 8.67% of the variance in math units, a moderate effect.
+e. Post-hoc tests are necessary. Both LSD and Tukey HSD find that students expecting less than a college degree take significantly fewer math units than every other group. Students expecting a bachelor's degree take fewer units than the PhD group. LSD, but not Tukey HSD, also finds bachelor's students take fewer units than master's students. No other differences are significant.
+
+</details>
+
+---
+
+### Exercise 13.5
+
+Perform a one-way ANOVA to determine whether average daily attendance rates (`SCHATTRT`) at schools attended by college-bound students who have always been at grade level differ between students who have ever smoked cigarettes and those who have never smoked (`CIGARETT`).
+
+b. Evaluate the underlying assumptions, or explain why violations would not compromise the analysis.
+c. Conduct the ANOVA and interpret the results in context.
+d. Are post-hoc tests necessary? If so, report and interpret the LSD and Tukey HSD results.
+
+<details>
+<summary>Show solution</summary>
+
+b. There are 359 students who never smoked and 58 who tried cigarettes. Both group sizes exceed 30, so the ANOVA is robust to normality violations. Levene's test supports equal variances, $F(1, 415) = 2.30$, $p = .13$.
+c. The mean school attendance rate does not differ significantly between students who ever smoked ($M = 94.12$, $SD = 2.43$) and those who never smoked ($M = 93.57$, $SD = 4.96$), $F(1, 415) = .68$, $p = .41$.
+d. Post-hoc tests are not necessary because the ANOVA is not statistically significant.
+
+</details>
+
+---
+
+### Exercise 13.8
+
+For each question based on the Learndis data set, select an appropriate statistical procedure from this list. For inferential purposes, consider the children in the data set to be a random sample of children attending public elementary school in a certain city who have been diagnosed with learning disabilities.
+
+1. One-tailed, one-sample t-test
+2. Two-tailed, one-sample t-test
+3. One-tailed, independent samples t-test
+4. Two-tailed, independent samples t-test
+5. One-tailed, paired samples t-test
+6. Two-tailed, paired samples t-test
+7. One-way ANOVA
+
+a. Do public-school elementary school females with learning disabilities perform better in reading comprehension than males from the same population?
+b. Is the average IQ of public-school children with learning disabilities in this city equal to 100?
+c. Do public-school children with learning disabilities in this city have higher math comprehension scores or reading comprehension scores?
+d. Are there differences in math comprehension by grade?
+e. Do public-school children with learning disabilities in this city have higher math comprehension scores than reading comprehension scores?
+
+<details>
+<summary>Show solution</summary>
+
+a. `3` (one-tailed, independent samples t-test)
+b. `2` (two-tailed, one-sample t-test)
+c. `6` (two-tailed, paired samples t-test)
+d. `7` (one-way ANOVA)
+e. `5` (one-tailed, paired samples t-test)
+
+</details>

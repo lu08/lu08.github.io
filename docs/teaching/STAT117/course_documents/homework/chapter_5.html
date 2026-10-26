@@ -244,9 +244,335 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To be posted</p>
+<section id="exercise-5.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.1">Exercise 5.1</h3>
+<p>Use the States data set to create a scatterplot to depict the relationship between the percentage of students taking the SAT (<code>PERTAK</code>) and the average SAT Writing score (<code>SATW</code>). Use it to explain why a correlation will capture one aspect of the relationship, but that it is probably not the most appropriate technique to use for measuring this relationship.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The relationship has a linear component, but the scatterplot suggests that a simple curve describes it better than a line.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.3">Exercise 5.3</h3>
+<p>Use the States data set and scatterplots to investigate the relationships between the average SAT Critical Reading score for the state (<code>SATCR</code>) and the following three variables: Average SAT Math score for the state (<code>SATM</code>), percentage of eligible students taking the SAT for the state (<code>PERTAK</code>), and the average student-teacher ratio for the state (<code>STUTEACH</code>). You may create separate bivariate graphs, or make use of the matrix scatterplot option under the Scatterplots procedure to create a single graph that contains several scatterplots. (Don’t worry about multiple scatterplots in one matrix. You can simply do each scatterplot one at a time.) Use the graphs that you create to answer the following questions.</p>
+<ol type="1">
+<li>Rank these linear relationships from strongest to weakest.</li>
+<li>Describe the nature of the linear relationship, or indicate that little or no linear relationship exists, between the average Critical Reading SAT for the state and the average Math SAT for the state.</li>
+<li>Describe the nature of the linear relationship, or indicate that little or no linear relationship exists, between the average Critical Reading SAT for the state and the percentage of eligible students taking the SAT for the state.</li>
+<li>Describe the nature of the linear relationship, or indicate that little or no linear relationship exists, between the average Critical Reading SAT for the state and the average student-teacher ratio for the state.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The linear relationships rank from strongest to weakest as <code>SATM</code>, <code>PERTAK</code>, and <code>STUTEACH</code>. States with higher average Critical Reading SAT scores also tend to have higher average Math SAT scores. Higher Critical Reading scores tend to be associated with lower percentages taking the SAT; a simple curve may fit slightly better than a line. There appears to be little or no linear relationship between Critical Reading SAT and student-teacher ratio.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.6">Exercise 5.6</h3>
+<p>Conduct a correlation analysis using the States data set to determine whether various factors are associated with <code>EDUCEXPE</code>, the average educational expenditure per pupil. These factors are <code>STUTEACH</code>, student-teacher ratio; <code>SATV</code>, average verbal SAT score for the state; and <code>TEACHPAY</code>, the average salary of public school teachers in the state.</p>
+<ol type="1">
+<li>Create a matrix scatterplot of the variables and determine whether a linear model is an appropriate representation of the relationships between all pairs of these variables.</li>
+<li>Calculate the correlation matrix between all pairs of these variables.</li>
+<li>Do states in which expenditures per pupil are higher tend to pay their teachers more?</li>
+<li>Do states in which expenditures per pupil are higher tend to have higher verbal SAT scores, on average?</li>
+<li>Do states in which expenditures per pupil are higher tend to have lower pupil-per-teacher ratios?</li>
+<li>Of the three variables, pupils per teacher, average SAT verbal scores, and teacher salary, which is most strongly correlated with expenditure per pupil?</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The matrix scatterplots suggest that linear models are appropriate for these relationships. Expenditure per pupil is positively correlated with teacher salary (<code>r = .72</code>), negatively correlated with average SAT verbal score (<code>r = -.25</code>), and negatively correlated with student-teacher ratio (<code>r = -.48</code>). Thus, higher-spending states tend to pay teachers more and have lower pupil-per-teacher ratios, but tend to have lower verbal SAT scores. Teacher salary has the strongest correlation with expenditure per pupil.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.9">Exercise 5.9</h3>
+<p>In this exercise, we use the NELS data set to look at the relationship of socioeconomic status with eighth-grade computer ownership (<code>COMPUTER</code>), a dichotomous variable. Do students whose families owned a computer when they were in eighth grade tend to have higher socioeconomic statuses than those whose families did not own a computer when they were in eighth grade?</p>
+<ol type="1">
+<li>Create a scatterplot between <code>COMPUTER</code> and <code>SES</code>. Use it to describe whether students whose families owned a computer when they were in eighth grade tend to have higher socioeconomic statuses than those whose families did not own a computer when they were in eighth grade.</li>
+<li>Calculate the correlation between these variables to determine the extent to which there is a relationship as described.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Students whose families owned a computer in eighth grade tend to have higher socioeconomic status than those whose families did not. The correlation is positive and moderate (<code>r = .35</code>).</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.10" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.10">Exercise 5.10</h3>
+<p>Use the Learndis data set to investigate whether different variables are associated with reading achievement. Determine the correlations between all pairs of the following variables: reading achievement (<code>READCOMP</code>), grade level (<code>GRADE</code>), intellectual ability (<code>IQ</code>), and whether the student was placed in the resource room for part of the day or in a full-time self-contained classroom (<code>PLACEMEN</code>, where 0 = resource room and 1 = self-contained classroom).</p>
+<ol type="1">
+<li>Interpret the correlation between reading comprehension and intellectual ability.</li>
+<li>Based on the correlation table, which group, on average, has higher reading comprehension, those in the resource room or those in a self-contained classroom? Explain.</li>
+<li>Interpret the correlation between type of placement and grade level.</li>
+<li>Interpret the correlation between grade level and reading comprehension for these students.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>Reading comprehension and intellectual ability have a small-to-moderate positive correlation (<code>r = .286</code>): students with higher reading scores tend to have higher intellectual ability scores.</li>
+<li>Resource-room students tend to have higher reading comprehension. The correlation is negative (<code>r = -.444</code>), and self-contained placement is coded 1 while resource-room placement is coded 0.</li>
+<li>Placement type and grade level have virtually no relationship (<code>r = -.07</code>).</li>
+<li>The relationship between grade level and reading comprehension is negative (<code>r = -.322</code>): students in higher grades tend to perform worse relative to their peers.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.11" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.11">Exercise 5.11</h3>
+<p>In this exercise, you are asked about the relationship between pairs of variables in the Framingham data set.</p>
+<ol type="1">
+<li>Compute the correlation (<code>r</code>) between the initial diastolic blood pressure at time 1 (<code>DIABP1</code>) and whether or not the person was taking antihypertensive (blood pressure) medication at time 1 (<code>BPMEDS1</code>). Interpret your result.</li>
+<li>What is another name for the special case of the Pearson Correlation Coefficient calculated between <code>DIABP1</code> and <code>BPMEDS1</code>?</li>
+<li>In part 1, a positive, yet weak, correlation was noted between taking blood pressure medication and blood pressure level. That is, those who take blood pressure medication have higher blood pressure levels, on average, than those who don’t. What is a likely explanation for this relationship?</li>
+<li>Which gender (<code>SEX</code>) is more likely to have developed coronary heart disease (CHD) by the end of the study (<code>ANYCHD4</code>)? Explain and support your answer with appropriate statistics.</li>
+<li>What is another name for the special case of the Pearson Correlation Coefficient calculated between <code>SEX</code> and <code>ANYCHD4</code>?</li>
+<li>Explain why correlation is not the most appropriate way to statistically describe the relationship between the initial casual glucose level (<code>GLUCOSE1</code>) and the initial number of cigarettes smoked per day (<code>CIGPDAY1</code>).</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>The correlation between <code>DIABP1</code> and <code>BPMEDS1</code> is positive but weak (<code>r = .18</code>). People taking blood-pressure medication have slightly higher diastolic blood pressure on average. The mean and median for those not taking medication are 81.00 and 80.75; for those taking medication, they are 91.54 and 92.50.</li>
+<li>This special case is the point-biserial correlation.</li>
+<li>People with higher blood pressure are more likely to take medication to lower it; the positive association may mean treatment has not yet reduced their blood pressure to an acceptable level or has not been used long enough.</li>
+<li>Males are more likely to develop CHD. The correlation between <code>SEX</code> and <code>ANYCHD4</code> is <code>r = -.18</code>; the corresponding rates are 33% for males and 17.5% for females.</li>
+<li>This special case is the phi coefficient.</li>
+<li>The scatterplot indicates a nonlinear relationship, for which a simple curve would be more appropriate than a straight-line correlation summary.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.12" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.12">Exercise 5.12</h3>
+<p>According to the data in the Framingham data set, what evidence is there in these data to suggest that HDL is “good” cholesterol and LDL is “bad” cholesterol? [Hint: Compute the correlation between <code>HDL3</code> and <code>ANYCHD4</code> and between <code>LDL3</code> and <code>ANYCHD4</code>.]</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Higher LDL is associated with developing CHD during the study (<code>r = .30</code>), while higher HDL is associated with not developing CHD (<code>r = -.25</code>).</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.15" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.15">Exercise 5.15</h3>
+<p>In this exercise, we investigate the relationship of two variables with <code>EXCURR12</code>, participation in extracurricular activities in twelfth grade. Note that this variable is measured using an ordinal level of measurement.</p>
+<ol type="1">
+<li>Is there a correlation between smoking cigarettes (<code>CIGARETT</code>) and participation in extracurricular activities in twelfth grade (<code>EXCURR12</code>)? If so, describe the nature of the correlation. Provide statistical support for your answer.</li>
+<li>Is there a correlation between missing school in twelfth grade (<code>ABSENT12</code>) and participation in extracurricular activities in twelfth grade (<code>EXCURR12</code>)? If so, describe the nature of the correlation. Provide statistical support for your answer.</li>
+<li>Is there a correlation between socioeconomic status (<code>SES</code>) and participation in extracurricular activities in twelfth grade (<code>EXCURR12</code>)? If so, describe the nature of the correlation. Provide statistical support for your answer.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>Spearman’s rho is <code>-.20</code>, a weak negative relationship: students who had tried smoking were less likely to participate in extracurricular activities in twelfth grade.</li>
+<li>Spearman’s rho is <code>-.08</code>, indicating virtually no relationship between absences and extracurricular participation.</li>
+<li>Spearman’s rho is <code>.12</code>, a weak positive relationship between socioeconomic status and extracurricular participation.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.16" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.16">Exercise 5.16</h3>
+<p>Use Crosstabs applied to two variables from the NELS data set (<code>ADVMATH8</code> and <code>URBAN</code>) to obtain a summary of who took advanced math in eighth grade by type of environment. Use the resulting summary to answer the following questions.</p>
+<ol type="1">
+<li>What proportion of students took advanced math in eighth grade from each of the three environments: urban, suburban, and rural?</li>
+<li>What proportion of students took advanced math in eighth grade over all environments?</li>
+<li>Which environment has the largest proportion of advanced math takers, urban, suburban, or rural?</li>
+<li>Is there a relationship between urbanicity and enrollment in advanced math in eighth grade? Explain.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>The proportions taking advanced math are urban: <code>61/120 = .51</code>; suburban: <code>100/212 = .47</code>; rural: <code>65/159 = .41</code>.</li>
+<li>Overall, <code>226/491 = .47</code> took advanced math.</li>
+<li>Urban students have the largest proportion (<code>.51</code>).</li>
+<li>There appears to be a relationship: the proportions differ from the overall rate of <code>.47</code>, with urban students most likely to have taken advanced math, followed by suburban and then rural students.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.17" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.17">Exercise 5.17</h3>
+<p>Use the Framingham data set to explore the relationship between gender and cigarette use at time 1 and at time 3.</p>
+<ol type="1">
+<li>Create a contingency table of cigarette use at time 1 (<code>CURSMOKE1</code>) by sex and use it to determine whether the two variables are related.</li>
+<li>Create a contingency table on cigarette use at time 3 (12 years into the study) (<code>CURSMOKE3</code>) by sex and use it to determine whether the two variables are related.</li>
+<li>Calculate the correlation between cigarette use at time 1 (<code>CURSMOKE1</code>) and sex and use it to confirm that the two variables are not related.</li>
+<li>Calculate the correlation between cigarette use 12 years into the study (<code>CURSMOKE3</code>) and sex and use it to determine whether the two are related.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>There is no relationship between sex and smoking at time 1: half of both men and women smoked, matching the overall proportion. The study sample was selected to have this property.</li>
+<li>At time 3, 40.3% of females and 32.2% of males smoked; overall, 36.4% smoked. The difference is slight.</li>
+<li>The correlation at time 1 is <code>r = 0</code>.</li>
+<li>The correlation at time 3 is small (<code>r = .08</code>).</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.19" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.19">Exercise 5.19</h3>
+<p>Select an appropriate statistic that conveys the magnitude and nature of the relationship that exists between pairs of variables in the NELS data set. When describing that relationship, use terms that someone who has not taken statistics could understand (for example, positive correlation is not sufficient).</p>
+<p>For each item, determine whether there is a relationship and, if so, describe that relationship:</p>
+<ol type="1">
+<li>Years of math taken in high school (<code>UNITMATH</code>) and math achievement in twelfth grade (<code>ACHMAT12</code>).</li>
+<li>Number of times the student is late to school in twelfth grade (<code>LATE12</code>) and number of times the student skipped/cut classes in twelfth grade (<code>CUTS12</code>).</li>
+<li>School type attended in eighth grade (<code>SCHTYP8</code>) and whether or not the student took any Advanced Placement classes in high school (<code>APPROG</code>).</li>
+<li>Family size (<code>FAMSIZE</code>) and self-concept in twelfth grade (<code>SLFCNC12</code>).</li>
+<li>Socioeconomic status (<code>SES</code>) and science achievement in twelfth grade (<code>ACHSCI12</code>).</li>
+<li>Region of the country (<code>REGION</code>) and whether or not a student took advanced math in eighth grade (<code>ADVMATH8</code>).</li>
+<li>Number of classes cut in twelfth grade (<code>CUTS12</code>) and whether or not the student took advanced math in eighth grade (<code>ADVMATH8</code>).</li>
+<li>Cigarette use (<code>CIGARETT</code>) and urbanicity (<code>URBAN</code>).</li>
+<li>Whether or not students took advanced math in eighth grade (<code>ADVMATH8</code>) and whether or not they took an AP class (<code>APPROG</code>) in high school.</li>
+<li>Frequency of cutting class in twelfth grade (<code>CUTS12</code>) and being absent from school in twelfth grade (<code>ABSENT12</code>).</li>
+<li>Twelfth-grade self-esteem (<code>SLFCNC12</code>) and socioeconomic status (<code>SES</code>).</li>
+<li>Socioeconomic status (<code>SES</code>) and nursery school attendance (<code>NURSERY</code>).</li>
+<li>Socioeconomic status (<code>SES</code>) and urbanicity (<code>URBAN</code>).</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>There can be more than one appropriate analysis. The solution key reports:</p>
+<ol type="1">
+<li><code>UNITMATH</code> and <code>ACHMAT12</code> have a positive correlation (<code>r = .42</code>): students who take more math tend to score higher on math achievement.</li>
+<li>Spearman’s rho is <code>.43</code>: students who are late to school also tend to skip or cut classes.</li>
+<li>Crosstabs show that 52% of public-school students did not take AP classes, compared with 38% of private religious-school students and 30% of private non-religious-school students. Public-school students appear less likely to take AP classes.</li>
+<li>Family size and twelfth-grade self-concept have virtually no linear relationship (<code>r = .02</code>).</li>
+<li>Higher socioeconomic status is associated with higher science achievement (<code>r = .32</code>).</li>
+<li>Region appears to be associated with taking advanced math: the proportions are West 61%, South 48%, Northeast 41%, and North Central 38%.</li>
+<li>Spearman’s rho is <code>-.006</code>, indicating virtually no relationship between classes cut and taking advanced math.</li>
+<li>There appears to be little relationship between urbanicity and cigarette use: 85% of urban, 86% of suburban, and 87% of rural students reported not having smoked.</li>
+<li>The phi coefficient is <code>.27</code>: students who took advanced math in eighth grade tended also to take AP classes in high school.</li>
+<li>Spearman’s rho is <code>.09</code>, indicating little or no relationship between cutting class and absences.</li>
+<li>The relationship between self-concept and SES is weak and positive (<code>r = .11</code>).</li>
+<li>The point-biserial correlation is <code>.38</code>: students who attended nursery school tend to have higher SES.</li>
+<li>Urban students have the highest average SES (<code>M = 20.33</code>), followed by suburban students (<code>M = 19.23</code>) and rural students (<code>M = 15.94</code>).</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.22" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.22">Exercise 5.22</h3>
+<p>Create a contingency table that gives the breakdown of the vote on perjury by region. Use it to answer the following questions.</p>
+<ol type="1">
+<li>How many senators voted not guilty on perjury?</li>
+<li>What percentage of senators voted not guilty on perjury?</li>
+<li>Of all not-guilty votes, what percentage (or proportion) came from the South?</li>
+<li>Of all votes from the South, what percentage (or proportion) were not-guilty votes?</li>
+<li>According to the contingency table, are there differences in the vote on perjury depending on the region from which the senator comes? Explain in a way that someone with no background in statistics could understand, and support your answer with the values of relevant statistics.</li>
+<li>What type of graph is best used to display the relationship between the vote on perjury and region? Create this graph.</li>
+<li>Explain why a contingency table should not be used to analyze the relationship between region and conservatism.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>55 senators voted not guilty.</li>
+<li>55% voted not guilty.</li>
+<li>29% of the not-guilty votes came from the South.</li>
+<li>50% of votes from the South were not guilty.</li>
+<li>Yes. In the Northeast, 83.33% voted not guilty, compared with 50% in the Midwest, 50% in the South, and 53.85% in the West.</li>
+<li>A clustered bar graph.</li>
+<li>A contingency table is appropriate for variables with a small number of categories. Region has four categories, but conservatism has many possible values, so a contingency table would be unwieldy.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.23" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.23">Exercise 5.23</h3>
+<p>Create a clustered bar graph that gives the number of guilty and not-guilty votes on perjury (<code>VOTE1</code>) for both first-term and more senior senators (<code>NEWBIE</code>). Use it to answer the following questions.</p>
+<ol type="1">
+<li>Is there a relationship between the vote on perjury and whether or not the senator is first-term? Explain.</li>
+<li>Without calculating, what is the sign of the Pearson correlation between <code>VOTE1</code> and <code>NEWBIE</code>? Explain.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>Yes. Not-guilty votes tend to come from senior senators, while guilty votes are more evenly split between first-term and senior senators.</li>
+<li>Positive. Low <code>VOTE1</code> scores (0 = not guilty) tend to pair with low <code>NEWBIE</code> scores (0 = senior senator).</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.28" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.28">Exercise 5.28</h3>
+<p>Read the following excerpt from the article <a href="http://healthland.time.com/2011/06/27/tv-video-games-at-night-may-cause-sleep-problems-in-kids/">“TV, video games at night may cause sleep problems in kids”</a>, by Amanda Gardner on June 27, 2011. You do not need to read the entire article to answer the related questions.</p>
+<blockquote class="blockquote">
+<p>Watching television or playing video games close to bedtime can act like a jolt of caffeine to young children, making them more likely to experience difficulty falling asleep, nightmares, and daytime fatigue, a new study in the journal <em>Pediatrics</em> suggests.</p>
+<p>In the study, 28% of preschoolers who watched TV or played video games for at least 30 minutes after 7 p.m. had sleep problems most nights of the week, versus 19% of children whose TV and video-game use took place only before 7 p.m.</p>
+<p>The study included 612 children ages 3 to 5. Garrison and her colleagues asked the parents to keep a detailed diary of their child’s media consumption over the course of one week, including the title, timing, and duration of each show or game. (To determine the level of violence, researchers consulted parental guidance ratings and actually analyzed specific shows and games.)</p>
+<p>On average, the kids spent 73 minutes per day in front of a TV or computer. The more time they spent watching TV or playing video games in the evening, the more likely they were to experience a sleep problem.</p>
+</blockquote>
+<ol type="1">
+<li>According to the results of this study, if you had a much younger brother or sister, should you limit television and video game time after 7 p.m. in order to ensure a good night’s sleep? Explain. Be as detailed as you can.</li>
+<li>Create the clustered bar graph depicting the relationship between whether or not the child watched television or played video games for at least 30 minutes after 7 p.m. and whether or not the child had sleep problems most nights of the week as described in the article. Make sure to label your axes and the bars.</li>
+<li>Based on the information in the excerpt from the article, is it fair to conclude that the number of children who watch TV after 7 p.m. and have sleep problems is more than the number of children who don’t watch TV after 7 p.m. and have sleep problems? Why or why not?</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li>The results do not establish that limiting evening television or video games will ensure good sleep. The variables may be associated without being causally related; a third factor could influence both media use and sleep.</li>
+<li>The excerpt gives percentages, not the raw counts needed to recover a unique clustered bar graph of counts. A graph of the reported percentages can show 28% for children using media after 7 p.m. and 19% for those whose use took place only before 7 p.m.</li>
+<li>No.&nbsp;The percentages do not reveal the group sizes. If relatively few children watched after 7 p.m., their number with sleep problems could be smaller even though their rate was higher.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="exercise-5.31" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.31">Exercise 5.31</h3>
+<p>What (if anything) is wrong with the following statement about the NELS data? “The correlation between region and the number of Advanced Placement classes offered is <code>r = .11</code>, indicating that the higher the region, the more Advanced Placement courses offered, on average.”</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Region is a nominal variable with more than two categories and has no inherent order. Therefore, a correlation and an interpretation such as “higher region” are not meaningful. A contingency-table analysis is more appropriate.</p>
+</details>
+<hr>
+</section>
+<section id="exercise-5.35" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.35">Exercise 5.35</h3>
+<p>The following questions relate to the scatterplot in the <a href="word_files/Chapter 5 Third Edition HW.docx">original Chapter 5 homework document</a>, which shows the relationship between X and Y for four different subgroups. For each subgroup, select the Pearson Correlation Coefficient, <code>r</code>, from the column at right that best represents the relationship between X and Y for the subgroup. You may select a value more than once.</p>
+<ul>
+<li>Group 1: _____</li>
+<li>Group 2: _____</li>
+<li>Group 3: _____</li>
+<li>Group 4: _____</li>
+</ul>
+<p>Choices: <code>r = 1.25</code>, <code>r = -1.25</code>, <code>r = .95</code>, <code>r = -.95</code>, <code>r = .82</code>, <code>r = -.82</code>, <code>r = 0</code>.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Using the labels in the source document: Group 1 = c (<code>r = .95</code>); Group 2 = d (<code>r = -.95</code>); Group 3 = e (<code>r = .82</code>); Group 4 = f (<code>r = -.82</code>).</p>
+</details>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
