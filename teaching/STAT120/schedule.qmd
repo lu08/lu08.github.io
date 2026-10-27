@@ -61,13 +61,13 @@ In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univ
 
 - Oct 27: [Lecture 6](lectures/lecture_6/lecture_6.html) and [Homework 6](homework/homework_6.qmd).
 
-- Oct 29: **Quiz 7**, based on content from [Lecture 6](lectures/lecture_6/lecture_6.html) and [Homework 6](homework/homework_6.qmd).
+- Oct 29: **Quiz 7**, based on content from [Lecture 6](lectures/lecture_6/lecture_6.html) (before Maps) and [Homework 6](homework/homework_6.qmd) **Part I**.
 
 ## Week 10
 
 - Nov 3: 
 
-- Nov 5: **Midterm Exam 2**
+- Nov 5: **Midterm Exam 2**.
 
 ## Week 11
 

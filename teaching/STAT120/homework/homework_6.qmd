@@ -12,10 +12,10 @@ This part is based on the [*running*](../../../dataset/running.csv) dataset.  It
 
 
 1.  On average, which day of the week do I tend to run the most miles?  Calculate the average mileage for Monday, Tuesday, etc. to compare.
-```{r,eval=T}
+```{r,eval=T, message=F, warning=FALSE}
 library(tidyverse)
 running <- read.csv('../../../dataset/running.csv')
-#summary(running)
+summary(running)
 ```
 
 2. Convert the data to the following long format and store it as a separate data frame (**running.long**).  Note that your output might be sorted by Day (i.e., the first rows correspond to all the Monday data).  Print out the first 5 rows of your data.
@@ -38,6 +38,13 @@ running.long %>%
 
 4. Print out the top 10 days when I ran the most miles (you should get the following information), using both **running** (wide format) and **running.long** (long format).   Discuss which format is easier in this case.   
 ```{r, eval=T}
+# wide format: difficult
+# maybe: manually sort through Monday to Sunday to find top 10
+running %>%
+  arrange(desc(Mon)) %>%
+  slice(1:10)
+
+# long format: easy
 running.long %>%
   arrange(desc(Miles)) %>%
   slice(1:10)
@@ -65,13 +72,14 @@ running.long %>%
 ## Part II
 Take a look at the dataset **USArrests** in base R.  Run the following code to extract the state names and store it as a separate variable in the data frame.
 ```{r, echo=T}
+#| code-fold: false
 USArrests$state <- row.names(USArrests)
 ```
 
 The following graph is generated using the **maps** package and based on the variable **UrbanPop** in the **USArrests** dataset.  Reproduce this graph (you can visualize other variables in the **USArrests** dataset instead of **UrbanPop**, if you prefer).  You can find sample code from Lecture 6 [here](../lectures/lecture_notes/index.qmd).
 
 
-```{r, eval=T}
+```{r, eval=T, message=F, warning=FALSE}
 library(maps)
 
 USArrests$state <- row.names(USArrests) %>% tolower()

@@ -32,6 +32,6 @@ The Changing Childhood Project (conducted by UNICEF)
   Source: [scraped](../../../dataset/scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_New_Jersey_locations_by_per_capita_income](https://en.wikipedia.org/wiki/List_of_New_Jersey_locations_by_per_capita_income)
 
 
-- [Running data](../../../dataset/running_data.csv){download="running_data.csv"}
+- [Running data](../../../dataset/running.csv){download="running.csv"}
 
   Sample running mileage data based on my own running records.
