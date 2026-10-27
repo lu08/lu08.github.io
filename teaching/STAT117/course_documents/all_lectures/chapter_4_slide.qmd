@@ -10,6 +10,7 @@ format:
     self-contained: false
     smaller: true
     scrollable: true
+    auto-stretch: false
     chalkboard:
       buttons: true
     template-partials:

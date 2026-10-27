@@ -13,6 +13,7 @@ format:
     self-contained: false
     smaller: false
     scrollable: true
+    auto-stretch: false
     chalkboard:
       buttons: true
     template-partials:
@@ -21,7 +22,7 @@ editor_options:
   chunk_output_type: inline
 ---
 
-## Setup
+## Introduction
 
 You want to *predict* something (e.g., predict stock prices; predict a person's marathon finish time; predict a student's social economic status `SES`)
 
@@ -31,7 +32,7 @@ I) The “something” you are predicting:
 
 II) The variable(s) you would use to make a prediction:
 
-- For instance, what variables would you use to predict a student `SES`?
+- For instance, what variables would you use to predict a student's `SES`?
 
 <br>
 <br>
@@ -40,13 +41,15 @@ II) The variable(s) you would use to make a prediction:
 
 We'll only cover these two cases:
 
-- Case 1: Y is scale and X is scale (called `Covariate`)
-- Case 2: Y is scale and X is dichotomous (called `Factor`)
+- Case 1: Y is numeric and X is scale (`Covariate`)
+- Case 2: Y is numeric and X is dichotomous (`Factor`)
 
 
-## Example
+## Exercise
 
-Label the dependent (Y) and independent (X) variables:
+> Jamovi procedure: Analyze – Regression – Linear Regression; Whatever you are predicting goes in the `Dependent` box. Numeric predictors go in the `Covariates` box; categorical predictors go in the `Factors` box.
+
+Identify the dependent (Y) variable.  For the independent (X) variable, label it as covariate or factor.
 
 1. Use a student's SAT score to predict the student's GPA in college
 <br>
@@ -61,7 +64,6 @@ Label the dependent (Y) and independent (X) variables:
 <br>
 
 
-> Jamovi procedure: Analyze – Regression – Linear Regression; Numeric predictors go in the `Covariates` box, and categorical predictors go in the `Factors` box.
 
 # Case 1: Numeric predictor
 
@@ -72,9 +74,9 @@ Label the dependent (Y) and independent (X) variables:
 #| code-fold: true
 #| code-summary: "R code (optional)"
 #| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
-#| out-width: "120%"
-#| fig-width: 10
-#| fig-height: 10
+#| out-width: "65%"
+#| fig-width: 5
+#| fig-height: 5
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 
 plot(
@@ -87,14 +89,12 @@ plot(
 ```
 
 
-As a review, is there a relationship between `achmat08` and `SES`?  (Pearson r = 0.318)
+- Review: is there a relationship between `achmat08` and `SES`?  (Pearson r = 0.318)
 
-<br><br>
+- Can you provide an estimate of SES, if a student's `achmat08` score is 
 
-Can you provide an estimate of SES, if a student's `achmat08` score is 
-
-- around 45?
-- around 70?
+        - around 45?
+        - around 70?
 
 
 
@@ -108,9 +108,9 @@ The goal is to find the line that “best fits” the data. The (least squares) 
 #| code-fold: true
 #| code-summary: "R code (optional)"
 #| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
-#| out-width: "120%"
-#| fig-width: 10
-#| fig-height: 10
+#| out-width: "65%"
+#| fig-width: 5
+#| fig-height: 5
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 
 plot(
@@ -126,7 +126,7 @@ abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
 
 
 
-## Jamovi output
+## Regression line
 
 **Model Fit Measures**
 
@@ -142,13 +142,13 @@ abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
 | achmat08 | 0.236 | 0.0315 | 7.49 | <.001 |
 
 
-Recall, the form of a line is given by:
+- Recall, the form of a line is given by:
 <br>
 <br>
 
-> HAT notation is very important!
+- Important: HAT notation is used to denote <span style="color: #D36B43;">predicted</span> values. 🧢
 
-## Predictions  
+## Predictions
 
 $\hat{Y} = 5.082 + 0.236 \cdot X$ 
 
@@ -176,16 +176,29 @@ Selected students from the NELS dataset:
 | 374 | 44.80 | 21 |
 | 489 | 44.80 | 20 |
 | 67 | 70.04 | 27 |
-| 207 | 69.93 | 11 |
+
 
 - Residual = actual - predicted = `ses` - $\hat{SES}$ 
 
-What is the residual for student with ID 374?
+- What is the residual for student with ID 374?
 
+<br>
+<br>
+<br>
+
+- Exercise: calculate the residuals for students with IDs 489 and 67.
 
 
 
 ## Interpretations
+
+**Model Coefficients - ses**
+
+| Predictor | Estimate | SE | t | p |
+|---|---:|---:|---:|---:|
+| Intercept | 5.082 | 1.8064 | 2.81 | .005 |
+| achmat08 | 0.236 | 0.0315 | 7.49 | <.001 |
+
 $\hat{SES} = 5.082 + 0.236 \cdot achmat08$
 
 
@@ -210,9 +223,9 @@ $\hat{SES} = 5.082 + 0.236 \cdot achmat08$
 #| code-fold: true
 #| code-summary: "R code (optional)"
 #| fig-alt: "Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"
-#| out-width: "120%"
-#| fig-width: 10
-#| fig-height: 10
+#| out-width: "65%"
+#| fig-width: 5
+#| fig-height: 5
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 
 plot(
@@ -253,16 +266,16 @@ abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
 
 # Case 2: dichotomous predictor
 
-## SES and nursery school (yes/no)
+## SES and nursery school (0=no, 1=yes)
 
 ```{r}
 #| echo: true
 #| code-fold: true
 #| code-summary: "R code (optional)"
 #| fig-alt: "Scatterplot of nursery school attendance and socioeconomic status, with a fitted regression line"
-#| out-width: "120%"
-#| fig-width: 10
-#| fig-height: 10
+#| out-width: "65%"
+#| fig-width: 5
+#| fig-height: 5
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 
 plot(
@@ -278,8 +291,6 @@ Can you estimate a student's SES if the student...
 
 - has not attend nursery school?
 - has attended nursery school?
-
-
 
 
 
@@ -315,6 +326,7 @@ We can get the same results from a regression analysis!
 ## Example: Nursery 
 
 Use regression to predict `SES` using `Nursery` (coded as 0=No, 1=Yes).
+
 > Make sure to put `Nursery` as a **factor**!  (For dichotomous predictors, you can get the same correct coefficients if you put it as a covariate, but this is not recommended, as you will get incorrect information when the variable is nominal or ordinal, or is coded in a non-standard way.)
 
   a) Write down the regression line.
@@ -339,6 +351,8 @@ Use regression to predict `SES` using `Nursery` (coded as 0=No, 1=Yes).
 
   f) For student with ID=1, what is the residual? Are we over-predicting or under-predicting?
 
+<br>
+<br>
 
 ## Example: Computer
 
@@ -366,6 +380,8 @@ Use regression to predict `SES` by whether or not the family owned a `computer` 
 
   f) For student with ID=1, what is the residual? Are we over-predicting or under-predicting?
 
+<br>
+<br>
 
 ## Example: slope interpretation
 

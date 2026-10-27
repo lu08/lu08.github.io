@@ -201,8 +201,8 @@
   <h1 class="title">Chapter 6: Simple Linear Regression</h1>
   <p class="subtitle">STAT117: Introduction to Statistics</p>
 </section>
-<section id="setup" class="slide level2 scrollable">
-<h2>Setup</h2>
+<section id="introduction" class="slide level2 scrollable">
+<h2>Introduction</h2>
 <p>You want to <em>predict</em> something (e.g., predict stock prices; predict a person’s marathon finish time; predict a student’s social economic status <code>SES</code>)</p>
 <blockquote>
 <p>In reality, the main goal can be the prediction itself, or can be understanding what variables are important for making the prediction.</p>
@@ -212,27 +212,27 @@
 <li><p>The variable(s) you would use to make a prediction:</p></li>
 </ol>
 <ul>
-<li>For instance, what variables would you use to predict a student <code>SES</code>?</li>
+<li>For instance, what variables would you use to predict a student’s <code>SES</code>?</li>
 </ul>
 <p><br> <br> <br> <br></p>
 <p>We’ll only cover these two cases:</p>
 <ul>
-<li>Case 1: Y is scale and X is scale (called <code>Covariate</code>)</li>
-<li>Case 2: Y is scale and X is dichotomous (called <code>Factor</code>)</li>
+<li>Case 1: Y is numeric and X is scale (<code>Covariate</code>)</li>
+<li>Case 2: Y is numeric and X is dichotomous (<code>Factor</code>)</li>
 </ul>
 </section>
-<section id="example" class="slide level2 scrollable">
-<h2>Example</h2>
-<p>Label the dependent (Y) and independent (X) variables:</p>
+<section id="exercise" class="slide level2 scrollable">
+<h2>Exercise</h2>
+<blockquote>
+<p>Jamovi procedure: Analyze – Regression – Linear Regression; Whatever you are predicting goes in the <code>Dependent</code> box. Numeric predictors go in the <code>Covariates</code> box; categorical predictors go in the <code>Factors</code> box.</p>
+</blockquote>
+<p>Identify the dependent (Y) variable. For the independent (X) variable, label it as covariate or factor.</p>
 <ol type="1">
 <li><p>Use a student’s SAT score to predict the student’s GPA in college <br></p></li>
 <li><p>Predict a student’s satisfaction with Drew’s dining service by whether the student is an international student <br></p></li>
 <li><p>Predict your future salary based on your GPA in college <br></p></li>
 <li><p>Use <code>achmat08</code> to predict <code>achrdg08</code> <br></p></li>
 </ol>
-<blockquote>
-<p>Jamovi procedure: Analyze – Regression – Linear Regression; Numeric predictors go in the <code>Covariates</code> box, and categorical predictors go in the <code>Factors</code> box.</p>
-</blockquote>
 </section>
 <section>
 <section id="case-1-numeric-predictor" class="title-slide slide level1 center">
@@ -254,14 +254,19 @@
 <span id="cb1-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
 <span id="cb1-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:65.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"></p>
+</figure>
 </div>
-<img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:120.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line" class="r-stretch"><p>As a review, is there a relationship between <code>achmat08</code> and <code>SES</code>? (Pearson r = 0.318)</p>
-<p><br><br></p>
-<p>Can you provide an estimate of SES, if a student’s <code>achmat08</code> score is</p>
+</div>
+</div>
 <ul>
-<li>around 45?</li>
-<li>around 70?</li>
+<li><p>Review: is there a relationship between <code>achmat08</code> and <code>SES</code>? (Pearson r = 0.318)</p></li>
+<li><p>Can you provide an estimate of SES, if a student’s <code>achmat08</code> score is</p>
+<pre><code>  - around 45?
+  - around 70?</code></pre></li>
 </ul>
 </section>
 <section id="regression-line" class="slide level2">
@@ -270,23 +275,29 @@
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb2-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
-<span id="cb2-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb2-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
-<span id="cb2-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb2-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb2-9"><a href=""></a>)</span>
-<span id="cb2-10"><a href=""></a></span>
-<span id="cb2-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb3-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
+<span id="cb3-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb3-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
+<span id="cb3-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb3-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb3-9"><a href=""></a>)</span>
+<span id="cb3-10"><a href=""></a></span>
+<span id="cb3-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:65.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"></p>
+</figure>
 </div>
-<img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:120.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line" class="r-stretch"></section>
-<section id="jamovi-output" class="slide level2">
-<h2>Jamovi output</h2>
+</div>
+</div>
+</section>
+<section id="regression-line-1" class="slide level2">
+<h2>Regression line</h2>
 <p><strong>Model Fit Measures</strong></p>
 <table class="caption-top">
 <thead>
@@ -332,10 +343,10 @@
 </tr>
 </tbody>
 </table>
-<p>Recall, the form of a line is given by: <br> <br></p>
-<blockquote>
-<p>HAT notation is very important!</p>
-</blockquote>
+<ul>
+<li><p>Recall, the form of a line is given by: <br> <br></p></li>
+<li><p>Important: HAT notation is used to denote <span style="color: #D36B43;">predicted</span> values. 🧢</p></li>
+</ul>
 </section>
 <section id="predictions" class="slide level2">
 <h2>Predictions</h2>
@@ -378,20 +389,47 @@
 <td style="text-align: right;">70.04</td>
 <td style="text-align: right;">27</td>
 </tr>
-<tr class="even">
-<td style="text-align: right;">207</td>
-<td style="text-align: right;">69.93</td>
-<td style="text-align: right;">11</td>
-</tr>
 </tbody>
 </table>
 <ul>
-<li>Residual = actual - predicted = <code>ses</code> - <span class="math inline">\(\hat{SES}\)</span></li>
+<li><p>Residual = actual - predicted = <code>ses</code> - <span class="math inline">\(\hat{SES}\)</span></p></li>
+<li><p>What is the residual for student with ID 374?</p></li>
 </ul>
-<p>What is the residual for student with ID 374?</p>
+<p><br> <br> <br></p>
+<ul>
+<li>Exercise: calculate the residuals for students with IDs 489 and 67.</li>
+</ul>
 </section>
 <section id="interpretations" class="slide level2">
 <h2>Interpretations</h2>
+<p><strong>Model Coefficients - ses</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Predictor</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">t</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td style="text-align: right;">5.082</td>
+<td style="text-align: right;">1.8064</td>
+<td style="text-align: right;">2.81</td>
+<td style="text-align: right;">.005</td>
+</tr>
+<tr class="even">
+<td>achmat08</td>
+<td style="text-align: right;">0.236</td>
+<td style="text-align: right;">0.0315</td>
+<td style="text-align: right;">7.49</td>
+<td style="text-align: right;">&lt;.001</td>
+</tr>
+</tbody>
+</table>
 <p><span class="math inline">\(\hat{SES} = 5.082 + 0.236 \cdot achmat08\)</span></p>
 <ul>
 <li>Slope</li>
@@ -407,21 +445,27 @@
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb3-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
-<span id="cb3-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb3-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
-<span id="cb3-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb3-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb3-9"><a href=""></a>)</span>
-<span id="cb3-10"><a href=""></a></span>
-<span id="cb3-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb4-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
+<span id="cb4-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb4-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
+<span id="cb4-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb4-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb4-9"><a href=""></a>)</span>
+<span id="cb4-10"><a href=""></a></span>
+<span id="cb4-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:65.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line"></p>
+</figure>
 </div>
-<img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:120.0%" alt="Scatterplot of eighth-grade math achievement and socioeconomic status, with a fitted regression line" class="r-stretch"></section>
+</div>
+</div>
+</section>
 <section id="example-icecream" class="slide level2 scrollable">
 <h2>Example: Icecream</h2>
 <p>(Icecream.sav) We want to use temperature to predict the number of ice cream bars sold.</p>
@@ -438,24 +482,30 @@
 <h1>Case 2: dichotomous predictor</h1>
 
 </section>
-<section id="ses-and-nursery-school-yesno" class="slide level2">
-<h2>SES and nursery school (yes/no)</h2>
+<section id="ses-and-nursery-school-0no-1yes" class="slide level2">
+<h2>SES and nursery school (0=no, 1=yes)</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb4-4"><a href=""></a>  nels<span class="sc">$</span>nursery,</span>
-<span id="cb4-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb4-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Nursery school attendance (nursery)"</span>,</span>
-<span id="cb4-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb4-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb4-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb5-4"><a href=""></a>  nels<span class="sc">$</span>nursery,</span>
+<span id="cb5-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb5-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Nursery school attendance (nursery)"</span>,</span>
+<span id="cb5-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb5-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb5-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:65.0%" alt="Scatterplot of nursery school attendance and socioeconomic status, with a fitted regression line"></p>
+</figure>
 </div>
-<img data-src="chapter_6_slide_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:120.0%" alt="Scatterplot of nursery school attendance and socioeconomic status, with a fitted regression line" class="r-stretch"><p>Can you estimate a student’s SES if the student…</p>
+</div>
+</div>
+<p>Can you estimate a student’s SES if the student…</p>
 <ul>
 <li>has not attend nursery school?</li>
 <li>has attended nursery school?</li>
@@ -520,7 +570,10 @@ Show descriptives
 </section>
 <section id="example-nursery" class="slide level2 scrollable">
 <h2>Example: Nursery</h2>
-<p>Use regression to predict <code>SES</code> using <code>Nursery</code> (coded as 0=No, 1=Yes). &gt; Make sure to put <code>Nursery</code> as a <strong>factor</strong>! (For dichotomous predictors, you can get the same correct coefficients if you put it as a covariate, but this is not recommended, as you will get incorrect information when the variable is nominal or ordinal, or is coded in a non-standard way.)</p>
+<p>Use regression to predict <code>SES</code> using <code>Nursery</code> (coded as 0=No, 1=Yes).</p>
+<blockquote>
+<p>Make sure to put <code>Nursery</code> as a <strong>factor</strong>! (For dichotomous predictors, you can get the same correct coefficients if you put it as a covariate, but this is not recommended, as you will get incorrect information when the variable is nominal or ordinal, or is coded in a non-standard way.)</p>
+</blockquote>
 <ol type="a">
 <li><p>Write down the regression line. <br> <br></p></li>
 <li><p>For a student who did attend nursery, what is the estimated SES? <br> <br></p></li>
@@ -529,6 +582,7 @@ Show descriptives
 <li><p>Provide the value of the slope and give an interpretation. <br> <br></p></li>
 <li><p>For student with ID=1, what is the residual? Are we over-predicting or under-predicting?</p></li>
 </ol>
+<p><br> <br></p>
 </section>
 <section id="example-computer" class="slide level2 scrollable">
 <h2>Example: Computer</h2>
@@ -541,6 +595,7 @@ Show descriptives
 <li><p>Provide the value of the slope and give an interpretation. <br> <br></p></li>
 <li><p>For student with ID=1, what is the residual? Are we over-predicting or under-predicting?</p></li>
 </ol>
+<p><br> <br></p>
 </section>
 <section id="example-slope-interpretation" class="slide level2">
 <h2>Example: slope interpretation</h2>

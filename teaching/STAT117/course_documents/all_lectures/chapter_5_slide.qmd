@@ -13,6 +13,7 @@ format:
     self-contained: false
     smaller: false
     scrollable: true
+    auto-stretch: false
     chalkboard:
       buttons: true
     template-partials:
