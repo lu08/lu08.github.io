@@ -281,35 +281,36 @@
 <span id="cb2-7"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"CO2"</span>, <span class="at">ylab =</span> <span class="st">"Energy"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
 <span id="cb2-8"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
 <span id="cb2-9"><a href=""></a>)</span>
-<span id="cb2-10"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(a)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
-<span id="cb2-11"><a href=""></a></span>
-<span id="cb2-12"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb2-13"><a href=""></a>  AllCountries<span class="sc">$</span>Internet, AllCountries<span class="sc">$</span>LifeExpectancy,</span>
-<span id="cb2-14"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Internet"</span>, <span class="at">ylab =</span> <span class="st">"LifeExpectancy"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
-<span id="cb2-15"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
-<span id="cb2-16"><a href=""></a>)</span>
-<span id="cb2-17"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(b)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
-<span id="cb2-18"><a href=""></a></span>
-<span id="cb2-19"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb2-20"><a href=""></a>  AllCountries<span class="sc">$</span>Rural, AllCountries<span class="sc">$</span>Internet,</span>
-<span id="cb2-21"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Rural"</span>, <span class="at">ylab =</span> <span class="st">"Internet"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
-<span id="cb2-22"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
-<span id="cb2-23"><a href=""></a>)</span>
-<span id="cb2-24"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(c)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
-<span id="cb2-25"><a href=""></a></span>
-<span id="cb2-26"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb2-27"><a href=""></a>  AllCountries<span class="sc">$</span>Diabetes, AllCountries<span class="sc">$</span>Unemployment,</span>
-<span id="cb2-28"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Diabetes"</span>, <span class="at">ylab =</span> <span class="st">"Unemployment"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
-<span id="cb2-29"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
-<span id="cb2-30"><a href=""></a>)</span>
-<span id="cb2-31"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(d)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
-<span id="cb2-32"><a href=""></a></span>
-<span id="cb2-33"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb2-34"><a href=""></a>  AllCountries<span class="sc">$</span>GDP, AllCountries<span class="sc">$</span>BirthRate,</span>
-<span id="cb2-35"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"GDP"</span>, <span class="at">ylab =</span> <span class="st">"BirthRate"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
-<span id="cb2-36"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
-<span id="cb2-37"><a href=""></a>)</span>
-<span id="cb2-38"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(e)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-10"><a href=""></a></span>
+<span id="cb2-11"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(a)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
+<span id="cb2-12"><a href=""></a></span>
+<span id="cb2-13"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb2-14"><a href=""></a>  AllCountries<span class="sc">$</span>Internet, AllCountries<span class="sc">$</span>LifeExpectancy,</span>
+<span id="cb2-15"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Internet"</span>, <span class="at">ylab =</span> <span class="st">"LifeExpectancy"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
+<span id="cb2-16"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
+<span id="cb2-17"><a href=""></a>)</span>
+<span id="cb2-18"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(b)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
+<span id="cb2-19"><a href=""></a></span>
+<span id="cb2-20"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb2-21"><a href=""></a>  AllCountries<span class="sc">$</span>Rural, AllCountries<span class="sc">$</span>Internet,</span>
+<span id="cb2-22"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Rural"</span>, <span class="at">ylab =</span> <span class="st">"Internet"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
+<span id="cb2-23"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
+<span id="cb2-24"><a href=""></a>)</span>
+<span id="cb2-25"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(c)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
+<span id="cb2-26"><a href=""></a></span>
+<span id="cb2-27"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb2-28"><a href=""></a>  AllCountries<span class="sc">$</span>Diabetes, AllCountries<span class="sc">$</span>Unemployment,</span>
+<span id="cb2-29"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Diabetes"</span>, <span class="at">ylab =</span> <span class="st">"Unemployment"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
+<span id="cb2-30"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
+<span id="cb2-31"><a href=""></a>)</span>
+<span id="cb2-32"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(d)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
+<span id="cb2-33"><a href=""></a></span>
+<span id="cb2-34"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb2-35"><a href=""></a>  AllCountries<span class="sc">$</span>GDP, AllCountries<span class="sc">$</span>BirthRate,</span>
+<span id="cb2-36"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"GDP"</span>, <span class="at">ylab =</span> <span class="st">"BirthRate"</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">col =</span> <span class="st">"gray55"</span>,</span>
+<span id="cb2-37"><a href=""></a>  <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span></span>
+<span id="cb2-38"><a href=""></a>)</span>
+<span id="cb2-39"><a href=""></a><span class="fu">mtext</span>(<span class="st">"(e)"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="fl">0.2</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">1.1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -319,6 +320,19 @@
 </div>
 </div>
 </div>
+<details>
+<summary>
+Show plot descriptions
+</summary>
+<ul>
+<li><strong>(a) CO2 and Energy:</strong> A strong positive linear relationship.</li>
+<li><strong>(b) Internet and LifeExpectancy:</strong> A strong positive linear relationship, but weaker than (a) since the dots are more scattered.</li>
+<li><strong>(c) Rural and Internet:</strong> A strong negative linear relationship.</li>
+<li><strong>(d) Diabetes and Unemployment:</strong> Essentially no linear relationship. The points do not show a consistent upward or downward linear trend.</li>
+<li><strong>(e) GDP and BirthRate:</strong> Some non-linear relationship, with the points not following a straight-line pattern.</li>
+</ul>
+<p>Note: <strong>strength</strong> describes how closely the points follow a straight-line pattern; <em>slope</em> describes how steep the line is. A correlation near zero means little or no <em>linear</em> relationship; a nonlinear pattern could still be present.</p>
+</details>
 </section>
 <section id="pearson-correlation-coefficient" class="slide level2">
 <h2>Pearson Correlation Coefficient</h2>
@@ -390,7 +404,7 @@ Show solution
 </ol>
 <details>
 <summary>
-Show solutions
+Show solution
 </summary>
 <ol type="1">
 <li><p><span class="math inline">\(r = 0.812\)</span>. There is a strong, positive linear relationship between internet access and life expectancy. Countries with greater internet access tend to have higher life expectancy, on average.</p></li>
@@ -437,7 +451,7 @@ Show solutions
 <p><strong>10.</strong> (<code>United States Colleges</code>) Is there an association between a school’s competitive rank (<code>comp</code>) and affiliation (<code>public</code>)?</p>
 <details>
 <summary>
-Show solutions
+Show solution
 </summary>
 <ol start="4" type="1">
 <li><p><span class="math inline">\(r = -0.203\)</span>. There is a weak, negative linear relationship between eighth-grade math achievement and teacher interest. The <code>tcherint</code> scale is coded so that lower values indicate greater teacher interest; students with higher math scores therefore tend to report greater teacher interest, on average.</p></li>
@@ -481,7 +495,7 @@ Show solutions
 <section id="nominal-continuous" class="slide level2">
 <h2>Nominal + Continuous</h2>
 <p>Example: (NELS dataset) is there a relationship between <code>achmat8</code> (math achievement in 8th grade) and <code>region</code>?</p>
-<p>Step 1: Identify the nominal variable (<code>region</code>)</p>
+<p>Step 1: Identify the nominal grouping variable (<code>region</code>).</p>
 <p>Step 2: Write down the groups as defined by the nominal variable:</p>
 <ul>
 <li>Northeast</li>
@@ -576,7 +590,19 @@ Show solution
 <li>West:</li>
 </ul>
 <p>Conclusion:</p>
-<p><br> <br> <br> <br> <br> <br></p>
+<p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<ul>
+<li><strong>Northeast:</strong> 25.5% have binged on alcohol.</li>
+<li><strong>North Central:</strong> 23.8% have binged on alcohol.</li>
+<li><strong>South:</strong> 20.7% have binged on alcohol.</li>
+<li><strong>West:</strong> 15.1% have binged on alcohol.</li>
+</ul>
+<p>There is a relationship between region and whether students have ever binged on alcohol. For instance, among students from the Northeast, 25.5% have binged on alcohol, while among students from the West, only 15.1% have binged on alcohol.</p>
+</details>
 </section>
 <section id="option-2-grouping-by-alcbinge" class="slide level2">
 <h2>Option 2: grouping by <code>alcbinge</code></h2>
@@ -585,7 +611,22 @@ Show solution
 <li>Among people who <strong>have</strong> binged on alcohol, what percentage comes from the South?</li>
 </ul>
 <p>Conclusion:</p>
-<p><br> <br> <br> <br> <br> <br></p>
+<p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<ul>
+<li>Among people who have <strong>never</strong> binged on alcohol, <strong>30.4%</strong> are from the South.</li>
+<li>Among people who <strong>have</strong> binged on alcohol, <strong>28.7%</strong> are from the South.</li>
+</ul>
+<p>(Not enough difference in percentages, so try a different region.)</p>
+<ul>
+<li>Among people who have <strong>never</strong> binged on alcohol, <strong>20.2%</strong> are from the West.</li>
+<li>Among people who <strong>have</strong> binged on alcohol, <strong>13.0%</strong> are from the West.</li>
+</ul>
+<p>There is a relationship between region and whether students have ever binged on alcohol. For instance, among students who have binged, 13.0% are from the West; among students who have never binged, 20.2% are from the West.</p>
+</details>
 <blockquote>
 <p>In practice: choose a column and compare the “row” percentages in that column.</p>
 </blockquote>
@@ -593,6 +634,26 @@ Show solution
 <section id="nominal-nominal" class="slide level2">
 <h2>Nominal + Nominal</h2>
 <p>Example: Is there a relationship between <code>schtyp8</code> (school type in 8th grade) and <code>region</code>? Calculate relevant percentages to support your answer. Make sure to interpret the percentages correctly.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p><strong>Option 1: Use <code>region</code> as the grouping variable.</strong></p>
+<ul>
+<li><strong>Northeast:</strong> 67.9% attend public school.</li>
+<li><strong>North Central:</strong> 70.2% attend public school.</li>
+<li><strong>South:</strong> 76.0% attend public school.</li>
+<li><strong>West:</strong> 83.9% attend public school.</li>
+</ul>
+<p>There is a relationship between region and school type: among students from the Northeast, 67.9% attend public school; among students from the West, 83.9% attend public school.</p>
+<p><strong>Option 2: Use <code>schtyp8</code> as the grouping variable.</strong></p>
+<ul>
+<li><strong>Public:</strong> 19.5% are from the Northeast.</li>
+<li><strong>Private, Religious:</strong> 26.7% are from the Northeast.</li>
+<li><strong>Private, Non-Religious:</strong> 25.0% are from the Northeast.</li>
+</ul>
+<p>There is a relationship between region and school type: among students who went to public school, 19.5% are from the Northeast; among students who went to private, religious school, 26.7% are from the Northeast.</p>
+</details>
 </section>
 <section id="common-mistakes-when-interpreting-contingency-tables" class="slide level2">
 <h2>Common mistakes when interpreting contingency tables</h2>
@@ -632,7 +693,20 @@ Show example
 <p>Example 1: (United States Colleges) relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).</p>
 <p><br> <br> <br></p>
 <p>Example 2: (NELS) relationship between Urbanicity and <code>edexpect</code> (highest level of education expected)?</p>
-<p><br></p>
+<p><br> <br> <br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<p><strong>Example 1.</strong></p>
+<p>Yes, there is a relationship between school affiliation and whether a school is a college or university. For example, among public schools, 93.5% are universities; among private schools, 43.4% are universities.</p>
+<p>(OR) Yes, there is a relationship between school affiliation and institution type. Among universities, 56.6% are public, whereas among colleges, only 6.5% are public.</p>
+<p>(OR) The correlation is <span class="math inline">\(r = 0.501\)</span>, indicating a moderate/strong, positive association. With public coded 1 and university coded 1, public schools tend to be universities, while private schools tend to be colleges.</p>
+<p><strong>Example 2.</strong></p>
+<p>Yes, there is a relationship between urbanicity and students’ educational expectations. For example, among students from rural areas, 40.1% expect a bachelor’s degree to be their highest degree, whereas among students from urban areas, 27.6% expect a bachelor’s degree to be their highest degree.</p>
+<p>(OR) Yes, there is a relationship between urbanicity and students’ educational expectations. For example, among the 48 students who expect “less than college degree” to be their highest degree, 12.5% are from urban areas, whereas among the 103 students who expect Ph.D, MD, JD etc. to be their highest degree, 34% are from urban areas.</p>
+<p>(OR) Spearman <span class="math inline">\(\rho\)</span> can also be used if you consider <code>urbanicity</code> as an ordinal variable. <span class="math inline">\(\rho = -0.179\)</span>. There is a negative, weak relationship. Students from urban areas (LOW coding) tend to expect higher levels of education (HIGH coding), on average.</p>
+</details>
 </section>
 
 <section>
@@ -653,15 +727,153 @@ Show example
 <p>In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>COST</code> (cost of food)?</p>
 <ul>
 <li><p>Since <span class="math inline">\(r = -0.382\)</span>, there is a negative, moderate relationship. French restaurants tend to have higher cost.</p></li>
-<li><p>Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.</p></li>
+<li><p>There is a relationship because the medians (40 and 2) are very different.</p></li>
 </ul>
+<details>
+<summary>
+Show summary statistics
+</summary>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th style="text-align: right;"><code>cost</code></th>
+<th style="text-align: right;"><code>type2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td>Missing</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Mean</td>
+<td style="text-align: right;">39.6</td>
+<td style="text-align: right;">2.10</td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td style="text-align: right;">40.0</td>
+<td style="text-align: right;">2.00</td>
+</tr>
+<tr class="odd">
+<td>Standard deviation</td>
+<td style="text-align: right;">7.83</td>
+<td style="text-align: right;">0.810</td>
+</tr>
+<tr class="even">
+<td>Minimum</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>Maximum</td>
+<td style="text-align: right;">59.0</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</details>
 </section>
 <section id="fix-and-improve-example-3" class="slide level2">
 <h2>Fix and improve: example 3</h2>
 <p>In the NJ Restaurants dataset, is there a relationship between <code>Type2</code> (1=‘French’, 2=‘American’, 3=‘Other’) and <code>Sunday</code> (does it open on Sunday, 0 = No, 1 = Yes)?</p>
 <ul>
-<li>There is no relationship, since they have the same medians.</li>
+<li>There is no relationship, since they have the same medians (2).</li>
 </ul>
+<details>
+<summary>
+Show summary statistics
+</summary>
+<p>Descriptive statistics for <code>type2</code>, grouped by <code>Sunday</code> status:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th><code>sunday</code></th>
+<th style="text-align: right;"><code>type2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td>No</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td>Missing</td>
+<td>No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Mean</td>
+<td>No</td>
+<td style="text-align: right;">1.83</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">2.21</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td>No</td>
+<td style="text-align: right;">2.00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">2.00</td>
+</tr>
+<tr class="odd">
+<td>Standard deviation</td>
+<td>No</td>
+<td style="text-align: right;">0.835</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">0.787</td>
+</tr>
+<tr class="odd">
+<td>Minimum</td>
+<td>No</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>Maximum</td>
+<td>No</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</details>
 </section>
 <section id="fix-and-improve-example-4" class="slide level2">
 <h2>Fix and improve: example 4</h2>
@@ -670,6 +882,92 @@ Show example
 <li><p>Since <span class="math inline">\(r = 0.099\)</span>, there is a positive, very weak relationship.</p></li>
 <li><p>Colleges have lower competitiveness rank (mean = 3.02); universities have higher competitiveness rank (mean = 3.49).</p></li>
 </ul>
+<details>
+<summary>
+Show summary statistics
+</summary>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th><code>univ</code></th>
+<th style="text-align: right;"><code>comp</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td>College</td>
+<td style="text-align: right;">92</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="odd">
+<td>Missing</td>
+<td>College</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Mean</td>
+<td>College</td>
+<td style="text-align: right;">3.02</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">3.49</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td>College</td>
+<td style="text-align: right;">2.00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">2.50</td>
+</tr>
+<tr class="odd">
+<td>Standard deviation</td>
+<td>College</td>
+<td style="text-align: right;">2.26</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">2.34</td>
+</tr>
+<tr class="odd">
+<td>Minimum</td>
+<td>College</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Maximum</td>
+<td>College</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>University</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+</details>
 </section></section>
 <section>
 <section id="appendix" class="title-slide slide level1 center">

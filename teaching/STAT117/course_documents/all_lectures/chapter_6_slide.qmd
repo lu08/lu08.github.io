@@ -39,28 +39,34 @@ II) The variable(s) you would use to make a prediction:
 <br>
 <br>
 
+
+## Introduction
+
 We'll only cover these two cases:
 
 - Case 1: Y is numeric and X is scale (`Covariate`)
 - Case 2: Y is numeric and X is dichotomous (`Factor`)
 
+> Jamovi procedure: Analyze – Regression – Linear Regression; Whatever you are predicting goes in the `Dependent` box. Numeric predictors go in the `Covariates` box; categorical predictors go in the `Factors` box.
 
 ## Exercise
-
-> Jamovi procedure: Analyze – Regression – Linear Regression; Whatever you are predicting goes in the `Dependent` box. Numeric predictors go in the `Covariates` box; categorical predictors go in the `Factors` box.
 
 Identify the dependent (Y) variable.  For the independent (X) variable, label it as covariate or factor.
 
 1. Use a student's SAT score to predict the student's GPA in college
+
 <br>
 
 2. Predict a student's satisfaction with Drew's dining service by whether the student is an international student
+
 <br>
 
 3. Predict your future salary based on your GPA in college
+
 <br>
 
 4. Use `achmat08` to predict `achrdg08`
+
 <br>
 
 
@@ -93,15 +99,14 @@ plot(
 
 - Can you provide an estimate of SES, if a student's `achmat08` score is 
 
-        - around 45?
-        - around 70?
+    - around 45?
+    - around 70?
 
 
 
 ## Regression line
 
-The goal is to find the line that “best fits” the data. The (least squares) regression line minimizes the total “distance” of each point to the line, where distance is measured by the squared difference.
-
+The goal is to find the line that “best fits” the data. The (least squares) regression line minimizes the total “distance” of each point to the line (where distance is measured by the squared difference).
 
 ```{r}
 #| echo: true
@@ -159,7 +164,7 @@ $\hat{SES} = 5.082 + 0.236 \cdot achmat08$
 
 <br>
 
-Be cautious about predicting out of the range of X
+Be cautious about predicting out of the range of X!
 
 - What is the predicted SES for a student with an `achmat08` score of 10?
 

@@ -215,24 +215,37 @@
 <li>For instance, what variables would you use to predict a student’s <code>SES</code>?</li>
 </ul>
 <p><br> <br> <br> <br></p>
+</section>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
 <p>We’ll only cover these two cases:</p>
 <ul>
 <li>Case 1: Y is numeric and X is scale (<code>Covariate</code>)</li>
 <li>Case 2: Y is numeric and X is dichotomous (<code>Factor</code>)</li>
 </ul>
-</section>
-<section id="exercise" class="slide level2 scrollable">
-<h2>Exercise</h2>
 <blockquote>
 <p>Jamovi procedure: Analyze – Regression – Linear Regression; Whatever you are predicting goes in the <code>Dependent</code> box. Numeric predictors go in the <code>Covariates</code> box; categorical predictors go in the <code>Factors</code> box.</p>
 </blockquote>
+</section>
+<section id="exercise" class="slide level2 scrollable">
+<h2>Exercise</h2>
 <p>Identify the dependent (Y) variable. For the independent (X) variable, label it as covariate or factor.</p>
 <ol type="1">
-<li><p>Use a student’s SAT score to predict the student’s GPA in college <br></p></li>
-<li><p>Predict a student’s satisfaction with Drew’s dining service by whether the student is an international student <br></p></li>
-<li><p>Predict your future salary based on your GPA in college <br></p></li>
-<li><p>Use <code>achmat08</code> to predict <code>achrdg08</code> <br></p></li>
+<li>Use a student’s SAT score to predict the student’s GPA in college</li>
 </ol>
+<p><br></p>
+<ol start="2" type="1">
+<li>Predict a student’s satisfaction with Drew’s dining service by whether the student is an international student</li>
+</ol>
+<p><br></p>
+<ol start="3" type="1">
+<li>Predict your future salary based on your GPA in college</li>
+</ol>
+<p><br></p>
+<ol start="4" type="1">
+<li>Use <code>achmat08</code> to predict <code>achrdg08</code></li>
+</ol>
+<p><br></p>
 </section>
 <section>
 <section id="case-1-numeric-predictor" class="title-slide slide level1 center">
@@ -265,27 +278,29 @@
 <ul>
 <li><p>Review: is there a relationship between <code>achmat08</code> and <code>SES</code>? (Pearson r = 0.318)</p></li>
 <li><p>Can you provide an estimate of SES, if a student’s <code>achmat08</code> score is</p>
-<pre><code>  - around 45?
-  - around 70?</code></pre></li>
+<ul>
+<li>around 45?</li>
+<li>around 70?</li>
+</ul></li>
 </ul>
 </section>
 <section id="regression-line" class="slide level2">
 <h2>Regression line</h2>
-<p>The goal is to find the line that “best fits” the data. The (least squares) regression line minimizes the total “distance” of each point to the line, where distance is measured by the squared difference.</p>
+<p>The goal is to find the line that “best fits” the data. The (least squares) regression line minimizes the total “distance” of each point to the line (where distance is measured by the squared difference).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb3-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
-<span id="cb3-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb3-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
-<span id="cb3-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb3-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb3-9"><a href=""></a>)</span>
-<span id="cb3-10"><a href=""></a></span>
-<span id="cb3-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb2-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
+<span id="cb2-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb2-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
+<span id="cb2-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb2-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb2-9"><a href=""></a>)</span>
+<span id="cb2-10"><a href=""></a></span>
+<span id="cb2-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -356,7 +371,7 @@
 <li>What is the predicted SES for a student with an <code>achmat08</code> score of 45?</li>
 </ul>
 <p><br></p>
-<p>Be cautious about predicting out of the range of X</p>
+<p>Be cautious about predicting out of the range of X!</p>
 <ul>
 <li>What is the predicted SES for a student with an <code>achmat08</code> score of 10?</li>
 </ul>
@@ -445,17 +460,17 @@
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb4-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
-<span id="cb4-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb4-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
-<span id="cb4-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb4-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb4-9"><a href=""></a>)</span>
-<span id="cb4-10"><a href=""></a></span>
-<span id="cb4-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb3-4"><a href=""></a>  nels<span class="sc">$</span>achmat08,</span>
+<span id="cb3-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb3-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Math achievement in 8th grade (achmat08)"</span>,</span>
+<span id="cb3-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb3-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb3-9"><a href=""></a>)</span>
+<span id="cb3-10"><a href=""></a></span>
+<span id="cb3-11"><a href=""></a><span class="fu">abline</span>(<span class="fu">lm</span>(ses <span class="sc">~</span> achmat08, <span class="at">data =</span> nels), <span class="at">col =</span> <span class="st">"#D36B43"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -487,15 +502,15 @@
 <div class="cell">
 <details class="code-fold">
 <summary>R code (optional)</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a><span class="fu">plot</span>(</span>
-<span id="cb5-4"><a href=""></a>  nels<span class="sc">$</span>nursery,</span>
-<span id="cb5-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
-<span id="cb5-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Nursery school attendance (nursery)"</span>,</span>
-<span id="cb5-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
-<span id="cb5-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
-<span id="cb5-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>nels <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../../../dataset/NELS.sav"</span>)</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="fu">plot</span>(</span>
+<span id="cb4-4"><a href=""></a>  nels<span class="sc">$</span>nursery,</span>
+<span id="cb4-5"><a href=""></a>  nels<span class="sc">$</span>ses,</span>
+<span id="cb4-6"><a href=""></a>  <span class="at">xlab =</span> <span class="st">"Nursery school attendance (nursery)"</span>,</span>
+<span id="cb4-7"><a href=""></a>  <span class="at">ylab =</span> <span class="st">"SES"</span>,</span>
+<span id="cb4-8"><a href=""></a>  <span class="at">pch =</span> <span class="dv">16</span></span>
+<span id="cb4-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>

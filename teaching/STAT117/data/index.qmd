@@ -64,6 +64,7 @@ These data are from *Statistics Using IBM SPSS (3rd edition)*, by S. Weinberg an
 
 - [United States Colleges.sav](../../../dataset/United%20States%20Colleges.sav){download="United States Colleges.sav"}
 
+- [NJ Restaurants.sav](../../../dataset/NJ%20Restaurants.sav){download="NJ Restaurants.sav"}
 
 ## CSV data
 

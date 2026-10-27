@@ -11,7 +11,7 @@ format: html
 
 ## Tuesday, Oct 27
 
-We will go over Chapter 6 in class.  The left over content of Chapter 5 will be discussed on Thursday instead, mostly as a review.  Homework for [Chapter 5](../../course_documents/homework/chapter_5.html) and [Chapter 6](../../course_documents/homework/chapter_6.html) have been posted.
+We will go over [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html) in class.  The left over content of [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html) will be discussed on Thursday instead, mostly as a review.  Homework for [Chapter 5](../../course_documents/homework/chapter_5.html) and [Chapter 6](../../course_documents/homework/chapter_6.html) have been posted.
 
 [Link to fullscreen](../../course_documents/all_lectures/chapter_6_slide.html){target="_blank"}
 
@@ -21,4 +21,4 @@ We will go over Chapter 6 in class.  The left over content of Chapter 5 will be 
 
 We will start with **quiz 6** on the topic of simple linear regression.  We will then finish the remaining slides of [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html).
 
-In preparation for next Tuesday's **exam 2**, go over the practice exam (to be posted).  Exam covers the second half of [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html) (z-scores), [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html), and [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html).
+In preparation for next Tuesday's **exam 2**, go over the practice exam (to be posted).  Exam covers [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html) (only the second half, z-scores), [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html), and [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html).

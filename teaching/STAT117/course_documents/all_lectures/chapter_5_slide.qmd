@@ -109,6 +109,7 @@ plot(
   xlab = "CO2", ylab = "Energy", pch = 16, cex = 0.7, col = "gray55",
   cex.lab = 1.5, cex.axis = 1.5
 )
+
 mtext("(a)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
 
 plot(
@@ -140,6 +141,19 @@ plot(
 mtext("(e)", side = 3, line = 0.2, adj = 0, cex = 1.1, font = 2)
 ```
 
+
+<details>
+<summary>Show plot descriptions</summary>
+
+- **(a) CO2 and Energy:** A strong positive linear relationship.
+- **(b) Internet and LifeExpectancy:** A strong positive linear relationship, but weaker than (a) since the dots are more scattered.
+- **(c) Rural and Internet:** A strong negative linear relationship.
+- **(d) Diabetes and Unemployment:** Essentially no linear relationship. The points do not show a consistent upward or downward linear trend.
+- **(e) GDP and BirthRate:** Some non-linear relationship, with the points not following a straight-line pattern.
+
+Note: **strength** describes how closely the points follow a straight-line pattern; *slope* describes how steep the line is. A correlation near zero means little or no *linear* relationship; a nonlinear pattern could still be present.
+
+</details>
 
 ## Pearson Correlation Coefficient
 
@@ -198,7 +212,7 @@ Use the `AllCountries` dataset for these questions.
 
 
 <details>
-<summary>Show solutions</summary>
+<summary>Show solution</summary>
 
 1. $r = 0.812$. There is a strong, positive linear relationship between internet access and life expectancy. Countries with greater internet access tend to have higher life expectancy, on average.
 
@@ -255,7 +269,7 @@ When using a correlation coefficient, report:
 <strong>10.</strong> (`United States Colleges`) Is there an association between a school's competitive rank (`comp`) and affiliation (`public`)?
 
 <details>
-<summary>Show solutions</summary>
+<summary>Show solution</summary>
 
 4. $r = -0.203$. There is a weak, negative linear relationship between eighth-grade math achievement and teacher interest. The `tcherint` scale is coded so that lower values indicate greater teacher interest; students with higher math scores therefore tend to report greater teacher interest, on average.
 
@@ -300,7 +314,7 @@ Compare percentages:
 
 Example: (NELS dataset) is there a relationship between `achmat8` (math achievement in 8th grade) and `region`?
 
-Step 1: Identify the nominal variable (`region`)
+Step 1: Identify the nominal grouping variable (`region`).
 
 Step 2: Write down the groups as defined by the nominal variable:
 
@@ -378,7 +392,6 @@ Option 2: Using `alcbinge` as a grouping variable:
 - Never binged:
 - Have binged:
 
-
 ## Jamovi procedure
 
 Refer to [assignment 5](../../course_documents/assignment/assignment_5.html){target="_blank"} for more examples of contingency tables.
@@ -402,11 +415,20 @@ For each region, calculate the percent that **have** binged on alcohol:
 Conclusion:
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<details>
+<summary>Show solution</summary>
+
+- **Northeast:** 25.5% have binged on alcohol.
+- **North Central:** 23.8% have binged on alcohol.
+- **South:** 20.7% have binged on alcohol.
+- **West:** 15.1% have binged on alcohol.
+
+There is a relationship between region and whether students have ever binged on alcohol.  For instance, among students from the Northeast, 25.5% have binged on alcohol, while among students from the West, only 15.1% have binged on alcohol.
+
+</details>
+
+
 
 ## Option 2: grouping by `alcbinge`
 
@@ -417,13 +439,21 @@ Conclusion:
 Conclusion:
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+<details>
+<summary>Show solution</summary>
 
+- Among people who have **never** binged on alcohol, **30.4%** are from the South.
+- Among people who **have** binged on alcohol, **28.7%** are from the South.
+
+(Not enough difference in percentages, so try a different region.)
+
+- Among people who have **never** binged on alcohol, **20.2%** are from the West.
+- Among people who **have** binged on alcohol, **13.0%** are from the West.
+
+There is a relationship between region and whether students have ever binged on alcohol. For instance, among students who have binged, 13.0% are from the West; among students who have never binged, 20.2% are from the West.
+
+</details>
 
 > In practice: choose a column and compare the "row" percentages in that column.
 
@@ -432,7 +462,28 @@ Conclusion:
 Example: Is there a relationship between `schtyp8` (school type in 8th grade) and `region`? Calculate relevant percentages to support your answer. Make sure to interpret the percentages correctly.
 
 
+<details>
+<summary>Show solution</summary>
 
+**Option 1: Use `region` as the grouping variable.** 
+
+- **Northeast:** 67.9% attend public school.
+- **North Central:** 70.2% attend public school.
+- **South:** 76.0% attend public school.
+- **West:** 83.9% attend public school.
+
+There is a relationship between region and school type: among students from the Northeast, 67.9% attend public school; among students from the West, 83.9% attend public school.
+
+**Option 2: Use `schtyp8` as the grouping variable.**
+
+- **Public:** 19.5% are from the Northeast.
+- **Private, Religious:** 26.7% are from the Northeast.
+- **Private, Non-Religious:** 25.0% are from the Northeast.
+
+There is a relationship between region and school type: among students who went to public school, 19.5% are from the Northeast; among students who went to private, religious school, 26.7% are from the Northeast.
+
+
+</details>
 
 ## Common mistakes when interpreting contingency tables
 
@@ -482,6 +533,32 @@ Example 1: (United States Colleges) relationship between Affiliation (0 = privat
 Example 2: (NELS) relationship between Urbanicity and `edexpect` (highest level of education expected)?
 
 <br>
+<br>
+<br>
+
+<details>
+<summary>Show solution</summary>
+
+**Example 1.**
+
+Yes, there is a relationship between school affiliation and whether a school is a college or university. For example, among public schools, 93.5% are universities; among private schools, 43.4% are universities.
+
+(OR) Yes, there is a relationship between school affiliation and institution type. Among universities, 56.6% are public, whereas among colleges, only 6.5% are public.
+
+(OR) The correlation is $r = 0.501$, indicating a moderate/strong, positive association. With public coded 1 and university coded 1, public schools tend to be universities, while private schools tend to be colleges.
+
+**Example 2.**
+
+Yes, there is a relationship between urbanicity and students' educational expectations. For example, among students from rural areas, 40.1% expect a bachelor's degree to be their highest degree, whereas among students from urban areas, 27.6% expect a bachelor's degree to be their highest degree.
+
+(OR) Yes, there is a relationship between urbanicity and students' educational expectations.  For example, among the 48 students who expect "less than college degree" to be their highest degree, 12.5% are from urban areas, whereas among the 103 students who expect Ph.D, MD, JD etc. to be their highest degree, 34% are from urban areas.
+
+(OR) Spearman $\rho$ can also be used if you consider `urbanicity` as an ordinal variable.  $\rho = -0.179$.  There is a negative, weak relationship. Students from urban areas (LOW coding) tend to expect higher levels of education (HIGH coding), on average.
+
+</details>
+
+
+
 
 # Review questions: fix and improve answers
 
@@ -497,14 +574,53 @@ In the NJ Restaurants dataset, is there a relationship between `Type2` (1='Frenc
 
 - Since $r = -0.382$, there is a negative, moderate relationship. French restaurants tend to have higher cost.
 
+- There is a relationship because the medians (40 and 2) are very different.
 
-- Based on the boxplot, French restaurants tend to have a higher cost of food, since the average is higher.
+<details>
+<summary>Show summary statistics</summary>
+
+| Statistic | `cost` | `type2` |
+|---|---:|---:|
+| N | 40 | 40 |
+| Missing | 0 | 0 |
+| Mean | 39.6 | 2.10 |
+| Median | 40.0 | 2.00 |
+| Standard deviation | 7.83 | 0.810 |
+| Minimum | 21.0 | 1 |
+| Maximum | 59.0 | 3 |
+
+</details>
 
 ## Fix and improve: example 3
 
 In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `Sunday` (does it open on Sunday, 0 = No, 1 = Yes)?
 
-- There is no relationship, since they have the same medians.
+- There is no relationship, since they have the same medians (2).
+
+<details>
+<summary>Show summary statistics</summary>
+
+Descriptive statistics for `type2`, grouped by `Sunday` status:
+
+| Statistic | `sunday` | `type2` |
+|---|---|---:|
+| N | No | 12 |
+|  | Yes | 28 |
+| Missing | No | 0 |
+|  | Yes | 0 |
+| Mean | No | 1.83 |
+|  | Yes | 2.21 |
+| Median | No | 2.00 |
+|  | Yes | 2.00 |
+| Standard deviation | No | 0.835 |
+|  | Yes | 0.787 |
+| Minimum | No | 1 |
+|  | Yes | 1 |
+| Maximum | No | 3 |
+|  | Yes | 3 |
+
+</details>
+
 
 ## Fix and improve: example 4
 
@@ -512,9 +628,29 @@ In the United States Colleges dataset, is there a relationship between `Competit
 
 - Since $r = 0.099$, there is a positive, very weak relationship.
 
-
 - Colleges have lower competitiveness rank (mean = 3.02); universities have higher competitiveness rank (mean = 3.49).
 
+<details>
+<summary>Show summary statistics</summary>
+
+| Statistic | `univ` | `comp` |
+|---|---|---:|
+| N | College | 92 |
+|  | University | 152 |
+| Missing | College | 0 |
+|  | University | 0 |
+| Mean | College | 3.02 |
+|  | University | 3.49 |
+| Median | College | 2.00 |
+|  | University | 2.50 |
+| Standard deviation | College | 2.26 |
+|  | University | 2.34 |
+| Minimum | College | 0 |
+|  | University | 0 |
+| Maximum | College | 8 |
+|  | University | 8 |
+
+</details>
 
 
 # Appendix
