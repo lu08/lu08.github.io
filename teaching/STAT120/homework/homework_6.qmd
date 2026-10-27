@@ -1,0 +1,92 @@
+---
+title: "STAT120 - Statistical Computing in R"
+subtitle: "Homework 6"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show solution"
+---
+
+## Part I
+This part is based on the [*running*](../../../dataset/running.csv) dataset.  It is a dataset that records my running mileage by day of the week.  You'll be using the pipe operator and data manipulation functions, so make sure you load relevant packages.
+
+
+1.  On average, which day of the week do I tend to run the most miles?  Calculate the average mileage for Monday, Tuesday, etc. to compare.
+```{r,eval=T}
+library(tidyverse)
+running <- read.csv('../../../dataset/running.csv')
+#summary(running)
+```
+
+2. Convert the data to the following long format and store it as a separate data frame (**running.long**).  Note that your output might be sorted by Day (i.e., the first rows correspond to all the Monday data).  Print out the first 5 rows of your data.
+```{r, eval=T}
+running.long <- running %>% 
+  pivot_longer(cols = Mon:Sun, names_to = 'Day', values_to = 'Miles')
+
+running.long %>%
+  filter(Week=='8/8/16')
+```
+
+
+3. With the long format, calculate the average mileage for Monday, Tuesday, ect. and generate the following output.
+```{r, eval=T}
+running.long %>%
+  group_by(Day) %>%
+  summarise(average.miles=mean(Miles)) %>%
+  arrange(desc(average.miles))
+```
+
+4. Print out the top 10 days when I ran the most miles (you should get the following information), using both **running** (wide format) and **running.long** (long format).   Discuss which format is easier in this case.   
+```{r, eval=T}
+running.long %>%
+  arrange(desc(Miles)) %>%
+  slice(1:10)
+```
+
+5. Reproduce the following two graphs with **running.long** (which is much easier than using the wide format!).  They are essentially the same graph, but the first one is done with the base R **boxplot** function and the second one is done with **ggplot2** (with **theme\_classic**).
+
+```{r,fig.height=4,fig.width=6,out.width="0.5\\linewidth",eval=T}
+boxplot(running.long$Miles ~ running.long$Day,
+        col='salmon',
+        pch=16,
+        xlab='Day',
+        ylab='Miles')
+```
+
+```{r,fig.height=3,fig.width=5,out.width="0.5\\linewidth", eval=T}
+running.long %>% 
+  ggplot(aes(x=Day,y=Miles)) +
+  geom_boxplot(fill='salmon') +
+  theme_classic()
+```
+
+
+
+## Part II
+Take a look at the dataset **USArrests** in base R.  Run the following code to extract the state names and store it as a separate variable in the data frame.
+```{r, echo=T}
+USArrests$state <- row.names(USArrests)
+```
+
+The following graph is generated using the **maps** package and based on the variable **UrbanPop** in the **USArrests** dataset.  Reproduce this graph (you can visualize other variables in the **USArrests** dataset instead of **UrbanPop**, if you prefer).  You can find sample code from Lecture 6 [here](../lectures/lecture_notes/index.qmd).
+
+
+```{r, eval=T}
+library(maps)
+
+USArrests$state <- row.names(USArrests) %>% tolower()
+mymap <- map_data(map="state")
+
+# Combine crime data to map data
+mymap <- left_join(mymap, USArrests, by=c('region'='state'))
+
+# Visualize
+mymap %>%
+  ggplot(aes(x=long,y=lat,group=group, fill=UrbanPop)) +
+  geom_polygon(color='darkblue') +
+  coord_fixed(1.4) +
+  theme_void() +
+  labs(fill='Urban population percentage') +
+  scale_fill_gradient(low="yellow", high="blue")
+```
+

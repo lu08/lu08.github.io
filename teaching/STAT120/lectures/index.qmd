@@ -7,6 +7,9 @@ title: "Lectures"
 - [Lecture 3: Univariate distributions](lecture_3/lecture_3.html)
 - [Lecture 4: Hollywood movies and tidyverse](lecture_4/lecture_4.html)
 - [Lecture 5: Data visualization](lecture_5/lecture_5.html)
-
+- [Lecture 6: Formatting and combining data](lecture_6/lecture_6.html)
+- [Lecture 7: Loops](lecture_7/lecture_7.html)
+- [Lecture 8: Functions](lecture_8/lecture_8.html)
+- [Lecture 9: Bivariate relationship and statistical significance](lecture_9/lecture_9.html)
 
 - Code used for demonstration during each lecture can be found [here](lecture_notes/index.qmd)

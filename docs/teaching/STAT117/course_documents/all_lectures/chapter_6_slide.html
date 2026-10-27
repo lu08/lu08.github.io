@@ -246,6 +246,17 @@
 <li>Use <code>achmat08</code> to predict <code>achrdg08</code></li>
 </ol>
 <p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="1">
+<li><strong>Dependent (Y):</strong> College GPA. <strong>Independent (X):</strong> SAT score, a covariate.</li>
+<li><strong>Dependent (Y):</strong> Satisfaction with Drew’s dining service. <strong>Independent (X):</strong> International-student status, a factor.</li>
+<li><strong>Dependent (Y):</strong> Future salary. <strong>Independent (X):</strong> College GPA, a covariate.</li>
+<li><strong>Dependent (Y):</strong> <code>achrdg08</code>. <strong>Independent (X):</strong> <code>achmat08</code>, a covariate.</li>
+</ol>
+</details>
 </section>
 <section>
 <section id="case-1-numeric-predictor" class="title-slide slide level1 center">
@@ -375,6 +386,15 @@
 <ul>
 <li>What is the predicted SES for a student with an <code>achmat08</code> score of 10?</li>
 </ul>
+<details>
+<summary>
+Show solution
+</summary>
+<ul>
+<li>For <code>achmat08 = 45</code>, <span class="math inline">\(\widehat{SES} = 5.082 + 0.236(45) = 15.702\)</span>, or about <strong>15.70</strong>.</li>
+<li>For <code>achmat08 = 10</code>, the equation gives <span class="math inline">\(\widehat{SES} = 5.082 + 0.236(10) = 7.442\)</span>, or about <strong>7.44</strong>. However, 10 is outside the observed range of <code>achmat08</code>, so this is an extrapolation and may not be reliable.</li>
+</ul>
+</details>
 </section>
 <section id="residuals" class="slide level2">
 <h2>Residuals</h2>
@@ -414,6 +434,17 @@
 <ul>
 <li>Exercise: calculate the residuals for students with IDs 489 and 67.</li>
 </ul>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Residual = actual SES <span class="math inline">\(-\)</span> predicted SES.</p>
+<ul>
+<li><strong>ID 374:</strong> <span class="math inline">\(21 - [5.082 + 0.236(44.80)] = 5.345\)</span>, or about <strong>5.35</strong>. The model underpredicts SES.</li>
+<li><strong>ID 489:</strong> <span class="math inline">\(20 - [5.082 + 0.236(44.80)] = 4.345\)</span>, or about <strong>4.35</strong>. The model underpredicts SES.</li>
+<li><strong>ID 67:</strong> <span class="math inline">\(27 - [5.082 + 0.236(70.04)] = 5.389\)</span>, or about <strong>5.39</strong>. The model underpredicts SES.</li>
+</ul>
+</details>
 </section>
 <section id="interpretations" class="slide level2">
 <h2>Interpretations</h2>
@@ -449,11 +480,20 @@
 <ul>
 <li>Slope</li>
 </ul>
-<p><br> <br> <br></p>
+<p><br></p>
 <ul>
 <li>Intercept</li>
 </ul>
-<p><br> <br> <br></p>
+<p><br></p>
+<details>
+<summary>
+Show solution
+</summary>
+<ul>
+<li><strong>Slope (<code>0.236</code>):</strong> For each one-point increase in eighth-grade math achievement, predicted SES increases by 0.236 points, on average.</li>
+<li><strong>Intercept (<code>5.082</code>):</strong> “A student with an eighth-grade math achievement score of 0 is predicted to have an SES score of 5.082.” This is not interpretable because a score of 0 is outside the observed range of <code>achmat08</code>.</li>
+</ul>
+</details>
 </section>
 <section id="regression-and-scatterplot" class="slide level2">
 <h2>Regression and scatterplot</h2>
@@ -491,6 +531,18 @@
 <li><p>For a day with a temperature of ____ Fahrenheit, how many ice cream bars do you estimate to be sold? <br> <br></p></li>
 <li><p>For day ID=12, are we over-predicting or under-predicting? Calculate the residual.</p></li>
 </ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li>The regression equation is <span class="math inline">\(\widehat{BARSOLD} = 75.779 + 1.1804(TEMP)\)</span>.</li>
+<li>The intercept is <code>75.779</code>: when temperature is 0°F, the model predicts about 76 bars sold. This is not interpretable because a temperature of 0°F is outside the observed range of temperatures.</li>
+<li>The slope is <code>1.1804</code>: for each 1°F increase in temperature, predicted ice cream bar sales increase by about 1.18 bars, on average.</li>
+<li>For example, at 56°F the predicted sales are <span class="math inline">\(75.779 + 1.1804(56) = 141.88\)</span>, or about 142 bars. Be cautious since a temperature of 56°F is out of the range of the data.</li>
+<li>For ID 12, temperature is 75°F and actual sales are 167 bars. The predicted sales are <span class="math inline">\(75.779 + 1.1804(75) = 164.31\)</span>, so the residual is <span class="math inline">\(167 - 164.31 = 2.69\)</span> bars. The model underpredicts sales for this day.</li>
+</ol>
+</details>
 </section></section>
 <section>
 <section id="case-2-dichotomous-predictor" class="title-slide slide level1 center">

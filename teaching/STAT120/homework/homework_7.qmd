@@ -1,0 +1,166 @@
+---
+title: "STAT120 - Statistical Computing in R"
+subtitle: "Homework 7"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show solution"
+---
+
+<!--
+## Part I
+1. Write a **for loop** to print the following output.
+```{r,eval=T,echo=T}
+for(i in 2:5){
+  print(i)
+}
+```
+
+
+2. Write a **for loop** to print the following output (hint: try something like **print(1:4)** first).
+```{r,eval=T,echo=T}
+for(i in 1:5){
+  print(c(1:i))
+}
+```
+
+
+3. Create a vector x that looks like $-50, -40, \ldots, 100$.  Double check that it has a mean of $25$.  Use a **for loop** to go through *all* elements of x (avoid hardcoding; do not manually type 16 for the length of x) and print out a sequence of text that looks like: Element 1 in x is -50, Element 2 in x is -40, ...  
+```{r}
+x=seq(from=-50,to=100,by=10)
+mean(x)
+for(i in 1:length(x)){
+  print(paste('Element',i,'in x is',x[i]))
+}
+```
+
+
+4. Add two **if** statements to the loop in 3 and print something slightly different for the *first* and *last* values, so that your output looks like: The first element in x is -50, Element 2 in x is -40, ..., The last element in x is 100.
+```{r}
+for(i in 1:length(x)){
+  if(i == 1){
+    print(paste('The first element in x is',x[i]))
+  }
+  else if(i == length(x)){
+    print(paste('The last element in x is',x[i]))
+  }
+  else{
+    print(paste('Element',i,'in x is',x[i])) 
+  }
+}
+```
+
+
+5. Use **for** and **if** to do the following.  Loop through all elements of x.  If x is nonnegative, calculate its square root and print: "The square root of \_ is \_"; if x is negative, print: "Cannot calculate the square root of \_."  The blanks should be appropriate values automatically filled by R.
+```{r}
+for(i in 1:length(x)){
+  if(x[i] >= 0){
+    print(paste('The square root of',x[i],'is',sqrt(x[i])))
+  }
+  if(x[i] <0){
+    print(paste('Cannot calculate the square root of',x[i]))
+  }
+}
+```
+
+
+6. With the *Cereal* dataset in the **Lock5Data** package, calculate the average protein of all of the cereals.  Then, loop through all of the cereals to check if each of them is above or below the average in terms of the protein content.  Print "\underline{NAME} contains more protein than the average" or "\underline{NAME} contains less protein than the average" accordingly for each of the cereals.
+```{r}
+library(Lock5Data)
+avg.protein=mean(Cereal$Protein)
+for(i in 1:nrow(Cereal)){
+  if(Cereal$Protein[i] > avg.protein){
+    print(paste(Cereal$Name[i], 'contains more protein than the average.'))
+  }else{
+    print(paste(Cereal$Name[i], 'contains less protein than the average.'))
+  }
+}
+```
+
+
+7. Write a **for loop** to print out the first 20 numbers of the fibonacci sequence (look it up): 0, 1, 1, 2, 3, 5, 8, ... 
+
+```{r}
+fseq <- rep(NA, 20)  #initialization
+fseq[1]=1; fseq[2]=1
+for(i in 3:20){
+   fseq[i]=sum(fseq[c(i-1,i-2)])  
+}
+fseq
+
+```
+
+
+## Part I
+1. Write a **while** loop to calculate a sequence: $\sqrt{1}\times20$, $\sqrt{2}\times30$, $\sqrt{3}\times40, \ldots$, *until* the last number exceeds $1000$.  The first few numbers of the output should look like this:
+
+```{r,eval=T}
+library(Lock5Data)
+library(tidyverse)
+
+i=1
+result=1
+while(max(result) < 1000){
+  result[i]=sqrt(i)*(i+1)*10
+  i=i+1
+}
+result[1:5]
+```
+
+
+
+2. Suppose you roll a fair, six-sided die.  Write a **while** loop to print the outcome *until* you have rolled a six.  Your output should look like this (the numbers will be different because of randomization):
+
+```{r,eval=T}
+outcome=1
+while(outcome != 6){
+  outcome=sample(c(1:6),size=1)
+  print(outcome)
+}
+```
+
+
+
+3. With the set up in the previous question, let N be the number of times you have to roll the dice until you get a six.  For instance, if you roll 4,2,1,6, then N is 4.  Obviously, N is a *random* quantity.  Suppose we want to use simulation to study the distribution of N.  Run your code in 2 *manually* for 10 times and write down the values of N.   With these 10 values, comment on the distribution of N (i.e., what are the likely values of N?  What's a typical value?)
+
+```{r,eval=T}
+outcome=1
+counter=0
+while(outcome != 6){
+  outcome=sample(c(1:6),size=1)
+  print(outcome)
+  counter = counter+1
+  print(paste("counnter",counter))
+}
+```
+
+
+
+4. Now, instead of manually running the game for 10 times, write a **for** loop to simulate this game for 10000 times.  With the resulting 10000 simulated values of N, comment on its distribution (for instance, you can use relevant summary statistics and a histogram to comment on the typical values of N, the spread, and the shape of the distribution).
+```{r,eval=T}
+result=rep(NA,10000)
+for(i in 1:length(result)){
+  counter=0
+  outcome=1
+while(outcome != 6){
+  outcome=sample(c(1:6),size=1)
+  #print(outcome)
+  counter=counter+1
+  if(counter >5000){
+    break
+  }
+}
+#print(counter)
+  result[i]=counter
+}
+
+summary(result)
+mean(result>=10)
+mean(result==1)
+hist(result,nclass = 30,
+     main='Game length until rolling a six',
+     xlab=NA)
+```
+
+
+-->

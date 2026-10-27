@@ -26,3 +26,12 @@ The Changing Childhood Project (conducted by UNICEF)
     - New York Times [article based on this data](https://www.nytimes.com/2021/11/17/upshot/global-survey-optimism.html){target="_blank"}
     - Codebook [download](../../../dataset/UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf){download="UNICEF-Global-Insight-Gallup-Changing-Childhood-Survey-Codebook-English-2021.pdf"}
 
+
+- [New Jersey County Data](../../../dataset/NJ_county.csv){download="NJ_county.csv"}
+
+  Source: [scraped](../../../dataset/scraping_wiki.R) from [https://en.wikipedia.org/wiki/List_of_New_Jersey_locations_by_per_capita_income](https://en.wikipedia.org/wiki/List_of_New_Jersey_locations_by_per_capita_income)
+
+
+- [Running data](../../../dataset/running_data.csv){download="running_data.csv"}
+
+  Sample running mileage data based on my own running records.

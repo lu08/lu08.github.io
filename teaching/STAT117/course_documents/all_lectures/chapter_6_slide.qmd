@@ -69,6 +69,16 @@ Identify the dependent (Y) variable.  For the independent (X) variable, label it
 
 <br>
 
+<details>
+<summary>Show solution</summary>
+
+1. **Dependent (Y):** College GPA. **Independent (X):** SAT score, a covariate.
+2. **Dependent (Y):** Satisfaction with Drew's dining service. **Independent (X):** International-student status, a factor.
+3. **Dependent (Y):** Future salary. **Independent (X):** College GPA, a covariate.
+4. **Dependent (Y):** `achrdg08`. **Independent (X):** `achmat08`, a covariate.
+
+</details>
+
 
 
 # Case 1: Numeric predictor
@@ -168,6 +178,14 @@ Be cautious about predicting out of the range of X!
 
 - What is the predicted SES for a student with an `achmat08` score of 10?
 
+<details>
+<summary>Show solution</summary>
+
+- For `achmat08 = 45`, $\widehat{SES} = 5.082 + 0.236(45) = 15.702$, or about **15.70**.
+- For `achmat08 = 10`, the equation gives $\widehat{SES} = 5.082 + 0.236(10) = 7.442$, or about **7.44**. However, 10 is outside the observed range of `achmat08`, so this is an extrapolation and may not be reliable.
+
+</details>
+
 
 ## Residuals
 
@@ -193,7 +211,16 @@ Selected students from the NELS dataset:
 
 - Exercise: calculate the residuals for students with IDs 489 and 67.
 
+<details>
+<summary>Show solution</summary>
 
+Residual = actual SES $-$ predicted SES.
+
+- **ID 374:** $21 - [5.082 + 0.236(44.80)] = 5.345$, or about **5.35**. The model underpredicts SES.
+- **ID 489:** $20 - [5.082 + 0.236(44.80)] = 4.345$, or about **4.35**. The model underpredicts SES.
+- **ID 67:** $27 - [5.082 + 0.236(70.04)] = 5.389$, or about **5.39**. The model underpredicts SES.
+
+</details>
 
 ## Interpretations
 
@@ -210,14 +237,18 @@ $\hat{SES} = 5.082 + 0.236 \cdot achmat08$
 - Slope
 
 <br>
-<br>
-<br>
 
 - Intercept
 
 <br>
-<br>
-<br>
+
+<details>
+<summary>Show solution</summary>
+
+- **Slope (`0.236`):** For each one-point increase in eighth-grade math achievement, predicted SES increases by 0.236 points, on average.
+- **Intercept (`5.082`):** "A student with an eighth-grade math achievement score of 0 is predicted to have an SES score of 5.082." This is not interpretable because a score of 0 is outside the observed range of `achmat08`.
+
+</details>
 
 
 
@@ -268,6 +299,17 @@ abline(lm(ses ~ achmat08, data = nels), col = "#D36B43", lwd = 3)
 <br>
 
   e) For day ID=12, are we over-predicting or under-predicting? Calculate the residual.
+
+<details>
+<summary>Show solution</summary>
+
+a) The regression equation is $\widehat{BARSOLD} = 75.779 + 1.1804(TEMP)$.
+b) The intercept is `75.779`: when temperature is 0°F, the model predicts about 76 bars sold. This is not interpretable because a temperature of 0°F is outside the observed range of temperatures.
+c) The slope is `1.1804`: for each 1°F increase in temperature, predicted ice cream bar sales increase by about 1.18 bars, on average.
+d) For example, at 56°F the predicted sales are $75.779 + 1.1804(56) = 141.88$, or about 142 bars. Be cautious since a temperature of 56°F is out of the range of the data.
+e) For ID 12, temperature is 75°F and actual sales are 167 bars. The predicted sales are $75.779 + 1.1804(75) = 164.31$, so the residual is $167 - 164.31 = 2.69$ bars. The model underpredicts sales for this day.
+
+</details>
 
 # Case 2: dichotomous predictor
 

@@ -9,7 +9,7 @@
 <link href="lecture_6_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Lecture 6</title>
+  <title>Lecture 6: data formatting and combining</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lecture_6_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="lecture_6_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -126,22 +192,624 @@
       margin-right: 0; 
     }
   </style>
+  <link href="lecture_6_slide_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+  <script src="lecture_6_slide_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="lecture_6_slide_files/libs/plotly-binding-4.12.1/plotly.js"></script>
+  <script src="lecture_6_slide_files/libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="lecture_6_slide_files/libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="lecture_6_slide_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+  <script src="lecture_6_slide_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+  <link href="lecture_6_slide_files/libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+  <script src="lecture_6_slide_files/libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 6</h1>
+  <h1 class="title">Lecture 6: data formatting and combining</h1>
+  <p class="subtitle">Data: running mileage and map examples</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
+<section id="prep-work" class="slide level2">
+<h2>Prep work</h2>
+</section>
+<section id="tidy-data" class="slide level2">
+<h2>Tidy data</h2>
+<p>“Tidy data sets are all alike; but every messy data set is messy in its own way.” - Hadley Wickham</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6</code></pre>
+</div>
+</div>
+<p>Important features:</p>
+<ul>
+<li>Each <strong>variable</strong> is in its own <strong>column</strong></li>
+<li>Each <strong>observation</strong> is in its own <strong>row</strong></li>
+<li>Each value is in its own cell</li>
+</ul>
+<p>Datasets with these features are referred to as “tidy data” (or “long data”). Most functions in R (esp.&nbsp;in the <strong>tidyverse</strong> packages) expect your data to be in the tidy format.</p>
+<p>Tidy data is not a mathematically defined concept; <em>the best way to format data is subjective and based on the goal of the project</em>.</p>
+</section>
+<section id="example-running-mileage" class="slide level2">
+<h2>Example: running mileage</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week of</th>
+<th style="text-align: right;">Monday</th>
+<th style="text-align: right;">Tuesday</th>
+<th style="text-align: right;">Wednesday</th>
+<th style="text-align: right;">Thursday</th>
+<th style="text-align: right;">Friday</th>
+<th style="text-align: right;">Saturday</th>
+<th style="text-align: right;">Sunday</th>
+<th style="text-align: right;">Weekly total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9/7/26</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;"><strong>11.5</strong></td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td>9/14/26</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>18</strong></td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="odd">
+<td>9/21/26</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>20</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td>9/28/26</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>12</strong></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="odd">
+<td>10/5/26</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"><strong>20</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>14</strong></td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="even">
+<td>10/12/26</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6 (interval)</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;"><strong>16</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td>10/19/26</td>
+<td style="text-align: right;">Pilates + 2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>12</strong></td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td>10/26/26</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>NYC marathon</strong></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>What can we do to improve the format of this data?</p>
+</section>
+<section id="example-tb-cases" class="slide level2">
+<h2>Example: TB cases</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">1999</th>
+<th style="text-align: right;">2000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">745</td>
+<td style="text-align: right;">2666</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: right;">37737</td>
+<td style="text-align: right;">80488</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">212258</td>
+<td style="text-align: right;">213766</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">1999</th>
+<th style="text-align: right;">2000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">19987071</td>
+<td style="text-align: right;">20595360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: right;">172006362</td>
+<td style="text-align: right;">174504898</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">1272915272</td>
+<td style="text-align: right;">1280428583</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>What can we do to improve the format of this data?</p>
+</section>
+<section id="gather" class="slide level2">
+<h2>gather</h2>
+<p>Convert wide data into long data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  country     `1999` `2000`
+  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+1 Afghanistan    745   2666
+2 Brazil       37737  80488
+3 China       212258 213766</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country     year  case.number
+  &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+1 Afghanistan 1999          745
+2 Afghanistan 2000         2666
+3 Brazil      1999        37737
+4 Brazil      2000        80488
+5 China       1999       212258
+6 China       2000       213766</code></pre>
+</div>
+</div>
+<ul>
+<li>Two new columns are created (‘year’ and ‘case.number’)</li>
+<li>The new column named by <strong>names_to</strong> contains old column names</li>
+<li>The new column named by <strong>values_to</strong> contains old cell values</li>
+<li>Columns 2 and 3 in the old data are “stacked”</li>
+</ul>
+<p>Exercise: convert <strong>table4b</strong> to the following format</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">1999</th>
+<th style="text-align: right;">2000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">19987071</td>
+<td style="text-align: right;">20595360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: right;">172006362</td>
+<td style="text-align: right;">174504898</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">1272915272</td>
+<td style="text-align: right;">1280428583</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country     year  population
+  &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt;
+1 Afghanistan 1999    19987071
+2 Afghanistan 2000    20595360
+3 Brazil      1999   172006362
+4 Brazil      2000   174504898
+5 China       1999  1272915272
+6 China       2000  1280428583</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">pivot_longer</span>(table4b, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="at">values_to =</span> <span class="st">"population"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section>
+<section id="example-exam-scores" class="slide level2">
+<h2>Example: exam scores</h2>
+<p>Run the following code to create a data frame of exam scores. What would the long format look like? Use R to convert it to the long format and call it <strong>df.score.long</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>df.score <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">student =</span> <span class="fu">c</span>(<span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span>),</span>
+<span id="cb6-2"><a href=""></a>                   <span class="at">math =</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">73</span>,<span class="dv">12</span>),</span>
+<span id="cb6-3"><a href=""></a>                   <span class="at">literature =</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">78</span>,<span class="dv">96</span>),</span>
+<span id="cb6-4"><a href=""></a>                   <span class="at">PE =</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">55</span>, <span class="dv">57</span>))</span>
+<span id="cb6-5"><a href=""></a>df.score</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student math literature PE
+1       A   99         45 56
+2       B   73         78 55
+3       C   12         96 57</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>df.score.long <span class="ot">&lt;-</span> df.score <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href=""></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">names_to =</span> <span class="st">"subject"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb8-3"><a href=""></a>df.score.long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  student subject    score
+  &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt;
+1 A       math          99
+2 A       literature    45
+3 A       PE            56
+4 B       math          73
+5 B       literature    78
+6 B       PE            55
+7 C       math          12
+8 C       literature    96
+9 C       PE            57</code></pre>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Different ways to specify the columns you want to stack
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># these code are equivalent </span></span>
+<span id="cb10-2"><a href=""></a>df.score <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">names_to =</span> <span class="st">"subject"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb10-3"><a href=""></a>df.score <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(math,literature,PE), <span class="at">names_to =</span> <span class="st">"subject"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb10-4"><a href=""></a>df.score <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> math<span class="sc">:</span>PE, <span class="at">names_to =</span> <span class="st">"subject"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb10-5"><a href=""></a>df.score <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>student, <span class="at">names_to =</span> <span class="st">"subject"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section>
+<section id="but-why" class="slide level2">
+<h2>But why?</h2>
+<p>As an example, try generating the following graphs with <strong>df.score</strong>, and then with <strong>df.score.long</strong>. Which format is easier?</p>
 
+<img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%" class="r-stretch"><details>
+<summary>
+Sample code
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># --------------------------------------------------- #</span></span>
+<span id="cb11-2"><a href=""></a><span class="co"># Long format: code for both graphs are very similar</span></span>
+<span id="cb11-3"><a href=""></a><span class="co"># --------------------------------------------------- #</span></span>
+<span id="cb11-4"><a href=""></a><span class="fu">boxplot</span>(df.score.long<span class="sc">$</span>score <span class="sc">~</span> df.score.long<span class="sc">$</span>student, </span>
+<span id="cb11-5"><a href=""></a>        <span class="at">xlab=</span><span class="st">'students'</span>, </span>
+<span id="cb11-6"><a href=""></a>        <span class="at">ylab=</span><span class="st">'scores'</span>)</span>
+<span id="cb11-7"><a href=""></a><span class="co"># OR #</span></span>
+<span id="cb11-8"><a href=""></a>df.score.long <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>student, <span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb11-9"><a href=""></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb11-10"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-11"><a href=""></a></span>
+<span id="cb11-12"><a href=""></a><span class="fu">boxplot</span>(df.score.long<span class="sc">$</span>score <span class="sc">~</span> df.score.long<span class="sc">$</span>subject, </span>
+<span id="cb11-13"><a href=""></a>        <span class="at">xlab=</span><span class="st">'subjects'</span>, </span>
+<span id="cb11-14"><a href=""></a>        <span class="at">ylab=</span><span class="st">'scores'</span>)</span>
+<span id="cb11-15"><a href=""></a><span class="co"># OR #</span></span>
+<span id="cb11-16"><a href=""></a>df.score.long <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>subject, <span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb11-17"><a href=""></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb11-18"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-19"><a href=""></a></span>
+<span id="cb11-20"><a href=""></a></span>
+<span id="cb11-21"><a href=""></a><span class="co"># --------------------------------------------------- #</span></span>
+<span id="cb11-22"><a href=""></a><span class="co"># Short format: not easy with ggplot; base R coding is not unified</span></span>
+<span id="cb11-23"><a href=""></a><span class="co"># --------------------------------------------------- #</span></span>
+<span id="cb11-24"><a href=""></a><span class="fu">boxplot</span>(<span class="fu">as.numeric</span>(df.score[<span class="dv">1</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]),</span>
+<span id="cb11-25"><a href=""></a>        <span class="fu">as.numeric</span>(df.score[<span class="dv">2</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]),</span>
+<span id="cb11-26"><a href=""></a>        <span class="fu">as.numeric</span>(df.score[<span class="dv">3</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]))</span>
+<span id="cb11-27"><a href=""></a></span>
+<span id="cb11-28"><a href=""></a><span class="fu">boxplot</span>(df.score<span class="sc">$</span>math,df.score<span class="sc">$</span>literature,df.score<span class="sc">$</span>PE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section>
+<section id="spread" class="slide level2">
+<h2>spread</h2>
+<p>Convert long data into wide data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  student subject    score
+  &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt;
+1 A       math          99
+2 A       literature    45
+3 A       PE            56
+4 B       math          73
+5 B       literature    78
+6 B       PE            55
+7 C       math          12
+8 C       literature    96
+9 C       PE            57</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  student  math literature    PE
+  &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+1 A          99         45    56
+2 B          73         78    55
+3 C          12         96    57</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>subject</strong> and <strong>score</strong> are not put in quotation, as they refer to <strong>existing</strong> columns in the dataset</li>
+<li>Variable specified by <strong>names_from</strong> becomes new column names; this variable has <span class="math inline">\(3\)</span> unique values, so <span class="math inline">\(3\)</span> new columns are created</li>
+<li>Variable specified by <strong>values_from</strong> becomes new cell values</li>
+</ul>
+</section>
+<section>
+<section id="map" class="title-slide slide level1 center">
+<h1>Map</h1>
 
 </section>
+<section id="maps-package" class="slide level2">
+<h2>maps package</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">library</span>(maps)</span>
+<span id="cb14-2"><a href=""></a><span class="co"># there are a few different maps included in this package</span></span>
+<span id="cb14-3"><a href=""></a><span class="co"># see ?map_data</span></span>
+<span id="cb14-4"><a href=""></a></span>
+<span id="cb14-5"><a href=""></a>mymap <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="at">map=</span><span class="st">"state"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>What exactly is <strong>mymap</strong>? Try some information extraction/visualization</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-14-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="new-jersey-map-by-county" class="slide level2">
+<h2>New Jersey map by county</h2>
+
+<img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:20.0%" class="r-stretch"></section>
+<section id="new-jersey-data" class="slide level2">
+<h2>New Jersey data</h2>
+<ul>
+<li>Download the <a href="../../../../dataset/NJ_county.csv"><strong>NJ_county.csv</strong></a> dataset and import to R (scraped from <a href="https://en.wikipedia.org/wiki/List_of_New_Jersey_locations_by_per_capita_income">wikipedia</a>)</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   22 obs. of  5 variables:
+ $ County           : chr  "Hunterdon" "Morris" "Somerset" "Monmouth" ...
+ $ Per_capita_income: int  73936 68227 67395 63610 58150 56363 54906 52911 52208 51272 ...
+ $ Median_household : int  142518 131795 135577 118194 114336 113640 84870 83056 98028 96346 ...
+ $ Population       : int  129777 511151 346875 644098 952997 146084 95634 703366 569815 9261699 ...
+ $ Number_households: int  50515 194141 130178 253767 354937 58885 48563 304526 202575 3516978 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="combine-data" class="slide level2">
+<h2>Combine data</h2>
+<p>We want to combine these two existing data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     County Per_capita_income Median_household Population Number_households
+1 Hunterdon             73936           142518     129777             50515
+2    Morris             68227           131795     511151            194141
+3  Somerset             67395           135577     346875            130178</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       long      lat group order     region subregion
+1 -74.98299 39.51690  1742 51277 new jersey  atlantic
+2 -74.89132 39.58566  1742 51278 new jersey  atlantic
+3 -74.70797 39.73462  1742 51279 new jersey  atlantic</code></pre>
+</div>
+</div>
+<ul>
+<li>We need to match <strong>County</strong> with <strong>subregion</strong></li>
+<li>We need to make sure the county spellings are consistent (e.g., all lower case)</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>       long      lat group order     region subregion Per_capita_income
+1 -74.98299 39.51690  1742 51277 new jersey  atlantic             40034
+2 -74.89132 39.58566  1742 51278 new jersey  atlantic             40034
+3 -74.70797 39.73462  1742 51279 new jersey  atlantic             40034
+  Median_household Population Number_households
+1            77248     275638            106972
+2            77248     275638            106972
+3            77248     275638            106972</code></pre>
+</div>
+</div>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization!</h2>
+<p>Now we can do all the fun stuff like visualizing a map. Also, note here that you can store a ggplot like a regular R object. This is <em>not</em> the case with base R plots.</p>
+
+<img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<section id="interactive-map-with-county-names" class="slide level2">
+<h2>Interactive map with county names</h2>
+<p>We set <strong>text=subregion</strong> in the previous ggplot. The goal is to show the county names on the map as text. This is very easy with an <strong>interactive</strong> graph: the <strong>ggplotly( )</strong> function in the <strong>plotly</strong> package allows you to convert an existing ggplot to an interactive version.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-87576f46061e572943fe" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-87576f46061e572943fe">{"x":{"data":[{"x":[-74.85693359375,-74.885589599609375,-74.914230346679688,-74.925689697265625,-74.925689697265625,-74.919960021972656,-74.960067749023438,-74.982986450195312,-75.000175476074219,-75.011634826660156,-75.046012878417969,-75.068931579589844,-75.08612060546875,-75.103302001953125,-75.120498657226562,-75.149139404296875,-75.160606384277344,-75.172065734863281,-75.212173461914062,-75.229354858398438,-75.240814208984375,-75.269462585449219,-75.298118591308594,-75.326759338378906,-75.361137390136719,-75.395515441894531,-75.424163818359375,-75.418434143066406,-75.412704467773438,-75.4012451171875,-75.384063720703125,-75.361137390136719,-75.349678039550781,-75.326759338378906,-75.286651611328125,-75.235084533691406,-75.080390930175781,-75.068931579589844,-75.051742553710938,-74.982986450195312,-74.85693359375,-74.85693359375,-74.851203918457031,-74.85693359375,-74.85693359375,-74.85693359375],"y":[39.327823638916016,39.293445587158203,39.247608184814453,39.218959808349609,39.213233947753906,39.167396545410156,39.173126220703125,39.173126220703125,39.190315246582031,39.201770782470703,39.201770782470703,39.207500457763672,39.207500457763672,39.196041107177734,39.178852081298828,39.190315246582031,39.207500457763672,39.236152648925781,39.253337860107422,39.270526885986328,39.287715911865234,39.293445587158203,39.293445587158203,39.333553314208984,39.345012664794922,39.362197875976562,39.402305603027344,39.430953979492188,39.459606170654297,39.46533203125,39.46533203125,39.471061706542969,39.482524871826172,39.482524871826172,39.51116943359375,39.5570068359375,39.453872680664062,39.539817810058594,39.562736511230469,39.516899108886719,39.430953979492188,39.396579742431641,39.367931365966797,39.345012664794922,39.327823638916016,39.327823638916016],"text":"Per_capita_income: 30214<br />cumberland","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(255,255,0,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.295440673828125,-74.295440673828125,-74.295440673828125,-74.295440673828125,-74.312629699707031,-74.341278076171875,-74.35845947265625,-74.387115478515625,-74.404296875,-74.432952880859375,-74.438682556152344,-74.455863952636719,-74.467323303222656,-74.478790283203125,-74.501701354980469,-74.375648498535156,-74.238136291503906,-74.192298889160156,-74.238136291503906,-74.27252197265625,-74.2266845703125,-74.169387817382812,-74.157928466796875,-74.152191162109375,-74.152191162109375,-74.129280090332031,-74.123550415039062,-74.08917236328125,-74.112091064453125,-74.129280090332031,-74.249603271484375,-74.266792297363281,-74.295440673828125,-74.295440673828125],"y":[40.903457641601562,40.932106018066406,40.943565368652344,40.955024719238281,40.972209930419922,41.006587982177734,41.012317657470703,41.018047332763672,41.023780822753906,41.029506683349609,41.029506683349609,41.046699523925781,41.046699523925781,41.040966033935547,41.086803436279297,41.201393127441406,41.144100189208984,41.126911163330078,41.069614410400391,41.023780822753906,40.983673095703125,40.983673095703125,40.972209930419922,40.972209930419922,40.955024719238281,40.886268615722656,40.880538940429688,40.857620239257812,40.846160888671875,40.817516326904297,40.891998291015625,40.897727966308594,40.903457641601562,40.903457641601562],"text":"Per_capita_income: 37516<br />passaic","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(242,216,96,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.982986450195312,-74.891319274902344,-74.707969665527344,-74.690773010253906,-74.662132263183594,-74.656402587890625,-74.650665283203125,-74.604827880859375,-74.576187133789062,-74.558998107910156,-74.547538757324219,-74.518890380859375,-74.473052978515625,-74.45013427734375,-74.432952880859375,-74.415756225585938,-74.392845153808594,-74.398567199707031,-74.392845153808594,-74.375648498535156,-74.398567199707031,-74.421485900878906,-74.461593627929688,-74.501701354980469,-74.553268432617188,-74.581916809082031,-74.63348388671875,-74.662132263183594,-74.673591613769531,-74.713699340820312,-74.742340087890625,-74.770988464355469,-74.782447814941406,-74.816825866699219,-74.85693359375,-74.85693359375,-74.851203918457031,-74.85693359375,-74.85693359375,-74.982986450195312,-74.982986450195312],"y":[39.516899108886719,39.585655212402344,39.734622955322266,39.723163604736328,39.677326202392578,39.642951965332031,39.637218475341797,39.620033264160156,39.60284423828125,39.597114562988281,39.585655212402344,39.568462371826172,39.5570068359375,39.5570068359375,39.551277160644531,39.545543670654297,39.539817810058594,39.516899108886719,39.505439758300781,39.459606170654297,39.425224304199219,39.396579742431641,39.379390716552734,39.356472015380859,39.293445587158203,39.281986236572266,39.293445587158203,39.293445587158203,39.293445587158203,39.293445587158203,39.293445587158203,39.304904937744141,39.310634613037109,39.316364288330078,39.327823638916016,39.345012664794922,39.367931365966797,39.396579742431641,39.430953979492188,39.516899108886719,39.516899108886719],"text":"Per_capita_income: 40034<br />atlantic","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(236,202,112,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.068931579589844,-75.080390930175781,-75.235084533691406,-75.286651611328125,-75.326759338378906,-75.349678039550781,-75.361137390136719,-75.384063720703125,-75.4012451171875,-75.412704467773438,-75.418434143066406,-75.424163818359375,-75.464271545410156,-75.515838623046875,-75.515838623046875,-75.510101318359375,-75.504379272460938,-75.504379272460938,-75.527297973632812,-75.550216674804688,-75.53875732421875,-75.521568298339844,-75.527297973632812,-75.441352844238281,-75.395515441894531,-75.395515441894531,-75.389785766601562,-75.361137390136719,-75.361137390136719,-75.361137390136719,-75.292388916015625,-75.269462585449219,-75.246551513671875,-75.235084533691406,-75.200714111328125,-75.068931579589844,-75.068931579589844,-75.068931579589844],"y":[39.539817810058594,39.453872680664062,39.5570068359375,39.51116943359375,39.482524871826172,39.482524871826172,39.471061706542969,39.46533203125,39.46533203125,39.459606170654297,39.430953979492188,39.402305603027344,39.425224304199219,39.482524871826172,39.505439758300781,39.528358459472656,39.551277160644531,39.568462371826172,39.585655212402344,39.608570098876953,39.637218475341797,39.677326202392578,39.677326202392578,39.786190032958984,39.774730682373047,39.769001007080078,39.757541656494141,39.746082305908203,39.723163604736328,39.717433929443359,39.683055877685547,39.683055877685547,39.671596527099609,39.665870666503906,39.665870666503906,39.574195861816406,39.539817810058594,39.539817810058594],"text":"Per_capita_income: 41804<br />salem","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(232,193,122,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.54180908203125,-74.421485900878906,-74.283973693847656,-74.261062622070312,-74.261062622070312,-74.220954895019531,-74.152191162109375,-74.123550415039062,-74.106361389160156,-74.094902038574219,-74.08917236328125,-74.077713012695312,-74.049064636230469,-74.008956909179688,-74.020416259765625,-74.031875610351562,-74.049064636230469,-74.054794311523438,-74.071983337402344,-74.08917236328125,-74.094902038574219,-74.08917236328125,-74.071983337402344,-74.071983337402344,-74.071983337402344,-74.08917236328125,-74.123550415039062,-74.117820739746094,-74.112091064453125,-74.129280090332031,-74.152191162109375,-74.175117492675781,-74.175117492675781,-74.175117492675781,-74.203765869140625,-74.2266845703125,-74.243865966796875,-74.306900024414062,-74.312629699707031,-74.318351745605469,-74.341278076171875,-74.364189147949219,-74.387115478515625,-74.392845153808594,-74.415756225585938,-74.415756225585938,-74.398567199707031,-74.381378173828125,-74.54180908203125,-74.54180908203125],"y":[40.072669982910156,40.175800323486328,40.175800323486328,40.164340972900391,40.135692596435547,40.107044219970703,40.101314544677734,40.129962921142578,40.135692596435547,40.135692596435547,40.107044219970703,40.095588684082031,40.107044219970703,40.107044219970703,40.032562255859375,39.952346801757812,39.912242889404297,39.837753295898438,39.791919708251953,39.780460357666016,39.791919708251953,39.826297760009766,39.906509399414062,39.96380615234375,40.021099090576172,40.032562255859375,39.969535827636719,39.946617126464844,39.923698425292969,39.849216461181641,39.814834594726562,39.791919708251953,39.740352630615234,39.700244903564453,39.660137176513672,39.637218475341797,39.614299774169922,39.574195861816406,39.562736511230469,39.528358459472656,39.528358459472656,39.545543670654297,39.545543670654297,39.539817810058594,39.545543670654297,39.568462371826172,39.574195861816406,39.757541656494141,40.072669982910156,40.072669982910156],"text":"Per_capita_income: 42474<br />ocean","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(230,189,125,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.149139404296875,-75.1319580078125,-75.120498657226562,-75.114768981933594,-75.074661254882812,-75.046012878417969,-75.011634826660156,-75.011634826660156,-74.960067749023438,-74.919960021972656,-74.897041320800781,-74.891319274902344,-74.816825866699219,-74.782447814941406,-74.759536743164062,-74.707969665527344,-74.891319274902344,-74.90277099609375,-74.925689697265625,-74.942878723144531,-74.977256774902344,-75.005905151367188,-75.034553527832031,-75.091850280761719,-75.08612060546875,-75.149139404296875,-75.149139404296875],"y":[39.883590698242188,39.906509399414062,39.929428100585938,39.958076477050781,39.986724853515625,39.998180389404297,39.975265502929688,39.958076477050781,39.906509399414062,39.872135162353516,39.849216461181641,39.791919708251953,39.786190032958984,39.780460357666016,39.757541656494141,39.734622955322266,39.585655212402344,39.660137176513672,39.688789367675781,39.700244903564453,39.711704254150391,39.723163604736328,39.757541656494141,39.832027435302734,39.843486785888672,39.883590698242188,39.883590698242188],"text":"Per_capita_income: 42651<br />camden","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(230,188,126,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.068931579589844,-75.068931579589844,-75.200714111328125,-75.235084533691406,-75.246551513671875,-75.269462585449219,-75.292388916015625,-75.361137390136719,-75.361137390136719,-75.361137390136719,-75.389785766601562,-75.395515441894531,-75.395515441894531,-75.441352844238281,-75.424163818359375,-75.412704467773438,-75.366867065429688,-75.338226318359375,-75.280921936035156,-75.240814208984375,-75.206443786621094,-75.166336059570312,-75.149139404296875,-75.08612060546875,-75.091850280761719,-75.034553527832031,-75.005905151367188,-74.977256774902344,-74.942878723144531,-74.925689697265625,-74.90277099609375,-74.891319274902344,-74.982986450195312,-75.051742553710938,-75.068931579589844,-75.068931579589844],"y":[39.539817810058594,39.574195861816406,39.665870666503906,39.665870666503906,39.671596527099609,39.683055877685547,39.683055877685547,39.717433929443359,39.723163604736328,39.746082305908203,39.757541656494141,39.769001007080078,39.774730682373047,39.786190032958984,39.809108734130859,39.803379058837891,39.826297760009766,39.843486785888672,39.849216461181641,39.854942321777344,39.860671997070312,39.872135162353516,39.883590698242188,39.843486785888672,39.832027435302734,39.757541656494141,39.723163604736328,39.711704254150391,39.700244903564453,39.688789367675781,39.660137176513672,39.585655212402344,39.516899108886719,39.562736511230469,39.539817810058594,39.539817810058594],"text":"Per_capita_income: 44186<br />gloucester","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(226,180,134,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.126228332519531,-75.1319580078125,-75.120498657226562,-75.068931579589844,-75.017364501953125,-74.982986450195312,-74.977256774902344,-74.770988464355469,-74.81109619140625,-74.822555541992188,-74.828285217285156,-74.868392944335938,-74.897041320800781,-74.931427001953125,-74.977256774902344,-75.000175476074219,-75.063201904296875,-75.114768981933594,-75.200714111328125,-75.206443786621094,-75.200714111328125,-75.183517456054688,-75.194976806640625,-75.183517456054688,-75.172065734863281,-75.1319580078125,-75.114768981933594,-75.097579956054688,-75.068931579589844,-75.068931579589844,-75.091850280761719,-75.114768981933594,-75.126228332519531,-75.126228332519531],"y":[40.96075439453125,40.983673095703125,41.000862121582031,41.029506683349609,41.052425384521484,41.081073760986328,41.103992462158203,40.9149169921875,40.891998291015625,40.857620239257812,40.846160888671875,40.806053161621094,40.783134460449219,40.765945434570312,40.731571197509766,40.708652496337891,40.680004119873047,40.645626068115234,40.594062805175781,40.616977691650391,40.645626068115234,40.680004119873047,40.702922821044922,40.754489898681641,40.777408599853516,40.783134460449219,40.794597625732422,40.846160888671875,40.86907958984375,40.897727966308594,40.926372528076172,40.943565368652344,40.96075439453125,40.96075439453125],"text":"Per_capita_income: 45188<br />warren","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,175,139,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.375648498535156,-74.369918823242188,-74.364189147949219,-74.347007751464844,-74.324081420898438,-74.341278076171875,-74.341278076171875,-74.335540771484375,-74.324081420898438,-74.312629699707031,-74.295440673828125,-74.266792297363281,-74.249603271484375,-74.129280090332031,-74.146469116210938,-74.152191162109375,-74.157928466796875,-74.140739440917969,-74.123550415039062,-74.123550415039062,-74.129280090332031,-74.146469116210938,-74.169387817382812,-74.152191162109375,-74.152191162109375,-74.169387817382812,-74.192298889160156,-74.232414245605469,-74.283973693847656,-74.312629699707031,-74.347007751464844,-74.375648498535156,-74.375648498535156],"y":[40.748760223388672,40.788864135742188,40.806053161621094,40.817516326904297,40.857620239257812,40.880538940429688,40.886268615722656,40.9149169921875,40.9149169921875,40.9149169921875,40.903457641601562,40.897727966308594,40.891998291015625,40.817516326904297,40.788864135742188,40.771678924560547,40.754489898681641,40.737300872802734,40.737300872802734,40.691463470458984,40.680004119873047,40.657085418701172,40.651355743408203,40.680004119873047,40.691463470458984,40.697193145751953,40.697193145751953,40.714382171630859,40.725841522216797,40.720108032226562,40.725841522216797,40.748760223388672,40.748760223388672],"text":"Per_capita_income: 47158<br />essex","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,164,148,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.455863952636719,-74.467323303222656,-74.513160705566406,-74.570457458496094,-74.627754211425781,-74.63348388671875,-74.63348388671875,-74.63348388671875,-74.599105834960938,-74.587646484375,-74.553268432617188,-74.513160705566406,-74.484512329101562,-74.467323303222656,-74.501701354980469,-74.530349731445312,-74.536079406738281,-74.54180908203125,-74.478790283203125,-74.398567199707031,-74.306900024414062,-74.306900024414062,-74.278244018554688,-74.220954895019531,-74.232414245605469,-74.243865966796875,-74.261062622070312,-74.289703369140625,-74.295440673828125,-74.278244018554688,-74.261062622070312,-74.209495544433594,-74.255332946777344,-74.255332946777344,-74.392845153808594,-74.392845153808594,-74.427215576171875,-74.455863952636719,-74.455863952636719],"y":[40.273204803466797,40.278934478759766,40.290390014648438,40.307579040527344,40.336227416992188,40.347690582275391,40.37060546875,40.387798309326172,40.393524169921875,40.427902221679688,40.433631896972656,40.468009948730469,40.496654510498047,40.50811767578125,40.531036376953125,40.553951263427734,40.553951263427734,40.576869964599609,40.599788665771484,40.611248016357422,40.616977691650391,40.611248016357422,40.605518341064453,40.611248016357422,40.582599639892578,40.553951263427734,40.531036376953125,40.519573211669922,40.50811767578125,40.485198974609375,40.468009948730469,40.450817108154297,40.445091247558594,40.404983520507812,40.296123504638672,40.278934478759766,40.273204803466797,40.273204803466797,40.273204803466797],"text":"Per_capita_income: 47221<br />middlesex","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,164,148,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.455863952636719,-74.45013427734375,-74.547538757324219,-74.553268432617188,-74.558998107910156,-74.587646484375,-74.593376159667969,-74.570457458496094,-74.673591613769531,-74.702239990234375,-74.707969665527344,-74.736610412597656,-74.782447814941406,-74.816825866699219,-74.834014892578125,-74.85693359375,-74.874122619628906,-74.897041320800781,-74.919960021972656,-74.868392944335938,-74.874122619628906,-74.799644470214844,-74.799644470214844,-74.753807067871094,-74.72515869140625,-74.650665283203125,-74.63348388671875,-74.63348388671875,-74.63348388671875,-74.627754211425781,-74.570457458496094,-74.513160705566406,-74.467323303222656,-74.455863952636719,-74.455863952636719],"y":[40.273204803466797,40.261745452880859,40.221637725830078,40.192989349365234,40.187259674072266,40.187259674072266,40.175800323486328,40.124233245849609,40.181529998779297,40.187259674072266,40.187259674072266,40.164340972900391,40.233097076416016,40.244556427001953,40.267471313476562,40.290390014648438,40.307579040527344,40.324771881103516,40.336227416992188,40.353416442871094,40.382064819335938,40.387798309326172,40.427902221679688,40.427902221679688,40.387798309326172,40.393524169921875,40.387798309326172,40.37060546875,40.347690582275391,40.336227416992188,40.307579040527344,40.290390014648438,40.278934478759766,40.273204803466797,40.273204803466797],"text":"Per_capita_income: 50652<br />mercer","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(207,146,164,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.046012878417969,-74.971527099609375,-74.914230346679688,-74.862663269042969,-74.834014892578125,-74.805374145507812,-74.765266418457031,-74.730880737304688,-74.736610412597656,-74.707969665527344,-74.702239990234375,-74.673591613769531,-74.570457458496094,-74.54180908203125,-74.381378173828125,-74.398567199707031,-74.415756225585938,-74.415756225585938,-74.432952880859375,-74.45013427734375,-74.473052978515625,-74.518890380859375,-74.547538757324219,-74.558998107910156,-74.576187133789062,-74.604827880859375,-74.650665283203125,-74.656402587890625,-74.662132263183594,-74.690773010253906,-74.707969665527344,-74.759536743164062,-74.782447814941406,-74.816825866699219,-74.891319274902344,-74.897041320800781,-74.919960021972656,-74.960067749023438,-75.011634826660156,-75.011634826660156,-75.046012878417969,-75.046012878417969],"y":[39.998180389404297,40.05548095703125,40.084125518798828,40.095588684082031,40.107044219970703,40.129962921142578,40.135692596435547,40.147151947021484,40.164340972900391,40.187259674072266,40.187259674072266,40.181529998779297,40.124233245849609,40.072669982910156,39.757541656494141,39.574195861816406,39.568462371826172,39.545543670654297,39.551277160644531,39.5570068359375,39.5570068359375,39.568462371826172,39.585655212402344,39.597114562988281,39.60284423828125,39.620033264160156,39.637218475341797,39.642951965332031,39.677326202392578,39.723163604736328,39.734622955322266,39.757541656494141,39.780460357666016,39.786190032958984,39.791919708251953,39.849216461181641,39.872135162353516,39.906509399414062,39.958076477050781,39.975265502929688,39.998180389404297,39.998180389404297],"text":"Per_capita_income: 50960<br />burlington","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,144,165,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.375648498535156,-74.347007751464844,-74.312629699707031,-74.283973693847656,-74.232414245605469,-74.192298889160156,-74.169387817382812,-74.152191162109375,-74.152191162109375,-74.169387817382812,-74.18084716796875,-74.203765869140625,-74.220954895019531,-74.278244018554688,-74.306900024414062,-74.306900024414062,-74.398567199707031,-74.478790283203125,-74.438682556152344,-74.432952880859375,-74.415756225585938,-74.427215576171875,-74.455863952636719,-74.467323303222656,-74.375648498535156,-74.375648498535156],"y":[40.748760223388672,40.725841522216797,40.720108032226562,40.725841522216797,40.714382171630859,40.697193145751953,40.697193145751953,40.691463470458984,40.680004119873047,40.651355743408203,40.651355743408203,40.622707366943359,40.611248016357422,40.605518341064453,40.611248016357422,40.616977691650391,40.611248016357422,40.599788665771484,40.622707366943359,40.645626068115234,40.668544769287109,40.674274444580078,40.662815093994141,40.680004119873047,40.748760223388672,40.748760223388672],"text":"Per_capita_income: 52208<br />union","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(201,138,170,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.146469116210938,-74.129280090332031,-74.094902038574219,-74.08917236328125,-74.083442687988281,-74.066253662109375,-74.037605285644531,-74.003227233886719,-74.014686584472656,-74.031875610351562,-74.054794311523438,-74.077713012695312,-74.094902038574219,-74.146469116210938,-74.129280090332031,-74.123550415039062,-74.123550415039062,-74.140739440917969,-74.157928466796875,-74.152191162109375,-74.146469116210938,-74.146469116210938],"y":[40.788864135742188,40.783134460449219,40.783134460449219,40.771678924560547,40.771678924560547,40.788864135742188,40.811782836914062,40.8232421875,40.806053161621094,40.777408599853516,40.754489898681641,40.691463470458984,40.662815093994141,40.657085418701172,40.680004119873047,40.691463470458984,40.737300872802734,40.737300872802734,40.754489898681641,40.771678924560547,40.788864135742188,40.788864135742188],"text":"Per_capita_income: 52911<br />hudson","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(199,134,173,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.581916809082031,-74.610565185546875,-74.662132263183594,-74.707969665527344,-74.742340087890625,-74.770988464355469,-74.782447814941406,-74.805374145507812,-74.839752197265625,-74.874122619628906,-74.919960021972656,-74.9486083984375,-74.960067749023438,-74.954338073730469,-74.937149047851562,-74.90277099609375,-74.891319274902344,-74.885589599609375,-74.885589599609375,-74.919960021972656,-74.925689697265625,-74.925689697265625,-74.914230346679688,-74.885589599609375,-74.85693359375,-74.816825866699219,-74.782447814941406,-74.770988464355469,-74.742340087890625,-74.713699340820312,-74.673591613769531,-74.662132263183594,-74.63348388671875,-74.581916809082031,-74.581916809082031],"y":[39.281986236572266,39.253337860107422,39.201770782470703,39.155933380126953,39.1043701171875,39.047073364257812,39.006969451904297,38.978317260742188,38.949668884277344,38.932479858398438,38.926753997802734,38.932479858398438,38.943943023681641,38.978317260742188,39.006969451904297,39.05853271484375,39.087181091308594,39.121559143066406,39.144477844238281,39.167396545410156,39.213233947753906,39.218959808349609,39.247608184814453,39.293445587158203,39.327823638916016,39.316364288330078,39.310634613037109,39.304904937744141,39.293445587158203,39.293445587158203,39.293445587158203,39.293445587158203,39.293445587158203,39.281986236572266,39.281986236572266],"text":"Per_capita_income: 54906<br />cape may","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(191,123,181,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.770988464355469,-74.977256774902344,-74.954338073730469,-74.925689697265625,-74.891319274902344,-74.868392944335938,-74.851203918457031,-74.81109619140625,-74.770988464355469,-74.72515869140625,-74.375648498535156,-74.501701354980469,-74.639213562011719,-74.639213562011719,-74.639213562011719,-74.650665283203125,-74.662132263183594,-74.690773010253906,-74.770988464355469,-74.770988464355469],"y":[40.9149169921875,41.103992462158203,41.121181488037109,41.138370513916016,41.195663452148438,41.230045318603516,41.270149230957031,41.310256958007812,41.338905334472656,41.3675537109375,41.201393127441406,41.086803436279297,40.972209930419922,40.96075439453125,40.949291229248047,40.932106018066406,40.9149169921875,40.9149169921875,40.9149169921875,40.9149169921875],"text":"Per_capita_income: 56363<br />sussex","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(185,116,187,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.003227233886719,-74.037605285644531,-74.066253662109375,-74.083442687988281,-74.08917236328125,-74.094902038574219,-74.129280090332031,-74.146469116210938,-74.129280090332031,-74.112091064453125,-74.08917236328125,-74.123550415039062,-74.129280090332031,-74.152191162109375,-74.152191162109375,-74.157928466796875,-74.169387817382812,-74.2266845703125,-74.27252197265625,-74.238136291503906,-74.192298889160156,-73.900100708007812,-73.911552429199219,-73.917282104492188,-73.940208435058594,-73.974578857421875,-74.003227233886719,-74.003227233886719],"y":[40.8232421875,40.811782836914062,40.788864135742188,40.771678924560547,40.771678924560547,40.783134460449219,40.783134460449219,40.788864135742188,40.817516326904297,40.846160888671875,40.857620239257812,40.880538940429688,40.886268615722656,40.955024719238281,40.972209930419922,40.972209930419922,40.983673095703125,40.983673095703125,41.023780822753906,41.069614410400391,41.126911163330078,40.995128631591797,40.909187316894531,40.903457641601562,40.891998291015625,40.846160888671875,40.8232421875,40.8232421875],"text":"Per_capita_income: 58150<br />bergen","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(177,106,194,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.570457458496094,-74.593376159667969,-74.587646484375,-74.558998107910156,-74.553268432617188,-74.547538757324219,-74.45013427734375,-74.455863952636719,-74.427215576171875,-74.392845153808594,-74.392845153808594,-74.255332946777344,-74.255332946777344,-74.209495544433594,-74.203765869140625,-74.192298889160156,-74.140739440917969,-74.08917236328125,-74.066253662109375,-74.008956909179688,-74.020416259765625,-74.008956909179688,-73.991767883300781,-73.974578857421875,-73.957389831542969,-73.957389831542969,-73.957389831542969,-73.957389831542969,-73.974578857421875,-74.003227233886719,-74.008956909179688,-74.049064636230469,-74.077713012695312,-74.08917236328125,-74.094902038574219,-74.106361389160156,-74.123550415039062,-74.152191162109375,-74.220954895019531,-74.261062622070312,-74.261062622070312,-74.283973693847656,-74.421485900878906,-74.54180908203125,-74.570457458496094,-74.570457458496094],"y":[40.124233245849609,40.175800323486328,40.187259674072266,40.187259674072266,40.192989349365234,40.221637725830078,40.261745452880859,40.273204803466797,40.273204803466797,40.278934478759766,40.296123504638672,40.404983520507812,40.445091247558594,40.450817108154297,40.445091247558594,40.433631896972656,40.433631896972656,40.433631896972656,40.422172546386719,40.404983520507812,40.450817108154297,40.468009948730469,40.450817108154297,40.433631896972656,40.393524169921875,40.336227416992188,40.301853179931641,40.267471313476562,40.221637725830078,40.158611297607422,40.107044219970703,40.107044219970703,40.095588684082031,40.107044219970703,40.135692596435547,40.135692596435547,40.129962921142578,40.101314544677734,40.107044219970703,40.135692596435547,40.164340972900391,40.175800323486328,40.175800323486328,40.072669982910156,40.124233245849609,40.124233245849609],"text":"Per_capita_income: 63610<br />monmouth","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(148,76,216,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.730880737304688,-74.553268432617188,-74.553268432617188,-74.54180908203125,-74.518890380859375,-74.536079406738281,-74.530349731445312,-74.518890380859375,-74.467323303222656,-74.455863952636719,-74.427215576171875,-74.415756225585938,-74.432952880859375,-74.438682556152344,-74.478790283203125,-74.54180908203125,-74.536079406738281,-74.530349731445312,-74.501701354980469,-74.467323303222656,-74.484512329101562,-74.513160705566406,-74.553268432617188,-74.587646484375,-74.599105834960938,-74.63348388671875,-74.650665283203125,-74.72515869140625,-74.753807067871094,-74.788177490234375,-74.782447814941406,-74.742340087890625,-74.72515869140625,-74.719429016113281,-74.72515869140625,-74.707969665527344,-74.72515869140625,-74.72515869140625,-74.72515869140625,-74.730880737304688,-74.730880737304688],"y":[40.725841522216797,40.754489898681641,40.737300872802734,40.731571197509766,40.720108032226562,40.680004119873047,40.657085418701172,40.651355743408203,40.680004119873047,40.662815093994141,40.674274444580078,40.668544769287109,40.645626068115234,40.622707366943359,40.599788665771484,40.576869964599609,40.553951263427734,40.553951263427734,40.531036376953125,40.50811767578125,40.496654510498047,40.468009948730469,40.433631896972656,40.427902221679688,40.393524169921875,40.387798309326172,40.393524169921875,40.387798309326172,40.427902221679688,40.50811767578125,40.50811767578125,40.559680938720703,40.565410614013672,40.582599639892578,40.594062805175781,40.622707366943359,40.639896392822266,40.662815093994141,40.691463470458984,40.725841522216797,40.725841522216797],"text":"Per_capita_income: 67395<br />somerset","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(121,55,230,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.295440673828125,-74.312629699707031,-74.324081420898438,-74.335540771484375,-74.341278076171875,-74.341278076171875,-74.324081420898438,-74.347007751464844,-74.364189147949219,-74.369918823242188,-74.375648498535156,-74.467323303222656,-74.518890380859375,-74.530349731445312,-74.536079406738281,-74.518890380859375,-74.54180908203125,-74.553268432617188,-74.553268432617188,-74.730880737304688,-74.753807067871094,-74.765266418457031,-74.799644470214844,-74.816825866699219,-74.834014892578125,-74.845481872558594,-74.851203918457031,-74.874122619628906,-74.897041320800781,-74.868392944335938,-74.828285217285156,-74.822555541992188,-74.81109619140625,-74.770988464355469,-74.690773010253906,-74.662132263183594,-74.650665283203125,-74.639213562011719,-74.639213562011719,-74.639213562011719,-74.501701354980469,-74.478790283203125,-74.467323303222656,-74.455863952636719,-74.438682556152344,-74.432952880859375,-74.404296875,-74.387115478515625,-74.35845947265625,-74.341278076171875,-74.312629699707031,-74.295440673828125,-74.295440673828125,-74.295440673828125,-74.295440673828125,-74.295440673828125],"y":[40.903457641601562,40.9149169921875,40.9149169921875,40.9149169921875,40.886268615722656,40.880538940429688,40.857620239257812,40.817516326904297,40.806053161621094,40.788864135742188,40.748760223388672,40.680004119873047,40.651355743408203,40.657085418701172,40.680004119873047,40.720108032226562,40.731571197509766,40.737300872802734,40.754489898681641,40.725841522216797,40.731571197509766,40.737300872802734,40.737300872802734,40.737300872802734,40.737300872802734,40.737300872802734,40.754489898681641,40.771678924560547,40.783134460449219,40.806053161621094,40.846160888671875,40.857620239257812,40.891998291015625,40.9149169921875,40.9149169921875,40.9149169921875,40.932106018066406,40.949291229248047,40.96075439453125,40.972209930419922,41.086803436279297,41.040966033935547,41.046699523925781,41.046699523925781,41.029506683349609,41.029506683349609,41.023780822753906,41.018047332763672,41.012317657470703,41.006587982177734,40.972209930419922,40.955024719238281,40.943565368652344,40.932106018066406,40.903457641601562,40.903457641601562],"text":"Per_capita_income: 68227<br />morris","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(114,50,233,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-74.897041320800781,-74.874122619628906,-74.851203918457031,-74.845481872558594,-74.834014892578125,-74.816825866699219,-74.799644470214844,-74.765266418457031,-74.753807067871094,-74.730880737304688,-74.72515869140625,-74.72515869140625,-74.72515869140625,-74.707969665527344,-74.72515869140625,-74.719429016113281,-74.72515869140625,-74.742340087890625,-74.782447814941406,-74.788177490234375,-74.753807067871094,-74.799644470214844,-74.799644470214844,-74.874122619628906,-74.868392944335938,-74.919960021972656,-74.931427001953125,-74.965797424316406,-75.011634826660156,-75.046012878417969,-75.063201904296875,-75.068931579589844,-75.068931579589844,-75.08612060546875,-75.120498657226562,-75.143409729003906,-75.172065734863281,-75.200714111328125,-75.114768981933594,-75.063201904296875,-75.000175476074219,-74.977256774902344,-74.931427001953125,-74.897041320800781,-74.897041320800781],"y":[40.783134460449219,40.771678924560547,40.754489898681641,40.737300872802734,40.737300872802734,40.737300872802734,40.737300872802734,40.737300872802734,40.731571197509766,40.725841522216797,40.691463470458984,40.662815093994141,40.639896392822266,40.622707366943359,40.594062805175781,40.582599639892578,40.565410614013672,40.559680938720703,40.50811767578125,40.50811767578125,40.427902221679688,40.427902221679688,40.387798309326172,40.382064819335938,40.353416442871094,40.336227416992188,40.359146118164062,40.404983520507812,40.41644287109375,40.427902221679688,40.445091247558594,40.479469299316406,40.553951263427734,40.565410614013672,40.576869964599609,40.576869964599609,40.576869964599609,40.594062805175781,40.645626068115234,40.680004119873047,40.708652496337891,40.731571197509766,40.765945434570312,40.783134460449219,40.783134460449219],"text":"Per_capita_income: 73936<br />hunterdon","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,139,1)","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,255,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-75.5],"y":[39],"name":"573bad37f55af6ecacb13924be7e3e8d","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#FFFF00"],[0.0033444816053511345,"#FFFE07"],[0.0066889632107023523,"#FFFD0E"],[0.010033444816053488,"#FEFD14"],[0.013377926421404705,"#FEFC18"],[0.016722408026755838,"#FEFB1C"],[0.020066889632107059,"#FEFA1F"],[0.023411371237458192,"#FDF922"],[0.026755852842809326,"#FDF925"],[0.030100334448160546,"#FDF827"],[0.033444816053511676,"#FDF72A"],[0.0367892976588629,"#FCF62C"],[0.040133779264214034,"#FCF52E"],[0.043478260869565251,"#FCF530"],[0.046822742474916385,"#FCF432"],[0.050167224080267601,"#FBF334"],[0.053511705685618735,"#FBF236"],[0.056856187290969869,"#FBF237"],[0.060200668896321093,"#FBF139"],[0.063545150501672309,"#FAF03B"],[0.066889632107023353,"#FAEF3C"],[0.070234113712374577,"#FAEE3E"],[0.073578595317725801,"#FAEE40"],[0.076923076923076844,"#F9ED41"],[0.080267558528428068,"#F9EC42"],[0.083612040133779278,"#F9EB44"],[0.086956521739130502,"#F9EA45"],[0.090301003344481545,"#F8EA47"],[0.093645484949832769,"#F8E948"],[0.096989966555183993,"#F8E849"],[0.1003344481605352,"#F8E74B"],[0.10367892976588626,"#F7E64C"],[0.10702341137123747,"#F7E64D"],[0.11036789297658869,"#F7E54E"],[0.11371237458193974,"#F6E44F"],[0.11705685618729096,"#F6E351"],[0.12040133779264219,"#F6E352"],[0.12374581939799323,"#F6E253"],[0.12709030100334445,"#F5E154"],[0.13043478260869568,"#F5E055"],[0.13377926421404687,"#F5DF56"],[0.13712374581939793,"#F4DF57"],[0.14046822742474915,"#F4DE58"],[0.14381270903010038,"#F4DD59"],[0.1471571906354516,"#F4DC5A"],[0.15050167224080263,"#F3DB5C"],[0.15384615384615385,"#F3DB5D"],[0.15719063545150508,"#F3DA5E"],[0.16053511705685614,"#F2D95F"],[0.16387959866220736,"#F2D860"],[0.16722408026755856,"#F2D860"],[0.17056856187290961,"#F1D761"],[0.17391304347826084,"#F1D662"],[0.17725752508361206,"#F1D563"],[0.18060200668896326,"#F1D464"],[0.18394648829431431,"#F0D465"],[0.18729096989966554,"#F0D366"],[0.19063545150501676,"#F0D267"],[0.19397993311036799,"#EFD168"],[0.19732441471571902,"#EFD169"],[0.20066889632107024,"#EFD06A"],[0.20401337792642146,"#EECF6B"],[0.20735785953177252,"#EECE6C"],[0.21070234113712374,"#EECD6C"],[0.21404682274247494,"#EDCD6D"],[0.217391304347826,"#EDCC6E"],[0.22073578595317722,"#EDCB6F"],[0.22408026755852845,"#ECCA70"],[0.22742474916387947,"#ECC971"],[0.2307692307692307,"#ECC972"],[0.23411371237458192,"#EBC872"],[0.23745819397993315,"#EBC773"],[0.24080267558528437,"#EBC674"],[0.2441471571906354,"#EAC675"],[0.24749163879598662,"#EAC576"],[0.25083612040133785,"#EAC476"],[0.2541806020066889,"#E9C377"],[0.25752508361204013,"#E9C278"],[0.26086956521739135,"#E9C279"],[0.26421404682274241,"#E8C17A"],[0.26755852842809358,"#E8C07A"],[0.2709030100334448,"#E7BF7B"],[0.27424749163879586,"#E7BF7C"],[0.27759197324414708,"#E7BE7D"],[0.28093645484949831,"#E6BD7D"],[0.28428093645484953,"#E6BC7E"],[0.28762541806020075,"#E6BB7F"],[0.29096989966555181,"#E5BB80"],[0.29431438127090304,"#E5BA80"],[0.2976588628762542,"#E5B981"],[0.30100334448160526,"#E4B882"],[0.30434782608695649,"#E4B883"],[0.30769230769230771,"#E3B783"],[0.31103678929765877,"#E3B684"],[0.31438127090300999,"#E3B585"],[0.31772575250836121,"#E2B486"],[0.32107023411371227,"#E2B486"],[0.3244147157190635,"#E1B387"],[0.32775919732441472,"#E1B288"],[0.33110367892976589,"#E1B188"],[0.33444816053511711,"#E0B189"],[0.33779264214046817,"#E0B08A"],[0.34113712374581939,"#E0AF8B"],[0.34448160535117062,"#DFAE8B"],[0.34782608695652167,"#DFAE8C"],[0.3511705685618729,"#DEAD8D"],[0.35451505016722412,"#DEAC8D"],[0.35785953177257518,"#DDAB8E"],[0.36120401337792635,"#DDAA8F"],[0.36454849498327757,"#DDAA8F"],[0.3678929765886288,"#DCA990"],[0.37123745819397985,"#DCA891"],[0.37458193979933108,"#DBA792"],[0.3779264214046823,"#DBA792"],[0.38127090301003352,"#DBA693"],[0.38461538461538458,"#DAA594"],[0.38795986622073581,"#DAA494"],[0.39130434782608697,"#D9A395"],[0.39464882943143803,"#D9A396"],[0.39799331103678925,"#D8A296"],[0.40133779264214048,"#D8A197"],[0.40468227424749154,"#D7A098"],[0.40802675585284276,"#D7A098"],[0.41137123745819398,"#D79F99"],[0.41471571906354504,"#D69E9A"],[0.41806020066889643,"#D69D9A"],[0.42140468227424749,"#D59C9B"],[0.42474916387959866,"#D59C9B"],[0.42809364548494988,"#D49B9C"],[0.43143812709030094,"#D49A9D"],[0.43478260869565216,"#D3999D"],[0.43812709030100339,"#D3999E"],[0.44147157190635444,"#D2989F"],[0.44481605351170567,"#D2979F"],[0.44816053511705689,"#D196A0"],[0.45150501672240795,"#D196A1"],[0.45484949832775912,"#D195A1"],[0.45819397993311034,"#D094A2"],[0.4615384615384614,"#D093A3"],[0.46488294314381279,"#CF92A3"],[0.46822742474916385,"#CF92A4"],[0.47157190635451507,"#CE91A4"],[0.47491638795986629,"#CE90A5"],[0.47826086956521735,"#CD8FA6"],[0.48160535117056857,"#CD8FA6"],[0.48494983277591974,"#CC8EA7"],[0.4882943143812708,"#CC8DA8"],[0.49163879598662202,"#CB8CA8"],[0.49498327759197325,"#CB8CA9"],[0.4983277591973243,"#CA8BA9"],[0.50167224080267547,"#CA8AAA"],[0.50501672240802675,"#C989AB"],[0.50836120401337781,"#C888AB"],[0.5117056856187292,"#C888AC"],[0.51505016722408026,"#C787AC"],[0.51839464882943143,"#C786AD"],[0.52173913043478271,"#C685AE"],[0.52508361204013376,"#C685AE"],[0.52842809364548493,"#C584AF"],[0.5317725752508361,"#C583B0"],[0.53511705685618716,"#C482B0"],[0.53846153846153844,"#C481B1"],[0.5418060200668896,"#C381B1"],[0.54515050167224066,"#C280B2"],[0.54849498327759194,"#C27FB3"],[0.55183946488294311,"#C17EB3"],[0.55518394648829417,"#C17EB4"],[0.55852842809364556,"#C07DB4"],[0.56187290969899661,"#C07CB5"],[0.56521739130434778,"#BF7BB6"],[0.56856187290969906,"#BE7AB6"],[0.57190635451505012,"#BE7AB7"],[0.57525083612040129,"#BD79B7"],[0.57859531772575257,"#BD78B8"],[0.58193979933110362,"#BC77B9"],[0.58528428093645479,"#BB77B9"],[0.58862876254180607,"#BB76BA"],[0.59197324414715713,"#BA75BA"],[0.5953177257525083,"#BA74BB"],[0.59866220735785947,"#B974BB"],[0.60200668896321052,"#B873BC"],[0.60535117056856191,"#B872BD"],[0.60869565217391297,"#B771BD"],[0.61204013377926425,"#B670BE"],[0.61538461538461542,"#B670BE"],[0.61872909698996648,"#B56FBF"],[0.62207357859531776,"#B56EC0"],[0.62541806020066892,"#B46DC0"],[0.62876254180601998,"#B36DC1"],[0.63210702341137115,"#B36CC1"],[0.63545150501672243,"#B26BC2"],[0.63879598662207349,"#B16AC2"],[0.64214046822742465,"#B169C3"],[0.64548494983277593,"#B069C4"],[0.64882943143812699,"#AF68C4"],[0.65217391304347838,"#AE67C5"],[0.65551839464882944,"#AE66C5"],[0.65886287625418061,"#AD65C6"],[0.66220735785953178,"#AC65C7"],[0.66555183946488283,"#AC64C7"],[0.66889632107023411,"#AB63C8"],[0.67224080267558528,"#AA62C8"],[0.67558528428093634,"#AA62C9"],[0.67892976588628762,"#A961C9"],[0.68227424749163879,"#A860CA"],[0.68561872909698984,"#A75FCB"],[0.68896321070234123,"#A75ECB"],[0.69230769230769229,"#A65ECC"],[0.69565217391304335,"#A55DCC"],[0.69899665551839474,"#A45CCD"],[0.7023411371237458,"#A45BCD"],[0.70568561872909696,"#A35ACE"],[0.70903010033444824,"#A25ACF"],[0.7123745819397993,"#A159CF"],[0.71571906354515047,"#A058D0"],[0.71906354515050164,"#A057D0"],[0.72240802675585269,"#9F56D1"],[0.72575250836120397,"#9E56D1"],[0.72909698996655514,"#9D55D2"],[0.7324414715719062,"#9C54D3"],[0.73578595317725759,"#9B53D3"],[0.73913043478260865,"#9B52D4"],[0.7424749163879597,"#9A52D4"],[0.7458193979933111,"#9951D5"],[0.74916387959866215,"#9850D5"],[0.75250836120401332,"#974FD6"],[0.7558528428093646,"#964ED6"],[0.75919732441471566,"#954ED7"],[0.76254180602006683,"#944DD8"],[0.76588628762541811,"#944CD8"],[0.76923076923076916,"#934BD9"],[0.77257525083612033,"#924AD9"],[0.77591973244147161,"#914ADA"],[0.77926421404682278,"#9049DA"],[0.78260869565217384,"#8F48DB"],[0.785953177257525,"#8E47DC"],[0.78929765886287628,"#8D46DC"],[0.79264214046822734,"#8C45DD"],[0.79598662207357851,"#8B45DD"],[0.79933110367892979,"#8A44DE"],[0.80267558528428096,"#8943DE"],[0.80602006688963201,"#8842DF"],[0.80936454849498307,"#8741DF"],[0.81270903010033446,"#8640E0"],[0.81605351170568552,"#8540E1"],[0.81939799331103658,"#843FE1"],[0.82274247491638797,"#833EE2"],[0.82608695652173936,"#823DE2"],[0.82943143812709008,"#803CE3"],[0.83277591973244147,"#7F3BE3"],[0.83612040133779286,"#7E3AE4"],[0.83946488294314359,"#7D3AE4"],[0.84280936454849498,"#7C39E5"],[0.84615384615384626,"#7B38E6"],[0.84949832775919731,"#7937E6"],[0.85284280936454837,"#7836E7"],[0.85618729096989976,"#7735E7"],[0.85953177257525082,"#7634E8"],[0.86287625418060188,"#7433E8"],[0.86622073578595327,"#7332E9"],[0.86956521739130432,"#7232E9"],[0.87290969899665538,"#7031EA"],[0.87625418060200677,"#6F30EB"],[0.87959866220735783,"#6E2FEB"],[0.88294314381270889,"#6C2EEC"],[0.88628762541806028,"#6B2DEC"],[0.88963210702341133,"#692CED"],[0.89297658862876239,"#682BED"],[0.89632107023411378,"#662AEE"],[0.89966555183946484,"#6529EE"],[0.9030100334448159,"#6328EF"],[0.90635451505016718,"#6227F0"],[0.90969899665551823,"#6026F0"],[0.91304347826086929,"#5E25F1"],[0.91638795986622068,"#5D24F1"],[0.91973244147157207,"#5B23F2"],[0.9230769230769228,"#5922F2"],[0.92642140468227419,"#5721F3"],[0.92976588628762558,"#5520F3"],[0.9331103678929763,"#531FF4"],[0.93645484949832769,"#511EF5"],[0.93979933110367908,"#4F1CF5"],[0.94314381270903014,"#4D1BF6"],[0.9464882943143812,"#4B1AF6"],[0.94983277591973259,"#4819F7"],[0.95317725752508364,"#4618F7"],[0.9565217391304347,"#4316F8"],[0.95986622073578609,"#4115F8"],[0.96321070234113715,"#3E14F9"],[0.96655518394648821,"#3B12F9"],[0.96989966555183948,"#3811FA"],[0.97324414715719054,"#350FFB"],[0.9765886287625416,"#310DFB"],[0.97993311036789299,"#2D0BFC"],[0.98327759197324405,"#2909FC"],[0.9866220735785951,"#2408FD"],[0.98996655518394649,"#1E06FD"],[0.99331103678929755,"#1704FE"],[0.99665551839464861,"#0E02FE"],[1,"#0000FF"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.039999999999996,"title":"Per capita income","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"tickmode":"array","ticktext":["40000","50000","60000","70000"],"tickvals":[0.22474383605507525,0.4526992513303752,0.6806546666056752,0.90861008188097525],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":16,"r":0,"b":0,"l":0},"paper_bgcolor":"rgba(0,0,0,0)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-75.632722473144526,-73.817594909667974],"tickmode":"array","ticktext":["-75.5","-75.0","-74.5","-74.0"],"tickvals":[-75.5,-75,-74.5,-74],"categoryorder":"array","categoryarray":["-75.5","-75.0","-74.5","-74.0"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":0,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":null,"family":null,"size":0}},"scaleanchor":"y","scaleratio":0.7142857142857143,"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[38.804714012145993,41.489593696594241],"tickmode":"array","ticktext":["39.0","39.5","40.0","40.5","41.0"],"tickvals":[39,39.5,40,40.5,41],"categoryorder":"array","categoryarray":["39.0","39.5","40.0","40.5","41.0"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":0,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":null,"family":null,"size":0}},"scaleanchor":"x","scaleratio":1.3999999999999999,"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Per capita income","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"1ea15dcc2cc2":{"x":{},"y":{},"fill":{},"text":{},"type":"scatter"}},"cur_data":"1ea15dcc2cc2","visdat":{"1ea15dcc2cc2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>To do the same graph with non-interactive ggplot is not as easy, since you have to specify exactly <em>where</em> to put each of the text.</p>
+<details>
+<summary>
+Sample code
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="co"># calculate average longitude and latitude for text coordinate</span></span>
+<span id="cb19-2"><a href=""></a>county_labels <span class="ot">&lt;-</span> mymap.nj <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href=""></a>  <span class="fu">group_by</span>(subregion) <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href=""></a>  <span class="fu">summarize</span>(</span>
+<span id="cb19-5"><a href=""></a>    <span class="at">long =</span> <span class="fu">mean</span>(long),</span>
+<span id="cb19-6"><a href=""></a>    <span class="at">lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb19-7"><a href=""></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb19-8"><a href=""></a>  )</span>
+<span id="cb19-9"><a href=""></a></span>
+<span id="cb19-10"><a href=""></a><span class="co"># add text</span></span>
+<span id="cb19-11"><a href=""></a>p1 <span class="sc">+</span></span>
+<span id="cb19-12"><a href=""></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> county_labels, </span>
+<span id="cb19-13"><a href=""></a>            <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> subregion),</span>
+<span id="cb19-14"><a href=""></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-15"><a href=""></a>            <span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_6_slide_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="different-ways-to-join-data" class="slide level2 scrollable">
+<h2>Different ways to join data</h2>
+<p>Exercise:</p>
+<ol type="1">
+<li>Create the following data frames:</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>df.student</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name exam project
+1    A   80       1
+2    B   91       2
+3    C   85       1
+4    D   78      NA</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>df.project</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  projectID    description
+1         1  visualization
+2         2 classification
+3         3    text mining</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Code
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>df.student <span class="ot">&lt;-</span> </span>
+<span id="cb24-2"><a href=""></a>  <span class="fu">data.frame</span>(<span class="at">name=</span><span class="fu">c</span>(<span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span>,<span class="st">'D'</span>),</span>
+<span id="cb24-3"><a href=""></a>             <span class="at">exam=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">91</span>,<span class="dv">85</span>,<span class="dv">78</span>),</span>
+<span id="cb24-4"><a href=""></a>             <span class="at">project=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="cn">NA</span>))</span>
+<span id="cb24-5"><a href=""></a></span>
+<span id="cb24-6"><a href=""></a>df.project <span class="ot">&lt;-</span></span>
+<span id="cb24-7"><a href=""></a>  <span class="fu">data.frame</span>(<span class="at">projectID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>),</span>
+<span id="cb24-8"><a href=""></a>             <span class="at">description =</span> <span class="fu">c</span>(<span class="st">'visualization'</span>,<span class="st">'classification'</span>,<span class="st">'text mining'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="2" type="1">
+<li>Run <strong>?left_join()</strong> to understand different ways to join data. Think about what each line of the following code should return. Run each line to confirm.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">inner_join</span>(df.student, df.project, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'project'</span> <span class="ot">=</span> <span class="st">'projectID'</span>))</span>
+<span id="cb25-2"><a href=""></a><span class="fu">left_join</span>(df.student, df.project, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'project'</span> <span class="ot">=</span> <span class="st">'projectID'</span>))</span>
+<span id="cb25-3"><a href=""></a><span class="fu">left_join</span>(df.project, df.student, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'projectID'</span> <span class="ot">=</span> <span class="st">'project'</span>))</span>
+<span id="cb25-4"><a href=""></a><span class="fu">right_join</span>(df.student, df.project, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'project'</span> <span class="ot">=</span> <span class="st">'projectID'</span>))</span>
+<span id="cb25-5"><a href=""></a><span class="fu">full_join</span>(df.student, df.project, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'project'</span> <span class="ot">=</span> <span class="st">'projectID'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -55,7 +55,51 @@ In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univ
 
 - Oct 20: Data visualization ([Lecture 5](lectures/lecture_5/lecture_5.html)).
 
-- Oct 22: **Quiz 6** based on content from [Lecture 5](lectures/lecture_5/lecture_5.html) and [Homework 5](homework/homework_5.qmd) **Part I**.
+- Oct 22: **Quiz 6** based on content from [Lecture 5](lectures/lecture_5/lecture_5.html) and [Homework 5](homework/homework_5.qmd) **Part I**.  Continue [Lecture 5](lectures/lecture_5/lecture_5.html).
+
+## Week 9
+
+- Oct 27: [Lecture 6](lectures/lecture_6/lecture_6.html) and [Homework 6](homework/homework_6.qmd).
+
+- Oct 29: **Quiz 7**, based on content from [Lecture 6](lectures/lecture_6/lecture_6.html) and [Homework 6](homework/homework_6.qmd).
+
+## Week 10
+
+- Nov 3: 
+
+- Nov 5: **Midterm Exam 2**
+
+## Week 11
+
+- Nov 10: Project workshop #2.
+
+- Nov 12: 
+
+## Week 12
+
+- Nov 17: 
+
+- Nov 19: **Quiz 8**; demonstration to R [Quarto](https://quarto.org/).
+
+## Week 13
+
+- Nov 24: Project workshop #3.
+
+- Nov 26: No class — Thanksgiving.
+
+## Week 14
+
+You ONLY need to attend the presentations for your group. When you are not attending, study [lecture 9](lectures/lecture_9/lecture_9.html) and [Homework 9](homework/homework_9.qmd) on your own.
+
+- Dec 1: Presentation: group A.
+
+- Dec 3: Presentation: group B.
+
+## Week 15
+
+- Dec 8: Presentation: group C.
+
+- Dec 10: **Quiz 9** based on content from [Lecture 9](lectures/lecture_9/lecture_9.html) and [Homework 9](homework/homework_9.qmd).
 
 
 
