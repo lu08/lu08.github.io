@@ -59,11 +59,10 @@ Tidy data is not a mathematically defined concept; *the best way to format data 
 | 10/5/26 | 0 | 0 | 0 | 4 | **20** | 0 | **14** | 38 |
 | 10/12/26 | 0 | 4.5 | 0 | 6 | 3.5 | **16** | 0 | 30 |
 | 10/19/26 | 2 | 0 | 4 | 0 | 5 | 0 | **12** | 23 |
-| 10/26/26 |  |  |  |  |  |  | **NYC marathon** |  |
 :::
 
 
-What can we do to improve the format of th,is data?
+What can we do to improve the format of this data?
 
 ## Example: TB cases
 
@@ -76,7 +75,9 @@ What can we do to improve the format of this data?
 ## Convert wide data into long data
 ```{r, echo=T, eval=T}
 table4a
-table4a %>% pivot_longer(cols = 2:3, names_to = "year", values_to = "case.number")
+table4a %>% pivot_longer(cols = 2:3, 
+            names_to = "year", 
+            values_to = "case.number")
 ```
 
 - Two new columns are created ('year' and 'case.number')

@@ -32,6 +32,11 @@ slides=(
 )
 
 for rel in "${slides[@]}"; do
+  if [ ! -f "$root/$rel" ]; then
+    printf 'Skipping missing slide source: %s\n' "$rel"
+    continue
+  fi
+
   dir="$(dirname "$rel")"
   file="$(basename "$rel")"
   base="${file%.qmd}"
