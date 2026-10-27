@@ -72,6 +72,8 @@ website:
               href: teaching/STAT120/lectures/lecture_4/lecture_4.html
             - text: "Lecture 5"
               href: teaching/STAT120/lectures/lecture_5/lecture_5.html
+            - text: "Lecture 6"
+              href: teaching/STAT120/lectures/lecture_6/lecture_6.html
             - text: "Lecture code"
               href: teaching/STAT120/lectures/lecture_notes/index.qmd
         - text: "Homework"

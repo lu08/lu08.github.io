@@ -49,15 +49,15 @@ Tidy data is not a mathematically defined concept; *the best way to format data 
 
 ## Example: running mileage
 
-| Week of | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday | Weekly total |
+| Week of | M | T | W | Th | F | Sa | Su | Weekly total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | 9/7/26 | 3 | 0 | 0 | 0 | 4 | 3.5 | **11.5** | 22 |
 | 9/14/26 | 5 | 0 | 7 | 0 | 5 | 0 | **18** | 35 |
 | 9/21/26 | 0 | 5 | 5 | 0 | **20** | 0 | 6 | 36 |
 | 9/28/26 | 4.5 | 0 | **12** | 6 | 6 | 6 | 4.5 | 39 |
 | 10/5/26 | 0 | 0 | 0 | 4 | **20** | 0 | **14** | 38 |
-| 10/12/26 | 0 | 4.5 | 0 | 6 (interval) | 3.5 | **16** | 0 | 30 |
-| 10/19/26 | Pilates + 2 | 0 | 4 | 0 | 5 | 0 | **12** | 23 |
+| 10/12/26 | 0 | 4.5 | 0 | 6 | 3.5 | **16** | 0 | 30 |
+| 10/19/26 | 2 | 0 | 4 | 0 | 5 | 0 | **12** | 23 |
 | 10/26/26 |  |  |  |  |  |  | **NYC marathon** |  |
 
 
@@ -87,7 +87,7 @@ table4a %>% pivot_longer(cols = 2:3, names_to = "year", values_to = "case.number
 
 Exercise: convert **table4b** to the following format
 
-```{r,echo=F}
+```{r,echo=T}
 kable(table4b)
 pivot_longer(table4b, cols = 2:3, names_to = "year", values_to = "population")
 ```
@@ -144,7 +144,7 @@ df.score %>% pivot_longer(cols = -student, names_to = "subject", values_to = "sc
 
 As an example, try generating the following graphs with **df.score**, and then with **df.score.long**. Which format is easier?
 
-```{r,fig.height=3,fig.width=6,out.width="100%",echo=F}
+```{r,fig.height=3,fig.width=6,out.width="100%",echo=T}
 par(mfrow=c(1,2))
 boxplot(df.score.long$score ~ df.score.long$student, xlab='students', ylab='scores') 
 boxplot(df.score.long$score ~ df.score.long$subject, xlab='subjects', ylab='scores') 
@@ -325,7 +325,7 @@ Exercise:
 
 1.  Create the following data frames:
 
-```{r,echo=F}
+```{r,echo=T}
 df.student <- 
   data.frame(name=c('A','B','C','D'),
              exam=c(80,91,85,78),
