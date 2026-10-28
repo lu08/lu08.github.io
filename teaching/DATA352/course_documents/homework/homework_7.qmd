@@ -10,4 +10,116 @@ format:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-TO BE ADDED
+
+Use the **nCoV_simple** dataset for the following questions.
+
+1. In class, we used parametric bootstrap (with a Weibull model) to study the $90th$ percentile of the incubation period.  We now use the **nonparametric bootstrap** to study the $90th$ percentile.
+
+    a. What is the $90th$ percentile of the incubation period among patients in the dataset?  Recall, in R, you can use the **quantile** function.
+
+    b. Obtain $B=1000$ (nonparametric) bootstrap samples; record the $90th$ percentile of each bootstrap sample.  What is the SD of the $90th$ percentile based on your bootstrap samples?
+
+    c. Compared to the median (we have estimated its SD in class), does the $90th$ percentile have more or less variation?
+    d. Obtain a $95\%$ confidence interval for the $90th$ percentile of the incubation period.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+ncov_simple <- read.csv("../all_lectures/nCoV_simple.csv")
+
+# a
+quantile(ncov_simple$incubation, probs = 0.9)
+
+# b
+bootsize <- 1000
+bootresult <- rep(NA, bootsize)
+for (i in seq_len(bootsize)) {
+  bootresult[i] <- quantile(sample(ncov_simple$incubation, replace = TRUE), probs = 0.9)
+}
+sd(bootresult)
+
+# The 90th percentile has more variation than the median.
+
+# d
+quantile(bootresult, probs = c(0.025, 0.975))
+```
+
+</details>
+
+
+
+2. Suppose we want to use nonparametric bootstrap to study the **maximum** incubation period.
+
+    a. What is the maximum incubation period among patients in the dataset?
+
+    b. Obtain $B=1000$ bootstrap samples and construct a $95\%$ confidence interval for the maximum incubation period.
+
+    c. Briefly explain why bootstrap does not work well for estimating the maximum incubation period.
+
+<details>
+<summary>Show solution</summary>
+
+The maximum incubation period in the dataset is 11 days. The bootstrap confidence interval is 8.5 to 11 days, which underestimates uncertainty because bootstrap samples cannot produce a maximum greater than 11.
+
+```{r}
+# a
+max(ncov_simple$incubation)
+
+# b
+bootsize <- 1000
+bootresult <- rep(NA, bootsize)
+for (i in seq_len(bootsize)) {
+  bootresult[i] <- max(sample(ncov_simple$incubation, replace = TRUE))
+}
+quantile(bootresult, probs = c(0.025, 0.975))
+```
+
+</details>
+
+3. In this question, we use parametric bootstrap to obtain confidence intervals for the parameters of a **log-normal model**.
+
+    a. What is the plug-in distribution in this case?
+    b. Generate one bootstrap sample from the plug-in distribution and re-fit the log-normal model.  What are the new parameter estimates?
+
+    c. Repeat (b) for 1000 times to obtain 1000 estimates for each of the log-normal model parameters.  Construct $99\%$ confidence intervals for each of the parameters.
+
+<details>
+<summary>Show solution</summary>
+
+The plug-in distribution is a log-normal distribution with parameters `meanlog = 1.209` and `sdlog = 0.731`.
+
+```{r}
+# a
+library(MASS)
+model1 <- fitdistr(ncov_simple$incubation, "lognormal", lower = 0)
+model1$estimate
+
+# b
+samplesize <- nrow(ncov_simple)  # sample size is 50 for the dataset
+bootdata <- rlnorm(samplesize, meanlog = model1$estimate[1], sdlog = model1$estimate[2])
+fitdistr(bootdata, "lognormal", lower = 0)
+
+# c
+bootsize <- 1000
+bootresult1 <- rep(NA, bootsize)
+bootresult2 <- rep(NA, bootsize)
+for (i in seq_len(bootsize)) {
+  bootdata <- rlnorm(samplesize, meanlog = model1$estimate[1], sdlog = model1$estimate[2])
+  modelboot <- fitdistr(bootdata, "lognormal", lower = 0)
+  bootresult1[i] <- modelboot$estimate[1]
+  bootresult2[i] <- modelboot$estimate[2]
+}
+quantile(bootresult1, c(0.005, 0.995))
+quantile(bootresult2, c(0.005, 0.995))
+
+# We can also compare the SDs of the estimated model parameters
+# calculated with and without bootstrap.
+model1$sd
+sd(bootresult1)
+sd(bootresult2)
+
+
+```
+
+</details>

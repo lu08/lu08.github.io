@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="../../data352.css">
@@ -244,9 +273,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To be added.</p>
+<section id="list-of-topics" class="level2">
+<h2 class="anchored" data-anchor-id="list-of-topics">List of topics</h2>
+<p>This is a general guide of the topics we have covered and the exam might contain things that are not listed here.</p>
+<ol type="1">
+<li><p>Understand the basic idea of simulation and can design and execute simulations; this topic was first introduced in lecture 1, but simulation is used throughout the course and there will be exam questions that rely on your understanding of running simulations;</p></li>
+<li><p>For the common continuous distributions (uniform, exponential, beta, normal), you are expected to know the parameters and interpretation of the parameters, how to calculate corresponding probabilities, and how to simulate from each distribution (<a href="../../course_documents/all_lectures/Lecture_4.qmd">lecture 4</a>);</p></li>
+<li><p>Understand the Central Limit Theorem; can verify CLT using a simulation (<a href="../../course_documents/all_lectures/Lecture_4.qmd">lecture 4</a> and <a href="../../../../teaching/DATA352/course_documents/assignment/assignment_3.html">assignment 3</a>);</p></li>
+<li><p>Understand the idea and the sample code for <strong>acceptance-rejection sampling</strong>; know how to choose a value of <span class="math inline">\(C\)</span> for the algorithm and how it affects the overall acceptance rate; know how to calculate the acceptance rate for a specific proposal value (<a href="../../course_documents/all_lectures/Lecture_5.qmd">lecture 5</a>);</p></li>
+<li><p>Understand the idea of <strong>importance sampling</strong>; know how to calculate the importance weight; can use simulation to verify that importance sampling reduces the standard error of an estimator (<a href="../../../../teaching/DATA352/course_documents/homework/homework_6.html">homework 6</a> Question 1);</p></li>
+<li><p>Understand the idea and the sample code for <strong>SIR</strong>; know how to calculate the resampling weight for a specific candidate value (<a href="../../course_documents/all_lectures/Lecture_5.qmd">lecture 5</a>);</p></li>
+<li><p>Understand the idea of fitting a distributionn; understand code related to the R function <strong>fitdistr</strong>; can decide which model fits the data better based on the log likelihood(<a href="../../course_documents/all_lectures/Lecture_6.qmd">lecture 6</a>;</p></li>
+<li><p>Understand the concept of <strong>bootstrapping</strong> and what a bootstrap sample is; understand the concept and the code for both nonparametric and parametric bootstrapping; know what a “plug-in distribution” is for parametric bootstrap; based on bootstrap results, know how to obtain interval estimates and standard deviation estimates for a given parameter (<a href="../../course_documents/all_lectures/Lecture_7.qmd">lecture 7</a>.</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

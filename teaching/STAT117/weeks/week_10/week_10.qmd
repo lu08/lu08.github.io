@@ -11,5 +11,7 @@ format: html
 
 ## Tuesday, Nov 3
 
+In-person **Exam 2**
 
 ## Thursday, Nov 5
+

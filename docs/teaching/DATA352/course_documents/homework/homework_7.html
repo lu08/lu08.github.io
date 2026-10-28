@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="../../data352.css">
@@ -245,7 +309,149 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- do not alter this first chunk below  -->
-<p>TO BE ADDED</p>
+<p>Use the <strong>nCoV_simple</strong> dataset for the following questions.</p>
+<ol type="1">
+<li><p>In class, we used parametric bootstrap (with a Weibull model) to study the <span class="math inline">\(90th\)</span> percentile of the incubation period. We now use the <strong>nonparametric bootstrap</strong> to study the <span class="math inline">\(90th\)</span> percentile.</p>
+<ol type="a">
+<li><p>What is the <span class="math inline">\(90th\)</span> percentile of the incubation period among patients in the dataset? Recall, in R, you can use the <strong>quantile</strong> function.</p></li>
+<li><p>Obtain <span class="math inline">\(B=1000\)</span> (nonparametric) bootstrap samples; record the <span class="math inline">\(90th\)</span> percentile of each bootstrap sample. What is the SD of the <span class="math inline">\(90th\)</span> percentile based on your bootstrap samples?</p></li>
+<li><p>Compared to the median (we have estimated its SD in class), does the <span class="math inline">\(90th\)</span> percentile have more or less variation?</p></li>
+<li><p>Obtain a <span class="math inline">\(95\%\)</span> confidence interval for the <span class="math inline">\(90th\)</span> percentile of the incubation period.</p></li>
+</ol></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ncov_simple <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../all_lectures/nCoV_simple.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ncov_simple<span class="sc">$</span>incubation, <span class="at">probs =</span> <span class="fl">0.9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  90% 
+6.785 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># b</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>bootresult <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(bootsize)) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  bootresult[i] <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">sample</span>(ncov_simple<span class="sc">$</span>incubation, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">probs =</span> <span class="fl">0.9</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.091851</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The 90th percentile has more variation than the median.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># d</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 2.5% 97.5% 
+5.500 9.104 </code></pre>
+</div>
+</div>
+</details>
+<ol start="2" type="1">
+<li><p>Suppose we want to use nonparametric bootstrap to study the <strong>maximum</strong> incubation period.</p>
+<ol type="a">
+<li><p>What is the maximum incubation period among patients in the dataset?</p></li>
+<li><p>Obtain <span class="math inline">\(B=1000\)</span> bootstrap samples and construct a <span class="math inline">\(95\%\)</span> confidence interval for the maximum incubation period.</p></li>
+<li><p>Briefly explain why bootstrap does not work well for estimating the maximum incubation period.</p></li>
+</ol></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The maximum incubation period in the dataset is 11 days. The bootstrap confidence interval is 8.5 to 11 days, which underestimates uncertainty because bootstrap samples cannot produce a maximum greater than 11.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ncov_simple<span class="sc">$</span>incubation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># b</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bootresult <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(bootsize)) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  bootresult[i] <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">sample</span>(ncov_simple<span class="sc">$</span>incubation, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 2.5% 97.5% 
+  8.5  11.0 </code></pre>
+</div>
+</div>
+</details>
+<ol start="3" type="1">
+<li><p>In this question, we use parametric bootstrap to obtain confidence intervals for the parameters of a <strong>log-normal model</strong>.</p>
+<ol type="a">
+<li><p>What is the plug-in distribution in this case?</p></li>
+<li><p>Generate one bootstrap sample from the plug-in distribution and re-fit the log-normal model. What are the new parameter estimates?</p></li>
+<li><p>Repeat (b) for 1000 times to obtain 1000 estimates for each of the log-normal model parameters. Construct <span class="math inline">\(99\%\)</span> confidence intervals for each of the parameters.</p></li>
+</ol></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<p>The plug-in distribution is a log-normal distribution with parameters <code>meanlog = 1.209</code> and <code>sdlog = 0.731</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation, <span class="st">"lognormal"</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>model1<span class="sc">$</span>estimate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  meanlog     sdlog 
+1.2092543 0.7307774 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># b</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>samplesize <span class="ot">&lt;-</span> <span class="fu">nrow</span>(ncov_simple)  <span class="co"># sample size is 50 for the dataset</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>bootdata <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(samplesize, <span class="at">meanlog =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">sdlog =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(bootdata, <span class="st">"lognormal"</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    meanlog       sdlog   
+  1.27433563   0.68582472 
+ (0.09699026) (0.06858247)</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># c</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>bootresult1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>bootresult2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(bootsize)) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  bootdata <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(samplesize, <span class="at">meanlog =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">sdlog =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  modelboot <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(bootdata, <span class="st">"lognormal"</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  bootresult1[i] <span class="ot">&lt;-</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>]</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  bootresult2[i] <span class="ot">&lt;-</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>]</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(bootresult1, <span class="fu">c</span>(<span class="fl">0.005</span>, <span class="fl">0.995</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    0.5%    99.5% 
+0.950586 1.464269 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(bootresult2, <span class="fu">c</span>(<span class="fl">0.005</span>, <span class="fl">0.995</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     0.5%     99.5% 
+0.5386822 0.8979159 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can also compare the SDs of the estimated model parameters</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># calculated with and without bootstrap.</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>model1<span class="sc">$</span>sd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   meanlog      sdlog 
+0.10334753 0.07307774 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(bootresult1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1008653</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(bootresult2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.07290932</code></pre>
+</div>
+</div>
+</details>
 
 
 

@@ -5,4 +5,22 @@ format:
     toc: false
 ---
 
-To be added.
+## List of topics
+
+This is a general guide of the topics we have covered and the exam might contain things that are not listed here.
+
+1.  Understand the basic idea of simulation and can design and execute simulations; this topic was first introduced in lecture 1, but simulation is used throughout the course and there will be exam questions that rely on your understanding of running simulations;
+
+2. For the common continuous distributions (uniform, exponential, beta, normal), you are expected to know the parameters and interpretation of the parameters, how to calculate corresponding probabilities, and how to simulate from each distribution ([lecture 4](../../course_documents/all_lectures/Lecture_4.qmd));
+
+3. Understand the Central Limit Theorem; can verify CLT using a simulation ([lecture 4](../../course_documents/all_lectures/Lecture_4.qmd) and [assignment 3](../../course_documents/assignment/assignment_3.qmd)); 
+
+4. Understand the idea and the sample code for **acceptance-rejection sampling**; know how to choose a value of $C$ for the algorithm and how it affects the overall acceptance rate; know how to calculate the acceptance rate for a specific proposal value ([lecture 5](../../course_documents/all_lectures/Lecture_5.qmd));
+
+5. Understand the idea of **importance sampling**; know how to calculate the importance weight; can use simulation to verify that importance sampling reduces the standard error of an estimator ([homework 6](../../course_documents/homework/homework_6.qmd) Question 1);
+
+6. Understand the idea and the sample code for **SIR**; know how to calculate the resampling weight for a specific candidate value  ([lecture 5](../../course_documents/all_lectures/Lecture_5.qmd));
+
+7. Understand the idea of fitting a distributionn; understand code related to the R function **fitdistr**; can decide which model fits the data better based on the log likelihood([lecture 6](../../course_documents/all_lectures/Lecture_6.qmd);
+
+8. Understand the concept of **bootstrapping** and what a bootstrap sample is; understand the concept and the code for both nonparametric and parametric bootstrapping; know what a "plug-in distribution" is for parametric bootstrap; based on bootstrap results, know how to obtain interval estimates and standard deviation estimates for a given parameter ([lecture 7](../../course_documents/all_lectures/Lecture_7.qmd).

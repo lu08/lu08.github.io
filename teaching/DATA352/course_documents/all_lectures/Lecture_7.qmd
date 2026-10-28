@@ -27,13 +27,14 @@ editor_options:
 
 ## Set-up
 
-Material is based on [The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application](Incubation%20period%20paper.pdf), Lauer et. al., Annals of Internal Medicine, published online on March 10, 2020. Data and code are publically [available](https://github.com/HopkinsIDD/ncov_incubation).
+Material is based on [The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application](Incubation%20period%20paper.pdf), Lauer et. al., *Annals of Internal Medicine*, published online on March 10, 2020. Data and code are publically [available](https://github.com/HopkinsIDD/ncov_incubation).
 
-Please import in to R the dataset [nCoV_simple.csv](nCoV_simple.csv): a simplified dataset that contains the incubation periods of $50$ patients
+[nCoV_simple.csv](nCoV_simple.csv): a simplified dataset that contains the incubation periods of $50$ patients.
 
-To further simplify the data, create a vector called `ncov10` based on the first $10$ patients.
+- Import the data into R
+- Create a vector called `ncov10` based on the first $10$ patients
 
-```{r, echo=F}
+```{r, echo=T}
 ncov_simple <- read.csv('nCoV_simple.csv')
 ncov10 <- round(head(ncov_simple$incubation, 10))
 ```
@@ -42,14 +43,15 @@ ncov10 <- round(head(ncov_simple$incubation, 10))
 ncov10
 ```
 
-- Recall: A **statistic** is a function (i.e., a numeric summary) of data.  A statistic is not the truth (i.e., **parameter**). We need to perform **statistical inference**.
+
+## Introduction
+Recall, a **statistic** is a function (i.e., a numeric summary) of data.  A statistic is not the truth (i.e., **parameter**). We need to perform **statistical inference**.
 
 ```{r, echo=T}
 summary(ncov10)
 ```
 
-## Introduction
-To make inference on the true average incubation period ($\mu$) based on the sample average ($\bar{X}$), we need to understand the **randomness of $\bar{X}$** (i.e., the ``sampling distribution" of a statistic).  Imagine two scenarios:
+To make inference on the true average incubation period ($\mu$) based on the sample average ($\bar{X} = 4.9$), we need to understand the **randomness of $\bar{X}$** (i.e., its "sampling distribution").  Imagine two scenarios:
 
 1. **Not much variation in $\bar{X}$:**
    - Confidence interval for $\mu$:
@@ -64,6 +66,7 @@ To make inference on the true average incubation period ($\mu$) based on the sam
 How do we know the sampling distribution of $\bar{X}$?
 
 The sampling distribution of $\bar{X}$ is well studied based on the *Central Limit Theorem.*
+
  - Shape:
  - Mean: $\mu$ (population mean)
  - Standard Deviation (SD): $\sigma/\sqrt{n}$ (where $\sigma$ is the population SD)
@@ -108,16 +111,17 @@ sample(ncov10, replace = TRUE)
 
 **Exercise:** Use the **nCoV_simple** dataset (incubation periods of $50$ patients) to obtain $B = 1000$ bootstrap samples; record the mean of each bootstrap sample in a vector called **bootresult**.
 
-
-
-## Inference using bootstrap samples
-```{r,echo=F,out.width="50%",fig.height=3,fig.width=4}
+```{r,out.width="50%",fig.height=3,fig.width=4}
+#| code-fold: true
+#| code-summary: "Show code"
 bootsize <- 1000
 bootresult <- rep(NA, bootsize)
-for (i in seq_len(bootsize)) {
+for (i in 1:bootsize) {
   bootresult[i] <- mean(sample(ncov_simple$incubation, replace = TRUE))
 }
 ```
+
+## Inference using bootstrap samples
 
 ```{r,echo=T}
 bootresult[1:30]
@@ -128,14 +132,16 @@ Using the 1000 bootstrap samples, we can estimate the SD of $\bar{X}$:
 sd(bootresult)
 ```
 
-In comparison, without using bootstrap, we can calculate the SD of $\bar{X}$: true SD = $\sigma/\sqrt{n}$, estimate = $s/\sqrt{n}$
+In comparison, without using bootstrap, we can estimate the SD of $\bar{X}$ with the formula: $s/\sqrt{n}$
 ```{r, echo=T}
 sd(ncov_simple$incubation) / sqrt(50)
 ```
 
 
 ## Inference using bootstrap samples
-```{r,echo=F,out.width="50%",fig.height=3,fig.width=4}
+```{r,out.width="50%",fig.height=3,fig.width=4}
+#| code-fold: true
+#| code-summary: "Show code"
 hist(bootresult, col='lightblue', main='1000 bootstrap sample means', xlab=NA)
 abline(v = mean(ncov_simple$incubation), col='red', lty='dashed', lwd=2)
 ```
@@ -145,22 +151,59 @@ A 95% confidence interval of the mean incubation period
 quantile(bootresult, probs = c(0.025, 0.975))
 ```
 
+
 ## Exercise: median
 The **median** incubation period is often more of interest (why?)  Compared to the mean, properties of the median are harder to calculate mathematically.  Instead, we can use bootstrap to study these properties.
 
 Exercise: use the **nCoV_simple** dataset
+
 1. Get the sample median of the dataset.
 2. Obtain $B = 5000$ bootstrap samples; record the median of each bootstrap sample.
 3. Estimate the SD of the median. Does it have more variation or less variation compared to the mean?
 4. Obtain a 95% confidence interval for the median incubation period.
 
+```{r,out.width="50%",fig.height=3,fig.width=4}
+#| code-fold: true
+#| code-summary: "Show code"
+
+#1
+median(ncov_simple$incubation)
+
+#2
+bootsize <- 5000
+bootresult <- rep(NA, bootsize)
+for (i in 1:bootsize) {
+  bootresult[i] <- median(sample(ncov_simple$incubation, replace = TRUE))
+}
+
+#3
+sd(bootresult)
+# more variation than the mean
+
+#4
+quantile(bootresult, probs = c(0.025, 0.975))
+```
+
+
 
 ## Limitations
 The basic (nonparametric) bootstrap method **does not work well** in the following situations:
+
 - The original data are not independent.
 - The original data are not identically distributed.
+
+> Intuition: the resampling process ignores any dependence structure in the data; 
+
 - We are studying the properties of a maximum or minimum.
+
+> Intuition: you would never exceed the maximum of the original data in a bootstrap sample, leading to underestimation of the variation of the maximum.
+
+
 - The underlying true distribution has a heavy tail.
+
+> Intuition: the resampling process tends to oversample extreme values in the original data.  
+
+
 # Parametric Bootstrap
 
 ## Introduction
@@ -172,42 +215,57 @@ model1 <- fitdistr(ncov_simple$incubation, 'weibull', lower = 0)
 pweibull(14, shape = model1$estimate[1], scale = model1$estimate[2])
 ```
 
-What if we want to construct a confidence interval based on $\hat{p}$?  We would need to know the sampling distribution, or at least the variation, of $\hat{p}$.  This can be difficult to derive if the model, and/or the parameter of interest, is complicated.
-Instead, we will study the sampling distribution of $\hat{p}$ using bootstrap.
+What if we want to construct a confidence interval based on $\hat{p}$?  
+
+- We would need to know the sampling distribution, or at least the variation, of $\hat{p}$.  
+- This can be difficult to derive if the model, and/or the parameter of interest, is complicated.
+
+- Instead, we will study the sampling distribution of $\hat{p}$ using bootstrap.
 
 
 
 ## Parametric bootstrap steps
-- Step 1: Fit the Weibull model and get parameter estimates; record a value of $\hat{p}$ (0.9994694)
-- Step 2: Randomly sample another dataset from the fitted Weibull distribution (called a **plug-in distribution**).
+- Step 1: Fit the Weibull model (based on the original data) to obtain the **plug-in distribution**.
+
+- Step 2: Randomly sample another dataset (of the same sample size $n=50$) from the plug-in distribution.
 
 ```{r,eval=T}
 bootdata <- rweibull(50, shape = model1$estimate[1], scale = model1$estimate[2])
 ```
 
-- Step 3: Fit the Weibull model with the new dataset and record another value of $\hat{p}$
+- Step 3: Re-fit the Weibull model with the new dataset.
 
 ```{r,eval=T}
 modelboot <- fitdistr(bootdata, 'weibull', lower = 0)
+```
+
+- Step 4: With the refitted model, record another value of $\hat{p}$
+
+```{r,eval=T}
 pweibull(14, shape = modelboot$estimate[1], scale = modelboot$estimate[2])
 ```
 
-- Step 4: Repeat steps 2 and 3 to obtain many values of $\hat{p}$.  These values can be used to estimate the distribution of $\hat{p}$
+- Step 5: Repeat steps 2, 3, and 4 to obtain many values of $\hat{p}$.  These values can be used to estimate the distribution of $\hat{p}$
 
 
 **Exercise:** Obtain $1000$ values of $\hat{p}$ using bootstrap. Plot a histogram of these values and construct a 95% confidence interval.
 
+```{r,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
+#| code-fold: true
+#| code-summary: "Show code"
 
+# obtain plugin distribution
+model1 <- fitdistr(ncov_simple$incubation, 'weibull', lower = 0)
 
-## Bootstrap distribution of estimated probability
-```{r,echo=F,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
+# run bootstrap
 bootsize <- 1000
 result <- rep(NA, bootsize)
-for (i in seq_len(bootsize)) {
+for (i in 1:bootsize) {
   bootdata <- rweibull(50, shape = model1$estimate[1], scale = model1$estimate[2])
   modelboot <- fitdistr(bootdata, 'weibull', lower = 0)
   result[i] <- pweibull(14, shape = modelboot$estimate[1], scale = modelboot$estimate[2])
 }
+
 hist(result,nclass=50,xlim=c(0.99,1),main='Prob. that incubation period < 14 days',
      yaxt='n',xlab=NA,col='salmon',ylab=NA)
 quantile(result,c(0.025,0.975))
@@ -215,6 +273,28 @@ quantile(result,c(0.025,0.975))
 
 
 ## Exercise: quantile estimates
-1. Fit the Weibull model to the incubation periods and estimate the 90th percentile of the incubation period.
+1. Fit the Weibull model to the incubation periods and estimate the 90th percentile of the incubation period (`qweibull`).
 2. Obtain $B = 1000$ bootstrap samples from the plug-in distribution and estimate the SD of the 90th percentile.
 3. Obtain a 99% confidence interval for the 90th percentile of the incubation period.
+
+```{r,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
+#| code-fold: true
+#| code-summary: "Show code"
+
+# obtain plugin distribution
+model1 <- fitdistr(ncov_simple$incubation, 'weibull', lower = 0)
+qweibull(0.9, shape = model1$estimate[1], scale = model1$estimate[2])
+
+# run bootstrap
+bootsize <- 1000
+result <- rep(NA, bootsize)
+for (i in 1:bootsize) {
+  bootdata <- rweibull(50, shape = model1$estimate[1], scale = model1$estimate[2])
+  modelboot <- fitdistr(bootdata, 'weibull', lower = 0)
+  result[i] <- qweibull(0.9, shape = modelboot$estimate[1], scale = modelboot$estimate[2])
+}
+
+hist(result,nclass=50,main='90th percentile of incubation period',
+     yaxt='n',xlab=NA,col='salmon',ylab=NA)
+quantile(result,c(0.025,0.975))
+```

@@ -212,29 +212,34 @@
 </section>
 <section id="set-up" class="slide level2">
 <h2>Set-up</h2>
-<p>Material is based on <a href="Incubation%20period%20paper.pdf">The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application</a>, Lauer et. al., Annals of Internal Medicine, published online on March 10, 2020. Data and code are publically <a href="https://github.com/HopkinsIDD/ncov_incubation">available</a>.</p>
-<p>Please import in to R the dataset <a href="nCoV_simple.csv">nCoV_simple.csv</a>: a simplified dataset that contains the incubation periods of <span class="math inline">\(50\)</span> patients</p>
-<p>To further simplify the data, create a vector called <code>ncov10</code> based on the first <span class="math inline">\(10\)</span> patients.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>ncov10</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  9 10  4  0  2  5 11  4  2  2</code></pre>
-</div>
-</div>
+<p>Material is based on <a href="Incubation%20period%20paper.pdf">The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application</a>, Lauer et. al., <em>Annals of Internal Medicine</em>, published online on March 10, 2020. Data and code are publically <a href="https://github.com/HopkinsIDD/ncov_incubation">available</a>.</p>
+<p><a href="nCoV_simple.csv">nCoV_simple.csv</a>: a simplified dataset that contains the incubation periods of <span class="math inline">\(50\)</span> patients.</p>
 <ul>
-<li>Recall: A <strong>statistic</strong> is a function (i.e., a numeric summary) of data. A statistic is not the truth (i.e., <strong>parameter</strong>). We need to perform <strong>statistical inference</strong>.</li>
+<li>Import the data into R</li>
+<li>Create a vector called <code>ncov10</code> based on the first <span class="math inline">\(10\)</span> patients</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">summary</span>(ncov10)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>ncov_simple <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'nCoV_simple.csv'</span>)</span>
+<span id="cb1-2"><a href=""></a>ncov10 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">head</span>(ncov_simple<span class="sc">$</span>incubation, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>ncov10</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    0.0     2.0     4.0     4.9     8.0    11.0 </code></pre>
+<pre><code> [1]  9 10  4  0  2  5 11  4  2  2</code></pre>
 </div>
 </div>
 </section>
 <section id="introduction" class="slide level2 scrollable">
 <h2>Introduction</h2>
-<p>To make inference on the true average incubation period (<span class="math inline">\(\mu\)</span>) based on the sample average (<span class="math inline">\(\bar{X}\)</span>), we need to understand the <strong>randomness of <span class="math inline">\(\bar{X}\)</span></strong> (i.e., the ``sampling distribution” of a statistic). Imagine two scenarios:</p>
+<p>Recall, a <strong>statistic</strong> is a function (i.e., a numeric summary) of data. A statistic is not the truth (i.e., <strong>parameter</strong>). We need to perform <strong>statistical inference</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">summary</span>(ncov10)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0     2.0     4.0     4.9     8.0    11.0 </code></pre>
+</div>
+</div>
+<p>To make inference on the true average incubation period (<span class="math inline">\(\mu\)</span>) based on the sample average (<span class="math inline">\(\bar{X} = 4.9\)</span>), we need to understand the <strong>randomness of <span class="math inline">\(\bar{X}\)</span></strong> (i.e., its “sampling distribution”). Imagine two scenarios:</p>
 <ol type="1">
 <li><strong>Not much variation in <span class="math inline">\(\bar{X}\)</span>:</strong>
 <ul>
@@ -251,7 +256,12 @@
 <section id="introduction-1" class="slide level2">
 <h2>Introduction</h2>
 <p>How do we know the sampling distribution of <span class="math inline">\(\bar{X}\)</span>?</p>
-<p>The sampling distribution of <span class="math inline">\(\bar{X}\)</span> is well studied based on the <em>Central Limit Theorem.</em> - Shape: - Mean: <span class="math inline">\(\mu\)</span> (population mean) - Standard Deviation (SD): <span class="math inline">\(\sigma/\sqrt{n}\)</span> (where <span class="math inline">\(\sigma\)</span> is the population SD)</p>
+<p>The sampling distribution of <span class="math inline">\(\bar{X}\)</span> is well studied based on the <em>Central Limit Theorem.</em></p>
+<ul>
+<li>Shape:</li>
+<li>Mean: <span class="math inline">\(\mu\)</span> (population mean)</li>
+<li>Standard Deviation (SD): <span class="math inline">\(\sigma/\sqrt{n}\)</span> (where <span class="math inline">\(\sigma\)</span> is the population SD)</li>
+</ul>
 <p>Limitations:</p>
 <ul>
 <li>CLT relies on a ``large enough” sample size</li>
@@ -285,48 +295,58 @@
 <h2>Bootstrap samples</h2>
 <p>To get a bootstrap sample: <strong>resample the original data with replacement</strong>; sample size stays the same.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>ncov10</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>ncov10</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  9 10  4  0  2  5 11  4  2  2</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  2 10  0  2  2  5  2 11  9  5</code></pre>
+<pre><code> [1]  2  4 11  2  9  4  4  9 10  9</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 4 0 5 4 2 4 4 2 0 4</code></pre>
+<pre><code> [1]  5  5  4 11 10  4  2  2  2  5</code></pre>
 </div>
 </div>
 <ul>
 <li>Repeat for many times and use the simulated means to study the randomness of the sample mean.</li>
 </ul>
 <p><strong>Exercise:</strong> Use the <strong>nCoV_simple</strong> dataset (incubation periods of <span class="math inline">\(50\)</span> patients) to obtain <span class="math inline">\(B = 1000\)</span> bootstrap samples; record the mean of each bootstrap sample in a vector called <strong>bootresult</strong>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb12-2"><a href=""></a>bootresult <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb12-3"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>bootsize) {</span>
+<span id="cb12-4"><a href=""></a>  bootresult[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(ncov_simple<span class="sc">$</span>incubation, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb12-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="inference-using-bootstrap-samples" class="slide level2">
 <h2>Inference using bootstrap samples</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>bootresult[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>bootresult[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 3.7480 4.1902 4.0528 3.9762 3.8878 3.9126 3.9118 3.5970 4.0208 4.1228
-[11] 4.1884 4.0904 4.2910 3.9284 4.2704 3.4846 3.8090 4.9328 4.1458 4.0798
-[21] 3.9476 3.7286 4.3194 4.1064 4.3108 4.1036 4.3742 3.6986 4.2682 4.5014</code></pre>
+<pre><code> [1] 4.4170 4.2912 4.3344 3.9876 4.3224 4.2810 4.1604 3.9550 3.7084 4.1556
+[11] 4.4366 4.1684 4.4770 3.8586 4.1460 4.7622 4.2714 3.9926 4.5928 4.9680
+[21] 4.3666 4.8554 4.2666 4.6834 4.4442 3.9380 4.1924 4.0738 4.2378 4.3464</code></pre>
 </div>
 </div>
 <p>Using the 1000 bootstrap samples, we can estimate the SD of <span class="math inline">\(\bar{X}\)</span>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3246789</code></pre>
+<pre><code>[1] 0.323767</code></pre>
 </div>
 </div>
-<p>In comparison, without using bootstrap, we can calculate the SD of <span class="math inline">\(\bar{X}\)</span>: true SD = <span class="math inline">\(\sigma/\sqrt{n}\)</span>, estimate = <span class="math inline">\(s/\sqrt{n}\)</span></p>
+<p>In comparison, without using bootstrap, we can estimate the SD of <span class="math inline">\(\bar{X}\)</span> with the formula: <span class="math inline">\(s/\sqrt{n}\)</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">sd</span>(ncov_simple<span class="sc">$</span>incubation) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">sd</span>(ncov_simple<span class="sc">$</span>incubation) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3309482</code></pre>
 </div>
@@ -334,81 +354,217 @@
 </section>
 <section id="inference-using-bootstrap-samples-1" class="slide level2">
 <h2>Inference using bootstrap samples</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">hist</span>(bootresult, <span class="at">col=</span><span class="st">'lightblue'</span>, <span class="at">main=</span><span class="st">'1000 bootstrap sample means'</span>, <span class="at">xlab=</span><span class="cn">NA</span>)</span>
+<span id="cb19-2"><a href=""></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(ncov_simple<span class="sc">$</span>incubation), <span class="at">col=</span><span class="st">'red'</span>, <span class="at">lty=</span><span class="st">'dashed'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
+</div>
 <img data-src="Lecture_7_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:50.0%" class="r-stretch"><p>A 95% confidence interval of the mean incubation period</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5%    97.5% 
-3.488985 4.742405 </code></pre>
+3.534600 4.772405 </code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-median" class="slide level2">
+<section id="exercise-median" class="slide level2 scrollable">
 <h2>Exercise: median</h2>
 <p>The <strong>median</strong> incubation period is often more of interest (why?) Compared to the mean, properties of the median are harder to calculate mathematically. Instead, we can use bootstrap to study these properties.</p>
-<p>Exercise: use the <strong>nCoV_simple</strong> dataset 1. Get the sample median of the dataset. 2. Obtain <span class="math inline">\(B = 5000\)</span> bootstrap samples; record the median of each bootstrap sample. 3. Estimate the SD of the median. Does it have more variation or less variation compared to the mean? 4. Obtain a 95% confidence interval for the median incubation period.</p>
+<p>Exercise: use the <strong>nCoV_simple</strong> dataset</p>
+<ol type="1">
+<li>Get the sample median of the dataset.</li>
+<li>Obtain <span class="math inline">\(B = 5000\)</span> bootstrap samples; record the median of each bootstrap sample.</li>
+<li>Estimate the SD of the median. Does it have more variation or less variation compared to the mean?</li>
+<li>Obtain a 95% confidence interval for the median incubation period.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co">#1</span></span>
+<span id="cb22-2"><a href=""></a><span class="fu">median</span>(ncov_simple<span class="sc">$</span>incubation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="co">#2</span></span>
+<span id="cb24-2"><a href=""></a>bootsize <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb24-3"><a href=""></a>bootresult <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb24-4"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>bootsize) {</span>
+<span id="cb24-5"><a href=""></a>  bootresult[i] <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="fu">sample</span>(ncov_simple<span class="sc">$</span>incubation, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb24-6"><a href=""></a>}</span>
+<span id="cb24-7"><a href=""></a></span>
+<span id="cb24-8"><a href=""></a><span class="co">#3</span></span>
+<span id="cb24-9"><a href=""></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3847611</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># more variation than the mean</span></span>
+<span id="cb26-2"><a href=""></a></span>
+<span id="cb26-3"><a href=""></a><span class="co">#4</span></span>
+<span id="cb26-4"><a href=""></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> 2.5% 97.5% 
+ 2.92  4.50 </code></pre>
+</div>
+</div>
 </section>
 <section id="limitations" class="slide level2">
 <h2>Limitations</h2>
-<p>The basic (nonparametric) bootstrap method <strong>does not work well</strong> in the following situations: - The original data are not independent. - The original data are not identically distributed. - We are studying the properties of a maximum or minimum. - The underlying true distribution has a heavy tail. # Parametric Bootstrap</p>
+<p>The basic (nonparametric) bootstrap method <strong>does not work well</strong> in the following situations:</p>
+<ul>
+<li>The original data are not independent.</li>
+<li>The original data are not identically distributed.</li>
+</ul>
+<blockquote>
+<p>Intuition: the resampling process ignores any dependence structure in the data;</p>
+</blockquote>
+<ul>
+<li>We are studying the properties of a maximum or minimum.</li>
+</ul>
+<blockquote>
+<p>Intuition: you would never exceed the maximum of the original data in a bootstrap sample, leading to underestimation of the variation of the maximum.</p>
+</blockquote>
+<ul>
+<li>The underlying true distribution has a heavy tail.</li>
+</ul>
+<blockquote>
+<p>Intuition: the resampling process tends to oversample extreme values in the original data.</p>
+</blockquote>
+</section></section>
+<section>
+<section id="parametric-bootstrap" class="title-slide slide level1 center">
+<h1>Parametric Bootstrap</h1>
+
 </section>
 <section id="introduction-3" class="slide level2">
 <h2>Introduction</h2>
 <p>Suppose we decide to fit a weibull distribution to the incubation period. We can then also estimate the probability that the incubation period is shorter than 14 days (call this <span class="math inline">\(\hat{p}\)</span>).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">library</span>(<span class="st">'MASS'</span>)</span>
-<span id="cb19-2"><a href=""></a>model1 <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
-<span id="cb19-3"><a href=""></a><span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">library</span>(<span class="st">'MASS'</span>)</span>
+<span id="cb28-2"><a href=""></a>model1 <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb28-3"><a href=""></a><span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9994694</code></pre>
 </div>
 </div>
-<p>What if we want to construct a confidence interval based on <span class="math inline">\(\hat{p}\)</span>? We would need to know the sampling distribution, or at least the variation, of <span class="math inline">\(\hat{p}\)</span>. This can be difficult to derive if the model, and/or the parameter of interest, is complicated. Instead, we will study the sampling distribution of <span class="math inline">\(\hat{p}\)</span> using bootstrap.</p>
+<p>What if we want to construct a confidence interval based on <span class="math inline">\(\hat{p}\)</span>?</p>
+<ul>
+<li><p>We would need to know the sampling distribution, or at least the variation, of <span class="math inline">\(\hat{p}\)</span>.<br>
+</p></li>
+<li><p>This can be difficult to derive if the model, and/or the parameter of interest, is complicated.</p></li>
+<li><p>Instead, we will study the sampling distribution of <span class="math inline">\(\hat{p}\)</span> using bootstrap.</p></li>
+</ul>
 </section>
 <section id="parametric-bootstrap-steps" class="slide level2">
 <h2>Parametric bootstrap steps</h2>
 <ul>
-<li>Step 1: Fit the Weibull model and get parameter estimates; record a value of <span class="math inline">\(\hat{p}\)</span> (0.9994694)</li>
-<li>Step 2: Randomly sample another dataset from the fitted Weibull distribution (called a <strong>plug-in distribution</strong>).</li>
+<li><p>Step 1: Fit the Weibull model (based on the original data) to obtain the <strong>plug-in distribution</strong>.</p></li>
+<li><p>Step 2: Randomly sample another dataset (of the same sample size <span class="math inline">\(n=50\)</span>) from the plug-in distribution.</p></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>bootdata <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="dv">50</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>bootdata <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="dv">50</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>Step 3: Fit the Weibull model with the new dataset and record another value of <span class="math inline">\(\hat{p}\)</span></li>
+<li>Step 3: Re-fit the Weibull model with the new dataset.</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>modelboot <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(bootdata, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
-<span id="cb22-2"><a href=""></a><span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>modelboot <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(bootdata, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Step 4: With the refitted model, record another value of <span class="math inline">\(\hat{p}\)</span></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.999483</code></pre>
+<pre><code>[1] 0.9996868</code></pre>
 </div>
 </div>
 <ul>
-<li>Step 4: Repeat steps 2 and 3 to obtain many values of <span class="math inline">\(\hat{p}\)</span>. These values can be used to estimate the distribution of <span class="math inline">\(\hat{p}\)</span></li>
+<li>Step 5: Repeat steps 2, 3, and 4 to obtain many values of <span class="math inline">\(\hat{p}\)</span>. These values can be used to estimate the distribution of <span class="math inline">\(\hat{p}\)</span></li>
 </ul>
 <p><strong>Exercise:</strong> Obtain <span class="math inline">\(1000\)</span> values of <span class="math inline">\(\hat{p}\)</span> using bootstrap. Plot a histogram of these values and construct a 95% confidence interval.</p>
-</section>
-<section id="bootstrap-distribution-of-estimated-probability" class="slide level2">
-<h2>Bootstrap distribution of estimated probability</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="co"># obtain plugin distribution</span></span>
+<span id="cb34-2"><a href=""></a>model1 <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb34-3"><a href=""></a></span>
+<span id="cb34-4"><a href=""></a><span class="co"># run bootstrap</span></span>
+<span id="cb34-5"><a href=""></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb34-6"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb34-7"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>bootsize) {</span>
+<span id="cb34-8"><a href=""></a>  bootdata <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="dv">50</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb34-9"><a href=""></a>  modelboot <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(bootdata, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb34-10"><a href=""></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb34-11"><a href=""></a>}</span>
+<span id="cb34-12"><a href=""></a></span>
+<span id="cb34-13"><a href=""></a><span class="fu">hist</span>(result,<span class="at">nclass=</span><span class="dv">50</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">0.99</span>,<span class="dv">1</span>),<span class="at">main=</span><span class="st">'Prob. that incubation period &lt; 14 days'</span>,</span>
+<span id="cb34-14"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">col=</span><span class="st">'salmon'</span>,<span class="at">ylab=</span><span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">quantile</span>(result,<span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     2.5%     97.5% 
-0.9950125 0.9999990 </code></pre>
+0.9954364 0.9999991 </code></pre>
 </div>
 </div>
-<img data-src="Lecture_7_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="Lecture_7_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="exercise-quantile-estimates" class="slide level2 scrollable">
 <h2>Exercise: quantile estimates</h2>
 <ol type="1">
-<li>Fit the Weibull model to the incubation periods and estimate the 90th percentile of the incubation period.</li>
+<li>Fit the Weibull model to the incubation periods and estimate the 90th percentile of the incubation period (<code>qweibull</code>).</li>
 <li>Obtain <span class="math inline">\(B = 1000\)</span> bootstrap samples from the plug-in distribution and estimate the SD of the 90th percentile.</li>
 <li>Obtain a 99% confidence interval for the 90th percentile of the incubation period.</li>
 </ol>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="co"># obtain plugin distribution</span></span>
+<span id="cb37-2"><a href=""></a>model1 <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(ncov_simple<span class="sc">$</span>incubation, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb37-3"><a href=""></a><span class="fu">qweibull</span>(<span class="fl">0.9</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.293084</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="co"># run bootstrap</span></span>
+<span id="cb39-2"><a href=""></a>bootsize <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb39-3"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, bootsize)</span>
+<span id="cb39-4"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>bootsize) {</span>
+<span id="cb39-5"><a href=""></a>  bootdata <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="dv">50</span>, <span class="at">shape =</span> model1<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> model1<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb39-6"><a href=""></a>  modelboot <span class="ot">&lt;-</span> <span class="fu">fitdistr</span>(bootdata, <span class="st">'weibull'</span>, <span class="at">lower =</span> <span class="dv">0</span>)</span>
+<span id="cb39-7"><a href=""></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">qweibull</span>(<span class="fl">0.9</span>, <span class="at">shape =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>])</span>
+<span id="cb39-8"><a href=""></a>}</span>
+<span id="cb39-9"><a href=""></a></span>
+<span id="cb39-10"><a href=""></a><span class="fu">hist</span>(result,<span class="at">nclass=</span><span class="dv">50</span>,<span class="at">main=</span><span class="st">'90th percentile of incubation period'</span>,</span>
+<span id="cb39-11"><a href=""></a>     <span class="at">yaxt=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">col=</span><span class="st">'salmon'</span>,<span class="at">ylab=</span><span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
-</section></section>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="fu">quantile</span>(result,<span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>    2.5%    97.5% 
+6.022809 8.528463 </code></pre>
+</div>
+</div>
+
+<img data-src="Lecture_7_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
