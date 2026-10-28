@@ -248,9 +248,165 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="in-class">In class</h2>
 <p>As usual, we will start with Quiz 5 based on <a href="../../course_documents/homework/homework_5.html">homework 5</a>.</p>
 <p>We’ll discuss Lecture 6 for the rest of the class.</p>
-<p><a href="../../../../teaching/DATA352/course_documents/all_lectures/Lecture_6.html">Link to fullscreen</a></p>
-<iframe src="../../../../teaching/DATA352/course_documents/all_lectures/Lecture_6.html" width="100%" height="650px" style="border:none;">
-</iframe>
+<style>
+#data352-lecture6-viewer {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+#data352-lecture6-viewer .lecture-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+#data352-lecture6-viewer .lecture-viewer-fullscreen {
+  border: 1px solid #0f766e;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: #0f766e;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#data352-lecture6-viewer .lecture-viewer-fullscreen:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+#data352-lecture6-viewer .lecture-viewer-open-link {
+  font-size: 0.9rem;
+}
+#data352-lecture6-viewer iframe {
+  display: block;
+  width: 100%;
+  height: 650px;
+  border: 0;
+  background: #fff;
+}
+#data352-lecture6-viewer:fullscreen,
+#data352-lecture6-viewer.lecture-viewer-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+#data352-lecture6-viewer:fullscreen .lecture-viewer-toolbar,
+#data352-lecture6-viewer.lecture-viewer-fallback .lecture-viewer-toolbar {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.65rem 1rem;
+  background: #f8fafc;
+}
+#data352-lecture6-viewer:fullscreen iframe,
+#data352-lecture6-viewer.lecture-viewer-fallback iframe {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+}
+body.lecture-viewer-no-scroll {
+  overflow: hidden !important;
+}
+</style>
+
+<div id="data352-lecture6-viewer">
+  <div class="lecture-viewer-toolbar" role="group" aria-label="Lecture 6 display options">
+    <button type="button" class="lecture-viewer-fullscreen" aria-controls="data352-lecture6-frame" aria-pressed="false">Fullscreen slides</button>
+    <a class="lecture-viewer-open-link" href="../../../../teaching/DATA352/course_documents/all_lectures/Lecture_6.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+  </div>
+  <iframe id="data352-lecture6-frame" title="Lecture 6: Model Based Inference" src="../../../../teaching/DATA352/course_documents/all_lectures/Lecture_6.html" allowfullscreen></iframe>
+</div>
+
+<script>
+(function () {
+  const viewer = document.getElementById("data352-lecture6-viewer");
+  const button = viewer && viewer.querySelector(".lecture-viewer-fullscreen");
+  const frame = document.getElementById("data352-lecture6-frame");
+  if (!viewer || !button || !frame) return;
+
+  let fallback = false;
+
+  function updateButton() {
+    const expanded = fallback || document.fullscreenElement === viewer;
+    button.textContent = expanded ? "Exit fullscreen" : "Fullscreen slides";
+    button.setAttribute("aria-pressed", String(expanded));
+    button.setAttribute("aria-label", expanded ? "Exit fullscreen slides" : "Enter fullscreen slides");
+  }
+
+  function closeFallback() {
+    fallback = false;
+    viewer.classList.remove("lecture-viewer-fallback");
+    document.body.classList.remove("lecture-viewer-no-scroll");
+    updateButton();
+  }
+
+  function openFallback() {
+    fallback = true;
+    viewer.classList.add("lecture-viewer-fallback");
+    document.body.classList.add("lecture-viewer-no-scroll");
+    updateButton();
+  }
+
+  button.addEventListener("click", async function () {
+    if (fallback) {
+      closeFallback();
+      return;
+    }
+
+    if (document.fullscreenElement === viewer) {
+      try {
+        await document.exitFullscreen();
+      } catch (error) {
+        // The browser controls exiting native fullscreen.
+      }
+      updateButton();
+      return;
+    }
+
+    if (viewer.requestFullscreen) {
+      try {
+        await viewer.requestFullscreen();
+        updateButton();
+        return;
+      } catch (error) {
+        // Fall back when Fullscreen API access is unavailable or denied.
+      }
+    }
+    openFallback();
+  });
+
+  document.addEventListener("fullscreenchange", updateButton);
+
+  function onEscape(event) {
+    if (event.key === "Escape" && fallback) {
+      event.preventDefault();
+      closeFallback();
+      button.focus();
+    }
+  }
+
+  document.addEventListener("keydown", onEscape);
+  frame.addEventListener("load", function () {
+    try {
+      // Keys inside the same-origin iframe do not bubble to its parent.
+      frame.contentDocument.addEventListener("keydown", onEscape);
+    } catch (error) {
+      // Cross-origin frames can still use the visible exit button.
+    }
+  });
+
+  updateButton();
+})();
+</script>
 </section>
 <section id="homework" class="level2">
 <h2 class="anchored" data-anchor-id="homework">Homework</h2>
