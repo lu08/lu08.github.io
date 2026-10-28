@@ -45,9 +45,6 @@ For (c): The loglikelihoods are (rounded): normal (-113); lognormal (-116); gamm
 
 
 
-
-
-
 2. Skim through the [incubation period paper](../all_lectures/Incubation%20period%20paper.pdf) and answer the following questions.  You should be able to find the answers within the paper, so a solution is not provided here.  You should have a basic familiarity with the paper (at least to the extent of these questions) for next week's quiz.
 
     a. Based on results of this paper, what is the estimated median incubation period? Why do you think the the paper uses the median instead of the mean?

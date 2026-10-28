@@ -16,6 +16,6 @@ For the rest of the class, we will finish [Lecture 7](/teaching/DATA352/course_d
 
 ## Homework
 
-Finish [Homework 7](../../course_documents/homework/homework_7.qmd) on your own, in preparation for next week's exam.  It is also important that you run and study the code in [Lecture 7](../../course_documents/all_lectures/Lecture_7.qmd).  These code will help you understand the concepts of bootstrapping and may appear on the exam.
+Finish [Homework 7](../../course_documents/homework/homework_7.qmd) on your own, in preparation for next week's exam.  It is also important that you run and study the code in [Lecture 7](../../course_documents/all_lectures/Lecture_7.html).  These code will help you understand the concepts of bootstrapping and may appear on the exam.
 
 Reminder: **Exam 2** is scheduled for next week.  It covers Lectures 4 to 7, with corresponding Homework 4 to 7 (see [course documents](../../course_documents/index.qmd)).  Go over [**Exam 2 review**](../../course_documents/exam_reviews/exam_2_review.qmd).  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.

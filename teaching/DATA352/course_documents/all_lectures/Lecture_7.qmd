@@ -31,7 +31,6 @@ Material is based on [The Incubation Period of Coronavirus Disease 2019 (COVID-1
 
 [nCoV_simple.csv](nCoV_simple.csv): a simplified dataset that contains the incubation periods of $50$ patients.
 
-- Import the data into R
 - Create a vector called `ncov10` based on the first $10$ patients
 
 ```{r, echo=T}
@@ -73,7 +72,7 @@ The sampling distribution of $\bar{X}$ is well studied based on the *Central Lim
 
 Limitations:
 
- - CLT relies on a ``large enough" sample size
+ - CLT relies on a "large enough" sample size
  - CLT is only relevant when the statistic is the sample mean
 
 Solution:
@@ -162,9 +161,10 @@ Exercise: use the **nCoV_simple** dataset
 3. Estimate the SD of the median. Does it have more variation or less variation compared to the mean?
 4. Obtain a 95% confidence interval for the median incubation period.
 
-```{r,out.width="50%",fig.height=3,fig.width=4}
-#| code-fold: true
-#| code-summary: "Show code"
+<details>
+<summary>Show solution</summary>
+
+```{r,out.width="70%",fig.height=3,fig.width=4}
 
 #1
 median(ncov_simple$incubation)
@@ -183,6 +183,8 @@ sd(bootresult)
 #4
 quantile(bootresult, probs = c(0.025, 0.975))
 ```
+
+</details>
 
 
 
@@ -250,10 +252,10 @@ pweibull(14, shape = modelboot$estimate[1], scale = modelboot$estimate[2])
 
 **Exercise:** Obtain $1000$ values of $\hat{p}$ using bootstrap. Plot a histogram of these values and construct a 95% confidence interval.
 
-```{r,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
-#| code-fold: true
-#| code-summary: "Show code"
+<details>
+<summary>Show solution</summary>
 
+```{r,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
 # obtain plugin distribution
 model1 <- fitdistr(ncov_simple$incubation, 'weibull', lower = 0)
 
@@ -271,15 +273,18 @@ hist(result,nclass=50,xlim=c(0.99,1),main='Prob. that incubation period < 14 day
 quantile(result,c(0.025,0.975))
 ```
 
+</details>
 
 ## Exercise: quantile estimates
 1. Fit the Weibull model to the incubation periods and estimate the 90th percentile of the incubation period (`qweibull`).
 2. Obtain $B = 1000$ bootstrap samples from the plug-in distribution and estimate the SD of the 90th percentile.
 3. Obtain a 99% confidence interval for the 90th percentile of the incubation period.
 
+
+<details>
+<summary>Show solution</summary>
+
 ```{r,fig.align='center',fig.height=4,fig.width=4,out.width="80%"}
-#| code-fold: true
-#| code-summary: "Show code"
 
 # obtain plugin distribution
 model1 <- fitdistr(ncov_simple$incubation, 'weibull', lower = 0)
@@ -298,3 +303,5 @@ hist(result,nclass=50,main='90th percentile of incubation period',
      yaxt='n',xlab=NA,col='salmon',ylab=NA)
 quantile(result,c(0.025,0.975))
 ```
+
+</details>

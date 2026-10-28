@@ -21,4 +21,6 @@ We will go over [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.
 
 We will start with **quiz 6** on the topic of simple linear regression.  We will then finish the remaining slides of [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html).
 
-In preparation for next Tuesday's **exam 2**, go over the [practice exam](../../course_documents/exam_reviews/practice_exam_2_blank.qmd).  Exam covers [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html) (only the second half, z-scores), [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html), and [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html).
+In preparation for next Tuesday's **exam 2**, go over the [practice exam](../../course_documents/exam_reviews/practice_exam_2_blank.qmd) (only go over the [solution](../../course_documents/exam_reviews/practice_exam_2_solution.qmd) after you have attempted the problems).  You can download the pdf format which might look better.
+
+Exam 2 covers [Chapter 4](../../course_documents/all_lectures/chapter_4_slide.html) (only the second half, z-scores), [Chapter 5](../../course_documents/all_lectures/chapter_5_slide.html), and [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html).

@@ -38,6 +38,7 @@ You can find all course documents here as a reference page. Please refer to the 
 - [Assignment 1 (Group discussion based on Homework 1)](assignment/assignment_1.qmd)
 - [Assignment 2 (Group discussion based on Homework 2)](assignment/assignment_2.qmd)
 - [Assignment 3 (Central Limit Theorem simulation)](assignment/assignment_3.qmd)
+- Assignment 4 (Discussion of the incubation period paper and data), given as part of [Lecture 6](all_lectures/Lecture_6.html)
 
 
 ## Exam reviews
