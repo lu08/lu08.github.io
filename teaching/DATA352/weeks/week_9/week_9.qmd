@@ -1,7 +1,21 @@
 ---
-title: "Week 9"
+title: "Week 9 (October 28)"
 ---
 
 ## In class
 
+We will start today's class with **Quiz 6** on [Homework 6](../../course_documents/homework/homework_6.qmd).
+
+For the rest of the class, we will finish [Lecture 7](/teaching/DATA352/course_documents/all_lectures/Lecture_7.html).
+
+[Link to fullscreen](/teaching/DATA352/course_documents/all_lectures/Lecture_7.html)
+
+<iframe src="/teaching/DATA352/course_documents/all_lectures/Lecture_7.html" width="100%" height="650px" style="border:none;"></iframe>
+
+
+
 ## Homework
+
+Finish [Homework 7](../../course_documents/homework/homework_7.qmd) on your own, in preparation for next week's exam.
+
+Reminder: **Exam 2** is scheduled for next week.  It covers Lectures 4 to 7, with corresponding Homework 4 to 7 (see [course documents](../../course_documents/index.qmd)).  Go over [**Exam 2 review**](../../course_documents/exam_reviews/exam_2_review.qmd).  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.

@@ -87,6 +87,24 @@ Use the Impeach data set to perform a simple linear regression analysis predicti
 
 The following scatterplot, created using variables from the Framingham data set, shows the relationship between initial body mass index (`BMI1`) and initial diastolic blood pressure (`DIABP1`). Points are labeled by the person's ID number. Use the scatterplot to answer the following questions.
 
+```{r, echo = FALSE}
+#| fig-width: 8
+#| fig-height: 6
+#| out-width: "100%"
+framingham <- haven::read_sav("../../../../dataset/Framingham.sav")
+
+plot(
+	framingham$BMI1,
+	framingham$DIABP1,
+	xlab = "Initial body mass index (BMI1)",
+	ylab = "Initial diastolic blood pressure (DIABP1)",
+	pch = 16,
+	col = "gray60"
+)
+text(framingham$BMI1, framingham$DIABP1, labels = framingham$ID, pos = 3, cex = 0.45)
+abline(lm(DIABP1 ~ BMI1, data = framingham), col = "#D36B43", lwd = 2)
+```
+
 1. Is linear regression appropriate for analyzing the relationship? Explain.
 2. Is the slope positive, negative, or near zero? What does that tell you about the relationship?
 3. Use the regression line to estimate initial diastolic blood pressure for a person with an initial BMI of 19.
@@ -127,30 +145,26 @@ d. The model overpredicts Alabama's educational expenditure.
 
 ### Exercise 6.13
 
-In this exercise, use the NELS data set to create a model predicting socioeconomic status (`SES`) from eighth-grade computer ownership (`COMPUTER`), a dichotomous variable. **Part (a), the scatterplot task, is omitted as requested.**
+In this exercise, use the NELS data set to create a model predicting socioeconomic status (`SES`) from eighth-grade computer ownership (`COMPUTER`), a dichotomous variable.
 
-b. What is the regression equation for predicting SES from computer ownership?
-c. Interpret the slope in context.
-d. Interpret the intercept in context, or explain why it is not meaningful.
-e. Use the equation to predict SES for those who owned a computer in eighth grade.
-f. Use the equation to predict SES for those who did not own a computer in eighth grade.
-g. Use Jamovi to find the mean SES of those who did and did not own a computer in eighth grade.
-h. If `COMPUTER` were recoded as `COMP1`, with 1 = did not own and 2 = did own, what would the regression equation be?
-i. If `COMPUTER` were recoded as `COMP2`, with 1 = did not own and 0 = did own, what would the regression equation be?
-j. Is it ever not meaningful to interpret the intercept when the independent variable is dichotomous?
+1. What is the regression equation for predicting SES from computer ownership?
+2. Interpret the slope in context.
+3. Interpret the intercept in context, or explain why it is not meaningful.
+4. Use the equation to predict SES for those who owned a computer in eighth grade.
+5. Use the equation to predict SES for those who did not own a computer in eighth grade.
+6. Use Jamovi to find the mean SES of those who did and did not own a computer in eighth grade.
+7. Is it ever not meaningful to interpret the intercept when the independent variable is dichotomous?
 
 <details>
 <summary>Show solution</summary>
 
-b. $\widehat{SES} = 4.83(COMPUTER) + 16.144$.
-c. Students who owned a computer in eighth grade have an average SES 4.83 points higher than those who did not.
-d. The intercept, 16.14, is the predicted mean SES for students who did not own a computer in eighth grade (`COMPUTER = 0`).
-e. For owners, the predicted SES is $4.83(1) + 16.144 = 20.97$.
-f. For non-owners, the predicted SES is $4.83(0) + 16.144 = 16.14$.
-g. Comparing means gives those same group means: 20.97 for computer owners and 16.14 for non-owners.
-h. $\widehat{SES} = 4.83(COMP1) + 11.31$.
-i. $\widehat{SES} = -4.83(COMP2) + 20.97$.
-j. Yes. The intercept is meaningful when one category is coded 0. If neither category is coded 0, the intercept does not represent either group's mean.
+1. $\widehat{SES} = 4.83(COMPUTER) + 16.144$.
+2. Students who owned a computer in eighth grade have an average SES 4.83 points higher than those who did not.
+3. The intercept, 16.14, is the predicted mean SES for students who did not own a computer in eighth grade (`COMPUTER = 0`).
+4. For owners, the predicted SES is $4.83(1) + 16.144 = 20.97$.
+5. For non-owners, the predicted SES is $4.83(0) + 16.144 = 16.14$.
+6. Comparing means gives those same group means: 20.97 for computer owners and 16.14 for non-owners.
+7. Yes. The intercept is meaningful when one category is coded 0. If neither category is coded 0, the intercept does not represent either group's mean.
 
 </details>
 
@@ -251,18 +265,51 @@ a. Above the mean on the essay exam. With a strong negative correlation, a below
 
 ### Exercise 6.24
 
-The following question relates to the scatterplot in the [original Chapter 6 homework document](word_files/Chapter%206%20Third%20Edition%20HW.docx), which shows the relationship between $X$ and $Y$ for four subgroups. For each subgroup, select the slope of the regression line, $b$, that best represents the relationship between $X$ and $Y$. You may select a value more than once.
+The scatterplot below shows the relationship between $X$ and $Y$ for two groups. Group 1 is shown with triangles, and Group 2 is shown with circles.
 
-- Group 1: _____
-- Group 2: _____
-- Group 3: _____
-- Group 4: _____
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-height: 5
+set.seed(27)
 
-Choices: $b = .95$, $b = -.95$, $b = 1.80$, $b = -1.80$, $b = 0$.
+group1 <- data.frame(
+	x = 1:10,
+	y = 0.5 * (1:10) + c(-0.15, 0.12, -0.08, 0.10, -0.12, 0.06, 0.15, -0.10, 0.08, -0.05),
+	group = "Group 1"
+)
+
+group2 <- data.frame(
+	x = c(1, 2, 3, 4, 5, 6, 7, 8),
+	y = 1.8 * c(1, 2, 3, 4, 5, 6, 7, 8) + c(4, -3, 2, -4, 3, -2, 4, -3),
+	group = "Group 2"
+)
+
+plot(
+	group1$x, group1$y,
+	type = "n",
+	xlim = c(0, 9),
+	ylim = c(0, 19),
+	xlab = "X",
+	ylab = "Y"
+)
+points(group1$x, group1$y, pch = 17)
+points(group2$x, group2$y, pch = 1)
+abline(lm(y ~ x, data = group1), lty = 2)
+abline(lm(y ~ x, data = group2), lty = 1)
+legend("topleft", legend = c("Group 1: triangles", "Group 2: circles"), pch = c(17, 1), bty = "n")
+```
+
+1. Match each group with the most plausible value for its Pearson's correlation coefficient: 1.25, 0.96, 0.87, -0.87, -0.96, -1.25
+2. Match each group with the most plausible value for its slope of the regression line: 1.9, 0.49, 0, -0.49, -1.9
 
 <details>
 <summary>Show solution</summary>
 
-Using the labels in the source document: Group 1 = a ($b = .95$); Group 2 = b ($b = -.95$); Group 3 = c ($b = 1.80$); Group 4 = d ($b = -1.80$).
+
+1. Group 1 has the stronger positive linear relationship because its points lie more closely around its fitted line (0.96), while Group 2's correlation is weaker because its points are more scattered (0.87).
+
+2. Group 2 has the steeper slope (1.9); Group 1 (triangles) has a smaller slope (0.49).
 
 </details>
+

@@ -360,6 +360,15 @@ Show solution
 <section id="exercise-6.5" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-6.5">Exercise 6.5</h3>
 <p>The following scatterplot, created using variables from the Framingham data set, shows the relationship between initial body mass index (<code>BMI1</code>) and initial diastolic blood pressure (<code>DIABP1</code>). Points are labeled by the person’s ID number. Use the scatterplot to answer the following questions.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter_6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 <ol type="1">
 <li>Is linear regression appropriate for analyzing the relationship? Explain.</li>
 <li>Is the slope positive, negative, or near zero? What does that tell you about the relationship?</li>
@@ -403,31 +412,27 @@ Show solution
 </section>
 <section id="exercise-6.13" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-6.13">Exercise 6.13</h3>
-<p>In this exercise, use the NELS data set to create a model predicting socioeconomic status (<code>SES</code>) from eighth-grade computer ownership (<code>COMPUTER</code>), a dichotomous variable. <strong>Part (a), the scatterplot task, is omitted as requested.</strong></p>
-<ol start="2" type="a">
+<p>In this exercise, use the NELS data set to create a model predicting socioeconomic status (<code>SES</code>) from eighth-grade computer ownership (<code>COMPUTER</code>), a dichotomous variable.</p>
+<ol type="1">
 <li>What is the regression equation for predicting SES from computer ownership?</li>
 <li>Interpret the slope in context.</li>
 <li>Interpret the intercept in context, or explain why it is not meaningful.</li>
 <li>Use the equation to predict SES for those who owned a computer in eighth grade.</li>
 <li>Use the equation to predict SES for those who did not own a computer in eighth grade.</li>
 <li>Use Jamovi to find the mean SES of those who did and did not own a computer in eighth grade.</li>
-<li>If <code>COMPUTER</code> were recoded as <code>COMP1</code>, with 1 = did not own and 2 = did own, what would the regression equation be?</li>
-<li>If <code>COMPUTER</code> were recoded as <code>COMP2</code>, with 1 = did not own and 0 = did own, what would the regression equation be?</li>
 <li>Is it ever not meaningful to interpret the intercept when the independent variable is dichotomous?</li>
 </ol>
 <details>
 <summary>
 Show solution
 </summary>
-<ol start="2" type="a">
+<ol type="1">
 <li><span class="math inline">\(\widehat{SES} = 4.83(COMPUTER) + 16.144\)</span>.</li>
 <li>Students who owned a computer in eighth grade have an average SES 4.83 points higher than those who did not.</li>
 <li>The intercept, 16.14, is the predicted mean SES for students who did not own a computer in eighth grade (<code>COMPUTER = 0</code>).</li>
 <li>For owners, the predicted SES is <span class="math inline">\(4.83(1) + 16.144 = 20.97\)</span>.</li>
 <li>For non-owners, the predicted SES is <span class="math inline">\(4.83(0) + 16.144 = 16.14\)</span>.</li>
 <li>Comparing means gives those same group means: 20.97 for computer owners and 16.14 for non-owners.</li>
-<li><span class="math inline">\(\widehat{SES} = 4.83(COMP1) + 11.31\)</span>.</li>
-<li><span class="math inline">\(\widehat{SES} = -4.83(COMP2) + 20.97\)</span>.</li>
 <li>Yes. The intercept is meaningful when one category is coded 0. If neither category is coded 0, the intercept does not represent either group’s mean.</li>
 </ol>
 </details>
@@ -533,19 +538,28 @@ Show solution
 </section>
 <section id="exercise-6.24" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-6.24">Exercise 6.24</h3>
-<p>The following question relates to the scatterplot in the <a href="word_files/Chapter 6 Third Edition HW.docx">original Chapter 6 homework document</a>, which shows the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> for four subgroups. For each subgroup, select the slope of the regression line, <span class="math inline">\(b\)</span>, that best represents the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. You may select a value more than once.</p>
-<ul>
-<li>Group 1: _____</li>
-<li>Group 2: _____</li>
-<li>Group 3: _____</li>
-<li>Group 4: _____</li>
-</ul>
-<p>Choices: <span class="math inline">\(b = .95\)</span>, <span class="math inline">\(b = -.95\)</span>, <span class="math inline">\(b = 1.80\)</span>, <span class="math inline">\(b = -1.80\)</span>, <span class="math inline">\(b = 0\)</span>.</p>
+<p>The scatterplot below shows the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> for two groups. Group 1 is shown with triangles, and Group 2 is shown with circles.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter_6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>Match each group with the most plausible value for its Pearson’s correlation coefficient: 1.25, 0.96, 0.87, -0.87, -0.96, -1.25</li>
+<li>Match each group with the most plausible value for its slope of the regression line: 1.9, 0.49, 0, -0.49, -1.9</li>
+</ol>
 <details>
 <summary>
 Show solution
 </summary>
-<p>Using the labels in the source document: Group 1 = a (<span class="math inline">\(b = .95\)</span>); Group 2 = b (<span class="math inline">\(b = -.95\)</span>); Group 3 = c (<span class="math inline">\(b = 1.80\)</span>); Group 4 = d (<span class="math inline">\(b = -1.80\)</span>).</p>
+<ol type="1">
+<li><p>Group 1 has the stronger positive linear relationship because its points lie more closely around its fitted line (0.96), while Group 2’s correlation is weaker because its points are more scattered (0.87).</p></li>
+<li><p>Group 2 has the steeper slope (1.9); Group 1 (triangles) has a smaller slope (0.49).</p></li>
+</ol>
 </details>
 
 

@@ -17,7 +17,7 @@ The relationship has a linear component, but the scatterplot suggests that a sim
 
 ### Exercise 5.3
 
-Use the States data set and scatterplots to investigate the relationships between the average SAT Critical Reading score for the state (`SATCR`) and the following three variables: Average SAT Math score for the state (`SATM`), percentage of eligible students taking the SAT for the state (`PERTAK`), and the average student-teacher ratio for the state (`STUTEACH`). You may create separate bivariate graphs, or make use of the matrix scatterplot option under the Scatterplots procedure to create a single graph that contains several scatterplots. (Don't worry about multiple scatterplots in one matrix. You can simply do each scatterplot one at a time.) Use the graphs that you create to answer the following questions.
+Use the States data set and scatterplots to investigate the relationships between the average SAT Critical Reading score for the state (`SATCR`) and the following three variables: Average SAT Math score for the state (`SATM`), percentage of eligible students taking the SAT for the state (`PERTAK`), and the average student-teacher ratio for the state (`STUTEACH`).  Use the graphs that you create to answer the following questions.
 
 1. Rank these linear relationships from strongest to weakest.
 2. Describe the nature of the linear relationship, or indicate that little or no linear relationship exists, between the average Critical Reading SAT for the state and the average Math SAT for the state.
@@ -38,16 +38,18 @@ The linear relationships rank from strongest to weakest as `SATM`, `PERTAK`, and
 Conduct a correlation analysis using the States data set to determine whether various factors are associated with `EDUCEXPE`, the average educational expenditure per pupil. These factors are `STUTEACH`, student-teacher ratio; `SATV`, average verbal SAT score for the state; and `TEACHPAY`, the average salary of public school teachers in the state.
 
 1. Create a matrix scatterplot of the variables and determine whether a linear model is an appropriate representation of the relationships between all pairs of these variables.
-2. Calculate the correlation matrix between all pairs of these variables.
-3. Do states in which expenditures per pupil are higher tend to pay their teachers more?
-4. Do states in which expenditures per pupil are higher tend to have higher verbal SAT scores, on average?
-5. Do states in which expenditures per pupil are higher tend to have lower pupil-per-teacher ratios?
-6. Of the three variables, pupils per teacher, average SAT verbal scores, and teacher salary, which is most strongly correlated with expenditure per pupil?
+
+> Hint: in Jamovi, do Analysis -> Regression -> Correlation Matrix; you can put multiple variables in the box; for scatterplot, you can select "Correlation matrix" under `Plot`
+
+2. Do states in which expenditures per pupil are higher tend to pay their teachers more?
+3. Do states in which expenditures per pupil are higher tend to have higher verbal SAT scores, on average?
+4. Do states in which expenditures per pupil are higher tend to have lower pupil-per-teacher ratios?
+5. Of the three variables, pupils per teacher, average SAT verbal scores, and teacher salary, which is most strongly correlated with expenditure per pupil?
 
 <details>
 <summary>Show solution</summary>
 
-The matrix scatterplots suggest that linear models are appropriate for these relationships. Expenditure per pupil is positively correlated with teacher salary (`r = .72`), negatively correlated with average SAT verbal score (`r = -.25`), and negatively correlated with student-teacher ratio (`r = -.48`). Thus, higher-spending states tend to pay teachers more and have lower pupil-per-teacher ratios, but tend to have lower verbal SAT scores. Teacher salary has the strongest correlation with expenditure per pupil.
+The matrix scatterplots suggest that linear models are appropriate for these relationships. Expenditure per pupil is positively correlated with teacher salary ($r = .72$), negatively correlated with average SAT verbal score ($r = -.25$), and negatively correlated with student-teacher ratio ($r = -.48$). Thus, higher-spending states tend to pay teachers more and have lower pupil-per-teacher ratios, but tend to have lower verbal SAT scores. Teacher salary has the strongest correlation with expenditure per pupil.
 
 </details>
 
@@ -63,7 +65,7 @@ In this exercise, we use the NELS data set to look at the relationship of socioe
 <details>
 <summary>Show solution</summary>
 
-Students whose families owned a computer in eighth grade tend to have higher socioeconomic status than those whose families did not. The correlation is positive and moderate (`r = .35`).
+Students whose families owned a computer in eighth grade tend to have higher socioeconomic status than those whose families did not. The correlation is positive and moderate ($r = .35$).
 
 </details>
 
@@ -81,10 +83,10 @@ Use the Learndis data set to investigate whether different variables are associa
 <details>
 <summary>Show solution</summary>
 
-1. Reading comprehension and intellectual ability have a small-to-moderate positive correlation (`r = .286`): students with higher reading scores tend to have higher intellectual ability scores.
-2. Resource-room students tend to have higher reading comprehension. The correlation is negative (`r = -.444`), and self-contained placement is coded 1 while resource-room placement is coded 0.
-3. Placement type and grade level have virtually no relationship (`r = -.07`).
-4. The relationship between grade level and reading comprehension is negative (`r = -.322`): students in higher grades tend to perform worse relative to their peers.
+1. Reading comprehension and intellectual ability have a small-to-moderate positive correlation ($r = .286$): students with higher reading scores tend to have higher intellectual ability scores.
+2. Resource-room students tend to have higher reading comprehension. The correlation is negative ($r = -.444$), and self-contained placement is coded 1 while resource-room placement is coded 0.
+3. Placement type and grade level have virtually no relationship ($r = -.07$).
+4. The relationship between grade level and reading comprehension is negative ($r = -.322$): students in higher grades tend to perform worse relative to their peers.
 
 </details>
 
@@ -104,10 +106,10 @@ In this exercise, you are asked about the relationship between pairs of variable
 <details>
 <summary>Show solution</summary>
 
-1. The correlation between `DIABP1` and `BPMEDS1` is positive but weak (`r = .18`). People taking blood-pressure medication have slightly higher diastolic blood pressure on average. The mean and median for those not taking medication are 81.00 and 80.75; for those taking medication, they are 91.54 and 92.50.
+1. The correlation between `DIABP1` and `BPMEDS1` is positive but weak ($r = .18$). People taking blood-pressure medication have slightly higher diastolic blood pressure on average. The mean and median for those not taking medication are 81.00 and 80.75; for those taking medication, they are 91.54 and 92.50.
 2. This special case is the point-biserial correlation.
 3. People with higher blood pressure are more likely to take medication to lower it; the positive association may mean treatment has not yet reduced their blood pressure to an acceptable level or has not been used long enough.
-4. Males are more likely to develop CHD. The correlation between `SEX` and `ANYCHD4` is `r = -.18`; the corresponding rates are 33% for males and 17.5% for females.
+4. Males are more likely to develop CHD. The correlation between `SEX` and `ANYCHD4` is $r = -.18$; the corresponding rates are 33% for males and 17.5% for females.
 5. This special case is the phi coefficient.
 6. The scatterplot indicates a nonlinear relationship, for which a simple curve would be more appropriate than a straight-line correlation summary.
 
@@ -122,7 +124,7 @@ According to the data in the Framingham data set, what evidence is there in thes
 <details>
 <summary>Show solution</summary>
 
-Higher LDL is associated with developing CHD during the study (`r = .30`), while higher HDL is associated with not developing CHD (`r = -.25`).
+Higher LDL is associated with developing CHD during the study ($r = .30$), while higher HDL is associated with not developing CHD ($r = -.25$).
 
 </details>
 
@@ -130,7 +132,7 @@ Higher LDL is associated with developing CHD during the study (`r = .30`), while
 
 ### Exercise 5.15
 
-In this exercise, we investigate the relationship of two variables with `EXCURR12`, participation in extracurricular activities in twelfth grade. Note that this variable is measured using an ordinal level of measurement.
+In this exercise (NELS dataset), we investigate the relationship of two variables with `EXCURR12`, participation in extracurricular activities in twelfth grade. Note that this variable is measured using an ordinal level of measurement.
 
 1. Is there a correlation between smoking cigarettes (`CIGARETT`) and participation in extracurricular activities in twelfth grade (`EXCURR12`)? If so, describe the nature of the correlation. Provide statistical support for your answer.
 2. Is there a correlation between missing school in twelfth grade (`ABSENT12`) and participation in extracurricular activities in twelfth grade (`EXCURR12`)? If so, describe the nature of the correlation. Provide statistical support for your answer.
@@ -149,7 +151,7 @@ In this exercise, we investigate the relationship of two variables with `EXCURR1
 
 ### Exercise 5.16
 
-Use Crosstabs applied to two variables from the NELS data set (`ADVMATH8` and `URBAN`) to obtain a summary of who took advanced math in eighth grade by type of environment. Use the resulting summary to answer the following questions.
+Create a contingency table between two variables from the NELS data set (`ADVMATH8` and `URBAN`) to obtain a summary of who took advanced math in eighth grade by type of environment. Use the resulting summary to answer the following questions.
 
 1. What proportion of students took advanced math in eighth grade from each of the three environments: urban, suburban, and rural?
 2. What proportion of students took advanced math in eighth grade over all environments?
@@ -182,8 +184,8 @@ Use the Framingham data set to explore the relationship between gender and cigar
 
 1. There is no relationship between sex and smoking at time 1: half of both men and women smoked, matching the overall proportion. The study sample was selected to have this property.
 2. At time 3, 40.3% of females and 32.2% of males smoked; overall, 36.4% smoked. The difference is slight.
-3. The correlation at time 1 is `r = 0`.
-4. The correlation at time 3 is small (`r = .08`).
+3. The correlation at time 1 is $r = 0$.
+4. The correlation at time 3 is small ($r = .08$).
 
 </details>
 
@@ -212,19 +214,19 @@ For each item, determine whether there is a relationship and, if so, describe th
 <details>
 <summary>Show solution</summary>
 
-There can be more than one appropriate analysis. The solution key reports:
+There can be more than one appropriate analysis.
 
-1. `UNITMATH` and `ACHMAT12` have a positive correlation (`r = .42`): students who take more math tend to score higher on math achievement.
+1. `UNITMATH` and `ACHMAT12` have a positive correlation ($r = .42$): students who take more math tend to score higher on math achievement.
 2. Spearman's rho is `.43`: students who are late to school also tend to skip or cut classes.
-3. Crosstabs show that 52% of public-school students did not take AP classes, compared with 38% of private religious-school students and 30% of private non-religious-school students. Public-school students appear less likely to take AP classes.
-4. Family size and twelfth-grade self-concept have virtually no linear relationship (`r = .02`).
-5. Higher socioeconomic status is associated with higher science achievement (`r = .32`).
+3. Contingency table shows that 52% of public-school students did not take AP classes, compared with 38% of private religious-school students and 30% of private non-religious-school students. Public-school students appear less likely to take AP classes.
+4. Family size and twelfth-grade self-concept have virtually no linear relationship ($r = .02$).
+5. Higher socioeconomic status is associated with higher science achievement ($r = .32$).
 6. Region appears to be associated with taking advanced math: the proportions are West 61%, South 48%, Northeast 41%, and North Central 38%.
 7. Spearman's rho is `-.006`, indicating virtually no relationship between classes cut and taking advanced math.
 8. There appears to be little relationship between urbanicity and cigarette use: 85% of urban, 86% of suburban, and 87% of rural students reported not having smoked.
 9. The phi coefficient is `.27`: students who took advanced math in eighth grade tended also to take AP classes in high school.
 10. Spearman's rho is `.09`, indicating little or no relationship between cutting class and absences.
-11. The relationship between self-concept and SES is weak and positive (`r = .11`).
+11. The relationship between self-concept and SES is weak and positive ($r = .11$).
 12. The point-biserial correlation is `.38`: students who attended nursery school tend to have higher SES.
 13. Urban students have the highest average SES (`M = 20.33`), followed by suburban students (`M = 19.23`) and rural students (`M = 15.94`).
 
@@ -233,8 +235,9 @@ There can be more than one appropriate analysis. The solution key reports:
 ---
 
 ### Exercise 5.22
+This question is based on the **Impeach** data set, created by Professor Alan Reifman of Texas Tech University in response to a U.S. Senate vote taken on February 12, 1999 on whether to remove a president from office, based on impeachment articles passed by the U.S. House of Representatives. This was only the second time in U.S. history that such a vote took place. The data contain descriptions of each senator as a way to try to understand each senator’s voting behavior.
 
-Create a contingency table that gives the breakdown of the vote on perjury by region. Use it to answer the following questions.
+Create a contingency table that gives the breakdown of the vote on perjury (`vote1`) by `region`. Use it to answer the following questions.
 
 1. How many senators voted not guilty on perjury?
 2. What percentage of senators voted not guilty on perjury?
@@ -242,7 +245,7 @@ Create a contingency table that gives the breakdown of the vote on perjury by re
 4. Of all votes from the South, what percentage (or proportion) were not-guilty votes?
 5. According to the contingency table, are there differences in the vote on perjury depending on the region from which the senator comes? Explain in a way that someone with no background in statistics could understand, and support your answer with the values of relevant statistics.
 6. What type of graph is best used to display the relationship between the vote on perjury and region? Create this graph.
-7. Explain why a contingency table should not be used to analyze the relationship between region and conservatism.
+7. Explain why a contingency table should not be used to analyze the relationship between region and conservatism (`CONSERVA`).
 
 <details>
 <summary>Show solution</summary>
@@ -261,7 +264,7 @@ Create a contingency table that gives the breakdown of the vote on perjury by re
 
 ### Exercise 5.23
 
-Create a clustered bar graph that gives the number of guilty and not-guilty votes on perjury (`VOTE1`) for both first-term and more senior senators (`NEWBIE`). Use it to answer the following questions.
+(Impeach data) Create a clustered bar graph that gives the number of guilty and not-guilty votes on perjury (`VOTE1`) for both first-term and more senior senators (`NEWBIE`). Use it to answer the following questions.
 
 1. Is there a relationship between the vote on perjury and whether or not the senator is first-term? Explain.
 2. Without calculating, what is the sign of the Pearson correlation between `VOTE1` and `NEWBIE`? Explain.
@@ -305,7 +308,7 @@ Read the following excerpt from the article [“TV, video games at night may cau
 
 ### Exercise 5.31
 
-What (if anything) is wrong with the following statement about the NELS data? “The correlation between region and the number of Advanced Placement classes offered is `r = .11`, indicating that the higher the region, the more Advanced Placement courses offered, on average.”
+What (if anything) is wrong with the following statement about the NELS data? “The correlation between region and the number of Advanced Placement classes offered is $r = .11$, indicating that the higher the region, the more Advanced Placement courses offered, on average.”
 
 <details>
 <summary>Show solution</summary>
@@ -316,20 +319,30 @@ Region is a nominal variable with more than two categories and has no inherent o
 
 ---
 
-### Exercise 5.35
 
-The following questions relate to the scatterplot in the [original Chapter 5 homework document](word_files/Chapter%205%20Third%20Edition%20HW.docx), which shows the relationship between X and Y for four different subgroups. For each subgroup, select the Pearson Correlation Coefficient, `r`, from the column at right that best represents the relationship between X and Y for the subgroup. You may select a value more than once.
 
-- Group 1: _____
-- Group 2: _____
-- Group 3: _____
-- Group 4: _____
 
-Choices: `r = 1.25`, `r = -1.25`, `r = .95`, `r = -.95`, `r = .82`, `r = -.82`, `r = 0`.
 
-<details>
-<summary>Show solution</summary>
 
-Using the labels in the source document: Group 1 = c (`r = .95`); Group 2 = d (`r = -.95`); Group 3 = e (`r = .82`); Group 4 = f (`r = -.82`).
 
-</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

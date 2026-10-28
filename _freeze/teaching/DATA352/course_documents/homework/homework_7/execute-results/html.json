@@ -1,0 +1,15 @@
+{
+  "hash": "5723700258a2b132f0c56b716a8d484c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"DATA 352/551: Homework 7\"\nformat:\n  html:\n    toc: false\n---\n\n<!-- do not alter this first chunk below  -->\n\n\nTO BE ADDED",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

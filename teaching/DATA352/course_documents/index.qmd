@@ -29,6 +29,8 @@ You can find all course documents here as a reference page. Please refer to the 
 - [Homework 3](homework/homework_3.qmd)
 - [Homework 4](homework/homework_4.qmd)
 - [Homework 5](homework/homework_5.qmd)
+- [Homework 6](homework/homework_6.qmd)
+- [Homework 7](homework/homework_7.qmd)
 
 
 ## Assignments
@@ -41,3 +43,4 @@ You can find all course documents here as a reference page. Please refer to the 
 ## Exam reviews
 
 - [Exam 1 Review](exam_reviews/exam_1_review.qmd)
+- [Exam 2 Review](exam_reviews/exam_2_review.qmd)

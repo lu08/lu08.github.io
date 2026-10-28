@@ -4,7 +4,7 @@ title: "Chapter 7"
 
 ### Exercise 7.1
 
-Create a frequency and percent distribution table of the variable `EDEXPECT`, which indicates the highest level of education students in eighth grade expect to achieve eventually. If one student is selected at random from the NELS data set, what is the probability that:
+(NELS dataset) Create a frequency table of the variable `EDEXPECT`, which indicates the highest level of education students in eighth grade expect to achieve eventually. If one student is selected at random from the NELS data set, what is the probability that:
 
 a. The student anticipates earning a bachelor's degree?
 b. The student anticipates earning a master's degree?
@@ -13,8 +13,6 @@ d. The student anticipates earning something other than a bachelor's degree?
 
 <details>
 <summary>Show solution</summary>
-
-The solution key rounds answers to the nearest hundredth.
 
 a. $159/500 = .32$.
 b. $190/500 = .38$.

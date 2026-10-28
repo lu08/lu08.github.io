@@ -1,7 +1,7 @@
 ---
-title: "Week 10"
+title: "Week 10 (November 4)"
 ---
 
-## In class
+In-person **Exam 2**.  There is no homework after the exam.
 
-## Homework
+> It covers Lectures 4 to 7, with corresponding Homework 4 to 7 (see [course documents](../../course_documents/index.qmd)).  Go over [**Exam 2 review**](../../course_documents/exam_reviews/exam_2_review.qmd).  Exams are closed book, notes, and electronics. For each exam, you may use one double-sided 8.5-by-11-inch (or A4) reference sheet.
