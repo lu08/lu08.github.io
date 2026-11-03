@@ -687,13 +687,11 @@ Show example
 </details>
 <p>See StatChat 3 for discussions.</p>
 </section></section>
-<section id="additional-examples" class="title-slide slide level1 center">
+<section id="additional-examples" class="title-slide slide level1 scrollable center">
 <h1>Additional examples</h1>
 <p>Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.</p>
 <p>Example 1: (United States Colleges) relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).</p>
-<p><br></p>
 <p>Example 2: (NELS) relationship between Urbanicity and <code>edexpect</code> (highest level of education expected)?</p>
-<p><br></p>
 <details>
 <summary>
 Show solution
@@ -719,8 +717,14 @@ Show solution
 <p>In the Combined Class Charities dataset, is there a relationship between <code>Type</code> (1=‘Animals’; 2=‘Environment’, 3=‘Human and civil rights’) and <code>OS</code> (Overall score)?</p>
 <ul>
 <li><p>Since <span class="math inline">\(r = -0.028\)</span>, there is no relationship.</p></li>
-<li><p>Since Type is nominal, there is no relationship.</p></li>
+<li><p>Since <code>Type</code> is nominal, there is no relationship.</p></li>
 </ul>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Should not use a correlation coefficient since <code>Type</code> is a nominal variable. The correct way is to compare the distributions (medians) of <code>OS</code> across different <code>Type</code> categories.</p>
+</details>
 </section>
 <section id="fix-and-improve-example-2" class="slide level2">
 <h2>Fix and improve: example 2</h2>
@@ -779,6 +783,12 @@ Show summary statistics
 </tr>
 </tbody>
 </table>
+</details>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Should not use a correlation coefficient since <code>Type2</code> is a nominal variable. The correct way is to compare the distributions (medians) of <code>COST</code> across different <code>Type2</code> categories.</p>
 </details>
 </section>
 <section id="fix-and-improve-example-3" class="slide level2">
@@ -874,6 +884,12 @@ Show summary statistics
 </tbody>
 </table>
 </details>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Should not compare the medians of <code>type2</code> since it is an ordinal variable. Should use a contingency table instead.</p>
+</details>
 </section>
 <section id="fix-and-improve-example-4" class="slide level2">
 <h2>Fix and improve: example 4</h2>
@@ -967,6 +983,12 @@ Show summary statistics
 </tr>
 </tbody>
 </table>
+</details>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Should use Spearman <span class="math inline">\(\rho\)</span> since <code>Competitiveness Ranking</code> is ordinal; comparing the distributions of <code>comp</code> between colleges and universities is also appropriate, but should use median instead of the mean, since <code>comp</code> is an ordinal variable.</p>
 </details>
 </section></section>
 <section>

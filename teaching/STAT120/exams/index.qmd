@@ -1,0 +1,8 @@
+---
+title: "Exam reviews"
+---
+
+Use these reviews to prepare for the exams:
+
+- [Exam 1 review](exam1_review.qmd)
+- [Exam 2 review](exam2_review.qmd)

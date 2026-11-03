@@ -16,9 +16,23 @@ format:
     code-font-size: 1.15em
     chalkboard:
       buttons: true
+  html:
+    embed-resources: true
+editor: visual
 editor_options:
   chunk_output_type: inline
 ---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align='center',
+                      fig.height=3,
+                      fig.width=3,
+                      out.width="50%",
+                      echo=T,
+                      eval=T,
+                      warning=F,
+                      message=F)
+```
 
 
 

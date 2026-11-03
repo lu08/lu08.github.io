@@ -520,17 +520,13 @@ See StatChat 3 for discussions.
 
 
 
-# Additional examples
+# Additional examples {.scrollable}
 
 Contingency tables are useful for categorical variables (dichotomous, ordinal, nominal) in general.
 
 Example 1: (United States Colleges) relationship between Affiliation (0 = private; 1 = public) and College or University (0 = college; 1 = university).
 
-<br>
-
 Example 2: (NELS) relationship between Urbanicity and `edexpect` (highest level of education expected)?
-
-<br>
 
 <details>
 <summary>Show solution</summary>
@@ -563,7 +559,17 @@ In the Combined Class Charities dataset, is there a relationship between `Type` 
 
 - Since $r = -0.028$, there is no relationship.
 
-- Since Type is nominal, there is no relationship.
+- Since `Type` is nominal, there is no relationship.
+
+<details>
+<summary>Show solution</summary>
+
+Should not use a correlation coefficient since `Type` is a nominal variable. The correct way is to compare the distributions (medians) of `OS` across different `Type` categories.
+
+</details>
+
+
+
 
 ## Fix and improve: example 2
 In the NJ Restaurants dataset, is there a relationship between `Type2` (1='French', 2='American', 3='Other') and `COST` (cost of food)?
@@ -584,6 +590,14 @@ In the NJ Restaurants dataset, is there a relationship between `Type2` (1='Frenc
 | Standard deviation | 7.83 | 0.810 |
 | Minimum | 21.0 | 1 |
 | Maximum | 59.0 | 3 |
+
+</details>
+
+
+<details>
+<summary>Show solution</summary>
+
+Should not use a correlation coefficient since `Type2` is a nominal variable. The correct way is to compare the distributions (medians) of `COST` across different `Type2` categories.
 
 </details>
 
@@ -618,6 +632,15 @@ Descriptive statistics for `type2`, grouped by `Sunday` status:
 </details>
 
 
+
+<details>
+<summary>Show solution</summary>
+
+Should not compare the medians of `type2` since it is an ordinal variable.  Should use a contingency table instead.
+
+</details>
+
+
 ## Fix and improve: example 4
 
 In the United States Colleges dataset, is there a relationship between `Competitiveness Ranking` and `College or University` (0 = college, 1 = university)?
@@ -647,6 +670,14 @@ In the United States Colleges dataset, is there a relationship between `Competit
 |  | University | 8 |
 
 </details>
+
+<details>
+<summary>Show solution</summary>
+
+Should use Spearman $\rho$ since `Competitiveness Ranking` is ordinal; comparing the distributions of `comp` between colleges and universities is also appropriate, but should use median instead of the mean, since `comp` is an ordinal variable.
+
+</details>
+
 
 
 # Appendix

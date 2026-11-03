@@ -80,6 +80,8 @@ website:
               href: teaching/STAT120/lectures/lecture_notes/index.qmd
         - text: "Homework"
           href: teaching/STAT120/homework/index.qmd
+        - text: "Exam reviews"
+          href: teaching/STAT120/exams/index.qmd
         - text: "Final project"
           href: teaching/STAT120/final_project.qmd
         - text: "Datasets"

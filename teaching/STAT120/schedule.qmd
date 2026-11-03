@@ -65,7 +65,7 @@ In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univ
 
 ## Week 10
 
-- Nov 3: We will go over **for loop** from [Lecture 7](lectures/lecture_7/lecture_7.html).  Exam 2 will be based on [lectures](lectures/index.qmd) 4 to 7 (only up to for loop) and the corresponding [homework](homework/index.qmd) 4 to 7 (only Part I).  See [review for Exam 2](exams/exam2_review.qmd). 
+- Nov 3: We will go over **for loop** from [Lecture 7](lectures/lecture_7/lecture_7.html).  Exam 2 will be based on [lectures](lectures/index.qmd) 4 to 7 (only up to for loop) and the corresponding [homework](homework/index.qmd) 4 to 7 (only Part I Questions 1, 2, 3).  See [review for Exam 2](exams/exam2_review.qmd). 
 
 - Nov 5: **Exam 2**.
 
