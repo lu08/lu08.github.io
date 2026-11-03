@@ -7,7 +7,7 @@ format:
     code-summary: "Show solution"
 ---
 
-<!--
+
 ## Part I
 1. Write a **for loop** to print the following output.
 ```{r,eval=T,echo=T}
@@ -78,20 +78,7 @@ for(i in 1:nrow(Cereal)){
 ```
 
 
-7. Write a **for loop** to print out the first 20 numbers of the fibonacci sequence (look it up): 0, 1, 1, 2, 3, 5, 8, ... 
-
-```{r}
-fseq <- rep(NA, 20)  #initialization
-fseq[1]=1; fseq[2]=1
-for(i in 3:20){
-   fseq[i]=sum(fseq[c(i-1,i-2)])  
-}
-fseq
-
-```
-
-
-## Part I
+## Part II
 1. Write a **while** loop to calculate a sequence: $\sqrt{1}\times20$, $\sqrt{2}\times30$, $\sqrt{3}\times40, \ldots$, *until* the last number exceeds $1000$.  The first few numbers of the output should look like this:
 
 ```{r,eval=T}
@@ -161,6 +148,3 @@ hist(result,nclass = 30,
      main='Game length until rolling a six',
      xlab=NA)
 ```
-
-
--->

@@ -65,3 +65,110 @@ df.run.long %>%
 
 
 
+# -------- #
+# in class code: 10/29
+# maps
+# -------- #
+
+library(maps)
+library(tidyverse)
+
+?map_data()
+
+mymap <- map_data(map="state")
+head(mymap)
+plot(mymap$long,mymap$lat)
+
+
+mymap %>% ggplot(aes(x=long, y=lat, group=group)) +
+  geom_polygon() +
+  theme_void() +
+  coord_fixed(1.4)
+
+USArrests$state <- row.names(USArrests) %>% tolower()
+mymap <- map_data(map="state")
+
+# Combine crime data to map data
+mymap <- left_join(mymap, USArrests, by=c('region'='state'))
+
+# Visualize
+mymap %>%
+  ggplot(aes(x=long,y=lat,group=group, fill=Murder)) +
+  geom_polygon(color='darkblue') +
+  coord_fixed(1.4) +
+  theme_void() +
+  labs(fill='Murder rate') +
+  scale_fill_gradient(low="lightblue", high="darkred")
+
+
+
+
+
+
+
+# NJ map
+mymap <- map_data(map="county")
+head(mymap)
+mymap$region %>% unique()
+mymap <- mymap %>% filter(region == "new jersey")
+
+mymap %>% ggplot(aes(x=long, y=lat, group=group)) +
+  geom_polygon(fill="pink", color="black") +
+  theme_void() +
+  coord_fixed(1.4)
+
+# NJ data
+df.nj <- read.csv("Google Drive/My Drive/Dataset and resource/NJcounty/NJ_county.csv")
+
+head(mymap)
+head(df.nj)
+
+# converting county names to lower case
+df.nj$County <- tolower(df.nj$County)
+
+# combine data
+mymap.nj <- left_join(mymap,  df.nj, by=c("subregion" = "County"))
+mymap.nj %>% head()
+
+p <- mymap.nj %>% 
+  ggplot(aes(x=long, y=lat, group=group,fill=Median_household, text=subregion)) +
+  geom_polygon(color="black") +
+  theme_void() +
+  coord_fixed(1.4) +
+  scale_fill_gradient(low="yellow",high="blue")+
+  labs(fill="Income")
+
+library(plotly)
+ggplotly(p)
+
+
+df.student <- 
+  data.frame(name=c('A','B','C','D'),
+             exam=c(80,91,85,78),
+             project=c(1,2,1,NA))
+
+df.project <-
+  data.frame(projectID = c(1:3),
+             description = c('visualization','classification','text mining'))
+
+inner_join(df.student, df.project, by=c('project' = 'projectID'))
+
+left_join(df.student, df.project, by=c('project' = 'projectID'))
+
+left_join(df.project, df.student, by=c('projectID' = 'project'))
+
+right_join(df.student, df.project, by=c('project' = 'projectID'))
+
+full_join(df.student, df.project, by=c('project' = 'projectID'))
+
+
+
+
+
+
+
+
+
+
+
+

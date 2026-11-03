@@ -1,0 +1,384 @@
+---
+title: "STAT120: Exam 2 Review"
+format: {html: {toc: true, toc-depth: 2}}
+---
+
+This review covers [Lecture 4](../lectures/lecture_4/lecture_4.html){target="_blank"}, [Lecture 5](../lectures/lecture_5/lecture_5.html){target="_blank"}, [Lecture 6](../lectures/lecture_6/lecture_6.html){target="_blank"}, and [Lecture 7 through for loops](../lectures/lecture_7/lecture_7.html){target="_blank"}, plus [Homework 4](../homework/homework_4.qmd){target="_blank"}, [Homework 5](../homework/homework_5.qmd){target="_blank"}, [Homework 6](../homework/homework_6.qmd){target="_blank"}, and [Homework 7](../homework/homework_7.qmd){target="_blank"} Part I.
+
+## Lecture 4: tidyverse data manipulation
+
+The tidyverse workflow applies a sequence of functions to a data frame. Read a pipe as “then.” Both `|>` and `%>%` can pass the result from one step into the next.
+
+```r
+games |>
+	filter(Genre == "Shooter") |>
+	select(Name, Platform, Global_Sales) |>
+	arrange(desc(Global_Sales)) |>
+	slice_head(n = 5)
+```
+
+Know what each common function does:
+
+- `filter()` keeps rows that meet conditions. Separate conditions with commas or use `&` for AND and `|` for OR.
+- `select()` keeps or removes columns.
+- `slice()` selects rows by position; `slice_head()` selects the first rows; `slice_max()` selects rows with the largest values.
+- `arrange()` sorts rows; use `desc()` for descending order.
+- `mutate()` adds or changes columns. `transmute()` creates columns and keeps only those columns.
+- `group_by()` defines groups for later calculations. `summarise()` makes one row per group; `n()` counts rows.
+- `count()` is a shortcut for counting rows by one or more grouping variables.
+- `rename(new_name = old_name)` changes a column name.
+
+```r
+games |>
+	group_by(Genre) |>
+	summarise(
+		average_sales = mean(Global_Sales, na.rm = TRUE),
+		game_count = n(),
+		.groups = "drop"
+	) |>
+	arrange(desc(average_sales))
+```
+
+`filter()` changes which observations remain; `select()` changes which variables remain. A pipe does not change the original data unless you assign its result to an object.
+
+## Lecture 5: data visualization
+
+### Base R plots
+
+- `hist(x)` displays one numeric variable's distribution.
+- `boxplot(x)` displays a numeric distribution; use `boxplot(y ~ group)` for side-by-side groups.
+- `plot(x, y)` displays the relationship between two variables.
+- `stem(x)` makes a stem-and-leaf display.
+- Labels and appearance can be set with arguments such as `xlab`, `ylab`, `main`, `col`, and `pch`.
+
+```r
+boxplot(Cereal$Sugars ~ Cereal$Company,
+				xlab = "Company", ylab = "Sugar per serving")
+plot(Cereal$Calories, Cereal$Sugars,
+		 xlab = "Calories", ylab = "Sugar per serving")
+```
+
+### ggplot2
+
+A ggplot is built from a data frame, aesthetic mappings inside `aes()`, and one or more geoms added with `+`.
+
+```r
+Cereal |>
+	ggplot(aes(x = Calories, y = Sugars, color = Company)) +
+	geom_point() +
+	labs(x = "Calories per serving", y = "Sugar per serving") +
+	theme_classic()
+```
+
+- Use `geom_point()` for scatterplots, `geom_boxplot()` for grouped distributions, `geom_histogram()` for one numeric variable, and `geom_bar()` for counts of a categorical variable.
+- Use `geom_jitter()` when many points overlap, often for categorical responses.
+- Map a variable to an aesthetic inside `aes()`, for example `color = Company`. Set a constant outside `aes()`, for example `geom_point(color = "steelblue")`.
+- `fill` controls interior color for many geoms; `color` controls outlines or point color.
+- Add titles and labels with `labs()`. Use `facet_wrap(~ group)` to make separate panels by group.
+- Filter invalid or special response codes before plotting survey data. For example, if valid responses are 1 through 3, keep `WP22071 %in% 1:3` rather than treating codes 8 or 9 as real answers.
+
+## Lecture 6: tidy data and joins
+
+Tidy data has one variable per column, one observation per row, and one value per cell. Long data is often easier to summarize or plot by category; wide data can be convenient when categories are separate columns.
+
+```r
+df.score <- data.frame(
+	student = c("A", "B", "C"),
+	math = c(99, 73, 12),
+	literature = c(45, 78, 96),
+	PE = c(56, 55, 57)
+)
+
+df.score.long <- df.score |>
+	pivot_longer(
+		cols = math:PE,
+		names_to = "subject",
+		values_to = "score"
+	)
+```
+
+`pivot_longer()` stacks selected columns into a names column and a values column. `pivot_wider()` does the reverse: `names_from` supplies new column names and `values_from` supplies cell values.
+
+Joins combine rows from two data frames using matching key columns:
+
+- `inner_join(x, y)` keeps only keys found in both data frames.
+- `left_join(x, y)` keeps every row of `x`, adding matching columns from `y` where available.
+- `right_join(x, y)` keeps every row of `y`.
+- `full_join(x, y)` keeps every key found in either data frame.
+
+Specify different key names with `by = c("left_name" = "right_name")`. Check that key values have compatible spelling, capitalization, and type before joining.
+
+## Lecture 7: for loops
+
+A `for` loop repeats the same code for each value in a vector. The loop index is created by the loop.
+
+```r
+for (value in c(2, 4, 6)) {
+	print(value * 10)
+}
+```
+
+Inside a loop, use `print()` or `cat()` to display results. `paste()` combines values into text; `paste0()` combines them without separator spaces. To save one result per iteration, initialize a vector first and assign into its indexed position.
+
+```r
+set.seed(120)
+rolls <- rep(NA, 10)
+for (i in 1:10) {
+	rolls[i] <- sample(1:6, size = 1)
+}
+print(rolls)
+```
+
+This review includes fixed-count `for` loops only; conditional statements are outside its scope.
+
+## Homework 4-6 skills to practice
+
+### Homework 4
+
+- Translate ordinary function calls into a piped workflow.
+- Filter rows and select columns with `filter()` and `select()`.
+- Create variables, sort data, and select the top rows.
+- Summarise by groups, count observations, and handle missing values with `na.rm = TRUE` or `filter()`.
+- Combine filters, transformations, and summaries into one readable pipeline.
+
+### Homework 5
+
+- Reproduce plots with base R and ggplot2.
+- Choose an appropriate geom and map variables to axes, color, fill, or labels.
+- Customize titles, axis labels, themes, colors, and facets.
+- Clean special or missing survey response values before summarizing or plotting.
+
+### Homework 6
+
+- Convert wide data to long data with `pivot_longer()` and long data to wide with `pivot_wider()`.
+- Summarise and graph repeated measurements using long data.
+- Explain which data shape makes a task easier.
+- Match key columns and choose an appropriate join to combine data frames.
+
+## Common exam mistakes
+
+- Using `select()` when you mean to keep rows, or `filter()` when you mean to keep columns.
+- Forgetting `desc()` when sorting from largest to smallest.
+- Summarising before grouping, or leaving a grouped result grouped when later steps should be ungrouped.
+- Forgetting `na.rm = TRUE` when missing values should be excluded from a summary.
+- Putting a fixed visual setting inside `aes()`, which maps it as if it were data.
+- Using `geom_histogram()` for categorical counts instead of `geom_bar()`.
+- Treating special survey codes such as 8, 9, 97, 98, or 99 as meaningful numeric responses.
+- Reversing `names_to` and `values_to` in `pivot_longer()`.
+- Expecting `inner_join()` to retain unmatched rows.
+- Printing an expression inside a loop without `print()` or `cat()`.
+- Assigning loop results repeatedly to one object instead of storing them by index.
+
+## Practice questions in addition to homework
+
+The questions use the `Cereal` dataset from `Lock5Data`, the video game sales CSV used in Homework 4, and the running and UNICEF CSV files used in Homework 5 and 6. Run this setup first from this review's directory.
+
+```r
+library(tidyverse)
+library(Lock5Data)
+data(Cereal)
+
+games <- read.csv("../../../dataset/Video_Games_Sales_as_at_22_Dec_2016.csv")
+running <- read.csv("../../../dataset/running.csv")
+df.child <- read.csv("../../../dataset/unicef-changing-childhood-data.csv")
+```
+
+### Question 1: Filter, mutate, and sort
+
+Find the five N64 games with the largest combined North American and European sales. Display the game name, genre, regional sales, and combined sales.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+games |>
+	filter(Platform == "N64") |>
+	mutate(NA_EU_Sales = NA_Sales + EU_Sales) |>
+	arrange(desc(NA_EU_Sales)) |>
+	slice_head(n = 5) |>
+	select(Name, Genre, NA_Sales, EU_Sales, NA_EU_Sales)
+```
+
+The pipeline keeps N64 rows, creates the combined-sales column, sorts largest first, takes five rows, and then selects the requested columns.
+</details>
+
+### Question 2: Grouped summaries
+
+For each game genre, calculate the number of games and average global sales. Sort genres from highest to lowest average sales.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+games |>
+	group_by(Genre) |>
+	summarise(
+		game_count = n(),
+		average_global_sales = mean(Global_Sales, na.rm = TRUE),
+		.groups = "drop"
+	) |>
+	arrange(desc(average_global_sales))
+```
+
+`n()` counts rows in each genre. `na.rm = TRUE` excludes missing sales values from the mean.
+</details>
+
+### Question 3: Choose and build a plot
+
+Create a ggplot scatterplot of `Calories` and `Sugars` in `Cereal`. Color points by `Company`, add informative axis labels and a title, and use `theme_bw()`. Why is a scatterplot appropriate here?
+
+<details>
+<summary>Show solution</summary>
+
+```r
+Cereal |>
+	ggplot(aes(x = Calories, y = Sugars, color = Company)) +
+	geom_point() +
+	labs(
+		title = "Calories and sugar in cereal",
+		x = "Calories per serving",
+		y = "Sugar per serving",
+		color = "Company"
+	) +
+	theme_bw()
+```
+
+Both `Calories` and `Sugars` are numeric variables, so a scatterplot shows their relationship. `Company` is categorical and can be mapped to color.
+</details>
+
+### Question 4: Clean and visualize survey data
+
+In the UNICEF data, `WP22071` records whether respondents think digital technology helps children with education: 1 = a lot, 2 = a little, and 3 = not at all. Keep valid responses from the United States, Japan, and Nigeria. Make a bar plot of response counts by country, with response category shown by fill.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+df.child |>
+	filter(
+		COUNTRYNEW %in% c("United States", "Japan", "Nigeria"),
+		WP22071 %in% 1:3
+	) |>
+	ggplot(aes(x = COUNTRYNEW, fill = as.factor(WP22071))) +
+	geom_bar() +
+	labs(
+		x = "Country",
+		y = "Number of respondents",
+		fill = "Response (1 = a lot, 2 = a little, 3 = not at all)"
+	) +
+	theme_minimal()
+```
+
+The filter removes other countries and special response codes. `geom_bar()` counts observations automatically; `WP22071` is converted to a factor so the fill legend treats responses as categories.
+</details>
+
+### Question 5: Pivot long and summarize
+
+The `running` data has one column for each day, `Mon` through `Sun`. Convert it to long format with columns named `Day` and `Miles`, then calculate average miles for each day, sorted from highest to lowest.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+running.long <- running |>
+	pivot_longer(
+		cols = Mon:Sun,
+		names_to = "Day",
+		values_to = "Miles"
+	)
+
+running.long |>
+	group_by(Day) |>
+	summarise(average_miles = mean(Miles), .groups = "drop") |>
+	arrange(desc(average_miles))
+```
+
+The weekday column names become values in `Day`; their mileage values become values in `Miles`. Each row now represents one week's mileage for one day.
+</details>
+
+### Question 6: Pivot back to wide
+
+Using `running.long`, create a wide data frame with one column per day and the mileage values in those columns. What arguments determine the new column names and their values?
+
+<details>
+<summary>Show solution</summary>
+
+```r
+running.wide <- running.long |>
+	pivot_wider(names_from = Day, values_from = Miles)
+```
+
+`names_from = Day` makes the day names into columns. `values_from = Miles` fills those columns with mileage values. The `Week` identifier column is retained.
+</details>
+
+### Question 7: Choose a join
+
+Create the two data frames below. Join the project description onto each student while keeping every student, including students whose project ID has no match. Then explain which join you used.
+
+```r
+students <- data.frame(
+	name = c("A", "B", "C", "D"),
+	project = c(1, 2, 1, NA)
+)
+
+projects <- data.frame(
+	projectID = 1:3,
+	description = c("visualization", "classification", "text mining")
+)
+```
+
+<details>
+<summary>Show solution</summary>
+
+```r
+students |>
+	left_join(projects, by = c("project" = "projectID"))
+```
+
+`left_join()` keeps every row from `students`. Students without a matching project retain their row and have `NA` for the unmatched project information.
+</details>
+
+### Question 8: Repeat and store results with a loop
+
+Simulate 10 rolls of a fair six-sided die and store the results in a vector. Display the vector and its mean.
+
+<details>
+<summary>Show solution</summary>
+
+```r
+set.seed(120)
+rolls <- rep(NA, 10)
+
+for (i in 1:10) {
+	rolls[i] <- sample(1:6, size = 1)
+}
+
+print(rolls)
+mean(rolls)
+```
+
+The result vector is initialized before the loop. Each iteration stores one roll at position `i`; setting a seed makes the example reproducible.
+</details>
+
+### Question 9: Predict loop output
+
+Without running the code, write the values that are printed.
+
+```r
+values <- c(4, 7, 2)
+for (i in 1:3) {
+	print(values[i] + i)
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+```text
+5
+9
+5
+```
+
+On each iteration, `i` is 1, then 2, then 3. The code prints `4 + 1`, `7 + 2`, and `2 + 3`.
+</details>

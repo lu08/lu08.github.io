@@ -10,3 +10,7 @@ You can find code and notes used during lectures here for your reference.  Most 
 - [Code](L4.R) used during class for [Lecture 4](lecture_4/lecture_4.qmd)
 - [Code](L5.R) used during class for [Lecture 5](lecture_5/lecture_5.qmd)
 - [Code](L6.R) used during class for [Lecture 6](lecture_6/lecture_6.qmd)
+- [Code](L7.R) used during class for [Lecture 7](lecture_7/lecture_7.qmd)
+- [Code](L8.R) used during class for [Lecture 8](lecture_8/lecture_8.qmd)
+- [Code](L9.R) used during class for [Lecture 9](lecture_9/lecture_9.qmd)
+

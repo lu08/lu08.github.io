@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../stat120.css">
@@ -156,6 +220,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../teaching/STAT120/lectures/lecture_7/lecture_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../teaching/STAT120/lectures/lecture_notes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture code</span></a>
   </div>
@@ -215,87 +285,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!--
-## Part I
-1. Write a **for loop** to print the following output.
-
-::: {.cell}
-
-```{.r .cell-code}
-for(i in 2:5){
-  print(i)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 2
+<section id="part-i" class="level2">
+<h2 class="anchored" data-anchor-id="part-i">Part I</h2>
+<ol type="1">
+<li>Write a <strong>for loop</strong> to print the following output.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2
 [1] 3
 [1] 4
-[1] 5
-```
-
-
-:::
-:::
-
-
-
-2. Write a **for loop** to print the following output (hint: try something like **print(1:4)** first).
-
-::: {.cell}
-
-```{.r .cell-code}
-for(i in 1:5){
-  print(c(1:i))
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1
+[1] 5</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Write a <strong>for loop</strong> to print the following output (hint: try something like <strong>print(1:4)</strong> first).</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>i))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
 [1] 1 2
 [1] 1 2 3
 [1] 1 2 3 4
-[1] 1 2 3 4 5
-```
-
-
-:::
-:::
-
-
-
-3. Create a vector x that looks like $-50, -40, \ldots, 100$.  Double check that it has a mean of $25$.  Use a **for loop** to go through *all* elements of x (avoid hardcoding; do not manually type 16 for the length of x) and print out a sequence of text that looks like: Element 1 in x is -50, Element 2 in x is -40, ...  
-
-::: {.cell}
-
-```{.r .cell-code}
-x=seq(from=-50,to=100,by=10)
-mean(x)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 25
-```
-
-
-:::
-
-```{.r .cell-code}
-for(i in 1:length(x)){
-  print(paste('Element',i,'in x is',x[i]))
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "Element 1 in x is -50"
+[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Create a vector x that looks like <span class="math inline">\(-50, -40, \ldots, 100\)</span>. Double check that it has a mean of <span class="math inline">\(25\)</span>. Use a <strong>for loop</strong> to go through <em>all</em> elements of x (avoid hardcoding; do not manually type 16 for the length of x) and print out a sequence of text that looks like: Element 1 in x is -50, Element 2 in x is -40, …</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">50</span>,<span class="at">to=</span><span class="dv">100</span>,<span class="at">by=</span><span class="dv">10</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Element'</span>,i,<span class="st">'in x is'</span>,x[i]))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Element 1 in x is -50"
 [1] "Element 2 in x is -40"
 [1] "Element 3 in x is -30"
 [1] "Element 4 in x is -20"
@@ -310,37 +356,29 @@ for(i in 1:length(x)){
 [1] "Element 13 in x is 70"
 [1] "Element 14 in x is 80"
 [1] "Element 15 in x is 90"
-[1] "Element 16 in x is 100"
-```
-
-
-:::
-:::
-
-
-
-4. Add two **if** statements to the loop in 3 and print something slightly different for the *first* and *last* values, so that your output looks like: The first element in x is -50, Element 2 in x is -40, ..., The last element in x is 100.
-
-::: {.cell}
-
-```{.r .cell-code}
-for(i in 1:length(x)){
-  if(i == 1){
-    print(paste('The first element in x is',x[i]))
-  }
-  else if(i == length(x)){
-    print(paste('The last element in x is',x[i]))
-  }
-  else{
-    print(paste('Element',i,'in x is',x[i])) 
-  }
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "The first element in x is -50"
+[1] "Element 16 in x is 100"</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Add two <strong>if</strong> statements to the loop in 3 and print something slightly different for the <em>first</em> and <em>last</em> values, so that your output looks like: The first element in x is -50, Element 2 in x is -40, …, The last element in x is 100.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'The first element in x is'</span>,x[i]))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">==</span> <span class="fu">length</span>(x)){</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'The last element in x is'</span>,x[i]))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>{</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Element'</span>,i,<span class="st">'in x is'</span>,x[i])) </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The first element in x is -50"
 [1] "Element 2 in x is -40"
 [1] "Element 3 in x is -30"
 [1] "Element 4 in x is -20"
@@ -355,34 +393,26 @@ for(i in 1:length(x)){
 [1] "Element 13 in x is 70"
 [1] "Element 14 in x is 80"
 [1] "Element 15 in x is 90"
-[1] "The last element in x is 100"
-```
-
-
-:::
-:::
-
-
-
-5. Use **for** and **if** to do the following.  Loop through all elements of x.  If x is nonnegative, calculate its square root and print: "The square root of \_ is \_"; if x is negative, print: "Cannot calculate the square root of \_."  The blanks should be appropriate values automatically filled by R.
-
-::: {.cell}
-
-```{.r .cell-code}
-for(i in 1:length(x)){
-  if(x[i] >= 0){
-    print(paste('The square root of',x[i],'is',sqrt(x[i])))
-  }
-  if(x[i] <0){
-    print(paste('Cannot calculate the square root of',x[i]))
-  }
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "Cannot calculate the square root of -50"
+[1] "The last element in x is 100"</code></pre>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Use <strong>for</strong> and <strong>if</strong> to do the following. Loop through all elements of x. If x is nonnegative, calculate its square root and print: “The square root of _ is _”; if x is negative, print: “Cannot calculate the square root of _.” The blanks should be appropriate values automatically filled by R.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x[i] <span class="sc">&gt;=</span> <span class="dv">0</span>){</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'The square root of'</span>,x[i],<span class="st">'is'</span>,<span class="fu">sqrt</span>(x[i])))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x[i] <span class="sc">&lt;</span><span class="dv">0</span>){</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Cannot calculate the square root of'</span>,x[i]))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cannot calculate the square root of -50"
 [1] "Cannot calculate the square root of -40"
 [1] "Cannot calculate the square root of -30"
 [1] "Cannot calculate the square root of -20"
@@ -397,35 +427,27 @@ for(i in 1:length(x)){
 [1] "The square root of 70 is 8.36660026534076"
 [1] "The square root of 80 is 8.94427190999916"
 [1] "The square root of 90 is 9.48683298050514"
-[1] "The square root of 100 is 10"
-```
-
-
-:::
-:::
-
-
-
-6. With the *Cereal* dataset in the **Lock5Data** package, calculate the average protein of all of the cereals.  Then, loop through all of the cereals to check if each of them is above or below the average in terms of the protein content.  Print "\underline{NAME} contains more protein than the average" or "\underline{NAME} contains less protein than the average" accordingly for each of the cereals.
-
-::: {.cell}
-
-```{.r .cell-code}
-library(Lock5Data)
-avg.protein=mean(Cereal$Protein)
-for(i in 1:nrow(Cereal)){
-  if(Cereal$Protein[i] > avg.protein){
-    print(paste(Cereal$Name[i], 'contains more protein than the average.'))
-  }else{
-    print(paste(Cereal$Name[i], 'contains less protein than the average.'))
-  }
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "AppleJacks contains less protein than the average."
+[1] "The square root of 100 is 10"</code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>With the <em>Cereal</em> dataset in the <strong>Lock5Data</strong> package, calculate the average protein of all of the cereals. Then, loop through all of the cereals to check if each of them is above or below the average in terms of the protein content. Print “ contains more protein than the average” or “ contains less protein than the average” accordingly for each of the cereals.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Lock5Data)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>avg.protein<span class="ot">=</span><span class="fu">mean</span>(Cereal<span class="sc">$</span>Protein)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Cereal)){</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(Cereal<span class="sc">$</span>Protein[i] <span class="sc">&gt;</span> avg.protein){</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(Cereal<span class="sc">$</span>Name[i], <span class="st">'contains more protein than the average.'</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(Cereal<span class="sc">$</span>Name[i], <span class="st">'contains less protein than the average.'</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "AppleJacks contains less protein than the average."
 [1] "Boo Berry contains less protein than the average."
 [1] "Cap'n Crunch contains less protein than the average."
 [1] "Cinnamon Toast Crunch contains more protein than the average."
@@ -454,57 +476,23 @@ for(i in 1:nrow(Cereal)){
 [1] "Smart Start contains more protein than the average."
 [1] "Special K contains more protein than the average."
 [1] "Total contains more protein than the average."
-[1] "Wheaties contains more protein than the average."
-```
-
-
-:::
-:::
-
-
-
-7. Write a **for loop** to print out the first 20 numbers of the fibonacci sequence (look it up): 0, 1, 1, 2, 3, 5, 8, ... 
-
-
-::: {.cell}
-
-```{.r .cell-code}
-fseq <- rep(NA, 20)  #initialization
-fseq[1]=1; fseq[2]=1
-for(i in 3:20){
-   fseq[i]=sum(fseq[c(i-1,i-2)])  
-}
-fseq
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
- [1]    1    1    2    3    5    8   13   21   34   55   89  144  233  377  610
-[16]  987 1597 2584 4181 6765
-```
-
-
-:::
-:::
-
-
-
-## Part I
-1. Write a **while** loop to calculate a sequence: $\sqrt{1}\times20$, $\sqrt{2}\times30$, $\sqrt{3}\times40, \ldots$, *until* the last number exceeds $1000$.  The first few numbers of the output should look like this:
-
-
-::: {.cell}
-
-```{.r .cell-code}
-library(Lock5Data)
-library(tidyverse)
-```
-
-::: {.cell-output .cell-output-stderr}
-
-```
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+[1] "Wheaties contains more protein than the average."</code></pre>
+</div>
+</div>
+</section>
+<section id="part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii">Part II</h2>
+<ol type="1">
+<li>Write a <strong>while</strong> loop to calculate a sequence: <span class="math inline">\(\sqrt{1}\times20\)</span>, <span class="math inline">\(\sqrt{2}\times30\)</span>, <span class="math inline">\(\sqrt{3}\times40, \ldots\)</span>, <em>until</em> the last number exceeds <span class="math inline">\(1000\)</span>. The first few numbers of the output should look like this:</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Lock5Data)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.2.1     ✔ readr     2.2.0
 ✔ forcats   1.0.1     ✔ stringr   1.6.0
 ✔ ggplot2   4.0.3     ✔ tibble    3.3.1
@@ -513,184 +501,121 @@ library(tidyverse)
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-```
-
-
-:::
-
-```{.r .cell-code}
-i=1
-result=1
-while(max(result) < 1000){
-  result[i]=sqrt(i)*(i+1)*10
-  i=i+1
-}
-result[1:5]
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1]  20.00000  42.42641  69.28203 100.00000 134.16408
-```
-
-
-:::
-:::
-
-
-
-
-2. Suppose you roll a fair, six-sided die.  Write a **while** loop to print the outcome *until* you have rolled a six.  Your output should look like this (the numbers will be different because of randomization):
-
-
-::: {.cell}
-
-```{.r .cell-code}
-outcome=1
-while(outcome != 6){
-  outcome=sample(c(1:6),size=1)
-  print(outcome)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 3
-[1] 6
-```
-
-
-:::
-:::
-
-
-
-
-3. With the set up in the previous question, let N be the number of times you have to roll the dice until you get a six.  For instance, if you roll 4,2,1,6, then N is 4.  Obviously, N is a *random* quantity.  Suppose we want to use simulation to study the distribution of N.  Run your code in 2 *manually* for 10 times and write down the values of N.   With these 10 values, comment on the distribution of N (i.e., what are the likely values of N?  What's a typical value?)
-
-
-::: {.cell}
-
-```{.r .cell-code}
-outcome=1
-counter=0
-while(outcome != 6){
-  outcome=sample(c(1:6),size=1)
-  print(outcome)
-  counter = counter+1
-  print(paste("counnter",counter))
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 5
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(<span class="fu">max</span>(result) <span class="sc">&lt;</span> <span class="dv">1000</span>){</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  result[i]<span class="ot">=</span><span class="fu">sqrt</span>(i)<span class="sc">*</span>(i<span class="sc">+</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  i<span class="ot">=</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>result[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  20.00000  42.42641  69.28203 100.00000 134.16408</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Suppose you roll a fair, six-sided die. Write a <strong>while</strong> loop to print the outcome <em>until</em> you have rolled a six. Your output should look like this (the numbers will be different because of randomization):</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outcome<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(outcome <span class="sc">!=</span> <span class="dv">6</span>){</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  outcome<span class="ot">=</span><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(outcome)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>With the set up in the previous question, let N be the number of times you have to roll the dice until you get a six. For instance, if you roll 4,2,1,6, then N is 4. Obviously, N is a <em>random</em> quantity. Suppose we want to use simulation to study the distribution of N. Run your code in 2 <em>manually</em> for 10 times and write down the values of N. With these 10 values, comment on the distribution of N (i.e., what are the likely values of N? What’s a typical value?)</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>outcome<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>counter<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(outcome <span class="sc">!=</span> <span class="dv">6</span>){</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  outcome<span class="ot">=</span><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(outcome)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">=</span> counter<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"counnter"</span>,counter))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4
 [1] "counnter 1"
-[1] 1
+[1] 2
 [1] "counnter 2"
-[1] 4
-[1] "counnter 3"
-[1] 3
-[1] "counnter 4"
-[1] 2
-[1] "counnter 5"
-[1] 1
-[1] "counnter 6"
-[1] 2
-[1] "counnter 7"
-[1] 3
-[1] "counnter 8"
 [1] 6
-[1] "counnter 9"
-```
+[1] "counnter 3"</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Now, instead of manually running the game for 10 times, write a <strong>for</strong> loop to simulate this game for 10000 times. With the resulting 10000 simulated values of N, comment on its distribution (for instance, you can use relevant summary statistics and a histogram to comment on the typical values of N, the spread, and the shape of the distribution).</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">10000</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(result)){</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  counter<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  outcome<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(outcome <span class="sc">!=</span> <span class="dv">6</span>){</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  outcome<span class="ot">=</span><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#print(outcome)</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  counter<span class="ot">=</span>counter<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(counter <span class="sc">&gt;</span><span class="dv">5000</span>){</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">#print(counter)</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  result[i]<span class="ot">=</span>counter</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    2.00    4.00    6.03    8.00   44.00 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result<span class="sc">&gt;=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1974</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result<span class="sc">==</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1677</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show solution</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(result,<span class="at">nclass =</span> <span class="dv">30</span>,</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">'Game length until rolling a six'</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_7_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-:::
-:::
-
-
-
-
-4. Now, instead of manually running the game for 10 times, write a **for** loop to simulate this game for 10000 times.  With the resulting 10000 simulated values of N, comment on its distribution (for instance, you can use relevant summary statistics and a histogram to comment on the typical values of N, the spread, and the shape of the distribution).
-
-::: {.cell}
-
-```{.r .cell-code}
-result=rep(NA,10000)
-for(i in 1:length(result)){
-  counter=0
-  outcome=1
-while(outcome != 6){
-  outcome=sample(c(1:6),size=1)
-  #print(outcome)
-  counter=counter+1
-  if(counter >5000){
-    break
-  }
-}
-#print(counter)
-  result[i]=counter
-}
-
-summary(result)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  1.000   2.000   4.000   6.043   8.000  50.000 
-```
-
-
-:::
-
-```{.r .cell-code}
-mean(result>=10)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 0.1975
-```
-
-
-:::
-
-```{.r .cell-code}
-mean(result==1)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 0.1644
-```
-
-
-:::
-
-```{.r .cell-code}
-hist(result,nclass = 30,
-     main='Game length until rolling a six',
-     xlab=NA)
-```
-
-::: {.cell-output-display}
-![](homework_7_files/figure-html/unnamed-chunk-11-1.png){width=672}
-:::
-:::
-
-
-
--->
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

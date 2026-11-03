@@ -9,7 +9,7 @@
 <link href="lecture_7_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Lecture 7</title>
+  <title>Lecture 7: Loops and IF conditions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lecture_7_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="lecture_7_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -132,16 +198,647 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 7</h1>
+  <h1 class="title">Lecture 7: Loops and IF conditions</h1>
+  <p class="subtitle">Data: rolling a dice</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
+<section id="prep-work---output-information" class="slide level2">
+<h2>Prep work - output information</h2>
+<p>Recall, you can directly print out the contents of an R object by running it</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Luka Doncic"</code></pre>
+</div>
+</div>
+<p>But in loop and conditional structures (more on this soon), this doesn’t work</p>
+<p>Instead, a <strong>print( )</strong> or <strong>cat( )</strong> function is needed (both functions are used to <strong>output information</strong>, but they behave slightly differently; <strong>print</strong> will print out an R object and <strong>cat</strong> will concatenate an R object into text):</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Luka DoncicShai Gilgeous-Alexander</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Luka Doncic"
+[1] "Shai Gilgeous-Alexander"</code></pre>
+</div>
+</div>
+<p>You can also <strong>paste texts together</strong>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The average age is 26.3080168776371 years old"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The average age is26.3080168776371years old"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The average age is 26.30802 years old</code></pre>
+</div>
+</div>
+<p><strong>paste</strong> and <strong>cat</strong> behave differently for vectors; also note R’s behavior of <strong>recycling the shorter vector</strong> when needed:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>dog cat 1 2 3 4 5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "dog 1" "cat 2" "dog 3" "cat 4" "dog 5"</code></pre>
+</div>
+</div>
+</section>
+<section>
+<section id="for-loops" class="title-slide slide level1 center">
+<h1>FOR loops</h1>
 
 </section>
+<section id="general-structure" class="slide level2">
+<h2>General structure</h2>
+<p>FOR loops allow you to <strong>repeatedly run the same chunk of code for a FIXED number of times</strong>.</p>
+<ul>
+<li>Try:</li>
+</ul>
+<ul>
+<li>Note: the index (named “i” in the example) does not have to pre-defined; it is created when you run the loop; at the end of the loop, it has a value 10.</li>
+</ul>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise 1</h2>
+<p>What will be printed if I run the following FOR loops?</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11
+[1] 12
+[1] 13</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50
+[1] 50
+[1] 50</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise 2</h2>
+<p>Try:</p>
+<p>Exercise: use a FOR loop to print: “1+1=2”, “2+2=4”, …, “10+10=20”</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1 + 1 = 2"
+[1] "2 + 2 = 4"
+[1] "3 + 3 = 6"
+[1] "4 + 4 = 8"
+[1] "5 + 5 = 10"
+[1] "6 + 6 = 12"
+[1] "7 + 7 = 14"
+[1] "8 + 8 = 16"
+[1] "9 + 9 = 18"
+[1] "10 + 10 = 20"</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-3-fake-coding-examples" class="slide level2">
+<h2>Exercise 3: “fake coding” examples</h2>
+<ul>
+<li>Repeatedly “do something” for 10 times</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+</details>
+<ul>
+<li>Repeatedly play a game for 1000 times, storing the result each time</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+</details>
+<p>Important note: as you can see in the previous example, the R object <strong>result</strong> needs to be <strong>initialized</strong> first. There are two ways to do this:</p>
+<ul>
+<li>Benefit of the 1st method: you don’t need to know the length of <strong>result</strong> in advance</li>
+<li>Benefit of the 2nd method: pre-allocate required CPU memory, which is more computationally efficient</li>
+</ul>
+</section>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise 4</h2>
+<ul>
+<li>You can simulate the outcome of a fair die with <code>sample(c(1:6), size=1)</code>; try it for a couple of times.</li>
+<li>Do this simulation for 10 times and store your results in a vector.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+</details>
+</section></section>
+<section>
+<section id="if-condition" class="title-slide slide level1 center">
+<h1>IF condition</h1>
+
+</section>
+<section id="general-structure-1" class="slide level2">
+<h2>General structure</h2>
+<p><strong>IF</strong> condition allows you to run a chunk of code <strong>only when a certain condition is true</strong>.</p>
+<p>CONDITION should be something that returns T/F (can be a single or a composite logical statement)</p>
+<ul>
+<li>Try:</li>
+</ul>
+<ul>
+<li>Change x to 2 and run it again; change x to 4 and run it again; change x to 0 and run it again…</li>
+<li>Try: put the code in a <strong>for loop</strong> to reproduce this output</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "the value of x is 0"
+[1] "the value of x is 1"
+[1] "1/x = 1"
+[1] "the value of x is 2"
+[1] "1/x = 0.5"
+[1] "the value of x is 3"
+[1] "1/x = 0.333333333333333"
+[1] "the value of x is 4"
+[1] "1/x = 0.25"</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "the value of x is 0"
+[1] "the value of x is 1"
+[1] "1/x = 1"
+[1] "the value of x is 2"
+[1] "1/x = 0.5"
+[1] "the value of x is 3"
+[1] "1/x = 0.333333333333333"
+[1] "the value of x is 4"
+[1] "1/x = 0.25"</code></pre>
+</div>
+</div>
+</details></section>
+<section id="multiple-if-conditions" class="slide level2">
+<h2>Multiple IF conditions</h2>
+<ul>
+<li>You can have more than one <strong>if</strong> conditions. For example:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "the value of x is -5"
+[1] "x is negative"
+[1] "the value of x is -4"
+[1] "x is negative"
+[1] "the value of x is -3"
+[1] "x is negative"
+[1] "the value of x is -2"
+[1] "x is negative"
+[1] "the value of x is -1"
+[1] "x is negative"
+[1] "the value of x is 0"
+[1] "x is 0"
+[1] "the value of x is 1"
+[1] "x is positive"
+[1] "the value of x is 2"
+[1] "x is positive"
+[1] "the value of x is 3"
+[1] "x is positive"</code></pre>
+</div>
+</div>
+</section>
+<section id="else" class="slide level2">
+<h2>else</h2>
+<p>You can add <strong>else</strong> to an <strong>if</strong> statement. This is especially useful if you only have <strong>two options</strong>.</p>
+<p>For example, let’s <em>simulate</em> the following game for 10 times: you roll a fair dice; if it lands 6, you win $20; else you lose $5.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2 -5"
+[1] "3 -10"
+[1] "5 -15"
+[1] "2 -20"
+[1] "6 0"
+[1] "4 -5"
+[1] "2 -10"
+[1] "6 10"
+[1] "1 5"
+[1] "5 0"</code></pre>
+</div>
+</div>
+</section>
+<section id="else-if" class="slide level2 scrollable">
+<h2>else if</h2>
+<p>If you have more than two options, you can use multiple <strong>if</strong> statements, or you can use <strong>else if</strong>. Be careful about the differences in the following two scenarios:</p>
+<ol type="A">
+<li></li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a is greater than 10"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a is greater than 5"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a is positive"</code></pre>
+</div>
+</div>
+<ol start="2" type="A">
+<li></li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a is greater than 10"</code></pre>
+</div>
+</div>
+<ul>
+<li><p>In (A): only the LAST TWO conditions are linked together</p></li>
+<li><p>In (B): all of the conditions are linked together and only one will run</p></li>
+</ul>
+</section>
+<section id="exercise-5" class="slide level2">
+<h2>Exercise 5</h2>
+<p>Suppose you roll a dice; if you get a 6, you win; else you lose. Simulate this game for 10 times and print out whether you win or lose each time.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "You win with roll 6"
+[1] "You lose with roll 5"
+[1] "You lose with roll 5"
+[1] "You lose with roll 3"
+[1] "You win with roll 6"
+[1] "You lose with roll 1"
+[1] "You lose with roll 2"
+[1] "You lose with roll 2"
+[1] "You win with roll 6"
+[1] "You lose with roll 4"</code></pre>
+</div>
+</div>
+</details></section></section>
+<section>
+<section id="while-loops" class="title-slide slide level1 center">
+<h1>WHILE loops</h1>
+
+</section>
+<section id="general-structure-2" class="slide level2">
+<h2>General structure</h2>
+<p>WHILE loops allow you to <strong>run code repeatedly, as long as the condition is satisfied</strong></p>
+<ul>
+<li>If you want to run code for exactly (say) 10 times, use FOR loop</li>
+<li>If you want to run code <em>until</em> your goal is met, but you don’t know how long it would take, use WHILE loop</li>
+<li>Be <em>very careful</em> with while loops! Your code can potentially run forever!</li>
+</ul>
+</section>
+<section id="basic-examples" class="slide level2 scrollable">
+<h2>Basic examples</h2>
+<p>Suppose you want to keep playing a game until you win $10. What are some issues with this general coding structure?</p>
+<details>
+<summary>
+Solution
+</summary>
+<ol type="1">
+<li>In the first step, R will try to evaluate <strong>winning &lt; 10</strong>, but the R object <strong>winning</strong> was never created. (2) <strong>winning</strong> was never updated, so the condition <strong>winning &lt; 10</strong> is always true and the loop will run forever!</li>
+</ol>
+</details>
+</section>
+<section id="basic-examples-1" class="slide level2">
+<h2>Basic examples</h2>
+<p>What will the following examples print? One of them will return an error and one of them will run forever!</p>
+<details>
+<summary>
+Solution
+</summary>
+<p>This will return an error since the R object <strong>i</strong> was not created.</p>
+</details>
+<details>
+<summary>
+Solution
+</summary>
+<p>This will run for ever since <strong>j &lt;= 5</strong> is always true.</p>
+</details>
+<details>
+<summary>
+Solution
+</summary>
+<p>This will print 2, 3, 4, 5, 6.</p>
+</details>
+<details>
+<summary>
+Solution
+</summary>
+<p>This will print 1, 2, 3, 4, 5.</p>
+</details>
+<p>Summary: every WHILE loop should have (1) an initialization and (2) an updating step.</p>
+</section>
+<section id="exercise" class="slide level2 scrollable">
+<h2>Exercise</h2>
+<p>Generate the Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21, etc.</p>
+<ol type="1">
+<li><p>Write a loop to generate the first <span class="math inline">\(20\)</span> numbers. Make sure to save the resulting sequence in a vector.</p></li>
+<li><p>Write a loop to keep generating this sequence, <em>until</em> the last number exceeds 20,000. Make sure to save the resulting sequence in a vector.</p></li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="do">### 1. FOR loop</span></span>
+<span id="cb22-2"><a href=""></a>fseq <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">20</span>)  <span class="co">#initialization</span></span>
+<span id="cb22-3"><a href=""></a>fseq[<span class="dv">1</span>]<span class="ot">=</span><span class="dv">1</span>; fseq[<span class="dv">2</span>]<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb22-4"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">20</span>){</span>
+<span id="cb22-5"><a href=""></a>   fseq[i]<span class="ot">=</span><span class="fu">sum</span>(fseq[<span class="fu">c</span>(i<span class="dv">-1</span>,i<span class="dv">-2</span>)])  </span>
+<span id="cb22-6"><a href=""></a>}</span>
+<span id="cb22-7"><a href=""></a>fseq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    1    1    2    3    5    8   13   21   34   55   89  144  233  377  610
+[16]  987 1597 2584 4181 6765</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="do">### 2. WHILE loop</span></span>
+<span id="cb24-2"><a href=""></a>fseq <span class="ot">&lt;-</span> <span class="fu">numeric</span>()  <span class="co">#initialization</span></span>
+<span id="cb24-3"><a href=""></a>fseq[<span class="dv">1</span>]<span class="ot">=</span><span class="dv">1</span>; fseq[<span class="dv">2</span>]<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb24-4"><a href=""></a>i<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb24-5"><a href=""></a><span class="cf">while</span>(<span class="fu">max</span>(fseq)<span class="sc">&lt;=</span><span class="dv">20000</span>){</span>
+<span id="cb24-6"><a href=""></a>   fseq[i]<span class="ot">=</span><span class="fu">sum</span>(fseq[<span class="fu">c</span>(i<span class="dv">-1</span>,i<span class="dv">-2</span>)])  </span>
+<span id="cb24-7"><a href=""></a>   i<span class="ot">=</span>i<span class="sc">+</span><span class="dv">1</span>  <span class="co"># update</span></span>
+<span id="cb24-8"><a href=""></a>}</span>
+<span id="cb24-9"><a href=""></a>fseq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]     1     1     2     3     5     8    13    21    34    55    89   144
+[13]   233   377   610   987  1597  2584  4181  6765 10946 17711 28657</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="break" class="slide level2">
+<h2>Break</h2>
+<p><strong>BREAK</strong> allows you to break out of any loop</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="safety-counter" class="slide level2">
+<h2>Safety counter</h2>
+<p>It is a good idea to add a <strong>safety counter</strong> to WHILE loops</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 1</code></pre>
+</div>
+</div>
+<ul>
+<li>Suppose you forget to update the value of i</li>
+<li>The while condition is always true! Luckily, the counter stops the loop after 5 runs</li>
+<li>For example, we can add the safety counter to the while loop of the Fibonacci sequence.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>counter<span class="ot">=</span><span class="dv">1</span>  <span class="co"># --- counter --- #</span></span>
+<span id="cb28-2"><a href=""></a></span>
+<span id="cb28-3"><a href=""></a>fseq <span class="ot">&lt;-</span> <span class="fu">numeric</span>()  <span class="co">#initialization</span></span>
+<span id="cb28-4"><a href=""></a>fseq[<span class="dv">1</span>]<span class="ot">=</span><span class="dv">1</span>; fseq[<span class="dv">2</span>]<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb28-5"><a href=""></a>i<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb28-6"><a href=""></a><span class="cf">while</span>(<span class="fu">max</span>(fseq)<span class="sc">&lt;=</span><span class="dv">20000</span>){</span>
+<span id="cb28-7"><a href=""></a>   fseq[i]<span class="ot">=</span><span class="fu">sum</span>(fseq[<span class="fu">c</span>(i<span class="dv">-1</span>,i<span class="dv">-2</span>)])  </span>
+<span id="cb28-8"><a href=""></a>   i<span class="ot">=</span>i<span class="sc">+</span><span class="dv">1</span>  <span class="co"># update</span></span>
+<span id="cb28-9"><a href=""></a>   </span>
+<span id="cb28-10"><a href=""></a>   <span class="co"># --- counter ---#</span></span>
+<span id="cb28-11"><a href=""></a>    counter <span class="ot">=</span> counter <span class="sc">+</span> <span class="dv">1</span>  </span>
+<span id="cb28-12"><a href=""></a>   <span class="cf">if</span>(counter <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb28-13"><a href=""></a>     <span class="fu">print</span>(<span class="st">'Caution: maximum iteration reached in while loop'</span>)</span>
+<span id="cb28-14"><a href=""></a>     <span class="cf">break</span></span>
+<span id="cb28-15"><a href=""></a>   }</span>
+<span id="cb28-16"><a href=""></a>  <span class="co"># --- counter ---#</span></span>
+<span id="cb28-17"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Caution: maximum iteration reached in while loop"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>fseq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  1  2  3  5  8 13</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="dice-example" class="title-slide slide level1 center">
+<h1>Dice example</h1>
+
+</section>
+<section id="a-little-digression-sample" class="slide level2">
+<h2>A little digression: sample()</h2>
+<p>The function <strong>sample( )</strong> allows you to <strong>randomly sample value(s) from a vector</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 76 70 65</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "dog"     "cat"     "chicken"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "T" "H" "T" "T" "H" "H" "T" "T" "H" "H"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "T" "H" "T" "H" "T" "H" "T" "T" "H" "H"</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-3" class="slide level2 scrollable">
+<h2>Exercise</h2>
+<p>Suppose you roll <em>two</em> fair dice and look at the sum of the two dice. If the sum is 10 or larger, you win the game.</p>
+<ol type="1">
+<li>Simulate this game for 20 times and reproduce the following result (your result will be different because of randomization).</li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Trial #1: rolled 1 &amp; 1; sum is 2"
+[1] "Trial #2: rolled 2 &amp; 1; sum is 3"
+[1] "Trial #3: rolled 4 &amp; 3; sum is 7"
+[1] "Trial #4: rolled 4 &amp; 3; sum is 7"
+[1] "Trial #5: rolled 5 &amp; 4; sum is 9"
+[1] "Trial #6: rolled 5 &amp; 2; sum is 7"
+[1] "Trial #7: rolled 5 &amp; 2; sum is 7"
+[1] "Trial #8: rolled 3 &amp; 4; sum is 7"
+[1] "Trial #9: rolled 5 &amp; 5; sum is 10"
+[1] "Trial #10: rolled 2 &amp; 2; sum is 4"
+[1] "Trial #11: rolled 5 &amp; 1; sum is 6"
+[1] "Trial #12: rolled 6 &amp; 5; sum is 11"
+[1] "Trial #13: rolled 1 &amp; 6; sum is 7"
+[1] "Trial #14: rolled 2 &amp; 1; sum is 3"
+[1] "Trial #15: rolled 4 &amp; 6; sum is 10"
+[1] "Trial #16: rolled 2 &amp; 2; sum is 4"
+[1] "Trial #17: rolled 6 &amp; 6; sum is 12"
+[1] "Trial #18: rolled 4 &amp; 2; sum is 6"
+[1] "Trial #19: rolled 6 &amp; 6; sum is 12"
+[1] "Trial #20: rolled 5 &amp; 3; sum is 8"</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>You keep rolling two fair dice <strong>until</strong> the sum is 10 or larger. Write a loop to reproduce the following result (your result will be different because of randomization).</li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Trial #1: rolled 1 &amp; 4; sum is 5"
+[1] "Trial #2: rolled 1 &amp; 2; sum is 3"
+[1] "Trial #3: rolled 5 &amp; 3; sum is 8"
+[1] "Trial #4: rolled 6 &amp; 2; sum is 8"
+[1] "Trial #5: rolled 3 &amp; 3; sum is 6"
+[1] "Trial #6: rolled 1 &amp; 5; sum is 6"
+[1] "Trial #7: rolled 5 &amp; 2; sum is 7"
+[1] "Trial #8: rolled 6 &amp; 6; sum is 12"</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Discussion: What is the probability that the sum is 10 or larger? How many trials, on average, would it take to get a sum that is 10 or larger?</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<p>To just print out the outcome 20 times (result is not saved):</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>){</span>
+<span id="cb38-2"><a href=""></a>  rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">2</span>,<span class="at">replace=</span>T)</span>
+<span id="cb38-3"><a href=""></a>  rollsum <span class="ot">&lt;-</span> <span class="fu">sum</span>(rolls)</span>
+<span id="cb38-4"><a href=""></a></span>
+<span id="cb38-5"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">'Trial #'</span>,i,</span>
+<span id="cb38-6"><a href=""></a>               <span class="st">': rolled '</span>, <span class="fu">paste</span>(rolls,<span class="at">collapse=</span><span class="st">' &amp; '</span>),</span>
+<span id="cb38-7"><a href=""></a>               <span class="st">'; sum is '</span>,rollsum))</span>
+<span id="cb38-8"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Trial #1: rolled 2 &amp; 1; sum is 3"
+[1] "Trial #2: rolled 5 &amp; 5; sum is 10"
+[1] "Trial #3: rolled 1 &amp; 1; sum is 2"
+[1] "Trial #4: rolled 6 &amp; 5; sum is 11"
+[1] "Trial #5: rolled 5 &amp; 2; sum is 7"
+[1] "Trial #6: rolled 2 &amp; 6; sum is 8"
+[1] "Trial #7: rolled 1 &amp; 4; sum is 5"
+[1] "Trial #8: rolled 1 &amp; 4; sum is 5"
+[1] "Trial #9: rolled 3 &amp; 6; sum is 9"
+[1] "Trial #10: rolled 2 &amp; 2; sum is 4"
+[1] "Trial #11: rolled 6 &amp; 4; sum is 10"
+[1] "Trial #12: rolled 4 &amp; 4; sum is 8"
+[1] "Trial #13: rolled 2 &amp; 4; sum is 6"
+[1] "Trial #14: rolled 1 &amp; 6; sum is 7"
+[1] "Trial #15: rolled 1 &amp; 4; sum is 5"
+[1] "Trial #16: rolled 1 &amp; 6; sum is 7"
+[1] "Trial #17: rolled 2 &amp; 3; sum is 5"
+[1] "Trial #18: rolled 2 &amp; 6; sum is 8"
+[1] "Trial #19: rolled 6 &amp; 2; sum is 8"
+[1] "Trial #20: rolled 5 &amp; 2; sum is 7"</code></pre>
+</div>
+</div>
+<p>To estimate the probability that the sum is 10 or larger, you can look at the <em>proportion</em> of sums that are 10 or larger. You would also want to increase the number of simulations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">10000</span>)</span>
+<span id="cb40-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(result)){</span>
+<span id="cb40-3"><a href=""></a>  rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">2</span>,<span class="at">replace=</span>T)</span>
+<span id="cb40-4"><a href=""></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(rolls)</span>
+<span id="cb40-5"><a href=""></a>}</span>
+<span id="cb40-6"><a href=""></a><span class="fu">table</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>result
+   2    3    4    5    6    7    8    9   10   11   12 
+ 299  546  822 1078 1413 1655 1415 1086  850  561  275 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="fu">mean</span>(result <span class="sc">&gt;=</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1686</code></pre>
+</div>
+</div>
+<p>Outcome <em>until</em> the sum is 10 or larger (the <strong>set.seed</strong> function sets a random seed, which makes the result reproducible):</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="do">####counter</span></span>
+<span id="cb44-2"><a href=""></a><span class="co">#set.seed(1)</span></span>
+<span id="cb44-3"><a href=""></a>rollsum <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb44-4"><a href=""></a><span class="cf">while</span>(rollsum <span class="sc">&lt;</span> <span class="dv">10</span>){</span>
+<span id="cb44-5"><a href=""></a>  rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">2</span>,<span class="at">replace=</span>T)</span>
+<span id="cb44-6"><a href=""></a>  rollsum <span class="ot">&lt;-</span> <span class="fu">sum</span>(rolls)</span>
+<span id="cb44-7"><a href=""></a></span>
+<span id="cb44-8"><a href=""></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span>  <span class="do">####counter</span></span>
+<span id="cb44-9"><a href=""></a>  </span>
+<span id="cb44-10"><a href=""></a>  <span class="cf">if</span>(counter <span class="sc">&gt;</span> <span class="dv">1000</span>){</span>
+<span id="cb44-11"><a href=""></a>     <span class="fu">print</span>(<span class="st">'Caution: maximum iteration reached in while loop'</span>)</span>
+<span id="cb44-12"><a href=""></a>     <span class="cf">break</span></span>
+<span id="cb44-13"><a href=""></a>    }  <span class="do">####counter</span></span>
+<span id="cb44-14"><a href=""></a>    </span>
+<span id="cb44-15"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">'Trial #'</span>,counter,</span>
+<span id="cb44-16"><a href=""></a>               <span class="st">': rolled '</span>, <span class="fu">paste</span>(rolls,<span class="at">collapse=</span><span class="st">' &amp; '</span>),</span>
+<span id="cb44-17"><a href=""></a>               <span class="st">'; sum is '</span>,rollsum))</span>
+<span id="cb44-18"><a href=""></a></span>
+<span id="cb44-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Trial #1: rolled 5 &amp; 6; sum is 11"</code></pre>
+</div>
+</div>
+<p>Similarly, to estimate the game length that it takes to get a sum that is 10 or larger, you have to repeat this code for a large number of times and record the game length each time.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">1000</span>)</span>
+<span id="cb46-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(result)){</span>
+<span id="cb46-3"><a href=""></a>  </span>
+<span id="cb46-4"><a href=""></a>  counter <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="do">####counter</span></span>
+<span id="cb46-5"><a href=""></a>  rollsum <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb46-6"><a href=""></a>  <span class="cf">while</span>(rollsum <span class="sc">&lt;</span> <span class="dv">10</span>){</span>
+<span id="cb46-7"><a href=""></a>  rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>),<span class="at">size=</span><span class="dv">2</span>,<span class="at">replace=</span>T)</span>
+<span id="cb46-8"><a href=""></a>  rollsum <span class="ot">&lt;-</span> <span class="fu">sum</span>(rolls)</span>
+<span id="cb46-9"><a href=""></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span>  <span class="do">####counter</span></span>
+<span id="cb46-10"><a href=""></a>  <span class="cf">if</span>(counter <span class="sc">&gt;</span> <span class="dv">1000</span>){</span>
+<span id="cb46-11"><a href=""></a>     <span class="fu">print</span>(<span class="st">'Caution: maximum iteration reached in while loop'</span>)</span>
+<span id="cb46-12"><a href=""></a>     <span class="cf">break</span></span>
+<span id="cb46-13"><a href=""></a>    }  <span class="do">####counter</span></span>
+<span id="cb46-14"><a href=""></a>  }</span>
+<span id="cb46-15"><a href=""></a>  </span>
+<span id="cb46-16"><a href=""></a>  result[i] <span class="ot">&lt;-</span> counter</span>
+<span id="cb46-17"><a href=""></a>  </span>
+<span id="cb46-18"><a href=""></a>  </span>
+<span id="cb46-19"><a href=""></a>}</span>
+<span id="cb46-20"><a href=""></a><span class="fu">table</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>result
+  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 
+181 129 126  95  77  64  60  40  34  31  23  23  24  23  13   8   8   8   5   7 
+ 21  22  23  24  25  26  27  32  34  35  37  39  43 
+  2   1   1   3   3   1   3   2   1   1   1   1   1 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="fu">plot</span>(<span class="fu">as.factor</span>(result))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_7_slide_files/figure-revealjs/unnamed-chunk-42-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
