@@ -5,8 +5,8 @@ format: html
 
 ## Overview
 
-- Dec 1 (Tuesday):
-- Dec 3 (Thursday):
+- Dec 1 (Tuesday): in-person lecture, **quiz 9**
+- Dec 3 (Thursday): in-person **EXAM 3**
 
 
 ## Tuesday, Dec 1

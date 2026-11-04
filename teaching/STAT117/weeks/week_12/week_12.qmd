@@ -6,7 +6,7 @@ format: html
 ## Overview
 
 - Nov 17 (Tuesday):
-- Nov 19 (Thursday):
+- Nov 19 (Thursday): in-person lecture, **quiz 8**
 
 
 ## Tuesday, Nov 17

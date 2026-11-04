@@ -6,12 +6,14 @@ format: html
 ## Overview
 
 - Nov 3 (Tuesday): in-person **Exam 2**
-- Nov 5 (Thursday): in-person lecture, no quiz
+- Nov 5 (Thursday): asynchronous lecture, no quiz
 
 
 ## Tuesday, Nov 3
 
-In-person **Exam 2**
+In-person **Exam 2**.
 
 ## Thursday, Nov 5
+
+
 

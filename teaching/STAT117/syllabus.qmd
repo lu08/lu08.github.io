@@ -145,7 +145,7 @@ Phone: 973-408-3962 &nbsp;&nbsp; Email: oar@drew.edu
 |  | Nov 19 |  | **Quiz 8** |
 | 13 | Nov 24 | Ch11 Part 2: Paired samples t test | |
 |  | Nov 26 |  | No class — Thanksgiving |
-| Dec 1 | Ch11 Part 3: Independent samples t test | **Quiz 9** |
+| 14 | Dec 1 | Ch11 Part 3: Independent samples t test | **Quiz 9** |
 |  | Dec 3 |  | **EXAM 3** |
 | 15 | Dec 8 |  | |
 |  | Dec 10 |  | **ANOVA quiz** |
