@@ -696,7 +696,7 @@
     "href": "teaching/STAT117/weeks/week_10/week_10.html#thursday-nov-5-asynchronous",
     "title": "Week 10",
     "section": "Thursday, Nov 5 (asynchronous)",
-    "text": "Thursday, Nov 5 (asynchronous)\n\nDo the two examples on slide page 17 and 18 from Chapter 6. The steps are identical to the simple linear regression when the predictor is continuous. The only difference is in the interpretations of the slope and intercept. Use the provided solutions to these examples to get a sense of how to interpret the slope and intercept.\nGo over Chapter 7 slides. This is a very short and simple chapter. There is also only one question in Chapter 7 homework.\nWatch this very well-made video on normal distribution and the central limit theorem. We will go over many of the concepts mentioned here in upcoming Chapters 8 and 9. You could skip the section between 16 min to 25 min.",
+    "text": "Thursday, Nov 5 (asynchronous)\n\nDo the two examples (Nursey, Computer) on slide page 17 and 18 from Chapter 6. The steps are identical to the continuous predictor case. The only difference is in the interpretations of the slope and intercept. Try the example first and use the provided solutions to get a sense of how to interpret the slope and intercept.\nGo over Chapter 7 slides. This is a very short and easy chapter. There is also only one question in Chapter 7 homework.\nWatch this very well-made video on normal distribution and the central limit theorem. We will go over many of the concepts mentioned here in upcoming Chapters 8 and 9. You could skip the section between 16 min to 25 min.",
     "crumbs": [
       "Research",
       "Weeks",
