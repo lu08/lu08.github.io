@@ -401,6 +401,20 @@ Use regression to predict `SES` using `Nursery` (coded as 0=No, 1=Yes).
 <br>
 <br>
 
+<details>
+<summary>Show solution</summary>
+
+The model uses 420 students with non-missing `SES` and `Nursery` values. Because `Nursery` is a factor, the intercept is the mean SES for students who did not attend nursery, and the slope is the difference between the Yes and No group means.
+
+- **a) Regression line:** $\widehat{SES} = 15.072 + 5.665(NurseryYes)$, where `NurseryYes` is 0 for No and 1 for Yes.
+- **b) Attended nursery:** $15.072 + 5.665(1) = 20.737$. The estimated SES is about **20.74**.
+- **c) Did not attend nursery:** $15.072 + 5.665(0) = 15.072$. The estimated SES is about **15.07**.
+- **d) Intercept:** **15.072** is the predicted mean SES for students who did not attend nursery school.
+- **e) Slope:** **5.665** is the difference in predicted mean SES between students who attended nursery and those who did not. Students who attended nursery have a predicted SES about **5.66 points higher**, on average.
+- **f) Student ID 1:** This student attended nursery and has actual SES 23. The prediction is 20.737, so the residual is $23 - 20.737 = 2.263$. The positive residual means the model **underpredicts** this student's SES.
+
+</details>
+
 ## Example: Computer
 
 Use regression to predict `SES` by whether or not the family owned a `computer` (coded as 0=No, 1=Yes).
@@ -429,6 +443,21 @@ Use regression to predict `SES` by whether or not the family owned a `computer` 
 
 <br>
 <br>
+
+<details>
+<summary>Show solution</summary>
+
+The model uses 500 students with non-missing `SES` and `computer` values. Because `computer` is a factor, the intercept is the mean SES for students whose families did not own a computer, and the slope is the difference between the Yes and No group means.
+
+- **a) Regression line:** $\widehat{SES} = 16.144 + 4.830(ComputerYes)$, where `ComputerYes` is 0 for No and 1 for Yes.
+- **b) Family had a computer:** $16.144 + 4.830(1) = 20.975$. The estimated SES is about **20.97**.
+- **c) Family did not have a computer:** $16.144 + 4.830(0) = 16.144$. The estimated SES is about **16.14**.
+- **d) Intercept:** **16.144** is the predicted mean SES for students whose families did not own a computer.
+- **e) Slope:** **4.830** is the difference in predicted mean SES between students whose families owned a computer and those whose families did not. Students whose families owned a computer have a predicted SES about **4.83 points higher**, on average.
+- **f) Student ID 1:** This student's family had a computer and actual SES is 23. The prediction is 20.975, so the residual is $23 - 20.975 = 2.025$. The positive residual means the model **underpredicts** this student's SES.
+
+</details>
+
 
 ## Example: slope interpretation
 

@@ -1,0 +1,49 @@
+---
+title: "NBAPlayers2024 Dataset"
+subtitle: "Variable codebook"
+---
+
+The `NBAPlayers2024` dataset contains data from the 2023-2024 NBA regular season for 237 basketball players.
+
+## Dataset structure
+
+The data frame contains **237 players** and **27 variables**. It includes all players who played in at least 20 games and averaged at least 20 minutes per game that season.
+
+## Variables
+
+| Variable | Description |
+|:--|:--|
+| `Player` | Name of player. |
+| `Pos` | Position: PG = point guard, SG = shooting guard, PF = power forward, SF = small forward, C = center. |
+| `Age` | Age, in years. |
+| `Team` | Team name (2TM or 3TM = players who switched teams during the season). |
+| `Games` | Games played (out of 82). |
+| `Starts` | Games started. |
+| `Mins` | Minutes played. |
+| `MinPerGame` | Minutes per game. |
+| `FGMade` | Field goals made. |
+| `FGAttempt` | Field goals attempted. |
+| `FGPct` | Field goal percentage. |
+| `FG3Made` | Three-point field goals made. |
+| `FG3Attempt` | Three-point field goals attempted. |
+| `FG3Pct` | Three-point field goal percentage. |
+| `FTMade` | Free throws made. |
+| `FTAttempt` | Free throws attempted. |
+| `FTPct` | Free throw percentage. |
+| `OffRebounds` | Offensive rebounds. |
+| `DefRebounds` | Defensive rebounds. |
+| `Rebounds` | Total rebounds. |
+| `Assists` | Number of assists. |
+| `Steals` | Number of steals. |
+| `Blocks` | Number of blocked shots. |
+| `Turnovers` | Number of turnovers. |
+| `Fouls` | Number of personal fouls. |
+| `Points` | Number of points scored. |
+| `PPG` | Points per game played. |
+
+## Data notes and sources
+
+This version is updated for the fourth edition and replaces earlier versions (`NBAPlayers2019`, `NBAPlayers2015`, and `NBAPlayers2011`).
+
+- Source: [Basketball-Reference](https://www.basketball-reference.com/leagues/NBA_2024_totals.html)
+- The dataset is distributed through the [`Lock5Data` package](https://www.lock5stat.com/datapage4e.html).

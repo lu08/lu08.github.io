@@ -13,7 +13,10 @@ format: html
 
 In-person **Exam 2**.
 
-## Thursday, Nov 5
+## Thursday, Nov 5 (asynchronous)
 
+1. Do the two examples on slide page 17 and 18 from [Chapter 6](all_lectures/chapter_6_slide.html).  The steps are identical to the simple linear regression when the predictor is continuous.  The only difference is in the interpretations of the slope and intercept.  Use the provided solutions to these examples to get a sense of how to interpret the slope and intercept.
 
+2. Go over [Chapter 7](all_lectures/chapter_7_slide.html) slides.  This is a very short and simple chapter.  There is also only one question in [Chapter 7 homework](homework/chapter_7.qmd).
 
+3. Watch this very well-made [video](https://www.youtube.com/watch?v=zeJD6dqJ5lo) on normal distribution and the central limit theorem.  We will go over many of the concepts mentioned here in upcoming Chapters 8 and 9.  You could skip the section between 16 min to 25 min.

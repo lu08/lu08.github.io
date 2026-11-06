@@ -12,6 +12,7 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 4: Transformations and Z-scores](all_lectures/chapter_4_slide.html)
 - [Chapter 5: Bivariate relationships](all_lectures/chapter_5_slide.html)
 - [Chapter 6: Simple Linear Regression](all_lectures/chapter_6_slide.html)
+- [Chapter 7: Basic (Discrete) Probability](all_lectures/chapter_7_slide.html)
 
 ## StatChat
 
