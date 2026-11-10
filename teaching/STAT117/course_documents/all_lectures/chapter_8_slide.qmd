@@ -1,0 +1,267 @@
+---
+title: "Chapter 8: Normal Distribution"
+subtitle: "STAT117: Introduction to Statistics"
+format:
+  revealjs:
+    width: 1050
+    height: 1050
+    margin: 0
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: false
+    scrollable: true
+    auto-stretch: false
+    chalkboard:
+      buttons: true
+    template-partials:
+      - title-slide.html
+editor_options:
+  chunk_output_type: inline
+---
+
+
+
+## Normal distribution
+
+```{r}
+#| fig-width: 11
+#| fig-height: 3.6
+#| echo: false
+set.seed(117)
+
+# Histogram (blue) with the matching density curve (red)
+draw <- function(x, main, dens, xlim, at = NULL, breaks = "Sturges") {
+  hist(x, freq = FALSE, breaks = breaks, main = main, xlab = "", ylab = "",
+       col = "lightblue", border = "blue", lty = 2, xlim = xlim, nclass=20,
+       axes = FALSE, cex.main = 1.8)
+  axis(1, at = at, cex.axis = 1.5)
+  curve(dens(x), add = TRUE, col = "red", lwd = 2.5)
+}
+
+par(mfrow = c(1, 3), mar = c(3, 1, 3, 1))
+
+z <- rnorm(1000)
+draw(z, "Normal", dnorm, c(-2.5, 2.5), at = -2:2)
+
+x2 <- rnorm(1000, mean = 2.5, sd = 0.6)
+draw(x2, "Normal", function(x) dnorm(x, 2.5, 0.6), c(1.4, 3.9),
+     at = seq(1.5, 3.5, 0.5))
+
+x3 <- rnorm(1000, mean = 162, sd = 12)
+draw(x3, "Normal", function(x) dnorm(x, 162, 12), c(130, 190),
+     at = c(130, 150, 170, 190))
+```
+
+
+- Range of normal distribution: $-\infty$ to $\infty$
+
+- A normal distribution is *entirely* determined by its mean (location) and standard deviation (spread)
+
+- **Standard** normal: mean = 0, standard deviation = 1
+
+- Normal distribution was mathematically developed by [Carl Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) (1777–1855) and is also called Gaussian distribution
+
+
+<details>
+<summary>Examples of non-normal distributions</summary>
+
+```{r}
+#| fig-width: 11
+#| fig-height: 3.6
+#| echo: false
+set.seed(117)
+
+draw <- function(x, main, dens, xlim, at = NULL, breaks = "Sturges") {
+  hist(x, freq = FALSE, breaks = breaks, main = main, xlab = "", ylab = "",
+       col = "lightblue", border = "blue", lty = 2, xlim = xlim,
+       axes = FALSE, cex.main = 1.8)
+  axis(1, at = at, cex.axis = 1.5)
+  curve(dens(x), add = TRUE, col = "red", lwd = 2.5, n = 500)
+}
+
+par(mfrow = c(1, 3), mar = c(3, 1, 3, 1))
+
+e <- rexp(150, rate = 1 / 10)
+draw(e, "Exponential", function(x) dexp(x, 1 / 10), c(0, 70),
+     at = c(0, 20, 40, 60), breaks = seq(0, max(e) + 5, 5))
+
+g <- rgamma(150, shape = 2, scale = 30000)
+draw(g, "Gamma", function(x) dgamma(x, shape = 2, scale = 30000), c(0, 270000),
+     at = c(0, 100000, 250000), breaks = 12)
+
+b <- rbeta(150, 5, 2)
+draw(b, "Beta", function(x) dbeta(x, 5, 2), c(0, 1),
+     at = c(0, 0.4, 0.8), breaks = seq(0, 1, 0.1))
+```
+
+</details>
+
+## Probablity calculation
+
+```{r}
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "30%"
+par(mar = c(3, 1, 1, 1))
+curve(dnorm(x), from = -4, to = 4, lwd = 2.5, col = "red",
+      xlab = "", ylab = "", yaxt = "n", bty = "n")
+```
+
+Suppose a score follows a **standard** normal distribution (so we'll call it a z-score).  Probablities can be obtained with the `pnorm` function in R in the following way.
+
+```{r, echo=T}
+# P(Z < 1)
+pnorm(1)
+
+# P(Z > -0.5)
+1 - pnorm(-0.5)
+
+# P(2 < Z < 3)
+pnorm(3) - pnorm(2)
+```
+
+
+- `pnorm(*)` always gives $P(Z \leq *)$ for a standard normal variable $Z$
+- For normal distribution, for example, $P(2<X <3) = P(2 \le X \le 3) = P(2 < X \le 3)$
+
+
+<details>
+<summary>(Optional) notes</summary>
+
+Mathematically, similar probablity calculations require integration under the curve. In the case of the normal distribution, however, this integration does not exist in closed form, so numeric approximation is always required. That's why people typically rely on software (or tables) to obtain these probabilities.
+
+</details>
+
+
+## Locating a score
+
+Suppose we want to **find the score** that corresponds to a given probability in a standard normal distribution. This can be done using the `qnorm` function in R.
+
+```{r, echo=T}
+# Find the score corresponding to the 85th percentile
+qnorm(0.85)
+
+# Find the score corresponding to the 5th percentile
+qnorm(0.05)
+```
+
+
+-The percentage you put in `qnorm()` should be the percentile, i.e., the proportion BELOW the desired score.
+
+
+## Examples
+
+Suppose Z follows a standard normal distribution.
+
+1. What is the probability that Z is greater than 0?
+2. What is the probability that Z is less than 1.25?
+3. What percentage of scores are between -2 and -2.5?
+4. What’s the value of the score such that the probability of being less than it is 90%?
+5. What’s the value of the score such that the probability of being greater than it is 30%?
+6. If you want to be in the top 15%, how many points do you have to score?
+7. What is the score that is better than 80% of scores?
+8. What is the percentile rank of 0.7?
+9. What is the 20th percentile of the z-score?
+10. What percentage of people scored above 2 or below -2?
+
+
+## Specifying mean and standard deviation
+
+In real life, a lot of variables do not follow a **standard** normal.  The R functions `pnorm` and `qnorm` can be used with the `mean` and `sd` arguments to handle non-standard normal distributions.
+
+```{r, echo=T}
+# P(X<-1) for standard normal
+pnorm(-1, mean = 0, sd = 1)
+pnorm(-1)
+
+# P(X<80) for normal with mean 75 and sd 8
+pnorm(80, mean = 75, sd = 8)
+
+# Find the score corresponding to the 90th percentile
+qnorm(0.9, mean = 75, sd = 8)
+```
+
+Fact: if a value follows a normal distribution, its z-score follows a standard normal distribution (intuition: z-score is a linear transformation that does not change the normal shape).
+
+## Example: pregnancy length
+
+Suppose the length of human pregnancy follows a normal distribution with mean 266 days and standard deviation 16 days (in reality, the distribution is slightly left skewed).
+
+1. What percentage of babies are born before 250 days?
+
+2. What percentage of babies are born between 260 and 265 days?
+
+3. What is the probablity that a pregnancy lasts for more than 280 days?
+
+4. What is the 10th percentile for the length of pregnancy? 
+
+5. What would be a very long pregnancy (top 1%)?
+
+
+
+
+## Example: SES
+Consider the socioeconomic status (`SES`) in the NELS dataset.
+
+1. Find the proportion of students scoring $\le 26$.
+2. Find the 80th percentile of SES.
+
+
+Now, we see that the distribution of `SES` can be well approximated by a normal distribution. Using the normal distribution, re-answer the above questions to compare.
+
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4
+#| out-width: "40%"
+nels <- haven::read_sav("../../../../dataset/NELS.sav")
+ses <- na.omit(as.numeric(nels$ses))
+m <- mean(ses)
+s <- sd(ses)
+
+hist(ses, freq = FALSE, main = "Socioeconomic status (SES)",
+     xlab = "SES", col = "lightblue", border = "blue",nclass=20)
+curve(dnorm(x, m, s), add = TRUE, col = "red", lwd = 2.5)
+legend("topright", bty = "n", cex = 1.5,
+       legend = c(paste0("Mean = ", round(m, 2)), paste0("SD = ", round(s, 2))))
+```
+
+
+## Example: 68% - 95% - 99.7% rule
+
+For something that follows a normal shape, what percentage of values fall **within one standard deviation** of the mean?
+
+What range am I look for if:
+
+- mean = 114 and SD = 20 (e.g., movie length in min)
+
+<br>
+
+- mean = 98.2 and SD = 0.7 (e.g., normal body temperature in F)
+
+<br>
+
+- mean = 0 and SD = 1 (e.g., standard normal)
+
+<br>
+
+
+Now, what percentage of values fall **within two standard deviations** of the mean?  **Three standard deviations**?
+
+
+
+## Example: 68% - 95% - 99.7% rule
+
+The [68% - 95% - 99.7% rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) gives a very convenient way to understand data when the data is normal.
+
+- For instance, we know from biological knowledge that human heights can be well approximated by a normal distribution. If we [look up a country](https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide) with a known mean and standard deviation, we know that most people (95%) in that country have heights between:
+
+<br>
+<br>
+<br>
+
+- It also provides an intuition that z-scores above 2 and below -2 are very rare (5%); z-scores above 5 and below -5 (called a 5-sigma event) are essentially impossible, *provided the data is at least approximately normal.*

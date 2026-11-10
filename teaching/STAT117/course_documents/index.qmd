@@ -13,6 +13,11 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 5: Bivariate relationships](all_lectures/chapter_5_slide.html)
 - [Chapter 6: Simple Linear Regression](all_lectures/chapter_6_slide.html)
 - [Chapter 7: Basic (Discrete) Probability](all_lectures/chapter_7_slide.html)
+- [Chapter 8: Normal Distribution](all_lectures/chapter_8_slide.html)
+- [Chapter 9: Central Limit Theorem (using a few examples)](all_lectures/Chapter_9_slide.html)
+- [Chapter 11: Inferences Involving the Mean](all_lectures/chapter_11_slide.html)
+- [Chapter 13: Analysis of Variance (ANOVA)](all_lectures/chapter_13_slide.html)
+
 
 ## StatChat
 
@@ -48,6 +53,7 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Assignment 3: Song length transformation](assignment/assignment_3.qmd)
 - Assignment 4: Bivariate relationship in-class exercise (see Moodle)
 - [Assignment 5: Contingency table (and clustered bar graph)](assignment/assignment_5.qmd)
+- [Assignment 6: R in Jamovi](assignment/assignment_6.qmd)
 
 
 ## Practice exams

@@ -1,0 +1,23 @@
+---
+title: "Chapter 11: Hypthesis Testing"
+subtitle: "STAT117: Introduction to Statistics"
+format:
+  revealjs:
+    width: 1050
+    height: 1050
+    margin: 0
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: false
+    scrollable: true
+    auto-stretch: false
+    chalkboard:
+      buttons: true
+    template-partials:
+      - title-slide.html
+editor_options:
+  chunk_output_type: inline
+---
