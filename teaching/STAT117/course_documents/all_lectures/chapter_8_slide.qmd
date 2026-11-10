@@ -107,11 +107,12 @@ draw(b, "Beta", function(x) dbeta(x, 5, 2), c(0, 1),
 #| fig-height: 4
 #| out-width: "30%"
 par(mar = c(3, 1, 1, 1))
-curve(dnorm(x), from = -4, to = 4, lwd = 2.5, col = "red",
-      xlab = "", ylab = "", yaxt = "n", bty = "n")
+curve(dnorm(x), from = -4, to = 4, lwd = 4, col = "red",
+      xlab = "", ylab = "", yaxt = "n", bty = "n", cex.axis = 3)
+grid()
 ```
 
-Suppose a score follows a **standard** normal distribution (so we'll call it a z-score).  Probablities can be obtained with the `pnorm` function in R in the following way.
+Suppose a score follows a **standard** normal distribution (so we'll call it a z-score).  Probablities can be obtained with the `pnorm` function in R.
 
 ```{r, echo=T}
 # P(Z < 1)
@@ -125,7 +126,7 @@ pnorm(3) - pnorm(2)
 ```
 
 
-- `pnorm(*)` always gives $P(Z \leq *)$ for a standard normal variable $Z$
+- `pnorm(*)` always gives $P(Z \leq *)$
 - For normal distribution, for example, $P(2<X <3) = P(2 \le X \le 3) = P(2 < X \le 3)$
 
 
@@ -150,7 +151,7 @@ qnorm(0.05)
 ```
 
 
--The percentage you put in `qnorm()` should be the percentile, i.e., the proportion BELOW the desired score.
+- The percentage you put in `qnorm()` should be the percentile, i.e., the proportion BELOW the desired score.
 
 
 ## Examples
@@ -171,7 +172,7 @@ Suppose Z follows a standard normal distribution.
 
 ## Specifying mean and standard deviation
 
-In real life, a lot of variables do not follow a **standard** normal.  The R functions `pnorm` and `qnorm` can be used with the `mean` and `sd` arguments to handle non-standard normal distributions.
+In practice, many variables do not follow a **standard** normal.  The R functions `pnorm` and `qnorm` can be used with the `mean` and `sd` arguments.
 
 ```{r, echo=T}
 # P(X<-1) for standard normal
@@ -193,15 +194,23 @@ Suppose the length of human pregnancy follows a normal distribution with mean 26
 
 1. What percentage of babies are born before 250 days?
 
+<br>
+
 2. What percentage of babies are born between 260 and 265 days?
+
+<br>
 
 3. What is the probablity that a pregnancy lasts for more than 280 days?
 
+<br>
+
 4. What is the 10th percentile for the length of pregnancy? 
+
+<br>
 
 5. What would be a very long pregnancy (top 1%)?
 
-
+<br>
 
 
 ## Example: SES
@@ -217,7 +226,7 @@ Now, we see that the distribution of `SES` can be well approximated by a normal 
 #| echo: false
 #| fig-width: 7
 #| fig-height: 4
-#| out-width: "40%"
+#| out-width: "55%"
 nels <- haven::read_sav("../../../../dataset/NELS.sav")
 ses <- na.omit(as.numeric(nels$ses))
 m <- mean(ses)
@@ -235,13 +244,13 @@ legend("topright", bty = "n", cex = 1.5,
 
 For something that follows a normal shape, what percentage of values fall **within one standard deviation** of the mean?
 
-What range am I look for if:
+What range am I looking for if:
 
-- mean = 114 and SD = 20 (e.g., movie length in min)
+- mean = 114 and SD = 20 (e.g., movie length in minutes)
 
 <br>
 
-- mean = 98.2 and SD = 0.7 (e.g., normal body temperature in F)
+- mean = 98.2 and SD = 0.7 (e.g., body temperature in F)
 
 <br>
 
@@ -264,4 +273,4 @@ The [68% - 95% - 99.7% rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9
 <br>
 <br>
 
-- It also provides an intuition that z-scores above 2 and below -2 are very rare (5%); z-scores above 5 and below -5 (called a 5-sigma event) are essentially impossible, *provided the data is at least approximately normal.*
+- It also provides an intuition that z-scores above 2 and below -2 are very rare (5%); z-scores above 5 (for example) and below -5 (called a 5-sigma event) are essentially impossible, *provided the data is at least approximately normal.*

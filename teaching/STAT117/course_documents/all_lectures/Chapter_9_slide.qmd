@@ -18,6 +18,11 @@ format:
       buttons: true
     template-partials:
       - title-slide.html
+    include-in-header:
+      text: |
+        <style>
+        .blank { display: inline-block; min-width: 5em; border-bottom: 2px solid currentColor; }
+        </style>
 editor_options:
   chunk_output_type: inline
 ---
@@ -43,7 +48,7 @@ editor_options:
 
 [Key result of the Central Limit Theorem]{style="color:purple;"}
 
-[(Under some assumptions) []{.blank} follows a []{.blank} distribution.]{style="color:purple;"}
+[(Under some assumptions) []{.blank} follows a []{.blank} distribution.]{style="color:green;"}
 
 
 ## Weird dice example
@@ -113,7 +118,7 @@ Suppose the average for the entire population is []{.blank} and the SD is []{.bl
 <br>
 
 
-## 
+## Just a fun picture
 
 ![](normal_distribution_gym.jpg){.nostretch fig-align="left" width=60%}
 

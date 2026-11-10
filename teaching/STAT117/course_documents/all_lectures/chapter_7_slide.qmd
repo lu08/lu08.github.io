@@ -82,7 +82,7 @@ When we perform a random experiment (ex: roll a die), we can have different outc
 
 ## Example 1:
 
-1. Consider the frequency table for player position (`Pos`) in the [NBAPlayers2024](../../../../dataset/NBAplayers2024_doc.qmd) dataset ([download](../../../../dataset/NBAPlayers2024.csv)). Position codes are C (center), PF (power forward), PG (point guard), SF (small forward), and SG (shooting guard).
+1. Consider the frequency table for player position (`Pos`) in the [NBAPlayers2024](../../../../dataset/NBAplayers2024_doc.html) dataset ([download](../../../../dataset/NBAplayers2024.csv)). Position codes are C (center), PF (power forward), PG (point guard), SF (small forward), and SG (shooting guard).
 
 ```{r}
 #| echo: true

@@ -244,7 +244,7 @@ Examples of non-normal distributions
 </div>
 </div>
 </div>
-<p>Suppose a score follows a <strong>standard</strong> normal distribution (so we’ll call it a z-score). Probablities can be obtained with the <code>pnorm</code> function in R in the following way.</p>
+<p>Suppose a score follows a <strong>standard</strong> normal distribution (so we’ll call it a z-score). Probablities can be obtained with the <code>pnorm</code> function in R.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># P(Z &lt; 1)</span></span>
 <span id="cb1-2"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -263,7 +263,7 @@ Examples of non-normal distributions
 </div>
 </div>
 <ul>
-<li><code>pnorm(*)</code> always gives <span class="math inline">\(P(Z \leq *)\)</span> for a standard normal variable <span class="math inline">\(Z\)</span></li>
+<li><code>pnorm(*)</code> always gives <span class="math inline">\(P(Z \leq *)\)</span></li>
 <li>For normal distribution, for example, <span class="math inline">\(P(2&lt;X &lt;3) = P(2 \le X \le 3) = P(2 &lt; X \le 3)\)</span></li>
 </ul>
 <details>
@@ -288,7 +288,9 @@ Examples of non-normal distributions
 <pre><code>[1] -1.644854</code></pre>
 </div>
 </div>
-<p>-The percentage you put in <code>qnorm()</code> should be the percentile, i.e., the proportion BELOW the desired score.</p>
+<ul>
+<li>The percentage you put in <code>qnorm()</code> should be the percentile, i.e., the proportion BELOW the desired score.</li>
+</ul>
 </section>
 <section id="examples" class="slide level2 scrollable">
 <h2>Examples</h2>
@@ -308,7 +310,7 @@ Examples of non-normal distributions
 </section>
 <section id="specifying-mean-and-standard-deviation" class="slide level2">
 <h2>Specifying mean and standard deviation</h2>
-<p>In real life, a lot of variables do not follow a <strong>standard</strong> normal. The R functions <code>pnorm</code> and <code>qnorm</code> can be used with the <code>mean</code> and <code>sd</code> arguments to handle non-standard normal distributions.</p>
+<p>In practice, many variables do not follow a <strong>standard</strong> normal. The R functions <code>pnorm</code> and <code>qnorm</code> can be used with the <code>mean</code> and <code>sd</code> arguments.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># P(X&lt;-1) for standard normal</span></span>
 <span id="cb11-2"><a href=""></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -336,12 +338,25 @@ Examples of non-normal distributions
 <h2>Example: pregnancy length</h2>
 <p>Suppose the length of human pregnancy follows a normal distribution with mean 266 days and standard deviation 16 days (in reality, the distribution is slightly left skewed).</p>
 <ol type="1">
-<li><p>What percentage of babies are born before 250 days?</p></li>
-<li><p>What percentage of babies are born between 260 and 265 days?</p></li>
-<li><p>What is the probablity that a pregnancy lasts for more than 280 days?</p></li>
-<li><p>What is the 10th percentile for the length of pregnancy?</p></li>
-<li><p>What would be a very long pregnancy (top 1%)?</p></li>
+<li>What percentage of babies are born before 250 days?</li>
 </ol>
+<p><br></p>
+<ol start="2" type="1">
+<li>What percentage of babies are born between 260 and 265 days?</li>
+</ol>
+<p><br></p>
+<ol start="3" type="1">
+<li>What is the probablity that a pregnancy lasts for more than 280 days?</li>
+</ol>
+<p><br></p>
+<ol start="4" type="1">
+<li>What is the 10th percentile for the length of pregnancy?</li>
+</ol>
+<p><br></p>
+<ol start="5" type="1">
+<li>What would be a very long pregnancy (top 1%)?</li>
+</ol>
+<p><br></p>
 </section>
 <section id="example-ses" class="slide level2 scrollable">
 <h2>Example: SES</h2>
@@ -355,7 +370,7 @@ Examples of non-normal distributions
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="chapter_8_slide_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:40.0%"></p>
+<p><img data-src="chapter_8_slide_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:55.0%"></p>
 </figure>
 </div>
 </div>
@@ -364,13 +379,13 @@ Examples of non-normal distributions
 <section id="example-68---95---99.7-rule" class="slide level2">
 <h2>Example: 68% - 95% - 99.7% rule</h2>
 <p>For something that follows a normal shape, what percentage of values fall <strong>within one standard deviation</strong> of the mean?</p>
-<p>What range am I look for if:</p>
+<p>What range am I looking for if:</p>
 <ul>
-<li>mean = 114 and SD = 20 (e.g., movie length in min)</li>
+<li>mean = 114 and SD = 20 (e.g., movie length in minutes)</li>
 </ul>
 <p><br></p>
 <ul>
-<li>mean = 98.2 and SD = 0.7 (e.g., normal body temperature in F)</li>
+<li>mean = 98.2 and SD = 0.7 (e.g., body temperature in F)</li>
 </ul>
 <p><br></p>
 <ul>
@@ -387,7 +402,7 @@ Examples of non-normal distributions
 </ul>
 <p><br> <br> <br></p>
 <ul>
-<li>It also provides an intuition that z-scores above 2 and below -2 are very rare (5%); z-scores above 5 and below -5 (called a 5-sigma event) are essentially impossible, <em>provided the data is at least approximately normal.</em></li>
+<li>It also provides an intuition that z-scores above 2 and below -2 are very rare (5%); z-scores above 5 (for example) and below -5 (called a 5-sigma event) are essentially impossible, <em>provided the data is at least approximately normal.</em></li>
 </ul>
 
 </section>

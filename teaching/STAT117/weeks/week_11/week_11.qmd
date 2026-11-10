@@ -11,5 +11,9 @@ format: html
 
 ## Tuesday, Nov 10
 
+We will briefly go over [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html) - simple linear regression with dichotomous predictor; [Chapter 7](../../course_documents/all_lectures/chapter_7_slide.html) (assigned to you as an asynchronous lecture); and get started with [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html).
+
+We will also get started with writing R code in Jamovi (see [assignment 6](../../course_documents/assignments/assignment_6.qmd)).  Please submit two screenshots on Moodle as instructed by the end of the class. 
+
 
 ## Thursday, Nov 12
