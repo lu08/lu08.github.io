@@ -32,7 +32,6 @@ slides=(
   "teaching/DATA352/course_documents/all_lectures/Lecture_5.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_6.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_7.qmd"
-  "teaching/DATA352/course_documents/all_lectures/Lecture_8.qmd"
   "teaching/DATA352/course_documents/all_lectures/Lecture_9.qmd"
 )
 

@@ -18,6 +18,7 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 11: Inferences Involving the Mean](all_lectures/chapter_11_slide.html)
 - [Chapter 13: Analysis of Variance (ANOVA)](all_lectures/chapter_13_slide.html)
 
+- [Introduction to Inferential Statistics](../../../topics/Intro_to_Inferential.html)
 
 ## StatChat
 

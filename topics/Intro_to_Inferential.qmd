@@ -1,0 +1,333 @@
+---
+title: "Introduction to Inferential Statistics"
+author: "Yi Lu"
+date: "2026/11/11"
+format: 
+  html:
+    embed-resources: true
+editor: visual
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align='center',
+                      fig.height=3,
+                      fig.width=3,
+                      out.width="0.5\\linewidth",
+                      echo=T)
+```
+
+
+## Example 1: NJ happiness
+
+Suppose you conduct a survey of adults in New Jersey and ask each respondent to rate their happiness on a scale from 0 to 100.  The following map shows the average happiness score for each county.  What conclusions can you draw?
+
+```{r,echo=F,warning=F,message=F,out.width="0.6\\linewidth"}
+library(ggplot2)
+library(maps)
+library(dplyr)
+map.nj <- subset(map_data(map='county'),region=='new jersey') #NJ map by county
+
+df.nj <- data.frame(county=unique(map.nj$subregion),
+                    happiness=rnorm(length(unique(map.nj$subregion)),mean=60,sd=15))
+
+# combine data to map
+map.nj.data <- left_join(map.nj,df.nj,by=c('subregion'='county'))
+
+# plot the map with data
+ggplot() +
+  geom_polygon(data=map.nj.data,aes(x=long,y=lat,group=group,fill=happiness),color='lightgrey') +
+  coord_fixed(1.4) +
+  theme_void() +
+  scale_fill_gradient(low="white", high="purple")
+```
+
+
+<details>
+<summary>What's the truth</summary>
+
+Any pattern you see is actually **due to random chance**.  The happiness score is randomly generated for each of the 21 counties using the *same* underlying distribution (**rnorm(21,mean=60,sd=15)**).
+
+</details>
+
+
+## Example 2: US crime rates
+
+This map is based on the [USArrests](USArrests_doc.html) dataset.  What conclusions can you draw?
+
+```{r,echo=F,out.width="0.7\\linewidth",}
+head(USArrests)
+map.us <- map_data(map='state')
+USArrests$state <- tolower(rownames(USArrests))
+map.usinfo <- left_join(map.us,USArrests,by=c('region'='state'))
+
+ggplot() +
+  geom_polygon(data=map.usinfo,aes(x=long,y=lat,group=group,fill=Murder),color='lightgrey') +
+  coord_fixed(1.4) +
+  theme_void() +
+  scale_fill_gradient(low="white", high="darkred")
+```
+
+
+<details>
+<summary>What's the truth</summary>
+
+Unknown.  Any pattern you see can be due to random chance, or can be statistically significant.
+
+</details>
+
+
+## Pattern you see in the data can be due to random chance!
+
+```{r}
+sample(c('Success','Fail'),size=50,replace=T) 
+```
+
+
+We see streaks of Fails and Successes, but these are all due to random chance! 
+
+
+
+<hr>
+<br><br>
+
+## Inferential statistics
+
+We have been working with many different data and can describe the data in many ways (summary statistics, visualizations, correlations, etc.). However, **data does NOT equal to the truth!**
+
+- In any survey data: respondents are only a random sample of the population. If we see that, for instance, 23% of **respondents** in the `child.care` dataset used childcare, it does not mean that exactly 23% of the entire U.S. population used childcare.
+
+- In an NBA example: a player's *true* ability (of shooting field goals, for instance) is a **latent variable** that cannot be directly measured. For instance, in the 2024 NBA season, Mikal Bridges has a higher field goal percentage than Jalen Green, but it doesn't necessarily mean that Mikal Bridges is better than Jalen Green; maybe he is just lucky (i.e., his success is "due to random chance").
+
+```{r}
+library(Lock5Data)
+NBAPlayers2024 %>%
+  filter(Starts > 80, MinPerGame > 30 ) %>%
+  select(Player, Pos, Team, Games, FGAttempt, FGMade, FGPct) %>%
+  arrange(desc(Team))
+```
+
+- Another way to think about this: most of the time, *data is not reproducible*: if I conduct the same survey again with different respondents, I will get a different percentage of respondents using childcare; Mikal Bridges is better than Jalen Green in 2024, but it is not a guarantee that he will also be better in 2025.
+
+
+## p-value and statistical significance
+
+- **Descriptive statistics**, also referred to as Exploratory Data Analysis (EDA), is about describing the *data*
+
+- **Inferential statistics** is about generalizing the conclusion to the *entire population* and/or the *truth*
+
+- Typically, a "hypothesis test" is conducted and a **p-value** is obtained
+
+  - If p-value is large (\>0.05): the conclusion is *not* significant and due to random chance
+
+  - If p-value is small (\<0.05): the conclusion is statistically significant
+
+- Definition of p-value: the probability of observing the data (i.e., test statistic) as extreme, or more extreme, than the one obtained, assuming the null hypothesis is true.
+
+
+
+## Example 3: drug effect on tumor size
+
+Suppose a new drug is developed to treat a certain type of cancer and has been tested on 20 patients.  Is the drug effective?
+
+```{r,echo=F,warning=F,message=F,out.width="0.6\\linewidth"}
+set.seed(seed=7)
+df.drug <- data.frame(tumsize1=rgamma(20,shape=20,rate=2),
+                   tumsize2=rgamma(20,shape=20,rate=2),
+                   patient=as.factor(paste('patient',c(1:20))))
+
+df.drug
+reorder <- order(df.drug$tumsize1-df.drug$tumsize2)
+df.drug <- df.drug[reorder,]
+df.drug$patient <- factor(df.drug$patient,levels=as.character(df.drug$patient))
+
+ggplot(data=df.drug, mapping=aes(y=patient)) +
+  geom_segment(aes(x=tumsize1,xend=tumsize2,yend=patient),linewidth=0.5) +
+  geom_point(aes(x=tumsize1,color="Before"),size=2) +
+  geom_point(aes(x=tumsize2,color="After"),size=2) +
+  scale_color_manual(values=c(Before="blue",After="red"),name=NULL) +
+  labs(x=NULL, y=NULL, title="tumor size in mm",
+       subtitle="before (blue) vs after (red)") +
+  theme_bw()
+```
+
+
+Remember, the data alone does not tell us whether the drug is effective; we need to evaluate the statistical significance.  We decide to conduct a **paired samples t-test**.  What is the conclusion here?
+
+```{r, echo=T, eval=T}
+t.test(df.drug$tumsize1, df.drug$tumsize2, paired = TRUE)
+```
+
+
+<details>
+<summary>Solution</summary>
+
+The p-value is large (0.1833 \> 0.05), so we conclude that the drug is not statistically significant in reducing tumor size.
+
+</details>
+
+
+<details>
+<summary>What's the truth</summary>
+
+Any pattern you see is indeed due to random chance.  The tumor sizes before and after taking the drug are both randomly, and independently generated for each patient using the *same* underlying distribution (**rgamma(20,shape=20,rate=2)**).
+
+</details>
+
+
+
+
+
+<hr>
+<br><br>
+
+## Intuition behind p-value: a thought experiment
+
+Suppose your data looks like this: Matt, he is wearing a blue t-shirt, a pair of jeans, some sneakers, sunglasses, and a baseball cap.  He is holding his phone and listening to music on his headphones.
+
+Question: which scenario is more likely?
+
+- A: Matt is about to run a race.
+- B: Matt is not about to run a race.
+
+<details>
+<summary>Key idea</summary>
+
+IF Matt is about to run a race, what **should** he look like? In other words, IF scenario A is true, what **should** your data look like?  This is called a **reference distribution**.
+
+**Reference distribution**
+
+![Runners at the [2026 NYC marathon](https://en.wikipedia.org/wiki/2026_New_York_City_Marathon)](NYC2026.jpg)
+
+If your data is very "unusual" or "extreme" compared to the reference distribution, you would **reject** scenario A on the basis of your data.
+
+If not, i.e., your data looks pretty "likely" under the reference distribution, you would **fail to reject** scenario A.
+
+How likely is your data under the reference distribution? This is essentially what the **p-value** measures! Hence: **small** p-value -> **unlikely** data -> reject the null hypothesis (scenario A).
+
+</details>
+
+Question: if you decide scenario B is more likely, did you **prove** with certainty that Matt is not about to run a race?
+
+<details>
+<summary>Key idea</summary>
+
+No, you cannot **prove** that Matt is not about to run a race.  You are just saying that the evidence is very strong against scenario A, meaning that your data is very unlikely under scenario A (i.e., it's unlikely that Matt would wear jeans to a race).
+
+</details>
+
+## Example 1: NJ happiness revisited
+
+Consider two scenarios:
+
+- A: every county in NJ is equally happy, on average.
+- B: Morris county is more happy than all of the other counties.
+
+You conduct your survey and look at your data (e.g., generate a map that looks like example 1), but how do you decide between scenario A and B?
+
+Key idea: if **scenario A** is true, what **should** your data look like?
+
+<details>
+<summary>Reference distribution under scenario A</summary>
+
+```{r,echo=F,warning=F,message=F,out.width="100%",fig.width=16,fig.height=8}
+map.nj <- subset(map_data(map='county'),region=='new jersey') #NJ map by county
+
+counties <- unique(map.nj$subregion)
+df.nj <- expand.grid(simulation=1:16,county=counties)
+df.nj$happiness <- rnorm(nrow(df.nj),mean=60,sd=15)
+
+# combine data to map
+map.nj <- merge(map.nj,data.frame(simulation=1:16),by=NULL)
+map.nj.data <- left_join(map.nj,df.nj,by=c('simulation','subregion'='county'))
+
+# plot the map with data
+ggplot() +
+  geom_polygon(data=map.nj.data,aes(x=long,y=lat,group=interaction(simulation,group),fill=happiness),color='lightgrey') +
+  coord_fixed(1.4) +
+  theme_void() +
+  scale_fill_gradient(low="white", high="purple") +
+  facet_wrap(~simulation,ncol=8)
+```
+
+
+</details>
+
+Now, if your data looks like this, would you **reject** scenario A?
+
+```{r,echo=F,warning=F,message=F,out.width="0.3\\linewidth"}
+map.nj <- subset(map_data(map='county'),region=='new jersey') #NJ map by county
+
+df.nj <- data.frame(county=unique(map.nj$subregion),
+                    happiness=rnorm(length(unique(map.nj$subregion)),mean=60,sd=15))
+df.nj$happiness[df.nj$county == 'morris'] <- 100                    
+
+# combine data to map
+map.nj.data <- left_join(map.nj,df.nj,by=c('subregion'='county'))
+
+# plot the map with data
+ggplot() +
+  geom_polygon(data=map.nj.data,aes(x=long,y=lat,group=group,fill=happiness),color='lightgrey') +
+  coord_fixed(1.4) +
+  theme_void() +
+  scale_fill_gradient(low="white", high="purple")
+```
+
+What if your data looks like this?
+
+```{r,echo=F,warning=F,message=F,out.width="0.3\\linewidth"}
+map.nj <- subset(map_data(map='county'),region=='new jersey') #NJ map by county
+
+df.nj <- data.frame(county=unique(map.nj$subregion),
+                    happiness=pmin(rnorm(length(unique(map.nj$subregion)),mean=30,sd=5),80))
+df.nj$happiness[df.nj$county == 'morris'] <- 100
+
+# combine data to map
+map.nj.data <- left_join(map.nj,df.nj,by=c('subregion'='county'))
+
+# plot the map with data
+ggplot() +
+  geom_polygon(data=map.nj.data,aes(x=long,y=lat,group=group,fill=happiness),color='lightgrey') +
+  coord_fixed(1.4) +
+  theme_void() +
+  scale_fill_gradient(low="white", high="purple")
+```
+
+
+## Example 3: drug effect revisited
+
+In the drug effect example, we can summarize the data by calculating the **mean difference** between the tumor sizes before and after treatment.
+
+```{r,echo=T,warning=F,message=F,out.width="0.6\\linewidth"}
+df.drug$tumsize1 - df.drug$tumsize2
+mean(df.drug$tumsize1 - df.drug$tumsize2)
+```
+
+We need to decide between:
+
+- Scenario A: The drug has no effect (the null hypothesis)
+- Scenario B: The drug has an effect (the alternative hypothesis)
+
+Reference distribution: what **should** the mean difference look like **if the drug has no effect**? 
+
+```{r,echo=F,warning=F,message=F,out.width="0.6\\linewidth",fig.width=4,fig.height=2}
+paired.test <- t.test(df.drug$tumsize1, df.drug$tumsize2, paired=TRUE)
+observed.t <- as.numeric(paired.test$statistic)
+test.df <- as.numeric(paired.test$parameter)
+
+reference.t <- data.frame(t=seq(-4,4,length.out=1001))
+reference.t$density <- dt(reference.t$t,df=test.df)
+reference.t$tail <- abs(reference.t$t) >= abs(observed.t)
+
+ggplot(reference.t,aes(x=t,y=density)) +
+  geom_line(linewidth=1) +
+  geom_vline(xintercept=observed.t,color="firebrick",linewidth=1) +
+  labs(x="",
+       y="",
+       title="Reference: mean difference under null") +
+  theme_minimal()
+```
+
+
+(This reference distribution is a t-distribution, that's why it's called a paired samples **t-test**.  The derivation is based on the Central Limit Theorem.)
+
+Is our observed value (1.3) very extreme?  What would you conclude?
