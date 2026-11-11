@@ -1,9 +1,20 @@
 ---
 title: "Lecture 8: Empirical p-values"
 subtitle: "DATA 352/551: Modeling and Simulation"
+engine: knitr
 filters:
   - ../../../../_extensions/coatless/webr/webr.lua
-format: html
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    toc: false
+    self-contained: false
+    smaller: true
+    scrollable: true
+    chalkboard:
+         buttons: true
 execute:
   echo: true
 webr:
@@ -29,18 +40,15 @@ editor_options:
 
 ## Streak
 
-- In both projects, data is binary (e.g.: win, win, win, lose, lose, win), and a goal is to quantify ``streakiness";
+- In both projects, data is binary (e.g.: win, win, win, lose, lose, win), and a goal is to quantify "streakiness"
 
-- One solution (Bayesian Binary Segmentation Procedure for Detecting Streakiness in Sports, Yang, 2004): calculate a statistic called <span style="color: red;">$B_{10}$</span>.  Data is considered <span style="color: red;">streaky if $B_{10} > 1$</span>;
+- One solution ([Bayesian Binary Segmentation Procedure for Detecting Streakiness in Sports](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-985X.2004.00484.x)): calculate a statistic called <span style="color: red;">$B_{10}$</span>.  Data is considered <span style="color: red;">streaky if $B_{10} > 1$</span>
 
-- Can also estimate the ``cut-point" for a streaky sequence of data.
-
-## 
 ![](wood1.png)
 
 ![](wood2.png)
 
-- Try: Use the [sample code](../code/L8_code.R), enter a sequence of binary data and report your <span style="color: red;">$B_{10}$</span> value.
+- Try: run the [sample code](../code/L8_code.R); enter a sequence of binary data and report your <span style="color: red;">$B_{10}$</span> value; is your data considered streaky?
 
 
 ## Data can be due to random chance
@@ -52,9 +60,9 @@ $B_{10}$ is a statistic (i.e., it's calculated based on data). We need to evalua
 
 <div style="height: 65pt;"></div>
 
-- Try: write code to randomly sample none-streaky data (consider randomly flipping a coin)
 
-##
+## Exercise
+Write code to randomly sample none-streaky data (consider randomly flipping a coin)
 
 ```{r,echo=F, message=F, warning=FALSE}
 #----------------------------------------------------------------------------#
@@ -150,7 +158,7 @@ f.B10(newdata)
 - Test statistic: $B_{10}$
 - Reference distribution: <span style="color: red;">If the null hypothesis is true (i.e., NOT streaky)</span>, what is the distribution of the test statistic $B_{10}$?
 
-Try: Run a simulation (1000 times) to estimate the reference distribution: i.e., repeat the previous step 1000 times and record the $B_{10}$ value each time.
+Exercise: Run a simulation (1000 times) to estimate the reference distribution: i.e., repeat the previous step 1000 times and record the $B_{10}$ value each time.
 
 
 ```{r,echo=F,fig.width=8,fig.height=3.5,out.width = '95%'}
@@ -177,11 +185,11 @@ abline(v=f.B10(mydata),col='red',lwd=2)
 
 ## Empirical p-value 
 
-- <span style="color: red;">p-value</span>: probability that the test statistic is as extreme, or more extreme, than the observed value, under the null hypothesis (``extreme" in the sense of pointing to the alternative hypothesis).
+- <span style="color: red;">p-value</span>: probability that the test statistic is as extreme, or more extreme, than the observed value, under the null hypothesis ("extreme" in the sense of pointing to the alternative hypothesis).
 
 <div style="height: 30pt;"></div>
 
-- Formula for calculating the p-value based on simulation has a small adjustment (North et al., 2002, “A note on the calculation of empirical p-values from Monte Carlo procedures”)
+- Formula for calculating the p-value based on simulation has a small adjustment ([A note on the calculation of empirical p-values from Monte Carlo procedures](https://pmc.ncbi.nlm.nih.gov/articles/PMC379178/))
 
 
 <div style="height: 30pt;"></div>
@@ -196,7 +204,7 @@ abline(v=f.B10(mydata),col='red',lwd=2)
 # Lady tasting tea
 
 ## Introduction
-A classic example in statistics, due to R. A. Fisher: *lady tasting tea*
+A classic example in statistics, due to R. A. Fisher: [lady tasting tea](https://en.wikipedia.org/wiki/Lady_tasting_tea)
 
 <ul>
 <li>T: adding tea first; M: adding milk first</li>
@@ -209,13 +217,14 @@ Out of the 4 she picks, how many needs to be correct for you to believe that she
 <div style="height: 50pt;"></div>
 
 
-## Simulation
+## Hypothesis test
 - Null hypothesis $H_0$: The lady is just guessing (i.e., cannot tell the difference)
 - Alternative hypothesis $H_1$: The lady can tell the difference
 - Test statistic: X = the number she gets correct (Q: what's the range of X?)
 - Reference distribution: <span style="color: red;">If the null hypothesis is true (i.e., she is only guessing)</span>, what is the distribution of the test statistic X?
 
-##
+
+## Simulation
 ```{r}
 tea <- c('T','T','T','T','M','M','M','M')
 choice <- sample(tea,size=4,replace=F); choice
@@ -241,9 +250,9 @@ table(result)
 
 - In the "lady tasting tea" and SES examples (see [homework 8](../homework/homework_8.qmd)), the reference distribution is easy to derive mathematically. Simulation is more useful with difficult test statistics (like $B_{10}$).
 
-- For the lady tasting tea example, if she gets 4 out of 4 correct, we would reject the null and conclude that "we have enough evidence that she is not guessing."  This DOES NOT *prove* that she is *definitely* not guessing.  All we are saying is that ``it's difficult to get 4 out of 4 correct just by random chance."
+- For the lady tasting tea example, if she gets 4 out of 4 correct, we would reject the null and conclude that "we have enough evidence that she is not guessing."  This DOES NOT *prove* that she is *definitely* not guessing.  All we are saying is that "it's difficult to get 4 out of 4 correct just by random chance."
 
-- ...if she gets 3 out of 4 correct, we would "accept" the null and conclude that "she is guessing."  This DOES NOT *prove* that she is *definitely* guessing.  All we are saying is that ``it's pretty possible to get 3 out of 4 correct just by random chance."
+- ...if she gets 3 out of 4 correct, we would "accept" the null and conclude that "she is guessing."  This DOES NOT *prove* that she is *definitely* guessing.  All we are saying is that "it's very possible to get 3 out of 4 correct just by random chance."
 
 - <span style="color: red;">Monte Carlo methods</span> refer to a very broad class of methods that rely on using <span style="color: red;">random sampling</span> to solve otherwise difficult problems (example: bootstrapping, Monte Carlo integration, empirical p-value).
 
