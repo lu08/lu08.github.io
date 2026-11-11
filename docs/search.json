@@ -2277,11 +2277,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_11/week_11.html#tuesday-nov-10",
-    "href": "teaching/STAT117/weeks/week_11/week_11.html#tuesday-nov-10",
+    "objectID": "teaching/STAT117/weeks/week_11/week_11.html#tuesday-nov-10-in-person",
+    "href": "teaching/STAT117/weeks/week_11/week_11.html#tuesday-nov-10-in-person",
     "title": "Week 11",
-    "section": "Tuesday, Nov 10",
-    "text": "Tuesday, Nov 10\nWe will briefly go over Chapter 6 - simple linear regression with dichotomous predictor; Chapter 7 (assigned to you as an asynchronous lecture); and get started with Chapter 8.\nWe will also get started with writing R code in Jamovi (see assignment 6). Please submit two screenshots on Moodle as instructed by the end of the class.",
+    "section": "Tuesday, Nov 10 (in-person)",
+    "text": "Tuesday, Nov 10 (in-person)\nWe will briefly go over Chapter 6 (simple linear regression with dichotomous predictor); Chapter 7 (assigned to you as an asynchronous lecture); and get started with Chapter 8.\nWe will also get started with writing R code in Jamovi (see assignment 6). Please submit two screenshots on Moodle as instructed by the end of the class.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2289,11 +2289,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_11/week_11.html#thursday-nov-12",
-    "href": "teaching/STAT117/weeks/week_11/week_11.html#thursday-nov-12",
+    "objectID": "teaching/STAT117/weeks/week_11/week_11.html#thursday-nov-12-in-person",
+    "href": "teaching/STAT117/weeks/week_11/week_11.html#thursday-nov-12-in-person",
     "title": "Week 11",
-    "section": "Thursday, Nov 12",
-    "text": "Thursday, Nov 12",
+    "section": "Thursday, Nov 12 (in-person)",
+    "text": "Thursday, Nov 12 (in-person)\nquiz 7 will mostly be based on the asynchronous content assigned to you from last week:\n\nInterpretations of SLOPE and INTERCEPT in the case of a dichotomous predictor in regression models\nA simple probablity question similar to Examples 1 and 2 on Chapter 7 slides\nBasic questions related to the Normal distribution based on slide page 2 of Chapter 8 (e.g., what’s the shape, what’s the range, what’s a “standard” normal, etc.)\nNone technical questions based on the assigned video\n\nIn class, we will continue with Chapter 8.",
     "crumbs": [
       "Research",
       "Weeks",

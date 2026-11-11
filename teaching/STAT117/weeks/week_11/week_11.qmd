@@ -9,11 +9,28 @@ format: html
 - Nov 12 (Thursday): in-person lecture, **quiz 7**
 
 
-## Tuesday, Nov 10
+## Tuesday, Nov 10 (in-person)
 
-We will briefly go over [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html) - simple linear regression with dichotomous predictor; [Chapter 7](../../course_documents/all_lectures/chapter_7_slide.html) (assigned to you as an asynchronous lecture); and get started with [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html).
+We will briefly go over [Chapter 6](../../course_documents/all_lectures/chapter_6_slide.html) (simple linear regression with dichotomous predictor); [Chapter 7](../../course_documents/all_lectures/chapter_7_slide.html) (assigned to you as an asynchronous lecture); and get started with [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html).
 
-We will also get started with writing R code in Jamovi (see [assignment 6](../../course_documents/assignments/assignment_6.qmd)).  Please submit two screenshots on Moodle as instructed by the end of the class. 
+We will also get started with writing R code in Jamovi (see [assignment 6](../../course_documents/assignment/assignment_6.html)).  Please submit two screenshots on Moodle as instructed by the end of the class. 
 
 
-## Thursday, Nov 12
+## Thursday, Nov 12 (in-person)
+
+**quiz 7** will mostly be based on the asynchronous content assigned to you from [last week](../week_10/week_10.html):
+
+- Interpretations of SLOPE and INTERCEPT in the case of a dichotomous predictor in regression models
+
+- A simple probablity question similar to Examples 1 and 2 on [Chapter 7](../../course_documents/all_lectures/chapter_7_slide.html) slides
+
+- Basic questions related to the Normal distribution based on slide page 2 of [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html) (e.g., what's the shape, what's the range, what's a  "standard" normal, etc.)
+
+- None technical questions based on the assigned [video](https://www.youtube.com/watch?v=zeJD6dqJ5lo)
+
+
+In class, we will continue with [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html).
+
+
+
+

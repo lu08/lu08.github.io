@@ -46,7 +46,7 @@ editor_options:
 
 <br>
 
-[Key result of the Central Limit Theorem]{style="color:purple;"}
+[Key result of the Central Limit Theorem]{style="color:green;"}
 
 [(Under some assumptions) []{.blank} follows a []{.blank} distribution.]{style="color:green;"}
 
