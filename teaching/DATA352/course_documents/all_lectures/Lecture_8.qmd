@@ -213,6 +213,8 @@ A classic example in statistics, due to R. A. Fisher: [lady tasting tea](https:/
 <li>The lady is asked to pick out 4 that she believes was made by adding tea first</li>
 </ul>
 
+
+
 Out of the 4 she picks, how many needs to be correct for you to believe that she actually has the ability to tell the difference?
 <div style="height: 50pt;"></div>
 

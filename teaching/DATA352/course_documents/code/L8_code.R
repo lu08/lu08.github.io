@@ -64,6 +64,59 @@ f.c <- function(x){
 
 
 library(dplyr)
-mydata.string <- "1111010101000011"
+
+# data representing Phoenix Sun's win/lose record
+
+mydata.string <- "0100001101"
 mydata <- strsplit(mydata.string,'') %>% unlist() %>% as.numeric()
 f.B10(mydata)
+
+
+result <- rep(NA, 1000)
+
+for(i in 1:1000){
+  newdata <- sample(c(0,1),
+                    size=length(mydata),
+                    replace=T,
+                    prob = c(mean(mydata==0), mean(mydata==1)))
+  
+  result[i] <- f.B10(newdata)
+}
+
+result
+hist(result,nclass = 50, main="B10 value with NO streak")
+
+# empirical p-value
+(sum(result>f.B10(mydata)) + 1)/(1000 + 1)
+
+
+
+
+
+
+tea <- c('T','T','T','T','M','M','M','M')
+choice <- sample(tea,size=4,replace=F); choice
+
+nsim<-10000
+result <- rep(NA,nsim)
+for(i in 1:nsim){
+  choice<-sample(tea,size=4,replace=F)
+  result[i]<-sum(choice=='T')
+}
+table(result)/10000
+
+# 4 out of 4
+(142 + 1) / (10000 + 1)
+# p-value is 0.014
+# conclusion: reject null; she can tell the difference
+
+# 3 out of 4
+(2251 +142+ 1)/(10000+1)
+# p-value is 0.24
+# conclusion: fail to reject null; she might be guessing
+
+
+
+
+
+
