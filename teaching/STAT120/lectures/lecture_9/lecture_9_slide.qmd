@@ -1,5 +1,5 @@
 ---
-title: "Lecture 9"
+title: "Lecture 9: Bivariate relationship with NBA data"
 engine: knitr
 filters:
   - ../../../../_extensions/coatless/webr/webr.lua
@@ -18,3 +18,267 @@ format:
 editor_options:
   chunk_output_type: inline
 ---
+
+
+[This is intended as an asynchronous, self-learning lecture.]{style="color: green;"}
+
+## Prep work
+
+[Self-learning task]{style="color: green;"}: run the following code to get a sense of the data and create two new variables (points per game, and categorized age)
+
+```{r,echo=T,message=F, warning==F}
+library(Lock5Data)
+library(tidyverse)
+?NBAPlayers2024
+
+# create new variables
+NBAPlayers2024 <- NBAPlayers2024 %>%
+  mutate(pointsPerGame = Points/Games) %>%
+  mutate(age_cat = case_when(Age<=25 ~ 'Young',
+                             Age<=30 & Age >25 ~ 'Middle',
+                             Age >30 ~ 'Old'))
+```
+
+# Bivariate relationship
+
+Bivariate relationship refers to the relationship between TWO variables:
+
+- What graph/tool/statistics to use largely depends on the *types* of the two variables.
+
+- Description of the relationship is often open-ended and varies based on the context of the data.
+
+- Always remember that **Correlation does not imply causation**!
+
+[Self-learning task]{style="color: green;"}: use an AI agent, type in the following prompt: *Provide five examples of "correlation does not imply causation"; some examples should include numeric variables and some should include categorical variables.*
+
+# Numeric + Numeric
+
+## Correlation coefficient
+
+Example question: is there a relationship between **FGPct** and **FG3Pct** for players in the dataset?
+
+- Use (Pearson) correlation coefficient for two numeric (scale) variables
+
+```{r,eval=T}
+cor(NBAPlayers2024$FGPct,NBAPlayers2024$FG3Pct)
+```
+
+We get an NA as there are NA values for both of the variables; to remedy:
+
+```{r,echo=T}
+cor(NBAPlayers2024$FGPct,NBAPlayers2024$FG3Pct,use="pairwise.complete.obs")
+```
+
+- [Self-learning task]{style="color: green;"}: Run **?cor()** to bring up the help page; you can see that it is easy to specify what to do with NA values and the type of correlation coefficient to calculate with the **cor()** function
+
+- A correlation coefficient close to 0 signals weak to no *linear* relationship between the two variables; a correlation coefficient close to 1 or -1 signals strong *linear* relationship
+
+**Interpretation for a positive correlation (**$>> 0.1$)
+
+[Self-learning task]{style="color: green;"}: Find a variable positively correlated with **FGPct** and write an interpretation.
+
+<details>
+
+<summary>Click to see an example solution</summary>
+
+Players with a higher field goal percentage tend to have a higher numbers of rebound, on average
+
+```{r}
+cor(NBAPlayers2024$FGPct, NBAPlayers2024$Rebounds)
+```
+
+</details>
+
+**Interpretation for a negative correlation (**$<< -0.1$):
+
+[Self-learning task]{style="color: green;"}: Write an interpretation for the correlation between **FGPct** and **FG3Pct** we found above.
+
+<details>
+
+<summary>Click to see an example solution</summary>
+
+Players with a higher field goal percentage tend to have a lower three-point field goal percentage, on average.
+
+</details>
+
+- **Avoid causal language**: you should not write "The higher the field goal percentage, the lower the three-point field goal percentage"; or "As the field goal percentage increases, the three-point field goal percentage decreases" as this kind of language implies a causal relationship.
+
+## Inferential statistics
+
+We have been working with many different data and can describe the data in many ways (summary statistics, visualizations, correlations, etc.). However, **data does NOT equal to the truth!**
+
+- In any survey data (like the Changing Childhood Project): respondents are only a random sample of the population. If we see that, for instance, 23% of respondents from the United States are optimistic, it does not mean that exactly 23% of the entire U.S. population are optimistic.
+
+- In the NBA example: a player's *true* ability (of shooting field goals, for instance) is a latent variable that cannot be directly measured. For instance, if in the 2024 NBA season, player 1 has a higher field goal percentage than player 2, it doesn't necessarily mean that player 1 is better than player 2; maybe he is just lucky (i.e., his success is "due to random chance").
+
+- Another way to think about this: most of the time, *data is not reproducible*: if I conduct the same survey again with different respondents, I will get different answers and different statistics; if NBA player 1 is better than player 2 in 2024, it is not a guarantee that he will also be better in 2025.
+
+## p-value and statistical significance
+
+- **Descriptive statistics**, also referred to as Exploratary Data Analysis (EDA), is about describing the *data*
+
+- **Inferential statistics** is about generalizing the conclusion to the *entire population* and/or the *truth*
+
+- Typically, a "hypothesis test" is conducted and a **p-value** is obtained
+
+  - If p-value is large (\>0.05): the conclusion is *not* significant and due to random chance
+
+  - If p-value is small (\<0.05): the conclusion is statistically significant
+
+- What is the conclusion in this case?
+
+  <details>
+
+  <summary>Click to see answer</summary>
+
+  Players with a higher field goal percentage tend to have a lower three-point field goal percentage, on average. The correlation is statistically significant and not likely due to random chance (p-value $< 0.001$).
+
+  </details>
+
+```{r}
+cor.test(NBAPlayers2024$FG3Pct,NBAPlayers2024$FGPct)
+```
+
+## Scatterplot
+
+Recall, a scatterplot is a **bivariate** graph that visualizes the relationship between two numeric/scale variables.
+
+[Self-learning task]{style="color: green;"}: Generate the following graph with both base R function and ggplot.
+
+```{r,echo=F,out.width="0.7\\linewidth",fig.height=4,fig.width=4}
+# base R
+plot(x=NBAPlayers2024$FGPct,
+     y=NBAPlayers2024$FG3Pct,
+     xlab='FG percent',
+     ylab='3-point FG percent',
+     pch=16,
+     col='salmon')
+grid()
+```
+
+<details>
+
+<summary>Click to see solution</summary>
+
+```{r,echo=T,out.width="0.7\\linewidth",fig.height=4,fig.width=4,eval=F}
+# base R
+plot(x=NBAPlayers2024$FGPct,
+     y=NBAPlayers2024$FG3Pct,
+     xlab='FG percent',
+     ylab='3-point FG percent',
+     pch=16,
+     col='salmon')
+grid()
+
+# ggplot
+NBAPlayers2024 %>% ggplot(aes(x=FGPct, y=FG3Pct)) +
+  labs(x='FG percent',y='3-point FG percent') +
+  geom_point(color='salmon') +
+  theme_bw()
+```
+
+</details>
+
+# Numeric + Categorical
+
+## Summary by group
+
+Example question: Is there a relationship between **FGPct** and the position of the player (**Pos**)?
+
+- In this case, we are comparing **FGPct** of players in different positions. The variable **Pos** is the grouping variable (i.e., "factor"). We already know how to do this!
+
+[Self-learning task]{style="color: green;"}: Use R to obtain the following information and generate the graph.
+
+```{r, echo=F, message=F, warning=F}
+library(kableExtra)
+NBAPlayers2024 %>% 
+  group_by(Pos) %>%
+  summarise(mean(FGPct),median(FGPct),min(FGPct),max(FGPct)) %>%
+  kable()
+boxplot(NBAPlayers2024$FGPct ~ NBAPlayers2024$Pos,
+        border='darkblue',
+        col='salmon',
+        pch=16,
+        xlab=NA,
+        ylab=NA, 
+        main='FG percent by position')
+```
+
+<details>
+
+<summary>Click to see solution</summary>
+
+```{r,echo=T,out.width="0.7\\linewidth",fig.height=4,fig.width=4,eval=F}
+NBAPlayers2024 %>% 
+  group_by(Pos) %>%
+  summarise(mean(FGPct),median(FGPct),min(FGPct),max(FGPct))
+
+boxplot(NBAPlayers2024$FGPct ~ NBAPlayers2024$Pos,
+        border='darkblue',
+        col='salmon',
+        pch=16,
+        xlab=NA,
+        ylab=NA, 
+        main='FG percent by position')
+```
+
+</details>
+
+## Statistical significance
+
+We see that **FGPct** differ by position for NBA players in the 2024 season. For instance, Centers have a much higher field goal percentage, on average. But is this difference due to random chance? In other words, does **FGPct** differ significantly by position, on average? This can be answered using a model called "ANOVA." You don't need to know the details of this model, but you should be able to interpret a given p-value. In this case, p-value is essentially 0 ($2\times10^{-16}$), so we can conclude that **FGPct** DOES differ significantly by position.
+
+```{r,out.width='0.7\\linewidth',fig.height=4,fig.width=6}
+model1 <- aov(NBAPlayers2024$FGPct ~ NBAPlayers2024$Pos)
+summary(model1)
+```
+
+[Self-learning task]{style="color: green;"}: Does the average **FGPct** differ significantly between point guards and power forwards? The following R code conducts an "independent samples t-test." Report the p-value and write a conclusion.
+
+```{r,echo=T,out.width="0.7\\linewidth",fig.height=4,fig.width=4}
+t.test(NBAPlayers2024$FGPct[NBAPlayers2024$Pos=='PG'],
+       NBAPlayers2024$FGPct[NBAPlayers2024$Pos=='PF'])
+```
+
+<details>
+
+<summary>Click to see solution</summary>
+
+The average **FGPct** DOES differ significantly between point guards and power forwards (p-value $= 0.0003685$)
+
+</details>
+
+# Categorical + categorical
+
+## Contingency table
+
+- Is there a relationship between **age_cat** and position?
+- A contingency table shows the **count** breakdown between these two categorical variables
+
+```{r}
+mytable <- table(NBAPlayers2024$Pos, NBAPlayers2024$age_cat);mytable
+```
+
+- Counts are typically not as useful as percentages. There are different ways to calculate percentages based on the denominator.
+
+```{r}
+# out of all players
+prop.table(mytable) %>% round(3)
+```
+
+This table shows that, out of all players, 5.5% are Centers and "young". This table is not that useful to determine the relationship between position and age.
+
+## 
+
+```{r}
+# out of each row
+prop.table(mytable,margin=1) %>% round(3)
+```
+
+Here, we can say that there may be a relationship. For instance, among small forwards, 55.6% are "young," whereas among shooting guards, 35.3% are "young." Statistical significance can be determined using a "Fisher's exact test" or a "chi-square test."
+
+```{r}
+chisq.test(mytable)
+```
+
+Since the p-value is 0.3823, there is NO significant relationship between position and age categories.

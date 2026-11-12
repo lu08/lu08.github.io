@@ -1,0 +1,151 @@
+---
+title: "STAT120 - Statistical Computing in R"
+subtitle: "Homework 9"
+format: html
+execute:
+  eval: false
+---
+
+In this homework, use the `COVIDCollege` dataset from the `Lock5Data` package. The dataset contains measurements collected before, during, and after the COVID-19 period. Load the `Lock5Data` and `tidyverse` packages before completing the questions.
+
+When you first work with a dataset, use its help page and inspect its structure. In R, `?COVIDCollege` opens the dataset documentation, and `str(COVIDCollege)` shows the number of observations, variables, and variable types. You can also use functions such as `dim()`, `names()`, `summary()` to explore the data.
+
+## 1. Get to know the data
+
+a. Load the `COVIDCollege` dataset. Use `?COVIDCollege` and `str()` to learn what the observations represent and what the variables measure.
+
+b. Report the number of rows and columns. Identify the categorical variable and give two examples of numeric variables.
+
+c. Use R to find the number of missing values in `StepsBefore` and `StepsDuring`. Why should you check for missing values before calculating a correlation?
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+library(Lock5Data)
+library(tidyverse)
+data(COVIDCollege)
+
+?COVIDCollege
+str(COVIDCollege)
+dim(COVIDCollege)
+colSums(is.na(COVIDCollege))[c("StepsBefore", "StepsDuring")]
+```
+
+The data contain 188 observations and 28 variables. `Sex` is categorical; `StepsBefore` and `SleepDuring` are examples of numeric variables. There are 23 missing values in `StepsBefore` and 30 in `StepsDuring`. Correlation calculations using the default missing-value behavior return `NA` if either variable has missing observations.
+
+</details>
+
+## 2. Numeric and numeric: steps
+
+Consider the relationship between `StepsBefore` and `StepsDuring`.
+
+a. Use `cor()` with its default settings. Explain the result.
+
+b. Calculate the Pearson correlation using only complete pairs. Describe the direction and strength of the linear association in context. Do not use causal language.
+
+c. Use `cor.test()` on complete pairs. Report the p-value and state whether the correlation is statistically significant at the 0.05 level.
+
+d. Make a scatterplot of the two variables using either base R or `ggplot2`. Label both axes.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+cor(COVIDCollege$StepsBefore, COVIDCollege$StepsDuring)
+
+steps_complete <- COVIDCollege %>%
+  drop_na(StepsBefore, StepsDuring)
+
+cor(steps_complete$StepsBefore, steps_complete$StepsDuring)
+cor.test(steps_complete$StepsBefore, steps_complete$StepsDuring)
+
+plot(COVIDCollege$StepsBefore, COVIDCollege$StepsDuring,
+     xlab = "Steps before COVID-19",
+     ylab = "Steps during COVID-19",
+     pch = 16,
+     col = "salmon")
+```
+
+The default correlation is `NA` because of missing values. Using the 154 complete pairs, the correlation is about 0.531. This is a moderately positive linear association: students with more steps before COVID-19 tended to have more steps during COVID-19. The correlation test gives a p-value of approximately $1.35 \times 10^{-12}$, which is below 0.05. This is evidence of a nonzero linear association in the population represented by the sampling process; it does not show that one measurement caused the other.
+
+</details>
+
+## 3. Numeric and categorical: sleep by sex
+
+Investigate whether `SleepDuring` differs between the F and M groups in `Sex`.
+
+a. Inspect the values of `Sex`. For this comparison, retain only observations labeled F or M and report how many observations are in each group.
+
+b. Calculate the mean and median of `SleepDuring` for each group. Make a boxplot comparing the groups.
+
+c. Use `t.test()` to compare the mean sleep values. Report the p-value and write a conclusion in context. Avoid interpreting a nonsignificant result as proof that the groups are identical.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+unique(COVIDCollege$Sex)
+
+sleep_by_sex <- COVIDCollege %>%
+  filter(Sex %in% c("F", "M")) %>%
+  drop_na(SleepDuring)
+
+sleep_by_sex %>%
+  group_by(Sex) %>%
+  summarise(
+    n = n(),
+    mean_sleep = mean(SleepDuring),
+    median_sleep = median(SleepDuring)
+  )
+
+boxplot(SleepDuring ~ Sex,
+        data = sleep_by_sex,
+        xlab = "Sex",
+        ylab = "Sleep during COVID-19",
+        col = "salmon")
+
+t.test(SleepDuring ~ Sex, data = sleep_by_sex)
+```
+
+There are 129 observations labeled F and 57 labeled M. The mean sleep values are about 7.72 hours for F and 7.89 hours for M. The Welch two-sample t-test gives a p-value of about 0.683. At the 0.05 level, the data do not provide statistically significant evidence of a difference in mean sleep between these groups. This does not prove that the means are identical.
+
+</details>
+
+## 4. Categorical and categorical: sex and sleep change
+
+Create a categorical variable called `SleepChange` with two values:
+
+- `Less sleep` if `SleepDuring` is less than `SleepBefore`
+- `Same or more sleep` otherwise
+
+Use only observations labeled F or M with complete values for both sleep variables.
+
+a. Make a contingency table of `Sex` and `SleepChange`.
+
+b. Calculate row proportions. Compare the proportion with less sleep in the two groups.
+
+c. Use a chi-square test to assess whether `Sex` and `SleepChange` are associated. Report the p-value and state a conclusion.
+
+<details>
+<summary>Show solution</summary>
+
+```{r}
+sleep_change <- COVIDCollege %>%
+  filter(Sex %in% c("F", "M")) %>%
+  drop_na(SleepBefore, SleepDuring) %>%
+  mutate(SleepChange = if_else(
+    SleepDuring < SleepBefore,
+    "Less sleep",
+    "Same or more sleep"
+  ))
+
+sleep_table <- table(sleep_change$Sex, sleep_change$SleepChange)
+sleep_table
+prop.table(sleep_table, margin = 1)
+chisq.test(sleep_table)
+```
+
+The counts are 46 F and 23 M observations with less sleep. The row proportions are about 35.7% for F and 40.4% for M. The chi-square test gives a p-value of about 0.656. At the 0.05 level, there is not statistically significant evidence of an association between `Sex` and this two-category sleep-change variable.
+
+</details>

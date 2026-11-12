@@ -192,7 +192,7 @@ Sometimes the randomness comes from the experiment itself (e.g., rolling a die, 
 <details>
 <summary>Show more</summary>
 
-Example: if 38 **percent** of households (in a certain region) own a cat, you might say that the "**probability** of owning a cat is 0.38." What is meant that you imagine selecting a household at random; there is a 38% chance that the household you happen to select owns a cat.
+Example: if 38 **percent** of households (in a certain region) own a cat, you might say that the **probability** of owning a cat is 0.38.  What is meant that you imagine selecting a household at random; there is a 38% chance that the household you happen to select owns a cat.
 
 Example: the **probability** of rolling a 2 on a fair die is 1/6 (or 0.167).  You could also understand this as: if you roll a large number of fair dice, about 16.7 **percent** of them will be a 2.
 

@@ -1,21 +1,20 @@
 ---
 title: "STAT120 - Statistical Computing in R"
 subtitle: "Homework 8"
-format:
-  html:
-    code-fold: true
-    code-summary: "Show solution"
+format: html
 execute:
   eval: false
 ---
 
-<!-- 
 
-# Part II: Writing functions
+# Part I: Writing functions
  
-In this part, you will be asked to write R functions. You will be using these functions in Part III. *Refer to Q1 of Part III to get a sense of how these functions should work.* (We separate the two processes of writing and using functions here because this is what you would typically do: you would create a separate R file only for functions and then do the rest of the coding after "loading" the functions you have written.)
+In this part, you will be asked to write R functions. You will be using these functions in Part II. *Refer to Q1 of Part II to get a sense of how these functions should work.* (We separate the two processes of writing and using functions here because this is what you would typically do: you would create a separate R file only for functions and then do the rest of the coding after "loading" the functions you have written.)
 
 1. Write a function, called **f.getNA**, that takes a vector as its argument, and returns the index of NA values in the vector. In addition, add a print option, defaulted to TRUE. If TRUE, the function will print how many NA values are found; if FALSE, nothing will be printed.
+
+<details>
+<summary>Show solution</summary>
 
 ```{r}
 f.getNA <- function(x,print=T){
@@ -27,8 +26,12 @@ f.getNA <- function(x,print=T){
 }
 ```
 
+</details>
 
 2.  Write a function, called **f.max2**, that takes two vectors of the same length, calculates the (element-wise) sum of the two vectors, and returns the *index* of the element with the largest sum. If there is a tie, it should return all of the indices with the largest sum.
+
+<details>
+<summary>Show solution</summary>
 
 ```{r}
 f.max2 <- function(x,y){
@@ -43,8 +46,12 @@ f.max2 <- function(x,y){
 }
 ```
 
+</details>
 
 3. Write a function, called **f.topdiff**, that takes two vectors of the same length and calculates the (element-wise) difference of the two vectors. The difference should be calculated in absolute value (i.e., difference between 1 and 5 is 4, difference between 5 and 1 is also 4; hint: you can use the function **abs()**). The function takes another argument, **top** (default to 1). If top is 3 (say), the function will return the *indices* of the top 3 biggest differences (don’t worry about handling ties). If **top** is an invalid value (like -3, 1.2, or a number larger than allowed), print an error message and return nothing.
+
+<details>
+<summary>Show solution</summary>
 
 ```{r}
 f.topdiff <- function(x,y,top=1){
@@ -73,8 +80,12 @@ f.topdiff <- function(x,y,top=1){
 }
 ```
 
+</details>
 
 4. Write a function, called **f.plotn**, that takes two vectors of the same length and generate a minimalistic scatterplot.  Use **plot()** to do the scatterplot and set **type** to line (**type='l'**). Remove the x and y labels and the x and y axis. Set the line width (**lwd**) to 3. Add an argument to the function, **color** (default to ``black"), which controls the color of the scatterplot.  This function only generates the plot and it does not need to have a return value.
+
+<details>
+<summary>Show solution</summary>
 
 ```{r}
 f.plotn <- function(x,y,color='black'){
@@ -82,10 +93,11 @@ f.plotn <- function(x,y,color='black'){
 }
 ```
 
+</details>
 
 
 
-# Part III: Using functions
+# Part II: Using functions
 
 1. We want to test the functions in Part II.  Run the code given below and check the output.  If you see anything that is not working correctly, you need to go back to modify your function.
 
@@ -110,16 +122,23 @@ f.plotn(vec2,sin(vec2),color='royalblue')
 
 2. Look at the **HollywoodMovies** dataset in the **Lock5Data** package. Use **f.max2** to find which movie(s) has the highest  domestic box office and foreign box office values combined (**DomesticBO**, **ForeignBO**). Print the information of those movies. Note that you might need to adjust your function to deal with NA values.
 
+<details>
+<summary>Show solution</summary>
+
 ```{r,eval=F}
 HollywoodMovies %>% slice(f.max2(DomesticBO,ForeignBO))
 ```
 
+</details>
 
 3. Use **f.topdiff** to find the top 5 movie(s) with the largest discrepancy between domestic box office and foreign box office. Print the information of those movies.  Note that you might need to adjust your function to deal with NA values.
+<details>
+<summary>Show solution</summary>
+
 ```{r,eval=F}
 
 HollywoodMovies %>% slice(f.topdiff(DomesticBO,ForeignBO,top=5))
 
 ```
 
--->
+</details>

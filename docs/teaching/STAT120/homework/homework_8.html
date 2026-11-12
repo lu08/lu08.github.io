@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -227,155 +262,140 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- 
-
-# Part II: Writing functions
- 
-In this part, you will be asked to write R functions. You will be using these functions in Part III. *Refer to Q1 of Part III to get a sense of how these functions should work.* (We separate the two processes of writing and using functions here because this is what you would typically do: you would create a separate R file only for functions and then do the rest of the coding after "loading" the functions you have written.)
-
-1. Write a function, called **f.getNA**, that takes a vector as its argument, and returns the index of NA values in the vector. In addition, add a print option, defaulted to TRUE. If TRUE, the function will print how many NA values are found; if FALSE, nothing will be printed.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-f.getNA <- function(x,print=T){
-  result <- which(is.na(x))
-  if(print){
-     print(paste(length(result),'NA values are found')) 
-  }
-  return(result)
-}
-```
-:::
-
-
-
-2.  Write a function, called **f.max2**, that takes two vectors of the same length, calculates the (element-wise) sum of the two vectors, and returns the *index* of the element with the largest sum. If there is a tie, it should return all of the indices with the largest sum.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-f.max2 <- function(x,y){
-  #x <- HollywoodMovies$DomesticBO
-  #y <- HollywoodMovies$WorldwideBO
-  
-  #x <- c(90,100,100,90,50,80)
-  #y <- c(100,90,50,40,55,80)
-  
-  #return(which.max(x+y))
-  return(which((x+y)==max(x+y,na.rm = T)))
-}
-```
-:::
-
-
-
-3. Write a function, called **f.topdiff**, that takes two vectors of the same length and calculates the (element-wise) difference of the two vectors. The difference should be calculated in absolute value (i.e., difference between 1 and 5 is 4, difference between 5 and 1 is also 4; hint: you can use the function **abs()**). The function takes another argument, **top** (default to 1). If top is 3 (say), the function will return the *indices* of the top 3 biggest differences (don’t worry about handling ties). If **top** is an invalid value (like -3, 1.2, or a number larger than allowed), print an error message and return nothing.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-f.topdiff <- function(x,y,top=1){
-  #x <- HollywoodMovies$DomesticBO
-  #y <- HollywoodMovies$WorldwideBO
-  # top = 2
-    #x <- c(90,100,100,90,50,80)
-  #y <- c(100,90,50,40,55,80)
-  
-  diff <- abs(x-y)
-  
-  if(top %in% c(1:length(diff))){
-    
-    result <- data.frame(diff, index=c(1:length(diff))) %>%
-    arrange(desc(diff)) %>%
-    slice(1:top) %>%
-    pull(index)
-  
-    ### OR ###
-    # result <- order(diff,decreasing=T)[1:top]
-    
-    return(result)
-  }else{
-    print('Invalid top value')
-  }
-}
-```
-:::
-
-
-
-4. Write a function, called **f.plotn**, that takes two vectors of the same length and generate a minimalistic scatterplot.  Use **plot()** to do the scatterplot and set **type** to line (**type='l'**). Remove the x and y labels and the x and y axis. Set the line width (**lwd**) to 3. Add an argument to the function, **color** (default to ``black"), which controls the color of the scatterplot.  This function only generates the plot and it does not need to have a return value.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-f.plotn <- function(x,y,color='black'){
-  plot(x,y,type ='l',col=color,xlab=NA,ylab=NA,xaxt='n',yaxt='n',lwd=3)
-}
-```
-:::
-
-
-
-
-
-# Part III: Using functions
-
-1. We want to test the functions in Part II.  Run the code given below and check the output.  If you see anything that is not working correctly, you need to go back to modify your function.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-vec1 <- c(10,11,15,NA,24,NA,15)
-vec2 <- seq(from=-2,to=2,by=0.01)
-exam1 <- c(90,100,100,90,50,80)
-exam2 <- c(100,90,50,40,55,80)
-
-
-f.getNA(vec1,print=T) 
-f.getNA(vec1,print=F) 
-f.getNA(vec2) 
-f.max2(exam1,exam2) #student(s) with the highest exam 1 and exam 2 grades combined
-f.topdiff(exam1,exam2,top=2) #student(s) with the largest difference between exam 1 and exam 2
-f.topdiff(exam1,exam2,top=12) 
-f.plotn(vec2,vec2^2) 
-f.plotn(vec2,sin(vec2),color='royalblue')
-```
-:::
-
-
-
-
-2. Look at the **HollywoodMovies** dataset in the **Lock5Data** package. Use **f.max2** to find which movie(s) has the highest  domestic box office and foreign box office values combined (**DomesticBO**, **ForeignBO**). Print the information of those movies. Note that you might need to adjust your function to deal with NA values.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-HollywoodMovies %>% slice(f.max2(DomesticBO,ForeignBO))
-```
-:::
+<section id="part-i-writing-functions" class="level1">
+<h1>Part I: Writing functions</h1>
+<p>In this part, you will be asked to write R functions. You will be using these functions in Part II. <em>Refer to Q1 of Part II to get a sense of how these functions should work.</em> (We separate the two processes of writing and using functions here because this is what you would typically do: you would create a separate R file only for functions and then do the rest of the coding after “loading” the functions you have written.)</p>
+<ol type="1">
+<li>Write a function, called <strong>f.getNA</strong>, that takes a vector as its argument, and returns the index of NA values in the vector. In addition, add a print option, defaulted to TRUE. If TRUE, the function will print how many NA values are found; if FALSE, nothing will be printed.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f.getNA <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">print=</span>T){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(print){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(<span class="fu">paste</span>(<span class="fu">length</span>(result),<span class="st">'NA values are found'</span>)) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="2" type="1">
+<li>Write a function, called <strong>f.max2</strong>, that takes two vectors of the same length, calculates the (element-wise) sum of the two vectors, and returns the <em>index</em> of the element with the largest sum. If there is a tie, it should return all of the indices with the largest sum.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f.max2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#x &lt;- HollywoodMovies$DomesticBO</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#y &lt;- HollywoodMovies$WorldwideBO</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#x &lt;- c(90,100,100,90,50,80)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#y &lt;- c(100,90,50,40,55,80)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#return(which.max(x+y))</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">which</span>((x<span class="sc">+</span>y)<span class="sc">==</span><span class="fu">max</span>(x<span class="sc">+</span>y,<span class="at">na.rm =</span> T)))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="3" type="1">
+<li>Write a function, called <strong>f.topdiff</strong>, that takes two vectors of the same length and calculates the (element-wise) difference of the two vectors. The difference should be calculated in absolute value (i.e., difference between 1 and 5 is 4, difference between 5 and 1 is also 4; hint: you can use the function <strong>abs()</strong>). The function takes another argument, <strong>top</strong> (default to 1). If top is 3 (say), the function will return the <em>indices</em> of the top 3 biggest differences (don’t worry about handling ties). If <strong>top</strong> is an invalid value (like -3, 1.2, or a number larger than allowed), print an error message and return nothing.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f.topdiff <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y,<span class="at">top=</span><span class="dv">1</span>){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#x &lt;- HollywoodMovies$DomesticBO</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#y &lt;- HollywoodMovies$WorldwideBO</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># top = 2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#x &lt;- c(90,100,100,90,50,80)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#y &lt;- c(100,90,50,40,55,80)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(x<span class="sc">-</span>y)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(top <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(diff))){</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(diff, <span class="at">index=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(diff))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(diff)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span>top) <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(index)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="do">### OR </span><span class="al">###</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># result &lt;- order(diff,decreasing=T)[1:top]</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(result)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'Invalid top value'</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="4" type="1">
+<li>Write a function, called <strong>f.plotn</strong>, that takes two vectors of the same length and generate a minimalistic scatterplot. Use <strong>plot()</strong> to do the scatterplot and set <strong>type</strong> to line (<strong>type=‘l’</strong>). Remove the x and y labels and the x and y axis. Set the line width (<strong>lwd</strong>) to 3. Add an argument to the function, <strong>color</strong> (default to ``black”), which controls the color of the scatterplot. This function only generates the plot and it does not need to have a return value.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f.plotn <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y,<span class="at">color=</span><span class="st">'black'</span>){</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,<span class="at">type =</span><span class="st">'l'</span>,<span class="at">col=</span>color,<span class="at">xlab=</span><span class="cn">NA</span>,<span class="at">ylab=</span><span class="cn">NA</span>,<span class="at">xaxt=</span><span class="st">'n'</span>,<span class="at">yaxt=</span><span class="st">'n'</span>,<span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section>
+<section id="part-ii-using-functions" class="level1">
+<h1>Part II: Using functions</h1>
+<ol type="1">
+<li>We want to test the functions in Part II. Run the code given below and check the output. If you see anything that is not working correctly, you need to go back to modify your function.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">15</span>,<span class="cn">NA</span>,<span class="dv">24</span>,<span class="cn">NA</span>,<span class="dv">15</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">to=</span><span class="dv">2</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>exam1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">90</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>exam2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">90</span>,<span class="dv">50</span>,<span class="dv">40</span>,<span class="dv">55</span>,<span class="dv">80</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">f.getNA</span>(vec1,<span class="at">print=</span>T) </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">f.getNA</span>(vec1,<span class="at">print=</span>F) </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">f.getNA</span>(vec2) </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">f.max2</span>(exam1,exam2) <span class="co">#student(s) with the highest exam 1 and exam 2 grades combined</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">f.topdiff</span>(exam1,exam2,<span class="at">top=</span><span class="dv">2</span>) <span class="co">#student(s) with the largest difference between exam 1 and exam 2</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">f.topdiff</span>(exam1,exam2,<span class="at">top=</span><span class="dv">12</span>) </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">f.plotn</span>(vec2,vec2<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">f.plotn</span>(vec2,<span class="fu">sin</span>(vec2),<span class="at">color=</span><span class="st">'royalblue'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Look at the <strong>HollywoodMovies</strong> dataset in the <strong>Lock5Data</strong> package. Use <strong>f.max2</strong> to find which movie(s) has the highest domestic box office and foreign box office values combined (<strong>DomesticBO</strong>, <strong>ForeignBO</strong>). Print the information of those movies. Note that you might need to adjust your function to deal with NA values.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>HollywoodMovies <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="fu">f.max2</span>(DomesticBO,ForeignBO))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<ol start="3" type="1">
+<li>Use <strong>f.topdiff</strong> to find the top 5 movie(s) with the largest discrepancy between domestic box office and foreign box office. Print the information of those movies. Note that you might need to adjust your function to deal with NA values.
+<details>
+<summary>
+Show solution
+</summary></details></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>HollywoodMovies <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="fu">f.topdiff</span>(DomesticBO,ForeignBO,<span class="at">top=</span><span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 
-3. Use **f.topdiff** to find the top 5 movie(s) with the largest discrepancy between domestic box office and foreign box office. Print the information of those movies.  Note that you might need to adjust your function to deal with NA values.
-
-::: {.cell}
-
-```{.r .cell-code}
-HollywoodMovies %>% slice(f.topdiff(DomesticBO,ForeignBO,top=5))
-```
-:::
-
-
--->
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

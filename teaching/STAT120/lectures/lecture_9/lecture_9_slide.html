@@ -9,7 +9,7 @@
 <link href="lecture_9_slide_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Lecture 9</title>
+  <title>Lecture 9: Bivariate relationship with NBA data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lecture_9_slide_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="lecture_9_slide_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -132,7 +198,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 9</h1>
+  <h1 class="title">Lecture 9: Bivariate relationship with NBA data</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -140,8 +206,342 @@
 </section>
 <section class="slide level2">
 
+<p><span style="color: green;">This is intended as an asynchronous, self-learning lecture.</span></p>
+</section>
+<section id="prep-work" class="slide level2">
+<h2>Prep work</h2>
+<p><span style="color: green;">Self-learning task</span>: run the following code to get a sense of the data and create two new variables (points per game, and categorized age)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(Lock5Data)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href=""></a>?NBAPlayers2024</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co"># create new variables</span></span>
+<span id="cb1-6"><a href=""></a>NBAPlayers2024 <span class="ot">&lt;-</span> NBAPlayers2024 <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">pointsPerGame =</span> Points<span class="sc">/</span>Games) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">age_cat =</span> <span class="fu">case_when</span>(Age<span class="sc">&lt;=</span><span class="dv">25</span> <span class="sc">~</span> <span class="st">'Young'</span>,</span>
+<span id="cb1-9"><a href=""></a>                             Age<span class="sc">&lt;=</span><span class="dv">30</span> <span class="sc">&amp;</span> Age <span class="sc">&gt;</span><span class="dv">25</span> <span class="sc">~</span> <span class="st">'Middle'</span>,</span>
+<span id="cb1-10"><a href=""></a>                             Age <span class="sc">&gt;</span><span class="dv">30</span> <span class="sc">~</span> <span class="st">'Old'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="bivariate-relationship" class="title-slide slide level1 center">
+<h1>Bivariate relationship</h1>
+<p>Bivariate relationship refers to the relationship between TWO variables:</p>
+<ul>
+<li><p>What graph/tool/statistics to use largely depends on the <em>types</em> of the two variables.</p></li>
+<li><p>Description of the relationship is often open-ended and varies based on the context of the data.</p></li>
+<li><p>Always remember that <strong>Correlation does not imply causation</strong>!</p></li>
+</ul>
+<p><span style="color: green;">Self-learning task</span>: use an AI agent, type in the following prompt: <em>Provide five examples of “correlation does not imply causation”; some examples should include numeric variables and some should include categorical variables.</em></p>
+</section>
+
+<section>
+<section id="numeric-numeric" class="title-slide slide level1 center">
+<h1>Numeric + Numeric</h1>
 
 </section>
+<section id="correlation-coefficient" class="slide level2">
+<h2>Correlation coefficient</h2>
+<p>Example question: is there a relationship between <strong>FGPct</strong> and <strong>FG3Pct</strong> for players in the dataset?</p>
+<ul>
+<li>Use (Pearson) correlation coefficient for two numeric (scale) variables</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>We get an NA as there are NA values for both of the variables; to remedy:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">cor</span>(NBAPlayers2024<span class="sc">$</span>FGPct,NBAPlayers2024<span class="sc">$</span>FG3Pct,<span class="at">use=</span><span class="st">"pairwise.complete.obs"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.4493933</code></pre>
+</div>
+</div>
+<ul>
+<li><p><span style="color: green;">Self-learning task</span>: Run <strong>?cor()</strong> to bring up the help page; you can see that it is easy to specify what to do with NA values and the type of correlation coefficient to calculate with the <strong>cor()</strong> function</p></li>
+<li><p>A correlation coefficient close to 0 signals weak to no <em>linear</em> relationship between the two variables; a correlation coefficient close to 1 or -1 signals strong <em>linear</em> relationship</p></li>
+</ul>
+<p><strong>Interpretation for a positive correlation (</strong><span class="math inline">\(&gt;&gt; 0.1\)</span>)</p>
+<p><span style="color: green;">Self-learning task</span>: Find a variable positively correlated with <strong>FGPct</strong> and write an interpretation.</p>
+<details>
+<summary>
+Click to see an example solution
+</summary>
+<p>Players with a higher field goal percentage tend to have a higher numbers of rebound, on average</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5886253</code></pre>
+</div>
+</div>
+</details>
+<p><strong>Interpretation for a negative correlation (</strong><span class="math inline">\(&lt;&lt; -0.1\)</span>):</p>
+<p><span style="color: green;">Self-learning task</span>: Write an interpretation for the correlation between <strong>FGPct</strong> and <strong>FG3Pct</strong> we found above.</p>
+<details>
+<summary>
+Click to see an example solution
+</summary>
+<p>Players with a higher field goal percentage tend to have a lower three-point field goal percentage, on average.</p>
+</details>
+<ul>
+<li><strong>Avoid causal language</strong>: you should not write “The higher the field goal percentage, the lower the three-point field goal percentage”; or “As the field goal percentage increases, the three-point field goal percentage decreases” as this kind of language implies a causal relationship.</li>
+</ul>
+</section>
+<section id="inferential-statistics" class="slide level2">
+<h2>Inferential statistics</h2>
+<p>We have been working with many different data and can describe the data in many ways (summary statistics, visualizations, correlations, etc.). However, <strong>data does NOT equal to the truth!</strong></p>
+<ul>
+<li><p>In any survey data (like the Changing Childhood Project): respondents are only a random sample of the population. If we see that, for instance, 23% of respondents from the United States are optimistic, it does not mean that exactly 23% of the entire U.S. population are optimistic.</p></li>
+<li><p>In the NBA example: a player’s <em>true</em> ability (of shooting field goals, for instance) is a latent variable that cannot be directly measured. For instance, if in the 2024 NBA season, player 1 has a higher field goal percentage than player 2, it doesn’t necessarily mean that player 1 is better than player 2; maybe he is just lucky (i.e., his success is “due to random chance”).</p></li>
+<li><p>Another way to think about this: most of the time, <em>data is not reproducible</em>: if I conduct the same survey again with different respondents, I will get different answers and different statistics; if NBA player 1 is better than player 2 in 2024, it is not a guarantee that he will also be better in 2025.</p></li>
+</ul>
+</section>
+<section id="p-value-and-statistical-significance" class="slide level2">
+<h2>p-value and statistical significance</h2>
+<ul>
+<li><p><strong>Descriptive statistics</strong>, also referred to as Exploratary Data Analysis (EDA), is about describing the <em>data</em></p></li>
+<li><p><strong>Inferential statistics</strong> is about generalizing the conclusion to the <em>entire population</em> and/or the <em>truth</em></p></li>
+<li><p>Typically, a “hypothesis test” is conducted and a <strong>p-value</strong> is obtained</p>
+<ul>
+<li><p>If p-value is large (&gt;0.05): the conclusion is <em>not</em> significant and due to random chance</p></li>
+<li><p>If p-value is small (&lt;0.05): the conclusion is statistically significant</p></li>
+</ul></li>
+<li><p>What is the conclusion in this case?</p>
+<details>
+<summary>
+<p>Click to see answer</p>
+</summary>
+<p>Players with a higher field goal percentage tend to have a lower three-point field goal percentage, on average. The correlation is statistically significant and not likely due to random chance (p-value <span class="math inline">\(&lt; 0.001\)</span>).</p>
+</details></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  NBAPlayers2024$FG3Pct and NBAPlayers2024$FGPct
+t = -7.6292, df = 230, p-value = 6.224e-13
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.5465566 -0.3402912
+sample estimates:
+       cor 
+-0.4493933 </code></pre>
+</div>
+</div>
+</section>
+<section id="scatterplot" class="slide level2">
+<h2>Scatterplot</h2>
+<p>Recall, a scatterplot is a <strong>bivariate</strong> graph that visualizes the relationship between two numeric/scale variables.</p>
+<p><span style="color: green;">Self-learning task</span>: Generate the following graph with both base R function and ggplot.</p>
+
+<img data-src="lecture_9_slide_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:70.0%" class="r-stretch"><details>
+<summary>
+Click to see solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># base R</span></span>
+<span id="cb7-2"><a href=""></a><span class="fu">plot</span>(<span class="at">x=</span>NBAPlayers2024<span class="sc">$</span>FGPct,</span>
+<span id="cb7-3"><a href=""></a>     <span class="at">y=</span>NBAPlayers2024<span class="sc">$</span>FG3Pct,</span>
+<span id="cb7-4"><a href=""></a>     <span class="at">xlab=</span><span class="st">'FG percent'</span>,</span>
+<span id="cb7-5"><a href=""></a>     <span class="at">ylab=</span><span class="st">'3-point FG percent'</span>,</span>
+<span id="cb7-6"><a href=""></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb7-7"><a href=""></a>     <span class="at">col=</span><span class="st">'salmon'</span>)</span>
+<span id="cb7-8"><a href=""></a><span class="fu">grid</span>()</span>
+<span id="cb7-9"><a href=""></a></span>
+<span id="cb7-10"><a href=""></a><span class="co"># ggplot</span></span>
+<span id="cb7-11"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>FGPct, <span class="at">y=</span>FG3Pct)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'FG percent'</span>,<span class="at">y=</span><span class="st">'3-point FG percent'</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">'salmon'</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section></section>
+<section>
+<section id="numeric-categorical" class="title-slide slide level1 center">
+<h1>Numeric + Categorical</h1>
+
+</section>
+<section id="summary-by-group" class="slide level2">
+<h2>Summary by group</h2>
+<p>Example question: Is there a relationship between <strong>FGPct</strong> and the position of the player (<strong>Pos</strong>)?</p>
+<ul>
+<li>In this case, we are comparing <strong>FGPct</strong> of players in different positions. The variable <strong>Pos</strong> is the grouping variable (i.e., “factor”). We already know how to do this!</li>
+</ul>
+<p><span style="color: green;">Self-learning task</span>: Use R to obtain the following information and generate the graph.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pos</th>
+<th style="text-align: right;">mean(FGPct)</th>
+<th style="text-align: right;">median(FGPct)</th>
+<th style="text-align: right;">min(FGPct)</th>
+<th style="text-align: right;">max(FGPct)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0.5664444</td>
+<td style="text-align: right;">0.5575</td>
+<td style="text-align: right;">0.432</td>
+<td style="text-align: right;">0.747</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PF</td>
+<td style="text-align: right;">0.4862115</td>
+<td style="text-align: right;">0.4710</td>
+<td style="text-align: right;">0.389</td>
+<td style="text-align: right;">0.725</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PG</td>
+<td style="text-align: right;">0.4511628</td>
+<td style="text-align: right;">0.4490</td>
+<td style="text-align: right;">0.385</td>
+<td style="text-align: right;">0.535</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SF</td>
+<td style="text-align: right;">0.4553962</td>
+<td style="text-align: right;">0.4540</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">0.536</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SG</td>
+<td style="text-align: right;">0.4527736</td>
+<td style="text-align: right;">0.4480</td>
+<td style="text-align: right;">0.372</td>
+<td style="text-align: right;">0.515</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<img data-src="lecture_9_slide_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><details>
+<summary>
+Click to see solution
+</summary>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>NBAPlayers2024 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href=""></a>  <span class="fu">group_by</span>(Pos) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(FGPct),<span class="fu">median</span>(FGPct),<span class="fu">min</span>(FGPct),<span class="fu">max</span>(FGPct))</span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a><span class="fu">boxplot</span>(NBAPlayers2024<span class="sc">$</span>FGPct <span class="sc">~</span> NBAPlayers2024<span class="sc">$</span>Pos,</span>
+<span id="cb8-6"><a href=""></a>        <span class="at">border=</span><span class="st">'darkblue'</span>,</span>
+<span id="cb8-7"><a href=""></a>        <span class="at">col=</span><span class="st">'salmon'</span>,</span>
+<span id="cb8-8"><a href=""></a>        <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb8-9"><a href=""></a>        <span class="at">xlab=</span><span class="cn">NA</span>,</span>
+<span id="cb8-10"><a href=""></a>        <span class="at">ylab=</span><span class="cn">NA</span>, </span>
+<span id="cb8-11"><a href=""></a>        <span class="at">main=</span><span class="st">'FG percent by position'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+</section>
+<section id="statistical-significance" class="slide level2">
+<h2>Statistical significance</h2>
+<p>We see that <strong>FGPct</strong> differ by position for NBA players in the 2024 season. For instance, Centers have a much higher field goal percentage, on average. But is this difference due to random chance? In other words, does <strong>FGPct</strong> differ significantly by position, on average? This can be answered using a model called “ANOVA.” You don’t need to know the details of this model, but you should be able to interpret a given p-value. In this case, p-value is essentially 0 (<span class="math inline">\(2\times10^{-16}\)</span>), so we can conclude that <strong>FGPct</strong> DOES differ significantly by position.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                    Df Sum Sq Mean Sq F value Pr(&gt;F)    
+NBAPlayers2024$Pos   4 0.3769 0.09422   42.21 &lt;2e-16 ***
+Residuals          232 0.5178 0.00223                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p><span style="color: green;">Self-learning task</span>: Does the average <strong>FGPct</strong> differ significantly between point guards and power forwards? The following R code conducts an “independent samples t-test.” Report the p-value and write a conclusion.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">t.test</span>(NBAPlayers2024<span class="sc">$</span>FGPct[NBAPlayers2024<span class="sc">$</span>Pos<span class="sc">==</span><span class="st">'PG'</span>],</span>
+<span id="cb10-2"><a href=""></a>       NBAPlayers2024<span class="sc">$</span>FGPct[NBAPlayers2024<span class="sc">$</span>Pos<span class="sc">==</span><span class="st">'PF'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  NBAPlayers2024$FGPct[NBAPlayers2024$Pos == "PG"] and NBAPlayers2024$FGPct[NBAPlayers2024$Pos == "PF"]
+t = -3.7172, df = 81.391, p-value = 0.0003685
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.05380784 -0.01628966
+sample estimates:
+mean of x mean of y 
+0.4511628 0.4862115 </code></pre>
+</div>
+</div>
+<details>
+<summary>
+Click to see solution
+</summary>
+<p>The average <strong>FGPct</strong> DOES differ significantly between point guards and power forwards (p-value <span class="math inline">\(= 0.0003685\)</span>)</p>
+</details>
+</section></section>
+<section>
+<section id="categorical-categorical" class="title-slide slide level1 center">
+<h1>Categorical + categorical</h1>
+
+</section>
+<section id="contingency-table" class="slide level2">
+<h2>Contingency table</h2>
+<ul>
+<li>Is there a relationship between <strong>age_cat</strong> and position?</li>
+<li>A contingency table shows the <strong>count</strong> breakdown between these two categorical variables</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    
+     Middle Old Young
+  C      13   7    16
+  PF     18  10    24
+  PG     11  12    20
+  SF     20   8    25
+  SG     18   4    31</code></pre>
+</div>
+</div>
+<ul>
+<li>Counts are typically not as useful as percentages. There are different ways to calculate percentages based on the denominator.</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    
+     Middle   Old Young
+  C   0.055 0.030 0.068
+  PF  0.076 0.042 0.101
+  PG  0.046 0.051 0.084
+  SF  0.084 0.034 0.105
+  SG  0.076 0.017 0.131</code></pre>
+</div>
+</div>
+<p>This table shows that, out of all players, 5.5% are Centers and “young”. This table is not that useful to determine the relationship between position and age.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    
+     Middle   Old Young
+  C   0.361 0.194 0.444
+  PF  0.346 0.192 0.462
+  PG  0.256 0.279 0.465
+  SF  0.377 0.151 0.472
+  SG  0.340 0.075 0.585</code></pre>
+</div>
+</div>
+<p>Here, we can say that there may be a relationship. For instance, among small forwards, 55.6% are “young,” whereas among shooting guards, 35.3% are “young.” Statistical significance can be determined using a “Fisher’s exact test” or a “chi-square test.”</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  mytable
+X-squared = 8.5431, df = 8, p-value = 0.3823</code></pre>
+</div>
+</div>
+<p>Since the p-value is 0.3823, there is NO significant relationship between position and age categories.</p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

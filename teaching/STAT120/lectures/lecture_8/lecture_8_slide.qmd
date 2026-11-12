@@ -1,5 +1,6 @@
 ---
-title: "Lecture 8"
+title: "Lecture 8: writing functions"
+subtitle: "Data: stock price"
 engine: knitr
 filters:
   - ../../../../_extensions/coatless/webr/webr.lua
@@ -18,3 +19,352 @@ format:
 editor_options:
   chunk_output_type: inline
 ---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align='center',
+                      fig.height=3,
+                      fig.width=3,
+                      out.width="50%",
+                      echo=T,
+                      eval=T,
+                      warning=F,
+                      message=F)
+```
+
+## Prep work
+
+```{r,eval=T,echo=T}
+library(tidyverse)
+library(quantmod)
+xts.stock <- getSymbols("AAPL", 
+                        from = "2026-01-01", 
+                        to = "2026-06-01",
+                        auto.assign = F)
+
+# list of companies (print out ALL.STOCK to see)
+ALL.STOCK <- stockSymbols()
+
+# try these functions to understand the returned R object
+#class(xts.stock)
+#plot(xts.stock$AAPL.Open)
+#index(xts.stock)
+#coredata(xts.stock)
+
+# convert to data frame
+df.stock <- data.frame(Date = index(xts.stock), coredata(xts.stock))
+
+# change the name to get rid of "AAPL"
+names(df.stock) <- sub(".*?\\.", "", names(df.stock))
+head(df.stock)
+```
+
+## Introduction
+
+We have been using a lot of R functions. They all have the same format: **function_name (argument1, argument2, ...)**
+
+```{r}
+vec1 <- c(1:5)
+mean(vec1)
+```
+
+- **Name**: mean
+- **Input**: a numeric vector
+- **Output**: the average of all the numbers in the vector
+
+## Example 1
+
+Write a function that calculates the difference of the *first* element in two given vectors.
+
+- Name: **f.diff**
+- Input: two vectors (**a** and **b**)
+- Output: a numeric value (**result**)
+
+```{r}
+f.diff <- function(a,b){
+  result <- a[1] - b[1]
+  return(result)
+}
+```
+
+- you don't need to declare the inputs (**a** and **b**)
+- you DO need to declare the output (**result**)
+
+Try (recall, you can use tab to display arguments of the function):
+
+```{r, eval=T}
+f.diff(2, 3)
+f.diff(c(1:5),c(5,10))
+f.diff(a=c(1:5),b=c(5,10)) # full version
+```
+
+## General structure of a function
+
+1.  Function name: avoid using names that will override existing functions (e.g.: don't write a function and name it something like **plot** or **mean**).
+2.  Input(s): you can have more than one inputs
+3.  Output: you can return **only one** R object; *you can also return nothing*
+
+```{r, eval=F}
+function_name <- function(input1, input2, ...){
+  
+  CODE TO CREATE "result"
+    ASSUMING THAT "input1", "input2",... EXIST
+  
+  return(result)
+}
+```
+
+## Calling function
+
+- The objects **a** and **b** only live in the local environment (i.e., they only exist inside the function). Try print the value of **a**: R will say it is not found. When you **call the function**, you assign new values to **a** and **b**, which will then be passed into the function.
+
+- If you do not specify the argument names, the *order* of the arguments matter:
+
+```{r, eval=T}
+a=2; b=1
+f.diff(a,b) 
+f.diff(a,a) 
+f.diff(b,a)
+```
+
+- If you specify the argument names, the order of the arguments does NOT matter:
+
+```{r, eval=T}
+f.diff(b=5,a=3)
+f.diff(b=b,a=a)
+f.diff(b=a,a=b)
+```
+
+## Example 2
+
+Exercise: write a function that calculates the total length of 3 vectors. It should run like this:
+
+```{r,echo=F}
+f.length <- function(a,b,c){
+  result <- sum(length(a),length(b),length(c))
+  return(result)
+}
+```
+
+```{r}
+vec1 <- runif(50) #randomly generate 50 numbers between 0 & 1
+vec2 <- 20
+vec3 <- c(1:4)
+
+f.length(vec2,vec2,vec3)
+f.length(vec1,vec2,vec3)
+```
+
+<details>
+
+<summary>Solution</summary>
+
+```{r,echo=T}
+f.length <- function(a,b,c){
+  result <- sum(length(a),length(b),length(c))
+  return(result)
+}
+```
+
+</details>
+
+In addition, you can include things like **plot()**, **print()**, **cat()** as part of the function; you can also add a **DEFAULT** value to any input.
+
+<details>
+
+<summary>Show code</summary>
+
+```{r,echo=T}
+f.length <- function(a,b,c,print=T){
+  result <- sum(length(a),length(b),length(c))
+  
+  if(print){
+  cat("Lengths:", length(a),length(b),length(c))
+  }
+  return(result)
+}
+```
+
+</details>
+
+You can now use this function:
+
+```{r}
+tot <- f.length(vec1,vec2,vec3); tot
+tot <- f.length(vec1,vec2,vec3,print=F); tot
+```
+
+- Total length (55 in this case) is stored in **tot** for later use
+- The argument **print** controls whether or not you want to print the information when running the function (default to TRUE)
+
+## Default values
+
+For any R function, when an argument is not specified:
+
+- if there is a default, then the default is used
+- if there is no default, then an error message occurs
+
+```{r,eval=F}
+?cor
+# you can see arguments with and without default values
+cor(df.stock$Open, df.stock$Close)
+cor(df.stock$Open) # not run
+cor(y=df.stock$Open) # not run
+```
+
+## Return multiple things in a list
+
+Recall, **you can only return one R object**. If you want to return multiple things, you need to put them together in one **list**. For example, **mymodel** stores the list returned by the function **lm** (try **mymodel\$**).
+
+```{r}
+mymodel <- lm(df.stock$Close ~ df.stock$Open)
+```
+
+## Example 3
+
+1.  Write a function that will get the specified stock price information and returns a data frame, as well as name of the stock (recall, this information is stored in **ALL.STOCK**). It should work like this:
+
+```{r,eval=T,echo=F}
+f.stock <- function(name, from="2026-01-01", to=Sys.Date()){
+  #name='NVS'
+  xts.stock <- getSymbols(name, from = from, to = to, auto.assign = F) 
+  df.stock <- data.frame(Date = index(xts.stock), coredata(xts.stock))
+  names(df.stock) <- sub(".*?\\.", "", names(df.stock))
+  
+  company <- ALL.STOCK %>%
+    filter(Symbol == name) %>%
+    pull(Name)
+  
+  result <- list(data=df.stock,company=company)
+  return(result)
+}
+```
+
+```{r,eval=T,echo=T}
+stock <- f.stock('GME',from="2020-12-01",to="2021-05-01")
+stock$company
+stock$data
+
+# "from" and "to" has default values, so they don't have to be specified
+stock <- f.stock('AAPL')
+stock$company
+stock$data
+```
+
+<details>
+
+<summary>Solution</summary>
+
+```{r,eval=T,echo=T}
+f.stock <- function(name, from="2026-01-01", to=Sys.Date()){
+  #name='NVS'
+  xts.stock <- getSymbols(name, from = from, to = to, auto.assign = F) 
+  df.stock <- data.frame(Date = index(xts.stock), coredata(xts.stock))
+  names(df.stock) <- sub(".*?\\.", "", names(df.stock))
+  
+  company <- ALL.STOCK %>%
+    filter(Symbol == name) %>%
+    pull(Name)
+  
+  result <- list(data=df.stock,company=company)
+  return(result)
+}
+```
+
+Note 1: you can set some input values \alert{for testing purpose only} (in my function, I wrote **name='NVS'**); comment those out right away in case you forget to do so later!
+
+Note 2: what does **Sys.Date()** return? Run it to find out.
+
+</details>
+
+2.  Add an **IF** condition in the **f.stock** function to check if the input of company name is valid.
+
+```{r,echo=F, eval=T}
+f.stock <- function(name, from="2026-01-01", to=Sys.Date()){
+  #name='a'
+  company = ALL.STOCK %>%
+  filter(Symbol == name) %>%
+  pull(Name)
+  
+  if(length(company)==0){
+    print('Invalid Name Input')
+  }else{
+     xts.stock <- getSymbols(name, from = from, to = to, auto.assign = F) 
+  df.stock <- data.frame(Date = index(xts.stock), coredata(xts.stock))
+  names(df.stock) <- sub(".*?\\.", "", names(df.stock))
+
+  result <- list(data=df.stock,company=company)
+    return(result)
+  }
+}
+```
+
+```{r,echo=T,eval=T}
+stock <- f.stock('abc')
+stock <- f.stock(1)
+stock <- f.stock('NVS')
+```
+
+<details>
+
+<summary>Solution</summary>
+
+```{r,eval=T,echo=T}
+f.stock <- function(name, from="2026-01-01", to=Sys.Date()){
+  #name='a'
+  company = ALL.STOCK %>%
+  filter(Symbol == name) %>%
+  pull(Name)
+  
+  if(length(company)==0){
+    print('Invalid Name Input')
+  }else{
+     xts.stock <- getSymbols(name, from = from, to = to, auto.assign = F) 
+  df.stock <- data.frame(Date = index(xts.stock), coredata(xts.stock))
+  names(df.stock) <- sub(".*?\\.", "", names(df.stock))
+
+  result <- list(data=df.stock,company=company)
+    return(result)
+  }
+}
+```
+
+</details>
+
+## Example 4: return nothing
+
+Write a function that will generate the following ggplot:
+
+```{r,echo=F,eval=T}
+f.plot <- function(df, title){
+    df %>% 
+    pivot_longer(names_to ='Type',values_to = 'Price', c(Open, Close)) %>%
+    ggplot(aes(x=Date, y=Price, color=Type)) +
+    geom_line() +
+    ggtitle(title) +
+    theme_minimal()
+}
+```
+
+```{r,fig.height=4,fig.width=6, out.width='80%'}
+stock <- f.stock('GME',from="2020-12-01",to="2021-05-01")
+f.plot(df=stock$data,title=stock$company)
+```
+
+<details>
+
+<summary>Solution</summary>
+
+```{r,eval=T,echo=T}
+f.plot <- function(df, title){
+    df %>% 
+    pivot_longer(names_to ='Type',values_to = 'Price', c(Open, Close)) %>%
+    ggplot(aes(x=Date, y=Price, color=Type)) +
+    geom_line() +
+    ggtitle(title) +
+    theme_minimal()
+}
+```
+
+
+</details>
