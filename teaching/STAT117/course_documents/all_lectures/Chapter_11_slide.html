@@ -224,7 +224,7 @@ Show solution
 </summary>
 <p>The 90% confidence interval is (111, 117) minutes, and the 99% confidence interval is (109, 119) minutes. The 99% interval is wider than the 90% interval. Note that the sample mean, 114 minutes, is at the center of both intervals.</p>
 </details>
-<p>Conmpare: am I very certain, or somewhat certain?</p>
+<p>Compare: am I very certain, or somewhat certain?</p>
 <ul>
 <li>… that movies are between 5 minutes and 6 hours long, on average.</li>
 <li>… that movies are between 115 and 120 minutes long, on average.</li>
@@ -344,23 +344,9 @@ Show solution
 <summary>
 (Optional) Show more
 </summary>
-<p>Yes, it matters, but <strong>how much it matters depends entirely on your sample size and the severity of the non-normality.</strong></p>
-<p>Here is how to interpret a significant Shapiro-Wilk result (which suggests your data is not normal) based on your situation:</p>
-<p><strong>1. If you have a small sample size (<span class="math inline">\(n &lt; 30\)</span>)</strong></p>
-<p>It matters a lot. For small samples, the t-test relies heavily on the assumption that the underlying population data is normally distributed. If the Shapiro-Wilk test suggests a departure from normality, the results of a standard one-sample t-test may be unreliable (it could give you a false positive or false negative).</p>
-<ul>
-<li><strong>What to do:</strong> You should strongly consider using a non-parametric alternative, such as the <strong>Wilcoxon signed-rank test</strong>, or use bootstrapping methods.</li>
-</ul>
-<p><strong>2. If you have a large sample size (<span class="math inline">\(n \ge 30\)</span>)</strong></p>
-<p>It rarely matters. Thanks to the Central Limit Theorem, the t-test is highly robust to non-normal data as long as the sample size is large enough. The t-test actually assumes that the <em>sampling distribution of the mean</em> is normal, which happens naturally as your sample size grows, regardless of the shape of the underlying data.</p>
-<ul>
-<li><strong>The Shapiro-Wilk trap:</strong> In large samples, the Shapiro-Wilk test becomes hypersensitive. It will flag even trivial, harmless deviations from perfect normality as “statistically significant.”</li>
-<li><strong>What to do:</strong> You can generally proceed with the one-sample t-test without worry.</li>
-</ul>
-<p><strong>The Exception: Extreme Outliers</strong></p>
-<p>Regardless of your sample size, you should check your data for extreme outliers. Because a t-test compares means, a massive outlier will drag the mean in its direction and inflate the variance, distorting your results even if your sample size is large.</p>
-<p><strong>The Bottom Line</strong></p>
-<p>Never rely on the Shapiro-Wilk p-value in isolation. Always look at a <strong>Q-Q plot</strong> or a <strong>histogram</strong> of your data. If the data is relatively bell-shaped or only mildly skewed, the t-test will work fine. If it is heavily skewed or has severe outliers, and your sample is small, switch to a Wilcoxon signed-rank test.</p>
+<p>Jamovi can perform a Shapiro-Wilk test for normality. As noted, a significant result (p &lt; 0.05) suggests the data is not normally distributed (e.g., movie lengths are expected to be right-skewed, maybe bimodal; things like family size, or income, are also often right-skewed).</p>
+<p><strong>If you have a large sample size (<span class="math inline">\(n \ge 30\)</span>):</strong>. Thanks to the Central Limit Theorem, the t-test is highly robust to non-normal data as long as the sample size is large enough. One thing to note, however, is that t-test can be affected by extreme outliers and extreme heavy tails, even in large samples.</p>
+<p><strong>If you have a small sample size (<span class="math inline">\(n &lt; 30\)</span>):</strong> For small samples, the t-test relies heavily on the assumption that the underlying population data is normally distributed. If the Shapiro-Wilk test suggests a departure from normality, the results of a standard one-sample t-test may be unreliable. You should consider alternative tests that do not rely on normality (often called “non-parametric” methods).</p>
 </details>
 </section>
 <section id="example-1-nels-expected-income-at-age-30-expinc30" class="slide level2 scrollable">
@@ -434,7 +420,7 @@ Show solution
 <li>Let <span class="math inline">\(\mu\)</span> be the average SES score of American students. <span class="math inline">\(H_0: \mu = 18\)</span> and <span class="math inline">\(H_a: \mu \ne 18\)</span>.</li>
 <li>The sample size is large (<span class="math inline">\(N = 500\)</span>), so normality is not an issue.</li>
 <li><span class="math inline">\(p = 0.162\)</span>.</li>
-<li>Since <span class="math inline">\(p &gt; 0.05\)</span>, <span style="color: red;">fail to reject <span class="math inline">\(H_0\)</span></span>. The average SES score of American students is NOT significantly differerent from 18.</li>
+<li>Since <span class="math inline">\(p &gt; 0.05\)</span>, <span style="color: red;">fail to reject <span class="math inline">\(H_0\)</span></span>. The average SES score of American students is NOT significantly different from 18.</li>
 <li><span class="math inline">\((17.826, 19.04)\)</span>. Since it contains 18, we would “accept” a value of 18 (i.e., same conclusion as in d).</li>
 <li>No need to do effect size as the test is not significant. (Intuition: we concluded that the average SES is NOT different from 18, so it makes no sense to ask “how much” of a difference there is.)</li>
 </ol>

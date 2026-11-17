@@ -81,7 +81,7 @@ The 90% confidence interval is (111, 117) minutes, and the 99% confidence interv
 
 </details>
 
-Conmpare:  am I very certain, or somewhat certain? 
+Compare:  am I very certain, or somewhat certain? 
 
 - ... that movies are between 5 minutes and 6 hours long, on average.
 - ... that movies are between 115 and 120 minutes long, on average.
@@ -208,30 +208,11 @@ Do not say "the population is normally distributed" or "normality is checked"!  
 <details>
 <summary>(Optional) Show more</summary>
 
-Yes, it matters, but **how much it matters depends entirely on your sample size and the severity of the non-normality.**
+Jamovi can perform a Shapiro-Wilk test for normality. As noted, a significant result (p < 0.05) suggests the data is not normally distributed (e.g., movie lengths are expected to be right-skewed, maybe bimodal; things like family size, or income, are also often right-skewed).
 
-Here is how to interpret a significant Shapiro-Wilk result (which suggests your data is not normal) based on your situation:
+**If you have a large sample size ($n \ge 30$):**. Thanks to the Central Limit Theorem, the t-test is highly robust to non-normal data as long as the sample size is large enough. One thing to note, however, is that t-test can be affected by extreme outliers and extreme heavy tails, even in large samples.
 
-**1. If you have a small sample size ($n < 30$)**
-
-It matters a lot. For small samples, the t-test relies heavily on the assumption that the underlying population data is normally distributed. If the Shapiro-Wilk test suggests a departure from normality, the results of a standard one-sample t-test may be unreliable (it could give you a false positive or false negative).
-
-- **What to do:** You should strongly consider using a non-parametric alternative, such as the **Wilcoxon signed-rank test**, or use bootstrapping methods.
-
-**2. If you have a large sample size ($n \ge 30$)**
-
-It rarely matters. Thanks to the Central Limit Theorem, the t-test is highly robust to non-normal data as long as the sample size is large enough. The t-test actually assumes that the *sampling distribution of the mean* is normal, which happens naturally as your sample size grows, regardless of the shape of the underlying data.
-
-- **The Shapiro-Wilk trap:** In large samples, the Shapiro-Wilk test becomes hypersensitive. It will flag even trivial, harmless deviations from perfect normality as "statistically significant."
-- **What to do:** You can generally proceed with the one-sample t-test without worry.
-
-**The Exception: Extreme Outliers**
-
-Regardless of your sample size, you should check your data for extreme outliers. Because a t-test compares means, a massive outlier will drag the mean in its direction and inflate the variance, distorting your results even if your sample size is large.
-
-**The Bottom Line**
-
-Never rely on the Shapiro-Wilk p-value in isolation. Always look at a **Q-Q plot** or a **histogram** of your data. If the data is relatively bell-shaped or only mildly skewed, the t-test will work fine. If it is heavily skewed or has severe outliers, and your sample is small, switch to a Wilcoxon signed-rank test.
+**If you have a small sample size ($n < 30$):** For small samples, the t-test relies heavily on the assumption that the underlying population data is normally distributed. If the Shapiro-Wilk test suggests a departure from normality, the results of a standard one-sample t-test may be unreliable.  You should consider alternative tests that do not rely on normality (often called "non-parametric" methods).
 
 </details>
 
@@ -311,7 +292,7 @@ f. Report and interpret the effect size, or explain why it is inappropriate.
 a. Let $\mu$ be the average SES score of American students.  $H_0: \mu = 18$ and $H_a: \mu \ne 18$.
 b. The sample size is large ($N = 500$), so normality is not an issue.
 c. $p = 0.162$.
-d. Since $p > 0.05$, <span style="color: red;">fail to reject $H_0$</span>.  The average SES score of American students is NOT significantly differerent from 18.
+d. Since $p > 0.05$, <span style="color: red;">fail to reject $H_0$</span>.  The average SES score of American students is NOT significantly different from 18.
 e. $(17.826, 19.04)$. Since it contains 18, we would "accept" a value of 18 (i.e., same conclusion as in d).
 f. No need to do effect size as the test is not significant. (Intuition: we concluded that the average SES is NOT different from 18, so it makes no sense to ask "how much" of a difference there is.)
 </details>
