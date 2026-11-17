@@ -206,7 +206,12 @@
     "href": "teaching/STAT120/lectures/lecture_9/lecture_9.html",
     "title": "Yi Lu",
     "section": "",
-    "text": "Link to fullscreen"
+    "text": "Link to fullscreen",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Lecture 9"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture_7/lecture_7.html",
@@ -673,7 +678,7 @@
     "href": "teaching/STAT117/weeks/week_13/week_13.html",
     "title": "Week 13",
     "section": "",
-    "text": "Nov 24 (Tuesday):\nNov 26 (Thursday): no class — Thanksgiving 🦃🍂",
+    "text": "Nov 24 (Tuesday): asynchronous lecture\nNov 26 (Thursday): no class — Thanksgiving 🦃🍂",
     "crumbs": [
       "Research",
       "Weeks",
@@ -685,7 +690,7 @@
     "href": "teaching/STAT117/weeks/week_13/week_13.html#overview",
     "title": "Week 13",
     "section": "",
-    "text": "Nov 24 (Tuesday):\nNov 26 (Thursday): no class — Thanksgiving 🦃🍂",
+    "text": "Nov 24 (Tuesday): asynchronous lecture\nNov 26 (Thursday): no class — Thanksgiving 🦃🍂",
     "crumbs": [
       "Research",
       "Weeks",
@@ -693,23 +698,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_13/week_13.html#tuesday-nov-24",
-    "href": "teaching/STAT117/weeks/week_13/week_13.html#tuesday-nov-24",
+    "objectID": "teaching/STAT117/weeks/week_13/week_13.html#tuesday-nov-24-asynchronous",
+    "href": "teaching/STAT117/weeks/week_13/week_13.html#tuesday-nov-24-asynchronous",
     "title": "Week 13",
-    "section": "Tuesday, Nov 24",
-    "text": "Tuesday, Nov 24",
-    "crumbs": [
-      "Research",
-      "Weeks",
-      "Week 13"
-    ]
-  },
-  {
-    "objectID": "teaching/STAT117/weeks/week_13/week_13.html#thursday-nov-26",
-    "href": "teaching/STAT117/weeks/week_13/week_13.html#thursday-nov-26",
-    "title": "Week 13",
-    "section": "Thursday, Nov 26",
-    "text": "Thursday, Nov 26",
+    "section": "Tuesday, Nov 24 (asynchronous)",
+    "text": "Tuesday, Nov 24 (asynchronous)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -828,7 +821,7 @@
     "href": "teaching/STAT117/data/index.html",
     "title": "Dataset",
     "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nchild_care.sav\nSurvey on Where Parents Look for and Find Information and How They Use Information When Selecting Child Care, United States, 2024 (ICPSR 39220), conducted by United States Department of Health and Human Services, Administration for Children and Families, Office of Planning, Research, and Evaluation (OPRE). This dataset here has been edited to have fewer variables for easier handling in class exercises.\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nA smaller dataset (with selective variables) based on the Young People Survey. Participants include students of a Statistics class at Comenius University Bratislava (Slovakia), as well as their invited friends.\nUnited States Colleges.sav\nNJ Restaurants.sav",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nchild_care.sav\nSurvey on Where Parents Look for and Find Information and How They Use Information When Selecting Child Care, United States, 2024 (ICPSR 39220), conducted by United States Department of Health and Human Services, Administration for Children and Families, Office of Planning, Research, and Evaluation (OPRE). This dataset here has been edited to have fewer variables for easier handling in class exercises.\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nA smaller dataset (with selective variables) based on the Young People Survey. Participants include students of a Statistics class at Comenius University Bratislava (Slovakia), as well as their invited friends.\nUnited States Colleges.sav\nNJ Restaurants.sav",
     "crumbs": [
       "Research",
       "Datasets"
@@ -839,7 +832,7 @@
     "href": "teaching/STAT117/data/index.html#spss-data",
     "title": "Dataset",
     "section": "",
-    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies Fall 2019.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nchild_care.sav\nSurvey on Where Parents Look for and Find Information and How They Use Information When Selecting Child Care, United States, 2024 (ICPSR 39220), conducted by United States Department of Health and Human Services, Administration for Children and Families, Office of Planning, Research, and Evaluation (OPRE). This dataset here has been edited to have fewer variables for easier handling in class exercises.\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nA smaller dataset (with selective variables) based on the Young People Survey. Participants include students of a Statistics class at Comenius University Bratislava (Slovakia), as well as their invited friends.\nUnited States Colleges.sav\nNJ Restaurants.sav",
+    "text": "These data were collected by STAT117 students at Drew University.\n\nCombined Class Books.sav\nCombined Class Charities.sav\nCombined Class Movies.sav\nCombined Class NJ homes FA18.sav\nCombined Class NYC Apartments.sav\nCombined Class Recipes.sav\nCombined Class Shoes.sav\nCombined Class Song Data.sav\nCombined Class eBayToys.sav\n\n\n\n\nThese data are from Statistics Using IBM SPSS (3rd edition), by S. Weinberg and S. Abramowitz, Cambridge University Press ISBN 9781107461222. A description of these datasets can be found in the Appendix A data set descriptions.\n\nNELS.sav\nBlood.sav\nCurrency.sav\nFramingham.sav\nHamburg.sav\nIcecream.sav\nImpeach.sav\nLearndis.sav\nMarijuana.sav\nStates.sav\nTemp.sav\nWages.sav\nbasketball.sav\nmandex.sav\nstepping.sav\n\n\n\n\n\nchild_care.sav\nSurvey on Where Parents Look for and Find Information and How They Use Information When Selecting Child Care, United States, 2024 (ICPSR 39220), conducted by United States Department of Health and Human Services, Administration for Children and Families, Office of Planning, Research, and Evaluation (OPRE). This dataset here has been edited to have fewer variables for easier handling in class exercises.\nGSS_SP2026.sav\nThe General Social Survey is a large scale sociological survey conducted by NORC at the University of Chicago. This dataset here has been edited to have fewer variables and respondents for easier handling in class exercises.\nMusic.sav\nStudent Survey.sav\nYoung People Survey partial.sav\nA smaller dataset (with selective variables) based on the Young People Survey. Participants include students of a Statistics class at Comenius University Bratislava (Slovakia), as well as their invited friends.\nUnited States Colleges.sav\nNJ Restaurants.sav",
     "crumbs": [
       "Research",
       "Datasets"
@@ -2397,7 +2390,7 @@
     "href": "teaching/STAT117/weeks/week_12/week_12.html",
     "title": "Week 12",
     "section": "",
-    "text": "Nov 17 (Tuesday):\nNov 19 (Thursday): in-person lecture, quiz 8",
+    "text": "Nov 17 (Tuesday): asynchronous lecture\nNov 19 (Thursday): in-person lecture, quiz 8",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2409,7 +2402,7 @@
     "href": "teaching/STAT117/weeks/week_12/week_12.html#overview",
     "title": "Week 12",
     "section": "",
-    "text": "Nov 17 (Tuesday):\nNov 19 (Thursday): in-person lecture, quiz 8",
+    "text": "Nov 17 (Tuesday): asynchronous lecture\nNov 19 (Thursday): in-person lecture, quiz 8",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2417,11 +2410,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_12/week_12.html#tuesday-nov-17",
-    "href": "teaching/STAT117/weeks/week_12/week_12.html#tuesday-nov-17",
+    "objectID": "teaching/STAT117/weeks/week_12/week_12.html#tuesday-nov-17-asynchronous",
+    "href": "teaching/STAT117/weeks/week_12/week_12.html#tuesday-nov-17-asynchronous",
     "title": "Week 12",
-    "section": "Tuesday, Nov 17",
-    "text": "Tuesday, Nov 17",
+    "section": "Tuesday, Nov 17 (asynchronous)",
+    "text": "Tuesday, Nov 17 (asynchronous)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2429,11 +2422,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_12/week_12.html#thursday-nov-19",
-    "href": "teaching/STAT117/weeks/week_12/week_12.html#thursday-nov-19",
+    "objectID": "teaching/STAT117/weeks/week_12/week_12.html#thursday-nov-19-in-person",
+    "href": "teaching/STAT117/weeks/week_12/week_12.html#thursday-nov-19-in-person",
     "title": "Week 12",
-    "section": "Thursday, Nov 19",
-    "text": "Thursday, Nov 19",
+    "section": "Thursday, Nov 19 (in-person)",
+    "text": "Thursday, Nov 19 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2465,11 +2458,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_14/week_14.html#tuesday-dec-1",
-    "href": "teaching/STAT117/weeks/week_14/week_14.html#tuesday-dec-1",
+    "objectID": "teaching/STAT117/weeks/week_14/week_14.html#tuesday-dec-1-in-person",
+    "href": "teaching/STAT117/weeks/week_14/week_14.html#tuesday-dec-1-in-person",
     "title": "Week 14",
-    "section": "Tuesday, Dec 1",
-    "text": "Tuesday, Dec 1",
+    "section": "Tuesday, Dec 1 (in-person)",
+    "text": "Tuesday, Dec 1 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2477,11 +2470,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_14/week_14.html#thursday-dec-3",
-    "href": "teaching/STAT117/weeks/week_14/week_14.html#thursday-dec-3",
+    "objectID": "teaching/STAT117/weeks/week_14/week_14.html#thursday-dec-3-in-person",
+    "href": "teaching/STAT117/weeks/week_14/week_14.html#thursday-dec-3-in-person",
     "title": "Week 14",
-    "section": "Thursday, Dec 3",
-    "text": "Thursday, Dec 3",
+    "section": "Thursday, Dec 3 (in-person)",
+    "text": "Thursday, Dec 3 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -2859,7 +2852,7 @@
     "href": "teaching/STAT120/homework/index.html",
     "title": "Homework",
     "section": "",
-    "text": "Homework is not collected in this class - it is entirely for your own practice.\nIt is required in the sense that you cannot succeed in this class without sufficient practice. Materials from the homework may appear on quizzes and exams, even if they do not appear in the lecture.\nThe provided solution is usually not the only way to code the answer. Write your own code, talk to your peers, and use online resources, including AI, to explore other approaches.\n\nHomework 1\nHomework 2\nHomework 3\nHomework 4\nHomework 5\nHomework 6\nHomework 7\nHomework 8",
+    "text": "Homework is not collected in this class - it is entirely for your own practice.\nIt is required in the sense that you cannot succeed in this class without sufficient practice. Materials from the homework may appear on quizzes and exams, even if they do not appear in the lecture.\nThe provided solution is usually not the only way to code the answer. Write your own code, talk to your peers, and use online resources, including AI, to explore other approaches.\n\nHomework 1\nHomework 2\nHomework 3\nHomework 4\nHomework 5\nHomework 6\nHomework 7\nHomework 8\nHomework 9",
     "crumbs": [
       "Research",
       "Homework"
@@ -2917,7 +2910,12 @@
     "href": "teaching/STAT120/lectures/lecture_8/lecture_8.html",
     "title": "Yi Lu",
     "section": "",
-    "text": "Link to fullscreen"
+    "text": "Link to fullscreen",
+    "crumbs": [
+      "Research",
+      "Lectures",
+      "Lecture 8"
+    ]
   },
   {
     "objectID": "teaching/STAT120/lectures/lecture_notes/index.html",

@@ -23,4 +23,294 @@ editor_options:
 ---
 
 
-TO BE ADDED
+# Confidence intervals
+
+## Example: movie lengths
+
+Treat the `Combined Class Movies` dataset as a <span style="color: red;">**random sample**</span> of all movies. The variable `TOTALLENGTHMINS` is the length of each movie in minutes.
+
+Population:
+
+Population mean:
+
+Sample:
+
+Sample mean:
+
+Point estimate for the population mean:
+
+Interval estimate for the population mean:
+
+<details>
+<summary>Show Jamovi table</summary>
+
+| Statistic | `TOTALLENGTHMINS` |
+|:--|--:|
+| N | 100 |
+| Missing | 0 |
+| Mean | 114 |
+| 95% CI mean lower bound | 110 |
+| 95% CI mean upper bound | 118 |
+| Median | 115 |
+| Standard deviation | 19.2 |
+| Minimum | 80.0 |
+| Maximum | 169 |
+
+*Note.* This confidence interval assumes sample means follow a t-distribution with $N - 1$ degrees of freedom.
+
+</details>
+
+
+> **Jamovi procedure:** **Analyses > Exploration > Descriptives**. Select **Confidence intervals** under **Statistics > Mean Dispersion**. The confidence level can also be changed (default: 95%).
+
+## Interpretation of confidence intervals
+
+What does it mean to be “95% confident”?
+
+- A probability statement must involve something **random**. In this case, where does the randomness come from?
+- Imagine collecting another random sample of 100 movies and constructing a 95% confidence interval. Would it also be (110, 118) minutes?
+- **Interpretation:** If we took many random samples of 100 movies and constructed many 95% confidence intervals accordingly, approximately <span style="color: red;">95% of those intervals would contain the true population mean</span>.
+
+## Confidence level
+
+Construct 90% and 99% confidence intervals for the average length of all movies. Which interval is wider?
+
+<details>
+<summary>Show solution</summary>
+
+The 90% confidence interval is (111, 117) minutes, and the 99% confidence interval is (109, 119) minutes. The 99% interval is wider than the 90% interval. Note that the sample mean, 114 minutes, is at the center of both intervals.
+
+</details>
+
+Conmpare:  am I very certain, or somewhat certain? 
+
+- ... that movies are between 5 minutes and 6 hours long, on average.
+- ... that movies are between 115 and 120 minutes long, on average.
+
+<span style="color: blue;">If all else stays the same and the confidence level increases (for example, from 90% to 99%), will the interval:</span>
+
+a. <span style="color: blue;">Be wider</span>
+b. <span style="color: blue;">Be narrower</span>
+c. <span style="color: blue;">Stay the same</span>
+
+
+## Sample size
+
+- Dataset 1: $N = 100$ movies
+- Dataset 2: $N = 10{,}000$ movies
+
+Which sample would give a more **precise** confidence interval?
+
+<span style="color: blue;">If all else stays the same and the sample size increases (for example, from $N = 100$ to $N = 1{,}000$), will the interval:</span>
+
+a. <span style="color: blue;">Be wider</span>
+b. <span style="color: blue;">Be narrower</span>
+c. <span style="color: blue;">Stay the same</span>
+
+
+## Exercise (Combined Class Movies)
+
+1. Construct a 95% confidence interval for the average `TOMATOMETER` score of all movies.
+2. Construct a 99% confidence interval for the average `TOMATOMETER` score. Is it wider or narrower than the 95% interval?
+3. Construct a 95% confidence interval for the true correlation between `TOMATOMETER` and `AUDIENCEL` (audience score) among all movies. A correlation can be obtained under **Regression > Correlation Matrix**; confidence intervals are under **Additional Options**.
+4. Use a regression analysis to predict `AUDIENCEL` from `TOMATOMETER`. Construct a 95% confidence interval for the slope. Regression is under **Regression > Linear Regression**; confidence intervals are under **Model Coefficients > Estimates**.
+
+<details>
+<summary>Show solution</summary>
+
+**Solution:**
+
+1. The 95% confidence interval is (62.7, 74); the sample mean is 68.3.
+2. The 99% confidence interval is (60.8, 75.8). It is wider than the 95% interval, so it is less precise.
+3. The 95% confidence interval is (0.817, 0.913); the sample correlation is 0.873.
+4. The 95% confidence interval for the slope is (0.494, 0.618); the estimated slope is 0.556. For each one-point increase in `TOMATOMETER`, the predicted `AUDIENCEL` score increases by 0.556 points on average. The interval gives a plausible range for the population slope.
+
+**Note 1:** In these examples, each <span style="color: red;">**point estimate**</span> (the sample statistic) is at or near (allowing for rounding) the center of its confidence interval. The sample mean of 68.3 is at the center of (62.7, 74) and (60.8, 75.8). The sample correlation of 0.873 is near the center of (0.817, 0.913), and the estimated slope of 0.556 is at the center of (0.494, 0.618).
+
+**Note 2:** Confidence intervals can be constructed for a correlation coefficient, regression slope, or other parameter. In this class, we mainly focus on inferences about the <span style="color: red;">**mean**</span> (examples 1 and 2 above).
+
+</details>
+
+
+
+
+# One-sample t-test
+
+## Hypothesis
+
+We are making an inference about the **average** length of **all** movies. A researcher claims that the average length is 2 hours (120 minutes), and we want to test this claim.
+
+The parameter of interest is:
+
+Null hypothesis (denoted $H_0$): the average movie length is 120 minutes.
+<br>
+
+Alternative hypothesis (denoted $H_1$ or $H_a$):
+
+- The average movie length differs from 120 minutes: 
+- The average movie length is shorter than 120 minutes: 
+- The average movie length is longer than 120 minutes: 
+
+
+
+## P-value
+
+> **Jamovi procedure:** **Analyses > T-Tests > One Sample T-Test**. Move `TOTALLENGTHMINS` into **Dependent Variables**. Under **Hypothesis**, enter `120` as the test value and select the appropriate alternative. Also select **Effect size** and **Descriptives**. Jamovi can also provide a confidence interval for the effect size, but it is not required here.
+
+p-value is the probability, assuming the null hypothesis is true, of observing the results or results more extreme than those in the sample (more on this later).
+
+- <span style="color: red;">If the p-value is very small (for example, less than a cut off of $\alpha = 0.05$), the result is **statistically significant** and we **reject** the null hypothesis.</span>
+
+- If the p-value is above the cut off, the result is not statistically significant and we "fail to reject" the null hypothesis.
+
+Movie length example: for the one-sided alternative $\mu < 120$, the p-value is 0.002. Since $0.002 < 0.05$, we **reject the null hypothesis** and conclude that the average movie length is statistically significantly shorter than 120 minutes.
+
+> **Important:** Remember to change the **test value**!  Jamovi's default of 0 means you are testing whether the average movie length is 0 minutes, which would lead to an extremely small p-value because we would certainly reject such a claim.
+
+
+## Effect size
+
+If a test is significant, we also want to know **by how much** the sample mean differs from the hypothesized population mean. <span style="color: red;">**Effect size**</span> is a standardized measure of that difference. (As we only care about the magnitude, you can ignore the sign.)
+
+Cohen's $d$ guidelines for effect size magnitude:
+
+- 0.2: small
+- 0.5: moderate
+- 0.8: strong
+
+Movie length example: Cohen's $d = 0.304$, a small-to-moderate effect. The sample mean (114 minutes) is 6 minutes, or 0.304 standard deviations, below the hypothesized value of 120 minutes.
+
+## Assumptions
+
+For a one-sample t-test, the <span style="color: red;">sampling distribution of the sample mean</span> should be approximately normal.
+
+- This is true if the population is normally distributed.
+
+<br>
+
+- Otherwise, the **Central Limit Theorem** says the sampling distribution becomes approximately normal when the sample size is sufficiently large.
+
+
+In practice: "Sample size is large enough (>30), normality is not an issue."
+
+
+## Example 1: NELS expected income at age 30 (`expinc30`)
+
+Based on `expinc30`, do people in the U.S. expect to earn more than $45,000 on average by age 30?
+
+a. State the null and alternative hypotheses.
+b. Evaluate the normality assumption, or explain why it is probably not a concern for this analysis.
+c. Perform a one-sample t-test and report the p-value.
+d. Draw a conclusion based on the p-value.
+e. Report and interpret the effect size, or explain why it is inappropriate.
+
+<details>
+<summary>Show solution</summary>
+
+a. Let $\mu$ be the average expected income at age 30 among the entire population. $H_0: \mu = 45{,}000$ and $H_a: \mu > 45{,}000$.
+b. The sample size is large ($N = 459$), so normality is not an issue. (NELS dataset has a sample size of 500, but only 459 is used for this test due to missing values.)
+c. $p = 0.008$.
+d. Since $p < 0.05$, <span style="color: red;">reject $H_0$</span>. Yes, people in the U.S. do expect to earn more than $45{,}000$ on average by age 30.
+e. Cohen's $d = 0.113$, a very small effect. The sample mean ($51575$) is 0.113 standard deviations higher than the hypothesized value of $45000$.
+</details>
+
+
+
+## Example 2: NELS family size (`famsize`)
+
+Does the average family size in the U.S. exceed 4?
+
+a. State the null and alternative hypotheses.
+b. Perform a one-sample t-test and report the p-value.
+c. Draw a conclusion based on the p-value.
+d. Report and interpret the effect size, or explain why it is inappropriate.
+
+<details>
+<summary>Show solution</summary>
+
+a. Let $\mu$ be the average family size. $H_0: \mu = 4$ and $H_a: \mu > 4$.
+b. $p < 0.001$.
+c. Since $p < 0.05$, <span style="color: red;">reject $H_0$</span>. Yes the average family size in the U.S. does exceed 4.
+d. Cohen's $d = 0.525$, a moderate effect. The sample mean (4.69) is 0.525 standard deviations larger than the hypothesized value of 4.
+
+</details>
+
+
+
+
+> **Discussion:** If a researcher writes, “Study shows that people in the U.S. are having big families. The average family size is significantly bigger than 4,” what concerns might you raise about this claim?
+
+## Using CI to perform a two-sided hypothesis test
+ 
+For a two-sided test at the 0.05 significance level, use either the p-value or the 95% confidence interval to draw a conclusion. <span style="color: red;">If the interval contains the hypothesized mean, fail to reject the null hypothesis; if it does not, reject the null hypothesis.</span>
+
+For example, the 95% confidence interval for average SES is approximately (17.83, 19.04). Because this interval contains the hypothesized mean of 18, we fail to reject the null hypothesis, matching the p-value conclusion.
+
+
+
+
+
+## Example 3: NELS socioeconomic status (`ses`)
+
+Suppose the average socioeconomic status (SES) score of students in Canada is 18. Is the average SES score of American students different from 18?
+
+a. State the null and alternative hypotheses.
+b. Evaluate the normality assumption, or explain why it is probably not a concern for this analysis.
+c. Perform a one-sample t-test and report the p-value.
+d. Draw a conclusion based on the p-value.
+e. Report the 95% confidence interval for the average SES score of American students and draw a conclusion.
+f. Report and interpret the effect size, or explain why it is inappropriate.
+
+<details>
+<summary>Show solution</summary>
+
+a. Let $\mu$ be the average SES score of American students.  $H_0: \mu = 18$ and $H_a: \mu \ne 18$.
+b. The sample size is large ($N = 500$), so normality is not an issue.
+c. $p = 0.162$.
+d. Since $p > 0.05$, <span style="color: red;">fail to reject $H_0$</span>.  The average SES score of American students is NOT significantly differerent from 18.
+e. $(17.826, 19.04)$. Since it contains 18, we would "accept" a value of 18 (i.e., same conclusion as in d).
+f. No need to do effect size as the test is not significant. (Intuition: we concluded that the average SES is NOT different from 18, so it makes no sense to ask "how much" of a difference there is.)
+</details>
+
+
+
+## Example 4: NELS AP courses (`apoffer`)
+
+Is the average number of AP courses offered by a school (`apoffer`) different from 5?
+
+a. State the null and alternative hypotheses.
+b. Perform a one-sample t-test and report the p-value.
+c. Draw a conclusion based on the p-value.
+d. Report the 95% confidence interval for the average number of AP courses offered.
+e. Draw a conclusion based on the confidence interval.
+f. Report and interpret the effect size, or explain why it is inappropriate.
+
+<details>
+<summary>Show solution</summary>
+
+a. Let $\mu$ be the average number of AP courses offered by a school. $H_0: \mu = 5$ and $H_a: \mu \ne 5$.
+b. $p = 0.168$.
+c. Since $p > 0.05$, <span style="color: red;">fail to reject $H_0$</span>. The average number of AP courses offered is NOT significantly different from 5.
+d. $(4.821, 6.02)$.
+e. The interval contains 5, so we "accept" a value of 5. Same conclusion as in c.
+f. No need to do effect size as the test is not significant.
+
+</details>
+
+
+
+## Summary steps for one-sample t-test
+
+1. State the null and alternative hypotheses.
+2. Check the normality assumption (check sample size).
+3. Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval)
+4. **If test is significant,** report and interpret the effect size.
+
+
+
+# Paired-samples t-test
+
+
+
+
+# Independent-samples t-test

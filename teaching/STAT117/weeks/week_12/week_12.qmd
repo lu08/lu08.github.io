@@ -5,11 +5,11 @@ format: html
 
 ## Overview
 
-- Nov 17 (Tuesday):
+- Nov 17 (Tuesday): asynchronous lecture
 - Nov 19 (Thursday): in-person lecture, **quiz 8**
 
 
-## Tuesday, Nov 17
+## Tuesday, Nov 17 (asynchronous)
 
 
-## Thursday, Nov 19
+## Thursday, Nov 19 (in-person)
