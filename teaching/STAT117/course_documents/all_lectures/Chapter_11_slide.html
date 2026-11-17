@@ -143,12 +143,14 @@
 <section id="example-movie-lengths" class="slide level2">
 <h2>Example: movie lengths</h2>
 <p>Treat the <code>Combined Class Movies</code> dataset as a <span style="color: red;"><strong>random sample</strong></span> of all movies. The variable <code>TOTALLENGTHMINS</code> is the length of each movie in minutes.</p>
-<p>Population:</p>
-<p>Population mean:</p>
-<p>Sample:</p>
-<p>Sample mean:</p>
-<p>Point estimate for the population mean:</p>
-<p>Interval estimate for the population mean:</p>
+<ul>
+<li><p>Population:</p></li>
+<li><p>Population mean:</p></li>
+<li><p>Sample:</p></li>
+<li><p>Sample mean:</p></li>
+<li><p>Point estimate for the population mean:</p></li>
+<li><p>Interval estimate for the population mean:</p></li>
+</ul>
 <details>
 <summary>
 Show Jamovi table
@@ -199,7 +201,6 @@ Show Jamovi table
 </tr>
 </tbody>
 </table>
-<p><em>Note.</em> This confidence interval assumes sample means follow a t-distribution with <span class="math inline">\(N - 1\)</span> degrees of freedom.</p>
 </details>
 <blockquote>
 <p><strong>Jamovi procedure:</strong> <strong>Analyses &gt; Exploration &gt; Descriptives</strong>. Select <strong>Confidence intervals</strong> under <strong>Statistics &gt; Mean Dispersion</strong>. The confidence level can also be changed (default: 95%).</p>
@@ -239,10 +240,10 @@ Show solution
 <h2>Sample size</h2>
 <ul>
 <li>Dataset 1: <span class="math inline">\(N = 100\)</span> movies</li>
-<li>Dataset 2: <span class="math inline">\(N = 10{,}000\)</span> movies</li>
+<li>Dataset 2: <span class="math inline">\(N = 10000\)</span> movies</li>
 </ul>
 <p>Which sample would give a more <strong>precise</strong> confidence interval?</p>
-<p><span style="color: blue;">If all else stays the same and the sample size increases (for example, from <span class="math inline">\(N = 100\)</span> to <span class="math inline">\(N = 1{,}000\)</span>), will the interval:</span></p>
+<p><span style="color: blue;">If all else stays the same and the sample size increases (for example, from <span class="math inline">\(N = 100\)</span> to <span class="math inline">\(N = 10000\)</span>), will the interval:</span></p>
 <ol type="a">
 <li><span style="color: blue;">Be wider</span></li>
 <li><span style="color: blue;">Be narrower</span></li>
@@ -253,6 +254,14 @@ Show solution
 <h2>Exercise (Combined Class Movies)</h2>
 <ol type="1">
 <li>Construct a 95% confidence interval for the average <code>TOMATOMETER</code> score of all movies.</li>
+</ol>
+<details>
+<summary>
+Read me!
+</summary>
+<p>Note the wording: 1. the CI is for the <strong>average</strong> specifically, not any other statistic like the median; 2. the CI is for the average of <strong>all movies</strong>. Why not “for movies in the dataset?” Because the average length of the 100 movies in the dataset is exactly 114 min; there is no need for a confidence interval. The average length of <strong>all movies</strong>, in comparison, is <strong>unknown</strong>.</p>
+</details>
+<ol start="2" type="1">
 <li>Construct a 99% confidence interval for the average <code>TOMATOMETER</code> score. Is it wider or narrower than the 95% interval?</li>
 <li>Construct a 95% confidence interval for the true correlation between <code>TOMATOMETER</code> and <code>AUDIENCEL</code> (audience score) among all movies. A correlation can be obtained under <strong>Regression &gt; Correlation Matrix</strong>; confidence intervals are under <strong>Additional Options</strong>.</li>
 <li>Use a regression analysis to predict <code>AUDIENCEL</code> from <code>TOMATOMETER</code>. Construct a 95% confidence interval for the slope. Regression is under <strong>Regression &gt; Linear Regression</strong>; confidence intervals are under <strong>Model Coefficients &gt; Estimates</strong>.</li>
@@ -281,25 +290,29 @@ Show solution
 <h2>Hypothesis</h2>
 <p>We are making an inference about the <strong>average</strong> length of <strong>all</strong> movies. A researcher claims that the average length is 2 hours (120 minutes), and we want to test this claim.</p>
 <p>The parameter of interest is:</p>
-<p>Null hypothesis (denoted <span class="math inline">\(H_0\)</span>): the average movie length is 120 minutes. <br></p>
+<p>Null hypothesis (denoted <span class="math inline">\(H_0\)</span>):</p>
+<ul>
+<li>the average movie length is 120 minutes</li>
+</ul>
+<p><br></p>
 <p>Alternative hypothesis (denoted <span class="math inline">\(H_1\)</span> or <span class="math inline">\(H_a\)</span>):</p>
 <ul>
-<li>The average movie length differs from 120 minutes:</li>
-<li>The average movie length is shorter than 120 minutes:</li>
-<li>The average movie length is longer than 120 minutes:</li>
+<li>The average movie length differs from 120 minutes</li>
+<li>The average movie length is shorter than 120 minutes</li>
+<li>The average movie length is longer than 120 minutes</li>
 </ul>
 </section>
 <section id="p-value" class="slide level2">
 <h2>P-value</h2>
 <blockquote>
-<p><strong>Jamovi procedure:</strong> <strong>Analyses &gt; T-Tests &gt; One Sample T-Test</strong>. Move <code>TOTALLENGTHMINS</code> into <strong>Dependent Variables</strong>. Under <strong>Hypothesis</strong>, enter <code>120</code> as the test value and select the appropriate alternative. Also select <strong>Effect size</strong> and <strong>Descriptives</strong>. Jamovi can also provide a confidence interval for the effect size, but it is not required here.</p>
+<p><strong>Jamovi procedure:</strong> <strong>Analyses &gt; T-Tests &gt; One Sample T-Test</strong>. Move <code>TOTALLENGTHMINS</code> into <strong>Dependent Variables</strong>. Under <strong>Hypothesis</strong>, enter <code>120</code> as the test value and select the appropriate alternative. Also select <strong>Effect size</strong> and <strong>Descriptives</strong>. (Jamovi can also provide a confidence interval for the effect size, but it is not required.)</p>
 </blockquote>
 <p>p-value is the probability, assuming the null hypothesis is true, of observing the results or results more extreme than those in the sample (more on this later).</p>
 <ul>
 <li><p><span style="color: red;">If the p-value is very small (for example, less than a cut off of <span class="math inline">\(\alpha = 0.05\)</span>), the result is <strong>statistically significant</strong> and we <strong>reject</strong> the null hypothesis.</span></p></li>
 <li><p>If the p-value is above the cut off, the result is not statistically significant and we “fail to reject” the null hypothesis.</p></li>
 </ul>
-<p>Movie length example: for the one-sided alternative <span class="math inline">\(\mu &lt; 120\)</span>, the p-value is 0.002. Since <span class="math inline">\(0.002 &lt; 0.05\)</span>, we <strong>reject the null hypothesis</strong> and conclude that the average movie length is statistically significantly shorter than 120 minutes.</p>
+<p><span style="color: blue;">Movie length example: for the one-sided alternative <span class="math inline">\(\mu &lt; 120\)</span>, the p-value is 0.002. Since <span class="math inline">\(0.002 &lt; 0.05\)</span>, we <strong>reject the null hypothesis</strong> and conclude that the average movie length is statistically significantly shorter than 120 minutes.</span></p>
 <blockquote>
 <p><strong>Important:</strong> Remember to change the <strong>test value</strong>! Jamovi’s default of 0 means you are testing whether the average movie length is 0 minutes, which would lead to an extremely small p-value because we would certainly reject such a claim.</p>
 </blockquote>
@@ -313,7 +326,7 @@ Show solution
 <li>0.5: moderate</li>
 <li>0.8: strong</li>
 </ul>
-<p>Movie length example: Cohen’s <span class="math inline">\(d = 0.304\)</span>, a small-to-moderate effect. The sample mean (114 minutes) is 6 minutes, or 0.304 standard deviations, below the hypothesized value of 120 minutes.</p>
+<p><span style="color: blue;">Movie length example: Cohen’s <span class="math inline">\(d = 0.304\)</span>, a small-to-moderate effect. The sample mean (114 minutes) is 6 minutes, or 0.304 standard deviations, below the hypothesized value of 120 minutes.</span></p>
 </section>
 <section id="assumptions" class="slide level2">
 <h2>Assumptions</h2>
@@ -326,6 +339,29 @@ Show solution
 <li>Otherwise, the <strong>Central Limit Theorem</strong> says the sampling distribution becomes approximately normal when the sample size is sufficiently large.</li>
 </ul>
 <p>In practice: “Sample size is large enough (&gt;30), normality is not an issue.”</p>
+<p>Do not say “the population is normally distributed” or “normality is checked”! In fact, you can check normality using the <strong>Normality test</strong> option in Jamovi, but it is not required for this class. We do NOT need to check normality because typically the sample size is large enough for the Central Limit Theorem to apply.</p>
+<details>
+<summary>
+(Optional) Show more
+</summary>
+<p>Yes, it matters, but <strong>how much it matters depends entirely on your sample size and the severity of the non-normality.</strong></p>
+<p>Here is how to interpret a significant Shapiro-Wilk result (which suggests your data is not normal) based on your situation:</p>
+<p><strong>1. If you have a small sample size (<span class="math inline">\(n &lt; 30\)</span>)</strong></p>
+<p>It matters a lot. For small samples, the t-test relies heavily on the assumption that the underlying population data is normally distributed. If the Shapiro-Wilk test suggests a departure from normality, the results of a standard one-sample t-test may be unreliable (it could give you a false positive or false negative).</p>
+<ul>
+<li><strong>What to do:</strong> You should strongly consider using a non-parametric alternative, such as the <strong>Wilcoxon signed-rank test</strong>, or use bootstrapping methods.</li>
+</ul>
+<p><strong>2. If you have a large sample size (<span class="math inline">\(n \ge 30\)</span>)</strong></p>
+<p>It rarely matters. Thanks to the Central Limit Theorem, the t-test is highly robust to non-normal data as long as the sample size is large enough. The t-test actually assumes that the <em>sampling distribution of the mean</em> is normal, which happens naturally as your sample size grows, regardless of the shape of the underlying data.</p>
+<ul>
+<li><strong>The Shapiro-Wilk trap:</strong> In large samples, the Shapiro-Wilk test becomes hypersensitive. It will flag even trivial, harmless deviations from perfect normality as “statistically significant.”</li>
+<li><strong>What to do:</strong> You can generally proceed with the one-sample t-test without worry.</li>
+</ul>
+<p><strong>The Exception: Extreme Outliers</strong></p>
+<p>Regardless of your sample size, you should check your data for extreme outliers. Because a t-test compares means, a massive outlier will drag the mean in its direction and inflate the variance, distorting your results even if your sample size is large.</p>
+<p><strong>The Bottom Line</strong></p>
+<p>Never rely on the Shapiro-Wilk p-value in isolation. Always look at a <strong>Q-Q plot</strong> or a <strong>histogram</strong> of your data. If the data is relatively bell-shaped or only mildly skewed, the t-test will work fine. If it is heavily skewed or has severe outliers, and your sample is small, switch to a Wilcoxon signed-rank test.</p>
+</details>
 </section>
 <section id="example-1-nels-expected-income-at-age-30-expinc30" class="slide level2 scrollable">
 <h2>Example 1: NELS expected income at age 30 (<code>expinc30</code>)</h2>
@@ -437,16 +473,8 @@ Show solution
 <li>Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval)</li>
 <li><strong>If test is significant,</strong> report and interpret the effect size.</li>
 </ol>
+
 </section></section>
-<section id="paired-samples-t-test" class="title-slide slide level1 center">
-<h1>Paired-samples t-test</h1>
-
-</section>
-
-<section id="independent-samples-t-test" class="title-slide slide level1 center">
-<h1>Independent-samples t-test</h1>
-
-</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

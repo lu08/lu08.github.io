@@ -302,13 +302,13 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 11 11  2 10  4  9  5 11  2  9</code></pre>
+<pre><code> [1] 10  9  2 10  0  2  4 10  0  2</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">sample</span>(ncov10, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 10 11  9  2  2  2  5  4  9  4</code></pre>
+<pre><code> [1] 11 11 10  2  5  4 11  2 10  5</code></pre>
 </div>
 </div>
 <ul>
@@ -331,16 +331,16 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>bootresult[<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 4.3056 4.3196 4.4920 4.0526 3.8048 3.3216 4.0310 4.3960 3.9052 4.3954
-[11] 3.7074 3.8898 3.7454 4.0186 4.2760 4.2314 3.9420 3.5418 4.3404 3.9330
-[21] 4.6538 4.5420 3.9736 4.5736 4.2038 4.4718 3.9288 4.4492 3.9434 4.3886</code></pre>
+<pre><code> [1] 4.1686 4.2272 3.9280 3.7520 4.0406 4.3850 3.7578 3.9152 4.0904 4.5826
+[11] 3.9320 3.8546 4.2472 4.7690 4.0446 3.2424 4.1776 3.6164 3.1020 4.3730
+[21] 4.2198 4.2860 4.3740 3.9272 3.5048 4.4016 4.5078 4.5220 3.5822 3.6448</code></pre>
 </div>
 </div>
 <p>Using the 1000 bootstrap samples, we can estimate the SD of <span class="math inline">\(\bar{X}\)</span>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3267532</code></pre>
+<pre><code>[1] 0.3375066</code></pre>
 </div>
 </div>
 <p>In comparison, without using bootstrap, we can estimate the SD of <span class="math inline">\(\bar{X}\)</span> with the formula: <span class="math inline">\(s/\sqrt{n}\)</span></p>
@@ -366,7 +366,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">quantile</span>(bootresult, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5%    97.5% 
-3.497075 4.746630 </code></pre>
+3.509955 4.814645 </code></pre>
 </div>
 </div>
 </section>
@@ -400,7 +400,7 @@ Show solution
 <span id="cb24-8"><a href=""></a><span class="co">#3</span></span>
 <span id="cb24-9"><a href=""></a><span class="fu">sd</span>(bootresult)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3896573</code></pre>
+<pre><code>[1] 0.3897877</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># more variation than the mean</span></span>
 <span id="cb26-2"><a href=""></a></span>
@@ -481,7 +481,7 @@ Show solution
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">pweibull</span>(<span class="dv">14</span>, <span class="at">shape =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">1</span>], <span class="at">scale =</span> modelboot<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.999113</code></pre>
+<pre><code>[1] 0.9997591</code></pre>
 </div>
 </div>
 <ul>
@@ -517,7 +517,7 @@ Show solution
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">quantile</span>(result,<span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     2.5%     97.5% 
-0.9949820 0.9999987 </code></pre>
+0.9947452 0.9999984 </code></pre>
 </div>
 </div>
 </details>
@@ -561,7 +561,7 @@ Show solution
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="fu">quantile</span>(result,<span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5%    97.5% 
-6.090535 8.479424 </code></pre>
+6.074973 8.436705 </code></pre>
 </div>
 </div>
 </details>
