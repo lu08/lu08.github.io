@@ -15,7 +15,7 @@ Study **one sample t-test** and **confidence intervals** from [Chapter 11](../..
 
 I have recorded the following videos to cover some conceptual discussions that happen before the examples.  Please watch them, but pause often so you can try out the procedures and examples yourself.  
 
-- [Chapter 11 sldes](https://youtu.be/6NcaTZn0FyI)
+- [Chapter 11 slides](https://youtu.be/6NcaTZn0FyI)
 - [Confidence interval and hypothesis testing](https://youtu.be/RZJWNLt6juo)
 
 It is ok if there are concepts related to inferential statistics and p-values that you do not fully understand for now.  We will go back to these concepts thoughout this chapter.  You should still be able to carry out a one-sample t-test and do the example questions.  You can find more examples in the [Chapter 11 homework](../../course_documents/homework/chapter_11.qmd).
@@ -25,4 +25,4 @@ It is ok if there are concepts related to inferential statistics and p-values th
 
 Quiz question will be similar to the one-sample t-test examples at the end of [Chapter 11](../../course_documents/all_lectures/chapter_11_slide.html) slides.  
 
-In class, we will finish [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html) and [Chapter 9](../../course_documents/all_lectures/chapter_9_slide.html).
+In class, we will finish [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html) and [Chapter 9](../../course_documents/all_lectures/Chapter_9_slide.html).

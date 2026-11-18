@@ -139,10 +139,198 @@
 </div>
 
 </section>
-<section id="to-be-added" class="slide level2">
-<h2>To be added</h2>
+<section id="reference" class="slide level2">
+<h2>Reference</h2>
+<p>Content on this lecture are based on</p>
+<ul>
+<li><p><a href="https://www.sciencedirect.com/book/monograph/9780124058880/doing-bayesian-data-analysis">Doing Bayesian Data Analysis (Kruschke)</a>, Chapters 5 and 6</p></li>
+<li><p><a href="https://greenteapress.com/wp/think-bayes/">Think Bayes: Bayesian Statistics Made Simple (Downey)</a>, Chapter 4.</p></li>
+</ul>
+</section>
+<section>
+<section id="background" class="title-slide slide level1 center">
+<h1>Background</h1>
 
 </section>
+<section id="set-up" class="slide level2">
+<h2>Set-up</h2>
+<p>🪙 You want to know the probability of head (denoted <span class="math inline">\(p\)</span>) for a potentially biased coin.</p>
+<blockquote>
+<p>You flip the coin <span class="math inline">\(n\)</span> times and record the number of heads you get (denoted <span class="math inline">\(X\)</span>). For example, you get 14 heads out of 20 flips, then <span class="math inline">\(n=20\)</span> and <span class="math inline">\(X=14\)</span>.</p>
+</blockquote>
+<p>Statistical set-up</p>
+<ul>
+<li><p>Data:</p></li>
+<li><p>Parameter:</p></li>
+</ul>
+<p>How do you estimate <span class="math inline">\(p\)</span>?</p>
+<blockquote>
+<p>This simple model has a lot of real life applications. <span class="math inline">\(p\)</span> can represent: success probability of a drug; probability that a patient receiving a certain treatment will survive after 1 year; probability that a person will vote for a certain candidate; etc.</p>
+</blockquote>
+</section>
+<section id="non-bayesian-classical-vs-bayesian-inference" class="slide level2">
+<h2>Non-Bayesian (classical) vs Bayesian inference</h2>
+<p><span style="text-decoration: underline;">In non-Bayesian inference</span>, the parameter (<span class="math inline">\(p\)</span> in this case) is <span style="color: red;">fixed</span> (but unknown). The goal is to make a “best” educated guess at this value, based on data.</p>
+<p><span style="text-decoration: underline;">In Bayesian inference</span>, the parameter <span class="math inline">\(p\)</span> is <span style="color: red;">random</span>! In other words, we can assign a <strong>distribution</strong> to <span class="math inline">\(p\)</span> to describe the randomness.</p>
+<ul>
+<li><p><span style="color: red;">Prior distribution</span>: distribution of <span class="math inline">\(p\)</span> before any data is observed</p></li>
+<li><p><span style="color: red;">Posterior distribution</span>: distribution of <span class="math inline">\(p\)</span> conditioning on data (i.e., update the prior based on data)</p></li>
+</ul>
+</section>
+<section id="two-key-ingredients-of-bayesian-analysis" class="slide level2 scrollable">
+<h2>Two key ingredients of Bayesian analysis</h2>
+<p>The goal of Bayesian analysis is to study the posterior distribution; this is done using the <span style="color: red;">Bayes Theorem</span>. To get the posterior, we need:<br>
+</p>
+<ol type="1">
+<li><p>Prior: prior distribution on p before data is observed <span class="math inline">\(P(p)\)</span><br>
+</p></li>
+<li><p>Likelihood: a data model <span class="math inline">\(P(X|p)\)</span></p></li>
+</ol>
+</section></section>
+<section>
+<section id="the-beta-binomial-model" class="title-slide slide level1 center">
+<h1>The Beta-binomial model</h1>
+
+</section>
+<section id="prior-beta-distribution" class="slide level2">
+<h2>(1) Prior: beta distribution</h2>
+<p>Beta distribution is very commonly used for modeling <span class="math inline">\(p \in (0,1)\)</span>:</p>
+<ul>
+<li><p>shape is very flexible and range is correct;</p></li>
+<li><p>it’s a <strong>conjugate prior</strong> for <span class="math inline">\(p\)</span> (more on this later);</p></li>
+<li><p>recall: the mean of a beta distribution is <span class="math inline">\(\alpha /  (\alpha+\beta)\)</span>.</p></li>
+</ul>
+
+<img data-src="Lecture_9_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch"></section>
+<section id="likelihood-binomial" class="slide level2">
+<h2>(2) Likelihood: binomial</h2>
+<p>Recall, the number of head <span class="math inline">\(X\)</span> out of <span class="math inline">\(n\)</span> flips can be modeled by a <strong>binomial distribution</strong>.</p>
+<p>Quick review:</p>
+<ul>
+<li>What are the parameters of the binomial distribution?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>What are the assumptions of the binomial model?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Suppose <span class="math inline">\(p=0.6\)</span>, what is the probability that I get 14 heads out of 20 flips? (0.1244117)</li>
+</ul>
+<p><br></p>
+</section>
+<section id="calculating-posterior" class="slide level2">
+<h2>Calculating posterior</h2>
+<p>We want to calculate <span class="math inline">\(P(p|X=x)\)</span>, the <strong>conditional density</strong> of <span class="math inline">\(P\)</span> given <span class="math inline">\(X=x\)</span> (i.e., distribution of parameter given data).</p>
+<p>This is done using the <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a>:</p>
+<p><span class="math display">\[
+P(p|X=x) \propto P(X=x|p) \cdot P(p)
+\]</span></p>
+<p><span style="color: red;">In the beta-binomial model, the posterior distribution is beta with <span class="math inline">\(\alpha' = x+\alpha\)</span> and <span class="math inline">\(\beta' = n-x+\beta\)</span>.</span></p>
+<details>
+<summary>
+Optional: derivation of the posterior
+</summary>
+<span class="math display">\[\begin{align*}
+P(p|X=x) &amp;= \frac{P(X=x|p) \cdot P(p)}{P(X=x)} \\
+&amp; = \frac{ \left\lbrace {n \choose x} p^x (1-p)^{n-x} \right\rbrace \left\lbrace p^{\alpha-1} (1-p)^{\beta-1} \Gamma(\alpha + \beta) / \Gamma(\alpha) \Gamma(\beta) \right\rbrace}{\int_0^1  \left\lbrace {n \choose x} p^x (1-p)^{n-x} \right\rbrace \left\lbrace p^{\alpha-1} (1-p)^{\beta-1} \cdot \Gamma(\alpha + \beta) / \Gamma(\alpha) \Gamma(\beta) \right\rbrace dp} \\
+&amp; \text{ (Drop all the constant terms)} \\
+&amp; \propto p^x (1-p)^{n-x} p^{\alpha-1} (1-p)^{\beta-1} \\
+&amp; = p^{x+\alpha-1} (1-p)^{n-x+\beta-1} \\
+&amp; = \textit{kernel for a beta density with $\alpha' = x+\alpha$ and $\beta' = n-x+\beta$}
+\end{align*}\]</span>
+</details>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><p><span style="color: red;">[parameter]</span> <span class="math inline">\(p\)</span>, probability of head of a possibly biased coin</p></li>
+<li><p><span style="color: red;">[data]</span> <span class="math inline">\(X\)</span>, number of heads out of <span class="math inline">\(n\)</span> flips</p></li>
+<li><p><span style="color: red;">[likelihood]</span> <span class="math inline">\(X|p\)</span> is modeled as a binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span></p></li>
+<li><p><span style="color: red;">[prior]</span> <span class="math inline">\(p\)</span> follows a beta distribution with (hyper)parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></p></li>
+<li><p><span style="color: red;">[posterior]</span> <span class="math inline">\(p|X=x\)</span> follows a beta distribution with parameters <span class="math inline">\(x+\alpha\)</span> and <span class="math inline">\(n-x+\beta\)</span><br>
+</p></li>
+</ul>
+<p>Example: start with a <span class="math inline">\(beta(1, 1)\)</span>; flip the coin and get Head, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>; flip again and get Head, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>; flip again and get Tail, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>.</p>
+<p>Example: assign a <span class="math inline">\(beta(3, 3)\)</span> prior for p; flip the coin <span class="math inline">\(20\)</span> times and count <span class="math inline">\(14\)</span> heads, then the posterior for p is <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span> and the posterior mean is <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>.</p>
+</section>
+<section id="effect-of-prior-and-sample-size" class="slide level2">
+<h2>Effect of prior and sample size</h2>
+<ul>
+<li><p>The posterior is always a compromise between the prior and the data.</p></li>
+<li><p>When we have <strong>strong prior</strong> belief, the posterior can be heavily affected by it. <strong>Sensitivity analysis</strong> is usually performed to see how much the prior affects the results. It can also be of interest to assign a <strong>non-informative prior</strong>.</p></li>
+</ul>
+<details>
+<summary>
+Show examples
+</summary>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lecture_9_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<ul>
+<li>When we have <strong>strong data</strong> (i.e., very large sample size), the influence of the prior diminishes.</li>
+</ul>
+<details>
+<summary>
+Show strong data
+</summary>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lecture_9_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="applied-example-1" class="slide level2 scrollable">
+<h2>Applied example 1</h2>
+<p>In an upcoming election, you want to know whether a population prefers candidate A or B. Based on a recent poll, 58 out of 100 randomly sampled people preferred candidate A.</p>
+<ol type="1">
+<li><p>We decide to use a <span class="math inline">\(beta(1,1)\)</span> (i.e., uniform) prior. Do you think this prior is non-informative?</p></li>
+<li><p>With the beta-binomial model, what is the posterior distribution?</p></li>
+<li><p>Check the assumptions of the binomial model: independence? equal probability?</p></li>
+</ol>
+
+<img data-src="Lecture_9_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:70.0%" class="r-stretch"></section>
+<section id="applied-example-2" class="slide level2 scrollable">
+<h2>Applied example 2</h2>
+<p>We want to estimate the probability that Stephen Curry will successfully make a field goal.</p>
+<ol type="1">
+<li><p>After some research, we decide a <span class="math inline">\(beta(4.8,5.2)\)</span> prior is reasonable. What is the prior mean?</p></li>
+<li><p><a href="https://www.espn.com/nba/player/stats/_/id/3975/stephen-curry">In the current NBA regular season</a>, he made 80 field goals out of 160 attempts (<span class="math inline">\(50\%\)</span>). With the beta-binomial model, what is the posterior distribution? What is the posterior mean?</p></li>
+<li><p>Suppose you observe in the next game, that he made 5 field goals out of 6 attempts. Update the posterior in 2. again with this new data. What is the updated posterior distribution?</p></li>
+<li><p>Plot the beta distributions in 1, 2, and 3 in R.</p></li>
+<li><p>Check the assumptions of the binomial model: independence? equal probability?</p></li>
+</ol>
+<p>Comment: instead of choosing specific parameter values for the prior, a <strong>hierarchical Bayesian model</strong> can be specified.</p>
+</section>
+<section id="statistical-inference" class="slide level2">
+<h2>Statistical inference</h2>
+<p>As an example, suppose our posterior distribution is <span class="math inline">\(\underline{\hspace{50pt}}\)</span></p>
+<p><span style="text-decoration: underline;">Connection to non-Bayesian methods</span></p>
+<ul>
+<li><p>Point estimate: can use a summary statistic of the posterior distribution (e.g., posterior mean, posterior median)</p></li>
+<li><p>Confidence interval: credible interval; HPD (highest posterior density) interval</p></li>
+<li><p>Hypothesis testing: “testing if <span class="math inline">\(p&gt;0.5\)</span>” (say) only makes sense in non-Bayesian setting; in Bayesian inference, one can look at <span class="math inline">\(P(p&gt;0.5)\)</span> under the posterior</p></li>
+</ul>
+</section>
+<section id="discussions" class="slide level2">
+<h2>Discussions</h2>
+<p>When the prior and posterior belong to the same distribution family (beta distribution in this case), the prior is called a <a href="https://en.wikipedia.org/wiki/Conjugate_prior">conjugate prior</a> for the model.</p>
+<p>In more complicated scenarios, conjugate priors do not exist or are not sufficient.</p>
+<p>The posterior can be difficult to solve mathematically…and we turn to <strong>Markov chain Monte Carlo (MCMC)</strong> to approximate the posterior!</p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

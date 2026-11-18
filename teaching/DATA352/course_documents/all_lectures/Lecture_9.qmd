@@ -23,4 +23,305 @@ editor_options:
   chunk_output_type: inline
 ---
 
-## To be added
+## Reference
+
+Content on this lecture are based on 
+
+- [Doing Bayesian Data Analysis (Kruschke)](https://www.sciencedirect.com/book/monograph/9780124058880/doing-bayesian-data-analysis), Chapters 5 and 6
+
+- [Think Bayes: Bayesian Statistics Made Simple (Downey)](https://greenteapress.com/wp/think-bayes/), Chapter 4.
+
+# Background
+
+## Set-up
+
+🪙 You want to know the probability of head (denoted $p$) for a potentially biased coin.
+
+> You flip the coin $n$ times and record the number of heads you get (denoted $X$). For example, you get 14 heads out of 20 flips, then $n=20$ and $X=14$.
+
+Statistical set-up
+
+- Data:
+
+- Parameter:
+
+How do you estimate $p$?
+
+>This simple model has a lot of real life applications. $p$ can represent: success probability of a drug; probability that a patient receiving a certain treatment will survive after 1 year; probability that a person will vote for a certain candidate; etc.
+
+
+## Non-Bayesian (classical) vs Bayesian inference
+
+<span style="text-decoration: underline;">In non-Bayesian inference</span>, the parameter ($p$ in this case) is <span style="color: red;">fixed</span> (but unknown). The goal is to make a "best" educated guess at this value, based on data.
+
+<span style="text-decoration: underline;">In Bayesian inference</span>, the parameter $p$ is <span style="color: red;">random</span>! In other words, we can assign a **distribution** to $p$ to describe the randomness.
+
+- <span style="color: red;">Prior distribution</span>: distribution of $p$ before any data is observed
+
+- <span style="color: red;">Posterior distribution</span>: distribution of $p$ conditioning on data (i.e., update the prior based on data)
+
+## Two key ingredients of Bayesian analysis
+
+The goal of Bayesian analysis is to study the posterior distribution; this is done using the <span style="color: red;">Bayes Theorem</span>. To get the posterior, we need:\
+
+  (1) Prior: prior distribution on p before data is observed $P(p)$\
+
+  (2) Likelihood: a data model $P(X|p)$
+
+
+# The Beta-binomial model
+
+## (1) Prior: beta distribution
+
+Beta distribution is very commonly used for modeling $p \in (0,1)$:
+
+- shape is very flexible and range is correct;
+
+- it's a **conjugate prior** for $p$ (more on this later);
+
+- recall: the mean of a beta distribution is $\alpha /  (\alpha+\beta)$.
+
+```{r, echo=FALSE}
+#| fig-width: 24
+#| fig-height: 3.5
+#| out-width: 100%
+
+parameter_sets <- data.frame(
+  alpha = c(1, 1, 2, 2, 6, 0.2),
+  beta = c(1, 5, 2, 8, 4, 0.3),
+  label = c(
+    "alpha=1, beta=1", "alpha=1, beta=5", "alpha=2, beta=2",
+    "alpha=2, beta=8", "alpha=6, beta=4", "alpha=0.2, beta=0.3"
+  )
+)
+x_values <- seq(0.001, 0.999, length.out = 1000)
+original_par <- par(mfrow = c(1, 6), mar = c(0.3, 0.3, 4.5, 0.3))
+
+for (index in seq_len(nrow(parameter_sets))) {
+  alpha_value <- parameter_sets$alpha[index]
+  beta_value <- parameter_sets$beta[index]
+  density_values <- dbeta(x_values, shape1 = alpha_value, shape2 = beta_value)
+
+  plot(
+    x_values, density_values,
+    type = "n", xlim = c(0, 1), ylim = c(0, max(density_values) * 1.1),
+    axes = FALSE, xlab = "", ylab = "", main = parameter_sets$label[index],
+    cex.main = 3, font.main = 2, bty = "o", xaxs = "i", yaxs = "i"
+  )
+  lines(x_values, density_values, col = "#4267E8", lwd = 3)
+  box(col = "black", lwd = 1)
+}
+
+par(original_par)
+```
+
+
+## (2) Likelihood: binomial
+
+Recall, the number of head $X$ out of $n$ flips can be modeled by a **binomial distribution**.
+
+Quick review:
+
+- What are the parameters of the binomial distribution?
+
+<br>
+
+- What are the assumptions of the binomial model?
+
+<br>
+
+- Suppose $p=0.6$, what is the probability that I get 14 heads out of 20 flips? (0.1244117)
+
+<br>
+
+## Calculating posterior
+
+We want to calculate $P(p|X=x)$, the **conditional density** of $P$ given $X=x$ (i.e., distribution of parameter given data). 
+
+This is done using the [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+
+$$
+P(p|X=x) \propto P(X=x|p) \cdot P(p)
+$$
+
+<span style="color: red;">In the beta-binomial model, the posterior distribution is beta with $\alpha' = x+\alpha$ and $\beta' = n-x+\beta$.</span>
+
+
+
+<details markdown="1">
+<summary>Optional: derivation of the posterior</summary>
+
+
+$$\begin{align*}
+P(p|X=x) &= \frac{P(X=x|p) \cdot P(p)}{P(X=x)} \\
+ & = \frac{ \left\lbrace {n \choose x} p^x (1-p)^{n-x} \right\rbrace \left\lbrace p^{\alpha-1} (1-p)^{\beta-1} \Gamma(\alpha + \beta) / \Gamma(\alpha) \Gamma(\beta) \right\rbrace}{\int_0^1  \left\lbrace {n \choose x} p^x (1-p)^{n-x} \right\rbrace \left\lbrace p^{\alpha-1} (1-p)^{\beta-1} \cdot \Gamma(\alpha + \beta) / \Gamma(\alpha) \Gamma(\beta) \right\rbrace dp} \\
+& \text{ (Drop all the constant terms)} \\
+& \propto p^x (1-p)^{n-x} p^{\alpha-1} (1-p)^{\beta-1} \\
+& = p^{x+\alpha-1} (1-p)^{n-x+\beta-1} \\
+& = \textit{kernel for a beta density with $\alpha' = x+\alpha$ and $\beta' = n-x+\beta$}
+\end{align*}$$
+</details>
+
+
+
+## Summary
+
+- <span style="color: red;">[parameter]</span> $p$, probability of head of a possibly biased coin
+
+- <span style="color: red;">[data]</span> $X$, number of heads out of $n$ flips
+
+- <span style="color: red;">[likelihood]</span> $X|p$ is modeled as a binomial distribution with parameters $n$ and $p$
+
+- <span style="color: red;">[prior]</span> $p$ follows a beta distribution with (hyper)parameters $\alpha$ and $\beta$
+
+- <span style="color: red;">[posterior]</span> $p|X=x$ follows a beta distribution with parameters $x+\alpha$ and $n-x+\beta$\
+
+Example: start with a $beta(1, 1)$; flip the coin and get Head, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>; flip again and get Head, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>; flip again and get Tail, and the posterior is now <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>.
+
+Example: assign a $beta(3, 3)$ prior for p; flip the coin $20$ times and count $14$ heads, then the posterior for p is <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span> and the posterior mean is <span style="display: inline-block; width: 100pt; border-bottom: 1px solid currentColor;">&nbsp;</span>.
+
+
+
+
+## Effect of prior and sample size
+
+- The posterior is always a compromise between the prior and the data.
+
+- When we have **strong prior** belief, the posterior can be heavily affected by it. **Sensitivity analysis** is usually performed to see how much the prior affects the results. It can also be of interest to assign a **non-informative prior**.
+
+<details markdown="1">
+<summary>Show examples</summary>
+
+
+```{r, echo=FALSE}
+#| fig-width: 8
+#| fig-height: 3
+#| out-width: 100%
+
+mydomain <- seq(0, 1, by = 0.001)
+
+onefig <- function(prior_a, prior_b, n_total, n_head, plot_yrange = c(0, 25)) {
+  post_a <- prior_a + n_head
+  post_b <- prior_b + n_total - n_head
+  plot_title <- paste0(
+    n_total, " flips with ", n_head, " heads\n",
+    "posterior mean=", round(post_a / (post_a + post_b), 2)
+  )
+
+  plot(
+    x = mydomain, y = mydomain, type = "n", xlim = c(0, 1),
+    ylim = plot_yrange, yaxt = "n", xaxt = "n", ylab = NA, xlab = NA,
+    main = plot_title, cex.main = 2
+  )
+  lines(
+    mydomain, dbeta(mydomain, shape1 = prior_a, shape2 = prior_b),
+    col = "royalblue", lwd = 2
+  )
+  lines(
+    mydomain, dbeta(mydomain, shape1 = post_a, shape2 = post_b),
+    col = "salmon", lwd = 2
+  )
+  abline(v = n_head / n_total, lty = "dashed", col = "salmon", lwd = 2)
+}
+
+old_par <- par(mfrow = c(1, 3))
+onefig(prior_a = 1, prior_b = 1, n_total = 20, n_head = 14)
+onefig(prior_a = 2, prior_b = 7, n_total = 20, n_head = 14)
+onefig(prior_a = 0.3, prior_b = 0.3, n_total = 20, n_head = 14)
+par(old_par)
+```
+</details>
+
+- When we have **strong data** (i.e., very large sample size), the influence of the prior diminishes.
+
+
+<details markdown="1">
+<summary>Show strong data</summary>
+
+```{r, echo=FALSE}
+#| fig-width: 8
+#| fig-height: 3
+#| out-width: 100%
+
+old_par <- par(mfrow = c(1, 3))
+onefig(prior_a = 1, prior_b = 1, n_total = 1000, n_head = 670)
+onefig(prior_a = 2, prior_b = 7, n_total = 1000, n_head = 670)
+onefig(prior_a = 0.3, prior_b = 0.3, n_total = 1000, n_head = 670)
+par(old_par)
+```
+</details>
+
+## Applied example 1
+
+In an upcoming election, you want to know whether a population prefers candidate A or B. Based on a recent poll, 58 out of 100 randomly sampled people preferred candidate A.
+
+1. We decide to use a $beta(1,1)$ (i.e., uniform) prior. Do you think this prior is non-informative?
+
+2. With the beta-binomial model, what is the posterior distribution? 
+
+3. Check the assumptions of the binomial model: independence? equal probability?
+
+```{r, echo=FALSE}
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: 70%
+
+applied_x <- seq(0, 1, by = 0.001)
+prior_alpha <- 1
+prior_beta <- 1
+trial_count <- 100
+success_count <- 58
+posterior_alpha <- prior_alpha + success_count
+posterior_beta <- prior_beta + trial_count - success_count
+posterior_mean <- posterior_alpha / (posterior_alpha + posterior_beta)
+
+plot(
+  x = applied_x, y = applied_x, type = "n", xlim = c(0, 1), ylim = c(0, 15),
+  yaxt = "n", xaxt = "n", ylab = NA, xlab = NA, cex.axis = 1.5,
+  main = paste0("posterior mean=", round(posterior_mean, 2)), cex.main = 2
+)
+axis(1, at = applied_x, labels = applied_x, col.axis = "darkgrey", las = 2)
+legend(
+  "topleft", col = c("royalblue", "salmon"), lty = 1, lwd = 2,
+  legend = c("prior", "posterior"), cex = 1.5, bty = "n"
+)
+lines(applied_x, dbeta(applied_x, prior_alpha, prior_beta), col = "royalblue", lwd = 2)
+lines(applied_x, dbeta(applied_x, posterior_alpha, posterior_beta), col = "salmon", lwd = 2)
+abline(v = success_count / trial_count, lty = "dashed", col = "salmon", lwd = 2)
+```
+
+## Applied example 2
+
+We want to estimate the probability that Stephen Curry will successfully make a field goal.
+
+1. After some research, we decide a $beta(4.8,5.2)$ prior is reasonable. What is the prior mean?
+
+2. [In the current NBA regular season](https://www.espn.com/nba/player/stats/_/id/3975/stephen-curry), he made 80 field goals out of 160 attempts ($50\%$). With the beta-binomial model, what is the posterior distribution? What is the posterior mean?
+
+3. Suppose you observe in the next game, that he made 5 field goals out of 6 attempts. Update the posterior in 2. again with this new data. What is the updated posterior distribution?
+
+4. Plot the beta distributions in 1, 2, and 3 in R.
+
+5. Check the assumptions of the binomial model: independence? equal probability?
+
+Comment: instead of choosing specific parameter values for the prior, a **hierarchical Bayesian model** can be specified.
+
+## Statistical inference
+
+As an example, suppose our posterior distribution is $\underline{\hspace{50pt}}$
+
+<span style="text-decoration: underline;">Connection to non-Bayesian methods</span>
+
+- Point estimate: can use a summary statistic of the posterior distribution (e.g., posterior mean, posterior median)
+
+- Confidence interval: credible interval; HPD (highest posterior density) interval
+
+- Hypothesis testing: "testing if $p>0.5$" (say) only makes sense in non-Bayesian setting; in Bayesian inference, one can look at $P(p>0.5)$ under the posterior
+
+## Discussions
+
+When the prior and posterior belong to the same distribution family (beta distribution in this case), the prior is called a [conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior) for the model.
+
+In more complicated scenarios, conjugate priors do not exist or are not sufficient. 
+
+The posterior can be difficult to solve mathematically...and we turn to **Markov chain Monte Carlo (MCMC)** to approximate the posterior!
