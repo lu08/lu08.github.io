@@ -1,7 +1,10 @@
 ---
-title: "Week 14"
+title: "Week 14 (December 2)"
 ---
 
 ## In class
+
+**Quiz 8** on [Homework 9](../../course_documents/homework/homework_9.qmd).
+
 
 ## Homework

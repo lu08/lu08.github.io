@@ -1063,7 +1063,7 @@
   {
     "objectID": "teaching/DATA352/weeks/week_15/week_15.html#homework",
     "href": "teaching/DATA352/weeks/week_15/week_15.html#homework",
-    "title": "Week 15",
+    "title": "Week 15 (December 9)",
     "section": "Homework",
     "text": "Homework",
     "crumbs": [
@@ -1073,11 +1073,11 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_13/week_13.html#homework",
-    "href": "teaching/DATA352/weeks/week_13/week_13.html#homework",
-    "title": "Week 13",
-    "section": "Homework",
-    "text": "Homework",
+    "objectID": "teaching/DATA352/weeks/week_13/week_13.html",
+    "href": "teaching/DATA352/weeks/week_13/week_13.html",
+    "title": "Week 13 (November 25)",
+    "section": "",
+    "text": "No class. Happy Thanksgiving! 🦃🍂",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1935,11 +1935,11 @@
     ]
   },
   {
-    "objectID": "teaching/DATA352/weeks/week_12/week_12.html#homework",
-    "href": "teaching/DATA352/weeks/week_12/week_12.html#homework",
-    "title": "Week 12",
-    "section": "Homework",
-    "text": "Homework",
+    "objectID": "teaching/DATA352/weeks/week_12/week_12.html",
+    "href": "teaching/DATA352/weeks/week_12/week_12.html",
+    "title": "Week 12 (November 18)",
+    "section": "",
+    "text": "Quiz 7 on Homework 8.\nWe will go over Lecture 9.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1947,9 +1947,57 @@
     ]
   },
   {
+    "objectID": "teaching/DATA352/weeks/week_12/week_12.html#in-class",
+    "href": "teaching/DATA352/weeks/week_12/week_12.html#in-class",
+    "title": "Week 12 (November 18)",
+    "section": "",
+    "text": "Quiz 7 on Homework 8.\nWe will go over Lecture 9.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 12"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_12/week_12.html#homework",
+    "href": "teaching/DATA352/weeks/week_12/week_12.html#homework",
+    "title": "Week 12 (November 18)",
+    "section": "Homework",
+    "text": "Homework\nHomework 9. There is no class next week (Thanksgiving break). This homework will be quizzed on December 2.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 12"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_14/week_14.html",
+    "href": "teaching/DATA352/weeks/week_14/week_14.html",
+    "title": "Week 14 (December 2)",
+    "section": "",
+    "text": "Quiz 8 on Homework 9.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 14"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_14/week_14.html#in-class",
+    "href": "teaching/DATA352/weeks/week_14/week_14.html#in-class",
+    "title": "Week 14 (December 2)",
+    "section": "",
+    "text": "Quiz 8 on Homework 9.",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 14"
+    ]
+  },
+  {
     "objectID": "teaching/DATA352/weeks/week_14/week_14.html#homework",
     "href": "teaching/DATA352/weeks/week_14/week_14.html#homework",
-    "title": "Week 14",
+    "title": "Week 14 (December 2)",
     "section": "Homework",
     "text": "Homework",
     "crumbs": [
