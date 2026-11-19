@@ -5,11 +5,12 @@ format: html
 
 ## Overview
 
-- Dec 8 (Tuesday):
+- Dec 8 (Tuesday): in-person lecture
 - Dec 10 (Thursday): in-person lecture, **quiz 10 (ANOVA quiz)**
 
 
-## Tuesday, Dec 8
+## Tuesday, Dec 8 (in-person)
 
 
-## Thursday, Dec 10
+
+## Thursday, Dec 10 (in-person)

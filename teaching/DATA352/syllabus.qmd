@@ -136,7 +136,7 @@ The schedule is subject to change.
 | November 11 | Monte Carlo methods | |
 | November 18 | Bayesian modeling | Homework quiz 7|
 | November 25 | **Thanksgiving - no class** | |
-| December 2 | MCMC I | Homework quiz 8 |
-| December 9 | MCMC II | Homework quiz 9 |
+| December 2 | MCMC I | No quiz |
+| December 9 | MCMC II | Homework quiz 8 |
 
 The in-person final exam is on **Wednesday, December 16, 7:30-10:30 p.m.**

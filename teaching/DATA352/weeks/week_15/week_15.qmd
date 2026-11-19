@@ -4,4 +4,15 @@ title: "Week 15 (December 9)"
 
 ## In class
 
+**Quiz 8** on [Homework 9](../../course_documents/homework/homework_9.qmd).
+
+We will finish [Lecture 9](/teaching/DATA352/course_documents/all_lectures/Lecture_9.html) in class.  We will also do a quick review for the final exam.
+
+[Link to fullscreen](/teaching/DATA352/course_documents/all_lectures/Lecture_9.html)
+
+<iframe src="/teaching/DATA352/course_documents/all_lectures/Lecture_9.html" width="100%" height="650px" style="border:none;"></iframe>
+
+
 ## Homework
+
+None.

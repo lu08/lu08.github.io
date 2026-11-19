@@ -630,7 +630,7 @@
     "href": "teaching/STAT117/weeks/week_15/week_15.html",
     "title": "Week 15",
     "section": "",
-    "text": "Dec 8 (Tuesday):\nDec 10 (Thursday): in-person lecture, quiz 10 (ANOVA quiz)",
+    "text": "Dec 8 (Tuesday): in-person lecture\nDec 10 (Thursday): in-person lecture, quiz 10 (ANOVA quiz)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -642,7 +642,7 @@
     "href": "teaching/STAT117/weeks/week_15/week_15.html#overview",
     "title": "Week 15",
     "section": "",
-    "text": "Dec 8 (Tuesday):\nDec 10 (Thursday): in-person lecture, quiz 10 (ANOVA quiz)",
+    "text": "Dec 8 (Tuesday): in-person lecture\nDec 10 (Thursday): in-person lecture, quiz 10 (ANOVA quiz)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -650,11 +650,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_15/week_15.html#tuesday-dec-8",
-    "href": "teaching/STAT117/weeks/week_15/week_15.html#tuesday-dec-8",
+    "objectID": "teaching/STAT117/weeks/week_15/week_15.html#tuesday-dec-8-in-person",
+    "href": "teaching/STAT117/weeks/week_15/week_15.html#tuesday-dec-8-in-person",
     "title": "Week 15",
-    "section": "Tuesday, Dec 8",
-    "text": "Tuesday, Dec 8",
+    "section": "Tuesday, Dec 8 (in-person)",
+    "text": "Tuesday, Dec 8 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -662,11 +662,11 @@
     ]
   },
   {
-    "objectID": "teaching/STAT117/weeks/week_15/week_15.html#thursday-dec-10",
-    "href": "teaching/STAT117/weeks/week_15/week_15.html#thursday-dec-10",
+    "objectID": "teaching/STAT117/weeks/week_15/week_15.html#thursday-dec-10-in-person",
+    "href": "teaching/STAT117/weeks/week_15/week_15.html#thursday-dec-10-in-person",
     "title": "Week 15",
-    "section": "Thursday, Dec 10",
-    "text": "Thursday, Dec 10",
+    "section": "Thursday, Dec 10 (in-person)",
+    "text": "Thursday, Dec 10 (in-person)",
     "crumbs": [
       "Research",
       "Weeks",
@@ -703,6 +703,18 @@
     "title": "Week 13",
     "section": "Tuesday, Nov 24 (asynchronous)",
     "text": "Tuesday, Nov 24 (asynchronous)",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 13"
+    ]
+  },
+  {
+    "objectID": "teaching/STAT117/weeks/week_13/week_13.html#thursday-nov-26-no-class",
+    "href": "teaching/STAT117/weeks/week_13/week_13.html#thursday-nov-26-no-class",
+    "title": "Week 13",
+    "section": "Thursday, Nov 26 (no class)",
+    "text": "Thursday, Nov 26 (no class)\nNo class.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1061,11 +1073,35 @@
     ]
   },
   {
+    "objectID": "teaching/DATA352/weeks/week_15/week_15.html",
+    "href": "teaching/DATA352/weeks/week_15/week_15.html",
+    "title": "Week 15 (December 9)",
+    "section": "",
+    "text": "Quiz 8 on Homework 9.\nWe will finish Lecture 9 in class. We will also do a quick review for the final exam.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 15"
+    ]
+  },
+  {
+    "objectID": "teaching/DATA352/weeks/week_15/week_15.html#in-class",
+    "href": "teaching/DATA352/weeks/week_15/week_15.html#in-class",
+    "title": "Week 15 (December 9)",
+    "section": "",
+    "text": "Quiz 8 on Homework 9.\nWe will finish Lecture 9 in class. We will also do a quick review for the final exam.\nLink to fullscreen",
+    "crumbs": [
+      "Research",
+      "Weeks",
+      "Week 15"
+    ]
+  },
+  {
     "objectID": "teaching/DATA352/weeks/week_15/week_15.html#homework",
     "href": "teaching/DATA352/weeks/week_15/week_15.html#homework",
     "title": "Week 15 (December 9)",
     "section": "Homework",
-    "text": "Homework",
+    "text": "Homework\nNone.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1348,7 +1384,7 @@
     "href": "teaching/DATA352/syllabus.html#tentative-schedule",
     "title": "Syllabus",
     "section": "Tentative Schedule",
-    "text": "Tentative Schedule\nThe schedule is subject to change.\n\n\n\nDate\nLecture content\nNote\n\n\n\n\nSeptember 2\nIntroduction\n\n\n\nSeptember 9\nCommon discrete distributions\nHomework quiz 1\n\n\nSeptember 16\nReview: R basics and loops\nHomework quiz 2\n\n\nSeptember 23\nContinuous distributions\nHomework quiz 3\n\n\nSeptember 30\nExam 1\n\n\n\nOctober 7\nSimulating the Central Limit Theorem\n\n\n\nOctober 14\nRejection and SIR sampling\nHomework quiz 4\n\n\nOctober 21\nModel-based inference\nHomework quiz 5\n\n\nOctober 28\nBootstrapping\nHomework quiz 6\n\n\nNovember 4\nExam 2\n\n\n\nNovember 11\nMonte Carlo methods\n\n\n\nNovember 18\nBayesian modeling\nHomework quiz 7\n\n\nNovember 25\nThanksgiving - no class\n\n\n\nDecember 2\nMCMC I\nHomework quiz 8\n\n\nDecember 9\nMCMC II\nHomework quiz 9\n\n\n\nThe in-person final exam is on Wednesday, December 16, 7:30-10:30 p.m.",
+    "text": "Tentative Schedule\nThe schedule is subject to change.\n\n\n\nDate\nLecture content\nNote\n\n\n\n\nSeptember 2\nIntroduction\n\n\n\nSeptember 9\nCommon discrete distributions\nHomework quiz 1\n\n\nSeptember 16\nReview: R basics and loops\nHomework quiz 2\n\n\nSeptember 23\nContinuous distributions\nHomework quiz 3\n\n\nSeptember 30\nExam 1\n\n\n\nOctober 7\nSimulating the Central Limit Theorem\n\n\n\nOctober 14\nRejection and SIR sampling\nHomework quiz 4\n\n\nOctober 21\nModel-based inference\nHomework quiz 5\n\n\nOctober 28\nBootstrapping\nHomework quiz 6\n\n\nNovember 4\nExam 2\n\n\n\nNovember 11\nMonte Carlo methods\n\n\n\nNovember 18\nBayesian modeling\nHomework quiz 7\n\n\nNovember 25\nThanksgiving - no class\n\n\n\nDecember 2\nMCMC I\nNo quiz\n\n\nDecember 9\nMCMC II\nHomework quiz 8\n\n\n\nThe in-person final exam is on Wednesday, December 16, 7:30-10:30 p.m.",
     "crumbs": [
       "Research",
       "Syllabus"
@@ -1939,7 +1975,7 @@
     "href": "teaching/DATA352/weeks/week_12/week_12.html",
     "title": "Week 12 (November 18)",
     "section": "",
-    "text": "Quiz 7 on Homework 8.\nWe will go over Lecture 9.\nLink to fullscreen",
+    "text": "Quiz 7 on Homework 8.\nWe reviewed key concepts of hypothesis testing and empirical p-values. We did not do a new lecture. There is no homework assigned.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1951,7 +1987,7 @@
     "href": "teaching/DATA352/weeks/week_12/week_12.html#in-class",
     "title": "Week 12 (November 18)",
     "section": "",
-    "text": "Quiz 7 on Homework 8.\nWe will go over Lecture 9.\nLink to fullscreen",
+    "text": "Quiz 7 on Homework 8.\nWe reviewed key concepts of hypothesis testing and empirical p-values. We did not do a new lecture. There is no homework assigned.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1963,7 +1999,7 @@
     "href": "teaching/DATA352/weeks/week_12/week_12.html#homework",
     "title": "Week 12 (November 18)",
     "section": "Homework",
-    "text": "Homework\nHomework 9. There is no class next week (Thanksgiving break). This homework will be quizzed on December 2.",
+    "text": "Homework\nNone.",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1975,7 +2011,7 @@
     "href": "teaching/DATA352/weeks/week_14/week_14.html",
     "title": "Week 14 (December 2)",
     "section": "",
-    "text": "Quiz 8 on Homework 9.",
+    "text": "There is no quiz today. We will go over Lecture 9 in class.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1987,7 +2023,7 @@
     "href": "teaching/DATA352/weeks/week_14/week_14.html#in-class",
     "title": "Week 14 (December 2)",
     "section": "",
-    "text": "Quiz 8 on Homework 9.",
+    "text": "There is no quiz today. We will go over Lecture 9 in class.\nLink to fullscreen",
     "crumbs": [
       "Research",
       "Weeks",
@@ -1999,7 +2035,7 @@
     "href": "teaching/DATA352/weeks/week_14/week_14.html#homework",
     "title": "Week 14 (December 2)",
     "section": "Homework",
-    "text": "Homework",
+    "text": "Homework\nHomework 9.",
     "crumbs": [
       "Research",
       "Weeks",

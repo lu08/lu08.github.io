@@ -6,14 +6,10 @@ title: "Week 12 (November 18)"
 
 **Quiz 7** on [Homework 8](../../course_documents/homework/homework_8.qmd).
 
-We will go over [Lecture 9](/teaching/DATA352/course_documents/all_lectures/Lecture_9.html).
-
-[Link to fullscreen](/teaching/DATA352/course_documents/all_lectures/Lecture_9.html)
-
-<iframe src="/teaching/DATA352/course_documents/all_lectures/Lecture_9.html" width="100%" height="650px" style="border:none;"></iframe>
+We reviewed key concepts of hypothesis testing and empirical p-values.  We did not do a new lecture.  There is no homework assigned.
 
 
 
 ## Homework
 
-[Homework 9](../../course_documents/homework/homework_9.qmd).  There is no class next week (Thanksgiving break).  This homework will be quizzed on December 2.
+None.
