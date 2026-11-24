@@ -328,7 +328,7 @@ f. No need to do effect size as the test is not significant.
 1. State the null and alternative hypotheses.
 2. Check the normality assumption (check sample size).
 3. Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval)
-4. **ONLY If test is significant,** report and interpret the effect size.
+4. **ONLY if the test is significant**, report and interpret the effect size.
 
 
 # Paired-samples t-test
@@ -389,13 +389,12 @@ We can calculate the difference between the two scores as our new “differenced
 | 48.70 | 53.12 | <span style="color: red;">4.42</span> |
 | 56.94 | 54.79 | <span style="color: red;">-2.15</span> |
 | 42.64 | 44.77 | <span style="color: red;">2.13</span> |
-| 63.29 | 61.99 | <span style="color: red;">-1.30</span> |
-| 65.66 | 65.02 | <span style="color: red;">-0.64</span> |
-| 63.43 | 60.49 | <span style="color: red;">-2.94</span> |
 
 
 Testing “Has the average reading achievement score in 12th grade decreased from 10th grade?”
-	- is the same as -
+	
+    ... is the same as ...
+
 Testing “Is the mean difference less than zero?”
 
 > The math behind a paired samples t test is identical to a one-sample t-test, where the one-sample is the difference between the two paired variables. The null hypothesis is that the mean difference is zero.
@@ -423,6 +422,7 @@ Each dot is the estimated change (i.e., the sample mean), each horizontal bar is
 
 The [young people survey](https://www.kaggle.com/datasets/miroslavsabo/young-people-survey/data) contains a set of questions that ask what young people (in Slovakia) are interested in (Likert scale, 1 = not interested, 5 = very interested). Look at the CI below, we see that young people are significantly more interested in shopping than celebrities; significantly more interested in mathematics than physics; significantly less interested in mathematics than fun with friends; and not significantly different in their interest in mathematics and law.  Note how these conclusions are consistent with the given p-values.
 
+::: {style="width: 50%; margin: 0 auto; font-size: 50%;"}
 | Measure 1 | Measure 2 | Test | Statistic | df | *p* | Mean difference | SE difference | 95% CI: Lower | 95% CI: Upper |
 |:--|:--|:--|--:|--:|--:|--:|--:|--:|--:|
 | Shopping | Celebrities | Student's *t* | 22.44 | 1005.00 | < .001 | 0.92 | 0.04 | 0.84 | 1.00 |
@@ -433,6 +433,8 @@ The [young people survey](https://www.kaggle.com/datasets/miroslavsabo/young-peo
 : Paired Samples T-Test {#tbl-paired-samples-t-test}
 
 *Note.* Two-sided alternative: $H_a: \mu_{\text{Measure 1} - \text{Measure 2}} \ne 0$.
+
+:::
 
 </details>
 
@@ -445,7 +447,7 @@ The [young people survey](https://www.kaggle.com/datasets/miroslavsabo/young-peo
 
 - One way to check: the correct one-sided p-value is always less than 0.5 (and half of the two-sided p-value). For example, the two-sided p-value for `achrdg12` vs `achrdg10` is 0.056, and the one-sided p-value is 0.028.
 
-Has the average reading achievement score in 12th grade decreased from 10th grade (`achrdg12` vs `achrdg10`)?
+Question: Has the average reading achievement score in 12th grade decreased from 10th grade (`achrdg12` vs `achrdg10`)?
 
 <span style="color: blue;">Solution: $p = 0.028 < 0.05$, so we reject the null hypothesis and conclude that the average reading achievement score in 12th grade is statistically significantly lower than that in 10th grade.</span>
 
@@ -455,7 +457,7 @@ Since the result is significant (i.e., we have rejected the null and concluded t
 
 Numerically, the sample mean of the reading score in 12th grade is 55.6, and in 10th grade is 56.1, so we see a decrease of 0.5 points. The effect size is a standardized measure of this difference.
 
-Report and interpret the effect size, or indicate why it is inappropriate to do so.
+Question: Report and interpret the effect size, or indicate why it is inappropriate to do so.
 
 <span style="color: blue;">  Solution: d=0.0856; the sample mean of 12th grade (55.6) is 0.0856 standard deviations lower than the sample mean of 10th grade (56.1).  This is a very small effect size (use the Cohen scale guidelines: d = 0.2 is small, d = 0.5 is medium, d = 0.8 is large).</span>
 
@@ -503,7 +505,7 @@ f. Report and interpret the effect size, or indicate why it is inappropriate to 
 <details>
 <summary>Show solution</summary>
 
-a. $H_0: \mu_r = \mu_m$ and $H_a: \mu_r \ne \mu_m $.
+a. $H_0: \mu_r = \mu_m$ and $H_a: \mu_r \ne \mu_m$.
 
 b. Normality is not an issue because the sample size is large ($n = 500 > 30$).
 
@@ -524,7 +526,7 @@ f. No need to do effect size since the test is not significant.  (Intuition: mat
 1. State the null and alternative hypotheses.
 2. Check the normality assumption (check sample size).
 3. Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval: is the CI entirely above or below zero?)
-4. **ONLY If test is significant,** report and interpret the effect size.
+4. **ONLY if the test is significant**, report and interpret the effect size.
 
 
 
@@ -596,13 +598,13 @@ This is what we are checking using the Homogeneity of variance test (Levene's). 
 
 Based on the NELS dataset, do female and male students have different family sizes, on average?
 
-The Homogeneity of variance test (Levene's) has a p-value of 0.403, so we can assume equal variances.  (And we do not need to switch to the Welch's t-test.)
+- The Homogeneity of variance test (Levene's) has a p-value of 0.403, so we can assume equal variances.  (And we do not need to switch to the Welch's t-test.)
 
-The sample sizes are 227 for males and 273 for females, so normality is not an issue.
+- The sample sizes are 227 for males and 273 for females, so normality is not an issue.
 
-The p-value of the independent samples t-test is 0.194 (against a two-sided alternative), so we fail to reject the null hypothesis and conclude that there is no statistically significant difference in family size between male and female students, on average.
+- The p-value of the independent samples t-test is 0.194 (against a two-sided alternative), so we fail to reject the null hypothesis and conclude that there is no statistically significant difference in family size between male and female students, on average.
 
-Also, the 95% confidence interval for the mean difference is (-0.387, 0.0787).  Since this interval contains 0, we would "accept" a value of 0 (i.e., the difference could be zero, so, no difference).
+- Also, the 95% confidence interval for the mean difference is (-0.387, 0.0787).  Since this interval contains 0, we would "accept" a value of 0 (i.e., the difference could be zero, so, no difference).
 
 
 ## Effect size
@@ -636,13 +638,13 @@ b. Normality is not an issue because both group sample sizes are large ($n_{Neve
 
 c. Levene's test has $p = .919 > .05$, so we can assume equal variances and use Student's t-test.
 
-d. The independent-samples test gives $t(498) = 3.15$, $p < .001$.
+d. The independent-samples test gives $p < .001$.
 
 e. Since $p < .05$, reject $H_0$. Students who have smoked marijuana have significantly lower average 10th-grade math achievement than students who have never smoked marijuana.
 
-f. The provided output does not include a confidence interval. Because this is a one-sided test, use the p-value for the conclusion; a matching one-sided confidence interval would need to be requested separately.
+f. Should not use a confidence interval to make a conclusion because this is a one-sided test.
 
-g. Cohen's $d = 0.36$, a small effect. The mean for students who have never smoked marijuana (57.51) is 0.36 standard deviations higher than the mean for students who have (54.69).
+g. Cohen's $d = 0.36$, a small effect. The mean math achievement for students who have never smoked marijuana (57.51) is 0.36 standard deviations higher than the mean for students who have (54.69).
 
 </details>
 
@@ -652,4 +654,4 @@ g. Cohen's $d = 0.36$, a small effect. The mean for students who have never smok
 2. Check the normality assumption (check sample sizes of BOTH independent groups!).
 3. Check the homogeneity of variance assumption using Levene's test (if Levene's test is significant, use Welch's t-test instead of Student's t-test).
 4. Draw a conclusion based on the p-value of the independent samples t-test. (OR, for a two-sided test, draw a conclusion based on the confidence interval.)
-5. **ONLY if the test is significant, report and interpret the effect size.**
+5. **ONLY if the test is significant,** report and interpret the effect size.
