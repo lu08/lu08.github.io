@@ -12,15 +12,17 @@ format: html
 
 ## Tuesday, Nov 24 (asynchronous)
 
+Study **paired Samples t-test** and **independent samples t-test** from [Chapter 11](../../course_documents/all_lectures/chapter_11_slide.html).  The quiz on Tuesday after Thanksgiving will be on independent samples t-test, similar to Example 7 on page 35 of the slide.
 
+I will add descriptive video recordings later this week. (Sorry about the delay; my whole family have been sick with the flu.)  You should be able to carry out the procedures without the videos. 
 
+You can find more examples in the [Chapter 11 homework](../../course_documents/homework/chapter_11.qmd).
 
-
-
+I have also posted exam 3 reviews (under [course documents](../../course_documents/index.qmd)) in case you want to get a headstart. You can skip Question 4 for now (Central Limit Theorem, which we will cover on Tuesday after Thanksgiving).
 
 
 
 
 ## Thursday, Nov 26 (no class)
 
-No class.
+No class. 

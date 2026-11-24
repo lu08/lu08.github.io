@@ -1,0 +1,158 @@
+---
+title: "STAT117 Spring 2026 Exam #3"
+format: pdf
+header-includes: ['\usepackage{xcolor}', '\definecolor{solutiongreen}{RGB}{0,100,0}']
+---
+
+\vspace{-7em}
+
+Name: _______________________________________________
+
+- Ask if you have any questions about the exam.
+
+- Be concise in your answers. You will be penalized for adding irrelevant or incorrect information to a response.
+
+- You don’t need to round decimals, but if you choose to, keep at least two decimals.
+
+- You are allowed a reference sheet. Use both sides of one 8.5 by 11 inch piece of paper and put whatever you want on it. You will turn this sheet in with your exam. Be sure to put your name on it so that it can be returned to you later.
+
+- Calculator use is permitted. You may NOT use your phone as a calculator. You will need to use your laptop, but the only programs you are allowed to have open are Jamovi, the excel (normal distribution) calculator, and the standard Windows or Mac calculator. You need to close (not just minimize) other programs (including your web browser and all messaging apps). You are not allowed to consult any papers (other than your reference sheet), websites, books, or any person except the instructor during the exam.
+
+- You need to download the dataset from Moodle before the exam.  You are not allowed to open a web browser during the exam.  You must turn off WIFI on your computer.
+
+- Cases of suspected cheating will be referred to the dean. We take cheating very seriously because it benefits student learning when students get grades that reflect what they know. For this reason, you are allowed to have at your seat only your test, your reference sheet, your computer, a calculator, and writing implements (pen or pencils). You will need to put your jacket, backpack, cell phone, smart watch and anything else you carry to class at the front of the room during the exam.
+
+The dataset used for the exam is GSS_SP2026.sav (same as exam 1 and 2).  The levels of measurement in Jamovi are not set correctly, so you need to judge for yourself.  Sometimes, the level of measurement is subjective or controversial, and the relevant question will tell you what to do.
+
+**Note 1:** the data is set up such that any value between -100 and -10 is automatically treated as a missing value.  You don’t need to do anything about these as Jamovi knows how to handle them (for instance, they are excluded from calculations of any statistics).
+
+**Note 2:** For inferential purposes, we consider this dataset to be a random sample of all American adults. Use α = .05 for all significance tests.
+
+\newpage
+
+**1. (30 points)** The variable biasnews is a Likert scale variable that measures a respondent’s agreement toward “News coverage about politics in America is biased.” Perform a one-sample t-test to determine whether the agreement toward this statement among all American adults is significantly less than 3, on average.
+
+\medskip
+**(a)** To make sense of this variable, look up its coding. A higher value for this variable corresponds to (choose one) less/more agreement toward the statement. What does a value of 3 (our test value) represent?
+
+\color{solutiongreen} Less, “neither agree nor disagree” \color{black}
+
+\medskip
+**(b)** State the null and alternative hypotheses for this test.
+
+\color{solutiongreen} $H_0: \mu = 3$; $H_a: \mu < 3$ \color{black}
+
+\medskip
+**(c)** Evaluate tenability of the normality assumption or indicate why the assumption is not an issue for this analysis.
+
+\color{solutiongreen} Sample size is large enough, normality is not an issue. \color{black}
+
+\medskip
+**(d)** Perform the t-test. p-value from Jamovi: _____. This is a one-sided/two-sided (choose one) p-value. Reject the null hypothesis (yes or no)? __________ Draw a conclusion of the test in the context of the question, using language that someone who didn’t know statistics and wasn’t familiar with the dataset would understand.
+
+\color{solutiongreen} p-value < 0.001, one-sided, yes. The average agreement toward “News coverage about politics in America is biased” is significantly less than 3 among all American adults; OR there is significantly more (than neutral) agreement toward the statement, on average (this is a better answer but not required). \color{black}
+
+\medskip
+**(e)** Report the effect size and give an interpretation in the context of the problem (make sure to mention the strength of the effect), or indicate why it is inappropriate to do so.
+
+\color{solutiongreen} d = 1.270 or -1.270; strong effect; the sample mean (1.88) is 1.270 SDs lower than the claimed value of 3. \color{black}
+
+\medskip
+**(f)** Report a 95% Confidence interval for the average agreement toward “News coverage about politics in America is biased” (biasnews) among all American adults.
+
+\color{solutiongreen} (1.84, 1.93) \color{black}
+
+\newpage
+
+**2. (30 points)** Among American adults, is the average perception significantly different toward (1) the reliability of news on TV (tvnews1) and (2) the reliability of news on web (webnews)? Perform a paired samples t-test to find out.
+
+\medskip
+**(a)** The sample mean for tvnews1 is ________; the sample mean for webnews is ________. Based only on the sample means, which of the following is true? Hint: you might want to check the coding of the variables. Choose one:
+
+- On average, people in the dataset think news on TV is more reliable.
+- On average, people in the dataset think news on web is more reliable.
+- On average, American adults think news on TV is more reliable.
+- On average, American adults think news on web is more reliable.
+
+\color{solutiongreen} tvnews1: 2.52; webnews: 2.58.  Correct statement: On average, people in the dataset think news on web is more reliable. \color{black}
+
+\medskip
+**(b)** State the null and alternative hypotheses for the paired samples t-test. If you write a notation with a generic subscript (e.g., $\mu_1$, $\bar{X}_2$), explain what the notation means in text.
+
+\color{solutiongreen} $H_0: \mu_{\text{tvnews}} = \mu_{\text{webnews}}$; $H_1: \mu_{\text{tvnews}} \ne \mu_{\text{webnews}}$. \color{black}
+
+\medskip
+**(c)** Report the p-value of the test: ________. State your conclusion in the context of the problem, using language that someone who didn’t know statistics and wasn’t familiar with the dataset would understand.
+
+\color{solutiongreen} p = 0.018. Among American adults, the average perception is significantly different toward the reliability of news on TV and the reliability of news on web. \color{black}
+
+\medskip
+**(d)** Report and interpret the effect size, or state why we should not do this.
+
+\color{solutiongreen} d = 0.065 or -0.065; the sample mean of TVNEWS1 (2.52) is 0.065 SDs lower than the sample mean of WEBNEWS (2.58); weak effect. \color{black}
+
+\medskip
+**(e)** Report the 95% confidence interval of the mean difference.
+
+\color{solutiongreen} (-0.100, -0.009) or (0.009, 0.100) \color{black}
+
+\medskip
+**(f)** Can we decide whether or not we should reject the null hypothesis based on the confidence interval above? If so, explain how. If not, explain why not.
+
+\color{solutiongreen} The confidence interval does not include 0, so we can reject the null hypothesis. \color{black}
+
+\newpage
+
+**3. (15 points)** In this question, you are expected to conduct a thorough analysis on your own, without prompting on all of the relevant components. Perform an independent samples t-test to see if the average agreement toward “News coverage about politics in America is biased” (biasnews, you’ve used this variable in Q1) is significantly different between people who favor or oppose the death penalty for murder (cappun), among all American adults. If you write a notation with a generic subscript (e.g., $\mu_1$, $\bar{X}_2$), explain what the notation means in text. Make sure to evaluate all relevant assumptions and components. If any component is unnecessary, you should mention it and provide a brief explanation.
+
+\color{solutiongreen} Hypotheses: $H_0: \mu_{\text{favor}} = \mu_{\text{oppose}}$; $H_1: \mu_{\text{favor}} \ne \mu_{\text{oppose}}$. \color{black}
+
+\color{solutiongreen} Assumption 1: both sample sizes (878 and 557) are large enough; normality is not an issue. \color{black}
+
+\color{solutiongreen} Assumption 2: Levene’s p-value is 0.042, so equal variances cannot be assumed. Use Welch's t-test instead of Student's t-test. \color{black}
+
+\color{solutiongreen} p-value = 0.006. \color{black}
+
+\color{solutiongreen} Conclusion: reject the null. The average agreement toward “News coverage about politics in America is biased” is significantly different between people who favor and oppose the death penalty. The same conclusion can be made from the confidence interval, which does not include 0. \color{black}
+
+\color{solutiongreen} Effect size: d = 0.147 or -0.147. The sample mean of biasnews among people who favor the death penalty (1.83) is 0.147 SDs lower (i.e., more agreement) than among people who oppose the death penalty (1.96); small effect. \color{black}
+
+\newpage
+
+**4. (10 points)** This question does not require Jamovi. In a certain metropolitan area, the average number of text messages sent per day by adults is 40, with a standard deviation of 35.
+
+\medskip
+**(a)** If we randomly sample 30 adults from this population and calculate their average number of daily text messages, what would be the shape, mean, and standard deviation (also called the standard error) of the distribution of this average?
+
+\color{solutiongreen} Shape: normal. Mean: 40. Standard deviation (standard error): 35/√30 = 6.390097. \color{black}
+
+\medskip
+**(b)** What is the probability that the average number of text messages for the 30 randomly sampled adults is more than 50?
+
+\color{solutiongreen} 1-pnorm(50, mean=40, sd=6.390097) = 0.05880072. \color{black}
+
+\newpage
+
+**5. (15 points)** This question does not require the use of Jamovi. The following information are adopted from a journal article “Boston Marathon athlete performance outcomes and intra-event medical encounter risk associated with low energy availability indicators.”
+
+**Objective:** To determine the association between survey-based self-reported problematic low energy availability indicators (LEA-I) and race performance and intra-event medical encounters during the Boston Marathon.
+
+**Methods:** 1030 runners who were registered for the 2022 Boston Marathon completed an electronic survey (1-4 weeks pre-race) assessing LEA-I, training and medical history. De-identified survey data were linked to event wearable timing chips and medical encounter records. LEA-I was defined as: an elevated Eating Disorder Examination Questionnaire score, elevated Low Energy Availability (LEA) in Females Questionnaire score, LEA in Males Questionnaire with a focus on gonadal dysfunction score and/or self-report of diagnosed eating disorder/disordered eating.
+
+**Results:** The prevalence of LEA-I was 232/546 (42.5%) in females and 85/484 (17.6%) in males. Athletes without LEA-I (non-LEA-I) achieved significantly better race times versus those with LEA-I (accounting for demographic and anthropomorphic data, training history and marathon experience), along with better division finishing place (DFP) mean outcomes (women's DFP: 948.9±57.6 versus 1377.4±82.9, p<0.001; men's DFP: 794.6±41.0 versus 1262.4±103.3, p<0.001). Compared with non-LEA-I athletes, LEA-I athletes had 1.99-fold (95% CI: 1.15 to 3.43) increased relative risk (RR) of an intra-event medical encounter of any severity level, and a 2.86-fold increased RR (95% CI:1.31 to 6.24) of a major medical encounter.
+
+\medskip
+**(a)** Multiple places in the Results section mention “p<0.001.” What does p here refer to? Why is it important to mention that “p<0.001” for a stated conclusion?
+
+\color{solutiongreen} p-value; “p<0.001” indicates that the stated conclusion is statistically significant and not due to random chance. \color{black}
+
+\medskip
+**(b)** To compare race performance (in terms of finishing time, for instance) between non-LEA-I and LEA-I athletes, what kind of t-test, one-sample, paired samples, or independent samples, would be the most appropriate?
+
+\color{solutiongreen} Independent samples t-test. \color{black}
+
+
+\medskip
+**(c)** Suppose a regression analysis was performed to predict race time (in minute), and LEA-I was used as a dichotomous predictor (coded as 0=non-LEA-I and 1=LEA-I). The slope of the predictor is estimated to be 12.5. Interpret this value in the context of the problem using language that someone who hasn’t taken statistics would understand. If it is not meaningful to interpret the slope, explain why not.
+
+\color{solutiongreen} The average (or predicted) race time for people with LEA-I is 12.5 minutes more than for people without LEA-I. \color{black}

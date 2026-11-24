@@ -25,4 +25,4 @@ It is ok if there are concepts related to inferential statistics and p-values th
 
 Quiz question will be similar to the one-sample t-test examples at the end of [Chapter 11](../../course_documents/all_lectures/chapter_11_slide.html) slides.  
 
-In class, we will finish [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html) and [Chapter 9](../../course_documents/all_lectures/Chapter_9_slide.html).
+In class, we will finish [Chapter 8](../../course_documents/all_lectures/chapter_8_slide.html).

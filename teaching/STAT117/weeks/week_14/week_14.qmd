@@ -11,7 +11,11 @@ format: html
 
 ## Tuesday, Dec 1 (in-person)
 
+**Quiz 9** on independent samples t-test, similar to Example 7 on page 35 of [Chapter 11 slides](../../course_documents/all_lectures/chapter_11_slide.html).
 
+In class, we will finish [Chapter 9](../../course_documents/all_lectures/Chapter_9_slide.html).
 
 
 ## Thursday, Dec 3 (in-person)
+
+**EXAM 3** will cover material from Chapters 6 (only on interpretation of a dichotomous predictor for regression), 7, 8, 9, and 11. Chapter 11 constitutes a significant portion of the exam.  You can find all of the lecture slides and exam reviews under [course documents](../../course_documents/index.qmd).

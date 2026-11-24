@@ -16,7 +16,7 @@ You can find all course documents here as a reference page.  Please refer to the
 - [Chapter 8: Normal Distribution](all_lectures/chapter_8_slide.html)
 - [Chapter 9: Central Limit Theorem (using a few examples)](all_lectures/Chapter_9_slide.html)
 - [Chapter 11: Inferences Involving the Mean](all_lectures/chapter_11_slide.html)
-- [Chapter 13: Analysis of Variance (ANOVA)](all_lectures/chapter_13_slide.html)
+- [Chapter 13: Analysis of Variance (ANOVA)](all_lectures/Chapter_13_slide.html)
 
 - [Introduction to Inferential Statistics](../../../topics/Intro_to_Inferential.html)
 
@@ -63,7 +63,10 @@ If a dataset is missing, or if you find a typo/error, please let me know.
 - [Practice Exam 1 solution](exam_reviews/practice_exam_1_solution.qmd)
 - [Practice Exam 2](exam_reviews/practice_exam_2_blank.qmd)
 - [Practice Exam 2 solution](exam_reviews/practice_exam_2_solution.qmd)
+- [Practice Exam 3](exam_reviews/practice_exam_3_blank.qmd)
+- [Practice Exam 3 solution](exam_reviews/practice_exam_3_solution.qmd)
 
 ## Exam solutions
 
 - [Exam 1 solution](FA2026_exam1_JMV_solution.pdf)
+- [Exam 2 solution](FA2026_exam2_JMV_solution.pdf)
