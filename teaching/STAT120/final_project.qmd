@@ -2,6 +2,11 @@
 title: "Final project"
 ---
 
+## Format
+
+Your presentation and final project should be HTML files rendered from [Quarto document](resources/quoarto.qmd).
+
+
 ## Data selection
 
 **Due: Oct 15 before class.**

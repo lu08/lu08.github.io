@@ -1,0 +1,53 @@
+---
+title: "Creating Quarto Reports and Presentations"
+---
+
+Quarto documents combine text, code, and results in one file. Write the source in a file ending in `.qmd`, then render it to create an HTML file you can open in a web browser. Your data analysis should still be conducted in R script. Quarto should be used only to generate the final report or presentation, by pasting the relevant code and output into the `.qmd` file.
+
+
+## Create a report
+
+In RStudio, choose **File > New File > Quarto Document**. Select **HTML** (default) as the output format, give the document a title, and save it with a name such as `my_report.qmd`.
+
+A simple report might look like this:
+
+````markdown
+---
+title: "Exploring Car Fuel Efficiency"
+author: "Your Name"
+format: html
+---
+
+## Question
+
+How does fuel efficiency vary across cars in the `mtcars` data?
+
+## Summary
+
+The average fuel efficiency is:
+
+```{r}
+mean(mtcars$mpg)
+```
+````
+
+
+Click **Render** in RStudio, or open a Terminal in the folder containing the file and run:
+
+```sh
+quarto render my_report.qmd
+```
+
+The rendered file is `my_report.html`. Open it in a browser to check the layout, text, code output, and figures before sharing it.
+
+To import a data in a qmd file, you need to specify the correct file path.  For simplicity, I recommend placing the data file in the same directory as your `.qmd` file and use `read.csv("your_data_file.csv")` to import it.
+
+
+## Create a presentation
+
+In RStudio, choose **File > New File > Quarto Presentation**. Select **Revealjs** as the output format (default), give the presentation a title, and save it with a name such as `my_slides.qmd`.
+
+
+## Submission
+
+You should only submit the rendered HTML file, not the source `.qmd` file.

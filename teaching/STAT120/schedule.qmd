@@ -91,15 +91,17 @@ In class, we went through [Lecture 3](lectures/lecture_3/lecture_3.html) on Univ
 
 You ONLY need to attend the presentations for your group. When you are not attending, study [lecture 9](lectures/lecture_9/lecture_9.html) and [Homework 9](homework/homework_9.qmd) on your own.
 
-- Dec 1: Presentation: group A.
+Note on format: your presentation and final project should be HTML files rendered from [Quarto document](resources/quoarto.qmd).
 
-- Dec 3: Presentation: group B.
+- Dec 1: Presentation: group A: Drew, Jack, Breckyn, Sophie, Cameron
+
+- Dec 3: Presentation: group B: Jessey, Yuchen, Hang, Gianna
 
 ## Week 15
 
-- Dec 8: Presentation: group C.
+- Dec 8: Presentation: group C: Lidia, Kaitlyn, Chou, Brendan
 
-- Dec 10: **Quiz 9** based on content from [Lecture 9](lectures/lecture_9/lecture_9.html) and [Homework 9](homework/homework_9.qmd).
+- Dec 10: **Quiz 9** based on content from [Lecture 9](lectures/lecture_9/lecture_9.html) and [Homework 9](homework/homework_9.qmd). We will also work on the final project.
 
 
 

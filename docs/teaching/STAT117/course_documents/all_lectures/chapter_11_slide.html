@@ -457,7 +457,524 @@ Show solution
 <li>State the null and alternative hypotheses.</li>
 <li>Check the normality assumption (check sample size).</li>
 <li>Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval)</li>
-<li><strong>If test is significant,</strong> report and interpret the effect size.</li>
+<li><strong>ONLY If test is significant,</strong> report and interpret the effect size.</li>
+</ol>
+</section></section>
+<section>
+<section id="paired-samples-t-test" class="title-slide slide level1 center">
+<h1>Paired-samples t-test</h1>
+
+</section>
+<section id="set-up-and-hypotheses" class="slide level2">
+<h2>Set up and hypotheses</h2>
+<p>Previously, we make inference on the population mean, based on the sample mean.</p>
+<p>Now: we compare TWO means of two variables from the population, and the two variables have to be paired.</p>
+<details>
+<summary>
+NELS data screenshot
+</summary>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><code>achrdc10</code></th>
+<th style="text-align: right;"><code>achrdg12</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">41.49</td>
+<td style="text-align: right;">52.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">48.70</td>
+<td style="text-align: right;">53.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">56.94</td>
+<td style="text-align: right;">54.79</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">42.64</td>
+<td style="text-align: right;">44.77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">63.29</td>
+<td style="text-align: right;">61.99</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">65.66</td>
+<td style="text-align: right;">65.02</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><code>slfcnc10</code></th>
+<th style="text-align: right;"><code>slfcnc12</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">27</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><code>achrdg08</code></th>
+<th style="text-align: right;"><code>achmat08</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">41.94</td>
+<td style="text-align: right;">47.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">53.86</td>
+<td style="text-align: right;">54.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">53.06</td>
+<td style="text-align: right;">58.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">41.86</td>
+<td style="text-align: right;">43.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">67.97</td>
+<td style="text-align: right;">64.91</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">62.84</td>
+<td style="text-align: right;">61.04</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Has the average reading achievement score in 12th grade decreased from 10th grade?</p>
+<p>Has self-concept in 12th grade, on average, improved from 10th grade?</p>
+<p>Is the average reading achievement different from the average math achievement in 8th grade?</p>
+</section>
+<section id="comparing-the-difference" class="slide level2">
+<h2>Comparing the difference</h2>
+<p>We can calculate the difference between the two scores as our new “differenced data”</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><code>achrdg10</code></th>
+<th style="text-align: right;"><code>achrdg12</code></th>
+<th style="text-align: right;">Difference (12th - 10th)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">41.49</td>
+<td style="text-align: right;">52.56</td>
+<td style="text-align: right;"><span style="color: red;">11.07</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">48.70</td>
+<td style="text-align: right;">53.12</td>
+<td style="text-align: right;"><span style="color: red;">4.42</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">56.94</td>
+<td style="text-align: right;">54.79</td>
+<td style="text-align: right;"><span style="color: red;">-2.15</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">42.64</td>
+<td style="text-align: right;">44.77</td>
+<td style="text-align: right;"><span style="color: red;">2.13</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">63.29</td>
+<td style="text-align: right;">61.99</td>
+<td style="text-align: right;"><span style="color: red;">-1.30</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">65.66</td>
+<td style="text-align: right;">65.02</td>
+<td style="text-align: right;"><span style="color: red;">-0.64</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">63.43</td>
+<td style="text-align: right;">60.49</td>
+<td style="text-align: right;"><span style="color: red;">-2.94</span></td>
+</tr>
+</tbody>
+</table>
+<p>Testing “Has the average reading achievement score in 12th grade decreased from 10th grade?” - is the same as - Testing “Is the mean difference less than zero?”</p>
+<blockquote>
+<p>The math behind a paired samples t test is identical to a one-sample t-test, where the one-sample is the difference between the two paired variables. The null hypothesis is that the mean difference is zero.</p>
+</blockquote>
+</section>
+<section id="comparing-the-difference-1" class="slide level2">
+<h2>Comparing the difference</h2>
+<p>Again, the paired samples t-test is equivalent to a one-sample t-test. e.g., <span class="math inline">\(H_0: \mu_{math} = \mu_{reading}\)</span> can also be written as <span class="math inline">\(H_0: \mu_d = 0\)</span> where <span class="math inline">\(\mu_d\)</span> is <span class="math inline">\(\mu_{math} - \mu_{reading}\)</span>.</p>
+<ul>
+<li><p>For the normality assumption, we either check that the differences are normally distributed, or we rely on the Central Limit Theorem if the sample size is sufficiently large (&gt;30).</p></li>
+<li><p>For a two-sided test, we can reject the null if the confidence interval of the mean difference (<span class="math inline">\(\mu_d\)</span>) does not contain zero.</p></li>
+</ul>
+<details>
+<summary>
+Intuitive example 1: <a href="https://www.nytimes.com/interactive/2018/07/18/upshot/nike-vaporfly-shoe-strava.html">fastest running shoes</a>
+</summary>
+<p><img data-src="L11-nike.png"></p>
+<p>Each dot is the estimated change (i.e., the sample mean), each horizontal bar is its 95% confidence interval, and zero represents no change. Confidence interval for Nike Vaporfly does not contain zero, so it shows a statistically significant improvement (at alpha = 0.05). Confidence interval for Asics DS trainer does contain zero, so it does not show a statistically significant change.</p>
+</details>
+<details>
+<summary>
+Intuitive example 2: <a href="https://www.kaggle.com/datasets/miroslavsabo/young-people-survey/data">Young people interest</a>
+</summary>
+<p>The <a href="https://www.kaggle.com/datasets/miroslavsabo/young-people-survey/data">young people survey</a> contains a set of questions that ask what young people (in Slovakia) are interested in (Likert scale, 1 = not interested, 5 = very interested). Look at the CI below, we see that young people are significantly more interested in shopping than celebrities; significantly more interested in mathematics than physics; significantly less interested in mathematics than fun with friends; and not significantly different in their interest in mathematics and law. Note how these conclusions are consistent with the given p-values.</p>
+<div id="tbl-paired-samples-t-test" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-paired-samples-t-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Paired Samples T-Test
+</figcaption>
+<div aria-describedby="tbl-paired-samples-t-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Measure 1</th>
+<th style="text-align: left;">Measure 2</th>
+<th style="text-align: left;">Test</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;"><em>p</em></th>
+<th style="text-align: right;">Mean difference</th>
+<th style="text-align: right;">SE difference</th>
+<th style="text-align: right;">95% CI: Lower</th>
+<th style="text-align: right;">95% CI: Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Shopping</td>
+<td style="text-align: left;">Celebrities</td>
+<td style="text-align: left;">Student’s <em>t</em></td>
+<td style="text-align: right;">22.44</td>
+<td style="text-align: right;">1005.00</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mathematics</td>
+<td style="text-align: left;">Physics</td>
+<td style="text-align: left;">Student’s <em>t</em></td>
+<td style="text-align: right;">7.38</td>
+<td style="text-align: right;">1003.00</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Funwithfriends</td>
+<td style="text-align: left;">Student’s <em>t</em></td>
+<td style="text-align: right;">-45.00</td>
+<td style="text-align: right;">1002.00</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">-2.22</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">-2.32</td>
+<td style="text-align: right;">-2.12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Law</td>
+<td style="text-align: left;">Student’s <em>t</em></td>
+<td style="text-align: right;">1.44</td>
+<td style="text-align: right;">1005.00</td>
+<td style="text-align: right;">.149</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">0.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><em>Note.</em> Two-sided alternative: <span class="math inline">\(H_a: \mu_{\text{Measure 1} - \text{Measure 2}} \ne 0\)</span>.</p>
+</details>
+</section>
+<section id="p-value-1" class="slide level2">
+<h2>P-value</h2>
+<blockquote>
+<p>Jamovi procedure: <strong>Analyses &gt; T-Tests &gt; Paired Samples T-Test</strong>. Move the two variables into the <strong>Paired Variables</strong> box Under <strong>Hypothesis</strong>, select the appropriate alternative. Also select <strong>Effect size</strong> and <strong>Descriptives</strong>.</p>
+</blockquote>
+<ul>
+<li><p>The order in which you put the two variables does not matter, but for one-sided alternative, the direction needs to be consistent with the choice of the alternative hypothesis. For example, if you want to test whether the average reading achievement score in 12th grade is LESS than that in 10th grade, and you put <code>achrdg10</code> first (Measure 1) and <code>achrdg12</code> second (Measure 2), the alternative should be <strong>Measure 1 &gt; Measure 2</strong> and the output should say: “Note: <span class="math inline">\(H_a\)</span> <span class="math inline">\(mu\)</span>(Measure 1 - Mueasure 2) &gt; 0”.</p></li>
+<li><p>One way to check: the correct one-sided p-value is always less than 0.5 (and half of the two-sided p-value). For example, the two-sided p-value for <code>achrdg12</code> vs <code>achrdg10</code> is 0.056, and the one-sided p-value is 0.028.</p></li>
+</ul>
+<p>Has the average reading achievement score in 12th grade decreased from 10th grade (<code>achrdg12</code> vs <code>achrdg10</code>)?</p>
+<p><span style="color: blue;">Solution: <span class="math inline">\(p = 0.028 &lt; 0.05\)</span>, so we reject the null hypothesis and conclude that the average reading achievement score in 12th grade is statistically significantly lower than that in 10th grade.</span></p>
+</section>
+<section id="effect-size-1" class="slide level2">
+<h2>Effect size</h2>
+<p>Since the result is significant (i.e., we have rejected the null and concluded that the average reading achievement in 12th grade has decreased from 10th grade), we might also want to know by how much it has decreased.</p>
+<p>Numerically, the sample mean of the reading score in 12th grade is 55.6, and in 10th grade is 56.1, so we see a decrease of 0.5 points. The effect size is a standardized measure of this difference.</p>
+<p>Report and interpret the effect size, or indicate why it is inappropriate to do so.</p>
+<p><span style="color: blue;"> Solution: d=0.0856; the sample mean of 12th grade (55.6) is 0.0856 standard deviations lower than the sample mean of 10th grade (56.1). This is a very small effect size (use the Cohen scale guidelines: d = 0.2 is small, d = 0.5 is medium, d = 0.8 is large).</span></p>
+</section>
+<section id="example-5-nels-self-concept-12th-vs-10th-grade" class="slide level2 scrollable">
+<h2>Example 5: NELS self-concept 12th vs 10th grade</h2>
+<p>Has self-concept in 12th grade, on average, improved from 10th grade?</p>
+<ol type="a">
+<li>State the null and alternative hypothesis.</li>
+<li>Evaluate the tenability of the normality assumption or indicate why the assumption is probably not an issue for this analysis.</li>
+<li>Perform a paired samples t test and report the p-value.</li>
+<li>Make a conclusion based on the p-value.</li>
+<li>Can we use a confidence interval to make a conclusion? If so, explain how. If not, explain why not.</li>
+<li>Report and interpret the effect size, or indicate why it is inappropriate to do so.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_{0}: \mu_{12} = \mu_{10}\)</span> and <span class="math inline">\(H_a: \mu_{10} &lt; \mu_{12}\)</span>.</p></li>
+<li><p>Not an issue because the sample size is large enough (n = 500 &gt; 30).</p></li>
+<li><p><span class="math inline">\(p &lt; .001\)</span>.</p></li>
+<li><p>Since <span class="math inline">\(p &lt; .05\)</span>, reject <span class="math inline">\(H_0\)</span>. The average self-concept is significantly higher in 12th grade than in 10th grade.</p></li>
+<li><p>Should not use a CI to make a conclusion because it is a one-sided test. (In fact, if you try CI with a on-sided alternative, Jamovi will display <code>Inf</code> for one of the bounds.)</p></li>
+<li><p>Cohen’s <span class="math inline">\(d = 1.44\)</span>. the 10th-grade mean (22.6) is 1.44 standard deviations lower than the 12th-grade mean (31.5). This is a very large effect size.</p></li>
+</ol>
+</details>
+</section>
+<section id="example-6-nels-reading-vs-math" class="slide level2 scrollable">
+<h2>Example 6: NELS reading vs math</h2>
+<p>Is the average reading achievement different from the average math achievement in 8th grade?</p>
+<ol type="a">
+<li>State the null and alternative hypothesis.</li>
+<li>Evaluate the tenability of the normality assumption or indicate why the assumption is probably not an issue for this analysis.</li>
+<li>Perform a paired samples t test and report the p-value.</li>
+<li>Make a conclusion based on the p-value.</li>
+<li>Can we use a confidence interval to make a conclusion? If so, explain how. If not, explain why not.</li>
+<li>Report and interpret the effect size, or indicate why it is inappropriate to do so.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: \mu_r = \mu_m\)</span> and $H_a: _r _m $.</p></li>
+<li><p>Normality is not an issue because the sample size is large (<span class="math inline">\(n = 500 &gt; 30\)</span>).</p></li>
+<li><p><span class="math inline">\(p = .140\)</span>.</p></li>
+<li><p>Since <span class="math inline">\(p &gt; .05\)</span>, fail to reject <span class="math inline">\(H_0\)</span>. Average reading and math achievement are not significantly different.</p></li>
+<li><p>(<span class="math inline">\(-0.178\)</span> to <span class="math inline">\(1.26\)</span>), which contains zero, leading to the same conclusion as in d.</p></li>
+<li><p>No need to do effect size since the test is not significant. (Intuition: math and reading are not different, as concluded, so no need to quantify the difference.)</p></li>
+</ol>
+</details>
+</section>
+<section id="summary-of-steps-for-paired-samples-t-test" class="slide level2 scrollable">
+<h2>Summary of steps for paired samples t-test</h2>
+<ol type="1">
+<li>State the null and alternative hypotheses.</li>
+<li>Check the normality assumption (check sample size).</li>
+<li>Draw a conclusion based on the p-value. (OR, for a two-sided test, draw a conclusion based on the confidence interval: is the CI entirely above or below zero?)</li>
+<li><strong>ONLY If test is significant,</strong> report and interpret the effect size.</li>
+</ol>
+</section></section>
+<section>
+<section id="independent-samples-t-test" class="title-slide slide level1 center">
+<h1>Independent-samples t-test</h1>
+
+</section>
+<section id="set-up-and-hypotheses-1" class="slide level2">
+<h2>Set up and hypotheses</h2>
+<p>Similar to the paired samples t-test, we compare two means.</p>
+<p><br> <br></p>
+<p>The two means are of different, independent populations and the data are not paired. In fact, the two samples are not necessarily of the same size.</p>
+<p><code>Based on the NELS dataset</code>, do female and male students have different family sizes, on average?</p>
+<details>
+<summary>
+Show summary statistics
+</summary>
+<div id="tbl-descriptives" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Descriptives
+</figcaption>
+<div aria-describedby="tbl-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: left;">Gender</th>
+<th style="text-align: right;">Family size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">227.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">273.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missing</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">4.61</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">4.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Median</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">4.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">5.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</details>
+</section>
+<section id="obtaining-results" class="slide level2">
+<h2>Obtaining results</h2>
+<blockquote>
+<p>Jamovi procedure: <strong>Analyses &gt; T-Tests &gt; Independent Samples T-Test</strong>. Move <code>famsize</code> into the <strong>Dependent Variables</strong> box and <code>gender</code> into the <strong>Grouping Variable</strong> box. Under <strong>Hypothesis</strong>, select the appropriate alternative (check: the correct one-sided p-value is less than 0.5 and half of the two-sided p-value).</p>
+</blockquote>
+<p>In addition: check <strong>Homogeneity test</strong> (more on this later). You should see a table that says “Homogeneity of variance test (Levene’s).” The last value is a p-value:</p>
+<ul>
+<li><p>if this p-value is greater than 0.05, we assume equal variances, you do not need to change anything.</p></li>
+<li><p>if this p-value is less than 0.05, we do not assume equal variances. Under <strong>Tests</strong>, uncheck <strong>Student’s</strong> and check <strong>Welch’s</strong>. (The Welch’s t-test is a more robust version of the independent samples t-test that does not assume equal variance).</p></li>
+<li><p>Comment: the default t-test is called a “Student’s t-test” because it is developed in 1908 by <a href="https://en.wikipedia.org/wiki/Student%27s_t-test">William Gosset</a>, who wrote under the very humble pseudonym “Student.” The Welch’s t-test is named after <a href="https://en.wikipedia.org/wiki/Bernard_Lewis_Welch">Bernard Welch</a>, who developed it in 1947.</p></li>
+</ul>
+<blockquote>
+<p>For effect size: select <strong>Effect size</strong> and <strong>Descriptives</strong>.</p>
+</blockquote>
+<blockquote>
+<p>For confidence interval: select <strong>Mean difference</strong> and <strong>Confidence Interval</strong>.</p>
+</blockquote>
+</section>
+<section id="assumption-1-normality" class="slide level2">
+<h2>Assumption 1: Normality</h2>
+<p>We have two independent populations, and we require the family size distribution for BOTH males and females to be approximately normal; or, using the Central Limit Theorem, we require the sample size for BOTH males and females to be sufficiently large (&gt;30).</p>
+<p>In practice, make sure you check the sample sizes of both groups!</p>
+</section>
+<section id="assumption-2-homogeneity-of-variance" class="slide level2">
+<h2>Assumption 2: Homogeneity of variance</h2>
+<p>We require the two independent populations to have the same level of spread: the distribution of family size for male respondents should be similarly consistent as the distribution of family size for female respondents.</p>
+<p>This is what we are checking using the Homogeneity of variance test (Levene’s). The null is that the two variances are equal (recall, the null hypothesis for any test is always in the form of an equality.); that’s why we reject equal variance and switch to Welch’s t-test if the p-value of the Homogeneity test is less than 0.05.</p>
+</section>
+<section id="putting-things-together" class="slide level2">
+<h2>Putting things together…</h2>
+<p>Based on the NELS dataset, do female and male students have different family sizes, on average?</p>
+<p>The Homogeneity of variance test (Levene’s) has a p-value of 0.403, so we can assume equal variances. (And we do not need to switch to the Welch’s t-test.)</p>
+<p>The sample sizes are 227 for males and 273 for females, so normality is not an issue.</p>
+<p>The p-value of the independent samples t-test is 0.194 (against a two-sided alternative), so we fail to reject the null hypothesis and conclude that there is no statistically significant difference in family size between male and female students, on average.</p>
+<p>Also, the 95% confidence interval for the mean difference is (-0.387, 0.0787). Since this interval contains 0, we would “accept” a value of 0 (i.e., the difference could be zero, so, no difference).</p>
+</section>
+<section id="effect-size-2" class="slide level2">
+<h2>Effect size</h2>
+<p>If the result is significant (i.e., we conclude that the two groups have significantly different means), we might want to know by how much the two groups differ.</p>
+<p>Just as an example: the effect size in this case is <span class="math inline">\(d=0.117\)</span>. The average family size for males (4.61) is 0.117 standard deviations smaller than the average family size for females (4.76). This is a very small effect size.</p>
+<p>The actual correct answer here is to say we should not report an effect size because the test is not significant. (Intuition: we concluded that male and female students do NOT have different family sizes, so it makes no sense to ask “by how much” they differ.)</p>
+</section>
+<section id="example-7-nels-math-and-marijuana" class="slide level2 scrollable">
+<h2>Example 7: NELS math and marijuana</h2>
+<p>Based on the NELS dataset, do people who have smoked marijuana (<code>marijuan</code>) have lower math achievement in 10th grade (<code>achmat10</code>), on average?</p>
+<ol type="a">
+<li>State the null and alternative hypothesis.</li>
+<li>Evaluate the tenability of the normality assumption or indicate why the assumption is probably not an issue for this analysis.</li>
+<li>Comment on the homogeneity variance assumption.</li>
+<li>Perform an independent samples t test and report the p-value.</li>
+<li>Make a conclusion based on the p-value.</li>
+<li>Can we use a confidence interval to make a conclusion? If so, explain how. If not, explain why not.</li>
+<li>Report and interpret the effect size, or indicate why it is inappropriate to do so.</li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p>Let <span class="math inline">\(\mu_{Never}\)</span> and <span class="math inline">\(\mu_{Yes}\)</span> be the population mean math achievement scores for students who have never smoked marijuana and those who have, respectively. <span class="math inline">\(H_0: \mu_{Never} = \mu_{Yes}\)</span> and <span class="math inline">\(H_a: \mu_{Never} &gt; \mu_{Yes}\)</span>.</p></li>
+<li><p>Normality is not an issue because both group sample sizes are large (<span class="math inline">\(n_{Never} = 408\)</span> and <span class="math inline">\(n_{Yes} = 92\)</span>, both greater than 30).</p></li>
+<li><p>Levene’s test has <span class="math inline">\(p = .919 &gt; .05\)</span>, so we can assume equal variances and use Student’s t-test.</p></li>
+<li><p>The independent-samples test gives <span class="math inline">\(t(498) = 3.15\)</span>, <span class="math inline">\(p &lt; .001\)</span>.</p></li>
+<li><p>Since <span class="math inline">\(p &lt; .05\)</span>, reject <span class="math inline">\(H_0\)</span>. Students who have smoked marijuana have significantly lower average 10th-grade math achievement than students who have never smoked marijuana.</p></li>
+<li><p>The provided output does not include a confidence interval. Because this is a one-sided test, use the p-value for the conclusion; a matching one-sided confidence interval would need to be requested separately.</p></li>
+<li><p>Cohen’s <span class="math inline">\(d = 0.36\)</span>, a small effect. The mean for students who have never smoked marijuana (57.51) is 0.36 standard deviations higher than the mean for students who have (54.69).</p></li>
+</ol>
+</details>
+</section>
+<section id="summaryof-steps-for-independent-samples-t-test" class="slide level2 scrollable">
+<h2>Summaryof steps for independent samples t-test</h2>
+<ol type="1">
+<li>State the null and alternative hypotheses.</li>
+<li>Check the normality assumption (check sample sizes of BOTH independent groups!).</li>
+<li>Check the homogeneity of variance assumption using Levene’s test (if Levene’s test is significant, use Welch’s t-test instead of Student’s t-test).</li>
+<li>Draw a conclusion based on the p-value of the independent samples t-test. (OR, for a two-sided test, draw a conclusion based on the confidence interval.)</li>
+<li><strong>ONLY if the test is significant, report and interpret the effect size.</strong></li>
 </ol>
 
 </section></section>

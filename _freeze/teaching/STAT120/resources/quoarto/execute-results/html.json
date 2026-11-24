@@ -1,0 +1,15 @@
+{
+  "hash": "3f50f99c5df9a54b05aec0bec0d381f4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Creating Quarto Reports and Presentations\"\n---\n\nQuarto documents combine text, code, and results in one file. Write the source in a file ending in `.qmd`, then render it to create an HTML file you can open in a web browser. Your data analysis should still be conducted in R script. Quarto should be used only to generate the final report or presentation, by pasting the relevant code and output into the `.qmd` file.\n\n\n## Create a report\n\nIn RStudio, choose **File > New File > Quarto Document**. Select **HTML** (default) as the output format, give the document a title, and save it with a name such as `my_report.qmd`.\n\nA simple report might look like this:\n\n````markdown\n---\ntitle: \"Exploring Car Fuel Efficiency\"\nauthor: \"Your Name\"\nformat: html\n---\n\n## Question\n\nHow does fuel efficiency vary across cars in the `mtcars` data?\n\n## Summary\n\nThe average fuel efficiency is:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmean(mtcars$mpg)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 20.09062\n```\n\n\n:::\n:::\n\n````\n\n\nClick **Render** in RStudio, or open a Terminal in the folder containing the file and run:\n\n```sh\nquarto render my_report.qmd\n```\n\nThe rendered file is `my_report.html`. Open it in a browser to check the layout, text, code output, and figures before sharing it.\n\nTo import a data in a qmd file, you need to specify the correct file path.  For simplicity, I recommend placing the data file in the same directory as your `.qmd` file and use `read.csv(\"your_data_file.csv\")` to import it.\n\n\n## Create a presentation\n\nIn RStudio, choose **File > New File > Quarto Presentation**. Select **Revealjs** as the output format (default), give the presentation a title, and save it with a name such as `my_slides.qmd`.\n\n\n## Submission\n\nYou should only submit the rendered HTML file, not the source `.qmd` file.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

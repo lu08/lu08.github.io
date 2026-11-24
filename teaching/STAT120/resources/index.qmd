@@ -16,3 +16,5 @@ As a backup, you can use [Posit Cloud](https://posit.cloud/) to run RStudio in y
 - [Posit recipes: interactive tutorials](https://posit.cloud/learn/recipes)
 
 - [Advanced R (Wickham)](http://adv-r.had.co.nz/)
+
+- [Creating Quarto reports and presentations](quoarto.qmd)
